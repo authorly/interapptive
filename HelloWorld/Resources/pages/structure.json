@@ -1,0 +1,97 @@
+{
+  "Page": {
+    "settings": {
+      "number": "pageNum",
+      "fontType": "TTF Font Name",
+      "fontColor": "color",
+      "fontSize": "value",
+      "highlightingTimes": "array",
+      "backgroundMusicFile": {
+        "numberTimesToLoop": "int"
+      }
+    },
+    "text": {
+      "paragraphs": [
+        {
+          "linesOfText": [
+            {
+              "text": "string",
+              "yOffset": "int",
+              "xOffset": "int"
+            },
+            {
+              "text": "string",
+              "yOffset": "int",
+              "xOffset": "int"
+            }
+          ]
+        },
+        {
+          "linesOfText": [
+            {
+              "text": "string",
+              "yOffset": "int",
+              "xOffset": "int"
+            },
+            {
+              "text": "string",
+              "yOffset": "int",
+              "xOffset": "int"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "API": {
+    "CCMoveTo": [
+      {
+        "position": "x, y",
+        "duration": "decimal",
+        "actionTag": "int"
+      }
+    ],
+    "CCScaleTo": [
+      {
+        "intensity": "decimal",
+        "duration": "decimal",
+        "actionTag": "int"
+      }
+    ],
+    "CCNode (scene)": {
+      "children": [
+        {
+          "spriteTag": "int"
+        }
+      ]
+    },
+    "CCSprite": {
+      "image": "filename",
+      "spriteTag": "int",
+      "position": "0,0",
+      "actions": [
+        {
+          "actionTag": "int"
+        }
+      ]
+    },
+    "CCSwipeEnded": {
+      "runAction": {
+        "calls": [
+          {
+            "afterSwipe": "int (i.e., after swipe 1 / after the first paragraph)",
+            "spriteTag": "int",
+            "actionTag": "int"
+          }
+        ]
+      },
+      "addChild": {
+        "children": [
+          {
+            "spriteTag": "int"
+          }
+        ]
+      }
+    }
+  }
+}
