@@ -5,7 +5,6 @@
      		"fontType": "TTF Font Name",
      		"fontColor": "color",
      		"fontSize": "value",
-     		"highlightingTimes": "array of decimals",
      		"backgroundMusicFile": {
         	"numberTimesToLoop": "int",
         	"audioFilePath": "string"
@@ -14,6 +13,7 @@
     "text": {
       "paragraphs": [
         {
+     			"highlightingTimes": "array.. [0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
           "linesOfText": [
             {
               "text": "string",
@@ -28,6 +28,7 @@
           ]
         },
         {
+     			"highlightingTimes": "[0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
           "linesOfText": [
             {
               "text": "string",
