@@ -1,12 +1,12 @@
 {
   "Page": {
     "settings": {
-      "number": "pageNum",
-      "fontType": "TTF Font Name",
-      "fontColor": "color",
-      "fontSize": "value",
-      "highlightingTimes": "array",
-      "backgroundMusicFile": {
+     		"number": "pageNum",
+     		"fontType": "TTF Font Name",
+     		"fontColor": "color",
+     		"fontSize": "value",
+     		"highlightingTimes": "array",
+     		"backgroundMusicFile": {
         "numberTimesToLoop": "int",
         "audioFilePath": "string"
       }
@@ -218,6 +218,18 @@
       "actions": [
         {
           "actionTag": "int"
+        }
+      ]
+    },
+    "CCStoryTouchableNode": {
+      "image": "filename",
+      "nodes": [
+        {
+          "position": "x, y",
+          "radius": "int",
+          "videoToPlay": "filename (null if sound or action values are present)",
+          "soundToPlay": "filename (null if action or video values are present)",
+          "action": "actionTag (null if sound or video values are present)"
         }
       ]
     },
