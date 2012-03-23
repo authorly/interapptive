@@ -141,27 +141,31 @@
       "CCRotateBy":[
          {
             "degrees":"int",
-            "duration":"int"
+            "duration":"int",
+            "actionTag":"int"
          }
       ],
       "CCRotateTo":[
          {
             "degrees":"int",
-            "duration":"int"
+            "duration":"int",
+            "actionTag":"int"
          }
       ],
       "CCSkewBy":[
          {
             "duration":"decimal (CCTime)",
             "deltaSkewX":"int",
-            "deltaSkewY":"int"
+            "deltaSkewY":"int",
+            "actionTag":"int"
          }
       ],
       "CCSkewTo":[
          {
             "duration":"decimal (CCTime)",
             "skewX":"int",
-            "skewY":"int"
+            "skewY":"int",
+            "actionTag":"int"
          }
       ],
       "CCMoveBy":[
@@ -195,7 +199,7 @@
       "CCSequence":{
          "actions":[
             {
-               "action":"actionTag"
+               "actionTag":"int"
             }
          ]
       },

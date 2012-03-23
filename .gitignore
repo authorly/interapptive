@@ -1,7 +1,9 @@
+
+
 # Ignore files build by ndk and eclipse
 # libs/
- bin/
- obj/
+bin/
+obj/
 assets/
 .classpath
 .project
