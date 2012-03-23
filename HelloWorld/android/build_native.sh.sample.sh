@@ -1,6 +1,6 @@
 # set params
-NDK_ROOT_LOCAL=/cygdrive/d/programe/android/ndk/android-ndk-r6b
-COCOS2DX_ROOT_LOCAL=/cygdrive/e/cocos2d-x
+NDK_ROOT_LOCAL=/cygdrive/d/programe/android/ndk/android-ndk-r7b
+COCOS2DX_ROOT_LOCAL=/cygdrive/d/interapptive
 
 # try to get global variable
 if [ $NDK_ROOT"aaa" != "aaa" ]; then
