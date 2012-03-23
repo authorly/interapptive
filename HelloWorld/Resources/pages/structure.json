@@ -5,11 +5,11 @@
      		"fontType": "TTF Font Name",
      		"fontColor": "color",
      		"fontSize": "value",
-     		"highlightingTimes": "array",
+     		"highlightingTimes": "array of decimals",
      		"backgroundMusicFile": {
-        "numberTimesToLoop": "int",
-        "audioFilePath": "string"
-      }
+        	"numberTimesToLoop": "int",
+        	"audioFilePath": "string"
+      	}
     },
     "text": {
       "paragraphs": [
@@ -49,9 +49,9 @@
       {
         "duration": "decimal (CCTime)",
         "config": {
-          "endPosition": "x, y",
-          "controlPoint_1": "x, y",
-          "controlPoint_2": "x, y"
+        	"endPosition": "x, y",
+        	"controlPoint_1": "x, y",
+        	"controlPoint_2": "x, y"
         }
       }
     ],
@@ -231,14 +231,14 @@
           "soundToPlay": "filename (null if action or video values are present)",
           "runAction": [
 		         {
-		           "spriteTag": "int",
-		           "actionTag": "int"
+		           "spriteTag": "int (null if video or sound values are present)",
+		           "actionTag": "int (null if video or sound values are present)"
 		         }
 		       ]
         }
       ]
     },
-    "CCSwipeEnded": {
+    "CCStorySwipeEnded": {
       "runAction": [
          {
            "runAfterSwipeNumber": "int",
