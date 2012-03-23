@@ -16,12 +16,37 @@
                "highlightingTimes":"array.. [0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
                "linesOfText":[
                   {
-                     "text":"string",
+                     "text":"The snowflakes were",
                      "yOffset":"int",
                      "xOffset":"int"
                   },
                   {
-                     "text":"string",
+                     "text":"resting after their twisting",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"twirling dance through",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"the crisp night air.",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"Every twig in the forest",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"wore a new coat",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"of glimmering white.",
                      "yOffset":"int",
                      "xOffset":"int"
                   }
@@ -31,12 +56,37 @@
                "highlightingTimes":"[0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
                "linesOfText":[
                   {
-                     "text":"string",
+                     "text":"Daybreak came",
                      "yOffset":"int",
                      "xOffset":"int"
                   },
                   {
-                     "text":"string",
+                     "text":"softly moving through the",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"and yawning",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"as its rays slowly",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"across the snowy meadows.",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"The birds",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+									{
+                     "text":"were the first to notice...",
                      "yOffset":"int",
                      "xOffset":"int"
                   }
