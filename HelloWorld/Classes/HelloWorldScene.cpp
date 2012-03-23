@@ -1,5 +1,7 @@
 #include "HelloWorldScene.h"
 
+#include <json/value.h>
+
 USING_NS_CC;
 
 CCScene* HelloWorld::scene()

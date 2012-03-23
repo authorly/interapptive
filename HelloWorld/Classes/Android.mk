@@ -11,6 +11,8 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
 
+LOCAL_C_INCLUDES := ../..
+
 LOCAL_STATIC_LIBRARIES := png_static_prebuilt
 LOCAL_STATIC_LIBRARIES += xml2_static_prebuilt
 LOCAL_STATIC_LIBRARIES += jpeg_static_prebuilt
