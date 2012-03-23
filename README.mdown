@@ -1,34 +1,61 @@
-cocos2d-x 
+Getting Started
 ==================
-
-[cocos2d-x][1] is a multi-platform 2D game engine in C++, based on [cocos2d-iphone][2] and licensed under MIT.
-Now this engine has been expended to iOS, Android, Bada, BlackBerry Playbook, Marmalade and desktop operating systems like Linux, WindowsXP & Windows7. 
-
-Multi Platform
+Cococs2d-x / Mac / Eclipse / Android
 -------------
-   * iOS:  stable, well tested on iOS 4.0 ~ 5.0 SDK.
-   * Android: stable, well tested on 2.0~3.1, based on ndk r5 ~ r7.
-   * Bada: stable on Bada SDK 1.0 & 2.0
-   * BlackBerry Playbook: stable, contribued by engineers working at RIM
-   * Marmalade: stable since cocos2d-x-0.11.0
-   * Windows: stable, tested on WinXP, Vista, Win7. Please upgrde the drive of your video card if you meet problems on OpenGL functions
-   * Linux: usable.
+1   Dependency Check
 
-Document
-------------------
-   * Website: [www.cocos2d-x.org][3]
-   * [Online API References][4] 
-	
-Contact us
-------------------
-   * Forum: [http://forum.cocos2d-x.org][5]
-   * Twitter: [http://www.twitter.com/cocos2dx][6]
-   * Sina mini-blog: [http://t.sina.com.cn/cocos2dx][7]
-   
-[1]: http://www.cocos2d-x.org "cocos2d-x"
-[2]: http://www.cocos2d-iphone.org "cocos2d for iPhone"
-[3]: http://www.cocos2d-x.org "www.cocos2d-x.org"
-[4]: http://www.cocos2d-x.org/embedded/cocos2d-x/classes.html "API References"
-[5]: http://forum.cocos2d-x.org "http://forum.cocos2d-x.org"
-[6]: http://www.twitter.com/cocos2dx "http://www.twitter.com/cocos2dx"
-[7]: http://t.sina.com.cn/cocos2dx "http://t.sina.com.cn/cocos2dx"
+	1.1 Make sure you have JDK installed. You can input the "java -version" in your terminal to check
+
+	1.2 Make sure you have Ant installed (it's better to use the version higher than 1.8.0). You can input the "ant -version" in your terminal to check
+
+2   Setting up Eclipse (IDE)
+
+	2.1 Download & Install Eclipse Helio Java EE
+
+	2.2 Check for updates, this is important. You can check by going to Help -> Check for Upddates.
+
+	2.3 Restart Eclipse
+
+3   Setup ADT plugin for Eclipse (Android development plugin, allows SDK manager etc.)
+
+	3.1 Navigate to Help -> Install new Software
+
+	3.2 paste "https://dl-ssl.google.com/android/eclipse/" in the 'work with' field. Hint: If it doesn't work, use non-secured protocol (http://)
+
+	3.3 Make your way through the motions, accept terms, download components. Make sure it's successful. 
+
+	3.4 Restart Eclipse
+
+	HINT: If you get nasty errors while trying to install ADT, make sure you have completed step 2.2
+
+4   Setup Android-SDK in Eclipse
+
+	4.1 Navigate to Window -> Android-SDK Manager
+
+	4.2 Make sure you are using Android SDK 2.1 (7)/2.2 (8)
+
+	4.3 Ensure ProjectRoot/HelloWorld/android/default.properties has: "target=android-8" in it (sets the build target for the app) (8 for 2.2, 7 for 2.1)
+
+5   Android NDK Installation & Running Cocos2d-x in Eclipse
+
+	5.1 Download Android-NDK 6 or 7. Remember where you save it.
+
+	5.2 Rename HelloWorld/android/build_native.sh.sample to HelloWorld/android/build_native.sh
+
+	5.3 Open HelloWorld/android/build_native.sh in your favorite editor and change the top two variables (NDK_ROOT_LOCAL, COCOS2DX_ROOT_LOCAL) to point to your downloaded Android-NDK directory as well as Cocos2d-x directory (project root)
+
+	5.4 In terminal, cd to your ProjectRoot/HelloWorld/android/ folder and run your build_native.sh script (in terminal: './build_native.sh'). This will compile native libraries and cc2x dependencies.
+
+	5.5 Opening, compiling and running the project in Eclipse
+
+		5.5.1 Open our HelloWorld project by navigating to to File -> New -> Other -> Android -> Android Project. Click Next.
+
+		5.5.2 Check "Create project from existing source" and browse to ProjectRoot/HelloWorld/android, select this folder. Next.
+
+		5.5.3 Set up an Android Emulator by navigating to Window -> AVD Manager, and make sure the Android SDK version you are using matches the emulator
+
+		5.5.4 Run it!
+
+		HINT: If your project has a bunch of errors related to @Override, and other java related errors (~17 of them), navigate to Project Properties -> Java Compiler and change compliance from 1.5 to 1.6. 
+
+		HINT: If you get a black screen in simulator with SDK 2.1, switch to Android SDK 2.2 for now.

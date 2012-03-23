@@ -1,0 +1,266 @@
+{
+   "Page":{
+      "settings":{
+         "number":"pageNum",
+         "fontType":"TTF Font Name",
+         "fontColor":"color",
+         "fontSize":"value",
+         "backgroundMusicFile":{
+            "numberTimesToLoop":"int",
+            "audioFilePath":"string"
+         }
+      },
+      "text":{
+         "paragraphs":[
+            {
+               "highlightingTimes":"array.. [0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
+               "linesOfText":[
+                  {
+                     "text":"string",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+                  {
+                     "text":"string",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  }
+               ]
+            },
+            {
+               "highlightingTimes":"[0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
+               "linesOfText":[
+                  {
+                     "text":"string",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  },
+                  {
+                     "text":"string",
+                     "yOffset":"int",
+                     "xOffset":"int"
+                  }
+               ]
+            }
+         ]
+      }
+   },
+   "API":{
+      "CCBezierBy":[
+         {
+            "duration":"decimal (CCTime)",
+            "config":{
+               "endPosition":"x, y",
+               "controlPoint_1":"x, y",
+               "controlPoint_2":"x, y"
+            }
+         }
+      ],
+      "CCBezierTo":[
+         {
+            "duration":"decimal (CCTime)",
+            "config":{
+               "endPosition":"x, y",
+               "controlPoint_1":"x, y",
+               "controlPoint_2":"x, y"
+            }
+         }
+      ],
+      "CCEaseBounceIn":[
+         {
+            "action":"actionTag"
+         }
+      ],
+      "CCEaseBounceOut":[
+         {
+            "action":"actionTag"
+         }
+      ],
+      "CCEaseIn":[
+         {
+            "action":"actionId",
+            "rate":"decimal"
+         }
+      ],
+      "CCEaseOut":[
+         {
+            "action":"actionId",
+            "rate":"decimal"
+         }
+      ],
+      "CCFadeIn":[
+         {
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCFadeOut":[
+         {
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCFadeTo":[
+         {
+            "opacity":"decimal",
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCFlipX":[
+         {
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCFlipX3D":[
+         {
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCFlipY":[
+         {
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCFlipY3D":[
+         {
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCJumpTo":[
+         {
+            "position":"x, y",
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCRotateBy":[
+         {
+            "degrees":"int",
+            "duration":"int"
+         }
+      ],
+      "CCRotateTo":[
+         {
+            "degrees":"int",
+            "duration":"int"
+         }
+      ],
+      "CCSkewBy":[
+         {
+            "duration":"decimal (CCTime)",
+            "deltaSkewX":"int",
+            "deltaSkewY":"int"
+         }
+      ],
+      "CCSkewTo":[
+         {
+            "duration":"decimal (CCTime)",
+            "skewX":"int",
+            "skewY":"int"
+         }
+      ],
+      "CCMoveBy":[
+         {
+            "position":"x, y",
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCMoveTo":[
+         {
+            "position":"x, y",
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCScaleBy":[
+         {
+            "intensity":"decimal",
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCScaleTo":[
+         {
+            "intensity":"decimal",
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCSequence":{
+         "actions":[
+            {
+               "action":"actionTag"
+            }
+         ]
+      },
+      "CCTimer":[
+         {
+            "duration":"decimal (CCTime)",
+            "actionTag":"int"
+         }
+      ],
+      "CCNode (scene)":{
+         "children":[
+            {
+               "spriteTag":"int"
+            }
+         ]
+      },
+      "CCSprite":{
+         "image":"filename",
+         "spriteTag":"int",
+         "position":"0,0",
+         "actions":[
+            {
+               "actionTag":"int"
+            }
+         ]
+      },
+      "CCStoryTouchableNode":{
+         "nodes":[
+            {
+               "glitterIndicator":"boolean",
+               "position":"x, y",
+               "radius":"int",
+               "videoToPlay":"filename (null if sound or action values are present)",
+               "soundToPlay":"filename (null if action or video values are present)",
+               "runAction":[
+                  {
+                     "spriteTag":"int (null if video or sound values are present)",
+                     "actionTag":"int (null if video or sound values are present)"
+                  }
+               ]
+            }
+         ]
+      },
+      "CCStorySwipeEnded":{
+         "runAction":[
+            {
+               "runAfterSwipeNumber":"int",
+               "spriteTag":"int",
+               "actionTag":"int"
+            }
+         ],
+         "addChild":{
+            "children":[
+               {
+                  "spriteTag":"int"
+               }
+            ]
+         },
+         "removeChild":{
+            "children":[
+               {
+                  "spriteTag":"int"
+               }
+            ]
+         }
+      }
+   }
+}
