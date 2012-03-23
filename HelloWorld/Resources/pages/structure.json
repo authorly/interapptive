@@ -8,7 +8,7 @@
       "highlightingTimes": "array",
       "backgroundMusicFile": {
         "numberTimesToLoop": "int",
-		"audioFilePath": "string"
+        "audioFilePath": "string"
       }
     },
     "text": {
@@ -45,20 +45,167 @@
     }
   },
   "API": {
+    "CCBezierBy": [
+      {
+        "duration": "decimal (CCTime)",
+        "config": {
+          "endPosition": "x, y",
+          "controlPoint_1": "x, y",
+          "controlPoint_2": "x, y"
+        }
+      }
+    ],
+    "CCBezierTo": [
+      {
+        "duration": "decimal (CCTime)",
+        "config": {
+          "endPosition": "x, y",
+          "controlPoint_1": "x, y",
+          "controlPoint_2": "x, y"
+        }
+      }
+    ],
+    "CCEaseBounceIn": [
+      {
+        "action": "actionTag"
+      }
+    ],
+    "CCEaseBounceOut": [
+      {
+        "action": "actionTag"
+      }
+    ],
+    "CCEaseIn": [
+      {
+        "action": "actionId",
+        "rate": "decimal"
+      }
+    ],
+    "CCEaseOut": [
+      {
+        "action": "actionId",
+        "rate": "decimal"
+      }
+    ],
+    "CCFadeIn": [
+      {
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCFadeOut": [
+      {
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCFadeTo": [
+      {
+        "opacity": "decimal",
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCFlipX": [
+      {
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCFlipX3D": [
+      {
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCFlipY": [
+      {
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCFlipY3D": [
+      {
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCJumpTo": [
+      {
+        "position": "x, y",
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCRotateBy": [
+      {
+        "degrees": "int",
+        "duration": "int"
+      }
+    ],
+    "CCRotateTo": [
+      {
+        "degrees": "int",
+        "duration": "int"
+      }
+    ],
+    "CCSkewBy": [
+      {
+        "duration": "decimal (CCTime)",
+        "deltaSkewX": "int",
+        "deltaSkewY": "int"
+      }
+    ],
+    "CCSkewTo": [
+      {
+        "duration": "decimal (CCTime)",
+        "skewX": "int",
+        "skewY": "int"
+      }
+    ],
+    "CCMoveBy": [
+      {
+        "position": "x, y",
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
     "CCMoveTo": [
       {
         "position": "x, y",
-        "duration": "decimal",
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
+    "CCScaleBy": [
+      {
+        "intensity": "decimal",
+        "duration": "decimal (CCTime)",
         "actionTag": "int"
       }
     ],
     "CCScaleTo": [
       {
         "intensity": "decimal",
-        "duration": "decimal",
+        "duration": "decimal (CCTime)",
         "actionTag": "int"
       }
     ],
+    "CCSequence": {
+      "actions": [
+        {
+          "action": "actionTag"
+        }
+      ]
+    },
+    "CCTimer": {
+      "": [
+        {
+          "duration": "decimal (CCTime)",
+          "actionTag": "int"
+        }
+      ]
+    },
     "CCNode (scene)": {
       "children": [
         {
@@ -87,6 +234,13 @@
         ]
       },
       "addChild": {
+        "children": [
+          {
+            "spriteTag": "int"
+          }
+        ]
+      },
+      "removeChildren": {
         "children": [
           {
             "spriteTag": "int"
