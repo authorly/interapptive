@@ -229,20 +229,23 @@
           "radius": "int",
           "videoToPlay": "filename (null if sound or action values are present)",
           "soundToPlay": "filename (null if action or video values are present)",
-          "action": "actionTag (null if sound or video values are present)"
+          "runAction": [
+		         {
+		           "spriteTag": "int",
+		           "actionTag": "int"
+		         }
+		       ]
         }
       ]
     },
     "CCSwipeEnded": {
-      "runAction": {
-        "calls": [
-          {
-            "runAfterSwipeNumber": "int",
-            "spriteTag": "int",
-            "actionTag": "int"
-          }
-        ]
-      },
+      "runAction": [
+         {
+           "runAfterSwipeNumber": "int",
+           "spriteTag": "int",
+           "actionTag": "int"
+         }
+       ],
       "addChild": {
         "children": [
           {
