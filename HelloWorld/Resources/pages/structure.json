@@ -198,14 +198,12 @@
         }
       ]
     },
-    "CCTimer": {
-      "": [
-        {
-          "duration": "decimal (CCTime)",
-          "actionTag": "int"
-        }
-      ]
-    },
+    "CCTimer": [
+      {
+        "duration": "decimal (CCTime)",
+        "actionTag": "int"
+      }
+    ],
     "CCNode (scene)": {
       "children": [
         {
