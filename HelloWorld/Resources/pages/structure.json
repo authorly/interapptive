@@ -222,7 +222,6 @@
       ]
     },
     "CCStoryTouchableNode": {
-      "image": "filename",
       "nodes": [
         {
           "position": "x, y",
