@@ -227,9 +227,9 @@
       ],
       "CCMoveTo":[
          {
-            "position":"x, y",
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "position":"200, 200",
+            "duration":"3.0",
+            "actionTag":"103"
          }
       ],
       "CCScaleBy":[
@@ -241,15 +241,17 @@
       ],
       "CCScaleTo":[
          {
-            "intensity":"decimal",
-            "duration":"decimal (CCTime)",
+            "intensity":"1.1",
+            "duration":"3.0",
             "actionTag":"int"
          }
       ],
       "CCSequence":{
+				 "actionTag":"101"
          "actions":[
             {
-               "actionTag":"int"
+               "actionTag":"102",
+							"actionTag":"103"
             }
          ]
       },
@@ -262,19 +264,15 @@
       "CCNode (scene)":{
          "children":[
             {
-               "spriteTag":"int"
+               "spriteTag":"001"
             }
          ]
       },
       "CCSprite":{
-         "image":"filename",
-         "spriteTag":"int",
+         "image":"background001.jpg",
+         "spriteTag":"001",
          "position":"0,0",
-         "actions":[
-            {
-               "actionTag":"int"
-            }
-         ]
+         "actions": ""
       },
       "CCStoryTouchableNode":{
          "nodes":[
@@ -296,9 +294,9 @@
       "CCStorySwipeEnded":{
          "runAction":[
             {
-               "runAfterSwipeNumber":"int",
-               "spriteTag":"int",
-               "actionTag":"int"
+               "runAfterSwipeNumber":"1",
+               "spriteTag":"001",
+               "actionTag":"101"
             }
          ],
          "addChild":{
