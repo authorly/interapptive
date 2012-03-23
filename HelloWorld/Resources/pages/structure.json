@@ -225,7 +225,7 @@
       "runAction": {
         "calls": [
           {
-            "afterSwipe": "int (i.e., after swipe 1 / after the first paragraph)",
+            "runAfterSwipeNumber": "int",
             "spriteTag": "int",
             "actionTag": "int"
           }
