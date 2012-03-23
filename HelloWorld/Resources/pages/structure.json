@@ -254,7 +254,7 @@
           }
         ]
       },
-      "removeChildren": {
+      "removeChild": {
         "children": [
           {
             "spriteTag": "int"
