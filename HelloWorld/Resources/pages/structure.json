@@ -1,315 +1,361 @@
 {
-   "Page":{
-      "settings":{
-         "number":"pageNum",
+   "Page":
+   {
+      "settings":
+      {
+         "number":1,
          "fontType":"TTF Font Name",
          "fontColor":"color",
-         "fontSize":"value",
-         "backgroundMusicFile":{
-            "numberTimesToLoop":"int",
+         "fontSize":1,
+         "backgroundMusicFile":
+         {
+            "numberTimesToLoop":1,
             "audioFilePath":"string"
-         }
-      },
-      "text":{
-         "paragraphs":[
+          }
+       },
+      "text":
+      {
+         "paragraphs":
+         [
             {
-               "highlightingTimes":"array.. [0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
-               "linesOfText":[
+               "highlightingTimes":[0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8],
+               "linesOfText":
+               [
                   {
                      "text":"The snowflakes were",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"resting after their twisting",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"twirling dance through",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"the crisp night air.",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"Every twig in the forest",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"wore a new coat",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"of glimmering white.",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   }
                ]
             },
             {
                "highlightingTimes":"[0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
-               "linesOfText":[
+               "linesOfText":
+               [
                   {
                      "text":"Daybreak came",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"softly moving through the",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"and yawning",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"as its rays slowly",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"across the snowy meadows.",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"The birds",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   },
                   {
                      "text":"were the first to notice...",
-                     "yOffset":"int",
-                     "xOffset":"int"
+                     "yOffset":1,
+                     "xOffset":1
                   }
                ]
             }
          ]
       }
    },
-   "API":{
+   "API":
+   {
       "CCBezierBy":[
-         {
-            "duration":"decimal (CCTime)",
-            "config":{
+      {
+            "duration":1.0,
+            "config":
+            {
                "endPosition":"x, y",
                "controlPoint_1":"x, y",
                "controlPoint_2":"x, y"
             }
-         }
+       }
       ],
-      "CCBezierTo":[
+      "CCBezierTo":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "config":{
-               "endPosition":"x, y",
-               "controlPoint_1":"x, y",
-               "controlPoint_2":"x, y"
+            "duration":1.0,
+            "config":
+            {
+               "endPosition":[1,2],
+               "controlPoint_1":[3,4],
+               "controlPoint_2":[5,6]
             }
          }
       ],
-      "CCEaseBounceIn":[
+      "CCEaseBounceIn":
+      [
          {
-            "action":"actionTag"
+            "actionTag":1
          }
       ],
-      "CCEaseBounceOut":[
+      "CCEaseBounceOut":
+      [
          {
-            "action":"actionTag"
+            "actionTag":1
          }
       ],
-      "CCEaseIn":[
+      "CCEaseIn":
+      [
          {
-            "action":"actionId",
-            "rate":"decimal"
+            "actionTag":1,
+            "rate":1
          }
       ],
-      "CCEaseOut":[
+      "CCEaseOut":
+      [
          {
-            "action":"actionId",
-            "rate":"decimal"
+            "actionTag":1,
+            "rate":1
          }
       ],
-      "CCFadeIn":[
+      "CCFadeIn":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "duration":1,
+            "actionTag":1
          }
       ],
-      "CCFadeOut":[
+      "CCFadeOut":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "duration":1,
+            "actionTag":1
          }
       ],
-      "CCFadeTo":[
+      "CCFadeTo":
+      [
          {
-            "opacity":"decimal",
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "opacity":1,
+            "duration":1.0,
+            "actionTag":1
          }
       ],
-      "CCFlipX":[
+      "CCFlipX":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "duration":1.0,
+            "actionTag":1
          }
       ],
-      "CCFlipX3D":[
+      "CCFlipX3D":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "duration":1.0,
+            "actionTag":1
          }
       ],
-      "CCFlipY":[
+      "CCFlipY":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "duration":1.0,
+            "actionTag":1
          }
       ],
-      "CCFlipY3D":[
+      "CCFlipY3D":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "duration":1.0,
+            "actionTag":1
          }
       ],
-      "CCJumpTo":[
+      "CCJumpTo":
+      [
+         {
+            "position":[1,2],
+            "duration":1.0,
+            "actionTag":1
+         }
+      ],
+      "CCRotateBy":
+      [
+         {
+            "degrees":1,
+            "duration":1.0,
+            "actionTag":1
+         }
+      ],
+      "CCRotateTo":
+      [
+         {
+            "degrees":1,
+            "duration":1.0,
+            "actionTag":1
+         }
+      ],
+      "CCSkewBy":
+      [
+         {
+            "duration":1.0,
+            "deltaSkewX":1,
+            "deltaSkewY":1,
+            "actionTag":1
+         }
+      ],
+      "CCSkewTo":
+      [
+         {
+            "duration":1.0,
+            "skewX":1,
+            "skewY":1,
+            "actionTag":1
+         }
+      ],
+      "CCMoveBy":
+      [
          {
             "position":"x, y",
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "duration":1.0,
+            "actionTag":1
          }
       ],
-      "CCRotateBy":[
+      "CCMoveTo":
+      [
          {
-            "degrees":"int",
-            "duration":"int",
-            "actionTag":"int"
+            "position":[200,200],
+            "duration":3.0,
+            "actionTag":1
          }
       ],
-      "CCRotateTo":[
+      "CCScaleBy":
+      [
          {
-            "degrees":"int",
-            "duration":"int",
-            "actionTag":"int"
+            "intensity":1,
+            "duration":1.0,
+            "actionTag":1
          }
       ],
-      "CCSkewBy":[
+      "CCScaleTo":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "deltaSkewX":"int",
-            "deltaSkewY":"int",
-            "actionTag":"int"
+            "intensity":1.1,
+            "duration":3.0,
+            "actionTag":1
          }
       ],
-      "CCSkewTo":[
-         {
-            "duration":"decimal (CCTime)",
-            "skewX":"int",
-            "skewY":"int",
-            "actionTag":"int"
-         }
-      ],
-      "CCMoveBy":[
-         {
-            "position":"x, y",
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
-         }
-      ],
-      "CCMoveTo":[
-         {
-            "position":"200, 200",
-            "duration":"3.0",
-            "actionTag":"103"
-         }
-      ],
-      "CCScaleBy":[
-         {
-            "intensity":"decimal",
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
-         }
-      ],
-      "CCScaleTo":[
-         {
-            "intensity":"1.1",
-            "duration":"3.0",
-            "actionTag":"int"
-         }
-      ],
-      "CCSequence":{
-				 "actionTag":"101"
-         "actions":[
+      "CCSequence":
+      {			 
+		"actionTag":1,
+         "actions":
+         [
             {
-               "actionTag":"102",
-							"actionTag":"103"
+               "actionTag":102,
+			   "actionTag":103
             }
          ]
       },
-      "CCTimer":[
+      "CCTimer":
+      [
          {
-            "duration":"decimal (CCTime)",
-            "actionTag":"int"
+            "duration":1.0,
+            "actionTag":1
          }
       ],
-      "CCNode (scene)":{
-         "children":[
+      "CCNode (scene)":
+      {
+         "children":
+         [
             {
-               "spriteTag":"001"
+               "spriteTag":1
             }
          ]
       },
-      "CCSprite":{
+      "CCSprite":
+      {
          "image":"background001.jpg",
-         "spriteTag":"001",
-         "position":"0,0",
-         "actions": ""
+         "spriteTag":1,
+         "position":[0,0],
+         "actions": [1,2,3]
       },
-      "CCStoryTouchableNode":{
-         "nodes":[
+      "CCStoryTouchableNode":
+      {
+         "nodes":
+         [
             {
-               "glitterIndicator":"boolean",
-               "position":"x, y",
-               "radius":"int",
+               "glitterIndicator":false,
+               "position":[0,0],
+               "radius":1,
                "videoToPlay":"filename (null if sound or action values are present)",
                "soundToPlay":"filename (null if action or video values are present)",
-               "runAction":[
+               "runAction":
+               [
                   {
-                     "spriteTag":"int (null if video or sound values are present)",
-                     "actionTag":"int (null if video or sound values are present)"
+                     "spriteTag":1,
+                     "actionTag":1
                   }
                ]
             }
          ]
       },
-      "CCStorySwipeEnded":{
-         "runAction":[
+      "CCStorySwipeEnded":
+      {
+         "runAction":
+         [
             {
-               "runAfterSwipeNumber":"1",
-               "spriteTag":"001",
-               "actionTag":"101"
+               "runAfterSwipeNumber":1,
+               "spriteTag":1,
+               "actionTag":1
             }
          ],
-         "addChild":{
-            "children":[
+         "addChild":
+         {
+            "children":
+            [
                {
-                  "spriteTag":"int"
+                  "spriteTag":1
                }
             ]
          },
-         "removeChild":{
-            "children":[
+         "removeChild":
+         {
+            "children":
+            [
                {
-                  "spriteTag":"int"
+                  "spriteTag":1
                }
             ]
          }
