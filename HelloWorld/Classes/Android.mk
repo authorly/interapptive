@@ -7,7 +7,8 @@ LOCAL_MODULE := game_logic_static
 LOCAL_MODULE_FILENAME := libgame_logic
 
 LOCAL_SRC_FILES := AppDelegate.cpp \
-                   HelloWorldScene.cpp
+                   Page.cpp \
+                   PageManager.cpp
                    
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
 
