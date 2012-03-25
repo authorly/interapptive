@@ -1,364 +1,383 @@
 {
-   "Page":
-   {
-      "settings":
-      {
-         "number":1,
-         "fontType":"TTF Font Name",
-         "fontColor":"color",
-         "fontSize":1,
-         "backgroundMusicFile":
-         {
-            "numberTimesToLoop":1,
-            "audioFilePath":"string"
+  "Pages": [
+    {
+      "Page": {
+        "settings": {
+          "number": 1,
+          "fontType": "TTF Font Name",
+          "fontColor": [
+            0,
+            0,
+            0
+          ],
+          "fontSize": 1,
+          "backgroundMusicFile": {
+            "numberTimesToLoop": 1,
+            "audioFilePath": "string"
           }
-       },
-      "text":
-      {
-         "paragraphs":
-         [
+        },
+        "text": {
+          "paragraphs": [
             {
-               "highlightingTimes":[0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8],
-               "linesOfText":
-               [
-                  {
-                     "text":"The snowflakes were",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"resting after their twisting",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"twirling dance through",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"the crisp night air.",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"Every twig in the forest",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"wore a new coat",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"of glimmering white.",
-                     "yOffset":1,
-                     "xOffset":1
-                  }
-               ]
+              "highlightingTimes": [
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
+              ],
+              "linesOfText": [
+                {
+                  "text": "The snowflakes were",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "resting after their twisting",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "twirling dance through",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "the crisp night air.",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "Every twig in the forest",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "wore a new coat",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "of glimmering white.",
+                  "yOffset": 1,
+                  "xOffset": 1
+                }
+              ]
             },
             {
-               "highlightingTimes":"[0.15,1.5,3.4,5.5,6.6,7.2,9.3,10.2,10.9,11.4,12.8]",
-               "linesOfText":
-               [
-                  {
-                     "text":"Daybreak came",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"softly moving through the",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"and yawning",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"as its rays slowly",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"across the snowy meadows.",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"The birds",
-                     "yOffset":1,
-                     "xOffset":1
-                  },
-                  {
-                     "text":"were the first to notice...",
-                     "yOffset":1,
-                     "xOffset":1
-                  }
-               ]
+              "highlightingTimes": [
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
+              ],
+              "linesOfText": [
+                {
+                  "text": "Daybreak came",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "softly moving through the",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "and yawning",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "as its rays slowly",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "across the snowy meadows.",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "The birds",
+                  "yOffset": 1,
+                  "xOffset": 1
+                },
+                {
+                  "text": "were the first to notice...",
+                  "yOffset": 1,
+                  "xOffset": 1
+                }
+              ]
             }
-         ]
-      }
-   },
-   "API":
-   {
-      "CCBezierBy":[
-      {
-            "duration":1.0,
-            "config":
-            {
-               "endPosition":[1,2],
-               "controlPoint_1":[3,4],
-               "controlPoint_2":[5,6]
-            }
-       }
-      ],
-      "CCBezierTo":
-      [
-         {
-            "duration":1.0,
-            "config":
-            {
-               "endPosition":[1,2],
-               "controlPoint_1":[3,4],
-               "controlPoint_2":[5,6]
-            }
-         }
-      ],
-      "CCEaseBounceIn":
-      [
-         {
-            "actionTag":1
-         }
-      ],
-      "CCEaseBounceOut":
-      [
-         {
-            "actionTag":1
-         }
-      ],
-      "CCEaseIn":
-      [
-         {
-            "actionTag":1,
-            "rate":1
-         }
-      ],
-      "CCEaseOut":
-      [
-         {
-            "actionTag":1,
-            "rate":1
-         }
-      ],
-      "CCFadeIn":
-      [
-         {
-            "duration":1,
-            "actionTag":1
-         }
-      ],
-      "CCFadeOut":
-      [
-         {
-            "duration":1,
-            "actionTag":1
-         }
-      ],
-      "CCFadeTo":
-      [
-         {
-            "opacity":1,
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCFlipX":
-      [
-         {
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCFlipX3D":
-      [
-         {
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCFlipY":
-      [
-         {
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCFlipY3D":
-      [
-         {
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCJumpTo":
-      [
-         {
-            "position":[1,2],
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCRotateBy":
-      [
-         {
-            "degrees":1,
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCRotateTo":
-      [
-         {
-            "degrees":1,
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCSkewBy":
-      [
-         {
-            "duration":1.0,
-            "deltaSkewX":1,
-            "deltaSkewY":1,
-            "actionTag":1
-         }
-      ],
-      "CCSkewTo":
-      [
-         {
-            "duration":1.0,
-            "skewX":1,
-            "skewY":1,
-            "actionTag":1
-         }
-      ],
-      "CCMoveBy":
-      [
-         {
-            "position":"x, y",
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCMoveTo":
-      [
-         {
-            "position":[200,200],
-            "duration":3.0,
-            "actionTag":1
-         }
-      ],
-      "CCScaleBy":
-      [
-         {
-            "intensity":1,
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCScaleTo":
-      [
-         {
-            "intensity":1.1,
-            "duration":3.0,
-            "actionTag":1
-         }
-      ],
-      "CCSequence":
-      {			 
-		"actionTag":1,
-         "actions":
-         [
-            {
-               "actionTag":102,
-			   "actionTag":103
-            }
-         ]
+          ]
+        }
       },
-      "CCTimer":
-      [
-         {
-            "duration":1.0,
-            "actionTag":1
-         }
-      ],
-      "CCNode":
-      {
-         "children":
-         [
-            {
-               "spriteTag":1
+      "API": {
+        "CCBezierBy": [
+          {
+            "duration": 1,
+            "config": {
+              "endPosition": [
+                1,
+                2
+              ],
+              "controlPoint_1": [
+                3,
+                4
+              ],
+              "controlPoint_2": [
+                5,
+                6
+              ]
             }
-         ]
-      },
-      "CCSprite":
-      {
-         "image":"background001.jpg",
-         "spriteTag":1,
-         "position":[0,0],
-         "actions": [1,2,3]
-      },
-      "CCStoryTouchableNode":
-      {
-         "nodes":
-         [
-            {
-               "glitterIndicator":false,
-               "position":[0,0],
-               "radius":1,
-               "videoToPlay":"filename (null if sound or action values are present)",
-               "soundToPlay":"filename (null if action or video values are present)",
-               "runAction":
-               [
-                  {
-                     "spriteTag":1,
-                     "actionTag":1
-                  }
-               ]
+          }
+        ],
+        "CCBezierTo": [
+          {
+            "duration": 1,
+            "config": {
+              "endPosition": [
+                1,
+                2
+              ],
+              "controlPoint_1": [
+                3,
+                4
+              ],
+              "controlPoint_2": [
+                5,
+                6
+              ]
             }
-         ]
-      },
-      "CCStorySwipeEnded":
-      {
-         "runAction":
-         [
+          }
+        ],
+        "CCEaseBounceIn": [
+          {
+            "actionTag": 1
+          }
+        ],
+        "CCEaseBounceOut": [
+          {
+            "actionTag": 1
+          }
+        ],
+        "CCEaseIn": [
+          {
+            "actionTag": 1,
+            "rate": 1
+          }
+        ],
+        "CCEaseOut": [
+          {
+            "actionTag": 1,
+            "rate": 1
+          }
+        ],
+        "CCFadeIn": [
+          {
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCFadeOut": [
+          {
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCFadeTo": [
+          {
+            "opacity": 1,
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCFlipX": [
+          {
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCFlipX3D": [
+          {
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCFlipY": [
+          {
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCFlipY3D": [
+          {
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCJumpTo": [
+          {
+            "position": [
+              1,
+              2
+            ],
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCRotateBy": [
+          {
+            "degrees": 1,
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCRotateTo": [
+          {
+            "degrees": 1,
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCSkewBy": [
+          {
+            "duration": 1,
+            "deltaSkewX": 1,
+            "deltaSkewY": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCSkewTo": [
+          {
+            "duration": 1,
+            "skewX": 1,
+            "skewY": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCMoveBy": [
+          {
+            "position": "x, y",
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCMoveTo": [
+          {
+            "position": [
+              200,
+              200
+            ],
+            "duration": 3,
+            "actionTag": 1
+          }
+        ],
+        "CCScaleBy": [
+          {
+            "intensity": 1,
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCScaleTo": [
+          {
+            "intensity": 1.1,
+            "duration": 3,
+            "actionTag": 1
+          }
+        ],
+        "CCSequence": {
+          "actionTag": 1,
+          "actions": [
             {
-               "runAfterSwipeNumber":1,
-               "spriteTag":1,
-               "actionTag":1
+              "actionTag": 103
             }
-         ],
-         "addChild":
-         {
-            "children":
-            [
-               {
-                  "spriteTag":1
-               }
+          ]
+        },
+        "CCTimer": [
+          {
+            "duration": 1,
+            "actionTag": 1
+          }
+        ],
+        "CCNode": {
+          "children": [
+            {
+              "spriteTag": 1
+            }
+          ]
+        },
+        "CCSprite": {
+          "image": "background001.jpg",
+          "spriteTag": 1,
+          "position": [
+            0,
+            0
+          ],
+          "actions": [
+            1,
+            2,
+            3
+          ]
+        },
+        "CCStoryTouchableNode": {
+          "nodes": [
+            {
+              "glitterIndicator": false,
+              "position": [
+                0,
+                0
+              ],
+              "radius": 1,
+              "videoToPlay": "filename (null if sound or action values are present)",
+              "soundToPlay": "filename (null if action or video values are present)",
+              "runAction": [
+                {
+                  "spriteTag": 1,
+                  "actionTag": 1
+                }
+              ]
+            }
+          ]
+        },
+        "CCStorySwipeEnded": {
+          "runAction": [
+            {
+              "runAfterSwipeNumber": 1,
+              "spriteTag": 1,
+              "actionTag": 1
+            }
+          ],
+          "addChild": {
+            "children": [
+              {
+                "spriteTag": 1
+              }
             ]
-         },
-         "removeChild":
-         {
-            "children":
-            [
-               {
-                  "spriteTag":1
-               }
+          },
+          "removeChild": {
+            "children": [
+              {
+                "spriteTag": 1
+              }
             ]
-         }
+          }
+        }
       }
-   }
+    }
+  ]
 }

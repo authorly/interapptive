@@ -189,11 +189,19 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Classes\HelloWorldScene.cpp"
+				RelativePath="..\Classes\Page.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\Classes\HelloWorldScene.h"
+				RelativePath="..\Classes\Page.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Classes\PageManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Classes\PageManager.h"
 				>
 			</File>
 		</Filter>
