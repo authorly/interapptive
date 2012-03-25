@@ -1,9 +1,10 @@
 #include "AppDelegate.h"
 
 #include "cocos2d.h"
-#include "HelloWorldScene.h"
 
 #include "CCEGLView.h"
+
+#include "PageManager.h"
 
 USING_NS_CC;
 
@@ -99,15 +100,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
 //     pDirector->enableRetinaDisplay(true);
 
 	// turn on display FPS
-	pDirector->setDisplayFPS(true);
+	// pDirector->setDisplayFPS(true);
 
 	// pDirector->setDeviceOrientation(kCCDeviceOrientationLandscapeLeft);
 
 	// set FPS. the default value is 1.0/60 if you don't call this
 	pDirector->setAnimationInterval(1.0 / 60);
 
-	// create a scene. it's an autorelease object
-	CCScene *pScene = HelloWorld::scene();
+	PageManager::parseJson();
+
+	CCScene *pScene = PageManager::getPage(1);
 
 	// run
 	pDirector->runWithScene(pScene);
