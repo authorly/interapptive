@@ -109,9 +109,9 @@
             "duration":1.0,
             "config":
             {
-               "endPosition":"x, y",
-               "controlPoint_1":"x, y",
-               "controlPoint_2":"x, y"
+               "endPosition":[1,2],
+               "controlPoint_1":[3,4],
+               "controlPoint_2":[5,6]
             }
        }
       ],
@@ -295,7 +295,7 @@
             "actionTag":1
          }
       ],
-      "CCNode (scene)":
+      "CCNode":
       {
          "children":
          [
