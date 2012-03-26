@@ -88,21 +88,23 @@ void PageManager::parseWithText(Page* page, Json::Value &jsonText)
 	for (unsigned int i = 0; i < jsonParagraphs.size(); ++i)
 	{
 		Paragraph *paragraph = new Paragraph();
+		Json::Value jsonParagraph = jsonParagraphs[i];
 
 		// highlightingTimes
-		Json::Value highlightingTimes = jsonParagraphs["highlightingTimes"];
+		Json::Value highlightingTimes = jsonParagraph["highlightingTimes"];
 		for (unsigned int j = 0; j < highlightingTimes.size(); ++j)
 		{
 			paragraph->highlightingTimes.push_back((float)highlightingTimes[j].asDouble());
 		}
 		// linesOfText
-		Json::Value linesOfText = jsonParagraphs["linesOfText"];
+		Json::Value linesOfText = jsonParagraph["linesOfText"];
 		for (unsigned int k = 0; k < linesOfText.size(); ++k)
 		{
+			Json::Value jsonLineText = linesOfText[i];
 			LineText *lineText = new LineText();
-			lineText->text = linesOfText["text"].asCString();
-			lineText->xOffset = linesOfText["xOffset"].asInt();
-			lineText->yOffset = linesOfText["yOffset"].asInt();
+			lineText->text = jsonLineText["text"].asCString();
+			lineText->xOffset = jsonLineText["xOffset"].asInt();
+			lineText->yOffset = jsonLineText["yOffset"].asInt();
 
 			paragraph->linesOfTest.push_back(lineText);
 		}
@@ -116,6 +118,281 @@ void PageManager::parseWithText(Page* page, Json::Value &jsonText)
 
 void PageManager::parseWithAPI(Page* page, Json::Value &jsonAPI)
 {
+	// CCBezierBy
+	Json::Value bezierBy = jsonAPI["CCBezierBy"];
+	parseWithBezierByOrBezierTo(page, bezierBy, true);
+
+	// CCBezierTo
+	Json::Value bezierTo = jsonAPI["CCBezierTo"];
+	parseWithBezierByOrBezierTo(page, bezierTo, false);
+
+	// CCFadeIn
+	Json::Value fadeIn = jsonAPI["CCFadeIn"];
+	parseWithFadeInOrFadeOut(page, fadeIn, true);
+
+	// CCFadeOut
+	Json::Value fadeOut = jsonAPI["CCFadeOut"];
+	parseWithFadeInOrFadeOut(page, fadeOut, false);
+
+	// CCFadeTo
+	Json::Value fadeTo = jsonAPI["CCFadeTo"];
+	parseWithFadeTo(page, fadeTo);
+
+	// CCFlipX
+	Json::Value flipX = jsonAPI["CCFlipX"];
+	parseWithFlipxOrFlipy(page, flipX, true);
+
+	// CCFlipY
+	Json::Value flipY = jsonAPI["CCFlipY"];
+	parseWithFlipxOrFlipy(page, flipY, false);
+
+	// CCFlipX3D
+	Json::Value flipX3D = jsonAPI["CCFlipX3D"];
+	parseWithFlipx3dOrFlipy3d(page, flipX3D, true);
+
+	// CCFlipY3D
+	Json::Value flipY3D = jsonAPI["CCFlipY3D"];
+	parseWithFlipx3dOrFlipy3d(page, flipY3D, false);
+
+	// should parse CCEaseXXX later, because it will use other action
+
+    // CCEaseBounceIn
+	Json::Value easeBounceIn = jsonAPI["CCEaseBounceIn"];	
+	parseWithEaseBounceInOrEaseBounceOut(page, easeBounceIn, true);
+
+	// CCEaseBounceOut
+	Json::Value easeBounceOut = jsonAPI["CCEaseBounceIn"];	
+	parseWithEaseBounceInOrEaseBounceOut(page, easeBounceOut, false);
+
+	// CCEaseIn
+	Json::Value easeIn = jsonAPI["CCEaseIn"];
+	parseWithEaseInOrEaseOut(page, easeIn, true);
+
+	// CCEaseOut
+	Json::Value easeOut = jsonAPI["CCEaseOut"];
+	parseWithEaseInOrEaseOut(page, easeOut, false);
+}
+
+void PageManager::parseWithBezierByOrBezierTo(Page *page, Json::Value &value, bool isBezierBy)
+{
+	if (! value.isNull())
+	{	
+		for (unsigned int i = 0; i < value.size(); ++i)
+		{
+			Json::Value jsonBezierByOrBezierTo = value[i];
+
+			ccBezierConfig config;
+
+		    // actionTag
+		    int actionTag = jsonBezierByOrBezierTo["actionTag"].asInt();
+
+		    // duration
+		    float duration = (float)jsonBezierByOrBezierTo["duration"].asDouble();
+
+		    // endPosition
+		    Json::Value jsonEndPosition = jsonBezierByOrBezierTo["config"]["endPosition"];
+		    int x = 0, y = 1;
+		    config.endPosition.x = (float)jsonEndPosition[x].asInt();
+		    config.endPosition.y = (float)jsonEndPosition[y].asInt();
+       
+		    // controlPosition1
+		    Json::Value jsonControlPosition1 = jsonBezierByOrBezierTo["config"]["controlPosition_1"];
+		    config.controlPoint_1.x = (float)jsonEndPosition[x].asInt();
+		    config.controlPoint_1.y = (float)jsonEndPosition[y].asInt();
+
+		    // controlPosition2
+		    Json::Value jsonControlPosition2 = jsonBezierByOrBezierTo["config"]["controlPosition_2"];
+		    config.controlPoint_2.x = (float)jsonEndPosition[x].asInt();
+		    config.controlPoint_2.y = (float)jsonEndPosition[y].asInt();
+
+		    // create action and add it into page
+		    CCAction *action;
+		    if (isBezierBy)
+		    {
+			    action = CCBezierBy::actionWithDuration(duration, config);
+		    }
+		    else
+		    {
+			    action = CCBezierTo::actionWithDuration(duration, config);
+		    }
+		    page->addAction(actionTag, action);
+		}	
+	}
+}
+
+
+void PageManager::parseWithEaseBounceInOrEaseBounceOut(Page *page, Json::Value &value, bool isEaseBounceIn)
+{
+	if (! value.isNull())
+	{
+		for (unsigned int i = 0; i < value.size(); ++i)
+		{
+			Json::Value easeBounceInOrOut = value[i];
+
+            // actionTag
+		    int actionTag = easeBounceInOrOut["actionTag"].asInt();
+		    // interalActionTag
+		    int internalActionTag = easeBounceInOrOut["internalActionTag"].asInt();
+
+		    // get action that is parameter of CCEaseBounceIn/Out
+		    CCAction *action = page->getActionByTag(internalActionTag);
+		    assert(action != NULL);
+		    assert(dynamic_cast<CCActionInterval*>(action) != NULL);
+
+		    // create and add action to page
+		    CCAction *actionToAdd;
+		    if (isEaseBounceIn)
+		    {
+			    actionToAdd = CCEaseBounceIn::actionWithAction((CCActionInterval*)action);
+		    }
+		    else
+		    {
+			    actionToAdd = CCEaseBounceOut::actionWithAction((CCActionInterval*)action);
+		    }
+		    page->addAction(actionTag, actionToAdd);
+		}
+	}
+}
+
+void PageManager::parseWithEaseInOrEaseOut(Page *page, Json::Value &value, bool isEaseIn)
+{
+	if (! value.isNull())
+	{
+		for (unsigned int i = 0; i < value.size(); ++i)
+		{
+			Json::Value easeInOrOut = value[i];
+
+			// actionTag
+		    int actionTag = easeInOrOut["actionTag"].asInt();
+		    // internalActionTag
+		    int internalActionTag = easeInOrOut["internalActionTag"].asInt();
+		    // rate
+		    float rate = (float)easeInOrOut["rate"].asDouble();
+
+		    // get action that is parameter of CCEaseBounceIn/Out
+		    CCAction *action = page->getActionByTag(internalActionTag);
+		    assert(action != NULL);
+		    assert(dynamic_cast<CCActionInterval*>(action) != NULL);
+
+		    // create and add action to page
+		    CCAction *actionToAdd;
+		    if (isEaseIn)
+		    {
+			    actionToAdd = CCEaseIn::actionWithAction((CCActionInterval*)action, rate);
+		    }
+		    else
+		    {
+			    actionToAdd = CCEaseOut::actionWithAction((CCActionInterval*)action, rate);
+		    }
+		    page->addAction(actionTag, actionToAdd);
+		}
+	}
+}
+
+
+void PageManager::parseWithFadeInOrFadeOut(Page *page, Json::Value &value, bool isFadeIn)
+{
+	if (! value.isNull())
+	{
+		for (unsigned int i = 0; i < value.size(); ++i)
+		{
+			Json::Value fadeInOrOut = value[i];
+
+			// duration
+		    float duration = (float)fadeInOrOut["duration"].asDouble();
+		    // actionTag
+		    int actionTag = fadeInOrOut["actionTag"].asInt();
+
+		    CCAction *action;
+		    if (isFadeIn)
+		    {
+			    action = CCFadeIn::actionWithDuration(duration);
+		    }
+		    else
+		    {
+			    action = CCFadeOut::actionWithDuration(duration);
+		    }
+		    page->addAction(actionTag, action);
+		}
+	}
+}
+
+
+
+void PageManager::parseWithFlipxOrFlipy(Page *page, Json::Value &value, bool isFlipx)
+{
+	if (! value.isNull())
+	{
+		for (unsigned int i = 0; i < value.size(); ++i)
+		{
+			Json::Value flipxOrFlipy = value[i];
+ 
+            // actionTag
+		    int actionTag = flipxOrFlipy["actionTag"].asInt();
+		    // flip
+		    bool flip = flipxOrFlipy["flip"].asBool();
+
+		    CCAction *action;
+		    if (isFlipx)
+		    {
+			    action = CCFlipX::actionWithFlipX(flip);
+		    }
+		    else
+		    {
+			    action = CCFlipY::actionWithFlipY(flip);
+		    }
+		    page->addAction(actionTag, action);
+		}
+	}
+}
+
+
+void PageManager::parseWithFlipx3dOrFlipy3d(Page *page, Json::Value &value, bool isFlipx3d)
+{
+	if (! value.isNull())
+	{
+		for (unsigned int i = 0; i < value.size(); ++i)
+		{
+			Json::Value flipx3dOrFlipy3d = value[i];
+
+            // duration
+		    float duration = (float)flipx3dOrFlipy3d["duration"].asDouble();
+		    // actionTag
+		    int actionTag = flipx3dOrFlipy3d["actionTag"].asInt();
+
+		    CCAction *action;
+		    if (isFlipx3d)
+		    {
+			    action = CCFlipX3D::actionWithDuration(duration);
+		    }
+		    else
+		    {
+			    action = CCFlipY3D::actionWithDuration(duration);
+		    }
+		    page->addAction(actionTag, action);
+		}
+	}
+}
+
+void PageManager::parseWithFadeTo(Page *page, Json::Value &value)
+{
+	if (! value.isNull())
+	{
+		for (unsigned int i = 0; i < value.size(); ++i)
+		{
+			Json::Value fadeTo = value[i];
+
+            // opacity
+		    int opacity = fadeTo["opacity"].asInt();
+		    // duration
+		    float duration = (float)fadeTo["duration"].asDouble();
+		    // actionTag
+		    int actionTag = fadeTo["actionTag"].asInt();
+
+		    CCFadeTo *fadeToAction = CCFadeTo::actionWithDuration(duration, (unsigned char)opacity);
+		    page->addAction(actionTag, fadeToAction);
+		}
+	}
 }
 
 void PageManager::insertPageWithPageNumber(int pageNumber, Page *page)

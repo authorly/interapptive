@@ -128,7 +128,8 @@
       "API": {
         "CCBezierBy": [
           {
-            "duration": 1,
+            "actionTag":1,
+            "duration": 1.0,
             "config": {
               "endPosition": [
                 1,
@@ -147,7 +148,8 @@
         ],
         "CCBezierTo": [
           {
-            "duration": 1,
+            "actionTag":2,
+            "duration": 1.0,
             "config": {
               "endPosition": [
                 1,
@@ -166,67 +168,71 @@
         ],
         "CCEaseBounceIn": [
           {
-            "actionTag": 1
+            "actionTag": 3,
+            "internalActionTag": 1
           }
         ],
         "CCEaseBounceOut": [
           {
-            "actionTag": 1
+            "actionTag": 4,
+            "internalActionTag": 1
           }
         ],
         "CCEaseIn": [
           {
-            "actionTag": 1,
-            "rate": 1
+            "actionTag": 5,
+            "internalActionTag": 1,
+            "rate": 1.0
           }
         ],
         "CCEaseOut": [
           {
-            "actionTag": 1,
-            "rate": 1
+            "actionTag": 6,
+            "internalActionTag": 1,
+            "rate": 1.0
           }
         ],
         "CCFadeIn": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 7
           }
         ],
         "CCFadeOut": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 8
           }
         ],
         "CCFadeTo": [
           {
             "opacity": 1,
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 9
           }
         ],
         "CCFlipX": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "actionTag": 10,
+            "flip": false
           }
         ],
         "CCFlipX3D": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 11
           }
         ],
         "CCFlipY": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "actionTag": 12,
+            "flip": false
           }
         ],
         "CCFlipY3D": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 13
           }
         ],
         "CCJumpTo": [
@@ -235,45 +241,59 @@
               1,
               2
             ],
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 14,
+            "height": 2.0,
+            "jumps": 3
+          }
+        ],
+        "CCJumpBy": [
+          {
+            "position": [
+              1,
+              2
+            ],
+            "duration": 1.0,
+            "actionTag": 14,
+            "height": 2.0,
+            "jumps": 3
           }
         ],
         "CCRotateBy": [
           {
             "degrees": 1,
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 15
           }
         ],
         "CCRotateTo": [
           {
             "degrees": 1,
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 16
           }
         ],
         "CCSkewBy": [
           {
-            "duration": 1,
+            "duration": 1.0,
             "deltaSkewX": 1,
             "deltaSkewY": 1,
-            "actionTag": 1
+            "actionTag": 17
           }
         ],
         "CCSkewTo": [
           {
-            "duration": 1,
+            "duration": 1.0,
             "skewX": 1,
             "skewY": 1,
-            "actionTag": 1
+            "actionTag": 18
           }
         ],
         "CCMoveBy": [
           {
             "position": "x, y",
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 19
           }
         ],
         "CCMoveTo": [
@@ -282,36 +302,36 @@
               200,
               200
             ],
-            "duration": 3,
-            "actionTag": 1
+            "duration": 3.0,
+            "actionTag": 20
           }
         ],
         "CCScaleBy": [
           {
-            "intensity": 1,
-            "duration": 1,
-            "actionTag": 1
+            "intensity": 1.1,
+            "duration": 1.0,
+            "actionTag": 21
           }
         ],
         "CCScaleTo": [
           {
             "intensity": 1.1,
-            "duration": 3,
-            "actionTag": 1
+            "duration": 3.0,
+            "actionTag": 22
           }
         ],
         "CCSequence": {
-          "actionTag": 1,
+          "actionTag": 23,
           "actions": [
             {
-              "actionTag": 103
+              "actionTag": 22
             }
           ]
         },
         "CCTimer": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "duration": 1.0,
+            "actionTag": 24
           }
         ],
         "CCNode": {

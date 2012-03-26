@@ -22,7 +22,14 @@ private:
 	static void parseWithText(Page* page, Json::Value &jsonText);
 	// jsonAPI is "API" in json data
 	static void parseWithAPI(Page* page, Json::Value &jsonAPI);
-public:
+	static void parseWithBezierByOrBezierTo(Page *page, Json::Value &value, bool isBezierBy);
+	static void parseWithEaseBounceInOrEaseBounceOut(Page *page, Json::Value &value, bool isEaseBounceIn);
+	static void parseWithEaseInOrEaseOut(Page *page, Json::Value &value, bool isEaseIn);
+	static void parseWithFadeInOrFadeOut(Page *page, Json::Value &value, bool isFadeIn);
+	static void parseWithFadeTo(Page *page, Json::Value &value);
+	static void parseWithFlipxOrFlipy(Page *page, Json::Value &value, bool isFlipx);
+	static void parseWithFlipx3dOrFlipy3d(Page *page, Json::Value &value, bool isFlipx3d);
+private:
 	// key: page number 
 	static std::map<int, Page*> pages;
 	const static char* pathJsonFile;

@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 typedef struct settings
 {
@@ -80,6 +81,9 @@ typedef struct storySwipeEnded
 class Page : public cocos2d::CCScene
 {
 public:
+	void addAction(int actionTag, cocos2d::CCAction *action);
+	cocos2d::CCAction* getActionByTag(int actionTag);
+public:
 	// settings
 	Setting settings;
 
@@ -90,7 +94,7 @@ public:
 	std::vector<SpriteInfo*> sprites;
 
 	// actions 
-	std::vector<cocos2d::CCAction*> actions;
+	std::map<int, cocos2d::CCAction*> actions;
 
 	// CCStoryTouchableNodes
 	std::vector<StoryTouchableNode*> storyTouchableNodes;
