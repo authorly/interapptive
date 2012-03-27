@@ -70,6 +70,7 @@ typedef struct storySwipeEnded
 {
 	std::vector<int> spritesToAdd;
 	std::vector<int> spritesToMove;
+	std::vector<StorySwipeEndedActionsToRun*> actionsToRun;
 } StorySwipeEnded;
 
 /**
@@ -94,6 +95,7 @@ public:
 	std::vector<SpriteInfo*> sprites;
 
 	// actions 
+	// CCTimer doesn't have target and handler
 	std::map<int, cocos2d::CCAction*> actions;
 
 	// CCStoryTouchableNodes

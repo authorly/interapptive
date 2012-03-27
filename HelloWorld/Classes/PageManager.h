@@ -29,6 +29,15 @@ private:
 	static void parseWithFadeTo(Page *page, Json::Value &value);
 	static void parseWithFlipxOrFlipy(Page *page, Json::Value &value, bool isFlipx);
 	static void parseWithFlipx3dOrFlipy3d(Page *page, Json::Value &value, bool isFlipx3d);
+	static void parseWithJumpToOrJumpBy(Page *page, Json::Value &value, bool isJumpTo);
+	static void parseWithRotateToOrRotateBy(Page *page, Json::Value &value, bool isRotateTo);
+	static void parseWithSkewToOrSkewBy(Page *page, Json::Value &value, bool isSkewTo);
+	static void parseWithMoveToOrMoveBy(Page *page, Json::Value &value, bool isMoveTo);
+	static void parseWithScaleToOrScaleBy(Page *page, Json::Value &value, bool isScaleTo);
+	static void parseWithSequence(Page *page, Json::Value &value);
+	static void parseWithSprites(Page *page, Json::Value &value);
+	static void parseWithStoryTouchableNode(Page *page, Json::Value &value);
+	static void parseWithStorySwipeEnded(Page *page, Json::Value &value);
 private:
 	// key: page number 
 	static std::map<int, Page*> pages;
