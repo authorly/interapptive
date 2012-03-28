@@ -109,7 +109,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	PageManager::parseJson();
 
-	CCScene *pScene = PageManager::getPage(1);
+	CCScene *pScene = PageManager::createSceneByPageNumber(1);
 
 	// run
 	pDirector->runWithScene(pScene);

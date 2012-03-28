@@ -14,7 +14,8 @@ class PageManager
 public:
 	static void insertPageWithPageNumber(int pageNumber, Page *page);
 	static bool parseJson();
-	static Page* getPage(int pageNumber);
+	static Page* getPageByPageNumber(int pageNumber);
+	static cocos2d::CCScene* createSceneByPageNumber(int pageNumber);
 private:
 	// jsonPage is "Page" in json data
 	static void parseWithPage(Page* page, Json::Value &jsonPage);
@@ -38,6 +39,11 @@ private:
 	static void parseWithSprites(Page *page, Json::Value &value);
 	static void parseWithStoryTouchableNode(Page *page, Json::Value &value);
 	static void parseWithStorySwipeEnded(Page *page, Json::Value &value);
+	static void parseWithDelayTime(Page *page, Json::Value &value);
+	// helper functions to create scene
+	static void createSprites(Page *page, cocos2d::CCLayer *layer);
+	static void createParagraphs(Page *page, cocos2d::CCLayer *layer);
+	static void playBackgroundMusic(Page *page);
 private:
 	// key: page number 
 	static std::map<int, Page*> pages;

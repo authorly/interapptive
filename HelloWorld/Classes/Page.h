@@ -16,7 +16,7 @@ typedef struct settings
 	int                fontSize;
 
 	// background music info
-    int         numberTimesToLoop; // -1 means loop forever
+    bool        loop; // -1 means loop forever
 	std::string audioFilePath;
 } Setting;
 

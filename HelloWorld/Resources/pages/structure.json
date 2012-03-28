@@ -4,16 +4,16 @@
       "Page": {
         "settings": {
           "number": 1,
-          "fontType": "TTF Font Name",
+          "fontType": "arial.ttf",
           "fontColor": [
-            0,
+            255,
             0,
             0
           ],
-          "fontSize": 1,
+          "fontSize": 20,
           "backgroundMusicFile": {
-            "numberTimesToLoop": 1,
-            "audioFilePath": "string"
+            "loop": true,
+            "audioFilePath": "background.mp3"
           }
         },
         "text": {
@@ -35,38 +35,38 @@
               "linesOfText": [
                 {
                   "text": "The snowflakes were",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 300,
+                  "xOffset": 100
                 },
                 {
                   "text": "resting after their twisting",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 260,
+                  "xOffset": 100
                 },
                 {
                   "text": "twirling dance through",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 220,
+                  "xOffset": 100
                 },
                 {
                   "text": "the crisp night air.",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 180,
+                  "xOffset": 100
                 },
                 {
                   "text": "Every twig in the forest",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 140,
+                  "xOffset": 100
                 },
                 {
                   "text": "wore a new coat",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 100,
+                  "xOffset": 100
                 },
                 {
                   "text": "of glimmering white.",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 60,
+                  "xOffset": 100
                 }
               ]
             },
@@ -87,38 +87,38 @@
               "linesOfText": [
                 {
                   "text": "Daybreak came",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 300,
+                  "xOffset": 300
                 },
                 {
                   "text": "softly moving through the",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 260,
+                  "xOffset": 300
                 },
                 {
                   "text": "and yawning",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 220,
+                  "xOffset": 300
                 },
                 {
                   "text": "as its rays slowly",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 180,
+                  "xOffset": 300
                 },
                 {
                   "text": "across the snowy meadows.",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 140,
+                  "xOffset": 300
                 },
                 {
                   "text": "The birds",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 100,
+                  "xOffset": 300
                 },
                 {
                   "text": "were the first to notice...",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 60,
+                  "xOffset": 300
                 }
               ]
             }
@@ -331,7 +331,7 @@
             }
           ]
         },
-        "CCTimer": [
+        "CCDelayTime": [
           {
             "duration": 1,
             "actionTag": 24
@@ -339,16 +339,14 @@
         ],
         "CCSprites": [
           {
-            "image": "background001.jpg",
+            "image": "background001.png",
             "spriteTag": 1,
             "position": [
-              0,
-              0
+              240,
+              160
             ],
             "actions": [
-              1,
-              2,
-              3
+              20
             ]
           }
         ],
