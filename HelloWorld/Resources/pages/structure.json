@@ -4,16 +4,16 @@
       "Page": {
         "settings": {
           "number": 1,
-          "fontType": "TTF Font Name",
+          "fontType": "arial.ttf",
           "fontColor": [
-            0,
+            255,
             0,
             0
           ],
-          "fontSize": 1,
+          "fontSize": 20,
           "backgroundMusicFile": {
-            "numberTimesToLoop": 1,
-            "audioFilePath": "string"
+            "loop": true,
+            "audioFilePath": "background.mp3"
           }
         },
         "text": {
@@ -35,38 +35,38 @@
               "linesOfText": [
                 {
                   "text": "The snowflakes were",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 300,
+                  "xOffset": 100
                 },
                 {
                   "text": "resting after their twisting",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 260,
+                  "xOffset": 100
                 },
                 {
                   "text": "twirling dance through",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 220,
+                  "xOffset": 100
                 },
                 {
                   "text": "the crisp night air.",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 180,
+                  "xOffset": 100
                 },
                 {
                   "text": "Every twig in the forest",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 140,
+                  "xOffset": 100
                 },
                 {
                   "text": "wore a new coat",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 100,
+                  "xOffset": 100
                 },
                 {
                   "text": "of glimmering white.",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 60,
+                  "xOffset": 100
                 }
               ]
             },
@@ -87,38 +87,38 @@
               "linesOfText": [
                 {
                   "text": "Daybreak came",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 300,
+                  "xOffset": 300
                 },
                 {
                   "text": "softly moving through the",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 260,
+                  "xOffset": 300
                 },
                 {
                   "text": "and yawning",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 220,
+                  "xOffset": 300
                 },
                 {
                   "text": "as its rays slowly",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 180,
+                  "xOffset": 300
                 },
                 {
                   "text": "across the snowy meadows.",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 140,
+                  "xOffset": 300
                 },
                 {
                   "text": "The birds",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 100,
+                  "xOffset": 300
                 },
                 {
                   "text": "were the first to notice...",
-                  "yOffset": 1,
-                  "xOffset": 1
+                  "yOffset": 60,
+                  "xOffset": 300
                 }
               ]
             }
@@ -128,6 +128,7 @@
       "API": {
         "CCBezierBy": [
           {
+            "actionTag": 1,
             "duration": 1,
             "config": {
               "endPosition": [
@@ -147,6 +148,7 @@
         ],
         "CCBezierTo": [
           {
+            "actionTag": 2,
             "duration": 1,
             "config": {
               "endPosition": [
@@ -166,67 +168,71 @@
         ],
         "CCEaseBounceIn": [
           {
-            "actionTag": 1
+            "actionTag": 3,
+            "internalActionTag": 1
           }
         ],
         "CCEaseBounceOut": [
           {
-            "actionTag": 1
+            "actionTag": 4,
+            "internalActionTag": 1
           }
         ],
         "CCEaseIn": [
           {
-            "actionTag": 1,
+            "actionTag": 5,
+            "internalActionTag": 1,
             "rate": 1
           }
         ],
         "CCEaseOut": [
           {
-            "actionTag": 1,
+            "actionTag": 6,
+            "internalActionTag": 1,
             "rate": 1
           }
         ],
         "CCFadeIn": [
           {
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 7
           }
         ],
         "CCFadeOut": [
           {
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 8
           }
         ],
         "CCFadeTo": [
           {
             "opacity": 1,
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 9
           }
         ],
         "CCFlipX": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "actionTag": 10,
+            "flip": false
           }
         ],
         "CCFlipX3D": [
           {
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 11
           }
         ],
         "CCFlipY": [
           {
-            "duration": 1,
-            "actionTag": 1
+            "actionTag": 12,
+            "flip": false
           }
         ],
         "CCFlipY3D": [
           {
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 13
           }
         ],
         "CCJumpTo": [
@@ -236,21 +242,35 @@
               2
             ],
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 14,
+            "height": 2,
+            "jumps": 3
+          }
+        ],
+        "CCJumpBy": [
+          {
+            "position": [
+              1,
+              2
+            ],
+            "duration": 1,
+            "actionTag": 25,
+            "height": 2,
+            "jumps": 3
           }
         ],
         "CCRotateBy": [
           {
             "degrees": 1,
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 15
           }
         ],
         "CCRotateTo": [
           {
             "degrees": 1,
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 16
           }
         ],
         "CCSkewBy": [
@@ -258,7 +278,7 @@
             "duration": 1,
             "deltaSkewX": 1,
             "deltaSkewY": 1,
-            "actionTag": 1
+            "actionTag": 17
           }
         ],
         "CCSkewTo": [
@@ -266,14 +286,17 @@
             "duration": 1,
             "skewX": 1,
             "skewY": 1,
-            "actionTag": 1
+            "actionTag": 18
           }
         ],
         "CCMoveBy": [
           {
-            "position": "x, y",
+            "position": [
+              200,
+              200
+            ],
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 19
           }
         ],
         "CCMoveTo": [
@@ -283,57 +306,50 @@
               200
             ],
             "duration": 3,
-            "actionTag": 1
+            "actionTag": 20
           }
         ],
         "CCScaleBy": [
           {
-            "intensity": 1,
+            "intensity": 1.1,
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 21
           }
         ],
         "CCScaleTo": [
           {
             "intensity": 1.1,
             "duration": 3,
-            "actionTag": 1
+            "actionTag": 22
           }
         ],
         "CCSequence": {
-          "actionTag": 1,
+          "actionTag": 23,
           "actions": [
             {
-              "actionTag": 103
+              "actionTag": 22
             }
           ]
         },
-        "CCTimer": [
+        "CCDelayTime": [
           {
             "duration": 1,
-            "actionTag": 1
+            "actionTag": 24
           }
         ],
-        "CCNode": {
-          "children": [
-            {
-              "spriteTag": 1
-            }
-          ]
-        },
-        "CCSprite": {
-          "image": "background001.jpg",
-          "spriteTag": 1,
-          "position": [
-            0,
-            0
-          ],
-          "actions": [
-            1,
-            2,
-            3
-          ]
-        },
+        "CCSprites": [
+          {
+            "image": "background001.png",
+            "spriteTag": 1,
+            "position": [
+              240,
+              160
+            ],
+            "actions": [
+              20
+            ]
+          }
+        ],
         "CCStoryTouchableNode": {
           "nodes": [
             {
