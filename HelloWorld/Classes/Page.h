@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 typedef struct settings
 {
@@ -15,7 +16,7 @@ typedef struct settings
 	int                fontSize;
 
 	// background music info
-    int         numberTimesToLoop; // -1 means loop forever
+    bool        loop; // -1 means loop forever
 	std::string audioFilePath;
 } Setting;
 
@@ -69,6 +70,7 @@ typedef struct storySwipeEnded
 {
 	std::vector<int> spritesToAdd;
 	std::vector<int> spritesToMove;
+	std::vector<StorySwipeEndedActionsToRun*> actionsToRun;
 } StorySwipeEnded;
 
 /**
@@ -80,6 +82,9 @@ typedef struct storySwipeEnded
 class Page : public cocos2d::CCScene
 {
 public:
+	void addAction(int actionTag, cocos2d::CCAction *action);
+	cocos2d::CCAction* getActionByTag(int actionTag);
+public:
 	// settings
 	Setting settings;
 
@@ -90,7 +95,8 @@ public:
 	std::vector<SpriteInfo*> sprites;
 
 	// actions 
-	std::vector<cocos2d::CCAction*> actions;
+	// CCTimer doesn't have target and handler
+	std::map<int, cocos2d::CCAction*> actions;
 
 	// CCStoryTouchableNodes
 	std::vector<StoryTouchableNode*> storyTouchableNodes;
