@@ -106,13 +106,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	// set FPS. the default value is 1.0/60 if you don't call this
 	pDirector->setAnimationInterval(1.0 / 60);
-
-	PageManager::parseJson();
-
-	CCScene *pScene = PageManager::createSceneByPageNumber(1);
-
-	// run
-	pDirector->runWithScene(pScene);
+	
+	PageManager::parseJsonAndRun();
 
 	return true;
 }
