@@ -55,6 +55,7 @@ typedef struct storyTouchableNode
 	int                       radius;
 	std::string               videoToPlay;
 	std::string               soundToPlay;
+	int                       touchFlag;
 
 	std::vector<StoryTouchableNodeActionsToRun*> actionsToRun;
 } StoryTouchableNode;

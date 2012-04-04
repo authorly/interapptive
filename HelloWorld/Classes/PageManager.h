@@ -17,10 +17,7 @@ public:
 	static Page* getPageByPageNumber(int pageNumber);
 	static cocos2d::CCScene* createSceneByPageNumber(int pageNumber);
 private:
-	// helper functions to create scene
-	static void createSprites(Page *page, cocos2d::CCLayer *layer);
-	static void createParagraphs(Page *page, cocos2d::CCLayer *layer);
-	static void playBackgroundMusic(Page *page);
+	
 private:
 	// key: page number 
 	static std::map<int, Page*> pages;

@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)cocos2dx\platform&quot;;&quot;$(SolutionDir)cocos2dx\include&quot;;&quot;$(SolutionDir)&quot;;&quot;$(SolutionDir)cocos2dx&quot;;&quot;$(SolutionDir)cocos2dx\platform\third_party\win32\OGLES&quot;;..\Classes;&quot;$(SolutionDir)CocosDenshion\include&quot;"
+				AdditionalIncludeDirectories="D:\interapptive\cocos2dx\platform\third_party\win32\OGLES;&quot;$(SolutionDir)cocos2dx\platform&quot;;&quot;$(SolutionDir)cocos2dx\include&quot;;&quot;$(SolutionDir)&quot;;&quot;$(SolutionDir)cocos2dx&quot;;&quot;$(SolutionDir)cocos2dx\platform\third_party\win32\OGLES&quot;;..\Classes;&quot;$(SolutionDir)CocosDenshion\include&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libcocos2d.lib"
+				AdditionalDependencies="libcocos2d.lib libgles_cm.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="$(OutDir)"
@@ -213,11 +213,35 @@
 				>
 			</File>
 			<File
+				RelativePath="..\Classes\PageLayer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Classes\PageLayer.h"
+				>
+			</File>
+			<File
 				RelativePath="..\Classes\PageManager.cpp"
 				>
 			</File>
 			<File
 				RelativePath="..\Classes\PageManager.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Classes\TouchDetection.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Classes\TouchDetection.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Classes\TouchObject.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Classes\TouchObject.h"
 				>
 			</File>
 		</Filter>

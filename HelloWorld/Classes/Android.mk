@@ -7,8 +7,14 @@ LOCAL_MODULE := game_logic_static
 LOCAL_MODULE_FILENAME := libgame_logic
 
 LOCAL_SRC_FILES := AppDelegate.cpp \
+                   DataLoader.cpp \
+                   JsonParser.cpp \
                    Page.cpp \
-                   PageManager.cpp
+                   PageLayer.cpp \
+                   PageManager.cpp \
+                   TouchDetection.cpp \
+                   TouchObject.cpp
+                   
                    
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
 

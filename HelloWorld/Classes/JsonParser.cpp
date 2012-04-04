@@ -686,8 +686,11 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 			storyTouchableNode->videoToPlay = node["videoToPlay"].asCString();
 			// soundToPlay
 			storyTouchableNode->soundToPlay = node["soundToPlay"].asCString();
+			// touchFlag
+			storyTouchableNode->touchFlag = node["touchFlag"].asInt();
 			// runAction
 			Json::Value runAction = node["runAction"];
+			
 			for (unsigned int j = 0; j < runAction.size(); ++j)
 			{
 				StoryTouchableNodeActionsToRun *storyTouchableNodeActionsToRun = new StoryTouchableNodeActionsToRun();
@@ -695,6 +698,8 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 				storyTouchableNodeActionsToRun->spriteTag = runAction[j]["spriteTag"].asInt();
 				storyTouchableNode->actionsToRun.push_back(storyTouchableNodeActionsToRun);
 			}
+
+			page->storyTouchableNodes.push_back(storyTouchableNode);
 		}
 	}
 }

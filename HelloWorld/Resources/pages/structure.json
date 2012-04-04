@@ -354,11 +354,12 @@
           "nodes": [
             {
               "glitterIndicator": false,
+              "touchFlag" : 1,
               "position": [
-                0,
-                0
+                20,
+                20
               ],
-              "radius": 1,
+              "radius": 20,
               "videoToPlay": "filename (null if sound or action values are present)",
               "soundToPlay": "filename (null if action or video values are present)",
               "runAction": [
