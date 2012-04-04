@@ -189,6 +189,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\Classes\JsonParser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Classes\JsonParser.h"
+				>
+			</File>
+			<File
 				RelativePath="..\Classes\Page.cpp"
 				>
 			</File>
