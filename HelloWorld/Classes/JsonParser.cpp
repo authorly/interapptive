@@ -4,8 +4,10 @@
 
 #include <json/value.h>
 #include <json/reader.h>
+#include <string>
 
 using namespace cocos2d;
+using namespace std;
 
 const char* JsonParser::pathJsonFile = "pages/structure.json";
 
@@ -14,7 +16,8 @@ bool JsonParser::parseJson()
 	// read json file
 	std::string doc;
 	unsigned long size;
-	doc = (char*)CCFileUtils::getFileData(pathJsonFile, "r", &size);
+    string fullPath = CCFileUtils::fullPathFromRelativePath(pathJsonFile);
+	doc = (char*)CCFileUtils::getFileData(fullPath.c_str(), "r", &size);
 
 	// read root
 	Json::Reader reader;
