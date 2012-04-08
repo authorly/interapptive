@@ -12,15 +12,16 @@ class PageManager
 {
 public:
 	static void parseJsonAndRun();
-	static void insertPageWithPageNumber(int pageNumber, Page *page);
 	
 	static Page* getPageByPageNumber(int pageNumber);
 	static cocos2d::CCScene* createSceneByPageNumber(int pageNumber);
+    static void turnToPage(int pageNumber);
 private:
 	
 private:
 	// key: page number 
 	static std::map<int, Page*> pages;
+    static int currentIndexOfPage;
 
 	// make JsonParser can access pages
 	friend class JsonParser;

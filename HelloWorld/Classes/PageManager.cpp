@@ -2,10 +2,14 @@
 #include "JsonParser.h"
 #include "cocos2d.h"
 #include "PageLayer.h"
+#include "cocos2d.h"
+#include "SimpleAudioEngine.h"
 
 using namespace cocos2d;
+using namespace CocosDenshion;
 
 map<int, Page*> PageManager::pages = map<int, Page*>();
+int PageManager::currentIndexOfPage = 0;
 
 void PageManager::parseJsonAndRun()
 {
@@ -16,11 +20,6 @@ void PageManager::parseJsonAndRun()
 
 	// create scene for page number 1 and run
 	CCDirector::sharedDirector()->runWithScene(createSceneByPageNumber(1));
-}
-
-
-void PageManager::insertPageWithPageNumber(int pageNumber, Page *page)
-{
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)
@@ -36,6 +35,22 @@ Page* PageManager::getPageByPageNumber(int pageNumber)
 	}
 }
 
+void PageManager::turnToPage(int pageNumber)
+{
+    // stop back ground music
+    if (SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying())
+    {
+        SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    }
+    
+    bool backWards = pageNumber > currentIndexOfPage ? false : true;
+    CCScene *scene = createSceneByPageNumber(pageNumber);
+    if (scene)
+    {
+        CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(2, scene, backWards));
+    }
+}
+
 CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 {
 	CCScene *scene = NULL;
@@ -49,6 +64,8 @@ CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 		// create a layer because we want to receive touch event
 		CCLayer *layer = PageLayer::pageLayerWithPage(page);;
 		scene->addChild(layer);
+        
+        currentIndexOfPage = page->settings.number;
 	}
 
 	return scene;

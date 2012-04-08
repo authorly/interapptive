@@ -75,8 +75,16 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
 	settings.fontSize = jsonSettings["fontSize"].asInt();
 	// background music file
 	Json::Value backgroundMusicInfo = jsonSettings["backgroundMusicFile"];
-	settings.loop = backgroundMusicInfo["loop"].asBool();
-	settings.audioFilePath = backgroundMusicInfo["audioFilePath"].asCString();
+    if (! backgroundMusicInfo.isNull())
+    {
+        settings.loop = backgroundMusicInfo["loop"].asBool();
+        settings.audioFilePath = backgroundMusicInfo["audioFilePath"].asCString();
+    }	
+    else 
+    {
+        // no background music
+        settings.audioFilePath = "";
+    }
 }
 
 void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
