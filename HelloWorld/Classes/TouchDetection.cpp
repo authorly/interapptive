@@ -48,13 +48,19 @@ void TouchDetection::draw()
 {
 	if (isDebugDrawing)
 	{
+        glLineWidth(6);
+        glColor4ub(0, 255, 0, 255);
+        
 		CCMutableArray<TouchObject*>::CCMutableArrayIterator iter;
 		for (iter = touchZones->begin(); iter != touchZones->end(); ++iter)
-		{
-			glLineWidth(6);
-			glColor4ub(0, 255, 0, 255);
+		{			
 			ccDrawCircle((*iter)->getPosition(), (*iter)->radius, 0, 20, false);
 		}
+        
+        // restore original values
+        glLineWidth(1);
+        /*glColor4ub(255,255,255,255);*/
+        glColor4f(1.0, 1.0, 1.0, 1.0);
 	}
 	CCLayer::draw();
 }
