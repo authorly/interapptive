@@ -326,6 +326,8 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
 	//CCSize size = m_obWinSizeInPixels;
     CCSize size = m_obTargetWindowSize;
     
+    CCLog("set projection width=%f,height=%f", size.width, size.height);
+    
 	//float zeye = this->getZEye();
     float zeye = size.height / 1.1566f;
 	switch (kProjection)
