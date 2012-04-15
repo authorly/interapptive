@@ -93,22 +93,22 @@ bool AppDelegate::initInstance() {
 bool AppDelegate::applicationDidFinishLaunching() {
 	// initialize director
 	CCDirector *pDirector = CCDirector::sharedDirector();
+    pDirector->setTargetWinsize(CCSizeMake(480, 320));
 
 	pDirector->setOpenGLView(&CCEGLView::sharedOpenGLView());
 
 	// enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
-//     pDirector->enableRetinaDisplay(true);
+     //pDirector->enableRetinaDisplay(true);
 
 	// turn on display FPS
-	// pDirector->setDisplayFPS(true);
+	pDirector->setDisplayFPS(true);
 
 	// pDirector->setDeviceOrientation(kCCDeviceOrientationLandscapeLeft);
 
 	// set FPS. the default value is 1.0/60 if you don't call this
 	pDirector->setAnimationInterval(1.0 / 60);
-
 	
-	PageManager::parseJsonAndRun();
+	PageManager::parseJsonAndRun("pages/structure.json");
 
 	return true;
 }

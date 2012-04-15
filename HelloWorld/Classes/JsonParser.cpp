@@ -9,14 +9,12 @@
 using namespace cocos2d;
 using namespace std;
 
-const char* JsonParser::pathJsonFile = "pages/structure.json";
-
-bool JsonParser::parseJson()
+bool JsonParser::parseJson(const char* pathOfJasonFile)
 {
 	// read json file
 	std::string doc;
 	unsigned long size;
-    string fullPath = CCFileUtils::fullPathFromRelativePath(pathJsonFile);
+    string fullPath = CCFileUtils::fullPathFromRelativePath(pathOfJasonFile);
 	doc = (char*)CCFileUtils::getFileData(fullPath.c_str(), "r", &size);
 
 	// read root
@@ -565,12 +563,12 @@ void JsonParser::parseWithSkewToOrSkewBy(Page *page, Json::Value &value, bool is
 void JsonParser::parseWithMoveToOrMoveBy(Page *page, Json::Value &value, bool isMoveTo)
 {
 	if (! value.isNull())
-	{
+	{        
 		for (unsigned int i = 0; i < value.size(); ++i)
 		{
 			Json::Value moveToOrBy = value[i];
 
-			// position
+			// position, adjust it with scale factor
 			int x = 0, y = 1;
 			CCPoint position;
 			position.x = moveToOrBy["position"][x].asInt();

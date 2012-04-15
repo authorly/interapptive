@@ -11,7 +11,7 @@
 class PageManager
 {
 public:
-	static void parseJsonAndRun();
+	static void parseJsonAndRun(const char* pathOfJasonFile);
 	
 	static Page* getPageByPageNumber(int pageNumber);
 	static cocos2d::CCScene* createSceneByPageNumber(int pageNumber);
