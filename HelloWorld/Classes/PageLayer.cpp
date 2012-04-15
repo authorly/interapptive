@@ -12,8 +12,9 @@ using namespace std;
 
 // the distance(in points) to determine swipe left or right
 #define TOLERATE_DISTANCE   50
-// z
+// page layer tag
 #define PARAGRAPH_LAYER_TAG       10
+#define PAGELAYER_HANDLER_PRIORITY 10
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
@@ -58,7 +59,7 @@ void PageLayer::touchCallBack(float flag)
 /// touch event
 void PageLayer::registerWithTouchDispatcher(void)
 {
-    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, 0, true);
+    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, PAGELAYER_HANDLER_PRIORITY, true);
 }
 
 bool PageLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
@@ -145,6 +146,12 @@ void PageLayer::createSprites()
 		sprite->setTag(spriteInfo->spriteTag);
 		sprite->setPosition(spriteInfo->position);
 
+        /*
+         * Now, the page is as large as screen size.
+         * If running action, some area in screen will be black, then page turn transition
+         * will have flicker. So don't run action now.
+         * After the real jason data given, uncomment this.
+         *
 		// runAction
 		for (unsigned int i = 0; i < spriteInfo->actions.size(); ++i)
 		{
@@ -152,6 +159,7 @@ void PageLayer::createSprites()
 			assert(action != NULL);
 			sprite->runAction(action);
 		}
+         */
 
 		addChild(sprite);
 	}

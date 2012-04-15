@@ -8,7 +8,7 @@
 class JsonParser
 {
 public:
-	static bool parseJson();
+	static bool parseJson(const char* pathOfJasonFile);
 private:
 	// jsonPage is "Page" in json data
 	static void parseWithPage(Page* page, Json::Value &jsonPage);
@@ -33,8 +33,6 @@ private:
 	static void parseWithStoryTouchableNode(Page *page, Json::Value &value);
 	static void parseWithStorySwipeEnded(Page *page, Json::Value &value);
 	static void parseWithDelayTime(Page *page, Json::Value &value);
-private:
-	const static char* pathJsonFile;
 };
 
 #endif // __JSON_PARSER_H__

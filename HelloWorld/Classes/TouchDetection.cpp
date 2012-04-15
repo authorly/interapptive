@@ -3,6 +3,9 @@
 
 using namespace cocos2d;
 
+// the priority should low than pagelayer
+#define TOUCHDETECTION_HANDLER_PRIORITY -10
+
 TouchDetection::TouchDetection() : isDebugDrawing(false)
 {
 }
@@ -14,7 +17,7 @@ TouchDetection::~TouchDetection()
 
 void TouchDetection::onEnter()
 {
-	CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, 50, true);
+	CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, TOUCHDETECTION_HANDLER_PRIORITY, true);
 
 	CCLayer::onEnter();
 }
