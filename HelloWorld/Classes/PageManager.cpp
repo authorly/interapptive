@@ -11,9 +11,9 @@ using namespace CocosDenshion;
 map<int, Page*> PageManager::pages = map<int, Page*>();
 int PageManager::currentIndexOfPage = 0;
 
-void PageManager::parseJsonAndRun()
+void PageManager::parseJsonAndRun(const char* pathOfJasonFile)
 {
-	if (! JsonParser::parseJson())
+	if (! JsonParser::parseJson(pathOfJasonFile))
 	{
 		return;
 	}

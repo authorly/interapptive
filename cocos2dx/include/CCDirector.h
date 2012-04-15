@@ -316,6 +316,14 @@ public:
 	This method is called every frame. Don't call it manually.
 	*/
 	void drawScene(void);
+    
+    /** Set target windows size.
+     It will scale the window size to target window size
+     */
+    void setTargetWinsize(CCSize targetWinsize);
+    
+    float getXScaleFactor() { return m_fXScaleFactor; }
+    float getYScaleFactor() { return m_fYScaleFactor; }
 
 	// Memory Helper
 
@@ -410,6 +418,9 @@ protected:
 
 	/* landscape mode ? */
 	bool m_bLandscape;
+    
+    float m_fXScaleFactor;
+    float m_fYScaleFactor;
 	
 	bool m_bDisplayFPS;
 	ccTime m_fAccumDt;
@@ -427,6 +438,8 @@ protected:
      
 	/* The running scene */
 	CCScene *m_pRunningScene;
+    
+    CCSize m_obTargetWindowSize;
 	
 	/* will be the next 'runningScene' in the next frame
 	 nextScene is a weak reference. */
