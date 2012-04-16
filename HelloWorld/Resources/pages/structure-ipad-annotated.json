@@ -118,6 +118,7 @@
             0
           ],
           "fontSize": 48,
+					// For any background music on the pages
           "backgroundMusicFile": {
             "loop": true,
             "audioFilePath": "background.mp3"
@@ -125,8 +126,13 @@
         },
         "text": {
           "paragraphs": [
-            {
+            {	
+							// If delayForPanning == true, the app will not fade paragraph text in in until panning is completed
+							// For example, I swipe the page and it hides the paragraph
+							// If delayForPanning is on, the app will perform any background image zooming/panning before making text appear again
               "delayForPanning": true,
+							// Every page must have the audio file which will play the voice (to match highlighting text)
+							// The voice file to match the highlightingTimes is defined here.
               "voiceAudioFile": "page-1-paragraph-1.mp3",
               "highlightingTimes": [
                 0.15,
@@ -214,6 +220,11 @@
             }
           ]
         },
+				// After each swipe, the app should iterate through runActions to check if its time to run an action.
+				// For example, if i am on page 1, and viewing paragraph #1, then I swipe forward. It should run any actions
+				// with "runAfterSwipeNumber" == 1
+				// Or, if I want to run the action right away when the page loads, I would set runAfterSwipeNumber to 0.
+				// That way, we could run panning/zooming on the background as soon as the scene/page shows, instead of only waiting for swipes.
         "CCStorySwipeEnded": {
           "runAction": [
             {
