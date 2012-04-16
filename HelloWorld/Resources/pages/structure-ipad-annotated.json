@@ -1,13 +1,33 @@
 {
   "Configurations": {
-    "DefaultPngImage": "Default.png", // Shows when app is opened on devide
-    "IconPngImage": "Icon.png", // Icon for the home screen of device
-    "pageFlipSound": { // Sound effect for turning pages
+     // Shows when app is opened on device.
+    "DefaultPngImage": "Default.png",
+    
+    // Icon for the home screen of device
+    "IconPngImage": "Icon.png", 
+      
+    // Sound effect for turning pages
+    // This should occur during the transition
+    "pageFlipSound": { 
       "forward": "page-flip.mp3", // Forward version, for going to the next page
       "backward": "page-flip.mp3" // Backward version, for going to a previous page
     },
-    "pageFlipTransitionDuration": 0.6, // Duration of CCTransitionPageTurn
-    "paragraphTextFadeDuration": 0.4, // Amount of time it takes for text to fade in/out when swiping to the next/previous paragraph
+      
+    // Duration of CCTransitionPageTurn
+    "pageFlipTransitionDuration": 0.6, 
+    
+    // Amount of time it takes for text to fade in/out when swiping to the next/previous paragraph
+    // For example,
+    // 1. Show page
+    // 2. Show first paragraphs
+    // 3. User swipes
+    // 4. paragraph 1 fades out
+    // 5. paragraph 2 fades in.
+    
+    // Also, there should be a flag to delay the fading in until panning/zooming is done.
+    // Some users may paragraph text hidden while panning/zooming an image.
+    // However, other user may want paragraph text visible while panning or zooming is occuring
+    "paragraphTextFadeDuration": 0.4, 
 
     // a home menu will be displayed on all of the pages in the same spot. 
     // When tapped, user confirms yes/no to continue to Main Menu from any page
@@ -20,14 +40,19 @@
       ]
     }
   },
+	// All storybooks have a main menu which is shown upon opening the app.
+	// We gather information from JSON here to build the menu
   "MainMenu": {
     "audio": {
-      "backgroundMusic": "background.mp3", // Allow user to define ongoing background music or a long audio
+      // Allow user to define ongoing background music or a long audio
+      "backgroundMusic": "background.mp3", 
       "backgroundMusicLoops": 0,
-      "soundEffect": "main-menu-title-sound.mp3", // Or allow use to play a sound effect when transition to main menu is finalized
+      // And/or allow the user to play a sound effect when transition to the main menu
+      "soundEffect": "main-menu-title-sound.mp3",
       "soundEffectLoops": 1
     },
-		// Sprites for the main menu
+      
+    // Sprites for the main menu
     "CCSprites": [
 			// We start with a background
       {
@@ -39,23 +64,24 @@
           384
         ]
       },
-			// Then add the stranger in the woods logo separate, so we can fade it in later.
       {
+        // Add a logo separate, so we can fade it in later.
         "image": "strangerinthewoods_logo.png",
         "spriteTag": 101,
-        "visible": false, // We add visible parameter to it so it is hidden at first, then we can fade it in. 
+        
+        // Added visible key to so it is hidden at first for text we want to fade in 
+        // We can not fade the sprite in if it already visible
+        "visible": false, 
         "position": [
           512,
           384
         ]
       }
     ],
-		// Since every storybook app has three modes (auto play, read to me, read it myself)
-		// We will use the defined images and position to place these menu items.
-		// To start the book, it is required that the user clicks one of these buttons.
-		// These buttons should set a flag for story play mode, and go to a page.
+    // Add mandatory menu items to the Main Menu with custom images and position
     "MenuItems": [
-      {
+      
+                  {
         "normalStateImage": "autoplay.png",
         "tappedStateImage": "autoplay-over.png",
         "storyMode": "autoPlay",
@@ -84,7 +110,8 @@
       }
     ],
     "API": {
-			// This fade in action is used to fade the logo in on the main menu
+        
+      // This fade in action is used to fade the logo in on the main menu
       "CCFadeIn": [
         {
           "duration": 2,
@@ -92,10 +119,11 @@
         }
       ]
     },
-		// this should fade the logo in after main menu is loaded. It would also perform any other actions
+    
+    // These actions should be run when the transition to the Main menu is completed. 
+    // this should fade the logo in after main menu is loaded. It would also perform any other actions
     "runActionsOnEnter": [
       {
-        "runAfterSwipeNumber": 1,
         "spriteTag": 101,
         "actionTag": 22
       }
@@ -118,7 +146,8 @@
             0
           ],
           "fontSize": 48,
-					// For any background music on the pages
+          
+          // For any background music on the pages
           "backgroundMusicFile": {
             "loop": true,
             "audioFilePath": "background.mp3"
@@ -127,12 +156,14 @@
         "text": {
           "paragraphs": [
             {	
-							// If delayForPanning == true, the app will not fade paragraph text in in until panning is completed
-							// For example, I swipe the page and it hides the paragraph
-							// If delayForPanning is on, the app will perform any background image zooming/panning before making text appear again
+			  // If delayForPanning == true, the app will not fade paragraph text until panning/zooming actions are completed
+              // For example, I swipe the page and it hides the paragraph
+              // If delayForPanning is on, 
+              // the app will perform any background image zooming/panning before fading text in
               "delayForPanning": true,
-							// Every page must have the audio file which will play the voice (to match highlighting text)
-							// The voice file to match the highlightingTimes is defined here.
+							
+              // Every page must have the audio file which will play the voice (to match highlighting text)
+			  // The voice file to match the highlightingTimes is defined here.
               "voiceAudioFile": "page-1-paragraph-1.mp3",
               "highlightingTimes": [
                 0.15,
