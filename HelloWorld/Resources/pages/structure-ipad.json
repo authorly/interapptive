@@ -9,8 +9,8 @@
     "pageFlipTransitionDuration": 0.6,
     "paragraphTextFadeDuration": 0.4,
     "homeMenuForOnPages": {
-      "normalStateImage": "homeButtonNormalState.png",
-      "tappedStateImage": "homeButtonTappedState.png",
+      "normalStateImage": "home-button.png",
+      "tappedStateImage": "home-button-over.png",
       "position": [
         20,
         20

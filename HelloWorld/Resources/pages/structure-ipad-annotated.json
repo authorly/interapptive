@@ -40,13 +40,16 @@
       ]
     }
   },
+
 	// All storybooks have a main menu which is shown upon opening the app.
 	// We gather information from JSON here to build the menu
   "MainMenu": {
     "audio": {
+	
       // Allow user to define ongoing background music or a long audio
       "backgroundMusic": "background.mp3", 
-      "backgroundMusicLoops": 0,
+      "backgroundMusicLoops": 0, // 0 = repeat continuously 
+
       // And/or allow the user to play a sound effect when transition to the main menu
       "soundEffect": "main-menu-title-sound.mp3",
       "soundEffectLoops": 1
@@ -54,7 +57,8 @@
       
     // Sprites for the main menu
     "CCSprites": [
-			// We start with a background
+
+			// We start by adding a background image/sprite to the Main Menu
       {
         "image": "background0000.jpg",
         "spriteTag": 100,
@@ -65,11 +69,12 @@
         ]
       },
       {
-        // Add a logo separate, so we can fade it in later.
+        // Add a logo separate, so we can fade it in.
         "image": "strangerinthewoods_logo.png",
         "spriteTag": 101,
         
-        // Added visible key to so it is hidden at first for text we want to fade in 
+        // Added visible to JSON so the sprite is hidden at first.
+				// That way we can fade it in from invisible to visible.
         // We can not fade the sprite in if it already visible
         "visible": false, 
         "position": [
@@ -78,6 +83,7 @@
         ]
       }
     ],
+
     // Add mandatory menu items to the Main Menu with custom images and position
     "MenuItems": [
       
@@ -156,14 +162,14 @@
         "text": {
           "paragraphs": [
             {	
-			  // If delayForPanning == true, the app will not fade paragraph text until panning/zooming actions are completed
+			  			// If delayForPanning == true, the app will not fade paragraph text until panning/zooming actions are completed
               // For example, I swipe the page and it hides the paragraph
               // If delayForPanning is on, 
               // the app will perform any background image zooming/panning before fading text in
               "delayForPanning": true,
 							
               // Every page must have the audio file which will play the voice (to match highlighting text)
-			  // The voice file to match the highlightingTimes is defined here.
+			  			// The voice file to match the highlightingTimes is defined here.
               "voiceAudioFile": "page-1-paragraph-1.mp3",
               "highlightingTimes": [
                 0.15,
@@ -251,11 +257,12 @@
             }
           ]
         },
-		// After each swipe, the app should iterate through runActions to check if its time to run an action.
-		// For example, if i am on page 1, and viewing paragraph #1, then I swipe forward. It should run any actions
-		// with "runAfterSwipeNumber" == 1
-		// Or, if I want to run the action right away when the page loads, I would set runAfterSwipeNumber to 0.
-		// That way, we could run panning/zooming on the background as soon as the scene/page shows, instead of only waiting for swipes.
+
+				// After each swipe, the app should iterate through runActions to check if its time to run an action.
+				// For example, if i am on page 1, and viewing paragraph #1, then I swipe forward. It should run any actions
+				// with "runAfterSwipeNumber" == 1
+				// Or, if I want to run the action right away when the page loads, I would set runAfterSwipeNumber to 0.
+				// That way, we could run panning/zooming on the background as soon as the scene/page shows, instead of only waiting for swipes.
         "CCStorySwipeEnded": {
           "runAction": [
             {
