@@ -1,16 +1,19 @@
 {
   "Configurations": {
-    "DefaultPngImage": "Default.png",
-    "IconPngImage": "Icon.png",
-    "pageFlipSound": {
-      "forward": "page-flip.mp3",
-      "backward": "page-flip.mp3"
+    "DefaultPngImage": "Default.png", // Shows when app is opened on devide
+    "IconPngImage": "Icon.png", // Icon for the home screen of device
+    "pageFlipSound": { // Sound effect for turning pages
+      "forward": "page-flip.mp3", // Forward version, for going to the next page
+      "backward": "page-flip.mp3" // Backward version, for going to a previous page
     },
-    "pageFlipTransitionDuration": 0.6,
-    "paragraphTextFadeDuration": 0.4,
-    "homeMenuForOnPages": {
-      "normalStateImage": "homeButtonNormalState.png",
-      "tappedStateImage": "homeButtonTappedState.png",
+    "pageFlipTransitionDuration": 0.6, // Duration of CCTransitionPageTurn
+    "paragraphTextFadeDuration": 0.4, // Amount of time it takes for text to fade in/out when swiping to the next/previous paragraph
+
+    // a home menu will be displayed on all of the pages in the same spot. 
+    // When tapped, user confirms yes/no to continue to Main Menu from any page
+    "homeMenuForOnPages": { 
+      "normalStateImage": "home-button.png", // Normal appearance of home button - This image exists in the project.
+      "tappedStateImage": "home-button-over.png",
       "position": [
         20,
         20
@@ -117,23 +120,17 @@
               "delayForPanning": true,
               "voiceAudioFile": "page-1-paragraph-1.mp3",
               "highlightingTimes": [
-                0.378,
-                0.766,
-                0.9047,
-                1.0238,
-                1.299,
-                1.758,
-                2.6864,
-                2.9274,
-                3.1327,
-                3.3603,
-                4.0474,
-                4.2724,
-                4.4625,
-                4.6856,
-                5.0783,
-                5.64,
-                6.6
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
               ],
               "linesOfText": [
                 {
@@ -256,32 +253,17 @@
               "delayForPanning": true,
               "voiceAudioFile": "page-2-paragraph-1.mp3",
               "highlightingTimes": [
-                0.261,
-                0.641,
-                1.598,
-                1.859,
-                2.934,
-                3.395,
-                3.641,
-                4.532,
-                5.316,
-                5.823,
-                5.946,
-                6.146,
-                6.73,
-                7.375,
-                8.727,
-                9.203,
-                9.48,
-                9.588,
-                9.757,
-                10.556,
-                10.74,
-                10.955,
-                11.232,
-                11.6,
-                11.831,
-                12.661
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
               ],
               "linesOfText": [
                 {
@@ -324,32 +306,17 @@
             {
               "voiceAudioFile": "page-2-paragraph-2.mp3",
               "highlightingTimes": [
-                0.265,
-                0.813,
-                1.235,
-                2.174,
-                2.846,
-                3.347,
-                3.55,
-                4.16,
-                4.504,
-                5.615,
-                5.834,
-                6.021,
-                6.616,
-                7.35,
-                7.977,
-                8.524,
-                8.68,
-                9.244,
-                10.698,
-                10.948,
-                11.512,
-                11.777,
-                12.222,
-                12.497,
-                12.7,
-                13.9
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
               ],
               "linesOfText": [
                 {
@@ -428,25 +395,17 @@
               "delayForPanning": true,
               "voiceAudioFile": "page-3-paragraph-1.mp3",
               "highlightingTimes": [
-                1.7737,
-                2.1027,
-                2.7077,
-                3.0367,
-                4.1297,
-                4.2737,
-                4.9317,
-                5.3267,
-                5.4057,
-                6.1297,
-                6.4717,
-                7.1167,
-                7.2257,
-                7.4317,
-                7.7607,
-                7.9717,
-                8.1957,
-                8.9587,
-                10.1557
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
               ],
               "linesOfText": [
                 {
@@ -515,21 +474,17 @@
               "delayForPanning": true,
               "voiceAudioFile": "page-4-paragraph-1.mp3",
               "highlightingTimes": [
-                2.0739,
-                2.2699,
-                2.5679,
-                2.9299,
-                3.1279,
-                3.7359,
-                4.9179,
-                5.3539,
-                5.9049,
-                6.1729,
-                6.8769,
-                7.0879,
-                7.2914,
-                8.4279,
-                9.3
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
               ],
               "linesOfText": [
                 {
@@ -552,35 +507,17 @@
             {
               "voiceAudioFile": "page-4-paragraph-2.mp3",
               "highlightingTimes": [
-                0.19,
-                0.977,
-                1.294,
-                2.411,
-                2.639,
-                3.172,
-                3.489,
-                3.616,
-                3.756,
-                4.517,
-                4.669,
-                5.113,
-                5.57,
-                5.773,
-                5.938,
-                6.763,
-                6.89,
-                7.334,
-                7.537,
-                7.626,
-                8.514,
-                8.755,
-                9.085,
-                9.276,
-                9.568,
-                9.745,
-                9.847,
-                10.95,
-                12
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
               ],
               "linesOfText": [
                 {
@@ -649,26 +586,17 @@
               "delayForPanning": true,
               "voiceAudioFile": "page-5-paragraph-1.mp3",
               "highlightingTimes": [
-                0.575,
-                0.938,
-                1.09,
-                1.191,
-                1.918,
-                2.837,
-                3.119,
-                3.261,
-                3.412,
-                3.725,
-                4.482,
-                4.725,
-                4.927,
-                5.684,
-                6.158,
-                6.391,
-                6.986,
-                7.138,
-                7.643,
-                8.85
+                0.15,
+                1.5,
+                3.4,
+                5.5,
+                6.6,
+                7.2,
+                9.3,
+                10.2,
+                10.9,
+                11.4,
+                12.8
               ],
               "linesOfText": [
                 {
