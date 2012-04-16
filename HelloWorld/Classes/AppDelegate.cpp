@@ -96,7 +96,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     // designed for 480*320
     // if you want to run ipad resources in iphone, change to 1024*768
-    pDirector->setTargetWinsize(CCSizeMake(480, 320));
+    pDirector->setTargetWinsize(CCSizeMake(1024, 768));
     CCLog("set target win size");
 
 	pDirector->setOpenGLView(&CCEGLView::sharedOpenGLView());
@@ -115,7 +115,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // parse with json data
     // pages/structure.json is designed for iphone
     // pages/structure-ipad.json is designed for ipad
-	PageManager::parseJsonAndRun("pages/structure.json");
+	PageManager::parseJsonAndRun("pages/structure-ipad.json");
 
 	return true;
 }
