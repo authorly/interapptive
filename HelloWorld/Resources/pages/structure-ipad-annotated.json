@@ -22,12 +22,14 @@
   },
   "MainMenu": {
     "audio": {
-      "backgroundMusic": "background.mp3",
+      "backgroundMusic": "background.mp3", // Allow user to define ongoing background music or a long audio
       "backgroundMusicLoops": 0,
-      "soundEffect": "main-menu-title-sound.mp3",
+      "soundEffect": "main-menu-title-sound.mp3", // Or allow use to play a sound effect when transition to main menu is finalized
       "soundEffectLoops": 1
     },
+		// Sprites for the main menu
     "CCSprites": [
+			// We start with a background
       {
         "image": "background0000.jpg",
         "spriteTag": 100,
@@ -37,16 +39,21 @@
           384
         ]
       },
+			// Then add the stranger in the woods logo separate, so we can fade it in later.
       {
         "image": "strangerinthewoods_logo.png",
         "spriteTag": 101,
-        "visible": false,
+        "visible": false, // We add visible parameter to it so it is hidden at first, then we can fade it in. 
         "position": [
           512,
           384
         ]
       }
     ],
+		// Since every storybook app has three modes (auto play, read to me, read it myself)
+		// We will use the defined images and position to place these menu items.
+		// To start the book, it is required that the user clicks one of these buttons.
+		// These buttons should set a flag for story play mode, and go to a page.
     "MenuItems": [
       {
         "normalStateImage": "autoplay.png",
@@ -77,6 +84,7 @@
       }
     ],
     "API": {
+			// This fade in action is used to fade the logo in on the main menu
       "CCFadeIn": [
         {
           "duration": 2,
@@ -84,11 +92,12 @@
         }
       ]
     },
+		// this should fade the logo in after main menu is loaded. It would also perform any other actions
     "runActionsOnEnter": [
       {
         "runAfterSwipeNumber": 1,
-        "spriteTag": 1,
-        "actionTag": 20
+        "spriteTag": 101,
+        "actionTag": 22
       }
     ]
   },
