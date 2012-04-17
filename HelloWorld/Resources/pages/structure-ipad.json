@@ -35,7 +35,7 @@
         ]
       },
       {
-        "image": "strangerinthewoods_logo.png",
+        "image": "stranger-in-the-woods-logo.png",
         "spriteTag": 101,
         "visible": false,
         "position": [
@@ -395,7 +395,7 @@
       "API": {
         "CCSprites": [
           {
-            "image": "background0020.jpeg",
+            "image": "background0020.jpg",
             "spriteTag": 2,
             "position": [
               512,
@@ -703,6 +703,322 @@
             "spriteTag": 2,
             "position": [
               812,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page": {
+        "settings": {
+          "number": 6,
+          "fontType": "arial.ttf",
+          "fontColor": [
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor": [
+            255,
+            0,
+            0
+          ],
+          "fontSize": 20
+        },
+        "text": {
+          "paragraphs": [
+            {
+              "delayForPanning": true,
+              "voiceAudioFile": "page-6-paragraph-1.mp3",
+              "highlightingTimes": [
+                0.575,
+                0.938,
+                1.09,
+                1.191,
+                1.918,
+                2.837,
+                3.119,
+                3.261,
+                3.412,
+                7.643,
+                8.85
+              ],
+              "linesOfText": [
+                {
+                  "text": "\"Coo-coo-could that be him?\"",
+                  "yOffset": 185,
+                  "xOffset": 755
+                },
+                {
+                  "text": "asked the mourning dove.",
+                  "yOffset": 160,
+                  "xOffset": 785
+                },
+                {
+                  "text": "\"There!",
+                  "yOffset": 135,
+                  "xOffset": 770
+                },
+                {
+                  "text": "Beyond the old apple tree.",
+                  "yOffset": 110,
+                  "xOffset": 795
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API": {
+        "CCSprites": [
+          {
+            "image": "background0060.jpg",
+            "spriteTag": 2,
+            "position": [
+              785,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page": {
+        "settings": {
+          "number": 7,
+          "fontType": "arial.ttf",
+          "fontColor": [
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor": [
+            255,
+            0,
+            0
+          ],
+          "fontSize": 20
+        },
+        "text": {
+          "paragraphs": [
+            {
+              "delayForPanning": true,
+              "voiceAudioFile": "page-7-paragraph-1.mp3",
+              "highlightingTimes": [
+                0.575,
+                0.938,
+                1.09,
+                1.191,
+                1.918,
+                2.837,
+                3.119,
+                3.261
+              ],
+              "linesOfText": [
+                {
+                  "text": "Follow the snow trail, past the pond",
+                  "yOffset": 425,
+                  "xOffset": 195
+                },
+                {
+                  "text": "to where the meadow begins",
+                  "yOffset": 400,
+                  "xOffset": 195
+                },
+                {
+                  "text": "Not far... not far at all.\"",
+                  "yOffset": 375,
+                  "xOffset": 195
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API": {
+        "CCSprites": [
+          {
+            "image": "background0070.jpg",
+            "spriteTag": 2,
+            "position": [
+              312,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page": {
+        "settings": {
+          "number": 8,
+          "fontType": "arial.ttf",
+          "fontColor": [
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor": [
+            255,
+            0,
+            0
+          ],
+          "fontSize": 20
+        },
+        "text": {
+          "paragraphs": [
+            {
+              "delayForPanning": true,
+              "voiceAudioFile": "page-8-paragraph-1.mp3",
+              "highlightingTimes": [
+                0.575,
+                0.938,
+                1.09,
+                1.191,
+                1.918,
+                2.837,
+                3.119,
+                3.261,
+                3.412,
+                3.725,
+                4.482,
+                4.725,
+                4.927,
+                5.684,
+                6.158,
+                6.391,
+                6.986,
+                7.138,
+                7.643,
+                8.85
+              ],
+              "linesOfText": [
+                {
+                  "text": "\"Who-hoo's in the woods?",
+                  "yOffset": 185,
+                  "xOffset": 755
+                },
+                {
+                  "text": "Why is he here?",
+                  "yOffset": 160,
+                  "xOffset": 785
+                },
+                {
+                  "text": "When? When did the stranger come?",
+                  "yOffset": 135,
+                  "xOffset": 770
+                },
+                {
+                  "text": "asked the Owl of Many Questions.",
+                  "yOffset": 110,
+                  "xOffset": 795
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API": {
+        "CCSprites": [
+          {
+            "image": "background0080.jpg",
+            "spriteTag": 2,
+            "position": [
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page": {
+        "settings": {
+          "number": 9,
+          "fontType": "arial.ttf",
+          "fontColor": [
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor": [
+            255,
+            0,
+            0
+          ],
+          "fontSize": 20
+        },
+        "text": {
+          "paragraphs": [
+            {
+              "delayForPanning": true,
+              "voiceAudioFile": "page-9-paragraph-1.mp3",
+              "highlightingTimes": [
+                0.575,
+                0.938,
+                1.09,
+                1.191,
+                1.918,
+                2.837,
+                3.119,
+                3.261,
+                3.412,
+                3.725,
+                4.482,
+                4.725,
+                4.927,
+                5.684,
+                6.158,
+                6.391,
+                6.986,
+                7.138,
+                7.643,
+                8.85
+              ],
+              "linesOfText": [
+                {
+                  "text": "\"I’ve been here since early morning,",
+                  "yOffset": 685,
+                  "xOffset": 755
+                },
+                {
+                  "text": "before the first pale light",
+                  "yOffset": 660,
+                  "xOffset": 755
+                },
+                {
+                  "text": "on the Eastern Sky,\"",
+                  "yOffset": 635,
+                  "xOffset": 755
+                },
+                {
+                  "text": "said the munching muskrat.",
+                  "yOffset": 610,
+                  "xOffset": 755
+                },
+                {
+                  "text": "\"No stranger came this way.",
+                  "yOffset": 585,
+                  "xOffset": 755
+                },
+                {
+                  "text": "No one passed by my pond.\"",
+                  "yOffset": 560,
+                  "xOffset": 755
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API": {
+        "CCSprites": [
+          {
+            "image": "background0090.jpg",
+            "spriteTag": 2,
+            "position": [
+              512,
               384
             ]
           }

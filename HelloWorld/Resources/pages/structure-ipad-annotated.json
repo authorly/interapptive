@@ -31,7 +31,7 @@
 
     // a home menu will be displayed on all of the pages in the same spot. 
     // When tapped, user confirms yes/no to continue to Main Menu from any page
-    "homeMenuForOnPages": { 
+    "homeMenuForPages": { 
       "normalStateImage": "home-button.png", // Normal appearance of home button - This image exists in the project.
       "tappedStateImage": "home-button-over.png",
       "position": [
