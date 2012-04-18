@@ -394,12 +394,9 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    float xscale = cocos2d::CCDirector::sharedDirector()->getXScaleFactor();
-    float yscale = cocos2d::CCDirector::sharedDirector()->getYScaleFactor();
-    
 	cocos2d::CCSet set;
     cocos2d::CCTouch *pTouch;
-
+    
 	for (UITouch *touch in touches) {
         NSNumber *index = (NSNumber*)CFDictionaryGetValue(touchesIntergerDict, touch);
         int unUsedIndex = 0;
@@ -414,8 +411,8 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
             }
             
             pTouch = s_pTouches[unUsedIndex] = new cocos2d::CCTouch();
-            float x = [touch locationInView: [touch view]].x / xscale;
-            float y = [touch locationInView: [touch view]].y / yscale;
+            float x = [touch locationInView: [touch view]].x;
+            float y = [touch locationInView: [touch view]].y;
             pTouch->SetTouchInfo(0, x, y, unUsedIndex);
             
             CFDictionaryAddValue(touchesIntergerDict, touch, [NSNumber numberWithInt:unUsedIndex]);
@@ -433,9 +430,6 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    float xscale = cocos2d::CCDirector::sharedDirector()->getXScaleFactor();
-    float yscale = cocos2d::CCDirector::sharedDirector()->getYScaleFactor();
-    
 	cocos2d::CCSet set;
 	for (UITouch *touch in touches) {
 		NSNumber *index = (NSNumber*)CFDictionaryGetValue(touchesIntergerDict, touch);
@@ -450,8 +444,8 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
                     return;
                 }
         
-		float x = [touch locationInView: [touch view]].x / xscale;
-		float y = [touch locationInView: [touch view]].y / yscale;
+		float x = [touch locationInView: [touch view]].x;
+		float y = [touch locationInView: [touch view]].y;
 		pTouch->SetTouchInfo(0, x, y, pTouch->id());
 		
 		set.addObject(pTouch);
@@ -462,9 +456,6 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    float xscale = cocos2d::CCDirector::sharedDirector()->getXScaleFactor();
-    float yscale = cocos2d::CCDirector::sharedDirector()->getYScaleFactor();
-    
 	cocos2d::CCSet set;
 	for (UITouch *touch in touches) {
             NSNumber *index = (NSNumber*)CFDictionaryGetValue(touchesIntergerDict, touch);
@@ -479,8 +470,8 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
                     return;
                 }
         
-		float x = [touch locationInView: [touch view]].x / xscale;
-		float y = [touch locationInView: [touch view]].y / yscale;
+		float x = [touch locationInView: [touch view]].x;
+		float y = [touch locationInView: [touch view]].y;
 		pTouch->SetTouchInfo(0, x, y, pTouch->id());
 		
 		set.addObject(pTouch);
@@ -495,9 +486,6 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    float xscale = cocos2d::CCDirector::sharedDirector()->getXScaleFactor();
-    float yscale = cocos2d::CCDirector::sharedDirector()->getYScaleFactor();
-    
 	cocos2d::CCSet set;
 	for (UITouch *touch in touches) {
             NSNumber *index = (NSNumber*)CFDictionaryGetValue(touchesIntergerDict, touch);

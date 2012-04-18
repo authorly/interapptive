@@ -80,7 +80,6 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     {
         if (currentIndexOfParagraph == (page->paragraphs.size() - 1))
         {
-            CCLOG("turn next page");
             PageManager::turnToPage(page->settings.number + 1);
         }
         else 
@@ -93,7 +92,6 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     {
         if (currentIndexOfParagraph == 0)
         {
-            CCLOG("turn previois page");
             PageManager::turnToPage(page->settings.number - 1);
         }
         else 
@@ -146,12 +144,7 @@ void PageLayer::createSprites()
 		sprite->setTag(spriteInfo->spriteTag);
 		sprite->setPosition(spriteInfo->position);
 
-        /*
-         * Now, the page is as large as screen size.
-         * If running action, some area in screen will be black, then page turn transition
-         * will have flicker. So don't run action now.
-         * After the real jason data given, uncomment this.
-         *
+
 		// runAction
 		for (unsigned int i = 0; i < spriteInfo->actions.size(); ++i)
 		{
@@ -159,7 +152,6 @@ void PageLayer::createSprites()
 			assert(action != NULL);
 			sprite->runAction(action);
 		}
-         */
 
 		addChild(sprite);
 	}

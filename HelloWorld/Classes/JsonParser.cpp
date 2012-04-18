@@ -9,8 +9,17 @@
 using namespace cocos2d;
 using namespace std;
 
+float JsonParser::xScale = 1.0f;
+float JsonParser::yScale = 1.0f;
+float JsonParser::scale = 1.0f;
+
 bool JsonParser::parseJson(const char* pathOfJasonFile)
 {
+    // initialize scale factors
+    xScale = CCDirector::sharedDirector()->getXScale();
+    yScale = CCDirector::sharedDirector()->getYScale();
+    scale = xScale > yScale ? xScale : yScale;
+    
 	// read json file
 	std::string doc;
 	unsigned long size;
@@ -70,7 +79,7 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
 	settings.fontColor.g = fontColor[g].asUInt();
 	settings.fontColor.b = fontColor[b].asUInt();
 	// font size
-	settings.fontSize = jsonSettings["fontSize"].asInt();
+	settings.fontSize = jsonSettings["fontSize"].asInt() * scale;
 	// background music file
 	Json::Value backgroundMusicInfo = jsonSettings["backgroundMusicFile"];
     if (! backgroundMusicInfo.isNull())
@@ -109,8 +118,8 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 			Json::Value jsonLineText = linesOfText[k];
 			LineText *lineText = new LineText();
 			lineText->text = jsonLineText["text"].asCString();
-			lineText->xOffset = jsonLineText["xOffset"].asInt();
-			lineText->yOffset = jsonLineText["yOffset"].asInt();
+			lineText->xOffset = jsonLineText["xOffset"].asInt() * xScale;
+			lineText->yOffset = jsonLineText["yOffset"].asInt() * yScale;
 
 			paragraph->linesOfTest.push_back(lineText);
 		}
@@ -259,18 +268,18 @@ void JsonParser::parseWithBezierByOrBezierTo(Page *page, Json::Value &value, boo
 		    // endPosition
 		    Json::Value jsonEndPosition = jsonBezierByOrBezierTo["config"]["endPosition"];
 		    int x = 0, y = 1;
-		    config.endPosition.x = (float)jsonEndPosition[x].asInt();
-		    config.endPosition.y = (float)jsonEndPosition[y].asInt();
+		    config.endPosition.x = (float)jsonEndPosition[x].asInt() * xScale;
+		    config.endPosition.y = (float)jsonEndPosition[y].asInt() * yScale;
        
 		    // controlPosition1
 		    Json::Value jsonControlPosition1 = jsonBezierByOrBezierTo["config"]["controlPosition_1"];
-		    config.controlPoint_1.x = (float)jsonEndPosition[x].asInt();
-		    config.controlPoint_1.y = (float)jsonEndPosition[y].asInt();
+		    config.controlPoint_1.x = (float)jsonEndPosition[x].asInt() * xScale;
+		    config.controlPoint_1.y = (float)jsonEndPosition[y].asInt() * yScale;
 
 		    // controlPosition2
 		    Json::Value jsonControlPosition2 = jsonBezierByOrBezierTo["config"]["controlPosition_2"];
-		    config.controlPoint_2.x = (float)jsonEndPosition[x].asInt();
-		    config.controlPoint_2.y = (float)jsonEndPosition[y].asInt();
+		    config.controlPoint_2.x = (float)jsonEndPosition[x].asInt() * xScale;
+		    config.controlPoint_2.y = (float)jsonEndPosition[y].asInt() * yScale;
 
 		    // create action and add it into page
 		    CCAction *action;
@@ -474,15 +483,15 @@ void JsonParser::parseWithJumpToOrJumpBy(Page *page, Json::Value &value, bool is
 			// position
 			int x = 0, y = 1;
             CCPoint position;
-			position.x = (float)jumpToOrJumpBy["position"][x].asInt();
-			position.y = (float)jumpToOrJumpBy["position"][y].asInt();
+			position.x = (float)jumpToOrJumpBy["position"][x].asInt() * xScale;
+			position.y = (float)jumpToOrJumpBy["position"][y].asInt() * yScale;
 
 			// duration
 			float duration = (float)jumpToOrJumpBy["duration"].asDouble();
 			// actionTag
 			int actionTag = jumpToOrJumpBy["actionTag"].asInt();
 			// height
-			float height = (float)jumpToOrJumpBy["height"].asDouble();
+			float height = (float)jumpToOrJumpBy["height"].asDouble() * yScale;
 			// jumps
 			int jumps = jumpToOrJumpBy["jumps"].asInt();
 
@@ -571,8 +580,8 @@ void JsonParser::parseWithMoveToOrMoveBy(Page *page, Json::Value &value, bool is
 			// position, adjust it with scale factor
 			int x = 0, y = 1;
 			CCPoint position;
-			position.x = moveToOrBy["position"][x].asInt();
-			position.y = moveToOrBy["position"][y].asInt();
+			position.x = moveToOrBy["position"][x].asInt() * xScale;
+			position.y = moveToOrBy["position"][y].asInt() * yScale;
 			// duration
 			float duration = (float)moveToOrBy["duration"].asDouble();
 			// actionTag
@@ -659,8 +668,8 @@ void JsonParser::parseWithSprites(Page *page, Json::Value &value)
 			spriteInfo->spriteTag = sprite["spriteTag"].asInt();
             // position
 			int x = 0, y = 1;
-			spriteInfo->position.x = sprite["position"][x].asInt();
-			spriteInfo->position.y = sprite["position"][y].asInt();
+			spriteInfo->position.x = sprite["position"][x].asInt() * xScale;
+			spriteInfo->position.y = sprite["position"][y].asInt() * yScale;
 			// actions
 			Json::Value actions = sprite["actions"];
 			for (unsigned int j = 0; j < actions.size(); ++j)
@@ -687,10 +696,10 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 			storyTouchableNode->glitterIndicator = node["glitterIndicator"].asBool();
 			// position
 			int x = 0, y = 1;
-			storyTouchableNode->position.x = node["position"][x].asInt();
-			storyTouchableNode->position.y = node["position"][y].asInt();
+			storyTouchableNode->position.x = node["position"][x].asInt() * xScale;
+			storyTouchableNode->position.y = node["position"][y].asInt() * yScale;
 			// radius
-			storyTouchableNode->radius = node["radius"].asInt();
+			storyTouchableNode->radius = node["radius"].asInt() * scale;
 			// videoToPlay
 			storyTouchableNode->videoToPlay = node["videoToPlay"].asCString();
 			// soundToPlay

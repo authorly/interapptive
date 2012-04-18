@@ -219,6 +219,9 @@ bool CCSprite::init(void)
 		
 	// Atlas: TexCoords
 	setTextureRectInPixels(CCRectZero, false, CCSizeZero);
+    
+    this->setScaleX(CCDirector::sharedDirector()->getXScale());
+    this->setScaleY(CCDirector::sharedDirector()->getYScale());
 
 	return true;
 }

@@ -93,13 +93,16 @@ bool AppDelegate::initInstance() {
 bool AppDelegate::applicationDidFinishLaunching() {
 	// initialize director
 	CCDirector *pDirector = CCDirector::sharedDirector();
+    //pDirector->setDepthTest(false);
     
     // designed for 480*320
     // if you want to run ipad resources in iphone, change to 1024*768
-    pDirector->setTargetWinsize(CCSizeMake(1024, 768));
+    //pDirector->setTargetWinsize(CCSizeMake(1024, 768));
     CCLog("set target win size");
 
 	pDirector->setOpenGLView(&CCEGLView::sharedOpenGLView());
+    
+    pDirector->setTargetWinsize(CCSizeMake(1024, 768));
 
 	// enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
      //pDirector->enableRetinaDisplay(true);
