@@ -110,9 +110,7 @@ bool CCDirector::init(void)
 	// purge ?
 	m_bPurgeDirecotorInNextLoop = false;
 
-	m_obWinSizeInPixels = m_obWinSizeInPoints = m_obTargetWindowSize = CCSizeZero;
-    
-    m_fXScaleFactor = m_fYScaleFactor = 1.0;
+	m_obWinSizeInPixels = m_obWinSizeInPoints = CCSizeZero;
 
 	// portrait mode default
 	m_eDeviceOrientation = CCDeviceOrientationPortrait;		
@@ -286,19 +284,8 @@ void CCDirector::setOpenGLView(CC_GLVIEW *pobOpenGLView)
 		// set size
 		m_obWinSizeInPoints = m_pobOpenGLView->getSize();
 		m_obWinSizeInPixels = CCSizeMake(m_obWinSizeInPoints.width * m_fContentScaleFactor, m_obWinSizeInPoints.height * m_fContentScaleFactor);
-        
-        if (! CCSize::CCSizeEqualToSize(m_obTargetWindowSize, CCSizeZero))
-        {
-            m_fXScaleFactor = ((float)m_obWinSizeInPixels.width) / m_obTargetWindowSize.width;
-            m_fYScaleFactor = ((float)m_obWinSizeInPixels.height) / m_obTargetWindowSize.height;
-        }
-        else 
-        {
-            m_obTargetWindowSize = m_obWinSizeInPoints;
-        }
-        
         setGLDefaultValues();
-        
+
 		if (m_fContentScaleFactor != 1)
 		{
 			updateContentScaleFactor();
@@ -309,11 +296,6 @@ void CCDirector::setOpenGLView(CC_GLVIEW *pobOpenGLView)
         pTouchDispatcher->setDispatchEvents(true);
 	}
 }
-    
-void CCDirector::setTargetWinsize(CCSize targetWindowSize)
-{
-    m_obTargetWindowSize = targetWindowSize;
-}
 
 void CCDirector::setNextDeltaTimeZero(bool bNextDeltaTimeZero)
 {
@@ -322,12 +304,8 @@ void CCDirector::setNextDeltaTimeZero(bool bNextDeltaTimeZero)
 
 void CCDirector::setProjection(ccDirectorProjection kProjection)
 {
-    // if it is retina, don't scale again
-	//CCSize size = m_obWinSizeInPixels;
-    CCSize size = m_obTargetWindowSize;
-    
-	//float zeye = this->getZEye();
-    float zeye = size.height / 1.1566f;
+	CCSize size = m_obWinSizeInPixels;
+	float zeye = this->getZEye();
 	switch (kProjection)
 	{
 	case kCCDirectorProjection2D:
@@ -346,12 +324,11 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
 	case kCCDirectorProjection3D:		
         if (m_pobOpenGLView) 
         {
-            m_pobOpenGLView->setViewPortInPoints(0, 0, m_obWinSizeInPixels.width, m_obWinSizeInPixels.height);
-            //m_pobOpenGLView->setViewPortInPoints(0, 0, 480, 320);
+            m_pobOpenGLView->setViewPortInPoints(0, 0, size.width, size.height);
         }
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
-        gluPerspective(60, (GLfloat)size.width/size.height, 0.5f, 1500.0f);
+		gluPerspective(60, (GLfloat)size.width/size.height, 0.5f, 1500.0f);
 			
 		glMatrixMode(GL_MODELVIEW);	
 		glLoadIdentity();
@@ -416,8 +393,7 @@ void CCDirector::setDepthTest(bool bOn)
 
 CCPoint CCDirector::convertToGL(const CCPoint& obPoint)
 {
-	//CCSize s = m_obWinSizeInPoints;
-    CCSize s = m_obTargetWindowSize;
+	CCSize s = m_obWinSizeInPoints;
 	float newY = s.height - obPoint.y;
 	float newX = s.width - obPoint.x;
 
@@ -445,8 +421,7 @@ CCPoint CCDirector::convertToGL(const CCPoint& obPoint)
 
 CCPoint CCDirector::convertToUI(const CCPoint& obPoint)
 {
-	//CCSize winSize = m_obWinSizeInPoints;
-    CCSize winSize = m_obTargetWindowSize;
+	CCSize winSize = m_obWinSizeInPoints;
 	float oppositeX = winSize.width - obPoint.x;
 	float oppositeY = winSize.height - obPoint.y;
 	CCPoint uiPoint = CCPointZero;
@@ -473,9 +448,7 @@ CCPoint CCDirector::convertToUI(const CCPoint& obPoint)
 
 CCSize CCDirector::getWinSize(void)
 {
-    
-	//CCSize s = m_obWinSizeInPoints;
-    CCSize s = m_obTargetWindowSize;
+	CCSize s = m_obWinSizeInPoints;
 
 	if (m_eDeviceOrientation == CCDeviceOrientationLandscapeLeft
 		|| m_eDeviceOrientation == CCDeviceOrientationLandscapeRight)
@@ -491,17 +464,12 @@ CCSize CCDirector::getWinSize(void)
 
 CCSize CCDirector::getWinSizeInPixels()
 {
-    /*
 	CCSize s = getWinSize();
 
 	s.width *= CC_CONTENT_SCALE_FACTOR();
 	s.height *= CC_CONTENT_SCALE_FACTOR();
 
 	return s;
-     */
-    return m_obWinSizeInPixels;
-
-    //return CCSizeMake(m_obTargetWindowSize.width * m_fXScaleFactor, m_obTargetWindowSize.height * m_fYScaleFactor);
 }
 
 // return the current frame size
@@ -514,9 +482,8 @@ void CCDirector::reshapeProjection(const CCSize& newWindowSize)
 {
     CC_UNUSED_PARAM(newWindowSize);
     m_obWinSizeInPoints = m_pobOpenGLView->getSize();
-	//m_obWinSizeInPixels = CCSizeMake(m_obWinSizeInPoints.width * m_fContentScaleFactor,
-		                             //m_obWinSizeInPoints.height * m_fContentScaleFactor);
-    m_obWinSizeInPixels = CCSizeMake(m_obTargetWindowSize.width * m_fXScaleFactor, m_obTargetWindowSize.height * m_fYScaleFactor);
+	m_obWinSizeInPixels = CCSizeMake(m_obWinSizeInPoints.width * m_fContentScaleFactor,
+		                             m_obWinSizeInPoints.height * m_fContentScaleFactor);
 
 	setProjection(m_eProjection);
 }
@@ -613,7 +580,22 @@ void CCDirector::resetDirector()
 	CCScheduler::purgeSharedScheduler();
 	CCTextureCache::purgeSharedTextureCache();
 }
+    
+void CCDirector::setTargetWinsize(CCSize winSize)
+{
+    m_fXScale = m_obWinSizeInPoints.width / winSize.width;
+    m_fYScale = m_obWinSizeInPoints.height / winSize.height;
+}
+    
+float CCDirector::getXScale()
+{
+    return m_fXScale;    
+}
 
+float CCDirector::getYScale()
+{
+    return m_fYScale;
+}
 
 void CCDirector::purgeDirector()
 {
@@ -773,7 +755,6 @@ void CCDirector::updateContentScaleFactor()
 	if (m_pobOpenGLView->canSetContentScaleFactor())
 	{
 		m_pobOpenGLView->setContentScaleFactor(m_fContentScaleFactor);
-        m_fContentScaleFactor = 1.0;
 		m_bIsContentScaleSupported = true;
 	}
 	else
@@ -820,7 +801,6 @@ bool CCDirector::enableRetinaDisplay(bool enabled)
 
 	float newScale = (float)(enabled ? 2 : 1);
 	setContentScaleFactor(newScale);
-    m_fXScaleFactor = m_fYScaleFactor = 2.0;
 
     // release cached texture
     CCTextureCache::purgeSharedTextureCache();

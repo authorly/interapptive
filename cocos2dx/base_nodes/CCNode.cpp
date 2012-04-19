@@ -1080,8 +1080,7 @@ CCAffineTransform CCNode::nodeToParentTransform(void)
 
 		if(! CCPoint::CCPointEqualToPoint(m_tPositionInPixels, CCPointZero))
 		{
-			//m_tTransform = CCAffineTransformTranslate(m_tTransform, m_tPositionInPixels.x, m_tPositionInPixels.y);
-            m_tTransform = CCAffineTransformTranslate(m_tTransform, m_tPosition.x, m_tPosition.y);
+			m_tTransform = CCAffineTransformTranslate(m_tTransform, m_tPositionInPixels.x, m_tPositionInPixels.y);
 		}
 
 		if(m_fRotation != 0)
