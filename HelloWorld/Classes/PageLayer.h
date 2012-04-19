@@ -10,6 +10,7 @@ class PageLayer : public cocos2d::CCLayer
 public:
 	static PageLayer* pageLayerWithPage(Page* page);
 	void touchCallBack(float flag);
+    virtual void onEnterTransitionDidFinish();
     virtual void registerWithTouchDispatcher(void);
     virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     //virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);

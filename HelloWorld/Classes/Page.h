@@ -13,6 +13,7 @@ typedef struct settings
 	int                number;
 	std::string        fontType;
 	cocos2d::ccColor3B fontColor;
+    cocos2d::ccColor3B fontHighlightColor;
 	int                fontSize;
 
 	// background music info

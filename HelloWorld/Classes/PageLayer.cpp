@@ -28,10 +28,12 @@ PageLayer* PageLayer::pageLayerWithPage(Page* page)
 	layer->autorelease();
     
     layer->page = page;
+    
+    // preload backgound music
+    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(page->settings.audioFilePath.c_str());
 
 	layer->createSprites();
 	layer->createParagraph(0);
-	layer->playBackgroundMusic();
 
 	// add touchable nodes
 	TouchDetection *touchDetector = TouchDetection::node();
@@ -60,6 +62,13 @@ void PageLayer::touchCallBack(float flag)
 void PageLayer::registerWithTouchDispatcher(void)
 {
     CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, PAGELAYER_HANDLER_PRIORITY, true);
+}
+
+void PageLayer::onEnterTransitionDidFinish()
+{
+    playBackgroundMusic();
+    
+    CCLayer::onEnterTransitionDidFinish();
 }
 
 bool PageLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
