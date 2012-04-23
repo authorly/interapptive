@@ -1,10 +1,8 @@
 {
   "Configurations": {
-    "DefaultPngImage": "Default.png",
-    "IconPngImage": "Icon.png",
     "pageFlipSound": {
-      "forward": "page-flip.mp3",
-      "backward": "page-flip.mp3"
+      "forward": "page-flip-sound.mp3",
+      "backward": "page-flip-sound.mp3"
     },
     "pageFlipTransitionDuration": 0.6,
     "paragraphTextFadeDuration": 0.4,
@@ -83,9 +81,8 @@
     },
     "runActionsOnEnter": [
       {
-        "runAfterSwipeNumber": 1,
-        "spriteTag": 1,
-        "actionTag": 20
+        "spriteTag": 100,
+        "actionTag": 22
       }
     ]
   },
@@ -101,7 +98,7 @@
             0
           ],
           "fontHighlightColor": [
-            255,
+            0,
             0,
             0
           ],

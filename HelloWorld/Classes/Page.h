@@ -13,6 +13,7 @@ typedef struct settings
 	int                number;
 	std::string        fontType;
 	cocos2d::ccColor3B fontColor;
+    cocos2d::ccColor3B fontHighlightColor;
 	int                fontSize;
 
 	// background music info
@@ -23,15 +24,17 @@ typedef struct settings
 // a line of a paragraph
 typedef struct lineText
 {
-	std::string text;
-	int         yOffset;
-	int         xOffset;
+	std::string         text;
+	int                 yOffset;
+	int                 xOffset;
+    std::vector<string> words;
 } LineText;
 
 typedef struct paragraph
 {
 	std::vector<float>       highlightingTimes;
 	std::vector<LineText*>   linesOfTest;
+    std::string              voiceAudioFile;
 } Paragraph;
 
 typedef struct sprite
@@ -83,8 +86,13 @@ typedef struct storySwipeEnded
 class Page : public cocos2d::CCScene
 {
 public:
+    ~Page();
+    
 	void addAction(int actionTag, cocos2d::CCAction *action);
 	cocos2d::CCAction* getActionByTag(int actionTag);
+    SpriteInfo* getSpriteInfoByTag(int spriteTag);
+    StorySwipeEndedActionsToRun* getStorySwipeEndedActionToRun(int swipeNumber);
+    void splitText(LineText *textLine);
 public:
 	// settings
 	Setting settings;
@@ -103,6 +111,8 @@ public:
 	std::vector<StoryTouchableNode*> storyTouchableNodes;
 
 	StorySwipeEnded storySwipeEnded;
+    
+    
 };
 
 #endif // __PAGE_H__
