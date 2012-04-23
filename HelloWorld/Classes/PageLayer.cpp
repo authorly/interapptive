@@ -16,6 +16,8 @@ using namespace std;
 // page layer tag
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 10
+// space between words of text
+#define WORD_SPACING 8
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
@@ -369,17 +371,82 @@ void PageLayer::createParagraph(int index)
             {
                 string &word = lineText->words[i];
                 CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);
+                
                 label->setColor(fontColor);
                 label->setPosition(ccp(xOffset, yOffset));
-                
-                // change xoffet
-                xOffset += label->getContentSize().width;
                 
                 // record label in a vector, don't have to retain it
                 // because it is retained by labelLayer
                 paragraphs.push_back(label);
                 
                 paragraphLayer->addChild(label);
+
+                //                              
+                // New word spacing/offset codes - Chris Whitman
+                //
+                
+                // If we are on the last word of a line, do not perform increment on xOffset 
+                if (i < lineText->words.size()-1) {
+                    
+                    // Local variable for the next word (string) in line (lineText array)
+                    string &word = lineText->words[i+1];
+                    
+                    // Create a CCLabelTTF for the next word so we may measure it
+                    CCLabelTTF *nextLabel = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);
+                    
+                   
+                    // START: xOffset                                                                    
+                    //       
+                    //    Result:
+                    //
+                    //        HOORAY
+                    //        HOORAY
+                    //           
+                    // 
+                    // 1: xOffset += label->getContentSize().width/2                                     
+                    //                                                                                   
+                    // Increment x coordinates position for next word.                                   
+                    // Since we place text by its center, we divide current label's width by 2. 
+                    //     - This represents the current labels width, which must be added to the xOffset
+                    //     - After adding this width, (label->getContentSize().width/2),
+                    //       the center of next label would be placed at the end of the current label
+                    //
+                    //    Result:
+                    // 
+                    //     HOORAY
+                    //        HOORAY
+                    //
+                    //
+                    // 2: xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2
+                    //
+                    // Then, we add the width of the next label, divided by 2 (nextLabel->getContentSize().width/2).
+                    //     - This will give enough spacing for beginning of the next label to be placed
+                    //       at the end of the current label
+                    //
+                    //   Result:
+                    //
+                    //     HOORAY
+                    //           HOORAY
+                    //
+                    //
+                    // 3. xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING
+                    //
+                    // Then, we increment by the WORD_SPACING constant, this is the spacing between the words.
+                    //     - This may need to be scaled according to font size?
+                    //       Because a large font size must require more spacing then a small font size. 
+                    //       So, we must take the different font sizes into account when considering WORD_SPACING
+                    //       We may need a minimum font size and maximum font size for this. 
+                    //
+                    //    Result:
+                    //
+                    //     HOORAY
+                    //             HOORAY
+                    //
+                    //
+                    // END: xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING
+                    
+                    xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING;
+                }
             }
 		}
     }
