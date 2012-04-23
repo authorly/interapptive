@@ -161,6 +161,7 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 		{
 			paragraph->highlightingTimes.push_back((float)highlightingTimes[j].asDouble());
 		}
+        
 		// linesOfText
 		Json::Value linesOfText = jsonParagraph["linesOfText"];
 		for (unsigned int k = 0; k < linesOfText.size(); ++k)
@@ -171,14 +172,18 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 			lineText->xOffset = jsonLineText["xOffset"].asInt() * xScale;
 			lineText->yOffset = jsonLineText["yOffset"].asInt() * yScale;
 
+            // split text into words
+            page->splitText(lineText);
+            
 			paragraph->linesOfTest.push_back(lineText);
 		}
+        
+        // voiceAudioFile
+        paragraph->voiceAudioFile = jsonParagraph["voiceAudioFile"].asString();
 
 		// add a new paragraph
 		paragraphs.push_back(paragraph);	
 	}
-
-	
 }
 
 void JsonParser::parseWithAPI(Page* page, Json::Value &jsonAPI)
