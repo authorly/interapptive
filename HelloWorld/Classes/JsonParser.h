@@ -10,6 +10,16 @@ class JsonParser
 public:
 	static bool parseJson(const char* pathOfJasonFile);
 private:
+    // parse configurations
+    static void parseConfigurations(Json::Value &root);
+    
+    // parse main menu
+    static void parseMainMenu(Json::Value &root);
+    
+    // parse pages
+    
+    static void parsePages(Json::Value &root);
+    
 	// jsonPage is "Page" in json data
 	static void parseWithPage(Page* page, Json::Value &jsonPage);
 	static void parseWithSettings(Page* page, Json::Value &jsonSettings);

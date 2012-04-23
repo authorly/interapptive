@@ -4,6 +4,7 @@
 #include "PageLayer.h"
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
+#include "Configurations.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -17,6 +18,10 @@ void PageManager::parseJsonAndRun(const char* pathOfJasonFile)
 	{
 		return;
 	}
+    
+    // preload effects
+    SimpleAudioEngine::sharedEngine()->preloadEffect(Configurations::backwardEffect.c_str());
+    SimpleAudioEngine::sharedEngine()->preloadEffect(Configurations::forwardEffect.c_str());
 
 	// create scene for page number 1 and run
 	CCDirector::sharedDirector()->runWithScene(createSceneByPageNumber(1));
@@ -47,7 +52,18 @@ void PageManager::turnToPage(int pageNumber)
     CCScene *scene = createSceneByPageNumber(pageNumber);
     if (scene)
     {
-        CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(2, scene, backWards));
+        // play effect
+        if (backWards)
+        {
+            SimpleAudioEngine::sharedEngine()->playEffect(Configurations::backwardEffect.c_str(), false);
+        }
+        else 
+        {
+            SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
+        }
+        
+        // turn page
+        CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
     }
 }
 

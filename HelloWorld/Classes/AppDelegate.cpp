@@ -118,7 +118,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // parse with json data
     // pages/structure.json is designed for iphone
     // pages/structure-ipad.json is designed for ipad
-	PageManager::parseJsonAndRun("pages/structure-ipad.json");
+	PageManager::parseJsonAndRun("structure-ipad.json");
 
 	return true;
 }

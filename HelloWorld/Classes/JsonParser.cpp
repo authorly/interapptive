@@ -1,5 +1,6 @@
 #include "JsonParser.h"
 #include "PageManager.h"
+#include "Configurations.h"
 #include "cocos2d.h"
 
 #include <json/value.h>
@@ -34,7 +35,48 @@ bool JsonParser::parseJson(const char* pathOfJasonFile)
 		return false;
 	}
 
-	// parse elements
+    // parse json data
+    parseConfigurations(root);
+    parseMainMenu(root);
+	parsePages(root);
+
+	return true;;
+}
+
+void JsonParser::parseConfigurations(Json::Value &root)
+{
+    Json::Value configurations = root["Configurations"];
+    // forward effect
+    Configurations::forwardEffect = configurations["pageFlipSound"]["forward"].asCString();
+    // backward effect
+    Configurations::backwardEffect = configurations["pageFlipSound"]["backward"].asCString();
+    // page flip transition duration
+    Configurations::pageFlipTransitionDuration = (float)configurations["pageFlipTransitionDuration"].asDouble();
+    // paragraph text fade duration
+    Configurations::paragraphTextFadeDuration = (float)configurations["paragraphTextFadeDuration"].asDouble();
+    
+    // home menu for pages
+    
+    Json::Value homeMenuForPages = configurations["homeMenuForPages"];
+    // normal state image
+    Configurations::homeButtonNormalStateImage = homeMenuForPages["normalStateImage"].asCString();
+    // tapped state iamge
+    Configurations::homeButtonTappedStateImage = homeMenuForPages["tappedStateImage"].asCString();
+    // position
+    int x = 0, y = 1;
+    Configurations::homeButtonPosition.x = (float)homeMenuForPages["position"][x].asDouble();
+    Configurations::homeButtonPosition.y = (float)homeMenuForPages["position"][y].asDouble();
+}
+
+///@todo
+void JsonParser::parseMainMenu(Json::Value &root)
+{
+    Json::Value mainMenu = root["MainMenu"];
+}
+
+void JsonParser::parsePages(Json::Value &root)
+{
+    // parse elements
 	// root is objectValue "Pages"
 	//Json::Value pages = root.get("Pages", "UTF-8");
 	Json::Value pages = root["Pages"];
@@ -47,11 +89,9 @@ bool JsonParser::parseJson(const char* pathOfJasonFile)
 		Json::Value elementAPI = pages[index]["API"];
 		parseWithPage(page, elementPage);
 		parseWithAPI(page, elementAPI);
-
+        
 		PageManager::pages[page->settings.number] = page;
 	}
-
-	return true;;
 }
 
 void JsonParser::parseWithPage(Page* page, Json::Value &jsonPage)
@@ -72,15 +112,25 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
 	settings.number = jsonSettings["number"].asInt();
 	// fontType
 	settings.fontType = jsonSettings["fontType"].asCString();
+    
 	// fontColor(r,g,b)
 	Json::Value fontColor = jsonSettings["fontColor"];
 	int r = 0, g = 1, b = 2;
 	settings.fontColor.r = fontColor[r].asUInt();
 	settings.fontColor.g = fontColor[g].asUInt();
 	settings.fontColor.b = fontColor[b].asUInt();
+    
+    // font highlight color
+    Json::Value fontHighlightColor = jsonSettings["fontHighlightColor"];
+    settings.fontHighlightColor.r = fontHighlightColor[r].asUInt();
+    settings.fontHighlightColor.g = fontHighlightColor[g].asUInt();
+    settings.fontHighlightColor.b = fontHighlightColor[b].asUInt();
+    
 	// font size
 	settings.fontSize = jsonSettings["fontSize"].asInt() * scale;
+    
 	// background music file
+    // may not have background music to play, so should check it
 	Json::Value backgroundMusicInfo = jsonSettings["backgroundMusicFile"];
     if (! backgroundMusicInfo.isNull())
     {
@@ -111,6 +161,7 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 		{
 			paragraph->highlightingTimes.push_back((float)highlightingTimes[j].asDouble());
 		}
+        
 		// linesOfText
 		Json::Value linesOfText = jsonParagraph["linesOfText"];
 		for (unsigned int k = 0; k < linesOfText.size(); ++k)
@@ -121,14 +172,18 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 			lineText->xOffset = jsonLineText["xOffset"].asInt() * xScale;
 			lineText->yOffset = jsonLineText["yOffset"].asInt() * yScale;
 
+            // split text into words
+            page->splitText(lineText);
+            
 			paragraph->linesOfTest.push_back(lineText);
 		}
+        
+        // voiceAudioFile
+        paragraph->voiceAudioFile = jsonParagraph["voiceAudioFile"].asString();
 
 		// add a new paragraph
 		paragraphs.push_back(paragraph);	
 	}
-
-	
 }
 
 void JsonParser::parseWithAPI(Page* page, Json::Value &jsonAPI)
