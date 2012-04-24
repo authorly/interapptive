@@ -21,6 +21,7 @@ public:
     virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     
     void highlightParagraph();
+    void highlightSchedule(cocos2d::ccTime dt);
     void setParagraphVisible();
 private:
     PageLayer();
@@ -54,7 +55,7 @@ private:
     // the page that pageLayer use, weak ref
     Page *page;
     // record all labels
-    std::vector<cocos2d::CCLabelTTF*> paragraphs;
+    std::vector<cocos2d::CCLabelTTF*> wordsOfParagraph;
     cocos2d::CCLayer *paragraphLayer;
 };
 
