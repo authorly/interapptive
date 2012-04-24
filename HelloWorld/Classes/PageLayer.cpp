@@ -216,8 +216,8 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
         // get action
         CCAction *action = page->getActionByTag(swipeEndedActionsToRun->actionTag);
         assert(action != NULL);
-        // the action should CCScaleTo or CCMoveTo
-        assert(dynamic_cast<CCScaleTo*>(action) != NULL || dynamic_cast<CCMoveTo*>(action) != NULL);
+        // the action should be CCScaleTo or CCMoveTo
+        assert(dynamic_cast<CCScaleBy*>(action) != NULL || dynamic_cast<CCMoveBy*>(action) != NULL);
         
         // caculate delay time
         delay = ((CCFiniteTimeAction*)action)->getDuration();
@@ -226,16 +226,17 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
         {
             // swipe left
             sprite->runAction(action);
+            if (dynamic_cast<CCScaleBy*>(action) != NULL)
+            {
+                CCLog("CCScaleBy");
+            }
         }
         else 
         {
             // swipe right
             // run reverse action
-            CCFiniteTimeAction* action = ((CCFiniteTimeAction*)action)->reverse();
-            sprite->runAction(action);
-        }
-        
-        
+            sprite->runAction(((CCActionInterval*)action)->reverse()); 
+        }        
     }
     
     return delay;
@@ -343,7 +344,7 @@ void PageLayer::createParagraph(int index)
         CC_SAFE_RELEASE_NULL(paragraphLayer);
         
         // clear paragrsphs
-        paragraphs.clear();
+        wordsOfParagraph.clear();
         
         currentIndexOfParagraph = index;
         
@@ -379,7 +380,7 @@ void PageLayer::createParagraph(int index)
                 
                 // record label in a vector, don't have to retain it
                 // because it is retained by labelLayer
-                paragraphs.push_back(label);
+                wordsOfParagraph.push_back(label);
                 
                 paragraphLayer->addChild(label);
 
@@ -486,12 +487,18 @@ void PageLayer::setParagraphVisible()
 
 void PageLayer::highlightParagraph()
 {
-    ccColor3B fontColor = page->settings.fontColor;
-    ccColor3B highlightColor = page->settings.fontHighlightColor;
+    CCScheduler::sharedScheduler()->scheduleSelector(schedule_selector(PageLayer::highlightSchedule), this, 0, false);
     
-    
+    // change first word's color
     
     // play corresponding effect
+}
+
+void PageLayer::highlightSchedule(ccTime dt)
+{
+    ccColor3B fontColor = page->settings.fontColor;
+    ccColor3B highlightColor = page->settings.fontHighlightColor;
+    static int highlightTime = 0;
 }
 
 void PageLayer::playBackgroundMusic()
