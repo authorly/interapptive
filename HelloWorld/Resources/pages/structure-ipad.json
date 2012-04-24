@@ -154,7 +154,7 @@
         }
       },
       "API": {
-        "CCMoveTo": [
+        "CCMoveBy": [
           {
             "position": [
               400,
@@ -164,7 +164,7 @@
             "actionTag": 20
           }
         ],
-        "CCScaleTo": [
+        "CCMoveTo": [
           {
             "intensity": 1.4,
             "duration": 3,
@@ -392,21 +392,31 @@
         }
       },
       "API": {
-				"CCMoveTo": [
+				"CCMoveBy": [
           {
             "position": [
-              400,
-              400
+              300,
+              0
             ],
             "duration": 3,
             "actionTag": 30
           }
         ],
-        "CCScaleTo": [
+        "CCScaleBy": [
           {
             "intensity": 1.4,
             "duration": 3,
             "actionTag": 31
+          },
+					{
+            "intensity": 1.2,
+            "duration": 0,
+            "actionTag": 32
+          },
+					{
+            "intensity": 1.0,
+            "duration": 3,
+            "actionTag": 3
           }
         ],
         "CCSprites": [
@@ -414,9 +424,12 @@
             "image": "background0020.jpg",
             "spriteTag": 2,
             "position": [
-              512,
+              770,
               384
-            ]
+            ], 
+						"actions": [
+							32
+						]
           }
         ],
         "CCStorySwipeEnded": {
@@ -425,6 +438,11 @@
               "runAfterSwipeNumber": 1,
               "spriteTag": 2,
               "actionTag": 30
+            },
+						{
+              "runAfterSwipeNumber": 1,
+              "spriteTag": 2,
+              "actionTag": 34
             }
           ]
         }
