@@ -178,9 +178,6 @@
             "position": [
               512,
               384
-            ],
-            "actions": [
-              20
             ]
           }
         ],
@@ -395,6 +392,23 @@
         }
       },
       "API": {
+				"CCMoveTo": [
+          {
+            "position": [
+              400,
+              400
+            ],
+            "duration": 3,
+            "actionTag": 30
+          }
+        ],
+        "CCScaleTo": [
+          {
+            "intensity": 1.4,
+            "duration": 3,
+            "actionTag": 31
+          }
+        ],
         "CCSprites": [
           {
             "image": "background0020.jpg",
@@ -404,7 +418,16 @@
               384
             ]
           }
-        ]
+        ],
+        "CCStorySwipeEnded": {
+          "runAction": [
+            {
+              "runAfterSwipeNumber": 1,
+              "spriteTag": 2,
+              "actionTag": 30
+            }
+          ]
+        }
       }
     },
     {
