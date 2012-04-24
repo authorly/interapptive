@@ -68,6 +68,8 @@ void PageLayer::onEnter()
 	touchDetector->setIsTouchEnabled(true);
     
     setIsTouchEnabled(true);
+    
+    CCLayer::onEnter();
 }
 
 void PageLayer::onExit()
