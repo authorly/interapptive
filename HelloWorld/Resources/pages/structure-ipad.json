@@ -395,7 +395,7 @@
 				"CCMoveBy": [
           {
             "position": [
-              300,
+              -300,
               0
             ],
             "duration": 3,
@@ -409,14 +409,14 @@
             "actionTag": 31
           },
 					{
-            "intensity": 1.2,
+            "intensity": 1.5,
             "duration": 0,
             "actionTag": 32
           },
 					{
             "intensity": 1.0,
             "duration": 3,
-            "actionTag": 3
+            "actionTag": 34
           }
         ],
         "CCSprites": [
