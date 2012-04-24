@@ -166,7 +166,7 @@
         ],
         "CCScaleTo": [
           {
-            "intensity": 1.1,
+            "intensity": 1.4,
             "duration": 3,
             "actionTag": 22
           }
@@ -211,6 +211,11 @@
               "runAfterSwipeNumber": 1,
               "spriteTag": 1,
               "actionTag": 20
+            },
+            {
+              "runAfterSwipeNumber": 1,
+              "spriteTag": 1,
+              "actionTag": 22
             }
           ],
           "addChild": {
