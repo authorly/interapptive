@@ -462,7 +462,7 @@ void PageLayer::showParagraph(float delay)
     
     if (delay != 0)
     {
-        //paragraphLayer->setIsVisible(false);
+        paragraphLayer->setIsVisible(false);
         paragraphLayer->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delay),
                                                       showParagraphAction,
                                                       fadeIn,
