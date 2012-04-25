@@ -24,6 +24,7 @@ PageLayer::PageLayer()
 , beginPoint(0, 0)
 , page(NULL)
 , paragraphLayer(NULL)
+, highlightCallbackTimes(0)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -147,6 +148,8 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     
     if (isSwipeLeft(beginPoint, endPoint)) 
     {
+        stopHightAndPlayEffect();
+        
         if (currentIndexOfParagraph == (page->paragraphs.size() - 1))
         {
             PageManager::turnToPage(page->settings.number + 1);
@@ -159,6 +162,8 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     
     if (isSwipeRight(beginPoint, endPoint)) 
     {
+        stopHightAndPlayEffect();
+        
         if (currentIndexOfParagraph == 0)
         {
             PageManager::turnToPage(page->settings.number - 1);
@@ -487,18 +492,59 @@ void PageLayer::setParagraphVisible()
 
 void PageLayer::highlightParagraph()
 {
-    CCScheduler::sharedScheduler()->scheduleSelector(schedule_selector(PageLayer::highlightSchedule), this, 0, false);
+    CCScheduler::sharedScheduler()->scheduleSelector(schedule_selector(PageLayer::highlightSchedule), 
+                                                     this, 
+                                                     page->paragraphs[currentIndexOfParagraph]->highlightingTimes[0], 
+                                                     false);
     
     // change first word's color
+    wordsOfParagraph[0]->setColor(page->settings.fontHighlightColor);
     
     // play corresponding effect
+    SimpleAudioEngine::sharedEngine()->playEffect(page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str());
 }
 
 void PageLayer::highlightSchedule(ccTime dt)
 {
     ccColor3B fontColor = page->settings.fontColor;
     ccColor3B highlightColor = page->settings.fontHighlightColor;
-    static int highlightTime = 0;
+    
+    ++highlightCallbackTimes;
+    
+    if (highlightCallbackTimes == wordsOfParagraph.size())
+    {
+        // don't highlight last word
+        highlightCallbackTimes = 0;
+        wordsOfParagraph[wordsOfParagraph.size()-1]->setColor(fontColor);
+        CCScheduler::sharedScheduler()->unscheduleSelector(schedule_selector(PageLayer::highlightSchedule), this);
+    }
+    else {
+        // unhighlight previous word
+        wordsOfParagraph[highlightCallbackTimes-1]->setColor(fontColor);
+        // highlight current
+        wordsOfParagraph[highlightCallbackTimes]->setColor(highlightColor);
+        
+        // set next schedule time
+        float nextScheduleTime = page->paragraphs[currentIndexOfParagraph]->highlightingTimes[highlightCallbackTimes] -
+        page->paragraphs[currentIndexOfParagraph]->highlightingTimes[highlightCallbackTimes-1];
+        
+        CCScheduler::sharedScheduler()->unscheduleSelector(schedule_selector(PageLayer::highlightSchedule), this);
+        CCScheduler::sharedScheduler()->scheduleSelector(schedule_selector(PageLayer::highlightSchedule), 
+                                                         this, 
+                                                         nextScheduleTime, 
+                                                         false);
+    }
+}
+
+void PageLayer::stopHightAndPlayEffect()
+{
+    // unschedule
+    CCScheduler::sharedScheduler()->unscheduleSelector(schedule_selector(PageLayer::highlightSchedule), this);
+    // stop all effect, I think now it will only have one effect that speaking word.
+    SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    
+    // reset helper data
+    highlightCallbackTimes = 0;
 }
 
 void PageLayer::playBackgroundMusic()
