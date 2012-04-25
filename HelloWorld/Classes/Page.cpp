@@ -70,16 +70,23 @@ SpriteInfo* Page::getSpriteInfoByTag(int spriteTag)
     return NULL;
 }
 
-StorySwipeEndedActionsToRun* Page::getStorySwipeEndedActionToRun(int swipeNumber)
+vector<StorySwipeEndedActionsToRun*>* Page::getStorySwipeEndedActionToRun(int swipeNumber)
 {
+    vector<StorySwipeEndedActionsToRun*>* arrayActionsToRun = NULL;
+    
     for (int i = 0; i < storySwipeEnded.actionsToRun.size(); ++i)
     {
         StorySwipeEndedActionsToRun* actionToRun = storySwipeEnded.actionsToRun[i];
         if (actionToRun->runAfterSwipeNumber == swipeNumber)
         {
-            return actionToRun;
+            if (! arrayActionsToRun)
+            {
+                arrayActionsToRun = new vector<StorySwipeEndedActionsToRun*>();
+            }
+            
+            arrayActionsToRun->push_back(actionToRun);
         }
     }
     
-    return NULL;
+    return arrayActionsToRun;
 }
