@@ -65,9 +65,9 @@ typedef struct storyTouchableNode
 
 typedef struct storySwipeEndedActionsToRun
 {
-	int runAfterSwipeNumber;
-	int spriteTag;
-	int actionTag;
+	int                 runAfterSwipeNumber;
+	int                 spriteTag;
+    std::vector<int>    actionTags;
 } StorySwipeEndedActionsToRun;
 
 typedef struct storySwipeEnded
@@ -91,7 +91,7 @@ public:
 	void addAction(int actionTag, cocos2d::CCAction *action);
 	cocos2d::CCAction* getActionByTag(int actionTag);
     SpriteInfo* getSpriteInfoByTag(int spriteTag);
-    StorySwipeEndedActionsToRun* getStorySwipeEndedActionToRun(int swipeNumber);
+    std::vector<StorySwipeEndedActionsToRun*>* getStorySwipeEndedActionToRun(int swipeNumber);
     void splitText(LineText *textLine);
 public:
 	// settings
