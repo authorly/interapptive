@@ -1,1072 +1,1068 @@
 {
-  "Configurations": {
-    "pageFlipSound": {
-      "forward": "page-flip-sound.mp3",
-      "backward": "page-flip-sound.mp3"
-    },
-    "pageFlipTransitionDuration": 0.6,
-    "paragraphTextFadeDuration": 0.4,
-    "homeMenuForPages": {
-      "normalStateImage": "home-button.png",
-      "tappedStateImage": "home-button-over.png",
-      "position": [
-        20,
-        20
-      ]
-    }
-  },
-  "MainMenu": {
-    "audio": {
-      "backgroundMusic": "background.mp3",
-      "backgroundMusicLoops": 0,
-      "soundEffect": "main-menu-title-sound.mp3",
-      "soundEffectLoops": 1
-    },
-    "CCSprites": [
-      {
-        "image": "background0000.jpg",
-        "spriteTag": 100,
-        "visible": true,
-        "position": [
-          512,
-          384
-        ]
-      },
-      {
-        "image": "stranger-in-the-woods-logo.png",
-        "spriteTag": 101,
-        "visible": false,
-        "position": [
-          512,
-          384
-        ]
-      }
-    ],
-    "MenuItems": [
-      {
-        "normalStateImage": "autoplay.png",
-        "tappedStateImage": "autoplay-over.png",
-        "storyMode": "autoPlay",
-        "position": [
-          112,
-          280
-        ]
-      },
-      {
-        "normalStateImage": "read-it-myself.png",
-        "tappedStateImage": "read-it-myself-over.png",
-        "storyMode": "readItMyself",
-        "position": [
-          112,
-          400
-        ]
-      },
-      {
-        "normalStateImage": "read-to-me.png",
-        "tappedStateImage": "read-to-me-over.png",
-        "storyMode": "readToMe",
-        "position": [
-          112,
-          520
-        ]
-      }
-    ],
-    "API": {
-      "CCFadeIn": [
-        {
-          "duration": 2,
-          "actionTag": 22
-        }
-      ]
-    },
-    "runActionsOnEnter": [
-      {
-        "spriteTag": 100,
-        "actionTag": 22
-      }
-    ]
-  },
-  "Pages": [
-    {
-      "Page": {
-        "settings": {
-          "number": 1,
-          "fontType": "PoeticaChanceryIII.ttf",
-          "fontColor": [
-            255,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            0,
-            0,
-            0
-          ],
-          "fontSize": 48,
-          "backgroundMusicFile": {
-            "loop": true,
-            "audioFilePath": "background.mp3"
-          }
+    "Configurations": {
+        "pageFlipSound": {
+            "forward": "page-flip-sound.mp3",
+            "backward": "page-flip-sound.mp3"
         },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-1-paragraph-1.mp3",
-              "highlightingTimes": [
-                0.378,
-                0.766,
-                0.9047,
-                1.0238,
-                1.299,
-                1.758,
-                2.6864,
-                2.9274,
-                3.1327,
-                3.3603,
-                4.0474,
-                4.2724,
-                4.4625,
-                4.6856,
-                5.0783,
-                5.64,
-                6.6
-              ],
-              "linesOfText": [
-                {
-                  "text": "For those who protect wild places",
-                  "yOffset": 250,
-                  "xOffset": 300
-                },
-                {
-                  "text": "and to the snowman that lives",
-                  "yOffset": 195,
-                  "xOffset": 322
-                },
-                {
-                  "text": "in every child's heart.",
-                  "yOffset": 140,
-                  "xOffset": 375
-                }
-              ]
-            }
-          ]
+        "pageFlipTransitionDuration": 0.6,
+        "paragraphTextFadeDuration": 0.4,
+        "homeMenuForPages": {
+            "normalStateImage": "home-button.png",
+            "tappedStateImage": "home-button-over.png",
+            "position": [
+                         20,
+                         20
+                         ]
         }
-      },
-      "API": {
-        "CCMoveBy": [
-          {
-            "position": [
-              400,
-              400
-            ],
-            "duration": 3,
-            "actionTag": 20
-          }
-        ],
-        "CCMoveTo": [
-          {
-            "intensity": 1.4,
-            "duration": 3,
-            "actionTag": 22
-          }
-        ],
+    },
+    "MainMenu": {
+        "audio": {
+            "backgroundMusic": "background.mp3",
+            "backgroundMusicLoops": 0,
+            "soundEffect": "main-menu-title-sound.mp3",
+            "soundEffectLoops": 1
+        },
         "CCSprites": [
-          {
-            "image": "background0010.jpg",
-            "spriteTag": 1,
-            "position": [
-              512,
-              384
-            ]
-          }
-        ],
-        "CCStoryTouchableNode": {
-          "nodes": [
-            {
-              "glitterIndicator": false,
-              "touchFlag": 1,
-              "position": [
-                20,
-                20
-              ],
-              "radius": 20,
-              "videoToPlay": "filename (null if sound or action values are present)",
-              "soundToPlay": "filename (null if action or video values are present)",
+                      {
+                      "image": "background0000.jpg",
+                      "spriteTag": 100,
+                      "visible": true,
+                      "position": [
+                                   512,
+                                   384
+                                   ]
+                      },
+                      {
+                      "image": "stranger-in-the-woods-logo.png",
+                      "spriteTag": 101,
+                      "visible": false,
+                      "position": [
+                                   512,
+                                   384
+                                   ]
+                      }
+                      ],
+        "MenuItems": [
+                      {
+                      "normalStateImage": "autoplay.png",
+                      "tappedStateImage": "autoplay-over.png",
+                      "storyMode": "autoPlay",
+                      "position": [
+                                   112,
+                                   280
+                                   ]
+                      },
+                      {
+                      "normalStateImage": "read-it-myself.png",
+                      "tappedStateImage": "read-it-myself-over.png",
+                      "storyMode": "readItMyself",
+                      "position": [
+                                   112,
+                                   400
+                                   ]
+                      },
+                      {
+                      "normalStateImage": "read-to-me.png",
+                      "tappedStateImage": "read-to-me-over.png",
+                      "storyMode": "readToMe",
+                      "position": [
+                                   112,
+                                   520
+                                   ]
+                      }
+                      ],
+        "API": {
+            "CCFadeIn": [
+                         {
+                         "duration": 2,
+                         "actionTag": 22
+                         }
+                         ]
+        },
+        "runActionsOnEnter": [
+                              {
+                              "spriteTag": 100,
+                              "actionTag": 22
+                              }
+                              ]
+    },
+    "Pages": [
+              {
+              "Page": {
+              "settings": {
+              "number": 1,
+              "fontType": "PoeticaChanceryIII.ttf",
+              "fontColor": [
+                            255,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     0,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 48,
+              "backgroundMusicFile": {
+              "loop": true,
+              "audioFilePath": "background.mp3"
+              }
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-1-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   0.378,
+                                                   0.766,
+                                                   0.9047,
+                                                   1.0238,
+                                                   1.299,
+                                                   1.758,
+                                                   2.6864,
+                                                   2.9274,
+                                                   3.1327,
+                                                   3.3603,
+                                                   4.0474,
+                                                   4.2724,
+                                                   4.4625,
+                                                   4.6856,
+                                                   5.0783,
+                                                   5.64,
+                                                   6.6
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "For those who protect wild places",
+                                             "yOffset": 250,
+                                             "xOffset": 300
+                                             },
+                                             {
+                                             "text": "and to the snowman that lives",
+                                             "yOffset": 195,
+                                             "xOffset": 322
+                                             },
+                                             {
+                                             "text": "in every child's heart.",
+                                             "yOffset": 140,
+                                             "xOffset": 375
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCMoveBy": [
+                           {
+                           "position": [
+                                        400,
+                                        400
+                                        ],
+                           "duration": 3,
+                           "actionTag": 20
+                           }
+                           ],
+              "CCMoveTo": [
+                           {
+                           "intensity": 1.4,
+                           "duration": 3,
+                           "actionTag": 22
+                           }
+                           ],
+              "CCSprites": [
+                            {
+                            "image": "background0010.jpg",
+                            "spriteTag": 1,
+                            "position": [
+                                         512,
+                                         384
+                                         ]
+                            }
+                            ],
+              "CCStoryTouchableNode": {
+              "nodes": [
+                        {
+                        "glitterIndicator": false,
+                        "touchFlag": 1,
+                        "position": [
+                                     20,
+                                     20
+                                     ],
+                        "radius": 20,
+                        "videoToPlay": "filename (null if sound or action values are present)",
+                        "soundToPlay": "filename (null if action or video values are present)",
+                        "runAction": [
+                                      {
+                                      "spriteTag": 1,
+                                      "actionTag": 20
+                                      }
+                                      ]
+                        }
+                        ]
+              },
+              "CCStorySwipeEnded": {
               "runAction": [
-                {
-                  "spriteTag": 1,
-                  "actionTag": 20
-                }
-              ]
-            }
-          ]
-        },
-        "CCStorySwipeEnded": {
-          "runAction": [
-            {
-              "runAfterSwipeNumber": 1,
-              "spriteTag": 1,
-              "actionTag": 20
-            },
-            {
-              "runAfterSwipeNumber": 1,
-              "spriteTag": 1,
-              "actionTag": 22
-            }
-          ],
-          "addChild": {
-            "children": [
-              {
-                "spriteTag": 1
+                            {
+                            "runAfterSwipeNumber": 1,
+                            "spriteTag": 1,
+                            "actionTags": [
+                                          20,
+                                          22
+                                          ]
+                            }
+                            ],
+              "addChild": {
+              "children": [
+                           {
+                           "spriteTag": 1
+                           }
+                           ]
+              },
+              "removeChild": {
+              "children": [
+                           {
+                           "spriteTag": 1
+                           }
+                           ]
               }
-            ]
-          },
-          "removeChild": {
-            "children": [
-              {
-                "spriteTag": 1
               }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "Page": {
-        "settings": {
-          "number": 2,
-          "fontType": "arial.ttf",
-          "fontColor": [
-            0,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            255,
-            0,
-            0
-          ],
-          "fontSize": 20
-        },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-2-paragraph-1.mp3",
-              "highlightingTimes": [
-                0.261,
-                0.641,
-                1.598,
-                1.859,
-                2.934,
-                3.395,
-                3.641,
-                4.532,
-                5.316,
-                5.823,
-                5.946,
-                6.146,
-                6.73,
-                7.375,
-                8.727,
-                9.203,
-                9.48,
-                9.588,
-                9.757,
-                10.556,
-                10.74,
-                10.955,
-                11.232,
-                11.6,
-                11.831,
-                12.661
-              ],
-              "linesOfText": [
-                {
-                  "text": "The snowflakes were",
-                  "yOffset": 150,
-                  "xOffset": 170
-                },
-                {
-                  "text": "resting after their twisting,",
-                  "yOffset": 125,
-                  "xOffset": 200
-                },
-                {
-                  "text": "twirling dance through",
-                  "yOffset": 100,
-                  "xOffset": 210
-                },
-                {
-                  "text": "the crisp night air.",
-                  "yOffset": 75,
-                  "xOffset": 190
-                },
-                {
-                  "text": "Every twig in the forest",
-                  "yOffset": 125,
-                  "xOffset": 580
-                },
-                {
-                  "text": "wore a new coat",
-                  "yOffset": 100,
-                  "xOffset": 605
-                },
-                {
-                  "text": "of glimmering white.",
-                  "yOffset": 75,
-                  "xOffset": 660
-                }
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 2,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-2-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   0.261,
+                                                   0.641,
+                                                   1.598,
+                                                   1.859,
+                                                   2.934,
+                                                   3.395,
+                                                   3.641,
+                                                   4.532,
+                                                   5.316,
+                                                   5.823,
+                                                   5.946,
+                                                   6.146,
+                                                   6.73,
+                                                   7.375,
+                                                   8.727,
+                                                   9.203,
+                                                   9.48,
+                                                   9.588,
+                                                   9.757,
+                                                   10.556,
+                                                   10.74,
+                                                   10.955,
+                                                   11.232,
+                                                   11.6,
+                                                   11.831,
+                                                   12.661
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "The snowflakes were",
+                                             "yOffset": 150,
+                                             "xOffset": 170
+                                             },
+                                             {
+                                             "text": "resting after their twisting,",
+                                             "yOffset": 125,
+                                             "xOffset": 200
+                                             },
+                                             {
+                                             "text": "twirling dance through",
+                                             "yOffset": 100,
+                                             "xOffset": 210
+                                             },
+                                             {
+                                             "text": "the crisp night air.",
+                                             "yOffset": 75,
+                                             "xOffset": 190
+                                             },
+                                             {
+                                             "text": "Every twig in the forest",
+                                             "yOffset": 125,
+                                             "xOffset": 580
+                                             },
+                                             {
+                                             "text": "wore a new coat",
+                                             "yOffset": 100,
+                                             "xOffset": 605
+                                             },
+                                             {
+                                             "text": "of glimmering white.",
+                                             "yOffset": 75,
+                                             "xOffset": 660
+                                             }
+                                             ]
+                             },
+                             {
+                             "voiceAudioFile": "page-2-paragraph-2.mp3",
+                             "highlightingTimes": [
+                                                   0.265,
+                                                   0.813,
+                                                   1.235,
+                                                   2.174,
+                                                   2.846,
+                                                   3.347,
+                                                   3.55,
+                                                   4.16,
+                                                   4.504,
+                                                   5.615,
+                                                   5.834,
+                                                   6.021,
+                                                   6.616,
+                                                   7.35,
+                                                   7.977,
+                                                   8.524,
+                                                   8.68,
+                                                   9.244,
+                                                   10.698,
+                                                   10.948,
+                                                   11.512,
+                                                   11.777,
+                                                   12.222,
+                                                   12.497,
+                                                   12.7,
+                                                   13.9
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "Daybreak came",
+                                             "yOffset": 160,
+                                             "xOffset": 225
+                                             },
+                                             {
+                                             "text": "softly moving through the woods",
+                                             "yOffset": 135,
+                                             "xOffset": 265
+                                             },
+                                             {
+                                             "text": "and yawning",
+                                             "yOffset": 110,
+                                             "xOffset": 250
+                                             },
+                                             {
+                                             "text": "as its rays slowly stretched",
+                                             "yOffset": 85,
+                                             "xOffset": 270
+                                             },
+                                             {
+                                             "text": "across the snowy meadows.",
+                                             "yOffset": 60,
+                                             "xOffset": 310
+                                             },
+                                             {
+                                             "text": "The birds",
+                                             "yOffset": 95,
+                                             "xOffset": 545
+                                             },
+                                             {
+                                             "text": "were the first to notice...",
+                                             "yOffset": 70,
+                                             "xOffset": 670
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCMoveBy": [
+                           {
+                           "position": [
+                                        -300,
+                                        0
+                                        ],
+                           "duration": 3,
+                           "actionTag": 30
+                           }
+                           ],
+              "CCScaleBy": [
+                            {
+                            "intensity": 1.4,
+                            "duration": 3,
+                            "actionTag": 31
+                            },
+                            {
+                            "intensity": 1.5,
+                            "duration": 0,
+                            "actionTag": 32
+                            },
+                            {
+                            "intensity": 1.2,
+                            "duration": 3,
+                            "actionTag": 34
+                            }
+                            ],
+              "CCSprites": [
+                            {
+                            "image": "background0020.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         770,
+                                         384
+                                         ],
+                            "actions": [
+                                        32
+                                        ]
+                            }
+                            ],
+              "CCStorySwipeEnded": {
+              "runAction": [
+                            {
+                            "runAfterSwipeNumber": 1,
+                            "spriteTag": 2,
+                            "actionTags": [
+                                          30,
+                                          34
+                                          ]
+                            }
+                            ]
+              }
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 3,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-3-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   1.7737,
+                                                   2.1027,
+                                                   2.7077,
+                                                   3.0367,
+                                                   4.1297,
+                                                   4.2737,
+                                                   4.9317,
+                                                   5.3267,
+                                                   5.4057,
+                                                   6.1297,
+                                                   6.4717,
+                                                   7.1167,
+                                                   7.2257,
+                                                   7.4317,
+                                                   7.7607,
+                                                   7.9717,
+                                                   8.1957,
+                                                   8.9587,
+                                                   10.1557
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "\"Take care!",
+                                             "yOffset": 215,
+                                             "xOffset": 855
+                                             },
+                                             {
+                                             "text": "Take care!\"",
+                                             "yOffset": 190,
+                                             "xOffset": 835
+                                             },
+                                             {
+                                             "text": "The blujays cawed",
+                                             "yOffset": 140,
+                                             "xOffset": 815
+                                             },
+                                             {
+                                             "text": "a warning from high in the tops",
+                                             "yOffset": 115,
+                                             "xOffset": 800
+                                             },
+                                             {
+                                             "text": "of the tall oaks.",
+                                             "yOffset": 90,
+                                             "xOffset": 760
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCSprites": [
+                            {
+                            "image": "background0030.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         512,
+                                         384
+                                         ]
+                            }
+                            ]
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 4,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-4-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   2.0739,
+                                                   2.2699,
+                                                   2.5679,
+                                                   2.9299,
+                                                   3.1279,
+                                                   3.7359,
+                                                   4.9179,
+                                                   5.3539,
+                                                   5.9049,
+                                                   6.1729,
+                                                   6.8769,
+                                                   7.0879,
+                                                   7.2914,
+                                                   8.4279,
+                                                   9.3
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "\"Do you hear the jays calling?\"",
+                                             "yOffset": 560,
+                                             "xOffset": 190
+                                             },
+                                             {
+                                             "text": "Mother Doe spoke softly",
+                                             "yOffset": 535,
+                                             "xOffset": 190
+                                             },
+                                             {
+                                             "text": "to her fawn.",
+                                             "yOffset": 510,
+                                             "xOffset": 190
+                                             }
+                                             ]
+                             },
+                             {
+                             "voiceAudioFile": "page-4-paragraph-2.mp3",
+                             "highlightingTimes": [
+                                                   0.19,
+                                                   0.977,
+                                                   1.294,
+                                                   2.411,
+                                                   2.639,
+                                                   3.172,
+                                                   3.489,
+                                                   3.616,
+                                                   3.756,
+                                                   4.517,
+                                                   4.669,
+                                                   5.113,
+                                                   5.57,
+                                                   5.773,
+                                                   5.938,
+                                                   6.763,
+                                                   6.89,
+                                                   7.334,
+                                                   7.537,
+                                                   7.626,
+                                                   8.514,
+                                                   8.755,
+                                                   9.085,
+                                                   9.276,
+                                                   9.568,
+                                                   9.745,
+                                                   9.847,
+                                                   10.95,
+                                                   12
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "\"Yes,\" he whispered.",
+                                             "yOffset": 590,
+                                             "xOffset": 190
+                                             },
+                                             {
+                                             "text": "\"I always listen to the birds,",
+                                             "yOffset": 540,
+                                             "xOffset": 320
+                                             },
+                                             {
+                                             "text": "the wind blowing through the trees,",
+                                             "yOffset": 515,
+                                             "xOffset": 340
+                                             },
+                                             {
+                                             "text": "the rustling of the leaves",
+                                             "yOffset": 490,
+                                             "xOffset": 330
+                                             },
+                                             {
+                                             "text": "and all the sounds of the woods.\"",
+                                             "yOffset": 465,
+                                             "xOffset": 325
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCSprites": [
+                            {
+                            "image": "background0040.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         512,
+                                         384
+                                         ]
+                            }
+                            ]
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 5,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-5-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   0.575,
+                                                   0.938,
+                                                   1.09,
+                                                   1.191,
+                                                   1.918,
+                                                   2.837,
+                                                   3.119,
+                                                   3.261,
+                                                   3.412,
+                                                   3.725,
+                                                   4.482,
+                                                   4.725,
+                                                   4.927,
+                                                   5.684,
+                                                   6.158,
+                                                   6.391,
+                                                   6.986,
+                                                   7.138,
+                                                   7.643,
+                                                   8.85
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "\"Who-hoo's in the woods?",
+                                             "yOffset": 185,
+                                             "xOffset": 755
+                                             },
+                                             {
+                                             "text": "Where? Where did the jays say?",
+                                             "yOffset": 160,
+                                             "xOffset": 785
+                                             },
+                                             {
+                                             "text": "Where is he?\"",
+                                             "yOffset": 135,
+                                             "xOffset": 770
+                                             },
+                                             {
+                                             "text": "asked the Owl of Many Questions.",
+                                             "yOffset": 110,
+                                             "xOffset": 795
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCSprites": [
+                            {
+                            "image": "background0050.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         812,
+                                         384
+                                         ]
+                            }
+                            ]
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 6,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-6-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   0.575,
+                                                   0.938,
+                                                   1.09,
+                                                   1.191,
+                                                   1.918,
+                                                   2.837,
+                                                   3.119,
+                                                   3.261,
+                                                   3.412,
+                                                   7.643,
+                                                   8.85
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "\"Coo-coo-could that be him?\"",
+                                             "yOffset": 185,
+                                             "xOffset": 755
+                                             },
+                                             {
+                                             "text": "asked the mourning dove.",
+                                             "yOffset": 160,
+                                             "xOffset": 785
+                                             },
+                                             {
+                                             "text": "\"There!",
+                                             "yOffset": 135,
+                                             "xOffset": 770
+                                             },
+                                             {
+                                             "text": "Beyond the old apple tree.",
+                                             "yOffset": 110,
+                                             "xOffset": 795
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCSprites": [
+                            {
+                            "image": "background0060.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         785,
+                                         384
+                                         ]
+                            }
+                            ]
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 7,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-7-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   0.575,
+                                                   0.938,
+                                                   1.09,
+                                                   1.191,
+                                                   1.918,
+                                                   2.837,
+                                                   3.119,
+                                                   3.261
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "Follow the snow trail, past the pond",
+                                             "yOffset": 425,
+                                             "xOffset": 195
+                                             },
+                                             {
+                                             "text": "to where the meadow begins",
+                                             "yOffset": 400,
+                                             "xOffset": 195
+                                             },
+                                             {
+                                             "text": "Not far... not far at all.\"",
+                                             "yOffset": 375,
+                                             "xOffset": 195
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCSprites": [
+                            {
+                            "image": "background0070.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         312,
+                                         384
+                                         ]
+                            }
+                            ]
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 8,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-8-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   0.575,
+                                                   0.938,
+                                                   1.09,
+                                                   1.191,
+                                                   1.918,
+                                                   2.837,
+                                                   3.119,
+                                                   3.261,
+                                                   3.412,
+                                                   3.725,
+                                                   4.482,
+                                                   4.725,
+                                                   4.927,
+                                                   5.684,
+                                                   6.158,
+                                                   6.391,
+                                                   6.986,
+                                                   7.138,
+                                                   7.643,
+                                                   8.85
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "\"Who-hoo's in the woods?",
+                                             "yOffset": 185,
+                                             "xOffset": 755
+                                             },
+                                             {
+                                             "text": "Why is he here?",
+                                             "yOffset": 160,
+                                             "xOffset": 785
+                                             },
+                                             {
+                                             "text": "When? When did the stranger come?",
+                                             "yOffset": 135,
+                                             "xOffset": 770
+                                             },
+                                             {
+                                             "text": "asked the Owl of Many Questions.",
+                                             "yOffset": 110,
+                                             "xOffset": 795
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCSprites": [
+                            {
+                            "image": "background0080.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         512,
+                                         384
+                                         ]
+                            }
+                            ]
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 9,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-9-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   0.575,
+                                                   0.938,
+                                                   1.09,
+                                                   1.191,
+                                                   1.918,
+                                                   2.837,
+                                                   3.119,
+                                                   3.261,
+                                                   3.412,
+                                                   3.725,
+                                                   4.482,
+                                                   4.725,
+                                                   4.927,
+                                                   5.684,
+                                                   6.158,
+                                                   6.391,
+                                                   6.986,
+                                                   7.138,
+                                                   7.643,
+                                                   8.85
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": "\"I’ve been here since early morning,",
+                                             "yOffset": 685,
+                                             "xOffset": 755
+                                             },
+                                             {
+                                             "text": "before the first pale light",
+                                             "yOffset": 660,
+                                             "xOffset": 755
+                                             },
+                                             {
+                                             "text": "on the Eastern Sky,\"",
+                                             "yOffset": 635,
+                                             "xOffset": 755
+                                             },
+                                             {
+                                             "text": "said the munching muskrat.",
+                                             "yOffset": 610,
+                                             "xOffset": 755
+                                             },
+                                             {
+                                             "text": "\"No stranger came this way.",
+                                             "yOffset": 585,
+                                             "xOffset": 755
+                                             },
+                                             {
+                                             "text": "No one passed by my pond.\"",
+                                             "yOffset": 560,
+                                             "xOffset": 755
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+              "CCSprites": [
+                            {
+                            "image": "background0090.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         512,
+                                         384
+                                         ]
+                            }
+                            ]
+              }
+              }
               ]
-            },
-            {
-              "voiceAudioFile": "page-2-paragraph-2.mp3",
-              "highlightingTimes": [
-                0.265,
-                0.813,
-                1.235,
-                2.174,
-                2.846,
-                3.347,
-                3.55,
-                4.16,
-                4.504,
-                5.615,
-                5.834,
-                6.021,
-                6.616,
-                7.35,
-                7.977,
-                8.524,
-                8.68,
-                9.244,
-                10.698,
-                10.948,
-                11.512,
-                11.777,
-                12.222,
-                12.497,
-                12.7,
-                13.9
-              ],
-              "linesOfText": [
-                {
-                  "text": "Daybreak came",
-                  "yOffset": 160,
-                  "xOffset": 225
-                },
-                {
-                  "text": "softly moving through the woods",
-                  "yOffset": 135,
-                  "xOffset": 265
-                },
-                {
-                  "text": "and yawning",
-                  "yOffset": 110,
-                  "xOffset": 250
-                },
-                {
-                  "text": "as its rays slowly stretched",
-                  "yOffset": 85,
-                  "xOffset": 270
-                },
-                {
-                  "text": "across the snowy meadows.",
-                  "yOffset": 60,
-                  "xOffset": 310
-                },
-                {
-                  "text": "The birds",
-                  "yOffset": 95,
-                  "xOffset": 545
-                },
-                {
-                  "text": "were the first to notice...",
-                  "yOffset": 70,
-                  "xOffset": 670
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "API": {
-				"CCMoveBy": [
-          {
-            "position": [
-              -300,
-              0
-            ],
-            "duration": 3,
-            "actionTag": 30
-          }
-        ],
-        "CCScaleBy": [
-          {
-            "intensity": 1.4,
-            "duration": 3,
-            "actionTag": 31
-          },
-					{
-            "intensity": 1.5,
-            "duration": 0,
-            "actionTag": 32
-          },
-					{
-            "intensity": 1.0,
-            "duration": 3,
-            "actionTag": 34
-          }
-        ],
-        "CCSprites": [
-          {
-            "image": "background0020.jpg",
-            "spriteTag": 2,
-            "position": [
-              770,
-              384
-            ], 
-						"actions": [
-							32
-						]
-          }
-        ],
-        "CCStorySwipeEnded": {
-          "runAction": [
-            {
-              "runAfterSwipeNumber": 1,
-              "spriteTag": 2,
-              "actionTag": 30
-            },
-						{
-              "runAfterSwipeNumber": 1,
-              "spriteTag": 2,
-              "actionTag": 34
-            }
-          ]
-        }
-      }
-    },
-    {
-      "Page": {
-        "settings": {
-          "number": 3,
-          "fontType": "arial.ttf",
-          "fontColor": [
-            0,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            255,
-            0,
-            0
-          ],
-          "fontSize": 20
-        },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-3-paragraph-1.mp3",
-              "highlightingTimes": [
-                1.7737,
-                2.1027,
-                2.7077,
-                3.0367,
-                4.1297,
-                4.2737,
-                4.9317,
-                5.3267,
-                5.4057,
-                6.1297,
-                6.4717,
-                7.1167,
-                7.2257,
-                7.4317,
-                7.7607,
-                7.9717,
-                8.1957,
-                8.9587,
-                10.1557
-              ],
-              "linesOfText": [
-                {
-                  "text": "\"Take care!",
-                  "yOffset": 215,
-                  "xOffset": 855
-                },
-                {
-                  "text": "Take care!\"",
-                  "yOffset": 190,
-                  "xOffset": 835
-                },
-                {
-                  "text": "The blujays cawed",
-                  "yOffset": 140,
-                  "xOffset": 815
-                },
-                {
-                  "text": "a warning from high in the tops",
-                  "yOffset": 115,
-                  "xOffset": 800
-                },
-                {
-                  "text": "of the tall oaks.",
-                  "yOffset": 90,
-                  "xOffset": 760
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "API": {
-        "CCSprites": [
-          {
-            "image": "background0030.jpg",
-            "spriteTag": 2,
-            "position": [
-              512,
-              384
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "Page": {
-        "settings": {
-          "number": 4,
-          "fontType": "arial.ttf",
-          "fontColor": [
-            0,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            255,
-            0,
-            0
-          ],
-          "fontSize": 20
-        },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-4-paragraph-1.mp3",
-              "highlightingTimes": [
-                2.0739,
-                2.2699,
-                2.5679,
-                2.9299,
-                3.1279,
-                3.7359,
-                4.9179,
-                5.3539,
-                5.9049,
-                6.1729,
-                6.8769,
-                7.0879,
-                7.2914,
-                8.4279,
-                9.3
-              ],
-              "linesOfText": [
-                {
-                  "text": "\"Do you hear the jays calling?\"",
-                  "yOffset": 560,
-                  "xOffset": 190
-                },
-                {
-                  "text": "Mother Doe spoke softly",
-                  "yOffset": 535,
-                  "xOffset": 190
-                },
-                {
-                  "text": "to her fawn.",
-                  "yOffset": 510,
-                  "xOffset": 190
-                }
-              ]
-            },
-            {
-              "voiceAudioFile": "page-4-paragraph-2.mp3",
-              "highlightingTimes": [
-                0.19,
-                0.977,
-                1.294,
-                2.411,
-                2.639,
-                3.172,
-                3.489,
-                3.616,
-                3.756,
-                4.517,
-                4.669,
-                5.113,
-                5.57,
-                5.773,
-                5.938,
-                6.763,
-                6.89,
-                7.334,
-                7.537,
-                7.626,
-                8.514,
-                8.755,
-                9.085,
-                9.276,
-                9.568,
-                9.745,
-                9.847,
-                10.95,
-                12
-              ],
-              "linesOfText": [
-                {
-                  "text": "\"Yes,\" he whispered.",
-                  "yOffset": 590,
-                  "xOffset": 190
-                },
-                {
-                  "text": "\"I always listen to the birds,",
-                  "yOffset": 540,
-                  "xOffset": 320
-                },
-                {
-                  "text": "the wind blowing through the trees,",
-                  "yOffset": 515,
-                  "xOffset": 340
-                },
-                {
-                  "text": "the rustling of the leaves",
-                  "yOffset": 490,
-                  "xOffset": 330
-                },
-                {
-                  "text": "and all the sounds of the woods.\"",
-                  "yOffset": 465,
-                  "xOffset": 325
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "API": {
-        "CCSprites": [
-          {
-            "image": "background0040.jpg",
-            "spriteTag": 2,
-            "position": [
-              512,
-              384
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "Page": {
-        "settings": {
-          "number": 5,
-          "fontType": "arial.ttf",
-          "fontColor": [
-            0,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            255,
-            0,
-            0
-          ],
-          "fontSize": 20
-        },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-5-paragraph-1.mp3",
-              "highlightingTimes": [
-                0.575,
-                0.938,
-                1.09,
-                1.191,
-                1.918,
-                2.837,
-                3.119,
-                3.261,
-                3.412,
-                3.725,
-                4.482,
-                4.725,
-                4.927,
-                5.684,
-                6.158,
-                6.391,
-                6.986,
-                7.138,
-                7.643,
-                8.85
-              ],
-              "linesOfText": [
-                {
-                  "text": "\"Who-hoo's in the woods?",
-                  "yOffset": 185,
-                  "xOffset": 755
-                },
-                {
-                  "text": "Where? Where did the jays say?",
-                  "yOffset": 160,
-                  "xOffset": 785
-                },
-                {
-                  "text": "Where is he?\"",
-                  "yOffset": 135,
-                  "xOffset": 770
-                },
-                {
-                  "text": "asked the Owl of Many Questions.",
-                  "yOffset": 110,
-                  "xOffset": 795
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "API": {
-        "CCSprites": [
-          {
-            "image": "background0050.jpg",
-            "spriteTag": 2,
-            "position": [
-              812,
-              384
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "Page": {
-        "settings": {
-          "number": 6,
-          "fontType": "arial.ttf",
-          "fontColor": [
-            0,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            255,
-            0,
-            0
-          ],
-          "fontSize": 20
-        },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-6-paragraph-1.mp3",
-              "highlightingTimes": [
-                0.575,
-                0.938,
-                1.09,
-                1.191,
-                1.918,
-                2.837,
-                3.119,
-                3.261,
-                3.412,
-                7.643,
-                8.85
-              ],
-              "linesOfText": [
-                {
-                  "text": "\"Coo-coo-could that be him?\"",
-                  "yOffset": 185,
-                  "xOffset": 755
-                },
-                {
-                  "text": "asked the mourning dove.",
-                  "yOffset": 160,
-                  "xOffset": 785
-                },
-                {
-                  "text": "\"There!",
-                  "yOffset": 135,
-                  "xOffset": 770
-                },
-                {
-                  "text": "Beyond the old apple tree.",
-                  "yOffset": 110,
-                  "xOffset": 795
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "API": {
-        "CCSprites": [
-          {
-            "image": "background0060.jpg",
-            "spriteTag": 2,
-            "position": [
-              785,
-              384
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "Page": {
-        "settings": {
-          "number": 7,
-          "fontType": "arial.ttf",
-          "fontColor": [
-            0,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            255,
-            0,
-            0
-          ],
-          "fontSize": 20
-        },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-7-paragraph-1.mp3",
-              "highlightingTimes": [
-                0.575,
-                0.938,
-                1.09,
-                1.191,
-                1.918,
-                2.837,
-                3.119,
-                3.261
-              ],
-              "linesOfText": [
-                {
-                  "text": "Follow the snow trail, past the pond",
-                  "yOffset": 425,
-                  "xOffset": 195
-                },
-                {
-                  "text": "to where the meadow begins",
-                  "yOffset": 400,
-                  "xOffset": 195
-                },
-                {
-                  "text": "Not far... not far at all.\"",
-                  "yOffset": 375,
-                  "xOffset": 195
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "API": {
-        "CCSprites": [
-          {
-            "image": "background0070.jpg",
-            "spriteTag": 2,
-            "position": [
-              312,
-              384
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "Page": {
-        "settings": {
-          "number": 8,
-          "fontType": "arial.ttf",
-          "fontColor": [
-            0,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            255,
-            0,
-            0
-          ],
-          "fontSize": 20
-        },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-8-paragraph-1.mp3",
-              "highlightingTimes": [
-                0.575,
-                0.938,
-                1.09,
-                1.191,
-                1.918,
-                2.837,
-                3.119,
-                3.261,
-                3.412,
-                3.725,
-                4.482,
-                4.725,
-                4.927,
-                5.684,
-                6.158,
-                6.391,
-                6.986,
-                7.138,
-                7.643,
-                8.85
-              ],
-              "linesOfText": [
-                {
-                  "text": "\"Who-hoo's in the woods?",
-                  "yOffset": 185,
-                  "xOffset": 755
-                },
-                {
-                  "text": "Why is he here?",
-                  "yOffset": 160,
-                  "xOffset": 785
-                },
-                {
-                  "text": "When? When did the stranger come?",
-                  "yOffset": 135,
-                  "xOffset": 770
-                },
-                {
-                  "text": "asked the Owl of Many Questions.",
-                  "yOffset": 110,
-                  "xOffset": 795
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "API": {
-        "CCSprites": [
-          {
-            "image": "background0080.jpg",
-            "spriteTag": 2,
-            "position": [
-              512,
-              384
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "Page": {
-        "settings": {
-          "number": 9,
-          "fontType": "arial.ttf",
-          "fontColor": [
-            0,
-            0,
-            0
-          ],
-          "fontHighlightColor": [
-            255,
-            0,
-            0
-          ],
-          "fontSize": 20
-        },
-        "text": {
-          "paragraphs": [
-            {
-              "delayForPanning": true,
-              "voiceAudioFile": "page-9-paragraph-1.mp3",
-              "highlightingTimes": [
-                0.575,
-                0.938,
-                1.09,
-                1.191,
-                1.918,
-                2.837,
-                3.119,
-                3.261,
-                3.412,
-                3.725,
-                4.482,
-                4.725,
-                4.927,
-                5.684,
-                6.158,
-                6.391,
-                6.986,
-                7.138,
-                7.643,
-                8.85
-              ],
-              "linesOfText": [
-                {
-                  "text": "\"I’ve been here since early morning,",
-                  "yOffset": 685,
-                  "xOffset": 755
-                },
-                {
-                  "text": "before the first pale light",
-                  "yOffset": 660,
-                  "xOffset": 755
-                },
-                {
-                  "text": "on the Eastern Sky,\"",
-                  "yOffset": 635,
-                  "xOffset": 755
-                },
-                {
-                  "text": "said the munching muskrat.",
-                  "yOffset": 610,
-                  "xOffset": 755
-                },
-                {
-                  "text": "\"No stranger came this way.",
-                  "yOffset": 585,
-                  "xOffset": 755
-                },
-                {
-                  "text": "No one passed by my pond.\"",
-                  "yOffset": 560,
-                  "xOffset": 755
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "API": {
-        "CCSprites": [
-          {
-            "image": "background0090.jpg",
-            "spriteTag": 2,
-            "position": [
-              512,
-              384
-            ]
-          }
-        ]
-      }
-    }
-  ]
 }

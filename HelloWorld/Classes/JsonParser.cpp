@@ -791,10 +791,14 @@ void JsonParser::parseWithStorySwipeEnded(Page *page, Json::Value &value)
 			action->runAfterSwipeNumber = runAction[i]["runAfterSwipeNumber"].asInt();
 			// spriteTag
 			action->spriteTag = runAction[i]["spriteTag"].asInt();
-			// actionTag
-			action->actionTag = runAction[i]["actionTag"].asInt();
-
-			page->storySwipeEnded.actionsToRun.push_back(action);
+			// actionTags
+            Json::Value actionTags = runAction[i]["actionTags"];
+			for (unsigned int k =0; k < actionTags.size(); ++k)
+            {
+                action->actionTags.push_back(actionTags[k].asInt()); 
+            }
+            
+            page->storySwipeEnded.actionsToRun.push_back(action);
 		}
 
 		// addChild

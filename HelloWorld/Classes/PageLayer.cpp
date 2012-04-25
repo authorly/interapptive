@@ -210,38 +210,59 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
      int actionTag;
      } StorySwipeEndedActionsToRun;
      */
-    StorySwipeEndedActionsToRun *swipeEndedActionsToRun = page->getStorySwipeEndedActionToRun(currentIndexOfParagraph);
+    vector<StorySwipeEndedActionsToRun*> *swipeEndedActionsToRun = page->getStorySwipeEndedActionToRun(currentIndexOfParagraph);
     
     if (swipeEndedActionsToRun)
     {
-        // get sprite
-        CCSprite *sprite = (CCSprite*)getChildByTag(swipeEndedActionsToRun->spriteTag);
-        assert(sprite != NULL);
-        
-        // get action
-        CCAction *action = page->getActionByTag(swipeEndedActionsToRun->actionTag);
-        assert(action != NULL);
-        // the action should be CCScaleTo or CCMoveTo
-        assert(dynamic_cast<CCScaleBy*>(action) != NULL || dynamic_cast<CCMoveBy*>(action) != NULL);
-        
-        // caculate delay time
-        delay = ((CCFiniteTimeAction*)action)->getDuration();
-        
-        if (swipeLeft)
+        for (int i = 0; i < swipeEndedActionsToRun->size(); ++i) 
         {
-            // swipe left
-            sprite->runAction(action);
-            if (dynamic_cast<CCScaleBy*>(action) != NULL)
+            StorySwipeEndedActionsToRun* actionToRun = (*swipeEndedActionsToRun)[i];
+            
+            // get sprite
+            CCSprite *sprite = (CCSprite*)getChildByTag(actionToRun->spriteTag);
+            assert(sprite != NULL);
+            
+            // get action
+            CCAction *action;
+            if (actionToRun->actionTags.size() > 1)
             {
-                CCLog("CCScaleBy");
+                // spawn action
+                
+                CCArray *array = CCArray::array();
+                for (int j = 0; j < actionToRun->actionTags.size(); ++j)
+                {
+                    // the action should be CCScaleBy or CCMoveBy
+                    CCAction *element = page->getActionByTag(actionToRun->actionTags[j]);
+                    assert(dynamic_cast<CCScaleBy*>(element) != NULL || dynamic_cast<CCMoveBy*>(element) != NULL);
+                    
+                    array->addObject(element);
+                }
+                action = CCSpawn::actionsWithArray(array);                
             }
+            else 
+            {
+                action = page->getActionByTag(actionToRun->actionTags[0]);
+                assert(dynamic_cast<CCScaleBy*>(action) != NULL || dynamic_cast<CCMoveBy*>(action) != NULL);
+            }
+            
+            
+            // caculate delay time
+            delay = ((CCFiniteTimeAction*)action)->getDuration();
+            
+            if (swipeLeft)
+            {
+                // swipe left
+                sprite->runAction(action);
+            }
+            else 
+            {
+                // swipe right
+                // run reverse action
+                sprite->runAction(((CCActionInterval*)action)->reverse()); 
+            }   
         }
-        else 
-        {
-            // swipe right
-            // run reverse action
-            sprite->runAction(((CCActionInterval*)action)->reverse()); 
-        }        
+        
+        delete swipeEndedActionsToRun;
     }
     
     return delay;
