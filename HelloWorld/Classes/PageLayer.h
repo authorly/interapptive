@@ -48,6 +48,8 @@ private:
     // helper functions of handling paragraph
     void showParagraph(float delay);
     
+    void stopHightAndPlayEffect();
+    
 private:
     // record touch began position
     cocos2d::CCPoint beginPoint;
@@ -56,6 +58,7 @@ private:
     Page *page;
     // record all labels
     std::vector<cocos2d::CCLabelTTF*> wordsOfParagraph;
+    unsigned int highlightCallbackTimes;
     cocos2d::CCLayer *paragraphLayer;
 };
 
