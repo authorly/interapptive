@@ -48,8 +48,8 @@
                       "tappedStateImage": "autoplay-over.png",
                       "storyMode": "autoPlay",
                       "position": [
-                                   112,
-                                   280
+                                   100,
+                                   112
                                    ]
                       },
                       {
@@ -57,8 +57,8 @@
                       "tappedStateImage": "read-it-myself-over.png",
                       "storyMode": "readItMyself",
                       "position": [
-                                   112,
-                                   400
+                                   400,
+                                   112
                                    ]
                       },
                       {
@@ -66,8 +66,8 @@
                       "tappedStateImage": "read-to-me-over.png",
                       "storyMode": "readToMe",
                       "position": [
-                                   112,
-                                   520
+                                   700,
+                                   112
                                    ]
                       }
                       ],

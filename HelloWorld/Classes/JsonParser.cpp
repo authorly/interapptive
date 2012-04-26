@@ -1,5 +1,6 @@
 #include "JsonParser.h"
 #include "PageManager.h"
+#include "MainMenu.h"
 #include "Configurations.h"
 #include "cocos2d.h"
 
@@ -68,10 +69,112 @@ void JsonParser::parseConfigurations(Json::Value &root)
     Configurations::homeButtonPosition.y = (float)homeMenuForPages["position"][y].asDouble();
 }
 
-///@todo
 void JsonParser::parseMainMenu(Json::Value &root)
 {
     Json::Value mainMenu = root["MainMenu"];
+    
+    // parse audio
+    Json::Value audio = mainMenu["audio"];
+    parseMainMenuAodio(audio);
+    
+    // parse CCSprites
+    Json::Value sprites = mainMenu["CCSprites"];
+    parseMainMenuSprites(sprites);
+    
+    // prase menu items
+    Json::Value menuItems = mainMenu["MenuItems"];
+    parseMenuItems(menuItems);
+    
+    // parse API
+    Json::Value api = mainMenu["API"];
+    parseMainMenuAPI(api);
+}
+
+void JsonParser::parseMainMenuAodio(Json::Value &value)
+{
+    // backgroundMusic
+    MainMenu::audio.backgroundMusic = value["backgroundMusic"].asCString();
+    // backgroundMusicLoops
+    MainMenu::audio.backgroundMusicLoops = value["backgroundMusicLoops"].asInt();
+    // soundEffect
+    MainMenu::audio.soundEffect = value["soundEffect"].asCString();
+    // soundEffectLoops
+    MainMenu::audio.soundEffectLoops = value["soundEffectLoops"].asInt();
+}
+
+void JsonParser::parseMainMenuSprites(Json::Value &value)
+{
+    for (int i = 0; i < value.size(); ++i)
+    {
+        Json::Value spriteJson = value[i];
+        MainMenuSpriteInfo *spriteInfo = new MainMenuSpriteInfo(); 
+        
+        // image
+        spriteInfo->image = spriteJson["image"].asCString();
+        // spriteTag
+        spriteInfo->spriteTag = spriteJson["spriteTag"].asInt();
+        // visible
+        spriteInfo->visible = spriteJson["visible"].asBool();
+        // position
+        int x = 0, y = 1;
+        spriteInfo->position.x = spriteJson["position"][x].asInt() * xScale;
+        spriteInfo->position.y = spriteJson["position"][y].asInt() * yScale;
+        
+        MainMenu::sprites.push_back(spriteInfo);
+    }
+}
+
+void JsonParser::parseMenuItems(Json::Value &value)
+{
+    for (int i = 0; i < value.size(); ++i)
+    {
+        Json::Value menuItemJson = value[i];
+        MenuItem *menuItem = new MenuItem();
+        
+        // normalStateImage
+        menuItem->normalStateImage = menuItemJson["normalStateImage"].asCString();
+        // tappedstateImage
+        menuItem->tappedStateImage = menuItemJson["tappedStateImage"].asCString();
+        // story mode
+        menuItem->storyMode = menuItemJson["storyMode"].asCString();
+        // position
+        int x = 0, y = 1;
+        menuItem->position.x = menuItemJson["position"][x].asInt() * xScale;
+        menuItem->position.y = menuItemJson["position"][y].asInt() * yScale;
+        
+        MainMenu::menuItems.push_back(menuItem);
+    }
+}
+
+void JsonParser::parseMainMenuAPI(Json::Value &value)
+{
+    // CCFadeIn
+    Json::Value fadeInJson = value["CCFadeIn"];
+    for (int i = 0; i < fadeInJson.size(); ++i)
+    {
+        ActionFadeIn *actionFadeIn = new ActionFadeIn();
+        
+        // duration
+        actionFadeIn->duration = fadeInJson[i]["duration"].asInt();
+        // actionTag
+        actionFadeIn->actionTag = fadeInJson[i]["actionTag"].asInt();
+        
+        MainMenu::actionsFadeIn.push_back(actionFadeIn);
+    }
+    
+    // run actions on enter
+    Json::Value runActionsOnEnterJson = value["runActionsOnEnter"];
+    for (int j = 0; j < runActionsOnEnterJson.size(); ++j)
+    {
+        ActionToRunOnEnter *actionToRun = new ActionToRunOnEnter();
+        
+        // spriteTag
+        actionToRun->spriteTag = runActionsOnEnterJson[j]["spriteTag"].asInt();
+        // actionTag
+        actionToRun->actionTag = runActionsOnEnterJson[j]["actionTag"].asInt();
+        
+        MainMenu::actionsToRunOnEnter.push_back(actionToRun);
+    }
 }
 
 void JsonParser::parsePages(Json::Value &root)

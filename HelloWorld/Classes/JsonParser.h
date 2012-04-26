@@ -15,6 +15,10 @@ private:
     
     // parse main menu
     static void parseMainMenu(Json::Value &root);
+    static void parseMainMenuAodio(Json::Value &value);
+    static void parseMainMenuSprites(Json::Value &value);
+    static void parseMenuItems(Json::Value &value);
+    static void parseMainMenuAPI(Json::Value &value);
     
     // parse pages
     

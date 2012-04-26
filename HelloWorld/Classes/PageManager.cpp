@@ -5,6 +5,7 @@
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
 #include "Configurations.h"
+#include "MainMenuLayer.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -22,9 +23,15 @@ void PageManager::parseJsonAndRun(const char* pathOfJasonFile)
     // preload effects
     SimpleAudioEngine::sharedEngine()->preloadEffect(Configurations::backwardEffect.c_str());
     SimpleAudioEngine::sharedEngine()->preloadEffect(Configurations::forwardEffect.c_str());
+    
+    // show main menu
+    CCScene *scene = CCScene::node();
+    scene->addChild(new MainMenuLayer());
+    
+    CCDirector::sharedDirector()->runWithScene(scene);
 
 	// create scene for page number 1 and run
-	CCDirector::sharedDirector()->runWithScene(createSceneByPageNumber(1));
+	// CCDirector::sharedDirector()->runWithScene(createSceneByPageNumber(1));
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)
