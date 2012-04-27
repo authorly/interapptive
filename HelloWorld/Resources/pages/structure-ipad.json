@@ -351,28 +351,28 @@
                              "linesOfText": [
                                              {
                                              "text": "Daybreak came",
-                                             "yOffset": 160,
-                                             "xOffset": 225
+                                             "yOffset": 140,
+                                             "xOffset": 125
                                              },
                                              {
                                              "text": "softly moving through the woods",
-                                             "yOffset": 135,
-                                             "xOffset": 265
+                                             "yOffset": 115,
+                                             "xOffset": 165
                                              },
                                              {
                                              "text": "and yawning",
-                                             "yOffset": 110,
-                                             "xOffset": 250
+                                             "yOffset": 90,
+                                             "xOffset": 150
                                              },
                                              {
                                              "text": "as its rays slowly stretched",
-                                             "yOffset": 85,
-                                             "xOffset": 270
+                                             "yOffset": 65,
+                                             "xOffset": 170
                                              },
                                              {
                                              "text": "across the snowy meadows.",
-                                             "yOffset": 60,
-                                             "xOffset": 310
+                                             "yOffset": 40,
+                                             "xOffset": 210
                                              },
                                              {
                                              "text": "The birds",
@@ -382,7 +382,7 @@
                                              {
                                              "text": "were the first to notice...",
                                              "yOffset": 70,
-                                             "xOffset": 670
+                                             "xOffset": 570
                                              }
                                              ]
                              }
@@ -393,8 +393,8 @@
               "CCMoveBy": [
                            {
                            "position": [
-                                        -300,
-                                        0
+                                        -810,
+                                        100
                                         ],
                            "duration": 3,
                            "actionTag": 30
@@ -407,12 +407,12 @@
                             "actionTag": 31
                             },
                             {
-                            "intensity": 1.5,
+                            "intensity": 1.0,
                             "duration": 0,
                             "actionTag": 32
                             },
                             {
-                            "intensity": 0.667,
+                            "intensity": 1.4,
                             "duration": 3,
                             "actionTag": 34
                             }
@@ -506,7 +506,7 @@
                                              {
                                              "text": "a warning from high in the tops",
                                              "yOffset": 115,
-                                             "xOffset": 800
+                                             "xOffset": 700
                                              },
                                              {
                                              "text": "of the tall oaks.",
