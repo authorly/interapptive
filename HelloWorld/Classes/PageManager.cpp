@@ -29,9 +29,18 @@ void PageManager::parseJsonAndRun(const char* pathOfJasonFile)
     scene->addChild(new MainMenuLayer());
     
     CCDirector::sharedDirector()->runWithScene(scene);
+}
 
-	// create scene for page number 1 and run
-	// CCDirector::sharedDirector()->runWithScene(createSceneByPageNumber(1));
+void PageManager::gotoMainMenu(void)
+{
+    // stop background music and effects
+    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    
+    CCScene *scene = CCScene::node();
+    scene->addChild(new MainMenuLayer());
+    
+    CCDirector::sharedDirector()->replaceScene(scene);
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)
@@ -47,15 +56,14 @@ Page* PageManager::getPageByPageNumber(int pageNumber)
 	}
 }
 
-void PageManager::turnToPage(int pageNumber)
+void PageManager::turnToPage(int pageNumber, bool backWards)
 {
     // stop back ground music
     if (SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying())
     {
         SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
     }
-    
-    bool backWards = pageNumber > currentIndexOfPage ? false : true;
+
     CCScene *scene = createSceneByPageNumber(pageNumber);
     if (scene)
     {

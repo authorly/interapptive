@@ -20,7 +20,7 @@ public:
 private:
     void init();
     
-private:
+public:
     static StoryMode storyMode;
 };
 

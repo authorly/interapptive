@@ -13,7 +13,10 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    PageLayer.cpp \
                    PageManager.cpp \
                    TouchDetection.cpp \
-                   TouchObject.cpp
+                   TouchObject.cpp \
+                   Configurations.cpp \
+                   MainMenu.cpp \
+                   MainMenuLayer.cpp
                    
                    
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)

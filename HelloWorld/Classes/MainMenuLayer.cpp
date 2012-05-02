@@ -1,7 +1,12 @@
-#include "SimpleAudioEngine.h"
-
 #include "MainMenuLayer.h"
 #include "MainMenu.h"
+#include "PageManager.h"
+
+#include "SimpleAudioEngine.h"
+
+#define MENU_ITEM_AOTU_PLAY_TAG     100
+#define MENU_ITEM_READ_TO_ME_TAG    101
+#define MENU_ITEM_READ_MYSELF_TAG   102
 
 using namespace CocosDenshion;
 using namespace cocos2d;
@@ -42,6 +47,20 @@ void MainMenuLayer::init()
                                                                      this, 
                                                                      menu_selector(MainMenuLayer::menuItemCallback)
                                                                      );
+        // set tag
+        if (menuItemInfo->storyMode == "autoPlay")
+        {
+            item->setTag(MENU_ITEM_AOTU_PLAY_TAG);
+        }
+        else if (menuItemInfo->storyMode == "readItMyself")
+        {
+            item->setTag(MENU_ITEM_READ_MYSELF_TAG);
+        }
+        else
+        {
+            item->setTag(MENU_ITEM_READ_TO_ME_TAG);
+        }
+        
         item->setPosition(menuItemInfo->position);
         menu->addChild(item, 1);
     }
@@ -59,5 +78,31 @@ void MainMenuLayer::onEnter()
 
 void MainMenuLayer::menuItemCallback(cocos2d::CCObject *sender)
 {
+    // pop a dialog to select 
+    // resume
+    // start over
+    // cancel
     
+    int tag = ((CCMenuItem*)sender)->getTag();
+    
+    switch (tag) {
+        case MENU_ITEM_AOTU_PLAY_TAG:
+            storyMode = kSotryModeAutoPlay;
+            break;
+        case MENU_ITEM_READ_MYSELF_TAG:
+            storyMode = kStoryModeReadItMyself;
+            break;
+        case MENU_ITEM_READ_TO_ME_TAG:
+            storyMode = kStoryModeReadToMe;
+            break;
+            
+        default:
+            // error
+            assert(0);
+            break;
+    }
+    
+    // test code
+    // read to my self
+    PageManager::turnToPage(1, false);
 }

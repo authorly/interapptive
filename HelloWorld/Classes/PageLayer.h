@@ -11,7 +11,8 @@ class PageLayer : public cocos2d::CCLayer
 {
 public:
 	static PageLayer* pageLayerWithPage(Page* page);
-	void touchCallBack(float flag);
+	void touchCallback(float flag);
+    void mainMenuItemCallback(cocos2d::CCObject *sender);
     virtual void onEnter();
     virtual void onExit();
     virtual void onEnterTransitionDidFinish();
@@ -31,7 +32,8 @@ private:
 	// helper functions to initialize layer
 	void createSprites();
 	void createParagraph(int index);
-	void playBackgroundMusic();
+    void createMainMenuItem();
+	void playBackgroundMusic();    
     
     bool isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos);
     bool isSwipeRight(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos);
