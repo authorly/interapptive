@@ -13,9 +13,14 @@ using namespace cocos2d;
 
 StoryMode MainMenuLayer::storyMode = kStoryModeReadItMyself;
 
-MainMenuLayer::MainMenuLayer()
+MainMenuLayer::MainMenuLayer(): mydialog(NULL)
 {
     init();
+}
+
+MainMenuLayer::~MainMenuLayer()
+{
+    CC_SAFE_RELEASE(mydialog);
 }
 
 void MainMenuLayer::init()
@@ -78,13 +83,22 @@ void MainMenuLayer::onEnter()
 
 void MainMenuLayer::menuItemCallback(cocos2d::CCObject *sender)
 {
+    // should release previous dialog
+    CC_SAFE_RELEASE(mydialog);
+    
     // pop a dialog to select 
-    // resume
-    // start over
-    // cancel
-    
+    vector<string> items;
+    items.push_back("Resume");
+    items.push_back("Start Over");
+    items.push_back("Cacel");
+        
+    mydialog = new MyDialog();
+    mydialog->initWithItems("Would you like to resume where you left off?", items, this);
+    mydialog->popUp();    
+
+    // set story mode, no matter if user select "cancle"
+    // because it will not turn not page if he selects "cancle"
     int tag = ((CCMenuItem*)sender)->getTag();
-    
     switch (tag) {
         case MENU_ITEM_AOTU_PLAY_TAG:
             storyMode = kSotryModeAutoPlay;
@@ -101,8 +115,22 @@ void MainMenuLayer::menuItemCallback(cocos2d::CCObject *sender)
             assert(0);
             break;
     }
+}
+
+void MainMenuLayer::buttonClicked(int index)
+{
+    // resume
+    if (index == 0)
+    {
+        // go to 1 page if it is the first time to run
+        int targetPageNumber = PageManager::getCurrentIndexOfPage() > 0 ? PageManager::getCurrentIndexOfPage() : 1;
+        PageManager::turnToPage(targetPageNumber, false);
+    }
     
-    // test code
-    // read to my self
-    PageManager::turnToPage(1, false);
+    // start over
+    if (index == 1)
+    {
+        PageManager::turnToPage(1, false);
+
+    }
 }

@@ -102,3 +102,8 @@ CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 	return scene;
 }
 
+int PageManager::getCurrentIndexOfPage()
+{
+    return currentIndexOfPage;
+}
+
