@@ -15,13 +15,13 @@ typedef struct _audio
     int         soundEffectLoops;
 } Audio;
 
-typedef struct _sprite
+typedef struct _mainMenuSpriteInfo
 {
     std::string         image;
     int                 spriteTag;
     bool                visible;
     cocos2d::CCPoint    position;
-} Sprite;
+} MainMenuSpriteInfo;
 
 typedef  struct _menuItem
 {
@@ -31,12 +31,17 @@ typedef  struct _menuItem
     cocos2d::CCPoint    position;
 } MenuItem;
 
-typedef struct _actionToRun
+typedef struct _actionFadeIn
 {
-    int runAfterSwipeNumber;
+    float  duration;
+    int    actionTag;
+} ActionFadeIn;
+
+typedef struct _actionToRunOnEnter
+{
     int spriteTag;
     int actionTag;
-} ActionToRun;
+} ActionToRunOnEnter;
 
 class MainMenu
 {
@@ -44,12 +49,13 @@ public:
     // audio
     static Audio audio;
     // sprites
-    static std::vector<Sprite> sprites;
+    static std::vector<MainMenuSpriteInfo*> sprites;
     // menu items
-    static std::vector<MenuItem> menuItems;
-    // api??
+    static std::vector<MenuItem*> menuItems;
     // actioins to run on enter
-    static std::vector<ActionToRun> actionsToRunOnEnter;
+    static std::vector<ActionToRunOnEnter*> actionsToRunOnEnter;
+    // CCFadeIn
+    static std::vector<ActionFadeIn*> actionsFadeIn;
 };
 
 #endif

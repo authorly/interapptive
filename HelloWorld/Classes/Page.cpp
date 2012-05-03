@@ -5,9 +5,35 @@ using namespace std;
 
 Page::~Page()
 {
-    // release momery
+    // free paragraphs
+    for (int i = 0; i < paragraphs.size(); ++i)
+    {
+        delete paragraphs[i];
+    }
     
+    // free sprite info
+    for (int j = 0; j < sprites.size(); ++j)
+    {
+        delete sprites[j];
+    }
     
+    // free actions
+    for (int k = 0; k < actions.size(); ++k)
+    {
+        actions[k]->release();
+    }
+    
+    // free StoryTouchableNode
+    for (int l = 0; l < storyTouchableNodes.size(); ++l)
+    {
+        delete storyTouchableNodes[l];
+    }
+    
+    // free StorySwipeEnded
+    for (int m = 0; m < storySwipeEnded.actionsToRun.size(); ++m)
+    {
+        delete storySwipeEnded.actionsToRun[m];
+    }
 }
 
 void Page::splitText(LineText *textLine)
