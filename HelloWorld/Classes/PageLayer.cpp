@@ -4,6 +4,7 @@
 #include "SimpleAudioEngine.h"
 #include "PageManager.h"
 #include "Configurations.h"
+#include "MainMenuLayer.h"
 
 #include <vector>
 
@@ -51,6 +52,9 @@ void PageLayer::init(Page *page)
     
 	createSprites();
 	createParagraph(0);
+    
+    // add menu item to go to main menu
+    createMainMenuItem();
 }
 
 void PageLayer::onEnter()
@@ -63,7 +67,7 @@ void PageLayer::onEnter()
 	{
 		StoryTouchableNode* touchNode = *iter;
         
-		touchDetector->addZoneWithPositionRadiusTargetSel(touchNode->position, touchNode->radius, this, schedule_selector(PageLayer::touchCallBack), touchNode->touchFlag);
+		touchDetector->addZoneWithPositionRadiusTargetSel(touchNode->position, touchNode->radius, this, schedule_selector(PageLayer::touchCallback), touchNode->touchFlag);
 	}
 	touchDetector->isDebugDrawing = true;
 	touchDetector->setIsTouchEnabled(true);
@@ -84,7 +88,7 @@ void PageLayer::onExit()
     }
 }
 
-void PageLayer::touchCallBack(float flag)
+void PageLayer::touchCallback(float flag)
 {
 	CCLog("touch zone call back %f", flag);
 }
@@ -148,30 +152,12 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     
     if (isSwipeLeft(beginPoint, endPoint)) 
     {
-        stopHightAndPlayEffect();
-        
-        if (currentIndexOfParagraph == (page->paragraphs.size() - 1))
-        {
-            PageManager::turnToPage(page->settings.number + 1);
-        }
-        else 
-        {
-            swipeLeft();
-        }
+        swipeLeft();
     }
     
     if (isSwipeRight(beginPoint, endPoint)) 
     {
-        stopHightAndPlayEffect();
-        
-        if (currentIndexOfParagraph == 0)
-        {
-            PageManager::turnToPage(page->settings.number - 1);
-        }
-        else 
-        {
-            swipeRight();
-        }
+        swipeRight();
     }
 }
 
@@ -270,35 +256,53 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
 
 void PageLayer::swipeLeft()
 {
-    // increase current index of paragraph
-    ++currentIndexOfParagraph;
+    stopHightAndPlayEffect();
     
-    
-    float delay = swipeEndedOperationAndCalculateTotalDelay(true);
- 
-    
-    createParagraph(currentIndexOfParagraph);
-    
-    showParagraph(delay);
+    if (currentIndexOfParagraph == (page->paragraphs.size() - 1))
+    {
+        PageManager::turnToPage(page->settings.number + 1, false);
+    }
+    else 
+    {
+        // increase current index of paragraph
+        ++currentIndexOfParagraph;
+        
+        
+        float delay = swipeEndedOperationAndCalculateTotalDelay(true);
+        
+        
+        createParagraph(currentIndexOfParagraph);
+        
+        showParagraph(delay);
+    }
 }
 
 void PageLayer::swipeRight()
 {
-    float delay = swipeEndedOperationAndCalculateTotalDelay(false);
+    stopHightAndPlayEffect();
     
-    // decrease current index of paragraph
-    // should decrease index after swipeEndedOperationAndCalculateTotalDelay, because it will
-    // run reverse action of current index
-    --currentIndexOfParagraph;
-    
-    // add child
-    // remove child
-    
-    // run actions
-    
-    createParagraph(currentIndexOfParagraph);
-    
-    showParagraph(delay);
+    if (currentIndexOfParagraph == 0)
+    {
+        PageManager::turnToPage(page->settings.number - 1, true);
+    }
+    else 
+    {
+        float delay = swipeEndedOperationAndCalculateTotalDelay(false);
+        
+        // decrease current index of paragraph
+        // should decrease index after swipeEndedOperationAndCalculateTotalDelay, because it will
+        // run reverse action of current index
+        --currentIndexOfParagraph;
+        
+        // add child
+        // remove child
+        
+        // run actions
+        
+        createParagraph(currentIndexOfParagraph);
+        
+        showParagraph(delay);
+    }
 }
 
 bool PageLayer::isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos)
@@ -355,6 +359,27 @@ void PageLayer::createSprites()
 
 		addChild(sprite);
 	}
+}
+
+void PageLayer::createMainMenuItem()
+{
+    CCMenuItem *mainMenuItem = CCMenuItemImage::itemFromNormalImage(Configurations::homeButtonNormalStateImage.c_str(), 
+                                                                    Configurations::homeButtonTappedStateImage.c_str(),
+                                                                    this,
+                                                                    menu_selector(PageLayer::mainMenuItemCallback));
+    mainMenuItem->setPosition(Configurations::homeButtonPosition);
+    
+    CCMenu *mainMenu = CCMenu::menuWithItems(mainMenuItem, NULL);
+    mainMenu->setPosition(CCPointZero);
+    addChild(mainMenu);
+}
+
+void PageLayer::mainMenuItemCallback(CCObject *sender)
+{
+    // todo
+    // popup a dialog to select
+    
+    PageManager::gotoMainMenu();
 }
 
 void PageLayer::createParagraph(int index)
@@ -513,16 +538,20 @@ void PageLayer::setParagraphVisible()
 
 void PageLayer::highlightParagraph()
 {
-    CCScheduler::sharedScheduler()->scheduleSelector(schedule_selector(PageLayer::highlightSchedule), 
-                                                     this, 
-                                                     page->paragraphs[currentIndexOfParagraph]->highlightingTimes[0], 
-                                                     false);
-    
-    // change first word's color
-    wordsOfParagraph[0]->setColor(page->settings.fontHighlightColor);
-    
-    // play corresponding effect
-    SimpleAudioEngine::sharedEngine()->playEffect(page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str());
+    // don't hilight if the story mode is read to myself
+    if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
+    {
+        CCScheduler::sharedScheduler()->scheduleSelector(schedule_selector(PageLayer::highlightSchedule), 
+                                                         this, 
+                                                         page->paragraphs[currentIndexOfParagraph]->highlightingTimes[0], 
+                                                         false);
+        
+        // change first word's color
+        wordsOfParagraph[0]->setColor(page->settings.fontHighlightColor);
+        
+        // play corresponding effect
+        SimpleAudioEngine::sharedEngine()->playEffect(page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str());
+    }
 }
 
 void PageLayer::highlightSchedule(ccTime dt)
@@ -538,6 +567,12 @@ void PageLayer::highlightSchedule(ccTime dt)
         highlightCallbackTimes = 0;
         wordsOfParagraph[wordsOfParagraph.size()-1]->setColor(fontColor);
         CCScheduler::sharedScheduler()->unscheduleSelector(schedule_selector(PageLayer::highlightSchedule), this);
+        
+        // if story mode is auto play, should trigger a "swipe left" event
+        if (MainMenuLayer::storyMode == kSotryModeAutoPlay)
+        {
+            swipeLeft();
+        }        
     }
     else {
         // unhighlight previous word

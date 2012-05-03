@@ -15,7 +15,10 @@ public:
 	
 	static Page* getPageByPageNumber(int pageNumber);
 	static cocos2d::CCScene* createSceneByPageNumber(int pageNumber);
-    static void turnToPage(int pageNumber);
+    static void turnToPage(int pageNumber, bool backWards);
+    static void gotoMainMenu(void);
+    
+    static int getCurrentIndexOfPage();
 private:
 	
 private:
