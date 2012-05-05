@@ -414,7 +414,11 @@ const CCPoint& CCNode::getAnchorPointInPixels()
 /// contentSize getter
 const CCSize& CCNode::getContentSize()
 {
-	return m_tContentSize;
+	//return m_tContentSize;
+    // the content size should be changed
+    m_tContentSize.width *= CCDirector::sharedDirector()->getXScale();
+    m_tContentSize.height *= CCDirector::sharedDirector()->getYScale();
+    return m_tContentSize;
 }
 
 void CCNode::setContentSize(const CCSize& size)

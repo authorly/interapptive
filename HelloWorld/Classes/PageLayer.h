@@ -18,12 +18,12 @@ public:
     virtual void onEnterTransitionDidFinish();
     virtual void registerWithTouchDispatcher(void);
     virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-    //virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     
     void highlightParagraph();
-    void highlightSchedule(cocos2d::ccTime dt);
     void setParagraphVisible();
+    void changeColor(cocos2d::CCObject *sender);
+    void changeColorBack(cocos2d::CCObject *sender);
 private:
     PageLayer();
     //~PageLayer();
@@ -50,7 +50,7 @@ private:
     // helper functions of handling paragraph
     void showParagraph(float delay);
     
-    void stopHightAndPlayEffect();
+    void stopHighlightEffect();
     
 private:
     // record touch began position
@@ -60,7 +60,6 @@ private:
     Page *page;
     // record all labels
     std::vector<cocos2d::CCLabelTTF*> wordsOfParagraph;
-    unsigned int highlightCallbackTimes;
     cocos2d::CCLayer *paragraphLayer;
 };
 
