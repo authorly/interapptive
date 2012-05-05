@@ -93,12 +93,6 @@ bool AppDelegate::initInstance() {
 bool AppDelegate::applicationDidFinishLaunching() {
 	// initialize director
 	CCDirector *pDirector = CCDirector::sharedDirector();
-    //pDirector->setDepthTest(false);
-    
-    // designed for 480*320
-    // if you want to run ipad resources in iphone, change to 1024*768
-    //pDirector->setTargetWinsize(CCSizeMake(1024, 768));
-    CCLog("set target win size");
 
 	pDirector->setOpenGLView(&CCEGLView::sharedOpenGLView());
     
@@ -116,8 +110,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	pDirector->setAnimationInterval(1.0 / 60);
 	
     // parse with json data
-    // pages/structure.json is designed for iphone
-    // pages/structure-ipad.json is designed for ipad
 	PageManager::parseJsonAndRun("structure-ipad.json");
 
 	return true;

@@ -18,14 +18,13 @@ using namespace std;
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 10
 // space between words of text
-#define WORD_SPACING 8
+#define WORD_SPACING (8 * CCDirector::sharedDirector()->getXScale())
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
 , beginPoint(0, 0)
 , page(NULL)
 , paragraphLayer(NULL)
-, highlightCallbackTimes(0)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -256,7 +255,7 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
 
 void PageLayer::swipeLeft()
 {
-    stopHightAndPlayEffect();
+    stopHighlightEffect();
     
     if (currentIndexOfParagraph == (page->paragraphs.size() - 1))
     {
@@ -279,7 +278,7 @@ void PageLayer::swipeLeft()
 
 void PageLayer::swipeRight()
 {
-    stopHightAndPlayEffect();
+    stopHighlightEffect();
     
     if (currentIndexOfParagraph == 0)
     {
@@ -541,66 +540,68 @@ void PageLayer::highlightParagraph()
     // don't hilight if the story mode is read to myself
     if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
     {
-        CCScheduler::sharedScheduler()->scheduleSelector(schedule_selector(PageLayer::highlightSchedule), 
-                                                         this, 
-                                                         page->paragraphs[currentIndexOfParagraph]->highlightingTimes[0], 
-                                                         false);
-        
-        // change first word's color
-        wordsOfParagraph[0]->setColor(page->settings.fontHighlightColor);
-        
         // play corresponding effect
+        int wordCount = 0;
+        vector<float> &audioInterval = page->paragraphs[currentIndexOfParagraph]->highlightingTimes;
+        vector<CCLabelTTF*>::iterator iter;
+        for (iter = wordsOfParagraph.begin(); iter != wordsOfParagraph.end(); ++iter)
+        {
+            if (wordCount < audioInterval.size())
+            {
+                (*iter)->runAction(CCSequence::actions(
+                                                       CCDelayTime::actionWithDuration(audioInterval[wordCount]),
+                                                       CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColor)),
+                                                       NULL
+                                                       )
+                                   );
+            }
+            
+            if (wordCount < audioInterval.size() - 1)
+            {
+                (*iter)->runAction(CCSequence::actions(
+                                                       CCDelayTime::actionWithDuration(audioInterval[wordCount+1]),
+                                                       CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColorBack)),
+                                                       NULL
+                                                       )
+                                   );
+            }
+            
+            if (wordCount == audioInterval.size() - 1)
+            {
+                (*iter)->runAction(CCSequence::actions(
+                                                       CCDelayTime::actionWithDuration(audioInterval[wordCount] + 0.8f),
+                                                       CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColorBack)),
+                                                       NULL
+                                                       )
+                                   );
+            }
+            
+            ++wordCount;
+        }
         SimpleAudioEngine::sharedEngine()->playEffect(page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str());
     }
 }
 
-void PageLayer::highlightSchedule(ccTime dt)
+void PageLayer::changeColor(CCObject *sender)
 {
-    ccColor3B fontColor = page->settings.fontColor;
-    ccColor3B highlightColor = page->settings.fontHighlightColor;
+    ((CCLabelTTF*)sender)->setColor(page->settings.fontHighlightColor);
+}
+
+void PageLayer::changeColorBack(CCObject *sender)
+{
+    CCLabelTTF *word = (CCLabelTTF*)sender;
+    word->setColor(page->settings.fontColor);
     
-    ++highlightCallbackTimes;
-    
-    if (highlightCallbackTimes == wordsOfParagraph.size())
+    if (MainMenuLayer::storyMode == kSotryModeAutoPlay && word == wordsOfParagraph[wordsOfParagraph.size()-1])
     {
-        // don't highlight last word
-        highlightCallbackTimes = 0;
-        wordsOfParagraph[wordsOfParagraph.size()-1]->setColor(fontColor);
-        CCScheduler::sharedScheduler()->unscheduleSelector(schedule_selector(PageLayer::highlightSchedule), this);
-        
-        // if story mode is auto play, should trigger a "swipe left" event
-        if (MainMenuLayer::storyMode == kSotryModeAutoPlay)
-        {
-            swipeLeft();
-        }        
-    }
-    else {
-        // unhighlight previous word
-        wordsOfParagraph[highlightCallbackTimes-1]->setColor(fontColor);
-        // highlight current
-        wordsOfParagraph[highlightCallbackTimes]->setColor(highlightColor);
-        
-        // set next schedule time
-        float nextScheduleTime = page->paragraphs[currentIndexOfParagraph]->highlightingTimes[highlightCallbackTimes] -
-        page->paragraphs[currentIndexOfParagraph]->highlightingTimes[highlightCallbackTimes-1];
-        
-        CCScheduler::sharedScheduler()->unscheduleSelector(schedule_selector(PageLayer::highlightSchedule), this);
-        CCScheduler::sharedScheduler()->scheduleSelector(schedule_selector(PageLayer::highlightSchedule), 
-                                                         this, 
-                                                         nextScheduleTime, 
-                                                         false);
+        swipeLeft();
     }
 }
 
-void PageLayer::stopHightAndPlayEffect()
+void PageLayer::stopHighlightEffect()
 {
-    // unschedule
-    CCScheduler::sharedScheduler()->unscheduleSelector(schedule_selector(PageLayer::highlightSchedule), this);
     // stop all effect, I think now it will only have one effect that speaking word.
     SimpleAudioEngine::sharedEngine()->stopAllEffects();
-    
-    // reset helper data
-    highlightCallbackTimes = 0;
 }
 
 void PageLayer::playBackgroundMusic()

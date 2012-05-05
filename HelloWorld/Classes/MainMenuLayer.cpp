@@ -83,18 +83,28 @@ void MainMenuLayer::onEnter()
 
 void MainMenuLayer::menuItemCallback(cocos2d::CCObject *sender)
 {
-    // should release previous dialog
-    CC_SAFE_RELEASE(mydialog);
-    
-    // pop a dialog to select 
-    vector<string> items;
-    items.push_back("Resume");
-    items.push_back("Start Over");
-    items.push_back("Cacel");
+    // only show dialog that page number greater than 1 last time left off 
+    if (PageManager::getCurrentIndexOfPage() > 1)
+    {
+        // should release previous dialog
+        CC_SAFE_RELEASE(mydialog);
         
-    mydialog = new MyDialog();
-    mydialog->initWithItems("Would you like to resume where you left off?", items, this);
-    mydialog->popUp();    
+        // pop a dialog to select 
+        vector<string> items;
+        items.push_back("Resume");
+        items.push_back("Start Over");
+        items.push_back("Cacel");
+        
+        mydialog = new MyDialog();
+        mydialog->initWithItems("Would you like to resume where you left off?", items, this);
+        mydialog->popUp();  
+    }
+    else 
+    {
+        // start over
+        buttonClicked(1);
+    }
+      
 
     // set story mode, no matter if user select "cancle"
     // because it will not turn not page if he selects "cancle"
@@ -122,9 +132,7 @@ void MainMenuLayer::buttonClicked(int index)
     // resume
     if (index == 0)
     {
-        // go to 1 page if it is the first time to run
-        int targetPageNumber = PageManager::getCurrentIndexOfPage() > 0 ? PageManager::getCurrentIndexOfPage() : 1;
-        PageManager::turnToPage(targetPageNumber, false);
+        PageManager::turnToPage(PageManager::getCurrentIndexOfPage(), false);
     }
     
     // start over
