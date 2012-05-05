@@ -49,8 +49,8 @@
 		1507962C1551791400816841 /* page-9-paragraph-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 150795F61551791400816841 /* page-9-paragraph-1.mp3 */; };
 		1507962D1551791400816841 /* PoeticaChanceryIII.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 150795F81551791400816841 /* PoeticaChanceryIII.ttf */; };
 		1507962E1551791400816841 /* PopplPontifexBE-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 150795F91551791400816841 /* PopplPontifexBE-Regular.ttf */; };
-		1507962F1551791400816841 /* home-button-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 150795FB1551791400816841 /* home-button-over.png */; };
-		150796301551791400816841 /* home-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 150795FC1551791400816841 /* home-button.png */; };
+		1507962F1551791400816841 /* home-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 150795FB1551791400816841 /* home-button.png */; };
+		150796301551791400816841 /* home-button-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 150795FC1551791400816841 /* home-button-over.png */; };
 		150796311551791400816841 /* touchable-node-particle-glitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 150795FD1551791400816841 /* touchable-node-particle-glitter.png */; };
 		150796321551791400816841 /* enter-dialog-or-alert-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 150795FF1551791400816841 /* enter-dialog-or-alert-sound.mp3 */; };
 		150796331551791400816841 /* enter-or-leave-main-menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 150796001551791400816841 /* enter-or-leave-main-menu.mp3 */; };
@@ -409,8 +409,8 @@
 		150795F61551791400816841 /* page-9-paragraph-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "page-9-paragraph-1.mp3"; sourceTree = "<group>"; };
 		150795F81551791400816841 /* PoeticaChanceryIII.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoeticaChanceryIII.ttf; sourceTree = "<group>"; };
 		150795F91551791400816841 /* PopplPontifexBE-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PopplPontifexBE-Regular.ttf"; sourceTree = "<group>"; };
-		150795FB1551791400816841 /* home-button-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-button-over.png"; sourceTree = "<group>"; };
-		150795FC1551791400816841 /* home-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-button.png"; sourceTree = "<group>"; };
+		150795FB1551791400816841 /* home-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-button.png"; sourceTree = "<group>"; };
+		150795FC1551791400816841 /* home-button-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-button-over.png"; sourceTree = "<group>"; };
 		150795FD1551791400816841 /* touchable-node-particle-glitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "touchable-node-particle-glitter.png"; sourceTree = "<group>"; };
 		150795FF1551791400816841 /* enter-dialog-or-alert-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "enter-dialog-or-alert-sound.mp3"; sourceTree = "<group>"; };
 		150796001551791400816841 /* enter-or-leave-main-menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "enter-or-leave-main-menu.mp3"; sourceTree = "<group>"; };
@@ -929,8 +929,8 @@
 		150795FA1551791400816841 /* shared_images */ = {
 			isa = PBXGroup;
 			children = (
-				150795FB1551791400816841 /* home-button-over.png */,
-				150795FC1551791400816841 /* home-button.png */,
+				150795FB1551791400816841 /* home-button.png */,
+				150795FC1551791400816841 /* home-button-over.png */,
 				150795FD1551791400816841 /* touchable-node-particle-glitter.png */,
 			);
 			path = shared_images;
@@ -1838,8 +1838,8 @@
 				1507962C1551791400816841 /* page-9-paragraph-1.mp3 in Resources */,
 				1507962D1551791400816841 /* PoeticaChanceryIII.ttf in Resources */,
 				1507962E1551791400816841 /* PopplPontifexBE-Regular.ttf in Resources */,
-				1507962F1551791400816841 /* home-button-over.png in Resources */,
-				150796301551791400816841 /* home-button.png in Resources */,
+				1507962F1551791400816841 /* home-button.png in Resources */,
+				150796301551791400816841 /* home-button-over.png in Resources */,
 				150796311551791400816841 /* touchable-node-particle-glitter.png in Resources */,
 				150796321551791400816841 /* enter-dialog-or-alert-sound.mp3 in Resources */,
 				150796331551791400816841 /* enter-or-leave-main-menu.mp3 in Resources */,

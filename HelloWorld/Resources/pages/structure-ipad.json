@@ -6,12 +6,14 @@
         },
         "pageFlipTransitionDuration": 0.6,
         "paragraphTextFadeDuration": 0.4,
+        "autoplayPageTurnDelay": 0.2,
+        "autoplayParagraphDelay": 0.1,
         "homeMenuForPages": {
             "normalStateImage": "home-button.png",
             "tappedStateImage": "home-button-over.png",
             "position": [
-                         20,
-                         20
+                         35,
+                         35
                          ]
         }
     },
