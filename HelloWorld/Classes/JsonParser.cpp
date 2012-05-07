@@ -65,8 +65,8 @@ void JsonParser::parseConfigurations(Json::Value &root)
     Configurations::homeButtonTappedStateImage = homeMenuForPages["tappedStateImage"].asCString();
     // position
     int x = 0, y = 1;
-    Configurations::homeButtonPosition.x = (float)homeMenuForPages["position"][x].asDouble();
-    Configurations::homeButtonPosition.y = (float)homeMenuForPages["position"][y].asDouble();
+    Configurations::homeButtonPosition.x = (float)homeMenuForPages["position"][x].asDouble() * xScale;
+    Configurations::homeButtonPosition.y = (float)homeMenuForPages["position"][y].asDouble() * yScale;
 }
 
 void JsonParser::parseMainMenu(Json::Value &root)
