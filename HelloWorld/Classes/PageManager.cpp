@@ -6,12 +6,12 @@
 #include "SimpleAudioEngine.h"
 #include "Configurations.h"
 #include "MainMenuLayer.h"
+#include "SharedGlobalData.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
 
 map<int, Page*> PageManager::pages = map<int, Page*>();
-int PageManager::currentIndexOfPage = 0;
 
 void PageManager::parseJsonAndRun(const char* pathOfJasonFile)
 {
@@ -96,14 +96,8 @@ CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 		CCLayer *layer = PageLayer::pageLayerWithPage(page);;
 		scene->addChild(layer);
         
-        currentIndexOfPage = page->settings.number;
+        GlobalData::sharedGlobalData()->currentPageNumber = page->settings.number;
 	}
 
 	return scene;
 }
-
-int PageManager::getCurrentIndexOfPage()
-{
-    return currentIndexOfPage;
-}
-

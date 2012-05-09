@@ -47,12 +47,6 @@ private:
 	static void parseWithStoryTouchableNode(Page *page, Json::Value &value);
 	static void parseWithStorySwipeEnded(Page *page, Json::Value &value);
 	static void parseWithDelayTime(Page *page, Json::Value &value);
-    
-private:
-    static float xScale;
-    static float yScale;
-    // scale = max[xScale, yScale]
-    static float scale;
 };
 
 #endif // __JSON_PARSER_H__

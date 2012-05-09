@@ -109,6 +109,8 @@ namespace cocos2d{
 	}
 	void CCLabelTTF::setString(const char *label)
 	{
+        setScale(1);
+        
         if (m_pString)
         {
             delete m_pString;
@@ -132,6 +134,7 @@ namespace cocos2d{
 
         CCRect rect = CCRectZero;
 		rect.size = m_pobTexture->getContentSize();
+        
 		this->setTextureRect(rect);
 	}
 

@@ -18,13 +18,11 @@ public:
     static void turnToPage(int pageNumber, bool backWards);
     static void gotoMainMenu(void);
     
-    static int getCurrentIndexOfPage();
 private:
 	
 private:
 	// key: page number 
 	static std::map<int, Page*> pages;
-    static int currentIndexOfPage;
 
 	// make JsonParser can access pages
 	friend class JsonParser;
