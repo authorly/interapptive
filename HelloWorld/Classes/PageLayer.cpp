@@ -5,6 +5,7 @@
 #include "PageManager.h"
 #include "Configurations.h"
 #include "MainMenuLayer.h"
+#include "SharedGlobalData.h"
 
 #include <vector>
 
@@ -18,7 +19,11 @@ using namespace std;
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 10
 // space between words of text
-#define WORD_SPACING (8 * CCDirector::sharedDirector()->getXScale())
+
+#define XSCALE          (GlobalData::sharedGlobalData()->xScale)
+#define YSCALE          (GlobalData::sharedGlobalData()->yScale)
+#define TEXT_SCALE      (GlobalData::sharedGlobalData()->textScale)
+#define WORD_SPACING    (8 * XSCALE)
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
@@ -420,14 +425,21 @@ void PageLayer::createParagraph(int index)
             xOffset = lineText->xOffset;
             yOffset = lineText->yOffset;
             
+            // adjust xOffset
+            CCLabelTTF *labelLine = CCLabelTTF::labelWithString(lineText->text.c_str(), fontName, fontSize);
+            labelLine->setScale(1.0f);
+            float xOffsetAdjust = (labelLine->getContentSize().width * (TEXT_SCALE - XSCALE));
+             xOffset-= xOffsetAdjust;
+            
             for (int i = 0; i < lineText->words.size(); ++i)
             {
                 string &word = lineText->words[i];
-                CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);
+                CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);                
                 
-                label->setColor(fontColor);
+                label->setColor(fontColor);                
+                label->setScale(TEXT_SCALE);                
                 label->setPosition(ccp(xOffset, yOffset));
-                
+                        
                 // record label in a vector, don't have to retain it
                 // because it is retained by labelLayer
                 wordsOfParagraph.push_back(label);
@@ -445,8 +457,8 @@ void PageLayer::createParagraph(int index)
                     string &word = lineText->words[i+1];
                     
                     // Create a CCLabelTTF for the next word so we may measure it
-                    CCLabelTTF *nextLabel = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);
-                    
+                    CCLabelTTF *nextLabel = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize); 
+                    nextLabel->setScale(TEXT_SCALE);
                    
                     // START: xOffset                                                                    
                     //       

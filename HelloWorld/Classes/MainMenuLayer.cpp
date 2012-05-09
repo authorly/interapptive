@@ -1,8 +1,10 @@
 #include "MainMenuLayer.h"
 #include "MainMenu.h"
 #include "PageManager.h"
+#include "SharedGlobalData.h"
 
 #include "SimpleAudioEngine.h"
+
 
 #define MENU_ITEM_AOTU_PLAY_TAG     100
 #define MENU_ITEM_READ_TO_ME_TAG    101
@@ -84,7 +86,7 @@ void MainMenuLayer::onEnter()
 void MainMenuLayer::menuItemCallback(cocos2d::CCObject *sender)
 {
     // only show dialog that page number greater than 1 last time left off 
-    if (PageManager::getCurrentIndexOfPage() > 1)
+    if (GlobalData::sharedGlobalData()->currentPageNumber > 1)
     {
         // should release previous dialog
         CC_SAFE_RELEASE(mydialog);
@@ -132,7 +134,7 @@ void MainMenuLayer::buttonClicked(int index)
     // resume
     if (index == 0)
     {
-        PageManager::turnToPage(PageManager::getCurrentIndexOfPage(), false);
+        PageManager::turnToPage(GlobalData::sharedGlobalData()->currentPageNumber, false);
     }
     
     // start over

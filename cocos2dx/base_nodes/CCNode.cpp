@@ -35,6 +35,7 @@ THE SOFTWARE.
 #include "CCTouch.h"
 #include "CCActionManager.h"
 #include "CCScriptSupport.h"
+#include "CCLabelTTF.h"
 
 #if CC_COCOSNODE_RENDER_SUBPIXEL
 #define RENDER_IN_SUBPIXEL
@@ -416,8 +417,10 @@ const CCSize& CCNode::getContentSize()
 {
 	//return m_tContentSize;
     // the content size should be changed
-    m_tContentSize.width *= CCDirector::sharedDirector()->getXScale();
-    m_tContentSize.height *= CCDirector::sharedDirector()->getYScale();
+
+    m_tContentSize.width *= m_fScaleX;
+    m_tContentSize.height *= m_fScaleY;
+
     return m_tContentSize;
 }
 
