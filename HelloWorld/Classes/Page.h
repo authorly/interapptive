@@ -14,7 +14,7 @@ typedef struct settings
 	std::string        fontType;
 	cocos2d::ccColor3B fontColor;
     cocos2d::ccColor3B fontHighlightColor;
-	int                fontSize;
+	float              fontSize;
 
 	// background music info
     bool        loop; // -1 means loop forever
