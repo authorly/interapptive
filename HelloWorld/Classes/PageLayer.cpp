@@ -428,7 +428,7 @@ void PageLayer::createParagraph(int index)
             // adjust xOffset
             CCLabelTTF *labelLine = CCLabelTTF::labelWithString(lineText->text.c_str(), fontName, fontSize);
             labelLine->setScale(1.0f);
-            float xOffsetAdjust = (labelLine->getContentSize().width * (TEXT_SCALE - XSCALE));
+            float xOffsetAdjust = (labelLine->getContentSize().width * (TEXT_SCALE - XSCALE)) / 2;
              xOffset-= xOffsetAdjust;
             
             for (int i = 0; i < lineText->words.size(); ++i)
