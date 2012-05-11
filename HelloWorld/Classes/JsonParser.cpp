@@ -85,6 +85,10 @@ void JsonParser::parseMainMenu(Json::Value &root)
     // parse API
     Json::Value api = mainMenu["API"];
     parseMainMenuAPI(api);
+    
+    // parse runActionsOnEnter
+    Json::Value runActionsOnEnterJson = mainMenu["runActionsOnEnter"];
+    parseMainMenuRunActionsOnEnter(runActionsOnEnterJson);
 }
 
 void JsonParser::parseMainMenuAodio(Json::Value &value)
@@ -158,17 +162,19 @@ void JsonParser::parseMainMenuAPI(Json::Value &value)
         
         MainMenu::actionsFadeIn.push_back(actionFadeIn);
     }
-    
-    // run actions on enter
-    Json::Value runActionsOnEnterJson = value["runActionsOnEnter"];
-    for (int j = 0; j < runActionsOnEnterJson.size(); ++j)
+}
+
+void JsonParser::parseMainMenuRunActionsOnEnter(Json::Value &value)
+{
+    // run actions on enter    
+    for (int j = 0; j < value.size(); ++j)
     {
         ActionToRunOnEnter *actionToRun = new ActionToRunOnEnter();
         
         // spriteTag
-        actionToRun->spriteTag = runActionsOnEnterJson[j]["spriteTag"].asInt();
+        actionToRun->spriteTag = value[j]["spriteTag"].asInt();
         // actionTag
-        actionToRun->actionTag = runActionsOnEnterJson[j]["actionTag"].asInt();
+        actionToRun->actionTag = value[j]["actionTag"].asInt();
         
         MainMenu::actionsToRunOnEnter.push_back(actionToRun);
     }

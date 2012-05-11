@@ -46,6 +46,9 @@ typedef struct _actionToRunOnEnter
 class MainMenu
 {
 public:
+    static MainMenuSpriteInfo* getSpriteInfoByTag(int spriteTag);
+    static ActionFadeIn* getActionFadeInInfoByTag(int actionTag);
+public:
     // audio
     static Audio audio;
     // sprites

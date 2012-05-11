@@ -23,7 +23,7 @@ using namespace std;
 #define XSCALE          (GlobalData::sharedGlobalData()->xScale)
 #define YSCALE          (GlobalData::sharedGlobalData()->yScale)
 #define TEXT_SCALE      (GlobalData::sharedGlobalData()->textScale)
-#define WORD_SPACING    (8 * XSCALE)
+#define WORD_SPACING    (8 * TEXT_SCALE * XSCALE)
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
