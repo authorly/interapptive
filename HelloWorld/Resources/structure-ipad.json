@@ -40,7 +40,7 @@
                       "visible": false,
                       "position": [
                                    512,
-                                   384
+                                   700
                                    ]
                       }
                       ],
@@ -50,8 +50,8 @@
                       "tappedStateImage": "autoplay-over.png",
                       "storyMode": "autoPlay",
                       "position": [
-                                   100,
-                                   112
+                                   230,
+                                   100
                                    ]
                       },
                       {
@@ -59,8 +59,8 @@
                       "tappedStateImage": "read-it-myself-over.png",
                       "storyMode": "readItMyself",
                       "position": [
-                                   400,
-                                   112
+                                   530,
+                                   100
                                    ]
                       },
                       {
@@ -68,8 +68,8 @@
                       "tappedStateImage": "read-to-me-over.png",
                       "storyMode": "readToMe",
                       "position": [
-                                   700,
-                                   112
+                                   830,
+                                   100
                                    ]
                       }
                       ],
@@ -83,7 +83,7 @@
         },
         "runActionsOnEnter": [
                               {
-                              "spriteTag": 100,
+                              "spriteTag": 101,
                               "actionTag": 22
                               }
                               ]
@@ -138,17 +138,17 @@
                                              {
                                              "text": "For those who protect wild places",
                                              "yOffset": 250,
-                                             "xOffset": 300
+                                             "xOffset": 512
                                              },
                                              {
                                              "text": "and to the snowman that lives",
                                              "yOffset": 195,
-                                             "xOffset": 322
+                                             "xOffset": 512
                                              },
                                              {
                                              "text": "in every child's heart.",
                                              "yOffset": 140,
-                                             "xOffset": 375
+                                             "xOffset": 512
                                              }
                                              ]
                              }
