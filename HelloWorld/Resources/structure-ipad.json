@@ -83,7 +83,7 @@
         },
         "runActionsOnEnter": [
                               {
-                              "spriteTag": 100,
+                              "spriteTag": 101,
                               "actionTag": 22
                               }
                               ]

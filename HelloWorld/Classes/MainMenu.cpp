@@ -12,3 +12,31 @@ vector<MenuItem*> MainMenu::menuItems = vector<MenuItem*>();
 vector<ActionToRunOnEnter*> MainMenu::actionsToRunOnEnter = vector<ActionToRunOnEnter*>();
 // CCFadeIn
 vector<ActionFadeIn*> MainMenu::actionsFadeIn = vector<ActionFadeIn*>();
+
+MainMenuSpriteInfo* MainMenu::getSpriteInfoByTag(int spriteTag)
+{
+    vector<MainMenuSpriteInfo*>::iterator iter;
+    for (iter = sprites.begin(); iter != sprites.end(); ++iter)
+    {
+        if ((*iter)->spriteTag == spriteTag)
+        {
+            return  *iter;
+        }
+    }
+    
+    return NULL;
+}
+
+ActionFadeIn* MainMenu::getActionFadeInInfoByTag(int actionTag)
+{
+    vector<ActionFadeIn*>::iterator iter;
+    for (iter = actionsFadeIn.begin(); iter != actionsFadeIn.end(); ++iter)
+    {
+        if ((*iter)->actionTag == actionTag)
+        {
+            return *iter;
+        }
+    }
+    
+    return NULL;
+}
