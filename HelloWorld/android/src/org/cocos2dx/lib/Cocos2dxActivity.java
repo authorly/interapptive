@@ -31,6 +31,7 @@ import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -44,7 +45,9 @@ public class Cocos2dxActivity extends Activity{
     private static boolean accelerometerEnabled = false;
     private static Handler handler;
     private final static int HANDLER_SHOW_DIALOG = 1;
+    private final static int HANDLER_SHOW_MY_DIALOG = 2;
     private static String packageName;
+    private static Cocos2dxGLSurfaceView glSurfaceView;
 
     private static native void nativeSetPaths(String apkPath);
 
@@ -70,9 +73,16 @@ public class Cocos2dxActivity extends Activity{
         		case HANDLER_SHOW_DIALOG:
         			showDialog(((DialogMessage)msg.obj).title, ((DialogMessage)msg.obj).message);
         			break;
+        		case HANDLER_SHOW_MY_DIALOG:
+        			showMyDialog(((MyDialogMessage)msg.obj).title, ((MyDialogMessage)msg.obj).buttons);
+        			break;
         		}
         	}
         };
+    }
+    
+    public void setGLSurfaceView(Cocos2dxGLSurfaceView view) {
+    	glSurfaceView = view;
     }
     
     public static String getCurrentLanguage() {
@@ -87,6 +97,14 @@ public class Cocos2dxActivity extends Activity{
     	
     	handler.sendMessage(msg);
     } 
+    
+    public static void myShowDialog(String title, String[] buttons){
+    	Message msg = new Message();
+    	msg.what = HANDLER_SHOW_MY_DIALOG;
+    	msg.obj = new MyDialogMessage(title, buttons);
+    	
+    	handler.sendMessage(msg);
+    }
 
     public static void enableAccelerometer() {
         accelerometerEnabled = true;
@@ -240,6 +258,20 @@ public class Cocos2dxActivity extends Activity{
 
 	    dialog.show();
     }
+    
+    private void showMyDialog(String title, String[] buttons){
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	builder.setTitle(title);
+    	builder.setItems(buttons, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				glSurfaceView.buttonCliked(which);
+			}
+		});
+    	AlertDialog alert = builder.create();
+    	alert.show();
+    }
 }
 
 class DialogMessage {
@@ -249,5 +281,15 @@ class DialogMessage {
 	public DialogMessage(String title, String message){
 		this.message = message;
 		this.title = title;
+	}
+}
+
+class MyDialogMessage {
+	public String title;
+	public String[] buttons;
+	
+	public MyDialogMessage(String title, String[] buttons) {
+		this.title = title;
+		this.buttons = buttons;
 	}
 }

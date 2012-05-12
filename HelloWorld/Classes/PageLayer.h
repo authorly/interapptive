@@ -10,6 +10,7 @@ class Page;
 class PageLayer : public cocos2d::CCLayer
 {
 public:
+    virtual ~PageLayer();
 	static PageLayer* pageLayerWithPage(Page* page);
 	void touchCallback(float flag);
     void mainMenuItemCallback(cocos2d::CCObject *sender);
@@ -26,7 +27,6 @@ public:
     void changeColorBack(cocos2d::CCObject *sender);
 private:
     PageLayer();
-    //~PageLayer();
     void init(Page *page);
     
 	// helper functions to initialize layer

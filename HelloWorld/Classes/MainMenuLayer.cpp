@@ -22,7 +22,7 @@ MainMenuLayer::MainMenuLayer(): mydialog(NULL)
 
 MainMenuLayer::~MainMenuLayer()
 {
-    CC_SAFE_RELEASE(mydialog);
+    CC_SAFE_RELEASE_NULL(mydialog);
 }
 
 void MainMenuLayer::init()
@@ -107,12 +107,12 @@ void MainMenuLayer::onEnter()
 
 void MainMenuLayer::menuItemCallback(cocos2d::CCObject *sender)
 {
+    // should release previous dialog if it is exist
+    CC_SAFE_RELEASE_NULL(mydialog);
+    
     // only show dialog that page number greater than 1 last time left off 
     if (GlobalData::sharedGlobalData()->currentPageNumber > 1)
     {
-        // should release previous dialog
-        CC_SAFE_RELEASE(mydialog);
-        
         // pop a dialog to select 
         vector<string> items;
         items.push_back("Resume");

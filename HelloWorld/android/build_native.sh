@@ -1,8 +1,6 @@
 # set params
 NDK_ROOT_LOCAL=/cygdrive/d/programe/android/ndk/android-ndk-r6b
-COCOS2DX_ROOT_LOCAL=/cygdrive/e/cocos2d-x
-NDK_ROOT_LOCAL=/Users/chriswhitman/workspace/android-ndk-r7b
-COCOS2DX_ROOT_LOCAL=/Users/chriswhitman/interapptive
+COCOS2DX_ROOT_LOCAL=/Users/zhangkoumyou/SourceCode/interapptive
 
 # try to get global variable
 if [ $NDK_ROOT"aaa" != "aaa" ]; then
@@ -10,10 +8,10 @@ if [ $NDK_ROOT"aaa" != "aaa" ]; then
     NDK_ROOT_LOCAL=$NDK_ROOT
 fi
 
-if [ $COCOS2DX_ROOT"aaa" != "aaa" ]; then
-    echo "use global definition of COCOS2DX_ROOT: $COCOS2DX_ROOT"
-    COCOS2DX_ROOT_LOCAL=$COCOS2DX_ROOT
-fi
+#if [ $COCOS2DX_ROOT"aaa" != "aaa" ]; then
+#    echo "use global definition of COCOS2DX_ROOT: $COCOS2DX_ROOT"
+#    COCOS2DX_ROOT_LOCAL=$COCOS2DX_ROOT
+#fi
 
 HELLOWORLD_ROOT=$COCOS2DX_ROOT_LOCAL/HelloWorld/android
 

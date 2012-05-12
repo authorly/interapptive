@@ -147,7 +147,7 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
 
     protected void initView() {
         mRenderer = new Cocos2dxRenderer();       
-        setFocusableInTouchMode(true);
+        setFocusableInTouchMode(false);
         setRenderer(mRenderer);
         
         textInputWraper = new TextInputWraper(this);
@@ -268,7 +268,7 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
     // for touch event
     ///////////////////////////////////////////////////////////////////////////
 
-    public boolean onTouchEvent(final MotionEvent event) {
+    public boolean onTouchEvent(final MotionEvent event) {   	
     	// these data are used in ACTION_MOVE and ACTION_CANCEL
     	final int pointerNumber = event.getPointerCount();
     	final int[] ids = new int[pointerNumber];
@@ -368,6 +368,15 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
      */
     protected void onSizeChanged(int w, int h, int oldw, int oldh){
     	this.mRenderer.setScreenWidthAndHeight(w, h);
+    }
+    
+    public void buttonCliked(int index) {
+    	final int i = index;
+    	queueEvent(new Runnable() {
+    		public void run() {
+    			mRenderer.handleButtonClicked(i);
+    		}
+    	});
     }
     
  @Override

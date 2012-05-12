@@ -26,7 +26,9 @@ void PageManager::parseJsonAndRun(const char* pathOfJasonFile)
     
     // show main menu
     CCScene *scene = CCScene::node();
-    scene->addChild(new MainMenuLayer());
+    MainMenuLayer *mainMenuLayer = new MainMenuLayer();
+    mainMenuLayer->autorelease();
+    scene->addChild(mainMenuLayer);
     
     CCDirector::sharedDirector()->runWithScene(scene);
 }
@@ -38,7 +40,9 @@ void PageManager::gotoMainMenu(void)
     SimpleAudioEngine::sharedEngine()->stopAllEffects();
     
     CCScene *scene = CCScene::node();
-    scene->addChild(new MainMenuLayer());
+    MainMenuLayer *mainMenuLayer = new MainMenuLayer();
+    mainMenuLayer->autorelease();
+    scene->addChild(mainMenuLayer);
     
     CCDirector::sharedDirector()->replaceScene(scene);
 }
