@@ -14,7 +14,7 @@ public:
 	void emptyZones();
 	virtual bool init();
 	virtual void onEnter();
-	virtual void draw();
+	//virtual void draw();
 	virtual bool ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event);
 	virtual void ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event);
 	virtual void onExit();
