@@ -38,11 +38,6 @@ static unsigned int s_uID = 0;
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
 {
 	PageLayer *layer = new PageLayer();
-    CCLog("m_uid is %u", layer->m_uID);
-    if (s_uID == 0)
-    {
-        s_uID = layer->m_uID;
-    }
 	layer->autorelease();
     
     layer->init(page);

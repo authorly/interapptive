@@ -147,7 +147,7 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
 
     protected void initView() {
         mRenderer = new Cocos2dxRenderer();       
-        setFocusableInTouchMode(false);
+        setFocusableInTouchMode(true);
         setRenderer(mRenderer);
         
         textInputWraper = new TextInputWraper(this);
