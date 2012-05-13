@@ -1,15 +1,17 @@
 #ifndef __PAGE_LAYER_H__
 #define __PAGE_LAYER_H__
 
+#include "MyDialog.h"
 #include "cocos2d.h"
 
 #include <vector>
 
 class Page;
 
-class PageLayer : public cocos2d::CCLayer
+class PageLayer : public cocos2d::CCLayer, public DialogProtocol
 {
 public:
+    virtual ~PageLayer();
 	static PageLayer* pageLayerWithPage(Page* page);
 	void touchCallback(float flag);
     void mainMenuItemCallback(cocos2d::CCObject *sender);
@@ -26,7 +28,6 @@ public:
     void changeColorBack(cocos2d::CCObject *sender);
 private:
     PageLayer();
-    //~PageLayer();
     void init(Page *page);
     
 	// helper functions to initialize layer
@@ -61,6 +62,9 @@ private:
     // record all labels
     std::vector<cocos2d::CCLabelTTF*> wordsOfParagraph;
     cocos2d::CCLayer *paragraphLayer;
+
+    MyDialog *mydialog;
+    virtual void buttonClicked(int index);
 };
 
 #endif // __PAGE_LAYER_H__

@@ -42,6 +42,8 @@ public class ApplicationDemo extends Cocos2dxActivity{
 		setContentView(R.layout.helloworld_demo);
         mGLView = (Cocos2dxGLSurfaceView) findViewById(R.id.helloworld_gl_surfaceview);
         mGLView.setTextField((Cocos2dxEditText)findViewById(R.id.textField));
+        
+        super.setGLSurfaceView(mGLView);
 	}
 	
 	 @Override
