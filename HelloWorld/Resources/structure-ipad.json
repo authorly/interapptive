@@ -40,7 +40,7 @@
                       "visible": false,
                       "position": [
                                    512,
-                                   384
+                                   670
                                    ]
                       }
                       ],
@@ -50,8 +50,8 @@
                       "tappedStateImage": "autoplay-over.png",
                       "storyMode": "autoPlay",
                       "position": [
-                                   100,
-                                   112
+                                   230,
+                                   90
                                    ]
                       },
                       {
@@ -59,8 +59,8 @@
                       "tappedStateImage": "read-it-myself-over.png",
                       "storyMode": "readItMyself",
                       "position": [
-                                   400,
-                                   112
+                                   530,
+                                   90
                                    ]
                       },
                       {
@@ -68,15 +68,15 @@
                       "tappedStateImage": "read-to-me-over.png",
                       "storyMode": "readToMe",
                       "position": [
-                                   700,
-                                   112
+                                   830,
+                                   90
                                    ]
                       }
                       ],
         "API": {
             "CCFadeIn": [
                          {
-                         "duration": 2,
+                         "duration": 4,
                          "actionTag": 22
                          }
                          ]
@@ -138,17 +138,17 @@
                                              {
                                              "text": "For those who protect wild places",
                                              "yOffset": 250,
-                                             "xOffset": 300
+                                             "xOffset": 322
                                              },
                                              {
                                              "text": "and to the snowman that lives",
                                              "yOffset": 195,
-                                             "xOffset": 322
+                                             "xOffset": 346
                                              },
                                              {
                                              "text": "in every child's heart.",
                                              "yOffset": 140,
-                                             "xOffset": 375
+                                             "xOffset": 397
                                              }
                                              ]
                              }
@@ -285,38 +285,38 @@
                              "linesOfText": [
                                              {
                                              "text": "The snowflakes were",
-                                             "yOffset": 150,
-                                             "xOffset": 170
+                                             "yOffset": 160,
+                                             "xOffset": 180
                                              },
                                              {
                                              "text": "resting after their twisting,",
-                                             "yOffset": 125,
-                                             "xOffset": 200
-                                             },
-                                             {
-                                             "text": "twirling dance through",
-                                             "yOffset": 100,
+                                             "yOffset": 135,
                                              "xOffset": 210
                                              },
                                              {
+                                             "text": "twirling dance through",
+                                             "yOffset": 110,
+                                             "xOffset": 220
+                                             },
+                                             {
                                              "text": "the crisp night air.",
-                                             "yOffset": 75,
-                                             "xOffset": 190
+                                             "yOffset": 85,
+                                             "xOffset": 200
                                              },
                                              {
                                              "text": "Every twig in the forest",
-                                             "yOffset": 125,
-                                             "xOffset": 580
+                                             "yOffset": 135,
+                                             "xOffset": 590
                                              },
                                              {
                                              "text": "wore a new coat",
-                                             "yOffset": 100,
-                                             "xOffset": 605
+                                             "yOffset": 110,
+                                             "xOffset": 615
                                              },
                                              {
                                              "text": "of glimmering white.",
-                                             "yOffset": 75,
-                                             "xOffset": 660
+                                             "yOffset": 85,
+                                             "xOffset": 670
                                              }
                                              ]
                              },
@@ -353,38 +353,38 @@
                              "linesOfText": [
                                              {
                                              "text": "Daybreak came",
-                                             "yOffset": 140,
-                                             "xOffset": 125
+                                             "yOffset": 205,
+                                             "xOffset": 140
                                              },
                                              {
                                              "text": "softly moving through the woods",
-                                             "yOffset": 115,
-                                             "xOffset": 165
+                                             "yOffset": 180,
+                                             "xOffset": 146
                                              },
                                              {
                                              "text": "and yawning",
-                                             "yOffset": 90,
-                                             "xOffset": 150
+                                             "yOffset": 155,
+                                             "xOffset": 165
                                              },
                                              {
                                              "text": "as its rays slowly stretched",
-                                             "yOffset": 65,
-                                             "xOffset": 170
+                                             "yOffset": 130,
+                                             "xOffset": 185
                                              },
                                              {
                                              "text": "across the snowy meadows.",
-                                             "yOffset": 40,
-                                             "xOffset": 210
+                                             "yOffset": 105,
+                                             "xOffset": 225
                                              },
                                              {
                                              "text": "The birds",
-                                             "yOffset": 95,
-                                             "xOffset": 545
+                                             "yOffset": 145,
+                                             "xOffset": 630
                                              },
                                              {
                                              "text": "were the first to notice...",
-                                             "yOffset": 70,
-                                             "xOffset": 570
+                                             "yOffset": 120,
+                                             "xOffset": 665
                                              }
                                              ]
                              }
@@ -396,7 +396,7 @@
                            {
                            "position": [
                                         -810,
-                                        100
+                                        240
                                         ],
                            "duration": 3,
                            "actionTag": 30
@@ -404,7 +404,7 @@
                            ],
               "CCScaleBy": [
                             {
-                            "intensity": 1.4,
+                            "intensity": 1.5,
                             "duration": 3,
                             "actionTag": 31
                             },
@@ -414,7 +414,7 @@
                             "actionTag": 32
                             },
                             {
-                            "intensity": 1.4,
+                            "intensity": 1.5,
                             "duration": 3,
                             "actionTag": 34
                             }
@@ -492,28 +492,28 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Take care!",
-                                             "yOffset": 215,
-                                             "xOffset": 855
+                                             "yOffset": 615,
+                                             "xOffset": 785
                                              },
                                              {
                                              "text": "Take care!\"",
-                                             "yOffset": 190,
-                                             "xOffset": 835
+                                             "yOffset": 590,
+                                             "xOffset": 815
                                              },
                                              {
                                              "text": "The blujays cawed",
                                              "yOffset": 140,
-                                             "xOffset": 815
+                                             "xOffset": 732
                                              },
                                              {
                                              "text": "a warning from high in the tops",
                                              "yOffset": 115,
-                                             "xOffset": 700
+                                             "xOffset": 617
                                              },
                                              {
                                              "text": "of the tall oaks.",
                                              "yOffset": 90,
-                                             "xOffset": 760
+                                             "xOffset": 717
                                              }
                                              ]
                              }
@@ -575,17 +575,17 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Do you hear the jays calling?\"",
-                                             "yOffset": 560,
+                                             "yOffset": 510,
                                              "xOffset": 190
                                              },
                                              {
                                              "text": "Mother Doe spoke softly",
-                                             "yOffset": 535,
+                                             "yOffset": 485,
                                              "xOffset": 190
                                              },
                                              {
                                              "text": "to her fawn.",
-                                             "yOffset": 510,
+                                             "yOffset": 460,
                                              "xOffset": 190
                                              }
                                              ]
@@ -626,28 +626,28 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Yes,\" he whispered.",
-                                             "yOffset": 590,
-                                             "xOffset": 190
+                                             "yOffset": 585,
+                                             "xOffset": 175
                                              },
                                              {
                                              "text": "\"I always listen to the birds,",
-                                             "yOffset": 540,
-                                             "xOffset": 320
+                                             "yOffset": 505,
+                                             "xOffset": 315
                                              },
                                              {
                                              "text": "the wind blowing through the trees,",
-                                             "yOffset": 515,
-                                             "xOffset": 340
+                                             "yOffset": 480,
+                                             "xOffset": 335
                                              },
                                              {
                                              "text": "the rustling of the leaves",
-                                             "yOffset": 490,
-                                             "xOffset": 330
+                                             "yOffset": 455,
+                                             "xOffset": 325
                                              },
                                              {
                                              "text": "and all the sounds of the woods.\"",
-                                             "yOffset": 465,
-                                             "xOffset": 325
+                                             "yOffset": 430,
+                                             "xOffset": 320
                                              }
                                              ]
                              }
@@ -714,23 +714,23 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Who-hoo's in the woods?",
-                                             "yOffset": 185,
-                                             "xOffset": 755
+                                             "yOffset": 175,
+                                             "xOffset": 655
                                              },
                                              {
                                              "text": "Where? Where did the jays say?",
-                                             "yOffset": 160,
-                                             "xOffset": 785
+                                             "yOffset": 150,
+                                             "xOffset": 630
                                              },
                                              {
                                              "text": "Where is he?\"",
-                                             "yOffset": 135,
-                                             "xOffset": 770
+                                             "yOffset": 125,
+                                             "xOffset": 670
                                              },
                                              {
                                              "text": "asked the Owl of Many Questions.",
-                                             "yOffset": 110,
-                                             "xOffset": 795
+                                             "yOffset": 100,
+                                             "xOffset": 605
                                              }
                                              ]
                              }
@@ -788,23 +788,23 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Coo-coo-could that be him?\"",
-                                             "yOffset": 185,
-                                             "xOffset": 755
+                                             "yOffset": 205,
+                                             "xOffset": 670
                                              },
                                              {
                                              "text": "asked the mourning dove.",
-                                             "yOffset": 160,
-                                             "xOffset": 785
+                                             "yOffset": 180,
+                                             "xOffset": 665
                                              },
                                              {
                                              "text": "\"There!",
-                                             "yOffset": 135,
-                                             "xOffset": 770
+                                             "yOffset": 155,
+                                             "xOffset": 690
                                              },
                                              {
                                              "text": "Beyond the old apple tree.",
-                                             "yOffset": 110,
-                                             "xOffset": 795
+                                             "yOffset": 130,
+                                             "xOffset": 675
                                              }
                                              ]
                              }
@@ -937,23 +937,23 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Who-hoo's in the woods?",
-                                             "yOffset": 185,
-                                             "xOffset": 755
+                                             "yOffset": 215,
+                                             "xOffset": 655
                                              },
                                              {
                                              "text": "Why is he here?",
-                                             "yOffset": 160,
-                                             "xOffset": 785
+                                             "yOffset": 190,
+                                             "xOffset": 615
                                              },
                                              {
                                              "text": "When? When did the stranger come?",
-                                             "yOffset": 135,
-                                             "xOffset": 770
+                                             "yOffset": 165,
+                                             "xOffset": 570
                                              },
                                              {
                                              "text": "asked the Owl of Many Questions.",
-                                             "yOffset": 110,
-                                             "xOffset": 795
+                                             "yOffset": 140,
+                                             "xOffset": 595
                                              }
                                              ]
                              }
@@ -1020,33 +1020,33 @@
                              "linesOfText": [
                                              {
                                              "text": "\"I’ve been here since early morning,",
-                                             "yOffset": 685,
-                                             "xOffset": 755
+                                             "yOffset": 645,
+                                             "xOffset": 550
                                              },
                                              {
                                              "text": "before the first pale light",
-                                             "yOffset": 660,
-                                             "xOffset": 755
+                                             "yOffset": 620,
+                                             "xOffset": 615
                                              },
                                              {
                                              "text": "on the Eastern Sky,\"",
-                                             "yOffset": 635,
-                                             "xOffset": 755
+                                             "yOffset": 595,
+                                             "xOffset": 590
                                              },
                                              {
                                              "text": "said the munching muskrat.",
-                                             "yOffset": 610,
-                                             "xOffset": 755
+                                             "yOffset": 570,
+                                             "xOffset": 620
                                              },
                                              {
                                              "text": "\"No stranger came this way.",
-                                             "yOffset": 585,
-                                             "xOffset": 755
+                                             "yOffset": 545,
+                                             "xOffset": 600
                                              },
                                              {
                                              "text": "No one passed by my pond.\"",
-                                             "yOffset": 560,
-                                             "xOffset": 755
+                                             "yOffset": 520,
+                                             "xOffset": 615
                                              }
                                              ]
                              }
