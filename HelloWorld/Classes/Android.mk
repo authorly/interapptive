@@ -7,16 +7,19 @@ LOCAL_MODULE := game_logic_static
 LOCAL_MODULE_FILENAME := libgame_logic
 
 LOCAL_SRC_FILES := AppDelegate.cpp \
+                   Configurations.cpp \
                    DataLoader.cpp \
                    JsonParser.cpp \
+                   MainMenu.cpp \
+                   MainMenuLayer.cpp \
+                   MyDialog.cpp \
                    Page.cpp \
                    PageLayer.cpp \
                    PageManager.cpp \
+                   SharedGlobalData.cpp \
                    TouchDetection.cpp \
-                   TouchObject.cpp \
-                   Configurations.cpp \
-                   MainMenu.cpp \
-                   MainMenuLayer.cpp
+                   TouchObject.cpp          
+                   
                    
                    
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
