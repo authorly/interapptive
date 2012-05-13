@@ -30,6 +30,7 @@ PageLayer::PageLayer()
 , beginPoint(0, 0)
 , page(NULL)
 , paragraphLayer(NULL)
+, mydialog(NULL)
 {}
 
 static unsigned int s_uID = 0;
@@ -52,6 +53,7 @@ PageLayer* PageLayer::pageLayerWithPage(Page* page)
 PageLayer::~PageLayer()
 {
     // resources is release in onExit()
+    CC_SAFE_RELEASE_NULL(mydialog);
 }
 
 void PageLayer::init(Page *page)
@@ -287,8 +289,7 @@ void PageLayer::swipeLeft()
         
         
         float delay = swipeEndedOperationAndCalculateTotalDelay(true);
-        
-        
+                
         createParagraph(currentIndexOfParagraph);
         
         showParagraph(delay);
@@ -394,10 +395,26 @@ void PageLayer::createMainMenuItem()
 
 void PageLayer::mainMenuItemCallback(CCObject *sender)
 {
-    // todo
     // popup a dialog to select
+    // should release previous dialog if it is exist
+    CC_SAFE_RELEASE_NULL(mydialog);
     
-    PageManager::gotoMainMenu();
+    // pop a dialog to select 
+    vector<string> items;
+    items.push_back("Yes");
+    items.push_back("No");
+    
+    mydialog = new MyDialog();
+    mydialog->initWithItems("Go to main menu?", items, this);
+    mydialog->popUp();  
+}
+
+void PageLayer::buttonClicked(int index)
+{
+    if (index == 0)
+    {
+        PageManager::gotoMainMenu();
+    }
 }
 
 void PageLayer::createParagraph(int index)
