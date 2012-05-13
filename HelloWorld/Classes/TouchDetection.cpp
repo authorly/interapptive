@@ -47,6 +47,7 @@ void TouchDetection::emptyZones()
 	touchZones->removeAllObjects(true);
 }
 
+/*
 void TouchDetection::draw()
 {
 	if (isDebugDrawing)
@@ -62,11 +63,12 @@ void TouchDetection::draw()
         
         // restore original values
         glLineWidth(1);
-        /*glColor4ub(255,255,255,255);*/
+        //glColor4ub(255,255,255,255);
         glColor4f(1.0, 1.0, 1.0, 1.0);
 	}
 	CCLayer::draw();
 }
+*/
 
 bool TouchDetection::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
 {

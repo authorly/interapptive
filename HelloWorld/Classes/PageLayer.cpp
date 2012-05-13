@@ -23,7 +23,7 @@ using namespace std;
 #define XSCALE          (GlobalData::sharedGlobalData()->xScale)
 #define YSCALE          (GlobalData::sharedGlobalData()->yScale)
 #define TEXT_SCALE      (GlobalData::sharedGlobalData()->textScale)
-#define WORD_SPACING    (6 * TEXT_SCALE * XSCALE)
+#define WORD_SPACING    (6 * TEXT_SCALE)
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
@@ -32,8 +32,6 @@ PageLayer::PageLayer()
 , paragraphLayer(NULL)
 , mydialog(NULL)
 {}
-
-static unsigned int s_uID = 0;
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
 {
@@ -81,6 +79,13 @@ void PageLayer::onEnter()
 		StoryTouchableNode* touchNode = *iter;
         
 		touchDetector->addZoneWithPositionRadiusTargetSel(touchNode->position, touchNode->radius, this, schedule_selector(PageLayer::touchCallback), touchNode->touchFlag);
+        
+        // add particle system
+        CCParticleSystem *particle = CCParticleSystemQuad::particleWithFile("Flower.plist");
+        particle->setPosition(touchNode->position);
+        particle->initWithTotalParticles(6);
+        
+        addChild(particle);
 	}
 	touchDetector->isDebugDrawing = true;
 	touchDetector->setIsTouchEnabled(true);
