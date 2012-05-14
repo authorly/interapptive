@@ -276,8 +276,8 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 			LineText *lineText = new LineText();
 			lineText->text = jsonLineText["text"].asCString();
             
-            lineText->xOffset = jsonLineText["xOffset"].asInt() * XSCALE;
-            lineText->yOffset = jsonLineText["yOffset"].asInt() * TEXT_SCALE;
+            lineText->xOffset = jsonLineText["xOffset"].asInt() * TEXT_SCALE;
+            lineText->yOffset = jsonLineText["yOffset"].asInt() * YSCALE;
 
             // split text into words
             page->splitText(lineText);
