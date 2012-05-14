@@ -456,6 +456,24 @@ void PageLayer::createParagraph(int index)
             xOffset = lineText->xOffset;
             yOffset = lineText->yOffset;
             
+            CCLabelTTF *labelLine = CCLabelTTF::labelWithString(lineText->text.c_str(), fontName, fontSize);
+            labelLine->setColor(fontColor);                
+               
+            
+            // adjust xOffset
+            labelLine->setScale(1.0f);
+            float xOffsetAdjust = (labelLine->getContentSize().width * (TEXT_SCALE - XSCALE)) / 2;
+            xOffset += xOffsetAdjust;   
+            
+            // adjust yOffset
+            float yOffsetAdjust = (labelLine->getContentSize().height * (TEXT_SCALE - XSCALE)) / 2;
+            yOffset -= yOffsetAdjust;
+            
+            labelLine->setScale(TEXT_SCALE);
+            labelLine->setPosition(ccp(xOffset, yOffset)); 
+            paragraphLayer->addChild(labelLine);
+            
+            /*
             // adjust xOffset
             CCLabelTTF *labelLine = CCLabelTTF::labelWithString(lineText->text.c_str(), fontName, fontSize);
             labelLine->setScale(1.0f);
@@ -543,7 +561,7 @@ void PageLayer::createParagraph(int index)
                     
                     xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING;
                 }
-            }
+            }*/
 		}
     }
 }
@@ -580,6 +598,8 @@ void PageLayer::setParagraphVisible()
 
 void PageLayer::highlightParagraph()
 {
+    // todo: highlight paragraph
+    /*
     // don't hilight if the story mode is read to myself
     if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
     {
@@ -622,7 +642,7 @@ void PageLayer::highlightParagraph()
             ++wordCount;
         }
         SimpleAudioEngine::sharedEngine()->playEffect(page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str());
-    }
+    }*/
 }
 
 void PageLayer::changeColor(CCObject *sender)
