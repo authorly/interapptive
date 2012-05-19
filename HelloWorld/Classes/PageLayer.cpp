@@ -22,8 +22,7 @@ using namespace std;
 
 #define XSCALE          (GlobalData::sharedGlobalData()->xScale)
 #define YSCALE          (GlobalData::sharedGlobalData()->yScale)
-#define TEXT_SCALE      (GlobalData::sharedGlobalData()->textScale)
-#define WORD_SPACING    (6 * TEXT_SCALE)
+#define WORD_SPACING    (6 * XSCALE)
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
@@ -438,7 +437,7 @@ void PageLayer::createParagraph(int index)
         const char* fontName = page->settings.fontType.c_str();
         ccColor3B &fontColor = page->settings.fontColor;
         int fontSize = page->settings.fontSize;
-        
+
         // don't use a 
         paragraphLayer = CCLayer::node();
         paragraphLayer->retain();
@@ -456,37 +455,12 @@ void PageLayer::createParagraph(int index)
             xOffset = lineText->xOffset;
             yOffset = lineText->yOffset;
             
-            CCLabelTTF *labelLine = CCLabelTTF::labelWithString(lineText->text.c_str(), fontName, fontSize);
-            labelLine->setColor(fontColor);                
-               
-            
-            // adjust xOffset
-            labelLine->setScale(1.0f);
-            float xOffsetAdjust = (labelLine->getContentSize().width * (TEXT_SCALE - XSCALE)) / 2;
-            xOffset += xOffsetAdjust;   
-            
-            // adjust yOffset
-            float yOffsetAdjust = (labelLine->getContentSize().height * (TEXT_SCALE - XSCALE)) / 2;
-            yOffset -= yOffsetAdjust;
-            
-            labelLine->setScale(TEXT_SCALE);
-            labelLine->setPosition(ccp(xOffset, yOffset)); 
-            paragraphLayer->addChild(labelLine);
-            
-            /*
-            // adjust xOffset
-            CCLabelTTF *labelLine = CCLabelTTF::labelWithString(lineText->text.c_str(), fontName, fontSize);
-            labelLine->setScale(1.0f);
-            float xOffsetAdjust = (labelLine->getContentSize().width * (TEXT_SCALE - XSCALE)) / 2;
-             xOffset-= xOffsetAdjust;
-            
             for (int i = 0; i < lineText->words.size(); ++i)
             {
                 string &word = lineText->words[i];
                 CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);                
                 
-                label->setColor(fontColor);                
-                label->setScale(TEXT_SCALE);                
+                label->setColor(fontColor);                           
                 label->setPosition(ccp(xOffset, yOffset));
                         
                 // record label in a vector, don't have to retain it
@@ -507,7 +481,6 @@ void PageLayer::createParagraph(int index)
                     
                     // Create a CCLabelTTF for the next word so we may measure it
                     CCLabelTTF *nextLabel = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize); 
-                    nextLabel->setScale(TEXT_SCALE);
                    
                     // START: xOffset                                                                    
                     //       
@@ -561,7 +534,7 @@ void PageLayer::createParagraph(int index)
                     
                     xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING;
                 }
-            }*/
+            }
 		}
     }
 }
@@ -598,8 +571,6 @@ void PageLayer::setParagraphVisible()
 
 void PageLayer::highlightParagraph()
 {
-    // todo: highlight paragraph
-    /*
     // don't hilight if the story mode is read to myself
     if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
     {
@@ -642,7 +613,7 @@ void PageLayer::highlightParagraph()
             ++wordCount;
         }
         SimpleAudioEngine::sharedEngine()->playEffect(page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str());
-    }*/
+    }
 }
 
 void PageLayer::changeColor(CCObject *sender)

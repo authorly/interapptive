@@ -15,7 +15,6 @@ using namespace std;
 #define XSCALE      (GlobalData::sharedGlobalData()->xScale)
 #define YSCALE      (GlobalData::sharedGlobalData()->yScale)
 #define MIN_SCALE   (GlobalData::sharedGlobalData()->minScale)
-#define TEXT_SCALE  (GlobalData::sharedGlobalData()->xScale)
 
 bool JsonParser::parseJson(const char* pathOfJasonFile)
 {
@@ -234,6 +233,10 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
     
 	// font size
 	settings.fontSize = jsonSettings["fontSize"].asDouble();
+    if (XSCALE != 1)
+    {
+        settings.fontSize += 8;
+    }
     
 	// background music file
     // may not have background music to play, so should check it
@@ -276,7 +279,7 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 			LineText *lineText = new LineText();
 			lineText->text = jsonLineText["text"].asCString();
             
-            lineText->xOffset = jsonLineText["xOffset"].asInt() * TEXT_SCALE;
+            lineText->xOffset = jsonLineText["xOffset"].asInt() * XSCALE;
             lineText->yOffset = jsonLineText["yOffset"].asInt() * YSCALE;
 
             // split text into words

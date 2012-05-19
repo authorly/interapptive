@@ -13,7 +13,6 @@ GlobalData::GlobalData()
 , yScale(0.0f)
 , minScale(0.0f)
 , maxScale(0.0f)
-, textScale(0.0f)
 , currentPageNumber(0)
 {}
 
@@ -49,14 +48,4 @@ void GlobalData::init()
     yScale = CCDirector::sharedDirector()->getYScale();
     minScale = xScale > yScale ? yScale : xScale;
     maxScale = xScale > yScale ? xScale : yScale;
-    
-    CCSize s = CCDirector::sharedDirector()->getWinSize();
-    if (s.width < 1024 || s.height < 768)
-    {
-        textScale = 0.7f;
-    }
-    else 
-    {
-        textScale = 1.0f;
-    }
 }
