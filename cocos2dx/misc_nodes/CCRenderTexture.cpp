@@ -206,6 +206,9 @@ void CCRenderTexture::beginWithClear(float r, float g, float b, float a)
 
 void CCRenderTexture::end(bool bIsTOCacheTexture)
 {
+    // not save data, because it is slow
+    bIsTOCacheTexture = false;
+    
 	ccglBindFramebuffer(CC_GL_FRAMEBUFFER, m_nOldFBO);
 	// Restore the original matrix and viewport
 	glPopMatrix();

@@ -481,7 +481,6 @@ void PageLayer::createParagraph(int index)
                     
                     // Create a CCLabelTTF for the next word so we may measure it
                     CCLabelTTF *nextLabel = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize); 
-                    //nextLabel->setScale(TEXT_SCALE);
                    
                     // START: xOffset                                                                    
                     //       
