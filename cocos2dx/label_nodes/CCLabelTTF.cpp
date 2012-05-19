@@ -108,9 +108,7 @@ namespace cocos2d{
 		return false;
 	}
 	void CCLabelTTF::setString(const char *label)
-	{
-        setScale(1);
-        
+	{        
         if (m_pString)
         {
             delete m_pString;
