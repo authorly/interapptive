@@ -2,13 +2,14 @@
 #define __PAGE_LAYER_H__
 
 #include "MyDialog.h"
+#include "VideoPlayer.h"
 #include "cocos2d.h"
 
 #include <vector>
 
 class Page;
 
-class PageLayer : public cocos2d::CCLayer, public DialogProtocol
+class PageLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayerProtocol
 {
 public:
     virtual ~PageLayer();
@@ -26,6 +27,12 @@ public:
     void setParagraphVisible();
     void changeColor(cocos2d::CCObject *sender);
     void changeColorBack(cocos2d::CCObject *sender);
+    
+    // dialog protocol
+    virtual void buttonClicked(int index);
+    
+    // video player protocol
+    virtual void moviePlayBackDidFinish();
 private:
     PageLayer();
     void init(Page *page);
@@ -64,7 +71,7 @@ private:
     cocos2d::CCLayer *paragraphLayer;
 
     MyDialog *mydialog;
-    virtual void buttonClicked(int index);
+    bool isVideoPlaying;
 };
 
 #endif // __PAGE_LAYER_H__

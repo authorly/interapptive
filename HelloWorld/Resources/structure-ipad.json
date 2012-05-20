@@ -189,11 +189,11 @@
                         "glitterIndicator": false,
                         "touchFlag": 1,
                         "position": [
-                                     20,
-                                     20
+                                     512,
+                                     300
                                      ],
                         "radius": 20,
-                        "videoToPlay": "filename (null if sound or action values are present)",
+                        "videoToPlay": "page5-owl-video.mp4",
                         "soundToPlay": "filename (null if action or video values are present)",
                         "runAction": [
                                       {
