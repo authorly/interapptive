@@ -13,8 +13,7 @@ public:
 	TouchObject* addZoneWithPositionRadiusTargetSel(cocos2d::CCPoint &p, float r, cocos2d::CCObject *t, cocos2d::SEL_SCHEDULE s, int flag);
 	void emptyZones();
 	virtual bool init();
-	virtual void onEnter();
-	//virtual void draw();
+    virtual void registerWithTouchDispatcher(void);
 	virtual bool ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event);
 	virtual void ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event);
 	virtual void onExit();

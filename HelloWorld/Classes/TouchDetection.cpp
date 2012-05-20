@@ -15,11 +15,9 @@ TouchDetection::~TouchDetection()
 	touchZones->release();
 }
 
-void TouchDetection::onEnter()
+void TouchDetection::registerWithTouchDispatcher(void)
 {
-	CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, TOUCHDETECTION_HANDLER_PRIORITY, true);
-
-	CCLayer::onEnter();
+    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, TOUCHDETECTION_HANDLER_PRIORITY, true);
 }
 
 bool TouchDetection::init()

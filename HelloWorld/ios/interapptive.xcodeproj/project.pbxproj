@@ -33,6 +33,8 @@
 		1585A293152DD113003E4376 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585A292152DD113003E4376 /* OpenAL.framework */; };
 		1585A295152DD11F003E4376 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585A294152DD11F003E4376 /* AudioToolbox.framework */; };
 		1585A297152DD143003E4376 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585A296152DD143003E4376 /* AVFoundation.framework */; };
+		15AB5F0B15687351007CA061 /* VideoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15AB5F0A15687351007CA061 /* VideoPlayer.mm */; };
+		15AB5F0D15687E2B007CA061 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AB5F0C15687E2B007CA061 /* MediaPlayer.framework */; };
 		15D682A815498C150007F346 /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15D682A715498C150007F346 /* MainMenuLayer.cpp */; };
 		15DCC303155805B40083B694 /* SharedGlobalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15DCC302155805B40083B694 /* SharedGlobalData.cpp */; };
 		15DF9E181552AF3D00E4FF3A /* MyDialog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF9E171552AF3D00E4FF3A /* MyDialog.mm */; };
@@ -423,6 +425,9 @@
 		1585A292152DD113003E4376 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		1585A294152DD11F003E4376 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1585A296152DD143003E4376 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		15AB5F0815687322007CA061 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
+		15AB5F0A15687351007CA061 /* VideoPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlayer.mm; sourceTree = "<group>"; };
+		15AB5F0C15687E2B007CA061 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		15D682A515498BF10007F346 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		15D682A715498C150007F346 /* MainMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuLayer.cpp; sourceTree = "<group>"; };
 		15DCC300155805990083B694 /* SharedGlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedGlobalData.h; sourceTree = "<group>"; };
@@ -755,6 +760,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15AB5F0D15687E2B007CA061 /* MediaPlayer.framework in Frameworks */,
 				1585A297152DD143003E4376 /* AVFoundation.framework in Frameworks */,
 				1585A295152DD11F003E4376 /* AudioToolbox.framework in Frameworks */,
 				1585A293152DD113003E4376 /* OpenAL.framework in Frameworks */,
@@ -857,6 +863,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				15AB5F0C15687E2B007CA061 /* MediaPlayer.framework */,
 				3ACBB1E7153D4BF60075EDB2 /* arial.ttf */,
 				1585A296152DD143003E4376 /* AVFoundation.framework */,
 				1585A294152DD11F003E4376 /* AudioToolbox.framework */,
@@ -1020,6 +1027,8 @@
 				15DF9E171552AF3D00E4FF3A /* MyDialog.mm */,
 				15DCC300155805990083B694 /* SharedGlobalData.h */,
 				15DCC302155805B40083B694 /* SharedGlobalData.cpp */,
+				15AB5F0815687322007CA061 /* VideoPlayer.h */,
+				15AB5F0A15687351007CA061 /* VideoPlayer.mm */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -1776,6 +1785,7 @@
 				15D682A815498C150007F346 /* MainMenuLayer.cpp in Sources */,
 				15DF9E181552AF3D00E4FF3A /* MyDialog.mm in Sources */,
 				15DCC303155805B40083B694 /* SharedGlobalData.cpp in Sources */,
+				15AB5F0B15687351007CA061 /* VideoPlayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
