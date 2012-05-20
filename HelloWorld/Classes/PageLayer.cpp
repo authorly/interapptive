@@ -18,7 +18,8 @@ using namespace std;
 // page layer tag
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 10
-// space between words of text
+
+#define TOUCH_DETECT_TAG    11
 
 #define XSCALE          (GlobalData::sharedGlobalData()->xScale)
 #define YSCALE          (GlobalData::sharedGlobalData()->yScale)
@@ -30,6 +31,7 @@ PageLayer::PageLayer()
 , page(NULL)
 , paragraphLayer(NULL)
 , mydialog(NULL)
+, isVideoPlaying(false)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -72,6 +74,7 @@ void PageLayer::onEnter()
     // add touchable nodes
 	TouchDetection *touchDetector = TouchDetection::node();
 	addChild(touchDetector);
+    touchDetector->setTag(TOUCH_DETECT_TAG);
 	vector<StoryTouchableNode*>::iterator iter;
 	for (iter = page->storyTouchableNodes.begin(); iter != page->storyTouchableNodes.end(); ++iter)
 	{
@@ -109,7 +112,31 @@ void PageLayer::onExit()
 
 void PageLayer::touchCallback(float flag)
 {
-	CCLog("touch zone call back %f", flag);
+    // stop all sounds
+    stopHighlightEffect();
+    
+    // play video
+    bool showControl = false;
+    string &videoName = page->storyTouchableNodes[0]->videoToPlay;
+    VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, videoName.c_str(), showControl);
+    if (showControl)
+    {
+        // disable touch event
+        setIsTouchEnabled(false);
+        ((TouchDetection*)getChildByTag(TOUCH_DETECT_TAG))->setIsTouchEnabled(false);
+    }
+    isVideoPlaying = true;
+}
+
+void PageLayer::moviePlayBackDidFinish()
+{
+    if (getIsTouchEnabled() == false)
+    {
+        setIsTouchEnabled(true);
+        ((TouchDetection*)getChildByTag(TOUCH_DETECT_TAG))->setIsTouchEnabled(true);
+    }
+    
+    isVideoPlaying = false;
 }
 
 /// touch event
@@ -166,6 +193,14 @@ bool PageLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 
 void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
+    if (isVideoPlaying)
+    {
+        VideoPlayer::sharedVideoPlayer()->stopPlay();
+        isVideoPlaying = false;
+        
+        return;
+    }
+    
     CCPoint endPoint = pTouch->locationInView(pTouch->view());
     endPoint = CCDirector::sharedDirector()->convertToGL(endPoint);
     
@@ -365,7 +400,6 @@ void PageLayer::createSprites()
 		CCSprite *sprite = CCSprite::spriteWithFile(spriteInfo->image.c_str());
 		sprite->setTag(spriteInfo->spriteTag);
 		sprite->setPosition(spriteInfo->position);
-
 
 		// runAction
 		for (unsigned int i = 0; i < spriteInfo->actions.size(); ++i)
@@ -636,6 +670,8 @@ void PageLayer::stopHighlightEffect()
 {
     // stop all effect, I think now it will only have one effect that speaking word.
     SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    // stop background music
+    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
 }
 
 void PageLayer::playBackgroundMusic()
