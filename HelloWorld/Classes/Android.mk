@@ -18,7 +18,8 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    PageManager.cpp \
                    SharedGlobalData.cpp \
                    TouchDetection.cpp \
-                   TouchObject.cpp          
+                   TouchObject.cpp  \
+                   VideoPlayer.cpp        
                    
                    
                    

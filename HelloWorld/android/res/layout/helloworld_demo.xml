@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:background="@null"/>
-
+    
     <org.cocos2dx.lib.Cocos2dxGLSurfaceView
         android:id="@+id/helloworld_gl_surfaceview"
         android:layout_width="fill_parent"

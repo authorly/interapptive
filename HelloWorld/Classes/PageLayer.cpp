@@ -119,6 +119,7 @@ void PageLayer::touchCallback(float flag)
     bool showControl = false;
     string &videoName = page->storyTouchableNodes[0]->videoToPlay;
     VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, videoName.c_str(), showControl);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     if (showControl)
     {
         // disable touch event
@@ -126,10 +127,12 @@ void PageLayer::touchCallback(float flag)
         ((TouchDetection*)getChildByTag(TOUCH_DETECT_TAG))->setIsTouchEnabled(false);
     }
     isVideoPlaying = true;
+#endif
 }
 
 void PageLayer::moviePlayBackDidFinish()
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     if (getIsTouchEnabled() == false)
     {
         setIsTouchEnabled(true);
@@ -137,6 +140,7 @@ void PageLayer::moviePlayBackDidFinish()
     }
     
     isVideoPlaying = false;
+#endif
 }
 
 /// touch event
@@ -193,6 +197,7 @@ bool PageLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 
 void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     if (isVideoPlaying)
     {
         VideoPlayer::sharedVideoPlayer()->stopPlay();
@@ -200,6 +205,7 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
         
         return;
     }
+#endif
     
     CCPoint endPoint = pTouch->locationInView(pTouch->view());
     endPoint = CCDirector::sharedDirector()->convertToGL(endPoint);
