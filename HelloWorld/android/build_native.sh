@@ -19,8 +19,12 @@ HELLOWORLD_ROOT=$COCOS2DX_ROOT_LOCAL/HelloWorld/android
 if [ -d $HELLOWORLD_ROOT/assets ]; then
     rm -rf $HELLOWORLD_ROOT/assets
 fi
+if [ -d $HELLOWORLD_ROOT/res/raw ]; then
+    rm -rf $HELLOWORLD_ROOT/res/raw
+fi
 
 mkdir $HELLOWORLD_ROOT/assets
+mkdir $HELLOWORLD_ROOT/res/raw
 
 # copy resources
 for file in $COCOS2DX_ROOT_LOCAL/HelloWorld/Resources/*
@@ -30,7 +34,11 @@ do
     fi
 
     if [ -f $file ]; then
-        cp $file $HELLOWORLD_ROOT/assets
+        if [ "${file##*.}" = "mp4" ]; then
+            cp $file $HELLOWORLD_ROOT/res/raw
+        else
+            cp $file $HELLOWORLD_ROOT/assets
+        fi        
     fi
 done
 

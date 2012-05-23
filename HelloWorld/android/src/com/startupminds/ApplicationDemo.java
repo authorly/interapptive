@@ -21,13 +21,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-package org.cocos2dx.application;
+package com.startupminds;
 
+import org.cocos2dx.application.R;
+import org.cocos2dx.application.R.id;
+import org.cocos2dx.application.R.raw;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxEditText;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.ViewGroup;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 public class ApplicationDemo extends Cocos2dxActivity{
 	private Cocos2dxGLSurfaceView mGLView;
@@ -39,11 +48,12 @@ public class ApplicationDemo extends Cocos2dxActivity{
 		String packageName = getApplication().getPackageName();
 		super.setPackageName(packageName);
 		
+		
 		setContentView(R.layout.helloworld_demo);
+
         mGLView = (Cocos2dxGLSurfaceView) findViewById(R.id.helloworld_gl_surfaceview);
         mGLView.setTextField((Cocos2dxEditText)findViewById(R.id.textField));
-        
-        super.setGLSurfaceView(mGLView);
+        super.setGLSurfaceView(mGLView);        
 	}
 	
 	 @Override

@@ -24,10 +24,13 @@ THE SOFTWARE.
 
 package org.cocos2dx.lib;
 
+import com.startupminds.VideoPlayer;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -46,6 +49,7 @@ public class Cocos2dxActivity extends Activity{
     private static Handler handler;
     private final static int HANDLER_SHOW_DIALOG = 1;
     private final static int HANDLER_SHOW_MY_DIALOG = 2;
+    private final static int HANDLER_PLAY_VIDEO = 3;
     private static String packageName;
     private static Cocos2dxGLSurfaceView glSurfaceView;
 
@@ -76,6 +80,9 @@ public class Cocos2dxActivity extends Activity{
         		case HANDLER_SHOW_MY_DIALOG:
         			showMyDialog(((MyDialogMessage)msg.obj).title, ((MyDialogMessage)msg.obj).buttons);
         			break;
+        		case HANDLER_PLAY_VIDEO:
+        			playVideo(((PlayVideoMessage)msg.obj).fileName, ((PlayVideoMessage)msg.obj).showControl);
+        			break;
         		}
         	}
         };
@@ -105,6 +112,14 @@ public class Cocos2dxActivity extends Activity{
     	
     	handler.sendMessage(msg);
     }
+    
+    public static void playVideoJNI(String fileName, boolean showControl) {
+    	Message msg = new Message();
+    	msg.what = HANDLER_PLAY_VIDEO;
+    	msg.obj = new PlayVideoMessage(fileName, showControl);
+    	
+    	handler.sendMessage(msg); 
+	 }
 
     public static void enableAccelerometer() {
         accelerometerEnabled = true;
@@ -272,6 +287,13 @@ public class Cocos2dxActivity extends Activity{
     	AlertDialog alert = builder.create();
     	alert.show();
     }
+    
+    private void playVideo(String fileName, boolean showControl) {   	
+    	Intent intent = new Intent(this, VideoPlayer.class);
+    	intent.putExtra("showControl", showControl);
+    	intent.putExtra("fileName", fileName);
+        startActivity(intent);
+    }
 }
 
 class DialogMessage {
@@ -291,5 +313,15 @@ class MyDialogMessage {
 	public MyDialogMessage(String title, String[] buttons) {
 		this.title = title;
 		this.buttons = buttons;
+	}
+}
+
+class PlayVideoMessage {
+	public String fileName;
+	public boolean showControl;
+	
+	public PlayVideoMessage(String fileName, boolean showControl) {
+		this.fileName = fileName;
+		this.showControl = showControl;
 	}
 }
