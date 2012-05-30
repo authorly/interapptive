@@ -48,4 +48,10 @@ public class VideoPlayer extends Activity {
 		
 		videoView.start();
 	}
+	
+	public void onPause() {
+		super.onPause();
+		
+		this.finish();
+	}
 }
