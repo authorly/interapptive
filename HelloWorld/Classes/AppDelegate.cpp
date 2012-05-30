@@ -1,12 +1,12 @@
 #include "AppDelegate.h"
-
-#include "cocos2d.h"
-
 #include "CCEGLView.h"
-
 #include "PageManager.h"
 
+#include "cocos2d.h"
+#include "SimpleAudioEngine.h"
+
 USING_NS_CC;
+using namespace CocosDenshion;
 
 AppDelegate::AppDelegate() {
 
@@ -118,6 +118,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground() {
 	CCDirector::sharedDirector()->pause();
+    
+    SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
 
 	// if you use SimpleAudioEngine, it must be pause
 	// SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
