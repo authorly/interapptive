@@ -10,6 +10,11 @@ if [ $NDK_ROOT"aaa" != "aaa" ]; then
     NDK_ROOT_LOCAL=$NDK_ROOT
 fi
 
+if [ $COCOS2DX_ROOT"aaa" != "aaa" ]; then
+    echo "use global definition of COCOS2DX_ROOT: $COCOS2DX_ROOT"
+    COCOS2DX_ROOT_LOCAL=$COCOS2DX_ROOT
+fi
+
 #if [ $COCOS2DX_ROOT"aaa" != "aaa" ]; then
 #    echo "use global definition of COCOS2DX_ROOT: $COCOS2DX_ROOT"
 #    COCOS2DX_ROOT_LOCAL=$COCOS2DX_ROOT
