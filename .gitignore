@@ -8,9 +8,11 @@ assets/
 .classpath
 .project
 .cproject
+*.prefs
 
 # Ignore files build by linux
 *.o
+
 
 # Ignore files build by airplay
 build_*_xcode/
@@ -35,3 +37,10 @@ build/
 Simulator/
 Device-Debug/
 Device-Release/
+
+# Ignore local files built for android
+gdb.setup
+gdbserver
+libcocosdenshion.so
+libhelloworld.so
+raw/
