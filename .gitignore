@@ -44,3 +44,5 @@ gdbserver
 libcocosdenshion.so
 libhelloworld.so
 raw/
+BuildConfig.java
+R.java
