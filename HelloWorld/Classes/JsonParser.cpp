@@ -936,7 +936,7 @@ void JsonParser::parseWithDelayTime(Page *page, Json::Value &value)
 			Json::Value delayTime = value[i];
 
 			// duration
-		    float duration = (float)delayTime["duratioin"].asDouble();
+		    float duration = (float)delayTime["duration"].asDouble();
 		    // actionTag
 		    int actionTag = delayTime["actionTag"].asInt();
 

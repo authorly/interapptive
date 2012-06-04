@@ -20,7 +20,7 @@
   "MainMenu":{
     "audio":{
       "backgroundMusic":"background.mp3",
-      "backgroundMusicLoops":0,
+      "backgroundMusicLoops":1,
       "soundEffect":"main-menu-title-sound.mp3",
       "soundEffectLoops":1
     },
@@ -186,7 +186,7 @@
         "CCStoryTouchableNode":{
           "nodes":[
             {
-              "glitterIndicator":false,
+              "glitterIndicator":true,
               "touchFlag":1,
               "position":[
                 512,
@@ -492,27 +492,27 @@
               "linesOfText":[
                 {
                   "text":"\"Take care!",
-                  "yOffset":615,
-                  "xOffset":785
+                  "yOffset":230,
+                  "xOffset":845
                 },
                 {
                   "text":"Take care!\"",
-                  "yOffset":590,
-                  "xOffset":815
+                  "yOffset":205,
+                  "xOffset":825
                 },
                 {
                   "text":"The blujays cawed",
-                  "yOffset":140,
-                  "xOffset":732
+                  "yOffset":105,
+                  "xOffset":630
                 },
                 {
                   "text":"a warning from high in the tops",
-                  "yOffset":115,
-                  "xOffset":617
+                  "yOffset":80,
+                  "xOffset":560
                 },
                 {
                   "text":"of the tall oaks.",
-                  "yOffset":90,
+                  "yOffset":55,
                   "xOffset":717
                 }
               ]
@@ -521,6 +521,27 @@
         }
       },
       "API":{
+        "CCStoryTouchableNode":{
+          "nodes":[
+            {
+              "glitterIndicator":true,
+              "touchFlag":1,
+              "position":[
+                200,
+                500
+              ],
+              "radius":90,
+              "videoToPlay":"page3effect.mp3",
+              "soundToPlay":"effect-bluejay-caw.mp3",
+              "runAction":[
+                {
+                  "spriteTag":1,
+                  "actionTag":20
+                }
+              ]
+            }
+          ]
+        },
         "CCSprites":[
           {
             "image":"background0030.jpg",
@@ -575,17 +596,17 @@
               "linesOfText":[
                 {
                   "text":"\"Do you hear the jays calling?\"",
-                  "yOffset":510,
-                  "xOffset":190
+                  "yOffset":550,
+                  "xOffset":130
                 },
                 {
                   "text":"Mother Doe spoke softly",
-                  "yOffset":485,
+                  "yOffset":525,
                   "xOffset":190
                 },
                 {
                   "text":"to her fawn.",
-                  "yOffset":460,
+                  "yOffset":500,
                   "xOffset":190
                 }
               ]
@@ -627,27 +648,27 @@
                 {
                   "text":"\"Yes,\" he whispered.",
                   "yOffset":585,
-                  "xOffset":175
+                  "xOffset":115
                 },
                 {
                   "text":"\"I always listen to the birds,",
-                  "yOffset":505,
-                  "xOffset":315
+                  "yOffset":535,
+                  "xOffset":155
                 },
                 {
                   "text":"the wind blowing through the trees,",
-                  "yOffset":480,
-                  "xOffset":335
+                  "yOffset":510,
+                  "xOffset":145
                 },
                 {
                   "text":"the rustling of the leaves",
-                  "yOffset":455,
-                  "xOffset":325
+                  "yOffset":485,
+                  "xOffset":135
                 },
                 {
                   "text":"and all the sounds of the woods.\"",
-                  "yOffset":430,
-                  "xOffset":320
+                  "yOffset":460,
+                  "xOffset":130
                 }
               ]
             }
@@ -715,22 +736,22 @@
                 {
                   "text":"\"Who-hoo's in the woods?",
                   "yOffset":175,
-                  "xOffset":655
+                  "xOffset":105
                 },
                 {
                   "text":"Where? Where did the jays say?",
                   "yOffset":150,
-                  "xOffset":630
+                  "xOffset":130
                 },
                 {
                   "text":"Where is he?\"",
                   "yOffset":125,
-                  "xOffset":670
+                  "xOffset":120
                 },
                 {
                   "text":"asked the Owl of Many Questions.",
                   "yOffset":100,
-                  "xOffset":605
+                  "xOffset":125
                 }
               ]
             }
@@ -738,6 +759,23 @@
         }
       },
       "API":{
+        "CCMoveBy":[
+          {
+            "position":[
+              -1220,
+              0
+            ],
+            "duration":4,
+            "actionTag":500
+          }
+        ],
+        "CCScaleBy":[
+          {
+            "intensity":1.5,
+            "duration":4,
+            "actionTag":501
+          }
+        ],
         "CCSprites":[
           {
             "image":"background0050.jpg",
@@ -745,6 +783,10 @@
             "position":[
               812,
               384
+            ],
+            "actions":[
+              500,
+              501
             ]
           }
         ]
@@ -788,23 +830,23 @@
               "linesOfText":[
                 {
                   "text":"\"Coo-coo-could that be him?\"",
-                  "yOffset":205,
-                  "xOffset":670
+                  "yOffset":195,
+                  "xOffset":620
                 },
                 {
                   "text":"asked the mourning dove.",
-                  "yOffset":180,
-                  "xOffset":665
+                  "yOffset":170,
+                  "xOffset":615
                 },
                 {
                   "text":"\"There!",
-                  "yOffset":155,
-                  "xOffset":690
+                  "yOffset":145,
+                  "xOffset":640
                 },
                 {
                   "text":"Beyond the old apple tree.",
-                  "yOffset":130,
-                  "xOffset":675
+                  "yOffset":120,
+                  "xOffset":625
                 }
               ]
             }
@@ -860,17 +902,17 @@
                 {
                   "text":"Follow the snow trail, past the pond",
                   "yOffset":425,
-                  "xOffset":195
+                  "xOffset":115
                 },
                 {
                   "text":"to where the meadow begins",
                   "yOffset":400,
-                  "xOffset":195
+                  "xOffset":135
                 },
                 {
                   "text":"Not far... not far at all.\"",
                   "yOffset":375,
-                  "xOffset":195
+                  "xOffset":175
                 }
               ]
             }
@@ -937,23 +979,23 @@
               "linesOfText":[
                 {
                   "text":"\"Who-hoo's in the woods?",
-                  "yOffset":215,
+                  "yOffset":170,
                   "xOffset":655
                 },
                 {
                   "text":"Why is he here?",
-                  "yOffset":190,
-                  "xOffset":615
+                  "yOffset":145,
+                  "xOffset":685
                 },
                 {
-                  "text":"When? When did the stranger come?",
-                  "yOffset":165,
-                  "xOffset":570
+                  "text":"When? When did the stranger come?\"",
+                  "yOffset":120,
+                  "xOffset":490
                 },
                 {
                   "text":"asked the Owl of Many Questions.",
-                  "yOffset":140,
-                  "xOffset":595
+                  "yOffset":95,
+                  "xOffset":500
                 }
               ]
             }
@@ -1020,33 +1062,33 @@
               "linesOfText":[
                 {
                   "text":"\"I’ve been here since early morning,",
-                  "yOffset":645,
-                  "xOffset":550
+                  "yOffset":695,
+                  "xOffset":500
                 },
                 {
                   "text":"before the first pale light",
-                  "yOffset":620,
+                  "yOffset":670,
                   "xOffset":615
                 },
                 {
                   "text":"on the Eastern Sky,\"",
-                  "yOffset":595,
+                  "yOffset":645,
                   "xOffset":590
                 },
                 {
                   "text":"said the munching muskrat.",
-                  "yOffset":570,
+                  "yOffset":620,
                   "xOffset":620
                 },
                 {
                   "text":"\"No stranger came this way.",
-                  "yOffset":545,
+                  "yOffset":595,
                   "xOffset":600
                 },
                 {
                   "text":"No one passed by my pond.\"",
-                  "yOffset":520,
-                  "xOffset":615
+                  "yOffset":570,
+                  "xOffset":585
                 }
               ]
             }
@@ -1057,6 +1099,2147 @@
         "CCSprites":[
           {
             "image":"background0090.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":10,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-10-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.265,
+                0.735,
+                1.097,
+                1.241,
+                1.627,
+                2.025,
+                2.302,
+                2.447,
+                2.857,
+                2.977,
+                3.206,
+                3.713,
+                4.484,
+                5.268,
+                5.461,
+                6.232,
+                6.377,
+                6.630,
+                7.000,
+                7.329,
+                7.691,
+                7.908,
+                8.462,
+                8.969,
+                9.270,
+                9.620,
+                10.9
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"I followed the snow trail",
+                  "yOffset":705,
+                  "xOffset":50
+                },
+                {
+                  "text":"under the light of the Winter Moon,\"",
+                  "yOffset":680,
+                  "xOffset":75
+                },
+                {
+                  "text":"answered the buck.",
+                  "yOffset":655,
+                  "xOffset":240
+                },
+                {
+                  "text":"\"He was not there during the night,",
+                  "yOffset":570,
+                  "xOffset":60
+                },
+                {
+                  "text":"that I am sure!\"",
+                  "yOffset":545,
+                  "xOffset":120
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCScaleBy":[
+          {
+            "intensity":1.2,
+            "duration":0,
+            "actionTag":1000
+          }
+        ],
+        "CCSprites":[
+          {
+            "image":"background0100.jpg",
+            "spriteTag":2,
+            "position":[
+              610,
+              384
+            ],
+            "actions":[
+              1000
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":11,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-11-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.289,
+                0.661,
+                0.836,
+                1.334,
+                1.962,
+                2.106,
+                2.267,
+                2.669,
+                3.506,
+                3.715,
+                4.358,
+                4.471,
+                4.615,
+                4.969,
+                5.020,
+                5.226,
+                6.577,
+                6.786,
+                7.301,
+                7.687,
+                8.100,
+                8.300,
+                8.893,
+                9.151,
+                10.196,
+                10.582,
+                10.807,
+                11.209,
+                11.563,
+                11.890,
+                12.367,
+                12.592,
+                12.817,
+                13.155,
+                14.2
+              ],
+              "linesOfText":[
+                {
+                  "text":"As the animals moved",
+                  "yOffset":275,
+                  "xOffset":630
+                },
+                {
+                  "text":"through the snowy forest, they came to",
+                  "yOffset":250,
+                  "xOffset":535
+                },
+                {
+                  "text":"the edge of the meadow.",
+                  "yOffset":225,
+                  "xOffset":695
+                },
+                {
+                  "text":"The frightened doe",
+                  "yOffset":175,
+                  "xOffset":610
+                },
+                {
+                  "text":"stomped her hoof",
+                  "yOffset":150,
+                  "xOffset":690
+                },
+                {
+                  "text":"and snorted!",
+                  "yOffset":125,
+                  "xOffset":685
+                },
+                {
+                  "text":"\"Where is he?",
+                  "yOffset":100,
+                  "xOffset":645
+                },
+                {
+                  "text":"Where is he?",
+                  "yOffset":75,
+                  "xOffset":680
+                },
+                {
+                  "text":"Can you see him?\"",
+                  "yOffset":50,
+                  "xOffset":690
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCScaleBy":[
+          {
+            "intensity":1.5,
+            "duration":0,
+            "actionTag":1100
+          }
+        ],
+        "CCSprites":[
+          {
+            "image":"background0110.jpg",
+            "spriteTag":2,
+            "position":[
+              312,
+              384
+            ],
+            "actions":[
+              1100
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":12,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-12-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.234,
+                1.100,
+                1.407,
+                1.632,
+                2.074,
+                2.246,
+                2.661,
+                3.337,
+                3.491,
+                4.591,
+                5.060,
+                5.268,
+                5.403,
+                5.574,
+                5.755,
+                5.989,
+                6.659,
+                6.971,
+                7.9,
+                9.2
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"Yes! Yes! I do see him!\"",
+                  "yOffset":245,
+                  "xOffset":250
+                },
+                {
+                  "text":"chattered the squirrel.",
+                  "yOffset":220,
+                  "xOffset":315
+                },
+                {
+                  "text":"\"Someone needs to go and,",
+                  "yOffset":195,
+                  "xOffset":290
+                },
+                {
+                  "text":"and check-check-check",
+                  "yOffset":170,
+                  "xOffset":320
+                },
+                {
+                  "text":"check’em out!\"",
+                  "yOffset":145,
+                  "xOffset":300
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0120.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":13,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-13-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.197,
+                1.2605,
+                1.49,
+                2.66,
+                3.701,
+                3.95,
+                4.15,
+                4.8,
+                5.4,
+                5.775,
+                6.3,
+                6.5,
+                6.9,
+                8.0
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"Who-hoo-hoo will go?",
+                  "yOffset":195,
+                  "xOffset":590
+                },
+                {
+                  "text":"Who-hoo-hoo will go see?\"",
+                  "yOffset":170,
+                  "xOffset":615
+                },
+                {
+                  "text":"asked the Owl of Many Questions.",
+                  "yOffset":145,
+                  "xOffset":530
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0130.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":14,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-14-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.220,
+                0.592,
+                0.963,
+                1.184,
+                1.556,
+                1.807,
+                2.279,
+                2.560,
+                2.962,
+                3.343,
+                3.825,
+                5.482,
+                5.713,
+                5.800,
+                6.875,
+                7.108,
+                7.531,
+                8.711,
+                10.4
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"Now don’t be looking at me.",
+                  "yOffset":685,
+                  "xOffset":120
+                },
+                {
+                  "text":"I’m much too busy chew-chew-chewing on my antler,\"",
+                  "yOffset":660,
+                  "xOffset":165
+                },
+                {
+                  "text":"sputtered the porcupine.",
+                  "yOffset":635,
+                  "xOffset":140
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0140.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":15,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-15-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.211,
+                0.569,
+                0.992,
+                1.304,
+                1.561,
+                2.464,
+                2.831,
+                3.747,
+                3.940,
+                4.289,
+                5.070,
+                6.22,
+                7.2,
+                7.45,
+                7.56,
+                8.13,
+                10.0
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"You’ll not be volunteering me!",
+                  "yOffset":645,
+                  "xOffset":570
+                },
+                {
+                  "text":"No sir-ree!\"",
+                  "yOffset":620,
+                  "xOffset":635
+                },
+                {
+                  "text":"said the scared rabbit.",
+                  "yOffset":595,
+                  "xOffset":610
+                },
+                {
+                  "text":"\"Is... is he watching me?\"",
+                  "yOffset":570,
+                  "xOffset":640
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0150.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":16,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-16-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.249,
+                1.810,
+                1.926,
+                2.050,
+                2.391,
+                2.565,
+                4.392,
+                4.658,
+                4.824,
+                5.297,
+                5.588,
+                5.804,
+                6.169,
+                6.320,
+                7.8
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"Howdy-dee-dee.",
+                  "yOffset":180,
+                  "xOffset":300
+                },
+                {
+                  "text":"It is me, the chickadee-dee-dee!",
+                  "yOffset":155,
+                  "xOffset":265
+                },
+                {
+                  "text":"I will go! I will take the lead.\"",
+                  "yOffset":130,
+                  "xOffset":290
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0160.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":17,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-17-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.256,
+                0.92,
+                1.354,
+                2.15,
+                2.693,
+                3.077,
+                3.86,
+                4.4,
+                5.243,
+                5.45,
+                5.5713,
+                6.15,
+                6.355,
+                6.497,
+                6.668,
+                7.08,
+                7.23,
+                7.49,
+                7.993,
+                8.2073,
+                8.73,
+                8.99,
+                9.19,
+                9.95,
+                10.17,
+                10.58,
+                11.15,
+                11.28,
+                11.39,
+                11.52,
+                12.08,
+                13.1,
+                13.49,
+                13.75,
+                14.14,
+                15.5
+              ],
+              "linesOfText":[
+                {
+                  "text":"I’m-m-m-m the smallest and",
+                  "yOffset":645,
+                  "xOffset":350
+                },
+                {
+                  "text":"I ca-ca-can scamper quickly.",
+                  "yOffset":620,
+                  "xOffset":415
+                },
+                {
+                  "text":"I’ll do it! I’ll make a tunnel under the snow",
+                  "yOffset":595,
+                  "xOffset":390
+                },
+                {
+                  "text":"where only I can go...",
+                  "yOffset":570,
+                  "xOffset":420
+                },
+                {
+                  "text":"...creeping in closer to get a look.",
+                  "yOffset":545,
+                  "xOffset":400
+                },
+                {
+                  "text":"Quietly",
+                  "yOffset":520,
+                  "xOffset":485
+                },
+                {
+                  "text":"just like a m-m-mouse!\"",
+                  "yOffset":495,
+                  "xOffset":535
+                }
+              ]
+            },
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-17-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.1867,
+                0.30,
+                0.3867,
+                0.613,
+                1.306,
+                1.653,
+                1.9536,
+                2.487,
+                3.58,
+                3.81,
+                4.65,
+                4.87,
+                5.12,
+                5.32,
+                5.82,
+                6.12,
+                6.38,
+                6.52,
+                7.9
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"Let it be me!",
+                  "yOffset":495,
+                  "xOffset":95
+                },
+                {
+                  "text":"volunteered the fawn.",
+                  "yOffset":470,
+                  "xOffset":105
+                },
+                {
+                  "text":"\"I can do it.",
+                  "yOffset":445,
+                  "xOffset":70
+                },
+                {
+                  "text":"I know I can!\"",
+                  "yOffset":420,
+                  "xOffset":90
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCScaleBy":[
+          {
+            "intensity":1.6,
+            "duration":0,
+            "actionTag":1700
+          },
+          {
+            "intensity":1.2,
+            "duration":2,
+            "actionTag":1701
+          }
+        ],
+         "CCMoveBy":[
+          {
+            "position":[
+              -840,
+              0
+            ],
+            "duration":2,
+            "actionTag":1702
+          }
+        ],
+        "CCSprites":[
+          {
+            "image":"background0170.jpg",
+            "spriteTag":17,
+            "position":[
+              900,
+              390
+            ],
+            "actions":[
+              1700
+            ]
+          }
+        ],
+        "CCStorySwipeEnded":{
+          "runAction":[
+            {
+              "runAfterSwipeNumber":1,
+              "spriteTag":17,
+              "actionTags":[
+                1701,
+                1702
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":18,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-18-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.089,
+                0.567,
+                0.698,
+                0.958,
+                1.52,
+                1.81,
+                2.04,
+                2.67,
+                3.28,
+                3.49,
+                3.88,
+                4.58,
+                5.08,
+                5.29,
+                5.58,
+                7.1
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"I am the strongest and the biggest,\"",
+                  "yOffset":645,
+                  "xOffset":90
+                },
+                {
+                  "text":"said the young buck.",
+                  "yOffset":620,
+                  "xOffset":145
+                },
+                {
+                  "text":"\"I should go first.\"",
+                  "yOffset":595,
+                  "xOffset":220
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0180.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":19,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-19-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.159,
+                0.633,
+                0.748,
+                1.407,
+                2.38,
+                2.86,
+                3.21,
+                5.5
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"I can fly faster,\"",
+                  "yOffset":205,
+                  "xOffset":170
+                },
+                {
+                  "text":"chirped the cardinal.",
+                  "yOffset":180,
+                  "xOffset":185
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0190.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":20,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-20-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.10,
+                0.38,
+                0.548,
+                0.837,
+                1.02,
+                1.363,
+                2.459,
+                2.88,
+                3.16,
+                3.34,
+                4.09,
+                4.9,
+                5.13,
+                6.04,
+                6.3,
+                6.64,
+                7.33,
+                7.71,
+                8.71,
+                9.86,
+                10.6,
+                10.82,
+                11.6,
+                12.04,
+                12.67,
+                12.98,
+                13.44,
+                13.7,
+                14.8
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"But I can run like lightning\"",
+                  "yOffset":200,
+                  "xOffset":550
+                },
+                {
+                  "text":"and I have antlers!",
+                  "yOffset":175,
+                  "xOffset":615
+                },
+                {
+                  "text":"boasted the buck.",
+                  "yOffset":150,
+                  "xOffset":590
+                },
+                {
+                  "text":"\"But... I am... I am... RED!\"",
+                  "yOffset":100,
+                  "xOffset":620
+                },
+                {
+                  "text":"announced the cardinal,",
+                  "yOffset":75,
+                  "xOffset":600
+                },
+                {
+                  "text":"not knowing what else to say.",
+                  "yOffset":50,
+                  "xOffset":615
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCScaleBy":[
+          {
+            "intensity":1.25,
+            "duration":0,
+            "actionTag":2000
+          },
+          {
+            "intensity":1.0,
+            "duration":2,
+            "actionTag":2001
+          }
+        ],
+         "CCMoveBy":[
+          {
+            "position":[
+              -720,
+              110
+            ],
+            "duration":2,
+            "actionTag":2002
+          }
+        ],
+        "CCSprites":[
+          {
+            "image":"background0200.jpg",
+            "spriteTag":20,
+            "position":[
+              950,
+              400
+            ],
+            "actions":[
+              2000
+            ]
+          }
+        ],
+        "CCStorySwipeEnded":{
+          "runAction":[
+            {
+              "runAfterSwipeNumber":1,
+              "spriteTag":20,
+              "actionTags":[
+                2001,
+                2002
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":21,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-21-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.159,
+                0.516,
+                0.58,
+                0.644,
+                0.96,
+                1.44,
+                1.76,
+                2.07,
+                3.57,
+                4.61,
+                4.74,
+                7.3
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"What are you waiting for?",
+                  "yOffset":355,
+                  "xOffset":70
+                },
+                {
+                  "text":"I’m there already-dee-dee\"",
+                  "yOffset":330,
+                  "xOffset":135
+                },
+                {
+                  "text":"exclaimed the Chickadee-dee-dee!",
+                  "yOffset":305,
+                  "xOffset":130
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0210.jpg",
+            "spriteTag":2,
+            "position":[
+              800,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":22,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-22-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.159,
+                1.4,
+                1.8,
+                2.08,
+                3.67,
+                3.95,
+                4.13,
+                4.35,
+                4.65,
+                4.87,
+                5.04,
+                5.21,
+                5.56,
+                5.7,
+                5.906,
+                6.12,
+                6.59,
+                6.8,
+                7.41,
+                7.68,
+                8.63,
+                8.99,
+                9.40,
+                9.82,
+                10.21,
+                10.57,
+                12.2
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"Gee-gee-gee!\"",
+                  "yOffset":645,
+                  "xOffset":550
+                },
+                {
+                  "text":"said the Chickadee-dee-dee.",
+                  "yOffset":620,
+                  "xOffset":615
+                },
+                {
+                  "text":"\"There are nuts and seeds",
+                  "yOffset":595,
+                  "xOffset":590
+                },
+                {
+                  "text":"on his hat for you and me!",
+                  "yOffset":570,
+                  "xOffset":620
+                },
+                {
+                  "text":"This stranger is friendly",
+                  "yOffset":545,
+                  "xOffset":600
+                },
+                {
+                  "text":"Come see! Come see!",
+                  "yOffset":520,
+                  "xOffset":615
+                },
+                {
+                  "text":"There’s plenty.\"",
+                  "yOffset":495,
+                  "xOffset":615
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCScaleBy":[
+          {
+            "intensity":1.3,
+            "duration":0,
+            "actionTag":2200
+          },
+          {
+            "intensity":1.1,
+            "duration":0,
+            "actionTag":2201
+          }
+        ],
+        "CCSprites":[
+          {
+            "image":"background0220.jpg",
+            "spriteTag":2,
+            "position":[
+              200,
+              384
+            ],
+            "actions":[
+              2200
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":23,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-23-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.159,
+                0.378,
+                0.632,
+                0.82,
+                1.06,
+                1.26,
+                1.41,
+                1.61,
+                2.21,
+                2.58,
+                2.79,
+                3.15,
+                3.73,
+                4.01,
+                4.34,
+                4.88,
+                5.24,
+                5.46,
+                5.68,
+                7.1
+              ],
+              "linesOfText":[
+                {
+                  "text":".",
+                  "yOffset":645,
+                  "xOffset":550
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0230.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":24,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-24-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.159,
+                0.448,
+                0.655,
+                0.8506,
+                1.09,
+                1.51,
+                1.7816,
+                2.47,
+                3.10,
+                3.32,
+                4.51,
+                4.7,
+                4.87,
+                5.26,
+                5.57,
+                6.09,
+                6.3,
+                7.42,
+                7.83,
+                8.32,
+                8.57,
+                8.93,
+                9.21,
+                9.55,
+                10.28,
+                10.68,
+                11.21,
+                11.48,
+                13.3
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"I can see there’s something for you,\"",
+                  "yOffset":145,
+                  "xOffset":90
+                },
+                {
+                  "text":"said the buck. \"Could it be there’s something for me?",
+                  "yOffset":120,
+                  "xOffset":155
+                },
+                {
+                  "text":"'My nose is leading me to corn",
+                  "yOffset":95,
+                  "xOffset":130
+                },
+                {
+                  "text":"buried beneath the snow.\"",
+                  "yOffset":70,
+                  "xOffset":170
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0240.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":25,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-25-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.575
+              ],
+              "linesOfText":[
+                {
+                  "text":".",
+                  "yOffset":645,
+                  "xOffset":550
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0250.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":26,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-26-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.159,
+                0.378,
+                0.632,
+                0.82,
+                1.06,
+                1.26,
+                1.41,
+                1.61,
+                2.21,
+                2.58,
+                2.79,
+                3.15,
+                3.73,
+                4.01,
+                4.34,
+                4.88,
+                5.24,
+                5.46,
+                5.68,
+                7.1
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"I found a treat that I can eat,\"",
+                  "yOffset":125,
+                  "xOffset":550
+                },
+                {
+                  "text":"said the young doe as she reached out",
+                  "yOffset":100,
+                  "xOffset":475
+                },
+                {
+                  "text":"'to the stranger.",
+                  "yOffset":75,
+                  "xOffset":750
+                }
+              ]
+            },
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-26-paragraph-2.mp3",
+              "highlightingTimes":[
+                0.159,
+                0.82,
+                1.0,
+                2.41,
+                2.70,
+                2.83,
+                2.95,
+                3.13,
+                3.53,
+                4.5
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"Wow! A carrot!",
+                  "yOffset":125,
+                  "xOffset":620
+                },
+                {
+                  "text":"Do I have to share it?\"",
+                  "yOffset":100,
+                  "xOffset":645
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0260.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":27,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-27-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.575,
+                8.85
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"What is this?\" questioned the fawn",
+                  "yOffset":145,
+                  "xOffset":290
+                },
+                {
+                  "text":"as he passed a curious object in the snow.",
+                  "yOffset":120,
+                  "xOffset":320
+                },
+                {
+                  "text":"\"Could it be...",
+                  "yOffset":95,
+                  "xOffset":265
+                },
+                {
+                  "text":"there's more than one stranger in the woods?\"",
+                  "yOffset":70,
+                  "xOffset":280
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0270.jpg",
+            "spriteTag":2,
+            "position":[
+              750,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":28,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-28-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.575
+              ],
+              "linesOfText":[
+                {
+                  "text":"After the corn was gone,",
+                  "yOffset":215,
+                  "xOffset":150
+                },
+                {
+                  "text":"the animals left by the snow trail one by one",
+                  "yOffset":190,
+                  "xOffset":115
+                },
+                {
+                  "text":"and disappeared into the winter woods.",
+                  "yOffset":165,
+                  "xOffset":190
+                },
+                {
+                  "text":"It was the chickadee who took the last seed and flew away.",
+                  "yOffset":140,
+                  "xOffset":120
+                },
+                {
+                  "text":"The snowman stood alone, but only for a short time.",
+                  "yOffset":115,
+                  "xOffset":170
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0280.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":29,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-29-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.159,
+                0.386,
+                0.501,
+                0.8282,
+                2.27,
+                2.68,
+                2.96,
+                3.44,
+                4.54,
+                5.37,
+                5.53,
+                5.67,
+                6.8,
+                7.37,
+                7.7,
+                8.0,
+                8.54,
+                8.72,
+                10.2
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"They have seaten everything...",
+                  "yOffset":675,
+                  "xOffset":310
+                },
+                {
+                  "text":"even the carrot nose,\"",
+                  "yOffset":650,
+                  "xOffset":375
+                },
+                {
+                  "text":"whispered the little sister",
+                  "yOffset":625,
+                  "xOffset":350
+                },
+                {
+                  "text":"peeking out from behind the evergreens.",
+                  "yOffset":600,
+                  "xOffset":360
+                }
+              ]
+            },
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-29-paragraph-2.mp3",
+              "highlightingTimes":[
+                0.159,
+                0.386,
+                0.501,
+                0.8282,
+                2.27,
+                2.68,
+                2.96,
+                3.44,
+                4.54,
+                5.37,
+                5.53,
+                5.67,
+                6.8,
+                7.37,
+                7.7,
+                8.0,
+                8.54,
+                8.72,
+                10.2
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"Let’s put out more",
+                  "yOffset":690,
+                  "xOffset":130
+                },
+                {
+                  "text":"seeds and corn",
+                  "yOffset":665,
+                  "xOffset":165
+                },
+                {
+                  "text":"before they come back,\"",
+                  "yOffset":640,
+                  "xOffset":140
+                },
+                {
+                  "text":"encouraged the brother.",
+                  "yOffset":615,
+                  "xOffset":155
+                },
+                {
+                  "text":"\"The animals will never know",
+                  "yOffset":590,
+                  "xOffset":170
+                },
+                {
+                  "text":"we were here.\"",
+                  "yOffset":565,
+                  "xOffset":150
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+         "CCScaleBy":[
+          {
+            "intensity":1.6,
+            "duration":0,
+            "actionTag":2900
+          },
+          {
+            "intensity":1.0,
+            "duration":2,
+            "actionTag":2901
+          }
+        ],
+         "CCMoveBy":[
+          {
+            "position":[
+              -520,
+              0
+            ],
+            "duration":2,
+            "actionTag":2902
+          }
+        ],
+        "CCSprites":[
+          {
+            "image":"background0290.jpg",
+            "spriteTag":2,
+            "position":[
+              800,
+              384
+            ],
+            "actions":[
+              2900
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":30,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-30-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.156,
+                0.54,
+                0.82,
+                1.00,
+                1.22,
+                1.51,
+                1.90,
+                2.44,
+                3.51,
+                3.87,
+                4.09,
+                4.56,
+                4.95,
+                5.55,
+                6.29,
+                7.57,
+                7.81,
+                8.23,
+                8.52,
+                8.80,
+                9.37,
+                9.65,
+                9.79,
+                10.25,
+                10.48,
+                10.8,
+                11.295,
+                11.6,
+                12.09,
+                12.45,
+                12.76,
+                13.01,
+                13.72,
+                13.95,
+                14.1,
+                14.48,
+                14.66,
+                14.83,
+                16.8
+              ],
+              "linesOfText":[
+                {
+                  "text":"\"How long will",
+                  "yOffset":645,
+                  "xOffset":590
+                },
+                {
+                  "text":"we feed them?",
+                  "yOffset":620,
+                  "xOffset":615
+                },
+                {
+                  "text":"she asked.",
+                  "yOffset":595,
+                  "xOffset":670
+                },
+                {
+                  "text":"\"For a long,",
+                  "yOffset":520,
+                  "xOffset":620
+                },
+                {
+                  "text":"long time,\"",
+                  "yOffset":495,
+                  "xOffset":635
+                },
+                {
+                  "text":"he replied.",
+                  "yOffset":470,
+                  "xOffset":665
+                },
+                {
+                  "text":"\"After the snow has gone",
+                  "yOffset":165,
+                  "xOffset":590
+                },
+                {
+                  "text":"and the snowman has melted away,",
+                  "yOffset":140,
+                  "xOffset":530
+                },
+                {
+                  "text":"until the frogs start to sing",
+                  "yOffset":115,
+                  "xOffset":630
+                },
+                {
+                  "text":"and the trees grow new leaves.\"",
+                  "yOffset":90,
+                  "xOffset":560
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0300.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":31,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-31-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.220,
+                0.516,
+                0.762,
+                0.95,
+                1.14,
+                1.641,
+                1.787,
+                3.3
+              ],
+              "linesOfText":[
+                {
+                  "text":"I think they like carrots the best!",
+                  "yOffset":155,
+                  "xOffset":70
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0310.jpg",
+            "spriteTag":2,
+            "position":[
+              512,
+              384
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "Page":{
+        "settings":{
+          "number":32,
+          "fontType":"arial.ttf",
+          "fontColor":[
+            0,
+            0,
+            0
+          ],
+          "fontHighlightColor":[
+            255,
+            0,
+            0
+          ],
+          "fontSize":20
+        },
+        "text":{
+          "paragraphs":[
+            {
+              "delayForPanning":true,
+              "voiceAudioFile":"page-32-paragraph-1.mp3",
+              "highlightingTimes":[
+                0.575,
+                0.938
+              ],
+              "linesOfText":[
+                {
+                  "text":".",
+                  "yOffset":645,
+                  "xOffset":550
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "API":{
+        "CCSprites":[
+          {
+            "image":"background0320.jpg",
             "spriteTag":2,
             "position":[
               512,

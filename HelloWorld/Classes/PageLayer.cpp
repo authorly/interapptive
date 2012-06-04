@@ -522,56 +522,7 @@ void PageLayer::createParagraph(int index)
                     // Create a CCLabelTTF for the next word so we may measure it
                     CCLabelTTF *nextLabel = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize); 
                    
-                    // START: xOffset                                                                    
-                    //       
-                    //    Result:
-                    //
-                    //        HOORAY
-                    //        HOORAY
-                    //           
-                    // 
-                    // 1: xOffset += label->getContentSize().width/2                                     
-                    //                                                                                   
-                    // Increment x coordinates position for next word.                                   
-                    // Since we place text by its center, we divide current label's width by 2. 
-                    //     - This represents the current labels width, which must be added to the xOffset
-                    //     - After adding this width, (label->getContentSize().width/2),
-                    //       the center of next label would be placed at the end of the current label
-                    //
-                    //    Result:
-                    // 
-                    //     HOORAY
-                    //        HOORAY
-                    //
-                    //
-                    // 2: xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2
-                    //
-                    // Then, we add the width of the next label, divided by 2 (nextLabel->getContentSize().width/2).
-                    //     - This will give enough spacing for beginning of the next label to be placed
-                    //       at the end of the current label
-                    //
-                    //   Result:
-                    //
-                    //     HOORAY
-                    //           HOORAY
-                    //
-                    //
-                    // 3. xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING
-                    //
-                    // Then, we increment by the WORD_SPACING constant, this is the spacing between the words.
-                    //     - This may need to be scaled according to font size?
-                    //       Because a large font size must require more spacing then a small font size. 
-                    //       So, we must take the different font sizes into account when considering WORD_SPACING
-                    //       We may need a minimum font size and maximum font size for this. 
-                    //
-                    //    Result:
-                    //
-                    //     HOORAY
-                    //             HOORAY
-                    //
-                    //
-                    // END: xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING
-                    
+                    // Calculate placement of CCLabelTTF
                     xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING;
                 }
             }
