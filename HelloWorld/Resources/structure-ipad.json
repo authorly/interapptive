@@ -71,6 +71,33 @@
           830,
           90
         ]
+      },
+      {
+        "normalStateImage":"video-link-the-snowman.png",
+        "tappedStateImage":"video-link-the-snowman-over.png",
+        "videoToPlay":"video-the-snowman.mp4",
+        "position":[
+          830,
+          140
+        ]
+      },
+      {
+        "normalStateImage":"video-link-mixed-nuts.png",
+        "tappedStateImage":"video-link-mixed-nuts-over.png",
+        "videoToPlay":"video-mixed-nuts.mp4",
+        "position":[
+          200,
+          140
+        ]
+      },
+      {
+        "normalStateImage":"go-to-website.png",
+        "tappedStateImage":"go-to-website-over.png",
+        "url":"http://strangerinthewoods.com",
+        "position":[
+          200,
+          240
+        ]
       }
     ],
     "API":{
@@ -193,7 +220,7 @@
                 300
               ],
               "radius":20,
-              "videoToPlay":"page5owlvideo.mp4",
+              "videoToPlay":"video-owl.mp4",
               "soundToPlay":"filename (null if action or video values are present)",
               "runAction":[
                 {
@@ -531,7 +558,7 @@
                 500
               ],
               "radius":90,
-              "videoToPlay":"page5owlvideo.mp4",
+              "videoToPlay":"video-owl.mp4",
               "soundToPlay":"effect-bluejay-caw.mp3",
               "runAction":[
                 {
