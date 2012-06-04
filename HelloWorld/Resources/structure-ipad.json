@@ -793,12 +793,13 @@
         ],
         "CCSequence":[
           {
+            "actionTag": 504,
             "actions":[
               502,
               503
             ]
           }
-        ]
+        ],
         "CCSprites":[
           {
             "image":"background0050.jpg",
@@ -808,8 +809,7 @@
               384
             ],
             "actions":[
-              500,
-              501
+              504
             ]
           }
         ]
