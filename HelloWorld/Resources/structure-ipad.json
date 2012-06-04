@@ -2316,7 +2316,8 @@
             0,
             0
           ],
-          "fontSize":20
+          "fontSize":20,
+          "physicsObject":"page-22-snowman.plist"
         },
         "text":{
           "paragraphs":[
