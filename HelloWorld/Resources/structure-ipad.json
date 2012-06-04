@@ -776,6 +776,29 @@
             "actionTag":501
           }
         ],
+        "CCDelayTime":[
+          {
+            "duration":3.0,
+            "actionTag":502
+          }
+        ],
+        "CCSpawn":[
+          {
+            "actionTag":503
+            "actions":[
+              500,
+              501
+            ]
+          }
+        ],
+        "CCSequence":[
+          {
+            "actions":[
+              502,
+              503
+            ]
+          }
+        ]
         "CCSprites":[
           {
             "image":"background0050.jpg",
