@@ -27,7 +27,11 @@ typedef  struct _menuItem
 {
     std::string         normalStateImage;
     std::string         tappedStateImage;
+
     std::string         storyMode;
+    std::string         videoToPlay;
+    std::string         url;
+   
     cocos2d::CCPoint    position;
 } MenuItem;
 
