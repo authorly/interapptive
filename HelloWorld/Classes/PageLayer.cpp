@@ -87,6 +87,9 @@ void PageLayer::onEnter()
         particle->setPosition(touchNode->position);
         particle->initWithTotalParticles(6);
         
+        // preload effect if exists
+        SimpleAudioEngine::sharedEngine()->preloadEffect(touchNode->soundToPlay.c_str());
+        
         addChild(particle);
 	}
 	touchDetector->isDebugDrawing = true;
@@ -118,7 +121,18 @@ void PageLayer::touchCallback(float flag)
     // play video
     bool showControl = false;
     string &videoName = page->storyTouchableNodes[0]->videoToPlay;
-    VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, videoName.c_str(), showControl);
+    if (videoName.size() != 0)
+    {
+       VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, videoName.c_str(), showControl); 
+    }
+    
+    // play audeo
+    string &audeoName = page->storyTouchableNodes[0]->soundToPlay;
+    if (audeoName.size() != 0)
+    {
+        SimpleAudioEngine::sharedEngine()->playEffect(audeoName.c_str());
+    }
+        
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     if (showControl)
     {

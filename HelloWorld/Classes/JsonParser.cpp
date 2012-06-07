@@ -136,7 +136,18 @@ void JsonParser::parseMenuItems(Json::Value &value)
         // tappedstateImage
         menuItem->tappedStateImage = menuItemJson["tappedStateImage"].asCString();
         // story mode
-        menuItem->storyMode = menuItemJson["storyMode"].asCString();
+        if (! menuItemJson["storyMode"].isNull())
+        {
+            menuItem->storyMode = menuItemJson["storyMode"].asCString();
+        }
+        if (! menuItemJson["videoToPlay"].isNull())
+        {
+            menuItem->videoToPlay = menuItemJson["videoToPlay"].asCString();
+        }
+        if (! menuItemJson["url"].isNull())
+        {
+            menuItem->url = menuItemJson["url"].asCString();
+        }
         // position
         int x = 0, y = 1;
         menuItem->position.x = menuItemJson["position"][x].asInt() * XSCALE;
@@ -377,6 +388,10 @@ void JsonParser::parseWithAPI(Page* page, Json::Value &jsonAPI)
 	// CCDelayTime
 	Json::Value delayTime = jsonAPI["CCDelayTime"];
 	parseWithDelayTime(page, delayTime);
+    
+    // CCSpawn
+    Json::Value spawn = jsonAPI["CCSpawn"];
+    parseWithSpawn(page, spawn);
 
 	// CCSequence
 	// should parse CCSequence later, it uses other action
@@ -799,22 +814,27 @@ void JsonParser::parseWithSequence(Page *page, Json::Value &value)
 {
 	if (! value.isNull())
 	{
-		// actionTag
-		int actionTag = value["actionTag"].asInt();
-		// actions
-		Json::Value actions = value["actions"];
-		CCArray *arr = CCArray::array();
-		for (unsigned int i = 0; i < actions.size(); ++i)
-		{
-			int actionToAddTag = actions[i]["actionTag"].asInt();
-			CCAction *actionToAdd = page->getActionByTag(actionToAddTag);
-			assert(actionToAdd != NULL);
-			assert(dynamic_cast<CCFiniteTimeAction*>(actionToAdd) != NULL);
-			arr->addObject((CCFiniteTimeAction*)actionToAdd);
-		}
-
-		CCAction *sequence = CCSequence::actionsWithArray(arr);
-		page->addAction(actionTag, sequence);
+        for (unsigned int i = 0; i < value.size(); ++i)
+        {
+            Json::Value jsonSequence = value[i];
+            
+            // actionTag
+            int actionTag = jsonSequence["actionTag"].asInt();
+            // actions
+            Json::Value actions = jsonSequence["actions"];
+            CCArray *arr = CCArray::array();
+            for (unsigned int j = 0; j < actions.size(); ++j)
+            {
+                int actionToAddTag = actions[j].asInt();
+                CCAction *actionToAdd = page->getActionByTag(actionToAddTag);
+                assert(actionToAdd != NULL);
+                assert(dynamic_cast<CCFiniteTimeAction*>(actionToAdd) != NULL);
+                arr->addObject((CCFiniteTimeAction*)actionToAdd);
+            }
+            
+            CCAction *sequence = CCSequence::actionsWithArray(arr);
+            page->addAction(actionTag, sequence);
+        }		
 	}
 }
 
@@ -866,9 +886,15 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 			// radius
 			storyTouchableNode->radius = node["radius"].asInt() * MIN_SCALE;
 			// videoToPlay
-			storyTouchableNode->videoToPlay = node["videoToPlay"].asCString();
+            if (! node["videoToPlay"].isNull())
+            {
+                storyTouchableNode->videoToPlay = node["videoToPlay"].asCString();
+            }
 			// soundToPlay
-			storyTouchableNode->soundToPlay = node["soundToPlay"].asCString();
+            if (! node["soundToPlay"].isNull())
+            {
+                storyTouchableNode->soundToPlay = node["soundToPlay"].asCString();
+            }			
 			// touchFlag
 			storyTouchableNode->touchFlag = node["touchFlag"].asInt();
 			// runAction
@@ -944,4 +970,31 @@ void JsonParser::parseWithDelayTime(Page *page, Json::Value &value)
 		    page->addAction(actionTag, action);
 		}		
 	}
+}
+
+void JsonParser::parseWithSpawn(Page *page, Json::Value &value)
+{
+    if (! value.isNull())
+    {
+        for (unsigned int i = 0; i < value.size(); ++i)
+        {
+            Json::Value jsonSpawn = value[i];
+            
+            // actionTag
+            int actionTag = jsonSpawn["actionTag"].asInt();
+            // actions
+            Json::Value actions = jsonSpawn["actions"];
+            CCArray *arr = CCArray::array();
+            for (unsigned int j = 0; j < actions.size(); ++j)
+            {
+                int actionToAddTag = actions[j].asInt();
+                CCAction *actionToAdd = page->getActionByTag(actionToAddTag);
+                assert(actionToAdd != NULL);
+                assert(dynamic_cast<CCFiniteTimeAction*>(actionToAdd) != NULL);
+                arr->addObject((CCFiniteTimeAction*)actionToAdd);
+            }
+            CCFiniteTimeAction *action = CCSpawn::actionsWithArray(arr);
+            page->addAction(actionTag, action);
+        }
+    }
 }
