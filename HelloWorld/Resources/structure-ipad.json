@@ -220,8 +220,7 @@
                 300
               ],
               "radius":20,
-              "videoToPlay":"video-owl.mp4",
-              "soundToPlay":"filename (null if action or video values are present)",
+              "videoToPlay":"video-doe-snort.mp4",
               "runAction":[
                 {
                   "spriteTag":1,
