@@ -492,7 +492,6 @@ void PageLayer::createParagraph(int index)
         ccColor3B &fontColor = page->settings.fontColor;
         int fontSize = page->settings.fontSize;
 
-        // don't use a 
         paragraphLayer = CCLayer::node();
         paragraphLayer->retain();
         paragraphLayer->setTag(PARAGRAPH_LAYER_TAG);
