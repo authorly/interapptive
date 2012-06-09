@@ -95,6 +95,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	CCDirector *pDirector = CCDirector::sharedDirector();
 
 	pDirector->setOpenGLView(&CCEGLView::sharedOpenGLView());
+    pDirector->setDepthTest(false);
     
     pDirector->setTargetWinsize(CCSizeMake(1024, 768));
 
