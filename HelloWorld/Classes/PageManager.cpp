@@ -7,6 +7,7 @@
 #include "Configurations.h"
 #include "MainMenuLayer.h"
 #include "SharedGlobalData.h"
+#include "MyScene.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -94,7 +95,8 @@ CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 	if (page)
 	{
 		// create a scene
-		scene = CCScene::node();
+		scene = MyScene::node();
+        //scene = CCScene::node();
 
 		// create a layer because we want to receive touch event
 		CCLayer *layer = PageLayer::pageLayerWithPage(page);;
