@@ -32,6 +32,7 @@ PageLayer::PageLayer()
 , paragraphLayer(NULL)
 , mydialog(NULL)
 , isVideoPlaying(false)
+, isSwiping(false)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -224,6 +225,11 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     CCPoint endPoint = pTouch->locationInView(pTouch->view());
     endPoint = CCDirector::sharedDirector()->convertToGL(endPoint);
     
+    if (isSwiping)
+    {
+        return;
+    }
+    
     if (isSwipeLeft(beginPoint, endPoint)) 
     {
         swipeLeft();
@@ -283,7 +289,7 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
             assert(sprite != NULL);
             
             // get action
-            CCAction *action;
+            CCFiniteTimeAction *action;
             if (actionToRun->actionTags.size() > 1)
             {
                 // spawn action
@@ -301,7 +307,7 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
             }
             else 
             {
-                action = page->getActionByTag(actionToRun->actionTags[0]);
+                action = (CCFiniteTimeAction*)page->getActionByTag(actionToRun->actionTags[0]);
                 assert(dynamic_cast<CCScaleBy*>(action) != NULL || dynamic_cast<CCMoveBy*>(action) != NULL);
             }
             
@@ -309,23 +315,40 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
             // caculate delay time
             delay = ((CCFiniteTimeAction*)action)->getDuration();
             
+            
+            
             if (swipeLeft)
             {
                 // swipe left
-                sprite->runAction(action);
+                CCFiniteTimeAction* seq = CCSequence::actions(action, 
+                                                              CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::swipEndCallBack)),
+                                                              NULL);
+                sprite->runAction(seq);
             }
             else 
             {
                 // swipe right
                 // run reverse action
-                sprite->runAction(((CCActionInterval*)action)->reverse()); 
-            }   
+                CCFiniteTimeAction* seq = CCSequence::actions(action->reverse(), 
+                                                              CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::swipEndCallBack)),
+                                                              NULL);
+                sprite->runAction(seq); 
+            }  
+            
+            // start swipping, then don't do swipe operation until done
+            isSwiping = true;
         }
         
         delete swipeEndedActionsToRun;
     }
     
     return delay;
+}
+
+void PageLayer::swipEndCallBack()
+{
+    // swipping ended
+    isSwiping = false;
 }
 
 void PageLayer::swipeLeft()
@@ -586,32 +609,23 @@ void PageLayer::highlightParagraph()
         {
             if (wordCount < audioInterval.size())
             {
-                (*iter)->runAction(CCSequence::actions(
-                                                       CCDelayTime::actionWithDuration(audioInterval[wordCount]),
+                (*iter)->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount]),
                                                        CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColor)),
-                                                       NULL
-                                                       )
-                                   );
+                                                       NULL));
             }
             
             if (wordCount < audioInterval.size() - 1)
             {
-                (*iter)->runAction(CCSequence::actions(
-                                                       CCDelayTime::actionWithDuration(audioInterval[wordCount+1]),
+                (*iter)->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount+1]),
                                                        CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColorBack)),
-                                                       NULL
-                                                       )
-                                   );
+                                                       NULL));
             }
             
             if (wordCount == audioInterval.size() - 1)
             {
-                (*iter)->runAction(CCSequence::actions(
-                                                       CCDelayTime::actionWithDuration(audioInterval[wordCount] + 0.8f),
+                (*iter)->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount] + 0.8f),
                                                        CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColorBack)),
-                                                       NULL
-                                                       )
-                                   );
+                                                       NULL));
             }
             
             ++wordCount;

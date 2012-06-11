@@ -47,6 +47,7 @@ private:
     bool isSwipeRight(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos);
     void swipeLeft();
     void swipeRight();
+    void swipEndCallBack();
     /**
      * @swipteLeft if it is swipe left
      * @ret total delay time for showing paragraph
@@ -72,6 +73,8 @@ private:
 
     MyDialog *mydialog;
     bool isVideoPlaying;
+    
+    bool isSwiping;
 };
 
 #endif // __PAGE_LAYER_H__
