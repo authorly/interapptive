@@ -13,6 +13,7 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    MainMenu.cpp \
                    MainMenuLayer.cpp \
                    MyDialog.cpp \
+                   MyScene.cpp \
                    Page.cpp \
                    PageLayer.cpp \
                    PageManager.cpp \
