@@ -129,7 +129,7 @@ void JsonParser::parseMenuItems(Json::Value &value)
     for (int i = 0; i < value.size(); ++i)
     {
         Json::Value menuItemJson = value[i];
-        MenuItem *menuItem = new MenuItem();
+        MainMenuItemInfo *menuItem = new MainMenuItemInfo();
         
         // normalStateImage
         menuItem->normalStateImage = menuItemJson["normalStateImage"].asCString();
@@ -139,14 +139,17 @@ void JsonParser::parseMenuItems(Json::Value &value)
         if (! menuItemJson["storyMode"].isNull())
         {
             menuItem->storyMode = menuItemJson["storyMode"].asCString();
+            menuItem->mainMenuItemType = kNormalMainMenuItemType;
         }
         if (! menuItemJson["videoToPlay"].isNull())
         {
             menuItem->videoToPlay = menuItemJson["videoToPlay"].asCString();
+            menuItem->mainMenuItemType = kPlayVideoMainMenuItemType;
         }
         if (! menuItemJson["url"].isNull())
         {
             menuItem->url = menuItemJson["url"].asCString();
+            menuItem->mainMenuItemType = kUrlMainMenuItemType;
         }
         // position
         int x = 0, y = 1;

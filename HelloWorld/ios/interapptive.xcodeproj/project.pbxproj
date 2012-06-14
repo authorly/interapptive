@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153247D5158A21720070B55F /* video_doe_snort.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 153247D2158A21720070B55F /* video_doe_snort.mp4 */; };
+		153247D6158A21720070B55F /* video_mixed_nuts.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 153247D3158A21720070B55F /* video_mixed_nuts.mp4 */; };
+		153247D7158A21720070B55F /* video_the_snowman.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 153247D4158A21720070B55F /* video_the_snowman.mp4 */; };
 		1573A72915403379004AC7CA /* Configurations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1573A72815403379004AC7CA /* Configurations.cpp */; };
 		1573A72C1540357D004AC7CA /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1573A72B1540357D004AC7CA /* MainMenu.cpp */; };
 		1585A14F152DC464003E4376 /* DataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1585A145152DC464003E4376 /* DataLoader.cpp */; };
@@ -96,13 +99,10 @@
 		3A1CCF2F1555E06D000EEC29 /* structure-ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCEFB1555E06C000EEC29 /* structure-ipad.json */; };
 		3A1CCF301555E06D000EEC29 /* structure.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCEFC1555E06C000EEC29 /* structure.json */; };
 		3A1CCF311555E06D000EEC29 /* touchable-node-particle-glitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCEFD1555E06C000EEC29 /* touchable-node-particle-glitter.png */; };
-		3A7E3AF6157CF96B00C34050 /* video-doe-snort.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AEF157CF96B00C34050 /* video-doe-snort.mp4 */; };
 		3A7E3AF7157CF96B00C34050 /* video-link-mixed-nuts-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF0157CF96B00C34050 /* video-link-mixed-nuts-over.png */; };
 		3A7E3AF8157CF96B00C34050 /* video-link-mixed-nuts.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF1157CF96B00C34050 /* video-link-mixed-nuts.png */; };
 		3A7E3AF9157CF96B00C34050 /* video-link-the-snowman-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF2157CF96B00C34050 /* video-link-the-snowman-over.png */; };
 		3A7E3AFA157CF96B00C34050 /* video-link-the-snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF3157CF96B00C34050 /* video-link-the-snowman.png */; };
-		3A7E3AFB157CF96B00C34050 /* video-mixed-nuts.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF4157CF96B00C34050 /* video-mixed-nuts.mp4 */; };
-		3A7E3AFC157CF96B00C34050 /* video-the-snowman.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF5157CF96B00C34050 /* video-the-snowman.mp4 */; };
 		3A81F01B157C871500D930E6 /* page-11-paragraph-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A81EFEF157C871500D930E6 /* page-11-paragraph-1.mp3 */; };
 		3A81F01C157C871500D930E6 /* page-12-paragraph-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A81EFF0157C871500D930E6 /* page-12-paragraph-1.mp3 */; };
 		3A81F01D157C871500D930E6 /* page-13-paragraph-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A81EFF1157C871500D930E6 /* page-13-paragraph-1.mp3 */; };
@@ -430,6 +430,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		153247D2158A21720070B55F /* video_doe_snort.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_doe_snort.mp4; sourceTree = "<group>"; };
+		153247D3158A21720070B55F /* video_mixed_nuts.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_mixed_nuts.mp4; sourceTree = "<group>"; };
+		153247D4158A21720070B55F /* video_the_snowman.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_the_snowman.mp4; sourceTree = "<group>"; };
 		1573A72715403346004AC7CA /* Configurations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configurations.h; sourceTree = "<group>"; };
 		1573A72815403379004AC7CA /* Configurations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Configurations.cpp; sourceTree = "<group>"; };
 		1573A72A15403567004AC7CA /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
@@ -551,13 +554,10 @@
 		3A1CCEFB1555E06C000EEC29 /* structure-ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "structure-ipad.json"; sourceTree = "<group>"; };
 		3A1CCEFC1555E06C000EEC29 /* structure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = structure.json; sourceTree = "<group>"; };
 		3A1CCEFD1555E06C000EEC29 /* touchable-node-particle-glitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "touchable-node-particle-glitter.png"; sourceTree = "<group>"; };
-		3A7E3AEF157CF96B00C34050 /* video-doe-snort.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-doe-snort.mp4"; sourceTree = "<group>"; };
 		3A7E3AF0157CF96B00C34050 /* video-link-mixed-nuts-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-link-mixed-nuts-over.png"; sourceTree = "<group>"; };
 		3A7E3AF1157CF96B00C34050 /* video-link-mixed-nuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-link-mixed-nuts.png"; sourceTree = "<group>"; };
 		3A7E3AF2157CF96B00C34050 /* video-link-the-snowman-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-link-the-snowman-over.png"; sourceTree = "<group>"; };
 		3A7E3AF3157CF96B00C34050 /* video-link-the-snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-link-the-snowman.png"; sourceTree = "<group>"; };
-		3A7E3AF4157CF96B00C34050 /* video-mixed-nuts.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-mixed-nuts.mp4"; sourceTree = "<group>"; };
-		3A7E3AF5157CF96B00C34050 /* video-the-snowman.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-the-snowman.mp4"; sourceTree = "<group>"; };
 		3A81EFEF157C871500D930E6 /* page-11-paragraph-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "page-11-paragraph-1.mp3"; sourceTree = "<group>"; };
 		3A81EFF0157C871500D930E6 /* page-12-paragraph-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "page-12-paragraph-1.mp3"; sourceTree = "<group>"; };
 		3A81EFF1157C871500D930E6 /* page-13-paragraph-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "page-13-paragraph-1.mp3"; sourceTree = "<group>"; };
@@ -1022,15 +1022,15 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				153247D2158A21720070B55F /* video_doe_snort.mp4 */,
+				153247D3158A21720070B55F /* video_mixed_nuts.mp4 */,
+				153247D4158A21720070B55F /* video_the_snowman.mp4 */,
 				15D4B2781580F21500729646 /* go-to-website-over.png */,
 				15D4B2791580F21500729646 /* go-to-website.png */,
-				3A7E3AEF157CF96B00C34050 /* video-doe-snort.mp4 */,
 				3A7E3AF0157CF96B00C34050 /* video-link-mixed-nuts-over.png */,
 				3A7E3AF1157CF96B00C34050 /* video-link-mixed-nuts.png */,
 				3A7E3AF2157CF96B00C34050 /* video-link-the-snowman-over.png */,
 				3A7E3AF3157CF96B00C34050 /* video-link-the-snowman.png */,
-				3A7E3AF4157CF96B00C34050 /* video-mixed-nuts.mp4 */,
-				3A7E3AF5157CF96B00C34050 /* video-the-snowman.mp4 */,
 				3ABEA752157CD99500F2EEC5 /* effect-chickadee-call.mp3 */,
 				3ABEA753157CD99500F2EEC5 /* effect-chickadee-wing-flap.mp3 */,
 				3ABEA755157CD99500F2EEC5 /* effect-fox-squirrel-sfx.mp3 */,
@@ -1973,15 +1973,15 @@
 				3ABEA75F157CD99500F2EEC5 /* effect-bluejay-caw.mp3 in Resources */,
 				3ABEA760157CD99500F2EEC5 /* effect-snow-footsteps.mp3 in Resources */,
 				3ABEA761157CD99500F2EEC5 /* effect-whitetail-deer.mp3 in Resources */,
-				3A7E3AF6157CF96B00C34050 /* video-doe-snort.mp4 in Resources */,
 				3A7E3AF7157CF96B00C34050 /* video-link-mixed-nuts-over.png in Resources */,
 				3A7E3AF8157CF96B00C34050 /* video-link-mixed-nuts.png in Resources */,
 				3A7E3AF9157CF96B00C34050 /* video-link-the-snowman-over.png in Resources */,
 				3A7E3AFA157CF96B00C34050 /* video-link-the-snowman.png in Resources */,
-				3A7E3AFB157CF96B00C34050 /* video-mixed-nuts.mp4 in Resources */,
-				3A7E3AFC157CF96B00C34050 /* video-the-snowman.mp4 in Resources */,
 				15D4B27A1580F21500729646 /* go-to-website-over.png in Resources */,
 				15D4B27B1580F21500729646 /* go-to-website.png in Resources */,
+				153247D5158A21720070B55F /* video_doe_snort.mp4 in Resources */,
+				153247D6158A21720070B55F /* video_mixed_nuts.mp4 in Resources */,
+				153247D7158A21720070B55F /* video_the_snowman.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

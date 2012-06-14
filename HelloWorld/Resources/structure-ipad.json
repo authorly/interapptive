@@ -78,7 +78,7 @@
         "videoToPlay":"video_the_snowman.mp4",
         "position":[
           830,
-          140
+          200
         ]
       },
       {
@@ -87,7 +87,7 @@
         "videoToPlay":"video_mixed_nuts.mp4",
         "position":[
           200,
-          140
+          200
         ]
       },
       {
@@ -96,7 +96,7 @@
         "url":"http://strangerinthewoods.com",
         "position":[
           200,
-          240
+          300
         ]
       }
     ],
