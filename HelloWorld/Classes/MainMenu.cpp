@@ -7,7 +7,7 @@ Audio MainMenu::audio = Audio();
 // sprites
 vector<MainMenuSpriteInfo*> MainMenu::sprites = vector<MainMenuSpriteInfo*>();
 // menu items
-vector<MenuItem*> MainMenu::menuItems = vector<MenuItem*>();
+vector<MainMenuItemInfo*> MainMenu::menuItems = vector<MainMenuItemInfo*>();
 // actioins to run on enter
 vector<ActionToRunOnEnter*> MainMenu::actionsToRunOnEnter = vector<ActionToRunOnEnter*>();
 // CCFadeIn
