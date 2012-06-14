@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "MyDialog.h"
+#include "VideoPlayer.h"
 
 enum StoryMode {
     kSotryModeAutoPlay,
@@ -10,15 +11,21 @@ enum StoryMode {
     kStoryModeReadToMe,
 };
 
-class MainMenuLayer : public cocos2d::CCLayer, public DialogProtocol
+class MainMenuLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayerProtocol
 {
 public:
    MainMenuLayer();
     ~MainMenuLayer();
     
     virtual void onEnter();
+    // DialogProtocol
     virtual void buttonClicked(int index);
-    void menuItemCallback(cocos2d::CCObject *sender);
+    // VideoPlayerProtocol
+    virtual void moviePlayBackDidFinish();
+    
+    void normalMainMenuItemTouched(cocos2d::CCObject *sender);
+    void playVideoMainMenuItemTouched(cocos2d::CCObject *sender);
+    void urlMainMenuItemTouched(cocos2d::CCObject *sender);
     
 private:
     void init();

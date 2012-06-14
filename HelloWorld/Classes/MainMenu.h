@@ -6,6 +6,13 @@
 #include <string>
 #include <vector>
 
+enum MainMenuItemType
+{
+    kNormalMainMenuItemType,    // has storyMode to go to a certain page
+    kPlayVideoMainMenuItemType, // play a video
+    kUrlMainMenuItemType,       // open a url
+};
+
 typedef struct _audio
 {
     std::string backgroundMusic;
@@ -31,9 +38,11 @@ typedef  struct _menuItem
     std::string         storyMode;
     std::string         videoToPlay;
     std::string         url;
+    
+    MainMenuItemType    mainMenuItemType;
    
     cocos2d::CCPoint    position;
-} MenuItem;
+} MainMenuItemInfo;
 
 typedef struct _actionFadeIn
 {
@@ -58,7 +67,7 @@ public:
     // sprites
     static std::vector<MainMenuSpriteInfo*> sprites;
     // menu items
-    static std::vector<MenuItem*> menuItems;
+    static std::vector<MainMenuItemInfo*> menuItems;
     // actioins to run on enter
     static std::vector<ActionToRunOnEnter*> actionsToRunOnEnter;
     // CCFadeIn

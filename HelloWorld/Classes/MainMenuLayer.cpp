@@ -5,11 +5,6 @@
 
 #include "SimpleAudioEngine.h"
 
-
-#define MENU_ITEM_AOTU_PLAY_TAG     100
-#define MENU_ITEM_READ_TO_ME_TAG    101
-#define MENU_ITEM_READ_MYSELF_TAG   102
-
 using namespace CocosDenshion;
 using namespace cocos2d;
 
@@ -48,28 +43,39 @@ void MainMenuLayer::init()
     CCMenu *menu = CCMenu::node();
     for (int j = 0; j < MainMenu::menuItems.size(); ++j)
     {
-        MenuItem *menuItemInfo = MainMenu::menuItems[j];
-        CCMenuItemImage *item = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(), 
+        CCMenuItemImage *menuItemImage = NULL;
+        
+        MainMenuItemInfo *menuItemInfo = MainMenu::menuItems[j];
+        switch (menuItemInfo->mainMenuItemType) {
+            case kNormalMainMenuItemType:
+                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(), 
+                                                                             menuItemInfo->tappedStateImage.c_str(), 
+                                                                             this, 
+                                                                             menu_selector(MainMenuLayer::normalMainMenuItemTouched));
+                break;
+            case kPlayVideoMainMenuItemType:
+                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(), 
                                                                      menuItemInfo->tappedStateImage.c_str(), 
                                                                      this, 
-                                                                     menu_selector(MainMenuLayer::menuItemCallback)
-                                                                     );
-        // set tag
-        if (menuItemInfo->storyMode == "autoPlay")
-        {
-            item->setTag(MENU_ITEM_AOTU_PLAY_TAG);
-        }
-        else if (menuItemInfo->storyMode == "readItMyself")
-        {
-            item->setTag(MENU_ITEM_READ_MYSELF_TAG);
-        }
-        else
-        {
-            item->setTag(MENU_ITEM_READ_TO_ME_TAG);
+                                                                     menu_selector(MainMenuLayer::playVideoMainMenuItemTouched));
+                break;
+            case kUrlMainMenuItemType:
+                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(), 
+                                                                     menuItemInfo->tappedStateImage.c_str(), 
+                                                                     this, 
+                                                                     menu_selector(MainMenuLayer::urlMainMenuItemTouched));
+                break;
+                
+            default:
+                // error main menu item type
+                assert(false);
+                break;
         }
         
-        item->setPosition(menuItemInfo->position);
-        menu->addChild(item, 1);
+        menuItemImage->setUserData(menuItemInfo);
+        
+        menuItemImage->setPosition(menuItemInfo->position);
+        menu->addChild(menuItemImage, 1);
     }
     menu->setPosition(ccp(0,0));
     addChild(menu);
@@ -105,7 +111,7 @@ void MainMenuLayer::onEnter()
     CCLayer::onEnter();
 }
 
-void MainMenuLayer::menuItemCallback(cocos2d::CCObject *sender)
+void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
 {
     // should release previous dialog if it is exist
     CC_SAFE_RELEASE_NULL(mydialog);
@@ -127,28 +133,44 @@ void MainMenuLayer::menuItemCallback(cocos2d::CCObject *sender)
     {
         // start over
         buttonClicked(1);
-    }
-      
+    }      
 
     // set story mode, no matter if user select "cancle"
     // because it will not turn not page if he selects "cancle"
-    int tag = ((CCMenuItem*)sender)->getTag();
-    switch (tag) {
-        case MENU_ITEM_AOTU_PLAY_TAG:
-            storyMode = kSotryModeAutoPlay;
-            break;
-        case MENU_ITEM_READ_MYSELF_TAG:
-            storyMode = kStoryModeReadItMyself;
-            break;
-        case MENU_ITEM_READ_TO_ME_TAG:
-            storyMode = kStoryModeReadToMe;
-            break;
-            
-        default:
-            // error
-            assert(0);
-            break;
+    MainMenuItemInfo *mainMenuItemInfo = (MainMenuItemInfo*)((CCMenuItemImage*)sender)->getUserData();
+    string &strStoryMode = mainMenuItemInfo->storyMode;
+    if (strStoryMode == "autoPlay")
+    {
+        storyMode = kSotryModeAutoPlay;
     }
+    if (strStoryMode == "readItMyself")
+    {
+        storyMode = kStoryModeReadItMyself;
+    }
+    if (strStoryMode == "readToMe")
+    {
+        storyMode = kStoryModeReadToMe;
+    }
+}
+
+void MainMenuLayer::playVideoMainMenuItemTouched(cocos2d::CCObject *sender)
+{
+    // disable touch event when playing video
+    setIsTouchEnabled(false);
+    
+    MainMenuItemInfo *mainMenuItemInfo = (MainMenuItemInfo*)((CCMenuItemImage*)sender)->getUserData();    
+    VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, mainMenuItemInfo->videoToPlay.c_str(), true);
+}
+
+void MainMenuLayer::moviePlayBackDidFinish()
+{
+    // enable touch event after playing video
+    setIsTouchEnabled(true);
+}
+
+void MainMenuLayer::urlMainMenuItemTouched(cocos2d::CCObject *sender)
+{
+    
 }
 
 void MainMenuLayer::buttonClicked(int index)
