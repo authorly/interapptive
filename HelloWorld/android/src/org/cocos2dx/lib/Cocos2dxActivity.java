@@ -34,6 +34,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
@@ -50,6 +51,7 @@ public class Cocos2dxActivity extends Activity{
     private final static int HANDLER_SHOW_DIALOG = 1;
     private final static int HANDLER_SHOW_MY_DIALOG = 2;
     private final static int HANDLER_PLAY_VIDEO = 3;
+    private final static int HANDLER_GOTO_URL = 4;
     private static String packageName;
     private static Cocos2dxGLSurfaceView glSurfaceView;
 
@@ -82,6 +84,12 @@ public class Cocos2dxActivity extends Activity{
         			break;
         		case HANDLER_PLAY_VIDEO:
         			playVideo(((PlayVideoMessage)msg.obj).fileName, ((PlayVideoMessage)msg.obj).showControl);
+        			break;
+        		case HANDLER_GOTO_URL:
+        			String url = ((GotoUrlMessage)msg.obj).url;
+        			Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+
+        			startActivity(myIntent);
         			break;
         		}
         	}
@@ -120,6 +128,14 @@ public class Cocos2dxActivity extends Activity{
     	
     	handler.sendMessage(msg); 
 	 }
+    
+    public static void gotoUrl(String url) {
+    	Message msg = new Message();
+    	msg.what = HANDLER_GOTO_URL;
+    	msg.obj = new GotoUrlMessage(url);
+    	
+    	handler.sendMessage(msg); 
+    }
 
     public static void enableAccelerometer() {
         accelerometerEnabled = true;
@@ -323,5 +339,13 @@ class PlayVideoMessage {
 	public PlayVideoMessage(String fileName, boolean showControl) {
 		this.fileName = fileName;
 		this.showControl = showControl;
+	}
+}
+
+class GotoUrlMessage {
+	public String url;
+	
+	public GotoUrlMessage(String url) {
+		this.url = url;
 	}
 }

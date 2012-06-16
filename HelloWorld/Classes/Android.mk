@@ -14,6 +14,7 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    MainMenuLayer.cpp \
                    MyDialog.cpp \
                    MyScene.cpp \
+                   OpenUrlHelper.cpp \
                    Page.cpp \
                    PageLayer.cpp \
                    PageManager.cpp \

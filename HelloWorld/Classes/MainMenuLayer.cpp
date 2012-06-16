@@ -2,6 +2,7 @@
 #include "MainMenu.h"
 #include "PageManager.h"
 #include "SharedGlobalData.h"
+#include "OpenUrlHelper.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -170,7 +171,9 @@ void MainMenuLayer::moviePlayBackDidFinish()
 
 void MainMenuLayer::urlMainMenuItemTouched(cocos2d::CCObject *sender)
 {
+    MainMenuItemInfo *mainMenuItemInfo = (MainMenuItemInfo*)((CCMenuItemImage*)sender)->getUserData();  
     
+    OpenUrlHelper::openUrl(mainMenuItemInfo->url.c_str());
 }
 
 void MainMenuLayer::buttonClicked(int index)
