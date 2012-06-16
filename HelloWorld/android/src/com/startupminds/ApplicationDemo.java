@@ -24,19 +24,11 @@ THE SOFTWARE.
 package com.startupminds;
 
 import org.cocos2dx.application.R;
-import org.cocos2dx.application.R.id;
-import org.cocos2dx.application.R.raw;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxEditText;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.ViewGroup;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
 public class ApplicationDemo extends Cocos2dxActivity{
 	private Cocos2dxGLSurfaceView mGLView;
