@@ -39,6 +39,7 @@
 		158EFE3B158641B600E096CA /* MyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 158EFE3A158641B600E096CA /* MyScene.cpp */; };
 		15AB5F0B15687351007CA061 /* VideoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15AB5F0A15687351007CA061 /* VideoPlayer.mm */; };
 		15AB5F0D15687E2B007CA061 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AB5F0C15687E2B007CA061 /* MediaPlayer.framework */; };
+		15C8FB99158C2749005A0F4E /* OpenUrlHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15C8FB98158C2749005A0F4E /* OpenUrlHelper.mm */; };
 		15D4B27A1580F21500729646 /* go-to-website-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D4B2781580F21500729646 /* go-to-website-over.png */; };
 		15D4B27B1580F21500729646 /* go-to-website.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D4B2791580F21500729646 /* go-to-website.png */; };
 		15D682A815498C150007F346 /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15D682A715498C150007F346 /* MainMenuLayer.cpp */; };
@@ -490,6 +491,8 @@
 		15AB5F0815687322007CA061 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
 		15AB5F0A15687351007CA061 /* VideoPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlayer.mm; sourceTree = "<group>"; };
 		15AB5F0C15687E2B007CA061 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		15C8FB96158C270A005A0F4E /* OpenUrlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUrlHelper.h; sourceTree = "<group>"; };
+		15C8FB98158C2749005A0F4E /* OpenUrlHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenUrlHelper.mm; sourceTree = "<group>"; };
 		15D4B2781580F21500729646 /* go-to-website-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go-to-website-over.png"; sourceTree = "<group>"; };
 		15D4B2791580F21500729646 /* go-to-website.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go-to-website.png"; sourceTree = "<group>"; };
 		15D682A515498BF10007F346 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
@@ -1202,6 +1205,8 @@
 				15AB5F0A15687351007CA061 /* VideoPlayer.mm */,
 				158EFE381586375700E096CA /* MyScene.h */,
 				158EFE3A158641B600E096CA /* MyScene.cpp */,
+				15C8FB96158C270A005A0F4E /* OpenUrlHelper.h */,
+				15C8FB98158C2749005A0F4E /* OpenUrlHelper.mm */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -2016,6 +2021,7 @@
 				15DCC303155805B40083B694 /* SharedGlobalData.cpp in Sources */,
 				15AB5F0B15687351007CA061 /* VideoPlayer.mm in Sources */,
 				158EFE3B158641B600E096CA /* MyScene.cpp in Sources */,
+				15C8FB99158C2749005A0F4E /* OpenUrlHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
