@@ -104,7 +104,10 @@
 		3A7E3AF8157CF96B00C34050 /* video-link-mixed-nuts.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF1157CF96B00C34050 /* video-link-mixed-nuts.png */; };
 		3A7E3AF9157CF96B00C34050 /* video-link-the-snowman-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF2157CF96B00C34050 /* video-link-the-snowman-over.png */; };
 		3A7E3AFA157CF96B00C34050 /* video-link-the-snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E3AF3157CF96B00C34050 /* video-link-the-snowman.png */; };
-		3A7F0A7F158EB0F50007BEE0 /* snowman-for-physics.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F0A7E158EB0F50007BEE0 /* snowman-for-physics.png */; };
+		3A7F0A85158EB1A50007BEE0 /* physics-object-seed1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F0A81158EB1A50007BEE0 /* physics-object-seed1.png */; };
+		3A7F0A86158EB1A50007BEE0 /* physics-object-seed2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F0A82158EB1A50007BEE0 /* physics-object-seed2.png */; };
+		3A7F0A87158EB1A50007BEE0 /* physics-object-seed3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F0A83158EB1A50007BEE0 /* physics-object-seed3.png */; };
+		3A7F0A88158EB1A50007BEE0 /* physics-object-snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7F0A84158EB1A50007BEE0 /* physics-object-snowman.png */; };
 		3A81F01B157C871500D930E6 /* page-11-paragraph-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A81EFEF157C871500D930E6 /* page-11-paragraph-1.mp3 */; };
 		3A81F01C157C871500D930E6 /* page-12-paragraph-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A81EFF0157C871500D930E6 /* page-12-paragraph-1.mp3 */; };
 		3A81F01D157C871500D930E6 /* page-13-paragraph-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A81EFF1157C871500D930E6 /* page-13-paragraph-1.mp3 */; };
@@ -562,7 +565,10 @@
 		3A7E3AF1157CF96B00C34050 /* video-link-mixed-nuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-link-mixed-nuts.png"; sourceTree = "<group>"; };
 		3A7E3AF2157CF96B00C34050 /* video-link-the-snowman-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-link-the-snowman-over.png"; sourceTree = "<group>"; };
 		3A7E3AF3157CF96B00C34050 /* video-link-the-snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-link-the-snowman.png"; sourceTree = "<group>"; };
-		3A7F0A7E158EB0F50007BEE0 /* snowman-for-physics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowman-for-physics.png"; sourceTree = "<group>"; };
+		3A7F0A81158EB1A50007BEE0 /* physics-object-seed1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physics-object-seed1.png"; sourceTree = "<group>"; };
+		3A7F0A82158EB1A50007BEE0 /* physics-object-seed2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physics-object-seed2.png"; sourceTree = "<group>"; };
+		3A7F0A83158EB1A50007BEE0 /* physics-object-seed3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physics-object-seed3.png"; sourceTree = "<group>"; };
+		3A7F0A84158EB1A50007BEE0 /* physics-object-snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physics-object-snowman.png"; sourceTree = "<group>"; };
 		3A81EFEF157C871500D930E6 /* page-11-paragraph-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "page-11-paragraph-1.mp3"; sourceTree = "<group>"; };
 		3A81EFF0157C871500D930E6 /* page-12-paragraph-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "page-12-paragraph-1.mp3"; sourceTree = "<group>"; };
 		3A81EFF1157C871500D930E6 /* page-13-paragraph-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "page-13-paragraph-1.mp3"; sourceTree = "<group>"; };
@@ -1027,7 +1033,10 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A7F0A7E158EB0F50007BEE0 /* snowman-for-physics.png */,
+				3A7F0A81158EB1A50007BEE0 /* physics-object-seed1.png */,
+				3A7F0A82158EB1A50007BEE0 /* physics-object-seed2.png */,
+				3A7F0A83158EB1A50007BEE0 /* physics-object-seed3.png */,
+				3A7F0A84158EB1A50007BEE0 /* physics-object-snowman.png */,
 				153247D2158A21720070B55F /* video_doe_snort.mp4 */,
 				153247D3158A21720070B55F /* video_mixed_nuts.mp4 */,
 				153247D4158A21720070B55F /* video_the_snowman.mp4 */,
@@ -1990,7 +1999,10 @@
 				153247D5158A21720070B55F /* video_doe_snort.mp4 in Resources */,
 				153247D6158A21720070B55F /* video_mixed_nuts.mp4 in Resources */,
 				153247D7158A21720070B55F /* video_the_snowman.mp4 in Resources */,
-				3A7F0A7F158EB0F50007BEE0 /* snowman-for-physics.png in Resources */,
+				3A7F0A85158EB1A50007BEE0 /* physics-object-seed1.png in Resources */,
+				3A7F0A86158EB1A50007BEE0 /* physics-object-seed2.png in Resources */,
+				3A7F0A87158EB1A50007BEE0 /* physics-object-seed3.png in Resources */,
+				3A7F0A88158EB1A50007BEE0 /* physics-object-snowman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
