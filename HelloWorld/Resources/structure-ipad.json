@@ -94,6 +94,7 @@
         "normalStateImage":"go-to-website.png",
         "tappedStateImage":"go-to-website-over.png",
         "url":"http://strangerinthewoods.com",
+        "confirmBeforeGoToUrl":true,
         "position":[
           200,
           300
