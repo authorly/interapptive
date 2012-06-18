@@ -2794,6 +2794,7 @@
           "fallingPhysicsObjects":[
             {
               "sprite":"physics-objects-seed1.png",
+              "affectedByAccelerometer":true,
               "metaData":{
                 "format":1
               },
@@ -2987,6 +2988,7 @@
             },
             {
               "sprite":"physics-objects-seed2.png",
+              "affectedByAccelerometer":true,
               "metaData":{
                 "format":1
               },
@@ -3094,6 +3096,7 @@
             },
             {
               "sprite":"physics-objects-seed3.png",
+              "affectedByAccelerometer":true,
               "metaData":{
                 "format":1
               },
