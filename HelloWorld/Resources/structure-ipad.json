@@ -2344,6 +2344,7 @@
           ],
           "fontSize":20,
           "physicsObjects":{
+            "sprite":"snowman-for-physics.png",
             "metaData":{
               "format":1
             },
