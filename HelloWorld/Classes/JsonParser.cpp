@@ -12,9 +12,7 @@
 using namespace cocos2d;
 using namespace std;
 
-#define XSCALE      (GlobalData::sharedGlobalData()->xScale)
-#define YSCALE      (GlobalData::sharedGlobalData()->yScale)
-#define MIN_SCALE   (GlobalData::sharedGlobalData()->minScale)
+
 
 bool JsonParser::parseJson(const char* pathOfJasonFile)
 {

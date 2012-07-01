@@ -4,6 +4,10 @@
 /** This class is used to record global data
  */
 
+#define XSCALE      (GlobalData::sharedGlobalData()->xScale)
+#define YSCALE      (GlobalData::sharedGlobalData()->yScale)
+#define MIN_SCALE   (GlobalData::sharedGlobalData()->minScale)
+
 class GlobalData
 {
 public:

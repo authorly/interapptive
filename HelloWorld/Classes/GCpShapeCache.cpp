@@ -1,5 +1,6 @@
 #include "GCpShapeCache.h"
 #include "CCNS.h"
+#include "SharedGlobalData.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -323,7 +324,7 @@ bool GCpShapeCache::addShapesWithFile(const char *filename)
 					
 					for (piter = polygonArray->begin(); piter != polygonArray->end(); ++piter) {
                         CCPoint offset = CCPointFromString((*piter)->toStdString().c_str());
-                        vertices[vindex] = cpVectMake(offset.x, offset.y);
+                        vertices[vindex] = cpVectMake(offset.x * XSCALE, offset.y * YSCALE);
                         vindex++;
                     }
                     
@@ -340,7 +341,7 @@ bool GCpShapeCache::addShapesWithFile(const char *filename)
                 
                 ObjectDict *circleData = (ObjectDict *)fixtureData->objectForKey("circle");
                 
-                fd->radius = static_cast<CCString *>(circleData->objectForKey("radius"))->toFloat();
+                fd->radius = static_cast<CCString *>(circleData->objectForKey("radius"))->toFloat() * MIN_SCALE;
 				CCPoint p = CCPointFromString(static_cast<CCString *>(circleData->objectForKey("position"))->toStdString().c_str());
                 fd->center = cpVectMake(p.x, p.y);
                 totalArea += 3.1415927*fd->radius*fd->radius;
