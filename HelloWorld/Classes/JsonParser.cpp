@@ -249,6 +249,7 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
 	settings.fontSize = jsonSettings["fontSize"].asDouble();
     if (XSCALE != 1)
     {
+        // add font size because it will be scaled down
         settings.fontSize += 8;
     }
     
@@ -264,6 +265,37 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
     {
         // no background music
         settings.audioFilePath = "";
+    }
+    
+    // falling physics object setting
+    Json::Value fallingPhysicsSettings = jsonSettings["fallingPhysicsSettings"];
+    if (! fallingPhysicsSettings.isNull())
+    {
+        FallingObjectSetting &fallingSet = settings.fallingObjectSetting;
+        
+        fallingSet.maxNumber = fallingPhysicsSettings["maxNumber"].asInt();
+        fallingSet.speedX = fallingPhysicsSettings["speedX"].asInt();
+        fallingSet.speedY = fallingPhysicsSettings["speedY"].asInt();
+        fallingSet.spinSpeed = fallingPhysicsSettings["spinSpeed"].asInt();
+        fallingSet.slowDownSpeed = fallingPhysicsSettings["slowDownSpeed"].asDouble();
+        fallingSet.hasFloor = fallingPhysicsSettings["hasFloor"].asBool();
+        fallingSet.hasWalls = fallingPhysicsSettings["hasWalls"].asBool();
+        
+        int x = 0;
+        int y = 1;
+        fallingSet.dropBetweenPoints.x = fallingPhysicsSettings["dropBetweenPoints"][x].asDouble() * XSCALE;
+        fallingSet.dropBetweenPoints.y = fallingPhysicsSettings["dropBetweenPoints"][y].asDouble() * YSCALE;
+        
+        fallingSet.filename = fallingPhysicsSettings["filename"].asCString();
+    }
+    
+    // static physics object setting
+    Json::Value staticPhysicsSettings = jsonSettings["staticPhysicsSettings"];
+    if (! staticPhysicsSettings.isNull())
+    {
+        StaticObjectSetting &staticSet = settings.staicObjectSetting;
+        
+        staticSet.filename = staticPhysicsSettings["filename"].asCString();
     }
 }
 

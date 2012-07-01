@@ -41,6 +41,7 @@ private:
 	void createSprites();
 	void createParagraph(int index);
     void createMainMenuItem();
+    void createPhysicsLayer();
 	void playBackgroundMusic();    
     
     bool isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos);

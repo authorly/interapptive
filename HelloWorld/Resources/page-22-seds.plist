@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+	</dict>
+	<key>bodies</key>
+	<dict>
+		<key>physics-object-seed1</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.50000,0.50000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>mass</key>
+					<real>2</real>
+					<key>elasticity</key>
+					<real>0</real>
+					<key>friction</key>
+					<real>0</real>
+					<key>surface_velocity</key>
+					<string>{ 0.00000,0.00000 }</string>
+					<key>layers</key>
+					<integer>0</integer>
+					<key>group</key>
+					<integer>0</integer>
+					<key>collision_type</key>
+					<integer>0</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>fixture_type</key>
+					<string>POLYGON</string>
+					<key>polygons</key>
+					<array>
+						<array>
+							<string>{ 19.00000,31.00000 }</string>
+							<string>{ 20.00000,26.00000 }</string>
+							<string>{ -18.00000,-12.00000 }</string>
+							<string>{ -4.00000,20.00000 }</string>
+							<string>{ 2.00000,32.00000 }</string>
+							<string>{ 7.00000,36.00000 }</string>
+							<string>{ 14.00000,36.00000 }</string>
+						</array>
+						<array>
+							<string>{ -19.00000,-30.00000 }</string>
+							<string>{ -20.00000,-15.00000 }</string>
+							<string>{ 20.00000,26.00000 }</string>
+							<string>{ 20.00000,-2.00000 }</string>
+							<string>{ 14.00000,-21.00000 }</string>
+							<string>{ 6.00000,-33.00000 }</string>
+							<string>{ 0.00000,-36.00000 }</string>
+							<string>{ -13.00000,-36.00000 }</string>
+						</array>
+						<array>
+							<string>{ -6.00000,19.00000 }</string>
+							<string>{ -4.00000,20.00000 }</string>
+							<string>{ -18.00000,-12.00000 }</string>
+							<string>{ -17.00000,-5.00000 }</string>
+						</array>
+						<array>
+							<string>{ 20.00000,26.00000 }</string>
+							<string>{ -20.00000,-15.00000 }</string>
+							<string>{ -18.00000,-12.00000 }</string>
+						</array>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>physics-object-seed2</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.50000,0.50000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>mass</key>
+					<real>2</real>
+					<key>elasticity</key>
+					<real>0</real>
+					<key>friction</key>
+					<real>0</real>
+					<key>surface_velocity</key>
+					<string>{ 0.00000,0.00000 }</string>
+					<key>layers</key>
+					<integer>0</integer>
+					<key>group</key>
+					<integer>0</integer>
+					<key>collision_type</key>
+					<integer>0</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>fixture_type</key>
+					<string>POLYGON</string>
+					<key>polygons</key>
+					<array>
+						<array>
+							<string>{ -21.00000,-8.50000 }</string>
+							<string>{ -25.00000,4.50000 }</string>
+							<string>{ -25.00000,13.50000 }</string>
+							<string>{ -24.00000,16.50000 }</string>
+							<string>{ 9.00000,27.50000 }</string>
+							<string>{ 14.00000,-24.50000 }</string>
+							<string>{ 12.00000,-27.50000 }</string>
+							<string>{ -9.00000,-27.50000 }</string>
+						</array>
+						<array>
+							<string>{ 14.00000,-24.50000 }</string>
+							<string>{ 9.00000,27.50000 }</string>
+							<string>{ 16.00000,25.50000 }</string>
+							<string>{ 25.00000,16.50000 }</string>
+							<string>{ 25.00000,-1.50000 }</string>
+							<string>{ 21.00000,-18.50000 }</string>
+							<string>{ 19.00000,-22.50000 }</string>
+						</array>
+						<array>
+							<string>{ -5.00000,27.50000 }</string>
+							<string>{ 9.00000,27.50000 }</string>
+							<string>{ -24.00000,16.50000 }</string>
+							<string>{ -17.00000,23.50000 }</string>
+						</array>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>physics-object-seed3</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.50000,0.50000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>mass</key>
+					<real>2</real>
+					<key>elasticity</key>
+					<real>0</real>
+					<key>friction</key>
+					<real>0</real>
+					<key>surface_velocity</key>
+					<string>{ 0.00000,0.00000 }</string>
+					<key>layers</key>
+					<integer>0</integer>
+					<key>group</key>
+					<integer>0</integer>
+					<key>collision_type</key>
+					<integer>0</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>fixture_type</key>
+					<string>POLYGON</string>
+					<key>polygons</key>
+					<array>
+						<array>
+							<string>{ 26.00000,-14.00000 }</string>
+							<string>{ -33.00000,-3.00000 }</string>
+							<string>{ -35.00000,-2.00000 }</string>
+							<string>{ -17.00000,19.00000 }</string>
+							<string>{ 10.00000,19.00000 }</string>
+							<string>{ 25.00000,14.00000 }</string>
+							<string>{ 35.00000,5.00000 }</string>
+							<string>{ 35.00000,-9.00000 }</string>
+						</array>
+						<array>
+							<string>{ -29.00000,15.00000 }</string>
+							<string>{ -17.00000,19.00000 }</string>
+							<string>{ -35.00000,-2.00000 }</string>
+							<string>{ -34.00000,10.00000 }</string>
+						</array>
+						<array>
+							<string>{ -33.00000,-3.00000 }</string>
+							<string>{ -23.00000,-12.00000 }</string>
+							<string>{ -26.00000,-12.00000 }</string>
+							<string>{ -33.00000,-6.00000 }</string>
+						</array>
+						<array>
+							<string>{ 5.00000,-19.00000 }</string>
+							<string>{ -3.00000,-16.00000 }</string>
+							<string>{ -33.00000,-3.00000 }</string>
+							<string>{ 26.00000,-14.00000 }</string>
+							<string>{ 25.00000,-16.00000 }</string>
+							<string>{ 17.00000,-19.00000 }</string>
+						</array>
+						<array>
+							<string>{ -23.00000,-12.00000 }</string>
+							<string>{ -3.00000,-16.00000 }</string>
+							<string>{ -21.00000,-14.00000 }</string>
+						</array>
+						<array>
+							<string>{ -33.00000,-3.00000 }</string>
+							<string>{ -3.00000,-16.00000 }</string>
+							<string>{ -23.00000,-12.00000 }</string>
+						</array>
+					</array>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>
