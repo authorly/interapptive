@@ -159,9 +159,13 @@ void ChipmunkLayer::addFloor()
     cpSpaceAddStaticShape(space, shape);
     
     // top
+    // should we need top?
+    // if top is added, the body may stay on top
+    /*
     shape = cpSegmentShapeNew(staticBody, cpVectMake(0,wins.height), cpVectMake(wins.width,wins.height), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
+     */
 }
 
 void ChipmunkLayer::addWalls()
