@@ -473,7 +473,7 @@ void PageLayer::createMainMenuItem()
 
 void PageLayer::createPhysicsLayer()
 {
-    if (page->settings.fallingObjectSetting.filename.size() > 0)
+    if (page->settings.fallingObjectSetting.plistfilename.size() > 0)
     {
         ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(page);
         addChild(chipmunkLayer);

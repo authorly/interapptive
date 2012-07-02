@@ -61,8 +61,11 @@ bool ChipmunkLayer::init(Page *page)
         addWalls();
     }
     
-    GCpShapeCache::sharedShapeCache()->addShapesWithFile(fallingObjectSetting.filename.c_str());
-    // todo: add static object
+    GCpShapeCache::sharedShapeCache()->addShapesWithFile(fallingObjectSetting.plistfilename.c_str());
+    GCpShapeCache::sharedShapeCache()->addShapesWithFile(page->settings.staicObjectSetting.plistfilename.c_str());
+    
+    // add static object
+    createStaticPhysicObject();
     
     return true;
 }
@@ -84,10 +87,18 @@ void ChipmunkLayer::onEnter()
 void ChipmunkLayer::newFallingObject(float dt)
 {
     const char *name = GCpShapeCache::sharedShapeCache()->randomShapeName();
-    
+  
     // create and add sprite
     char tempName[50];
     sprintf(tempName, "%s.png", name);
+    
+    // don't create static object
+    string strName = tempName;
+    if (strName.compare(page->settings.staicObjectSetting.filename.c_str()) == 0)
+    {
+        return;
+    }
+    
 	CCSprite *sprite = CCSprite::spriteWithFile(tempName);
     addChild(sprite);
     
@@ -108,6 +119,24 @@ void ChipmunkLayer::newFallingObject(float dt)
     {
         unschedule(schedule_selector(ChipmunkLayer::newFallingObject));
     }
+}
+
+void ChipmunkLayer::createStaticPhysicObject()
+{
+    // create and add sprite
+    string &filename = page->settings.staicObjectSetting.filename;
+	CCSprite *sprite = CCSprite::spriteWithFile(filename.c_str());
+    addChild(sprite);
+    
+    // set anchor point
+    string fixtureName = filename.substr(0, filename.find_last_of("."));
+    sprite->setAnchorPoint(GCpShapeCache::sharedShapeCache()->anchorPointForShape(fixtureName.c_str()));
+    
+    // create physics shape
+    cpBody *body = GCpShapeCache::sharedShapeCache()->createBodyWithName(fixtureName.c_str(), space, sprite);
+    body->p.x = page->settings.staicObjectSetting.position.x;
+    body->p.y = page->settings.staicObjectSetting.position.y;
+    sprite->setPosition(page->settings.staicObjectSetting.position);
 }
 
 static void eachBody(cpBody *body, void *data)
