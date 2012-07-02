@@ -110,8 +110,11 @@ void ChipmunkLayer::newFallingObject(float dt)
     
     // set position
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    body->p.x = rand() % (int)winSize.width;
-    body->p.y = rand() % (int)winSize.height;
+    int x = rand() % (int)winSize.width;
+
+
+    body->p.x = x;
+    body->p.y = winSize.height;
     sprite->setPosition(ccp(body->p.x, body->p.y));
     
     totalFallingObjects++;

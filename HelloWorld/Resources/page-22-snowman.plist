@@ -21,7 +21,7 @@
 					<key>elasticity</key>
 					<real>0</real>
 					<key>friction</key>
-					<real>0</real>
+					<integer>1</integer>
 					<key>surface_velocity</key>
 					<string>{ 0.00000,0.00000 }</string>
 					<key>layers</key>
