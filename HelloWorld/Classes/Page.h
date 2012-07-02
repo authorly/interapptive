@@ -7,6 +7,22 @@
 #include <vector>
 #include <map>
 
+typedef struct fallingPhysicsSettings{
+    int     maxNumber;
+    int     speedX;
+    int     speedY;
+    int     spinSpeed;
+    float   slowDownSpeed;
+    bool    hasFloor;
+    bool    hasWalls;
+    cocos2d::CCPoint    dropBetweenPoints;
+    std::string         filename;
+}FallingObjectSetting;
+
+typedef struct staticPhysicsSettings{
+    std::string         filename;
+}StaticObjectSetting;
+
 typedef struct settings
 {
 	// font info
@@ -19,6 +35,11 @@ typedef struct settings
 	// background music info
     bool        loop; // -1 means loop forever
 	std::string audioFilePath;
+    
+    // falling physics object setting
+    FallingObjectSetting fallingObjectSetting;
+    // static physics object setting
+    StaticObjectSetting staicObjectSetting;
 } Setting;
 
 // a line of a paragraph
@@ -111,8 +132,6 @@ public:
 	std::vector<StoryTouchableNode*> storyTouchableNodes;
 
 	StorySwipeEnded storySwipeEnded;
-    
-    
 };
 
 #endif // __PAGE_H__

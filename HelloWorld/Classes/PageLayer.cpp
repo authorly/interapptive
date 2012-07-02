@@ -6,6 +6,7 @@
 #include "Configurations.h"
 #include "MainMenuLayer.h"
 #include "SharedGlobalData.h"
+#include "ChipmunkLayer.h"
 
 #include <vector>
 
@@ -65,6 +66,7 @@ void PageLayer::init(Page *page)
     
 	createSprites();
 	createParagraph(0);
+    createPhysicsLayer();
     
     // add menu item to go to main menu
     createMainMenuItem();
@@ -467,6 +469,15 @@ void PageLayer::createMainMenuItem()
     CCMenu *mainMenu = CCMenu::menuWithItems(mainMenuItem, NULL);
     mainMenu->setPosition(CCPointZero);
     addChild(mainMenu);
+}
+
+void PageLayer::createPhysicsLayer()
+{
+    if (page->settings.fallingObjectSetting.filename.size() > 0)
+    {
+        ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(page);
+        addChild(chipmunkLayer);
+    }    
 }
 
 void PageLayer::mainMenuItemCallback(CCObject *sender)
