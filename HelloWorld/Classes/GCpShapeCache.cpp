@@ -166,7 +166,7 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
     
     // add space to body
     cpSpaceAddBody(space, body);
-    
+
     // iterate over fixtures
     CCMutableArray<GFixtureData*>::CCMutableArrayIterator iter;
     for (iter = bd->fixtures->begin(); iter != bd->fixtures->end(); ++iter) {
@@ -185,7 +185,7 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
             shape->sensor = fd->isSensor;
             
             // add shape to space
-            cpSpaceAddShape(space, shape);        
+            cpSpaceAddShape(space, shape); 
         }
         else {
             // iterate over polygons

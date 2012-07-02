@@ -284,7 +284,7 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
         fallingSet.dropBetweenPoints.x = fallingPhysicsSettings["dropBetweenPoints"][x].asDouble() * XSCALE;
         fallingSet.dropBetweenPoints.y = fallingPhysicsSettings["dropBetweenPoints"][y].asDouble() * YSCALE;
         
-        fallingSet.filename = fallingPhysicsSettings["filename"].asCString();
+        fallingSet.plistfilename = fallingPhysicsSettings["plistfilename"].asCString();
     }
     
     // static physics object setting
@@ -294,6 +294,12 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
         StaticObjectSetting &staticSet = settings.staicObjectSetting;
         
         staticSet.filename = staticPhysicsSettings["filename"].asCString();
+        staticSet.plistfilename = staticPhysicsSettings["plistfilename"].asCString();
+        
+        int x = 0;
+        int y = 1;
+        staticSet.position.x = staticPhysicsSettings["position"][x].asDouble() * XSCALE;
+        staticSet.position.y = staticPhysicsSettings["position"][y].asDouble() * YSCALE;
     }
 }
 

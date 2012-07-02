@@ -6,7 +6,6 @@
 #include "chipmunk.h"
 #include <string>
 
-
 extern cpVect cpVectMake(float x, float y);
 
 class GCpShapeCache : public cocos2d::CCObject

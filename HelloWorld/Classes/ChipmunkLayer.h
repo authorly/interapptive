@@ -21,6 +21,7 @@ private:
     void setupSpace();
     void addFloor();
     void addWalls();
+    void createStaticPhysicObject();
 private:
     cpSpace *space;
     // weak ref

@@ -7,8 +7,10 @@ LOCAL_MODULE := game_logic_static
 LOCAL_MODULE_FILENAME := libgame_logic
 
 LOCAL_SRC_FILES := AppDelegate.cpp \
+                   ChipmunkLayer.cpp \
                    Configurations.cpp \
                    DataLoader.cpp \
+                   GCpShapeCache.cpp \
                    JsonParser.cpp \
                    MainMenu.cpp \
                    MainMenuLayer.cpp \
