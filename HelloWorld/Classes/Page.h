@@ -17,10 +17,13 @@ typedef struct fallingPhysicsSettings{
     bool    hasWalls;
     cocos2d::CCPoint    dropBetweenPoints;
     std::string         filename;
+    std::string         plistfilename;
 }FallingObjectSetting;
 
 typedef struct staticPhysicsSettings{
     std::string         filename;
+    std::string         plistfilename;
+    cocos2d::CCPoint    position;
 }StaticObjectSetting;
 
 typedef struct settings
