@@ -19,7 +19,7 @@
 					<key>mass</key>
 					<real>99999</real>
 					<key>elasticity</key>
-					<real>0</real>
+					<integer>0</integer>
 					<key>friction</key>
 					<integer>1</integer>
 					<key>surface_velocity</key>

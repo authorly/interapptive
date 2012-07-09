@@ -109,7 +109,8 @@ touch_dispatcher/CCTouchHandler.cpp
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/ \
                            $(LOCAL_PATH)/include \
-                           $(LOCAL_PATH)/platform
+                           $(LOCAL_PATH)/platform \
+                           $(LOCAL_PATH)/cocoa
                            
 LOCAL_EXPORT_LDLIBS := -llog\
                        -lz \

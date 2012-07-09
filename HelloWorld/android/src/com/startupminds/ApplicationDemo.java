@@ -62,6 +62,7 @@ public class ApplicationDemo extends Cocos2dxActivity{
 	
      static {
     	 System.loadLibrary("cocosdenshion");
+    	 System.loadLibrary("chipmunk");
          System.loadLibrary("helloworld");
      }
 }
