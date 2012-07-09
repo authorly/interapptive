@@ -40,10 +40,14 @@ ChipmunkLayer::ChipmunkLayer()
 : totalFallingObjects(0)
 , page(NULL)
 , space(NULL)
+, accX(0.f)
+, accY(0.f)
 {}
 
 bool ChipmunkLayer::init(Page *page)
 {
+    this->setIsAccelerometerEnabled(true);
+    
     this->page = page;
     
     initChipmunk();
@@ -84,6 +88,12 @@ void ChipmunkLayer::onEnter()
     CCLayer::onEnter();
 }
 
+void ChipmunkLayer::didAccelerate(cocos2d::CCAcceleration* pAccelerationValue)
+{
+    accX = pAccelerationValue->x;
+    accY = pAccelerationValue->y;
+}
+
 void ChipmunkLayer::newFallingObject(float dt)
 {
     const char *name = GCpShapeCache::sharedShapeCache()->randomShapeName();
@@ -112,9 +122,7 @@ void ChipmunkLayer::newFallingObject(float dt)
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     int x = rand() % (int)winSize.width;
 
-
-    body->p.x = x;
-    body->p.y = winSize.height;
+    body->p = cpVectMake(x, winSize.height);
     sprite->setPosition(ccp(body->p.x, body->p.y));
     
     totalFallingObjects++;
@@ -136,9 +144,8 @@ void ChipmunkLayer::createStaticPhysicObject()
     sprite->setAnchorPoint(GCpShapeCache::sharedShapeCache()->anchorPointForShape(fixtureName.c_str()));
     
     // create physics shape
-    cpBody *body = GCpShapeCache::sharedShapeCache()->createBodyWithName(fixtureName.c_str(), space, sprite);
-    body->p.x = page->settings.staicObjectSetting.position.x;
-    body->p.y = page->settings.staicObjectSetting.position.y;
+    cpBody *body = GCpShapeCache::sharedShapeCache()->createBodyWithName(fixtureName.c_str(), space, sprite, true);
+    body->p = cpVectMake(page->settings.staicObjectSetting.position.x, page->settings.staicObjectSetting.position.y);
     sprite->setPosition(page->settings.staicObjectSetting.position);
 }
 
@@ -156,6 +163,9 @@ void ChipmunkLayer::update(float delta)
 {
     int steps = 2;
 	float dt = delta/(float)steps;
+    
+    space->gravity = cpVectMake(accX * page->settings.fallingObjectSetting.speedX, 
+                                accY * page->settings.fallingObjectSetting.speedY);
 	
 	for(int i=0; i<steps; i++)
     {
@@ -170,10 +180,7 @@ void ChipmunkLayer::setupSpace()
     cpSpaceResizeStaticHash(space, 400.0f, 40);
     cpSpaceResizeActiveHash(space, 100, 600);
     
-    // no gravity, the spped depends on accelerometer
-    space->gravity.x = 0;
-    space->gravity.y = -900; // for test
-    //space->gravity.y = 0;
+    space->gravity = cpVectMake(0, 0);
     
     space->elasticIterations = space->iterations;
 }

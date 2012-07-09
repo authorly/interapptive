@@ -146,7 +146,7 @@ CCPoint GCpShapeCache::anchorPointForShape(const char *shape)
     return bd->anchorPoint;
 }
 
-cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void *data)
+cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void *data, bool isStatic)
 {
     GBodyDef *bd = (GBodyDef*)bodyDefs->objectForKey(name);
     assert(bd != 0);
@@ -155,18 +155,25 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
     }
     
     // create and add body to space
-    cpBody *body = cpBodyNew(bd->mass, bd->momentum);
+    cpBody *body = NULL;
+    if (isStatic) {
+        body = cpBodyNew(INFINITY, INFINITY);
+    }
+    else {
+        body = cpBodyNew(bd->mass, bd->momentum);
+    }
     
     // set the center point
-    body->p.x = bd->anchorPoint.x;
-    body->p.y = bd->anchorPoint.y;
+    body->p = cpVectMake(bd->anchorPoint.x, bd->anchorPoint.y);
     
     // set the data
     body->data = data;
     
     // add space to body
-    cpSpaceAddBody(space, body);
-
+    if (! isStatic) {
+        cpSpaceAddBody(space, body);
+    }
+    
     // iterate over fixtures
     CCMutableArray<GFixtureData*>::CCMutableArrayIterator iter;
     for (iter = bd->fixtures->begin(); iter != bd->fixtures->end(); ++iter) {
@@ -185,7 +192,7 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
             shape->sensor = fd->isSensor;
             
             // add shape to space
-            cpSpaceAddShape(space, shape); 
+            cpSpaceAddShape(space, shape);
         }
         else {
             // iterate over polygons
@@ -206,7 +213,7 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
                 shape->sensor = fd->isSensor;
                 
                 // add shape to space
-                cpSpaceAddShape(space, shape); 
+                cpSpaceAddShape(space, shape);
             }
         }
     }
