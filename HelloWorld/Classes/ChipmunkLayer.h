@@ -16,6 +16,7 @@ public:
     virtual void update(float dt);
     virtual void onEnter();
     virtual void onExit();
+    virtual void didAccelerate(cocos2d::CCAcceleration* pAccelerationValue);
 private:
     bool init(Page *page);
     void setupSpace();
@@ -27,6 +28,9 @@ private:
     // weak ref
     Page *page;
     int totalFallingObjects;
+    
+    float accX;
+    float accY;
 };
 
 #endif

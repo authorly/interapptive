@@ -15,7 +15,7 @@ public:
     GCpShapeCache();
     ~GCpShapeCache();
     bool addShapesWithFile(const char* filename);
-    cpBody* createBodyWithName(const char* name, cpSpace* space, void* data);
+    cpBody* createBodyWithName(const char* name, cpSpace* space, void* data, bool isStatic = false);
     cocos2d::CCPoint anchorPointForShape(const char* shape);
     const char* randomShapeName();
     void purge();
