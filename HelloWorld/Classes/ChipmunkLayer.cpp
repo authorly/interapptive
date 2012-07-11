@@ -122,9 +122,7 @@ void ChipmunkLayer::newFallingObject(float dt)
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     int x = rand() % (int)winSize.width;
 
-    // y should not be 0, or the object may stay at top, because there is 
-    // segment at top
-    body->p = cpVectMake(x, winSize.height - sprite->getContentSize().height/2);
+    body->p = cpVectMake(x, winSize.height + sprite->getContentSize().height/2);
     sprite->setPosition(ccp(body->p.x, body->p.y));
     
     totalFallingObjects++;
@@ -200,9 +198,11 @@ void ChipmunkLayer::addFloor()
     cpSpaceAddStaticShape(space, shape);
     
     // top
+    /*
     shape = cpSegmentShapeNew(staticBody, cpVectMake(0,wins.height), cpVectMake(wins.width,wins.height), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
+     */
 }
 
 void ChipmunkLayer::addWalls()
