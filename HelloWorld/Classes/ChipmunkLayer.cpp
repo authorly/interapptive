@@ -83,7 +83,7 @@ void ChipmunkLayer::onExit()
 
 void ChipmunkLayer::onEnter()
 {
-    schedule(schedule_selector(ChipmunkLayer::newFallingObject), 0.6f);
+    schedule(schedule_selector(ChipmunkLayer::newFallingObject), page->settings.fallingObjectSetting.slowDownSpeed);
     scheduleUpdate();
     CCLayer::onEnter();
 }
