@@ -156,6 +156,9 @@ void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
 
 void MainMenuLayer::playVideoMainMenuItemTouched(cocos2d::CCObject *sender)
 {
+    // stop playing background music
+    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    
     // disable touch event when playing video
     setIsTouchEnabled(false);
     
