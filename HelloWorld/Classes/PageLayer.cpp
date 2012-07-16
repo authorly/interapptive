@@ -65,8 +65,8 @@ void PageLayer::init(Page *page)
     }
     
 	createSprites();
-	createParagraph(0);
     createPhysicsLayer();
+	createParagraph(0);
     
     // add menu item to go to main menu
     createMainMenuItem();
