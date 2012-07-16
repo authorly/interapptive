@@ -20,10 +20,14 @@ typedef struct fallingPhysicsSettings{
     std::string         plistfilename;
 }FallingObjectSetting;
 
-typedef struct staticPhysicsSettings{
+typedef struct staticObjectInfo{
     std::string         filename;
-    std::string         plistfilename;
     cocos2d::CCPoint    position;
+} StaticObjectInfo;
+
+typedef struct staticPhysicsSettings{
+    std::string                     plistfilename;
+    std::vector<StaticObjectInfo*>   staticObjects;
 }StaticObjectSetting;
 
 typedef struct settings
