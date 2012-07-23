@@ -8,6 +8,7 @@
 #include "MainMenuLayer.h"
 #include "SharedGlobalData.h"
 #include "MyScene.h"
+#include "MyPageTurn.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -83,7 +84,7 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
         }
         
         // turn page
-        CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
+        CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
     }
 }
 
@@ -95,8 +96,8 @@ CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 	if (page)
 	{
 		// create a scene
-		scene = MyScene::node();
-        //scene = CCScene::node();
+		//scene = MyScene::node();
+        scene = CCScene::node();
 
 		// create a layer because we want to receive touch event
 		CCLayer *layer = PageLayer::pageLayerWithPage(page);;
