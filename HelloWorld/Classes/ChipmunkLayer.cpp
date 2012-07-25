@@ -83,7 +83,7 @@ void ChipmunkLayer::onExit()
 
 void ChipmunkLayer::onEnter()
 {
-    schedule(schedule_selector(ChipmunkLayer::newFallingObject), 0.6f);
+    schedule(schedule_selector(ChipmunkLayer::newFallingObject), page->settings.fallingObjectSetting.slowDownSpeed);
     scheduleUpdate();
     CCLayer::onEnter();
 }
@@ -103,10 +103,15 @@ void ChipmunkLayer::newFallingObject(float dt)
     sprintf(tempName, "%s.png", name);
     
     // don't create static object
-    string strName = tempName;
-    if (strName.compare(page->settings.staicObjectSetting.filename.c_str()) == 0)
+    string strName = tempName;    
+    vector<StaticObjectInfo*> staticObjectInfos = page->settings.staicObjectSetting.staticObjects;
+    vector<StaticObjectInfo*>::iterator iter;
+    for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter) 
     {
-        return;
+        if (strName.compare((*iter)->filename.c_str()) == 0)
+        {
+            return;
+        }
     }
     
 	CCSprite *sprite = CCSprite::spriteWithFile(tempName);
@@ -122,9 +127,7 @@ void ChipmunkLayer::newFallingObject(float dt)
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     int x = rand() % (int)winSize.width;
 
-    // y should not be 0, or the object may stay at top, because there is 
-    // segment at top
-    body->p = cpVectMake(x, winSize.height - sprite->getContentSize().height/2);
+    body->p = cpVectMake(x, winSize.height + sprite->getContentSize().height/2);
     sprite->setPosition(ccp(body->p.x, body->p.y));
     
     totalFallingObjects++;
@@ -136,19 +139,24 @@ void ChipmunkLayer::newFallingObject(float dt)
 
 void ChipmunkLayer::createStaticPhysicObject()
 {
-    // create and add sprite
-    string &filename = page->settings.staicObjectSetting.filename;
-	CCSprite *sprite = CCSprite::spriteWithFile(filename.c_str());
-    addChild(sprite);
-    
-    // set anchor point
-    string fixtureName = filename.substr(0, filename.find_last_of("."));
-    sprite->setAnchorPoint(GCpShapeCache::sharedShapeCache()->anchorPointForShape(fixtureName.c_str()));
-    
-    // create physics shape
-    cpBody *body = GCpShapeCache::sharedShapeCache()->createBodyWithName(fixtureName.c_str(), space, sprite, true);
-    body->p = cpVectMake(page->settings.staicObjectSetting.position.x, page->settings.staicObjectSetting.position.y);
-    sprite->setPosition(page->settings.staicObjectSetting.position);
+    vector<StaticObjectInfo*> staticObjectInfos = page->settings.staicObjectSetting.staticObjects;
+    vector<StaticObjectInfo*>::iterator iter;
+    for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter) 
+    {
+        // create and add sprite
+        string &filename = (*iter)->filename;
+        CCSprite *sprite = CCSprite::spriteWithFile(filename.c_str());
+        addChild(sprite);
+        
+        // set anchor point
+        string fixtureName = filename.substr(0, filename.find_last_of("."));
+        sprite->setAnchorPoint(GCpShapeCache::sharedShapeCache()->anchorPointForShape(fixtureName.c_str()));
+        
+        // create physics shape
+        cpBody *body = GCpShapeCache::sharedShapeCache()->createBodyWithName(fixtureName.c_str(), space, sprite, true);
+        body->p = cpVectMake((*iter)->position.x, (*iter)->position.y);
+        sprite->setPosition((*iter)->position);
+    }
 }
 
 static void eachBody(cpBody *body, void *data)
@@ -200,9 +208,11 @@ void ChipmunkLayer::addFloor()
     cpSpaceAddStaticShape(space, shape);
     
     // top
+    /*
     shape = cpSegmentShapeNew(staticBody, cpVectMake(0,wins.height), cpVectMake(wins.width,wins.height), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
+     */
 }
 
 void ChipmunkLayer::addWalls()

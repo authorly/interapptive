@@ -8,6 +8,13 @@ Page::~Page()
     // free paragraphs
     for (int i = 0; i < paragraphs.size(); ++i)
     {
+        vector<LineText*> &linesOfTest = paragraphs[i]->linesOfTest;
+        vector<LineText*>::iterator iter;
+        for (iter = linesOfTest.begin(); iter != linesOfTest.end(); ++iter) 
+        {
+            delete *iter;
+        }
+        
         delete paragraphs[i];
     }
     
@@ -33,6 +40,14 @@ Page::~Page()
     for (int m = 0; m < storySwipeEnded.actionsToRun.size(); ++m)
     {
         delete storySwipeEnded.actionsToRun[m];
+    }
+    
+    // free static object information
+    vector<StaticObjectInfo*> &staticObjectInfos = settings.staicObjectSetting.staticObjects;
+    vector<StaticObjectInfo*>::iterator iter;
+    for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter) 
+    {
+        delete *iter;
     }
 }
 

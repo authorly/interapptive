@@ -277,11 +277,15 @@
               "fontSize": 20,
               "staticPhysicsSettings": {
               "plistfilename": "page-22-snowman.plist",
-              "position": [
-                           324,
-                           222
-                           ],
-              "filename": "physics-object-snowman.png"
+              "objects": [
+                          {
+                          "filename": "physics-object-snowman.png",
+                          "position": [
+                                       324,
+                                       222
+                                       ]
+                          }
+                          ]
               },
               "fallingPhysicsSettings": {
               "maxNumber": 35,
@@ -2367,11 +2371,15 @@
               "fontSize": 20,
               "staticPhysicsSettings": {
               "plistfilename": "page-22-snowman.plist",
-              "position": [
-                           324,
-                           222
-                           ],
-              "filename": "physics-object-snowman.png"
+              "objects": [
+                          {
+                          "filename": "physics-object-snowman.png",
+                          "position": [
+                                       324,
+                                       222
+                                       ]
+                          }
+                          ]
               },
               "fallingPhysicsSettings": {
               "maxNumber": 35,
