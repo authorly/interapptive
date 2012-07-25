@@ -8,6 +8,7 @@
 #include "MainMenuLayer.h"
 #include "SharedGlobalData.h"
 #include "MyScene.h"
+#include "MyPageTurn.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -83,7 +84,7 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
         }
         
         // turn page
-        CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
+        CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
     }
 }
 
