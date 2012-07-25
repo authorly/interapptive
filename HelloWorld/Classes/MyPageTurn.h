@@ -86,6 +86,7 @@ public:
     cocos2d::CCActionInterval* actionWithSize(cocos2d::ccGridSize vector);
     virtual void sceneOrder();
     virtual void onEnter();
+    void addShadow();
 };
 
 #endif

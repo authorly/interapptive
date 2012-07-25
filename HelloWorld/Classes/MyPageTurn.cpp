@@ -142,6 +142,8 @@ ccMyPageTurn3d* ccMyPageTurn3d::actionWithSize(cocos2d::ccGridSize size, float d
 
 bool ccMyPageTurn3d::initWithSize(cocos2d::ccGridSize size, float duration, int fromCorner)
 {
+    ccMyGrid3dAction::initWithDuration(duration);
+    
     this->turnCorner = fromCorner;
     this->m_sGridSize = size;
     this->winSize = CCDirector::sharedDirector()->getWinSize();
@@ -346,9 +348,60 @@ void ccMyTransitionPageTurn::sceneOrder()
     m_bIsInSceneOnTop = back;
 }
 
+void ccMyTransitionPageTurn::addShadow()
+{
+    CCSize s = CCDirector::sharedDirector()->getWinSize();
+    CCScene *scene = back ? m_pOutScene : m_pInScene;
+    
+    CCLayerGradient * shadow = CCLayerGradient::layerWithColor(ccc4(0,0,0,255), ccc4(0,0,0,0), ccp(1.f,0.f));
+    
+    bool rightToLeft;
+    int topToBottom;
+    float startAngle, destAngle, startX, destX, move_duration, startY;
+    
+    if (turnCorner == MyPageTurnCornerUpperRight || turnCorner == MyPageTurnCornerLowerRight) {
+        
+        rightToLeft = !back;
+        
+        topToBottom = (turnCorner == MyPageTurnCornerUpperRight) ? 1 : -1;
+        
+        startAngle    = rightToLeft ?   -45 * topToBottom : 0;
+        destAngle     = rightToLeft ?   +45 * topToBottom : -45 * topToBottom; //rotate 45 degrees
+        startX        = rightToLeft ?   0 :  -s.width;
+        destX         = rightToLeft ?   -s.width :  s.width; //move the full width of screen
+        move_duration = rightToLeft ?   1.3 : 1; // if forwards go slower - gives nice offset
+        startY        = topToBottom == 1 ?  -.5 * s.height : 0;
+    }
+    
+    else if (turnCorner == MyPageTurnCornerUpperLeft || turnCorner == MyPageTurnCornerLowerLeft) {
+        
+        rightToLeft = back;
+        
+        topToBottom = (turnCorner == MyPageTurnCornerUpperLeft) ? 1 : -1;
+        
+        startAngle    = rightToLeft ?   180 : 180 + 45 * topToBottom;
+        destAngle     = rightToLeft ?   +45 * topToBottom : -45 * topToBottom; //rotate 45 degrees
+        startX        = rightToLeft ?   s.width : 0;
+        destX         = rightToLeft ?   -s.width :  s.width; //move the full width of screen
+        move_duration = rightToLeft ?   1.3 : 1; // if forwards go slower - gives nice offset
+        startY        = topToBottom ==  1 ?  -.5 * s.height :  0;
+    }
+    
+    shadow->setRotation(startAngle);
+    shadow->changeHeight(s.height * 1.5);
+    shadow->setPosition(ccp(startX, startY));
+    
+    CCMoveBy *move = CCMoveBy::actionWithDuration(m_fDuration*move_duration, ccp(destX, 0));
+    CCRotateBy *rotate = CCRotateBy::actionWithDuration(m_fDuration, destAngle);
+    CCFiniteTimeAction *spawn = CCSpawn::actions(move, rotate, NULL);
+    scene->addChild(shadow, 1);
+    shadow->runAction(spawn);
+}
+
 void ccMyTransitionPageTurn::onEnter()
 {
     CCTransitionScene::onEnter();
+    addShadow();
     
     CCSize s = CCDirector::sharedDirector()->getWinSize();
 	int x, y;

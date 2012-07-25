@@ -96,8 +96,8 @@ CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 	if (page)
 	{
 		// create a scene
-		//scene = MyScene::node();
-        scene = CCScene::node();
+		scene = MyScene::node();
+        //scene = CCScene::node();
 
 		// create a layer because we want to receive touch event
 		CCLayer *layer = PageLayer::pageLayerWithPage(page);;
