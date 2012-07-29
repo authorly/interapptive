@@ -1,6 +1,7 @@
 #include "ChipmunkLayer.h"
 #include "GCpShapeCache.h"
 #include "chipmunk.h"
+#include "cpSprite.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -42,6 +43,7 @@ ChipmunkLayer::ChipmunkLayer()
 , space(NULL)
 , accX(0.f)
 , accY(0.f)
+, isFallingObjectTouched(false)
 {}
 
 bool ChipmunkLayer::init(Page *page)
@@ -97,6 +99,7 @@ void ChipmunkLayer::didAccelerate(cocos2d::CCAcceleration* pAccelerationValue)
 void ChipmunkLayer::newFallingObject(float dt)
 {
     const char *name = GCpShapeCache::sharedShapeCache()->randomShapeName();
+    bool draggable = page->settings.fallingObjectSetting.draggble;
   
     // create and add sprite
     char tempName[50];
@@ -114,7 +117,16 @@ void ChipmunkLayer::newFallingObject(float dt)
         }
     }
     
-	CCSprite *sprite = CCSprite::spriteWithFile(tempName);
+	CCSprite *sprite = NULL;
+    if (draggable)
+    {
+        sprite = cpSprite::spriteWithFile(tempName);
+    }
+    else 
+    {
+        sprite = CCSprite::spriteWithFile(tempName);
+    }
+    
     addChild(sprite);
     
     // set anchor point
@@ -129,6 +141,11 @@ void ChipmunkLayer::newFallingObject(float dt)
 
     body->p = cpVectMake(x, winSize.height + sprite->getContentSize().height/2);
     sprite->setPosition(ccp(body->p.x, body->p.y));
+    
+    if (draggable)
+    {
+        ((cpSprite*)sprite)->setChipmunBody(body);
+    }
     
     totalFallingObjects++;
     if (totalFallingObjects >= page->settings.fallingObjectSetting.maxNumber)
@@ -162,8 +179,18 @@ void ChipmunkLayer::createStaticPhysicObject()
 static void eachBody(cpBody *body, void *data)
 {    
 	CCSprite *sprite = (CCSprite*)body->data;
-	if( sprite )
+	if( sprite)
     {
+        // if it is an type of cpSprite*, it means that the falling object is draggalbe
+        // because eachBody() is a local static function, so it can not get the information
+        // if the falling object is draggable
+        // fix me if dynamic_cast affect performance
+        cpSprite *s = dynamic_cast<cpSprite*>(sprite);
+        if (s && s->selected())
+        {
+            return;
+        }
+            
 		sprite->setPosition(ccp(body->p.x, body->p.y));
         sprite->setRotation((float) CC_RADIANS_TO_DEGREES( -body->a));
 	}

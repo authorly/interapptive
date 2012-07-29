@@ -224,6 +224,12 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     }
 #endif
     
+    // do not allow user to turn pages during autoplay
+    if (MainMenuLayer::storyMode == kSotryModeAutoPlay)
+    {
+        return;
+    }
+    
     CCPoint endPoint = pTouch->locationInView(pTouch->view());
     endPoint = CCDirector::sharedDirector()->convertToGL(endPoint);
     
