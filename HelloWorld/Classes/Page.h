@@ -8,6 +8,7 @@
 #include <map>
 
 typedef struct fallingPhysicsSettings{
+    bool    draggble;
     int     maxNumber;
     int     speedX;
     int     speedY;
