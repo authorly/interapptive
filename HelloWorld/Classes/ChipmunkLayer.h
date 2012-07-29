@@ -17,6 +17,7 @@ public:
     virtual void onEnter();
     virtual void onExit();
     virtual void didAccelerate(cocos2d::CCAcceleration* pAccelerationValue);
+
 private:
     bool init(Page *page);
     void setupSpace();
@@ -31,6 +32,8 @@ private:
     
     float accX;
     float accY;
+    
+    bool isFallingObjectTouched;
 };
 
 #endif

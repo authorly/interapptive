@@ -271,6 +271,7 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
     {
         FallingObjectSetting &fallingSet = settings.fallingObjectSetting;
         
+        fallingSet.draggble = fallingPhysicsSettings["draggable"].asBool();
         fallingSet.maxNumber = fallingPhysicsSettings["maxNumber"].asInt();
         fallingSet.speedX = fallingPhysicsSettings["speedX"].asInt();
         fallingSet.speedY = fallingPhysicsSettings["speedY"].asInt();
