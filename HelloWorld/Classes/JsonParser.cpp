@@ -940,6 +940,16 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 
 			// glitterIndicator
 			storyTouchableNode->glitterIndicator = node["glitterIndicator"].asBool();
+            // stopEffectIndicator
+            Json::Value stopEffectIndicatorJson = node["stopEffectIndicator"];
+            if (! stopEffectIndicatorJson.isNull())
+            {
+                storyTouchableNode->stopEffectIndicator = stopEffectIndicatorJson.asBool();
+            }
+            else 
+            {
+                storyTouchableNode->stopEffectIndicator = true;
+            }
 			// position
 			int x = 0, y = 1;
 			storyTouchableNode->position.x = node["position"][x].asInt() * XSCALE;

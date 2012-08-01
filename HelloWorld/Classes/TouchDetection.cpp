@@ -6,7 +6,7 @@ using namespace cocos2d;
 // the priority should low than pagelayer
 #define TOUCHDETECTION_HANDLER_PRIORITY -10
 
-TouchDetection::TouchDetection() : isDebugDrawing(false)
+TouchDetection::TouchDetection()
 {
 }
 
@@ -44,29 +44,6 @@ void TouchDetection::emptyZones()
 {
 	touchZones->removeAllObjects(true);
 }
-
-/*
-void TouchDetection::draw()
-{
-	if (isDebugDrawing)
-	{
-        glLineWidth(6);
-        glColor4ub(0, 255, 0, 255);
-        
-		CCMutableArray<TouchObject*>::CCMutableArrayIterator iter;
-		for (iter = touchZones->begin(); iter != touchZones->end(); ++iter)
-		{			
-			ccDrawCircle((*iter)->getPosition(), (*iter)->radius, 0, 20, false);
-		}
-        
-        // restore original values
-        glLineWidth(1);
-        //glColor4ub(255,255,255,255);
-        glColor4f(1.0, 1.0, 1.0, 1.0);
-	}
-	CCLayer::draw();
-}
-*/
 
 bool TouchDetection::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
 {
