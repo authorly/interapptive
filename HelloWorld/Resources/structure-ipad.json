@@ -215,6 +215,7 @@
               "nodes": [
                         {
                         "glitterIndicator": true,
+                        "stopEffectIndicator": false,
                         "touchFlag": 1,
                         "position": [
                                      512,

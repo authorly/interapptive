@@ -95,7 +95,6 @@ void PageLayer::onEnter()
         
         addChild(particle);
 	}
-	touchDetector->isDebugDrawing = true;
 	touchDetector->setIsTouchEnabled(true);
     
     setIsTouchEnabled(true);
@@ -118,19 +117,24 @@ void PageLayer::onExit()
 
 void PageLayer::touchCallback(float flag)
 {
-    // stop all sounds
-    stopHighlightEffect();
+    StoryTouchableNode *storyTouchableNode = page->getSotryTouchableNodeByFlag(flag);
     
+    // stop all sounds
+    if (storyTouchableNode->stopEffectIndicator)
+    {
+        stopHighlightEffect();
+    }
+
     // play video
     bool showControl = false;
-    string &videoName = page->storyTouchableNodes[0]->videoToPlay;
+    string &videoName = storyTouchableNode->videoToPlay;
     if (videoName.size() != 0)
     {
        VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, videoName.c_str(), showControl); 
     }
     
     // play audeo
-    string &audeoName = page->storyTouchableNodes[0]->soundToPlay;
+    string &audeoName = storyTouchableNode->soundToPlay;
     if (audeoName.size() != 0)
     {
         SimpleAudioEngine::sharedEngine()->playEffect(audeoName.c_str());

@@ -111,6 +111,20 @@ SpriteInfo* Page::getSpriteInfoByTag(int spriteTag)
     return NULL;
 }
 
+StoryTouchableNode* Page::getSotryTouchableNodeByFlag(int touchFlag)
+{
+    vector<StoryTouchableNode*>::iterator iter;
+    for (iter = storyTouchableNodes.begin(); iter != storyTouchableNodes.end(); ++iter)
+    {
+        if ((*iter)->touchFlag == touchFlag)
+        {
+            return *iter;
+        } 
+    }
+    
+    return NULL;
+}
+
 vector<StorySwipeEndedActionsToRun*>* Page::getStorySwipeEndedActionToRun(int swipeNumber)
 {
     vector<StorySwipeEndedActionsToRun*>* arrayActionsToRun = NULL;

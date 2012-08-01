@@ -69,7 +69,10 @@ void JsonParser::parseMainMenu(Json::Value &root)
     
     // parse audio
     Json::Value audio = mainMenu["audio"];
-    parseMainMenuAodio(audio);
+    if (! audio.isNull())
+    {
+        parseMainMenuAodio(audio);
+    }
     
     // parse CCSprites
     Json::Value sprites = mainMenu["CCSprites"];
@@ -91,13 +94,22 @@ void JsonParser::parseMainMenu(Json::Value &root)
 void JsonParser::parseMainMenuAodio(Json::Value &value)
 {
     // backgroundMusic
-    MainMenu::audio.backgroundMusic = value["backgroundMusic"].asCString();
-    // backgroundMusicLoops
-    MainMenu::audio.backgroundMusicLoops = value["backgroundMusicLoops"].asInt();
-    // soundEffect
-    MainMenu::audio.soundEffect = value["soundEffect"].asCString();
-    // soundEffectLoops
-    MainMenu::audio.soundEffectLoops = value["soundEffectLoops"].asInt();
+    Json::Value backgroundJson = value["backgroundMusic"];
+    if (! backgroundJson.isNull())
+    {
+        MainMenu::audio.backgroundMusic = backgroundJson.asCString();
+        // backgroundMusicLoops
+        MainMenu::audio.backgroundMusicLoops = value["backgroundMusicLoops"].asInt();
+    }
+    
+    Json::Value soundJson = value["soundEffect"];
+    if (! soundJson.isNull())
+    {
+        // soundEffect
+        MainMenu::audio.soundEffect = soundJson.asCString();
+        // soundEffectLoops
+        MainMenu::audio.soundEffectLoops = value["soundEffectLoops"].asInt();
+    }    
 }
 
 void JsonParser::parseMainMenuSprites(Json::Value &value)
@@ -928,6 +940,16 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 
 			// glitterIndicator
 			storyTouchableNode->glitterIndicator = node["glitterIndicator"].asBool();
+            // stopEffectIndicator
+            Json::Value stopEffectIndicatorJson = node["stopEffectIndicator"];
+            if (! stopEffectIndicatorJson.isNull())
+            {
+                storyTouchableNode->stopEffectIndicator = stopEffectIndicatorJson.asBool();
+            }
+            else 
+            {
+                storyTouchableNode->stopEffectIndicator = true;
+            }
 			// position
 			int x = 0, y = 1;
 			storyTouchableNode->position.x = node["position"][x].asInt() * XSCALE;
