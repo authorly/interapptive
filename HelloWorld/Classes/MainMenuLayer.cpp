@@ -23,9 +23,15 @@ MainMenuLayer::~MainMenuLayer()
 
 void MainMenuLayer::init()
 {
-    // preload background music, effect
-    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(MainMenu::audio.backgroundMusic.c_str());
-    SimpleAudioEngine::sharedEngine()->preloadEffect(MainMenu::audio.soundEffect.c_str());
+    // preload background music, effect if exists
+    if (MainMenu::audio.backgroundMusic.size() > 0)
+    {
+        SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(MainMenu::audio.backgroundMusic.c_str());
+    }
+    if (MainMenu::audio.soundEffect.size() > 0)
+    {
+        SimpleAudioEngine::sharedEngine()->preloadEffect(MainMenu::audio.soundEffect.c_str());
+    }    
     
     // add sprites
     for (int i = 0; i < MainMenu::sprites.size(); ++i)
@@ -83,9 +89,12 @@ void MainMenuLayer::init()
 }
 
 void MainMenuLayer::onEnter()
-{
-    bool musicLoop = MainMenu::audio.backgroundMusicLoops == 0 ? true : false;
-    SimpleAudioEngine::sharedEngine()->playBackgroundMusic(MainMenu::audio.backgroundMusic.c_str(), musicLoop);
+{  
+    if (MainMenu::audio.backgroundMusic.size() > 0)
+    {
+        bool musicLoop = MainMenu::audio.backgroundMusicLoops == 0 ? true : false;
+        SimpleAudioEngine::sharedEngine()->playBackgroundMusic(MainMenu::audio.backgroundMusic.c_str(), musicLoop);
+    }
 
     // run action, action type should be CCFadeIn
     vector<ActionToRunOnEnter*> &actionsToRunOnEnter = MainMenu::actionsToRunOnEnter;

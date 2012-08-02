@@ -83,6 +83,7 @@ typedef struct storyTouchableNodeActionsToRun
 typedef struct storyTouchableNode
 {
 	bool                      glitterIndicator;
+    bool                      stopEffectIndicator;
 	cocos2d::CCPoint          position;
 	int                       radius;
 	std::string               videoToPlay;
@@ -120,6 +121,7 @@ public:
 	void addAction(int actionTag, cocos2d::CCAction *action);
 	cocos2d::CCAction* getActionByTag(int actionTag);
     SpriteInfo* getSpriteInfoByTag(int spriteTag);
+    StoryTouchableNode* getSotryTouchableNodeByFlag(int touchFlag);
     std::vector<StorySwipeEndedActionsToRun*>* getStorySwipeEndedActionToRun(int swipeNumber);
     void splitText(LineText *textLine);
 public:

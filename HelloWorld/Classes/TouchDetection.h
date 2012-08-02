@@ -21,7 +21,6 @@ public:
 
 public:
 	cocos2d::CCMutableArray<TouchObject*> *touchZones;
-	bool isDebugDrawing;
 	TouchObject *touchedObject;
 };
 
