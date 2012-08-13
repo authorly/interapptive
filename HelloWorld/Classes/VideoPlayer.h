@@ -1,23 +1,21 @@
 #ifndef interapptive_VideoPlayer_h
 #define interapptive_VideoPlayer_h
 
-class VideoPlayerProtocol
-{
-public:
-    virtual void moviePlayBackDidFinish() = 0;
-};
+#include "cocos2d.h"
 
 /* Can only play one video at a time
  */
-class VideoPlayer
+class VideoPlayer : public cocos2d::CCLayer
 {
 public:
     static VideoPlayer* sharedVideoPlayer();
-    void playVideoByFilename(VideoPlayerProtocol *delegate, const char* fileName, bool showControl);
+    virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+    virtual void registerWithTouchDispatcher(void);
+    void playVideoByFilename(cocos2d::CCNode *parent, const char* fileName, bool showControl);
     void stopPlay();
-
+    
 private:
-    VideoPlayer();
+    bool showControl;
 };
 
 #endif

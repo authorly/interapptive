@@ -8,26 +8,19 @@
 
 static id g_intervalVideoPlayer = nil;
 static MPMoviePlayerController *g_moviePlayer = nil;
-static VideoPlayer* g_videoPlayer = NULL;
+static VideoPlayer* g_sharedVideoPlayer = NULL;
 
 // internal oc class to receive call back message MPMoviePlayerController
 // when it is finished
 @interface InternalVideoPlayer : NSObject
 {
-    // weak ref
-    VideoPlayerProtocol *_delegate;
 }
 
 -(void) moviePlayBackDidFinish:(NSNotification*)notification;
--(void) initWithDelegate:(VideoPlayerProtocol*)delegate;
 @end
 
 @implementation InternalVideoPlayer
 
--(void) initWithDelegate:(VideoPlayerProtocol *)delegate
-{
-    _delegate = delegate;
-}
 
 -(void) moviePlayBackDidFinish:(NSNotification*)notification
 {
@@ -58,35 +51,48 @@ static VideoPlayer* g_videoPlayer = NULL;
     [g_intervalVideoPlayer release];
     g_intervalVideoPlayer = nil;
     
-    _delegate->moviePlayBackDidFinish();
-    _delegate = NULL;
+    g_sharedVideoPlayer->removeFromParentAndCleanup(true);
 }
 
 @end
 
 using namespace cocos2d;
 
+
 VideoPlayer* VideoPlayer::sharedVideoPlayer()
 {
-    if (g_videoPlayer == NULL)
+    if (! g_sharedVideoPlayer)
     {
-        g_videoPlayer = new VideoPlayer();
+        g_sharedVideoPlayer = new VideoPlayer();
     }
     
-    return g_videoPlayer;
+    return g_sharedVideoPlayer;
 }
 
-VideoPlayer::VideoPlayer() {}
-
-void VideoPlayer::playVideoByFilename(VideoPlayerProtocol *delegate, const char *fileName, bool showControl)
+void VideoPlayer::registerWithTouchDispatcher(void)
 {
+    CCTouchDispatcher::sharedDispatcher()->addStandardDelegate(this, -20);
+}
+
+void VideoPlayer::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+    if (! showControl)
+    {
+        stopPlay();
+        removeFromParentAndCleanup(true);
+    }
+}
+
+void VideoPlayer::playVideoByFilename(CCNode * parent, const char *fileName, bool showControl)
+{
+    this->showControl = showControl;
+    
     NSString *nsFilePath = [NSString stringWithUTF8String:fileName];
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:nsFilePath ofType:@""]];
     g_moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
     
     // register internal oc class to receive call back message
     g_intervalVideoPlayer = [InternalVideoPlayer alloc];
-    [g_intervalVideoPlayer initWithDelegate:delegate];
     
     [[NSNotificationCenter defaultCenter] addObserver:g_intervalVideoPlayer
                                              selector:@selector(moviePlayBackDidFinish:)
@@ -128,6 +134,8 @@ void VideoPlayer::playVideoByFilename(VideoPlayerProtocol *delegate, const char 
         
         [g_moviePlayer play];
     }
+    
+    parent->addChild(this);
 }
 
 void VideoPlayer::stopPlay()
