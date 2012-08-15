@@ -9,12 +9,14 @@ LOCAL_MODULE_FILENAME := libgame_logic
 LOCAL_SRC_FILES := AppDelegate.cpp \
                    ChipmunkLayer.cpp \
                    Configurations.cpp \
+                   cpSprite.cpp \
                    DataLoader.cpp \
                    GCpShapeCache.cpp \
                    JsonParser.cpp \
                    MainMenu.cpp \
                    MainMenuLayer.cpp \
                    MyDialog.cpp \
+                   MyPageTurn.cpp \
                    MyScene.cpp \
                    OpenUrlHelper.cpp \
                    Page.cpp \
@@ -29,7 +31,8 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)
 
-LOCAL_C_INCLUDES := ../..
+LOCAL_C_INCLUDES := ../.. \
+../../cocos2dx/effects
 
 LOCAL_STATIC_LIBRARIES := png_static_prebuilt
 LOCAL_STATIC_LIBRARIES += xml2_static_prebuilt

@@ -71,6 +71,8 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 #import "CCIMEDispatcher.h"
 #import "OpenGL_Internal.h"
 
+#import "VideoPlayer.h"
+
 //CLASS IMPLEMENTATIONS:
 
 #define MAX_TOUCHES     11
@@ -394,6 +396,11 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (VideoPlayer::sharedVideoPlayer()->touch())
+    {
+        return;
+    }
+    
 	cocos2d::CCSet set;
     cocos2d::CCTouch *pTouch;
     
@@ -430,6 +437,11 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (VideoPlayer::sharedVideoPlayer()->touch())
+    {
+        return;
+    }
+    
 	cocos2d::CCSet set;
 	for (UITouch *touch in touches) {
 		NSNumber *index = (NSNumber*)CFDictionaryGetValue(touchesIntergerDict, touch);
@@ -456,6 +468,11 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (VideoPlayer::sharedVideoPlayer()->touch())
+    {
+        return;
+    }
+    
 	cocos2d::CCSet set;
 	for (UITouch *touch in touches) {
             NSNumber *index = (NSNumber*)CFDictionaryGetValue(touchesIntergerDict, touch);
