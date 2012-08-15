@@ -51,7 +51,7 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
     [g_intervalVideoPlayer release];
     g_intervalVideoPlayer = nil;
     
-    g_sharedVideoPlayer->removeFromParentAndCleanup(true);
+    g_sharedVideoPlayer->isVideoPlaying = false;
 }
 
 @end
@@ -69,23 +69,10 @@ VideoPlayer* VideoPlayer::sharedVideoPlayer()
     return g_sharedVideoPlayer;
 }
 
-void VideoPlayer::registerWithTouchDispatcher(void)
-{
-    CCTouchDispatcher::sharedDispatcher()->addStandardDelegate(this, -20);
-}
-
-void VideoPlayer::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
-{
-    if (! showControl)
-    {
-        stopPlay();
-        removeFromParentAndCleanup(true);
-    }
-}
-
-void VideoPlayer::playVideoByFilename(CCNode * parent, const char *fileName, bool showControl)
+void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl)
 {
     this->showControl = showControl;
+    this->isVideoPlaying = true;
     
     NSString *nsFilePath = [NSString stringWithUTF8String:fileName];
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:nsFilePath ofType:@""]];
@@ -134,12 +121,33 @@ void VideoPlayer::playVideoByFilename(CCNode * parent, const char *fileName, boo
         
         [g_moviePlayer play];
     }
+}
+
+bool VideoPlayer::touch()
+{
     
-    parent->addChild(this);
+    if (isVideoPlaying)
+    {
+        // playing video and not show control, should stop playing
+        if (!showControl)
+        {
+            stopPlay();
+            isVideoPlaying = false;
+            showControl = false;
+        }
+        
+        // playing video and show control, should absorb the touch message
+        // can only stop playing video by touch "Done"
+        return true;
+    }
+    
+    return false;
 }
 
 void VideoPlayer::stopPlay()
 {
+    isVideoPlaying = false;
+    
     if (g_intervalVideoPlayer)
     {
         [g_moviePlayer stop];

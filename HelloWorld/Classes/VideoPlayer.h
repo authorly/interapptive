@@ -5,17 +5,16 @@
 
 /* Can only play one video at a time
  */
-class VideoPlayer : public cocos2d::CCLayer
+class VideoPlayer
 {
 public:
     static VideoPlayer* sharedVideoPlayer();
-    virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
-    virtual void registerWithTouchDispatcher(void);
-    void playVideoByFilename(cocos2d::CCNode *parent, const char* fileName, bool showControl);
+    void playVideoByFilename(const char* fileName, bool showControl);
     void stopPlay();
+    bool touch();
     
-private:
     bool showControl;
+    bool isVideoPlaying;
 };
 
 #endif

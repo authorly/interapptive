@@ -168,8 +168,8 @@ void MainMenuLayer::playVideoMainMenuItemTouched(cocos2d::CCObject *sender)
     // stop playing background music
     SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
     
-    MainMenuItemInfo *mainMenuItemInfo = (MainMenuItemInfo*)((CCMenuItemImage*)sender)->getUserData();  
-    VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, mainMenuItemInfo->videoToPlay.c_str(), true);
+    MainMenuItemInfo *mainMenuItemInfo = (MainMenuItemInfo*)((CCMenuItemImage*)sender)->getUserData(); 
+    VideoPlayer::sharedVideoPlayer()->playVideoByFilename(mainMenuItemInfo->videoToPlay.c_str(), true);
 }
 
 void MainMenuLayer::urlMainMenuItemTouched(cocos2d::CCObject *sender)

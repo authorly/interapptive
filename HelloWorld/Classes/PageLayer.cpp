@@ -129,7 +129,7 @@ void PageLayer::touchCallback(float flag)
     string &videoName = storyTouchableNode->videoToPlay;
     if (videoName.size() != 0)
     {
-       VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, videoName.c_str(), showControl); 
+       VideoPlayer::sharedVideoPlayer()->playVideoByFilename(videoName.c_str(), showControl); 
     }
     
     // play audeo
