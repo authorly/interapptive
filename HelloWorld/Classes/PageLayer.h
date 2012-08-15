@@ -9,7 +9,7 @@
 
 class Page;
 
-class PageLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayerProtocol
+class PageLayer : public cocos2d::CCLayer, public DialogProtocol
 {
 public:
     virtual ~PageLayer();
@@ -31,8 +31,6 @@ public:
     // dialog protocol
     virtual void buttonClicked(int index);
     
-    // video player protocol
-    virtual void moviePlayBackDidFinish();
 private:
     PageLayer();
     void init(Page *page);
@@ -73,7 +71,6 @@ private:
     cocos2d::CCLayer *paragraphLayer;
 
     MyDialog *mydialog;
-    bool isVideoPlaying;
     
     bool isSwiping;
 };

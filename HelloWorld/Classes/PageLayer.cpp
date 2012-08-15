@@ -32,7 +32,6 @@ PageLayer::PageLayer()
 , page(NULL)
 , paragraphLayer(NULL)
 , mydialog(NULL)
-, isVideoPlaying(false)
 , isSwiping(false)
 {}
 
@@ -130,7 +129,7 @@ void PageLayer::touchCallback(float flag)
     string &videoName = storyTouchableNode->videoToPlay;
     if (videoName.size() != 0)
     {
-       VideoPlayer::sharedVideoPlayer()->playVideoByFilename(this, videoName.c_str(), showControl); 
+       VideoPlayer::sharedVideoPlayer()->playVideoByFilename(videoName.c_str(), showControl); 
     }
     
     // play audeo
@@ -139,29 +138,6 @@ void PageLayer::touchCallback(float flag)
     {
         SimpleAudioEngine::sharedEngine()->playEffect(audeoName.c_str());
     }
-        
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    if (showControl)
-    {
-        // disable touch event
-        setIsTouchEnabled(false);
-        ((TouchDetection*)getChildByTag(TOUCH_DETECT_TAG))->setIsTouchEnabled(false);
-    }
-    isVideoPlaying = true;
-#endif
-}
-
-void PageLayer::moviePlayBackDidFinish()
-{
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    if (getIsTouchEnabled() == false)
-    {
-        setIsTouchEnabled(true);
-        ((TouchDetection*)getChildByTag(TOUCH_DETECT_TAG))->setIsTouchEnabled(true);
-    }
-    
-    isVideoPlaying = false;
-#endif
 }
 
 /// touch event
@@ -218,16 +194,6 @@ bool PageLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 
 void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    if (isVideoPlaying)
-    {
-        VideoPlayer::sharedVideoPlayer()->stopPlay();
-        isVideoPlaying = false;
-        
-        return;
-    }
-#endif
-    
     // do not allow user to turn pages during autoplay
     if (MainMenuLayer::storyMode == kSotryModeAutoPlay)
     {

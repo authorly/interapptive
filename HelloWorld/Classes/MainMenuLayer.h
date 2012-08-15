@@ -11,7 +11,7 @@ enum StoryMode {
     kStoryModeReadToMe,
 };
 
-class MainMenuLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayerProtocol
+class MainMenuLayer : public cocos2d::CCLayer, public DialogProtocol
 {
 public:
    MainMenuLayer();
@@ -20,8 +20,6 @@ public:
     virtual void onEnter();
     // DialogProtocol
     virtual void buttonClicked(int index);
-    // VideoPlayerProtocol
-    virtual void moviePlayBackDidFinish();
     
     void normalMainMenuItemTouched(cocos2d::CCObject *sender);
     void playVideoMainMenuItemTouched(cocos2d::CCObject *sender);

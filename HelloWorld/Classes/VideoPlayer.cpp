@@ -17,9 +17,7 @@ VideoPlayer* VideoPlayer::sharedVideoPlayer()
     return g_videoPlayer;
 }
 
-VideoPlayer::VideoPlayer() {}
-
-void VideoPlayer::playVideoByFilename(VideoPlayerProtocol *delegate, const char *fileName, bool showControl)
+void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl)
 {
     JniMethodInfo methodInfo;
     
@@ -43,4 +41,9 @@ void VideoPlayer::playVideoByFilename(VideoPlayerProtocol *delegate, const char 
 void VideoPlayer::stopPlay()
 {
 
+}
+
+bool VideoPlayer::touch()
+{
+    return false;
 }
