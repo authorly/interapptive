@@ -56,7 +56,8 @@ pushd $NDK_ROOT_LOCAL
 popd
 
 
-if [ $# > 0 ];then
+if [ $# -eq 0 ];then
+echo "generate apk"
 android update project -p .
 ant debug
 fi
