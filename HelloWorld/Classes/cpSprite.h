@@ -11,7 +11,7 @@ public:
     
     cpSprite();
     
-    void setChipmunBody(cpBody *body);
+    void setChipmunkInfo(cpSpace *space, cpBody *body);
     bool selected();
     
     virtual void setPosition(const cocos2d::CCPoint& pos);
@@ -23,8 +23,10 @@ public:
 	virtual void touchDelegateRelease();
     
 private:
+    void internalSetPosition(const cocos2d::CCPoint& pos);
     // weak ref
     cpBody *body;
+    cpSpace *space;
     bool isSelected;
 };
 
