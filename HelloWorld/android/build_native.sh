@@ -2,7 +2,8 @@
 #NDK_ROOT_LOCAL=/cygdrive/d/programe/android/ndk/android-ndk-r6b
 #COCOS2DX_ROOT_LOCAL=/Users/zhangkoumyou/SourceCode/interapptive
 NDK_ROOT_LOCAL=/Users/chriswhitman/workspace/android-ndk-r7b
-COCOS2DX_ROOT_LOCAL=/Users/chriswhitman/workspace/interapptive
+COCOS2DX_ROOT_LOCAL=`pwd`/../..
+
 
 # try to get global variable
 if [ $NDK_ROOT"aaa" != "aaa" ]; then
@@ -10,10 +11,10 @@ if [ $NDK_ROOT"aaa" != "aaa" ]; then
     NDK_ROOT_LOCAL=$NDK_ROOT
 fi
 
-if [ $COCOS2DX_ROOT"aaa" != "aaa" ]; then
-    echo "use global definition of COCOS2DX_ROOT: $COCOS2DX_ROOT"
-    COCOS2DX_ROOT_LOCAL=$COCOS2DX_ROOT
-fi
+#if [ $COCOS2DX_ROOT"aaa" != "aaa" ]; then
+#    echo "use global definition of COCOS2DX_ROOT: $COCOS2DX_ROOT"
+#    COCOS2DX_ROOT_LOCAL=$COCOS2DX_ROOT
+#fi
 
 #if [ $COCOS2DX_ROOT"aaa" != "aaa" ]; then
 #    echo "use global definition of COCOS2DX_ROOT: $COCOS2DX_ROOT"
@@ -54,3 +55,9 @@ pushd $NDK_ROOT_LOCAL
 ./ndk-build -C $HELLOWORLD_ROOT $*
 popd
 
+
+if [ $# -eq 0 ];then
+echo "generate apk"
+android update project -p .
+ant debug
+fi
