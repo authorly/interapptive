@@ -1,4 +1,5 @@
 #include "cpSprite.h"
+#include "GCpShapeCache.h"
 
 using namespace cocos2d;
 
@@ -19,9 +20,10 @@ cpSprite::cpSprite()
 , isSelected(false)
 {}
 
-void cpSprite::setChipmunBody(cpBody *body)
+void cpSprite::setChipmunkInfo(cpSpace *space, cpBody *body)
 {
     this->body = body;
+    this->space = space;
 }
 
 void cpSprite::setPosition(const CCPoint& pos)
@@ -32,6 +34,16 @@ void cpSprite::setPosition(const CCPoint& pos)
         body->p.x = pos.x;
         body->p.y = pos.y;
     }
+}
+
+void cpSprite::internalSetPosition(const CCPoint &pos)
+{
+    if (cpSpacePointQueryFirst(space, cpVectMake(pos.x, pos.y), CP_ALL_LAYERS, CP_NO_GROUP) != NULL)
+    {
+        return;
+    }
+    
+    setPosition(pos);
 }
 
 void cpSprite::onEnter()
@@ -56,10 +68,10 @@ bool cpSprite::ccTouchBegan(CCTouch* touch, CCEvent* event)
 
 void cpSprite::ccTouchMoved(CCTouch* touch, CCEvent* event)
 {		
-	CCPoint touchPoint = touch->locationInView( touch->view() );
-    touchPoint = CCDirector::sharedDirector()->convertToGL( touchPoint );
+	CCPoint touchPoint = touch->locationInView(touch->view());
+    touchPoint = CCDirector::sharedDirector()->convertToGL(touchPoint);
 	
-	setPosition( CCPointMake(touchPoint.x, touchPoint.y) );
+	internalSetPosition(CCPointMake(touchPoint.x, touchPoint.y));
 }
 
 void cpSprite::ccTouchEnded(CCTouch* touch, CCEvent* event)
