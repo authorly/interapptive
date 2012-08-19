@@ -144,7 +144,7 @@ void ChipmunkLayer::newFallingObject(float dt)
     
     if (draggable)
     {
-        ((cpSprite*)sprite)->setChipmunBody(body);
+        ((cpSprite*)sprite)->setChipmunkInfo(space, body);
     }
     
     totalFallingObjects++;
