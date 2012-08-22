@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -93,6 +93,10 @@
 		159FDC4115C535E30064CCAF /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 159FDBFE15C535E30064CCAF /* Makefile */; };
 		15AB5F0B15687351007CA061 /* VideoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15AB5F0A15687351007CA061 /* VideoPlayer.mm */; };
 		15AB5F0D15687E2B007CA061 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AB5F0C15687E2B007CA061 /* MediaPlayer.framework */; };
+		15BA624515E5387F002BC3A5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 15BA624415E5387F002BC3A5 /* Icon.png */; };
+		15BA624915E53978002BC3A5 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 15BA624615E53978002BC3A5 /* Icon-72.png */; };
+		15BA624A15E53978002BC3A5 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 15BA624715E53978002BC3A5 /* Icon-144.png */; };
+		15BA624B15E53978002BC3A5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15BA624815E53978002BC3A5 /* Icon@2x.png */; };
 		15C8FB99158C2749005A0F4E /* OpenUrlHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15C8FB98158C2749005A0F4E /* OpenUrlHelper.mm */; };
 		15CFCF531592175200B6DBD7 /* ChipmunkLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15CFCF521592175200B6DBD7 /* ChipmunkLayer.cpp */; };
 		15D4B27A1580F21500729646 /* go-to-website-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D4B2781580F21500729646 /* go-to-website-over.png */; };
@@ -218,17 +222,6 @@
 		784521C114EBA389009D533B /* CCNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 784521BF14EBA389009D533B /* CCNotificationCenter.h */; };
 		78891AB714EA205A0072482D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78891AB614EA205A0072482D /* Default.png */; };
 		AD7C5EC514751287008E5647 /* CCThread_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5EC414751287008E5647 /* CCThread_ios.mm */; };
-		AD7C5ED2147512AD008E5647 /* FontLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = AD7C5EC7147512AD008E5647 /* FontLabel.h */; };
-		AD7C5ED3147512AD008E5647 /* FontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5EC8147512AD008E5647 /* FontLabel.m */; };
-		AD7C5ED4147512AD008E5647 /* FontLabelStringDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = AD7C5EC9147512AD008E5647 /* FontLabelStringDrawing.h */; };
-		AD7C5ED5147512AD008E5647 /* FontLabelStringDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5ECA147512AD008E5647 /* FontLabelStringDrawing.m */; };
-		AD7C5ED6147512AD008E5647 /* FontManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AD7C5ECB147512AD008E5647 /* FontManager.h */; };
-		AD7C5ED7147512AD008E5647 /* FontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5ECC147512AD008E5647 /* FontManager.m */; };
-		AD7C5ED8147512AD008E5647 /* ZAttributedString.h in Headers */ = {isa = PBXBuildFile; fileRef = AD7C5ECD147512AD008E5647 /* ZAttributedString.h */; };
-		AD7C5ED9147512AD008E5647 /* ZAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5ECE147512AD008E5647 /* ZAttributedString.m */; };
-		AD7C5EDA147512AD008E5647 /* ZAttributedStringPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = AD7C5ECF147512AD008E5647 /* ZAttributedStringPrivate.h */; };
-		AD7C5EDB147512AD008E5647 /* ZFont.h in Headers */ = {isa = PBXBuildFile; fileRef = AD7C5ED0147512AD008E5647 /* ZFont.h */; };
-		AD7C5EDC147512AD008E5647 /* ZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = AD7C5ED1147512AD008E5647 /* ZFont.m */; };
 		BF126D191373F24200C4ABC5 /* CCUserDefault.h in Headers */ = {isa = PBXBuildFile; fileRef = BF126D181373F24200C4ABC5 /* CCUserDefault.h */; };
 		BF126D1B1373F25400C4ABC5 /* CCUserDefault.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF126D1A1373F25400C4ABC5 /* CCUserDefault.cpp */; };
 		BF1373D3128A849B00D9F789 /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4927C41289199700A09262 /* libcocos2d.a */; };
@@ -637,6 +630,10 @@
 		15AB5F0815687322007CA061 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
 		15AB5F0A15687351007CA061 /* VideoPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlayer.mm; sourceTree = "<group>"; };
 		15AB5F0C15687E2B007CA061 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		15BA624415E5387F002BC3A5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
+		15BA624615E53978002BC3A5 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		15BA624715E53978002BC3A5 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = SOURCE_ROOT; };
+		15BA624815E53978002BC3A5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		15C8FB96158C270A005A0F4E /* OpenUrlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUrlHelper.h; sourceTree = "<group>"; };
 		15C8FB98158C2749005A0F4E /* OpenUrlHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenUrlHelper.mm; sourceTree = "<group>"; };
 		15CFCF511592173100B6DBD7 /* ChipmunkLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChipmunkLayer.h; sourceTree = "<group>"; };
@@ -1329,6 +1326,10 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				15BA624615E53978002BC3A5 /* Icon-72.png */,
+				15BA624715E53978002BC3A5 /* Icon-144.png */,
+				15BA624815E53978002BC3A5 /* Icon@2x.png */,
+				15BA624415E5387F002BC3A5 /* Icon.png */,
 				159A15A8159FDF8E006DF546 /* page-22-snowman.plist */,
 				159A15A5159FDE7C006DF546 /* page-22-seds.plist */,
 				3A7F0A81158EB1A50007BEE0 /* physics-object-seed1.png */,
@@ -2105,12 +2106,6 @@
 				BFEE2E3F13E16D2D005C0577 /* ZAttributedStringPrivate.h in Headers */,
 				BFEE2E4013E16D2D005C0577 /* ZFont.h in Headers */,
 				BF7A45A113F2219E0035C563 /* CCTouchHandler.h in Headers */,
-				AD7C5ED2147512AD008E5647 /* FontLabel.h in Headers */,
-				AD7C5ED4147512AD008E5647 /* FontLabelStringDrawing.h in Headers */,
-				AD7C5ED6147512AD008E5647 /* FontManager.h in Headers */,
-				AD7C5ED8147512AD008E5647 /* ZAttributedString.h in Headers */,
-				AD7C5EDA147512AD008E5647 /* ZAttributedStringPrivate.h in Headers */,
-				AD7C5EDB147512AD008E5647 /* ZFont.h in Headers */,
 				784521C114EBA389009D533B /* CCNotificationCenter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2158,8 +2153,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "interapptive" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -2333,6 +2331,10 @@
 				159FDC2515C535E30064CCAF /* CMakeDirectoryInformation.cmake in Resources */,
 				159FDC2615C535E30064CCAF /* progress.marks in Resources */,
 				159FDC2715C535E30064CCAF /* CMakeLists.txt in Resources */,
+				15BA624515E5387F002BC3A5 /* Icon.png in Resources */,
+				15BA624915E53978002BC3A5 /* Icon-72.png in Resources */,
+				15BA624A15E53978002BC3A5 /* Icon-144.png in Resources */,
+				15BA624B15E53978002BC3A5 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2509,11 +2511,6 @@
 				BFEE2E3E13E16D2D005C0577 /* ZAttributedString.m in Sources */,
 				BFEE2E4113E16D2D005C0577 /* ZFont.m in Sources */,
 				AD7C5EC514751287008E5647 /* CCThread_ios.mm in Sources */,
-				AD7C5ED3147512AD008E5647 /* FontLabel.m in Sources */,
-				AD7C5ED5147512AD008E5647 /* FontLabelStringDrawing.m in Sources */,
-				AD7C5ED7147512AD008E5647 /* FontManager.m in Sources */,
-				AD7C5ED9147512AD008E5647 /* ZAttributedString.m in Sources */,
-				AD7C5EDC147512AD008E5647 /* ZFont.m in Sources */,
 				784521C014EBA389009D533B /* CCNotificationCenter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2542,7 +2539,7 @@
 				GCC_PREFIX_HEADER = HelloWorld_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = TARGET_OS_IPHONE;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/include/libxml2/\"",
 					"\"$(SRCROOT)/../../cocos2dx\"",
@@ -2553,17 +2550,18 @@
 					"$(SRCROOT)/../../chipmunk/include/constraints",
 				);
 				INFOPLIST_FILE = "HelloWorld-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../CocosDenshion/third_party/qnx/libraries/armle-v7\"",
 					"\"$(SRCROOT)/../../CocosDenshion/third_party/qnx/libraries/x86\"",
 				);
+				New_Setting = "";
 				PRODUCT_NAME = interapptive;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "arm6 armv7";
 			};
 			name = Debug;
 		};
@@ -2578,7 +2576,7 @@
 				GCC_PREFIX_HEADER = HelloWorld_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = TARGET_OS_IPHONE;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/include/libxml2/\"",
 					"\"$(SRCROOT)/../../cocos2dx\"",
@@ -2589,18 +2587,19 @@
 					"$(SRCROOT)/../../chipmunk/include/constraints",
 				);
 				INFOPLIST_FILE = "HelloWorld-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../CocosDenshion/third_party/qnx/libraries/armle-v7\"",
 					"\"$(SRCROOT)/../../CocosDenshion/third_party/qnx/libraries/x86\"",
 				);
+				New_Setting = "";
 				PRODUCT_NAME = interapptive;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "arm6 armv7";
 			};
 			name = Release;
 		};
@@ -2608,9 +2607,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2618,18 +2617,17 @@
 					GL_GLEXT_PROTOTYPES,
 					TARGET_OS_IPHONE,
 				);
-				GCC_VERSION = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/include/libxml2/\"",
 					"\"$(SRCROOT)/../../cocos2dx/\"",
 				);
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PREBINDING = NO;
 				PRODUCT_NAME = cocos2d;
 				PUBLIC_HEADERS_FOLDER_PATH = "/usr/local/include /usr/local/include/libxml2";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
 		};
@@ -2637,27 +2635,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					USE_FILE32API,
 					GL_GLEXT_PROTOTYPES,
 					TARGET_OS_IPHONE,
 				);
-				GCC_VERSION = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SDKROOT)/usr/include/libxml2/\"",
 					"\"$(SRCROOT)/../../cocos2dx/\"",
 				);
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PREBINDING = NO;
 				PRODUCT_NAME = cocos2d;
 				PUBLIC_HEADERS_FOLDER_PATH = "/usr/local/include /usr/local/include/libxml2";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2666,18 +2663,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: 小明 张 (L4ZF355VQS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 小明 张 (L4ZF355VQS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/Adhoc-iphoneos";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				PROVISIONING_PROFILE = "0C43CFE2-55C4-429A-9A03-BFB76D31630B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C43CFE2-55C4-429A-9A03-BFB76D31630B";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				SHARED_PRECOMPS_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
 		};
@@ -2685,19 +2683,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: 小明 张 (L4ZF355VQS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 小明 张 (L4ZF355VQS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/Adhoc-iphoneos";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
-				PROVISIONING_PROFILE = "0C43CFE2-55C4-429A-9A03-BFB76D31630B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C43CFE2-55C4-429A-9A03-BFB76D31630B";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				SHARED_PRECOMPS_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;
 		};
