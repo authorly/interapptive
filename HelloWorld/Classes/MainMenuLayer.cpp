@@ -93,7 +93,7 @@ void MainMenuLayer::init()
                                                                          "buildASnowman-hover.png",
                                                                          this,
                                                                           menu_selector(MainMenuLayer::buildASnowmanMenuItemTouched));
-    buildASnowman->setPosition(ccp(830, 90));
+    buildASnowman->setPosition(ccp(830*XSCALE, 90*YSCALE));
     menu->addChild(buildASnowman, 1);
     
     menu->setPosition(ccp(0,0));

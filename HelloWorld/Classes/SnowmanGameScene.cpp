@@ -182,7 +182,7 @@ void SnowmanGameScene::addArrowMenuAndAddSprite()
     hat->setUserData(data);
     
     hat->setPosition(SPRITE_BETWEEN_ARROW_POSITION);
-    hat->setScale(HAT_SCALE);
+    hat->setScale(HAT_SCALE * MIN_SCALE);
     hat->setTag(SPRITE_BETWEEN_ARROW_TAG);
     
     addChild(hat);
@@ -305,7 +305,7 @@ bool SnowmanGameScene::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *
         }
         
         spriteToDrag = CCSprite::spriteWithSpriteFrameName(spriteToDragFrameName);
-        spriteToDrag->setScale(0.5);
+        spriteToDrag->setScale(0.5 * MIN_SCALE);
         spriteToDrag->setPosition(SPRITE_BETWEEN_ARROW_POSITION);
         spriteToDrag->setTag(SPRITE_TO_DRAG_TAG);
         
@@ -386,7 +386,6 @@ void SnowmanGameScene::ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *
     removeChildByTag(spriteToDrawTag, true);
     
     addChild(spriteToDraw);
-    
 }
 
 void SnowmanGameScene::arrowTouched(cocos2d::CCObject *sender)
@@ -548,10 +547,10 @@ void SnowmanGameScene::snowmanPartsMenuTouched(cocos2d::CCObject *sender)
     
     data->tag = tag;
     data->index = 0;
-    data->scale = scale;
+    data->scale = scale * MIN_SCALE;
     spriteBetweenArrow->setUserData(data);
     spriteBetweenArrow->setTag(SPRITE_BETWEEN_ARROW_TAG);
-    spriteBetweenArrow->setScale(scale);
+    spriteBetweenArrow->setScale(data->scale);
     
     addChild(spriteBetweenArrow);
 }
