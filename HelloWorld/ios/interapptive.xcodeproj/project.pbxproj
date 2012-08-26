@@ -38,6 +38,10 @@
 		1585A293152DD113003E4376 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585A292152DD113003E4376 /* OpenAL.framework */; };
 		1585A295152DD11F003E4376 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585A294152DD11F003E4376 /* AudioToolbox.framework */; };
 		1585A297152DD143003E4376 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1585A296152DD143003E4376 /* AVFoundation.framework */; };
+		158B570815EA6CB7009FCBB4 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 158B570415EA6CB7009FCBB4 /* Icon-72.png */; };
+		158B570915EA6CB7009FCBB4 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 158B570515EA6CB7009FCBB4 /* Icon-144.png */; };
+		158B570A15EA6CB7009FCBB4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 158B570615EA6CB7009FCBB4 /* Icon.png */; };
+		158B570B15EA6CB7009FCBB4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 158B570715EA6CB7009FCBB4 /* Icon@2x.png */; };
 		158EFE3B158641B600E096CA /* MyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 158EFE3A158641B600E096CA /* MyScene.cpp */; };
 		159A15A6159FDE7C006DF546 /* page-22-seds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159A15A5159FDE7C006DF546 /* page-22-seds.plist */; };
 		159A15A9159FDF8E006DF546 /* page-22-snowman.plist in Resources */ = {isa = PBXBuildFile; fileRef = 159A15A8159FDF8E006DF546 /* page-22-snowman.plist */; };
@@ -574,6 +578,10 @@
 		1585A292152DD113003E4376 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		1585A294152DD11F003E4376 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1585A296152DD143003E4376 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		158B570415EA6CB7009FCBB4 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		158B570515EA6CB7009FCBB4 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = SOURCE_ROOT; };
+		158B570615EA6CB7009FCBB4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
+		158B570715EA6CB7009FCBB4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		158EFE381586375700E096CA /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		158EFE3A158641B600E096CA /* MyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyScene.cpp; sourceTree = "<group>"; };
 		159A15A5159FDE7C006DF546 /* page-22-seds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "page-22-seds.plist"; sourceTree = "<group>"; };
@@ -1380,6 +1388,10 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				158B570415EA6CB7009FCBB4 /* Icon-72.png */,
+				158B570515EA6CB7009FCBB4 /* Icon-144.png */,
+				158B570615EA6CB7009FCBB4 /* Icon.png */,
+				158B570715EA6CB7009FCBB4 /* Icon@2x.png */,
 				15D7CF5B15E66935005F0F2F /* arrow-hover.png */,
 				15D7CF5C15E66935005F0F2F /* arrow.png */,
 				15D7CF5D15E66935005F0F2F /* eyes.plist */,
@@ -2434,6 +2446,10 @@
 				15D7CF8C15E66936005F0F2F /* snowman-game-bg.jpg in Resources */,
 				15D7CF8D15E66936005F0F2F /* twitter-hover.png in Resources */,
 				15D7CF8E15E66936005F0F2F /* twitter.png in Resources */,
+				158B570815EA6CB7009FCBB4 /* Icon-72.png in Resources */,
+				158B570915EA6CB7009FCBB4 /* Icon-144.png in Resources */,
+				158B570A15EA6CB7009FCBB4 /* Icon.png in Resources */,
+				158B570B15EA6CB7009FCBB4 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

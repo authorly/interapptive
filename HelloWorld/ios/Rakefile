@@ -1,0 +1,7 @@
+require 'rubygems'
+require 'betabuilder'
+
+BetaBuilder::Tasks.new do |config|
+  config.target = "interapptive"
+  config.configuration = "Adhoc"
+end
