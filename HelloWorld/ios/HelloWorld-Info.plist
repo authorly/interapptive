@@ -32,8 +32,6 @@
 	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.novelapps.${PRODUCT_NAME:rfc1034identifier}</string>
-	<key>UIStatusBarHidden</key>
-	<true/>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -50,5 +48,7 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string></string>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>
