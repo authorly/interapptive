@@ -2652,6 +2652,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Whitman (U4WGXZS2A3)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -2678,6 +2679,7 @@
 					"\"$(SRCROOT)/../../CocosDenshion/third_party/qnx/libraries/x86\"",
 				);
 				PRODUCT_NAME = interapptive;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "15282530-2C7C-4BBC-B4DD-5F595479936B";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2690,8 +2692,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Whitman (U4WGXZS2A3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Whitman (U4WGXZS2A3)";
 				COPY_PHASE_STRIP = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2716,8 +2718,8 @@
 					"\"$(SRCROOT)/../../CocosDenshion/third_party/qnx/libraries/x86\"",
 				);
 				PRODUCT_NAME = interapptive;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "15282530-2C7C-4BBC-B4DD-5F595479936B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "15282530-2C7C-4BBC-B4DD-5F595479936B";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2878,14 +2880,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: 小明 张 (L4ZF355VQS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Whitman (U4WGXZS2A3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 小明 张 (L4ZF355VQS)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "0C43CFE2-55C4-429A-9A03-BFB76D31630B";
+				PROVISIONING_PROFILE = "15282530-2C7C-4BBC-B4DD-5F595479936B";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C43CFE2-55C4-429A-9A03-BFB76D31630B";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

@@ -19,7 +19,7 @@
     },
     "MainMenu": {
         "audio": {
-            "backgroundMusic": "background.mp3",
+            "backgroundMusic": "main-menu-title-sound.mp3",
             "backgroundMusicLoops": 1,
             "soundEffect": "main-menu-title-sound.mp3",
             "soundEffectLoops": 1
@@ -50,7 +50,7 @@
                       "tappedStateImage": "autoplay-over.png",
                       "storyMode": "autoPlay",
                       "position": [
-                                   100,
+                                   125,
                                    90
                                    ]
                       },
@@ -59,7 +59,7 @@
                       "tappedStateImage": "read-it-myself-over.png",
                       "storyMode": "readItMyself",
                       "position": [
-                                   300,
+                                   350,
                                    90
                                    ]
                       },
@@ -68,7 +68,7 @@
                       "tappedStateImage": "read-to-me-over.png",
                       "storyMode": "readToMe",
                       "position": [
-                                   550,
+                                   580,
                                    90
                                    ]
                       },
@@ -77,7 +77,7 @@
                       "tappedStateImage": "video-link-the-snowman-over.png",
                       "videoToPlay": "video_the_snowman.mp4",
                       "position": [
-                                   830,
+                                   145,
                                    200
                                    ]
                       },
@@ -86,7 +86,7 @@
                       "tappedStateImage": "video-link-mixed-nuts-over.png",
                       "videoToPlay": "video_mixed_nuts.mp4",
                       "position": [
-                                   200,
+                                   875,
                                    200
                                    ]
                       },
@@ -96,8 +96,8 @@
                       "url": "http://strangerinthewoods.com",
                       "confirmBeforeGoToUrl": true,
                       "position": [
-                                   200,
-                                   300
+                                   950,
+                                   330
                                    ]
                       }
                       ],
@@ -211,27 +211,6 @@
                                          ]
                             }
                             ],
-              "CCStoryTouchableNode": {
-              "nodes": [
-                        {
-                        "glitterIndicator": true,
-                        "stopEffectIndicator": false,
-                        "touchFlag": 1,
-                        "position": [
-                                     512,
-                                     300
-                                     ],
-                        "radius": 20,
-                        "videoToPlay": "video_doe_snort.mp4",
-                        "runAction": [
-                                      {
-                                      "spriteTag": 1,
-                                      "actionTag": 20
-                                      }
-                                      ]
-                        }
-                        ]
-              },
               "CCStorySwipeEnded": {
               "runAction": [
                             {
@@ -287,21 +266,6 @@
                                        ]
                           }
                           ]
-              },
-              "fallingPhysicsSettings": {
-              "draggable":true,
-              "maxNumber": 35,
-              "speedX": 165,
-              "speedY": 50,
-              "spinSpeed": 100,
-              "slowDownSpeed": 0.6,
-              "hasFloor": true,
-              "hasWalls": true,
-              "dropBetweenPoints": [
-                                    0,
-                                    1024
-                                    ],
-              "plistfilename": "page-22-seds.plist"
               }
               },
               "text": {
