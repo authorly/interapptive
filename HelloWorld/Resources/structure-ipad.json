@@ -50,7 +50,7 @@
                       "tappedStateImage": "autoplay-over.png",
                       "storyMode": "autoPlay",
                       "position": [
-                                   230,
+                                   100,
                                    90
                                    ]
                       },
@@ -59,7 +59,7 @@
                       "tappedStateImage": "read-it-myself-over.png",
                       "storyMode": "readItMyself",
                       "position": [
-                                   530,
+                                   300,
                                    90
                                    ]
                       },
@@ -68,7 +68,7 @@
                       "tappedStateImage": "read-to-me-over.png",
                       "storyMode": "readToMe",
                       "position": [
-                                   830,
+                                   550,
                                    90
                                    ]
                       },
