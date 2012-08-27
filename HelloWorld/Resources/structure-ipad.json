@@ -132,11 +132,7 @@
                                      0,
                                      0
                                      ],
-              "fontSize": 48,
-              "backgroundMusicFile": {
-              "loop": true,
-              "audioFilePath": "background.mp3"
-              }
+              "fontSize": 48
               },
               "text": {
               "paragraphs": [
