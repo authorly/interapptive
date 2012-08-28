@@ -3,9 +3,6 @@
 #include "PageManager.h"
 #include "SharedGlobalData.h"
 #include "OpenUrlHelper.h"
-#include "SnowmanGameScene.h"
-#include "MyPageTurn.h"
-#include "Configurations.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -87,15 +84,6 @@ void MainMenuLayer::init()
         menuItemImage->setPosition(menuItemInfo->position);
         menu->addChild(menuItemImage, 1);
     }
-    
-    // add build snow man menu item (830*90)
-    CCMenuItemImage *buildASnowman = CCMenuItemImage::itemFromNormalImage("buildASnowman.png", 
-                                                                         "buildASnowman-hover.png",
-                                                                         this,
-                                                                          menu_selector(MainMenuLayer::buildASnowmanMenuItemTouched));
-    buildASnowman->setPosition(ccp(830*XSCALE, 90*YSCALE));
-    menu->addChild(buildASnowman, 1);
-    
     menu->setPosition(ccp(0,0));
     addChild(menu);
 }
@@ -205,17 +193,4 @@ void MainMenuLayer::buttonClicked(int index)
         PageManager::turnToPage(1, false);
 
     }
-}
-
-void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
-{
-    // stop back ground music
-    if (SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying())
-    {
-        SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
-    }
-    
-    SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
-    
-    CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, SnowmanGameScene::node(), false));
 }
