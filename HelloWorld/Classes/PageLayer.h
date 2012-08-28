@@ -60,6 +60,12 @@ private:
     
     void stopHighlightEffect();
     
+    // determine add or minus text space according the y coordinate 
+    // of the first line text
+    // @true add text space
+    // @false minus text space
+    bool addTextSpace(float yFirstLineText);
+    
 private:
     // record touch began position
     cocos2d::CCPoint beginPoint;
