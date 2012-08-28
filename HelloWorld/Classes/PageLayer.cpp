@@ -480,6 +480,19 @@ void PageLayer::buttonClicked(int index)
     }
 }
 
+bool PageLayer::addTextSpace(float yFirstLineText)
+{
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+    if (yFirstLineText > winSize.height/2)
+    {
+        return false;
+    }
+    else 
+    {
+        return true;
+    }
+}
+
 void PageLayer::createParagraph(int index)
 {
     assert(index < page->paragraphs.size());
@@ -512,11 +525,24 @@ void PageLayer::createParagraph(int index)
 		vector<LineText*>::iterator lineTextIter;
         float xOffset = 0.0f;
         float yOffset = 0.0f;
-		for (lineTextIter = linesOfText.begin(); lineTextIter != linesOfText.end(); ++lineTextIter)
+        // should add space when it is zoomed in, because we add text size
+        float ySpaceAdded = XSCALE < 1.0f ? 5 : 0;
+        int downIndex = linesOfText.size();
+        int upIndex = 0;
+        bool addSpace = addTextSpace(downIndex > 0 ? linesOfText[0]->yOffset : 0);
+		for (lineTextIter = linesOfText.begin(); lineTextIter != linesOfText.end(); ++lineTextIter, --downIndex, ++ upIndex)
 		{
 			LineText* lineText = *lineTextIter;
             xOffset = lineText->xOffset;
-            yOffset = lineText->yOffset;
+            
+            if (addSpace)
+            {
+                yOffset = lineText->yOffset + downIndex*ySpaceAdded;
+            }
+            else 
+            {
+                yOffset = lineText->yOffset - upIndex*ySpaceAdded;
+            }
             
             for (int i = 0; i < lineText->words.size(); ++i)
             {
