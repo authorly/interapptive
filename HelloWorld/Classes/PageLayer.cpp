@@ -169,7 +169,7 @@ float PageLayer::calculateDelayTimeOnEnter()
         for (int j = 0; j < actions.size(); ++j)
         {
             CCAction *action = page->getActionByTag(actions[j]);
-            if (dynamic_cast<CCMoveTo*>(action) != NULL || dynamic_cast<CCScaleTo*>(action) != NULL)
+            if (dynamic_cast<CCMoveTo*>(action) != NULL || dynamic_cast<CCScaleTo*>(action) != NULL ||  dynamic_cast<CCDelayTime*>(action) != NULL || dynamic_cast<CCSequence*>(action) != NULL ||  dynamic_cast<CCSpawn*>(action) != NULL)
             {
                 float temDelay = ((CCFiniteTimeAction*)action)->getDuration();
                 if (temDelay > delay)
