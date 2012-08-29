@@ -301,7 +301,7 @@
                                              {
                                              "text": "The snowflakes were",
                                              "yOffset": 160,
-                                             "xOffset": 180
+                                             "xOffset": 170
                                              },
                                              {
                                              "text": "resting after their twisting,",
@@ -320,17 +320,17 @@
                                              },
                                              {
                                              "text": "Every twig in the forest",
-                                             "yOffset": 165,
+                                             "yOffset": 145,
                                              "xOffset": 590
                                              },
                                              {
                                              "text": "wore a new coat",
-                                             "yOffset": 140,
+                                             "yOffset": 120,
                                              "xOffset": 615
                                              },
                                              {
                                              "text": "of glimmering white.",
-                                             "yOffset": 115,
+                                             "yOffset": 95,
                                              "xOffset": 670
                                              }
                                              ]
@@ -393,12 +393,12 @@
                                              },
                                              {
                                              "text": "The birds",
-                                             "yOffset": 145,
-                                             "xOffset": 630
+                                             "yOffset": 165,
+                                             "xOffset": 640
                                              },
                                              {
                                              "text": "were the first to notice...",
-                                             "yOffset": 120,
+                                             "yOffset": 140,
                                              "xOffset": 665
                                              }
                                              ]
@@ -517,18 +517,18 @@
                                              },
                                              {
                                              "text": "The blujays cawed",
+                                             "yOffset": 185,
+                                             "xOffset": 695
+                                             },
+                                             {
+                                             "text": "a warning from high in the",
                                              "yOffset": 160,
-                                             "xOffset": 645
+                                             "xOffset": 620
                                              },
                                              {
-                                             "text": "a warning from high in the tops",
+                                             "text": "tops of the tall oaks.",
                                              "yOffset": 135,
-                                             "xOffset": 575
-                                             },
-                                             {
-                                             "text": "of the tall oaks.",
-                                             "yOffset": 110,
-                                             "xOffset": 730
+                                             "xOffset": 700
                                              }
                                              ]
                              }
@@ -540,6 +540,7 @@
               "nodes": [
                         {
                         "glitterIndicator": true,
+                        "stopEffectIndicator": false,
                         "touchFlag": 1,
                         "position": [
                                      200,
@@ -583,7 +584,18 @@
                                      0,
                                      0
                                      ],
-              "fontSize": 20
+              "fontSize": 20,
+              
+              
+              
+              
+              "backgroundMusicFile": {
+
+                            "loop": true,
+                            
+                            "audioFilePath": "effect-woods.mp3"
+                            
+              }
               },
               "text": {
               "paragraphs": [
@@ -717,13 +729,24 @@
                                      0,
                                      0
                                      ],
-              "fontSize": 20
+              "fontSize": 20                       ,
+
+
+
+
+                                     "backgroundMusicFile": {
+
+                                                   "loop": false,
+
+                                                   "audioFilePath": "effect-stranger-in-woods.mp3"
+
+                                     }
               },
               "text": {
               "paragraphs": [
                              {
                              "delayForPanning": true,
-                             "voiceAudioFile": "page-5-paragraph-1.mp3",
+                             "voiceAudioFile": "page-5-paragraph-2.mp3",
                              "highlightingTimes": [
                                                    0.575,
                                                    0.938,
@@ -755,7 +778,7 @@
                                              {
                                              "text": "Where? Where did the jays say?",
                                              "yOffset": 185,
-                                             "xOffset": 145
+                                             "xOffset": 140
                                              },
                                              {
                                              "text": "Where is he?\"",
@@ -765,7 +788,7 @@
                                              {
                                              "text": "asked the Owl of Many Questions.",
                                              "yOffset": 135,
-                                             "xOffset": 140
+                                             "xOffset": 120
                                              }
                                              ]
                              }
@@ -773,6 +796,20 @@
               }
               },
               "API": {
+                 "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "touchFlag": 1,
+                            "position": [
+                                         700,
+                                         400
+                                         ],
+                            "radius": 90,
+                            "videoToPlay": "video_owl.mp4"
+                          }
+                            ]
+                  },
               "CCMoveBy": [
                            {
                            "position": [
@@ -918,7 +955,26 @@
                                      0,
                                      0
                                      ],
-              "fontSize": 20
+              "fontSize": 20,
+              
+              
+              
+              
+              "backgroundMusicFile": {
+
+                            "loop": true,
+                            
+                            "audioFilePath": "effect-footsteps.mp3"
+                            
+              }
+              },
+              
+              "backgroundMusicFile": {
+
+              "loop": true,
+
+              "audioFilePath": "effect-footsteps.mp3"
+
               },
               "text": {
               "paragraphs": [
@@ -1022,17 +1078,17 @@
                                              {
                                              "text": "Why is he here?",
                                              "yOffset": 190,
-                                             "xOffset": 685
+                                             "xOffset": 675
                                              },
                                              {
                                              "text": "When? When did the stranger come?\"",
                                              "yOffset": 165,
-                                             "xOffset": 490
+                                             "xOffset": 540
                                              },
                                              {
                                              "text": "asked the Owl of Many Questions.",
                                              "yOffset": 140,
-                                             "xOffset": 500
+                                             "xOffset": 560
                                              }
                                              ]
                              }
@@ -1133,14 +1189,64 @@
               }
               },
               "API": {
+                 "CCMoveBy": [
+                               {
+                               "position": [
+                                            -110,
+                                            -115
+                                            ],
+                               "duration": 4,
+                               "actionTag": 900
+                               }
+                               ],
+                  "CCScaleTo": [
+                                {
+                                "intensity": 2.3,
+                                "duration": 0,
+                                "actionTag": 901
+                                },
+                                {
+                                "intensity": 1.0,
+                                "duration": 4,
+                                "actionTag": 907
+                                }
+                                ],
+                  "CCDelayTime": [
+                                  {
+                                  "duration": 3,
+                                  "actionTag": 902
+                                  }
+                                  ],
+                  "CCSpawn": [
+                              {
+                              "actionTag": 903,
+                              "actions": [
+                                          900,
+                                          907
+                                          ]
+                              }
+                              ],
+                  "CCSequence": [
+                                 {
+                                 "actionTag": 904,
+                                 "actions": [
+                                             902,
+                                             903
+                                             ]
+                                 }
+                                 ],
               "CCSprites": [
                             {
                             "image": "background0090.jpg",
                             "spriteTag": 2,
                             "position": [
-                                         512,
-                                         384
-                                         ]
+                                         620,
+                                         500
+                                         ],
+                             "actions":[
+                                       901,
+                                       904
+                                       ]
                             }
                             ]
               }
@@ -1199,27 +1305,37 @@
                              "linesOfText": [
                                              {
                                              "text": "\"I followed the snow trail",
-                                             "yOffset": 705,
-                                             "xOffset": 50
-                                             },
-                                             {
-                                             "text": "under the light of the Winter Moon,\"",
-                                             "yOffset": 680,
-                                             "xOffset": 75
-                                             },
-                                             {
-                                             "text": "answered the buck.",
                                              "yOffset": 655,
-                                             "xOffset": 240
-                                             },
-                                             {
-                                             "text": "\"He was not there during the night,",
-                                             "yOffset": 570,
                                              "xOffset": 60
                                              },
                                              {
+                                             "text": "under the light",
+                                             "yOffset": 630,
+                                             "xOffset": 85
+                                             },
+                                              {
+                                              "text": "of the Winter Moon,\"",
+                                              "yOffset": 605,
+                                              "xOffset": 85
+                                              },
+                                             {
+                                             "text": "answered the buck.",
+                                             "yOffset": 580,
+                                             "xOffset": 180
+                                             },
+                                             {
+                                             "text": "\"He was not there",
+                                             "yOffset": 530,
+                                             "xOffset": 75
+                                             },
+                                              {
+                                              "text": "during the night,",
+                                              "yOffset": 505,
+                                              "xOffset": 110
+                                              },
+                                             {
                                              "text": "that I am sure!\"",
-                                             "yOffset": 545,
+                                             "yOffset": 480,
                                              "xOffset": 120
                                              }
                                              ]
@@ -1228,9 +1344,23 @@
               }
               },
               "API": {
+                "CCStoryTouchableNode": {
+                "nodes": [
+                          {
+                          "glitterIndicator": true,
+                          "touchFlag": 1,
+                          "position": [
+                                       200,
+                                       500
+                                       ],
+                          "radius": 90,
+                          "soundToPlay": "effect-whitetail-deer.mp3"
+                          }
+                          ]
+                },
               "CCScaleBy": [
                             {
-                            "intensity": 1.2,
+                            "intensity": 1.0,
                             "duration": 0,
                             "actionTag": 1000
                             }
@@ -1240,7 +1370,7 @@
                             "image": "background0100.jpg",
                             "spriteTag": 2,
                             "position": [
-                                         610,
+                                         512,
                                          384
                                          ],
                             "actions": [
@@ -1312,52 +1442,52 @@
                              "linesOfText": [
                                              {
                                              "text": "As the animals moved",
-                                             "yOffset": 370,
-                                             "xOffset": 705
+                                             "yOffset": 705,
+                                             "xOffset": 90
                                              },
                                              {
                                              "text": "through the snowy forest,",
-                                             "yOffset": 345,
-                                             "xOffset": 670
+                                             "yOffset": 680,
+                                             "xOffset": 135
                                              },
                                               {
-                                              "text": " they came to the edge",
-                                              "yOffset": 320,
-                                              "xOffset": 575
+                                              "text": "they came to the edge",
+                                              "yOffset": 655,
+                                              "xOffset": 120
                                               },
                                                {
                                                "text": "of the meadow.",
-                                               "yOffset": 295,
-                                               "xOffset": 600
+                                               "yOffset": 630,
+                                               "xOffset": 90
                                                },
                                              {
                                              "text": "The frightened doe",
-                                             "yOffset": 245,
-                                             "xOffset": 655
+                                             "yOffset": 310,
+                                             "xOffset": 735
                                              },
                                              {
                                              "text": "stomped her hoof",
-                                             "yOffset": 220,
-                                             "xOffset": 700
+                                             "yOffset": 285,
+                                             "xOffset": 760
                                              },
                                              {
                                              "text": "and snorted!",
-                                             "yOffset": 195,
-                                             "xOffset": 695
+                                             "yOffset": 260,
+                                             "xOffset": 755
                                              },
                                              {
                                              "text": "\"Where is he?",
-                                             "yOffset": 170,
-                                             "xOffset": 665
+                                             "yOffset": 210,
+                                             "xOffset": 685
                                              },
                                              {
                                              "text": "Where is he?",
-                                             "yOffset": 145,
-                                             "xOffset": 705
+                                             "yOffset": 185,
+                                             "xOffset": 715
                                              },
                                              {
                                              "text": "Can you see him?\"",
-                                             "yOffset": 120,
+                                             "yOffset": 160,
                                              "xOffset": 690
                                              }
                                              ]
@@ -1368,7 +1498,7 @@
               "API": {
               "CCScaleBy": [
                             {
-                            "intensity": 1.5,
+                            "intensity": 1.0,
                             "duration": 0,
                             "actionTag": 1100
                             }
@@ -1378,7 +1508,7 @@
                             "image": "background0110.jpg",
                             "spriteTag": 2,
                             "position": [
-                                         312,
+                                         512,
                                          384
                                          ],
                             "actions": [
@@ -1456,7 +1586,7 @@
                                              {
                                              "text": "check’em out!\"",
                                              "yOffset": 185,
-                                             "xOffset": 300
+                                             "xOffset": 475
                                              }
                                              ]
                              }
@@ -1517,18 +1647,18 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Who-hoo-hoo will go?",
-                                             "yOffset": 220,
-                                             "xOffset": 655
+                                             "yOffset": 210,
+                                             "xOffset": 650
                                              },
                                              {
                                              "text": "Who-hoo-hoo will go see?\"",
-                                             "yOffset": 195,
-                                             "xOffset": 635
+                                             "yOffset": 185,
+                                             "xOffset": 630
                                              },
                                              {
                                              "text": "asked the Owl of Many Questions.",
-                                             "yOffset": 170,
-                                             "xOffset": 545
+                                             "yOffset": 160,
+                                             "xOffset": 655
                                              }
                                              ]
                              }
@@ -1595,17 +1725,17 @@
                                              {
                                              "text": "\"Now don’t be looking at me.",
                                              "yOffset": 685,
-                                             "xOffset": 120
+                                             "xOffset": 100
                                              },
                                              {
                                              "text": "I’m much too busy chew-chew-chewing on my antler,\"",
                                              "yOffset": 660,
-                                             "xOffset": 165
+                                             "xOffset": 115
                                              },
                                              {
                                              "text": "sputtered the porcupine.",
                                              "yOffset": 635,
-                                             "xOffset": 140
+                                             "xOffset": 195
                                              }
                                              ]
                              }
@@ -1680,11 +1810,11 @@
                                              {
                                              "text": "said the scared rabbit.",
                                              "yOffset": 595,
-                                             "xOffset": 610
+                                             "xOffset": 690
                                              },
                                              {
                                              "text": "\"Is... is he watching me?\"",
-                                             "yOffset": 570,
+                                             "yOffset": 545,
                                              "xOffset": 640
                                              }
                                              ]
@@ -1842,37 +1972,37 @@
                                              {
                                              "text": "I’m-m-m-m the smallest and",
                                              "yOffset": 645,
-                                             "xOffset": 350
+                                             "xOffset": 200
                                              },
                                              {
                                              "text": "I ca-ca-can scamper quickly.",
                                              "yOffset": 620,
-                                             "xOffset": 415
+                                             "xOffset": 265
                                              },
                                              {
                                              "text": "I’ll do it! I’ll make a tunnel under the snow",
                                              "yOffset": 595,
-                                             "xOffset": 390
+                                             "xOffset": 240
                                              },
                                              {
                                              "text": "where only I can go...",
                                              "yOffset": 570,
-                                             "xOffset": 420
+                                             "xOffset": 270
                                              },
                                              {
                                              "text": "...creeping in closer to get a look.",
-                                             "yOffset": 545,
-                                             "xOffset": 400
+                                             "yOffset": 520,
+                                             "xOffset":580
                                              },
                                              {
                                              "text": "Quietly",
-                                             "yOffset": 520,
-                                             "xOffset": 485
+                                             "yOffset": 495,
+                                             "xOffset": 655
                                              },
                                              {
                                              "text": "just like a m-m-mouse!\"",
-                                             "yOffset": 495,
-                                             "xOffset": 535
+                                             "yOffset": 470,
+                                             "xOffset": 645
                                              }
                                              ]
                              },
@@ -1903,23 +2033,23 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Let it be me!",
-                                             "yOffset": 495,
-                                             "xOffset": 295
+                                             "yOffset": 375,
+                                             "xOffset": 255
                                              },
                                              {
                                              "text": "volunteered the fawn.",
-                                             "yOffset": 470,
-                                             "xOffset": 305
-                                             },
-                                             {
-                                             "text": "\"I can do it.",
-                                             "yOffset": 445,
+                                             "yOffset": 350,
                                              "xOffset": 270
                                              },
                                              {
+                                             "text": "\"I can do it.",
+                                             "yOffset": 325,
+                                             "xOffset": 235
+                                             },
+                                             {
                                              "text": "I know I can!\"",
-                                             "yOffset": 420,
-                                             "xOffset": 290
+                                             "yOffset": 300,
+                                             "xOffset": 255
                                              }
                                              ]
                              }
@@ -1929,12 +2059,12 @@
               "API": {
               "CCScaleBy": [
                             {
-                            "intensity": 1.4,
+                            "intensity": 1.3,
                             "duration": 0,
                             "actionTag": 1700
                             },
                             {
-                            "intensity": 1.3,
+                            "intensity": 1.2,
                             "duration": 2,
                             "actionTag": 1701
                             }
@@ -1942,8 +2072,8 @@
               "CCMoveBy": [
                            {
                            "position": [
-                                        -670,
-                                        -80
+                                        -610,
+                                        0
                                         ],
                            "duration": 2,
                            "actionTag": 1702
@@ -1954,7 +2084,7 @@
                             "image": "background0170.jpg",
                             "spriteTag": 17,
                             "position": [
-                                         820,
+                                         765,
                                          390
                                          ],
                             "actions": [
@@ -2029,8 +2159,8 @@
                                              },
                                              {
                                              "text": "\"I should go first.\"",
-                                             "yOffset": 595,
-                                             "xOffset": 220
+                                             "yOffset": 570,
+                                             "xOffset": 205
                                              }
                                              ]
                              }
@@ -2085,12 +2215,12 @@
                              "linesOfText": [
                                              {
                                              "text": "\"I can fly faster,\"",
-                                             "yOffset": 205,
-                                             "xOffset": 170
+                                             "yOffset": 235,
+                                             "xOffset": 160
                                              },
                                              {
                                              "text": "chirped the cardinal.",
-                                             "yOffset": 180,
+                                             "yOffset": 210,
                                              "xOffset": 225
                                              }
                                              ]
@@ -2166,49 +2296,64 @@
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": "\"But I can run like lightning\"",
-                                             "yOffset": 200,
-                                             "xOffset": 550
-                                             },
-                                             {
-                                             "text": "and I have antlers!",
-                                             "yOffset": 175,
-                                             "xOffset": 615
-                                             },
-                                             {
-                                             "text": "boasted the buck.",
-                                             "yOffset": 150,
+                                             "text": "\"But I can run like lightning",
+                                             "yOffset": 700,
                                              "xOffset": 590
                                              },
                                              {
+                                             "text": "and I have antlers!\"",
+                                             "yOffset": 675,
+                                             "xOffset": 670
+                                             },
+                                             {
+                                             "text": "boasted the buck.",
+                                             "yOffset": 650,
+                                             "xOffset": 715
+                                             },
+                                             {
                                              "text": "\"But... I am... I am... RED!\"",
-                                             "yOffset": 100,
-                                             "xOffset": 620
+                                             "yOffset": 550,
+                                             "xOffset": 640
                                              },
                                              {
                                              "text": "announced the cardinal,",
-                                             "yOffset": 75,
-                                             "xOffset": 600
+                                             "yOffset": 525,
+                                             "xOffset": 705
                                              },
                                              {
                                              "text": "not knowing what else to say.",
-                                             "yOffset": 50,
-                                             "xOffset": 615
+                                             "yOffset": 500,
+                                             "xOffset": 605
                                              }
                                              ]
-                             }
+                             },
+                             {
+                              "delayForPanning": true,
+                              "voiceAudioFile": "page-20-paragraph-1.mp3",
+                              "highlightingTimes": [
+                                                    0.1,
+                                                    0.38
+                                                    ],
+                              "linesOfText": [
+                                              {
+                                              "text": " ",
+                                              "yOffset": 700,
+                                              "xOffset": 590
+                                              }
+                                              ]
+                              }
                              ]
               }
               },
               "API": {
               "CCScaleBy": [
                             {
-                            "intensity": 1.4,
+                            "intensity": 1.1,
                             "duration": 0,
                             "actionTag": 2000
                             },
                             {
-                            "intensity": 1,
+                            "intensity": 1.3,
                             "duration": 2,
                             "actionTag": 2001
                             }
@@ -2216,8 +2361,8 @@
               "CCMoveBy": [
                            {
                            "position": [
-                                        -670,
-                                        110
+                                        -800,
+                                        0
                                         ],
                            "duration": 2,
                            "actionTag": 2002
@@ -2228,8 +2373,8 @@
                             "image": "background0200.jpg",
                             "spriteTag": 20,
                             "position": [
-                                         800,
-                                         400
+                                         815,
+                                         410
                                          ],
                             "actions": [
                                         2000
@@ -2289,18 +2434,18 @@
                              "linesOfText": [
                                              {
                                              "text": "\"What are you waiting for?",
-                                             "yOffset": 485,
-                                             "xOffset": 110
+                                             "yOffset": 365,
+                                             "xOffset": 90
                                              },
                                              {
                                              "text": "I’m there already-dee-dee\"",
-                                             "yOffset": 460,
-                                             "xOffset": 175
+                                             "yOffset": 340,
+                                             "xOffset": 92
                                              },
                                              {
                                              "text": "exclaimed the Chickadee-dee-dee!",
-                                             "yOffset": 435,
-                                             "xOffset": 170
+                                             "yOffset": 315,
+                                             "xOffset": 95
                                              }
                                              ]
                              }
@@ -2311,8 +2456,8 @@
                "CCMoveBy": [
                             {
                             "position": [
-                                         -1100,
-                                         -90
+                                         -845,
+                                         -100
                                          ],
                             "duration": 4,
                             "actionTag": 2100
@@ -2320,12 +2465,12 @@
                             ],
                "CCScaleBy": [
                              {
-                              "intensity": 1.3,
+                              "intensity": 1.25,
                               "duration": 0,
                               "actionTag": 2105
                               },
                               {
-                               "intensity": 1.1,
+                               "intensity": 1.05,
                                "duration": 4,
                                "actionTag": 2101
                                }
@@ -2359,7 +2504,7 @@
                                             "image": "background0210.jpg",
                                             "spriteTag": 2100,
                                             "position": [
-                                                         1100,
+                                                         940,
                                                          384
                                                          ],
                                              "actions": [
@@ -2369,9 +2514,6 @@
                                             }
                                             ]
                }
-              //
-              
-              //
               },
               {
               "Page": {
@@ -2412,7 +2554,7 @@
               "hasWalls": true,
               "dropBetweenPoints": [
                                     0,
-                                    1024
+                                    600
                                     ],
               "plistfilename": "page-22-seds.plist"
               }
@@ -2455,37 +2597,37 @@
                                              {
                                              "text": "\"Gee-gee-gee!\"",
                                              "yOffset": 695,
-                                             "xOffset": 550
+                                             "xOffset": 500
                                              },
                                              {
                                              "text": "said the Chickadee-dee-dee.",
                                              "yOffset": 670,
-                                             "xOffset": 530
+                                             "xOffset": 510
                                              },
                                              {
                                              "text": "\"There are nuts and seeds",
-                                             "yOffset": 645,
-                                             "xOffset": 550
+                                             "yOffset": 595,
+                                             "xOffset": 410
                                              },
                                              {
                                              "text": "on his hat for you and me!",
-                                             "yOffset": 620,
-                                             "xOffset": 560
+                                             "yOffset": 570,
+                                             "xOffset": 450
                                              },
                                              {
                                              "text": "This stranger is friendly",
-                                             "yOffset": 595,
-                                             "xOffset": 540
+                                             "yOffset": 545,
+                                             "xOffset": 430
                                              },
                                              {
                                              "text": "Come see! Come see!",
-                                             "yOffset": 570,
-                                             "xOffset": 565
+                                             "yOffset": 520,
+                                             "xOffset": 475
                                              },
                                              {
                                              "text": "There’s plenty.\"",
-                                             "yOffset": 545,
-                                             "xOffset": 550
+                                             "yOffset": 495,
+                                             "xOffset": 470
                                              }
                                              ]
                              }
@@ -2496,7 +2638,7 @@
                "CCMoveBy": [
                             {
                             "position": [
-                                         530,
+                                         489,
                                          0
                                          ],
                             "duration": 4,
@@ -2508,7 +2650,12 @@
                              "intensity": 1.0,
                              "duration": 4,
                              "actionTag": 2201
-                             }
+                             },
+                             {
+                              "intensity": 1.0,
+                              "duration": 4,
+                              "actionTag": 2206
+                              }
                              ],
                "CCDelayTime": [
                                {
@@ -2539,11 +2686,12 @@
                               "image": "background0220.jpg",
                               "spriteTag": 22,
                               "position": [
-                                           270,
+                                           230,
                                            384
                                            ],
                               "actions": [
-                                          2204
+                                          2204, 
+                                          2206
                                           ]
                               }
                               ]
@@ -2673,22 +2821,22 @@
                              "linesOfText": [
                                              {
                                              "text": "\"I can see there’s something for you,\"",
-                                             "yOffset": 185,
+                                             "yOffset": 192,
                                              "xOffset": 90
                                              },
                                              {
                                              "text": "said the buck. \"Could it be there’s something for me?",
-                                             "yOffset": 160,
-                                             "xOffset": 155
+                                             "yOffset": 167,
+                                             "xOffset": 140
                                              },
                                              {
-                                             "text": "'My nose is leading me to corn",
-                                             "yOffset": 135,
+                                             "text": "My nose is leading me to corn",
+                                             "yOffset": 142,
                                              "xOffset": 130
                                              },
                                              {
                                              "text": "buried beneath the snow.\"",
-                                             "yOffset": 110,
+                                             "yOffset": 117,
                                              "xOffset": 170
                                              }
                                              ]
@@ -2805,18 +2953,18 @@
                              "linesOfText": [
                                              {
                                              "text": "\"I found a treat that I can eat,\"",
-                                             "yOffset": 175,
+                                             "yOffset": 205,
                                              "xOffset": 550
                                              },
                                              {
                                              "text": "said the young doe as she reached out",
-                                             "yOffset": 150,
+                                             "yOffset": 180,
                                              "xOffset": 475
                                              },
                                              {
-                                             "text": "'to the stranger.",
-                                             "yOffset": 125,
-                                             "xOffset": 750
+                                             "text": "to the stranger.",
+                                             "yOffset": 155,
+                                             "xOffset": 550
                                              }
                                              ]
                              },
@@ -2838,13 +2986,13 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Wow! A carrot!",
-                                             "yOffset": 165,
-                                             "xOffset": 660
+                                             "yOffset": 200,
+                                             "xOffset": 760
                                              },
                                              {
                                              "text": "Do I have to share it?\"",
-                                             "yOffset": 140,
-                                             "xOffset": 655
+                                             "yOffset": 175,
+                                             "xOffset": 680
                                              }
                                              ]
                              }
@@ -2893,38 +3041,98 @@
                              "linesOfText": [
                                              {
                                              "text": "\"What is this?\" questioned the fawn",
-                                             "yOffset": 195,
-                                             "xOffset": 290
+                                             "yOffset": 235,
+                                             "xOffset": 90
                                              },
                                              {
-                                             "text": "as he passed a curious object in the snow.",
-                                             "yOffset": 170,
-                                             "xOffset": 320
+                                             "text": "as he passed",
+                                             "yOffset": 210,
+                                             "xOffset": 120
                                              },
+                                              {
+                                              "text": "a curious object in the snow.",
+                                              "yOffset": 185,
+                                              "xOffset": 120
+                                              },
                                              {
                                              "text": "\"Could it be...",
-                                             "yOffset": 145,
-                                             "xOffset": 265
+                                             "yOffset": 160,
+                                             "xOffset": 95
                                              },
-                                             {
-                                             "text": "there's more than one stranger in the woods?\"",
-                                             "yOffset": 125,
-                                             "xOffset": 290
-                                             }
+                                              {
+                                              "text": "there's more than one",
+                                              "yOffset": 135,
+                                              "xOffset": 130
+                                              },
+                                               {
+                                               "text": "stranger in the woods?\"",
+                                               "yOffset": 110,
+                                               "xOffset": 155
+                                               }
                                              ]
                              }
                              ]
               }
               },
               "API": {
+                "CCMoveBy": [
+                             {
+                             "position": [
+                                          -550,
+                                          0
+                                          ],
+                             "duration": 4,
+                             "actionTag": 2700
+                             }
+                             ],
+                "CCScaleBy": [
+                              {
+                              "intensity": 1.0,
+                              "duration": 0,
+                              "actionTag": 2708
+                              },
+                              {
+                              "intensity": 1.15,
+                              "duration": 4,
+                              "actionTag": 2701
+                              }
+                              ],
+                "CCDelayTime": [
+                                {
+                                "duration": 3,
+                                "actionTag": 2702
+                                }
+                                ],
+                "CCSpawn": [
+                            {
+                            "actionTag": 2703,
+                            "actions": [
+                                        2700,
+                                        2701
+                                        ]
+                            }
+                            ],
+                "CCSequence": [
+                               {
+                               "actionTag": 2704,
+                               "actions": [
+                                           2702,
+                                           2703
+                                           ]
+                               }
+                               ],
               "CCSprites": [
                             {
                             "image": "background0270.jpg",
                             "spriteTag": 2,
                             "position": [
-                                         750,
-                                         384
-                                         ]
+                                         700,
+                                         385
+                                         ],
+                            "actions":[
+                            2704,
+                            2708
+                            ]
                             }
                             ]
               }
@@ -2986,14 +3194,64 @@
               }
               },
               "API": {
+                "CCMoveBy": [
+                             {
+                             "position": [
+                                          -500,
+                                          384
+                                          ],
+                             "duration": 4,
+                             "actionTag": 2800
+                             }
+                             ],
+                "CCScaleTo": [
+                              {
+                              "intensity": 2.3,
+                              "duration": 0,
+                              "actionTag": 2801
+                              },
+                              {
+                              "intensity": 1.0,
+                              "duration": 4,
+                              "actionTag": 2807
+                              }
+                              ],
+                "CCDelayTime": [
+                                {
+                                "duration": 3,
+                                "actionTag": 2802
+                                }
+                                ],
+                "CCSpawn": [
+                            {
+                            "actionTag": 2803,
+                            "actions": [
+                                        2800,
+                                        2807
+                                        ]
+                            }
+                            ],
+                "CCSequence": [
+                               {
+                               "actionTag": 2804,
+                               "actions": [
+                                           2802,
+                                           2803
+                                           ]
+                               }
+                               ],
               "CCSprites": [
                             {
                             "image": "background0280.jpg",
                             "spriteTag": 2,
                             "position": [
-                                         512,
-                                         384
-                                         ]
+                                         1050,
+                                         0
+                                         ],
+                            "actions":[
+                                      2801,
+                                      2804
+                                      ]
                             }
                             ]
               }
@@ -3043,24 +3301,24 @@
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": "\"They have seaten everything...",
-                                             "yOffset": 675,
-                                             "xOffset": 310
+                                             "text": "\"They have eaten everything...",
+                                             "yOffset": 700,
+                                             "xOffset": 460
                                              },
                                              {
                                              "text": "even the carrot nose,\"",
-                                             "yOffset": 650,
-                                             "xOffset": 375
+                                             "yOffset": 675,
+                                             "xOffset": 495
                                              },
                                              {
                                              "text": "whispered the little sister",
-                                             "yOffset": 625,
-                                             "xOffset": 350
+                                             "yOffset": 650,
+                                             "xOffset": 530
                                              },
                                              {
                                              "text": "peeking out from behind the evergreens.",
-                                             "yOffset": 600,
-                                             "xOffset": 360
+                                             "yOffset": 625,
+                                             "xOffset": 555
                                              }
                                              ]
                              },
@@ -3112,7 +3370,7 @@
                                              {
                                              "text": "\"The animals will never know",
                                              "yOffset": 590,
-                                             "xOffset": 170
+                                             "xOffset": 110
                                              },
                                              {
                                              "text": "we were here.\"",
@@ -3127,14 +3385,9 @@
               "API": {
               "CCScaleBy": [
                             {
-                            "intensity": 1.6,
+                            "intensity": 1.15,
                             "duration": 0,
                             "actionTag": 2900
-                            },
-                            {
-                            "intensity": 1,
-                            "duration": 2,
-                            "actionTag": 2901
                             }
                             ],
               "CCMoveBy": [
@@ -3159,7 +3412,18 @@
                                         2900
                                         ]
                             }
+                            ],
+              "CCStorySwipeEnded": {
+              "runAction": [
+                            {
+                            "runAfterSwipeNumber": 1,
+                            "spriteTag": 2,
+                            "actionTags": [
+                                           2902
+                                           ]
+                            }
                             ]
+              }
               }
               },
               {
@@ -3228,53 +3492,53 @@
                              "linesOfText": [
                                              {
                                              "text": "\"How long will",
-                                             "yOffset": 645,
+                                             "yOffset": 605,
                                              "xOffset": 590
                                              },
                                              {
                                              "text": "we feed them?",
-                                             "yOffset": 620,
+                                             "yOffset": 580,
                                              "xOffset": 615
                                              },
                                              {
                                              "text": "she asked.",
-                                             "yOffset": 595,
+                                             "yOffset": 555,
                                              "xOffset": 670
                                              },
                                              {
                                              "text": "\"For a long,",
-                                             "yOffset": 520,
+                                             "yOffset": 480,
                                              "xOffset": 620
                                              },
                                              {
                                              "text": "long time,\"",
-                                             "yOffset": 495,
+                                             "yOffset": 455,
                                              "xOffset": 635
                                              },
                                              {
                                              "text": "he replied.",
-                                             "yOffset": 470,
+                                             "yOffset": 430,
                                              "xOffset": 665
                                              },
                                              {
                                              "text": "\"After the snow has gone",
-                                             "yOffset": 245,
+                                             "yOffset": 255,
                                              "xOffset": 590
                                              },
                                              {
                                              "text": "and the snowman has melted away,",
-                                             "yOffset": 220,
-                                             "xOffset": 530
+                                             "yOffset": 230,
+                                             "xOffset": 517
                                              },
                                              {
                                              "text": "until the frogs start to sing",
-                                             "yOffset": 195,
-                                             "xOffset": 630
+                                             "yOffset": 205,
+                                             "xOffset": 610
                                              },
                                              {
                                              "text": "and the trees grow new leaves.\"",
-                                             "yOffset": 170,
-                                             "xOffset": 560
+                                             "yOffset": 180,
+                                             "xOffset": 545
                                              }
                                              ]
                              }
@@ -3329,8 +3593,8 @@
                              "linesOfText": [
                                              {
                                              "text": "I think they like carrots the best!",
-                                             "yOffset": 155,
-                                             "xOffset": 70
+                                             "yOffset": 185,
+                                             "xOffset": 90
                                              }
                                              ]
                              }
