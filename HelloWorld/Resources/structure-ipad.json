@@ -1091,7 +1091,7 @@
                                              {
                                              "text": "asked the Owl of Many Questions.",
                                              "yOffset": 140,
-                                             "xOffset": 560
+                                             "xOffset": 500
                                              }
                                              ]
                              }
@@ -3068,14 +3068,14 @@
                                              "xOffset": 580
                                              },
                                              {
-                                             "text": "said the young doe as she reached out",
+                                             "text": "said the young doe as she",
                                              "yOffset": 180,
-                                             "xOffset": 545
+                                             "xOffset": 575
                                              },
                                              {
-                                             "text": "to the stranger.",
+                                             "text": "reached out to the stranger.",
                                              "yOffset": 155,
-                                             "xOffset": 740
+                                             "xOffset": 600
                                              }
                                              ]
                              },
@@ -3103,7 +3103,7 @@
                                              {
                                              "text": "Do I have to share it?\"",
                                              "yOffset": 175,
-                                             "xOffset": 720
+                                             "xOffset": 705
                                              }
                                              ]
                              }
@@ -3317,12 +3317,12 @@
                                              {
                                              "text": "It was the chickadee who took the last seed and flew away.",
                                              "yOffset": 155,
-                                             "xOffset": 320
+                                             "xOffset": 220
                                              },
                                              {
                                              "text": "The snowman stood alone, but only for a short time.",
                                              "yOffset": 130,
-                                             "xOffset": 370
+                                             "xOffset": 270
                                              }
                                              ]
                              }
@@ -3452,10 +3452,15 @@
                                              "xOffset": 530
                                              },
                                              {
-                                             "text": "peeking out from behind the evergreens.",
+                                             "text": "peeking out from behind",
                                              "yOffset": 625,
                                              "xOffset": 555
-                                             }
+                                             },
+                                              {
+                                              "text": "the evergreens.",
+                                              "yOffset": 600,
+                                              "xOffset": 625
+                                              }
                                              ]
                              },
                              {
@@ -3488,7 +3493,7 @@
                                              {
                                              "text": "\"The animals will never know",
                                              "yOffset": 565,
-                                             "xOffset": 150
+                                             "xOffset": 90
                                              },
                                              {
                                              "text": "we were here.\"",
