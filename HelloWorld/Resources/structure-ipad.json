@@ -547,13 +547,7 @@
                                      500
                                      ],
                         "radius": 90,
-                        "soundToPlay": "effect-bluejay-caw.mp3",
-                        "runAction": [
-                                      {
-                                      "spriteTag": 1,
-                                      "actionTag": 20
-                                      }
-                                      ]
+                        "soundToPlay": "effect-bluejay-caw.mp3"
                         }
                         ]
               },
@@ -783,7 +777,7 @@
                                              {
                                              "text": "Where is he?\"",
                                              "yOffset": 160,
-                                             "xOffset": 135
+                                             "xOffset": 215
                                              },
                                              {
                                              "text": "asked the Owl of Many Questions.",
@@ -889,17 +883,7 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-6-paragraph-1.mp3",
                              "highlightingTimes": [
-                                                   0.575,
-                                                   0.938,
-                                                   1.09,
-                                                   1.191,
-                                                   1.918,
-                                                   2.837,
-                                                   3.119,
-                                                   3.261,
-                                                   3.412,
-                                                   7.643,
-                                                   8.85
+                                                   0.096,2.177,2.647,2.989,3.843,4.409,4.579,5.113,6.031,7.152,7.750,7.964,8.295,8.700,9.8
                                                    ],
                              "linesOfText": [
                                              {
@@ -928,6 +912,32 @@
               }
               },
               "API": {
+                 "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": false,
+                            "touchFlag": 10,
+                            "position": [
+                                         120,
+                                         610
+                                         ],
+                            "radius": 90,
+                            "soundToPlay": "effect-mourning-dove.mp3"
+                            },
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": true,
+                            "touchFlag": 10,
+                            "position": [
+                                         390,
+                                         460
+                                         ],
+                            "radius": 90,
+                            "soundToPlay": "effect-mourning-dove.mp3"
+                            }
+                            ]
+                  },
               "CCSprites": [
                             {
                             "image": "background0060.jpg",
@@ -982,14 +992,7 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-7-paragraph-1.mp3",
                              "highlightingTimes": [
-                                                   0.575,
-                                                   0.938,
-                                                   1.09,
-                                                   1.191,
-                                                   1.918,
-                                                   2.837,
-                                                   3.119,
-                                                   3.261
+                                                   0.147,0.573,0.810,1.103,1.616,1.963,2.233,2.711,2.858,3.041,3.136,3.554,4.648,4.979,5.856,6.204,6.439,6.589,7.7
                                                    ],
                              "linesOfText": [
                                              {
@@ -1096,6 +1099,21 @@
               }
               },
               "API": {
+                "CCStoryTouchableNode": {
+                "nodes": [
+                          {
+                          "glitterIndicator": true,
+                          "stopEffectIndicator": false,
+                          "touchFlag": 10,
+                          "position": [
+                                       120,
+                                       400
+                                       ],
+                          "radius": 140,
+                          "soundToPlay": "effect-owl.mp3"
+                          }
+                          ]
+                },
               "CCSprites": [
                             {
                             "image": "background0080.jpg",
@@ -1131,26 +1149,7 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-9-paragraph-1.mp3",
                              "highlightingTimes": [
-                                                   0.575,
-                                                   0.938,
-                                                   1.09,
-                                                   1.191,
-                                                   1.918,
-                                                   2.837,
-                                                   3.119,
-                                                   3.261,
-                                                   3.412,
-                                                   3.725,
-                                                   4.482,
-                                                   4.725,
-                                                   4.927,
-                                                   5.684,
-                                                   6.158,
-                                                   6.391,
-                                                   6.986,
-                                                   7.138,
-                                                   7.643,
-                                                   8.85
+                                                   304,.655,.871,1.310,1.702,2.175,2.757,3.263,3.473,3.912,4.200,4.655,4.973,5.095,5.765,6.756,7.227,7.392,7.892,8.639,9.535,10.107,10.461,10.809,11.344,11.655,12.046,12.494,12.885,13.348,14.5
                                                    ],
                              "linesOfText": [
                                              {
@@ -1161,7 +1160,7 @@
                                              {
                                              "text": "before the first pale light",
                                              "yOffset": 670,
-                                             "xOffset": 615
+                                             "xOffset": 540
                                              },
                                              {
                                              "text": "on the Eastern Sky,\"",
@@ -1175,13 +1174,13 @@
                                              },
                                              {
                                              "text": "\"No stranger came this way.",
-                                             "yOffset": 595,
-                                             "xOffset": 600
+                                             "yOffset": 570,
+                                             "xOffset": 620
                                              },
                                              {
                                              "text": "No one passed by my pond.\"",
-                                             "yOffset": 570,
-                                             "xOffset": 585
+                                             "yOffset": 545,
+                                             "xOffset": 605
                                              }
                                              ]
                              }
@@ -1189,6 +1188,21 @@
               }
               },
               "API": {
+                "CCStoryTouchableNode": {
+                "nodes": [
+                          {
+                          "glitterIndicator": true,
+                          "stopEffectIndicator": true,
+                          "touchFlag": 10,
+                          "position": [
+                                       360,
+                                       320
+                                       ],
+                          "radius": 180,
+                          "videoToPlay": "video_muskrat.mp4"
+                          }
+                          ]
+                },
                  "CCMoveBy": [
                                {
                                "position": [
@@ -1344,20 +1358,6 @@
               }
               },
               "API": {
-                "CCStoryTouchableNode": {
-                "nodes": [
-                          {
-                          "glitterIndicator": true,
-                          "touchFlag": 1,
-                          "position": [
-                                       200,
-                                       500
-                                       ],
-                          "radius": 90,
-                          "soundToPlay": "effect-whitetail-deer.mp3"
-                          }
-                          ]
-                },
               "CCScaleBy": [
                             {
                             "intensity": 1.0,
@@ -1365,6 +1365,27 @@
                             "actionTag": 1000
                             }
                             ],
+              "CCStoryTouchableNode": {
+              "nodes": [
+                        {
+                        "glitterIndicator": true,
+                        "stopEffectIndicator": true,
+                        "touchFlag": 10,
+                        "position": [
+                                     680,
+                                     350
+                                     ],
+                        "radius": 230,
+                        "soundToPlay": "effect-whitetail-deer.mp3",
+                        "runAction": [
+                                      {
+                                      "spriteTag": 1,
+                                      "actionTag": 20
+                                      }
+                                      ]
+                        }
+                        ]
+              },
               "CCSprites": [
                             {
                             "image": "background0100.jpg",
@@ -1496,6 +1517,21 @@
               }
               },
               "API": {
+                 "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": true,
+                            "touchFlag": 10,
+                            "position": [
+                                         420,
+                                         350
+                                         ],
+                            "radius": 250,
+                            "videoToPlay": "video_doe_snort.mp4"
+                            }
+                            ]
+                  },
               "CCScaleBy": [
                             {
                             "intensity": 1.0,
@@ -1594,6 +1630,21 @@
               }
               },
               "API": {
+                  "CCStoryTouchableNode": {
+                    "nodes": [
+                              {
+                              "glitterIndicator": true,
+                              "stopEffectIndicator": false,
+                              "touchFlag": 10,
+                              "position": [
+                                           700,
+                                           500
+                                           ],
+                              "radius": 130,
+                              "soundToPlay": "effect-fox-squirrel-sfx.mp3"
+                              }
+                              ]
+                    },
               "CCSprites": [
                             {
                             "image": "background0120.jpg",
@@ -1666,6 +1717,21 @@
               }
               },
               "API": {
+                  "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": true,
+                            "touchFlag": 10,
+                            "position": [
+                                         150,
+                                         400
+                                         ],
+                            "radius": 170,
+                            "soundToPlay": "effect-owl.mp3"
+                            }
+                            ]
+                  },
               "CCSprites": [
                             {
                             "image": "background0130.jpg",
@@ -1743,6 +1809,21 @@
               }
               },
               "API": {
+                  "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": false,
+                            "touchFlag": 10,
+                            "position": [
+                                         520,
+                                         350
+                                         ],
+                            "radius": 220,
+                            "soundToPlay": "effect-porcupine.mp3"
+                            }
+                            ]
+                  },
               "CCSprites": [
                             {
                             "image": "background0140.jpg",
@@ -1896,6 +1977,21 @@
               }
               },
               "API": {
+                  "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": false,
+                            "touchFlag": 10,
+                            "position": [
+                                         640,
+                                         550
+                                         ],
+                            "radius": 140,
+                            "soundToPlay": "effect-chickadee-call.mp3"
+                            }
+                            ]
+                  },
               "CCSprites": [
                             {
                             "image": "background0160.jpg",
@@ -1987,7 +2083,7 @@
                                              {
                                              "text": "where only I can go...",
                                              "yOffset": 570,
-                                             "xOffset": 270
+                                             "xOffset": 380
                                              },
                                              {
                                              "text": "...creeping in closer to get a look.",
@@ -1997,7 +2093,7 @@
                                              {
                                              "text": "Quietly",
                                              "yOffset": 495,
-                                             "xOffset": 655
+                                             "xOffset": 625
                                              },
                                              {
                                              "text": "just like a m-m-mouse!\"",
@@ -2008,27 +2104,9 @@
                              },
                              {
                              "delayForPanning": true,
-                             "voiceAudioFile": "page-17-paragraph-1.mp3",
+                             "voiceAudioFile": "page-17-paragraph-2.mp3",
                              "highlightingTimes": [
-                                                   0.1867,
-                                                   0.3,
-                                                   0.3867,
-                                                   0.613,
-                                                   1.306,
-                                                   1.653,
-                                                   1.9536,
-                                                   2.487,
-                                                   3.58,
-                                                   3.81,
-                                                   4.65,
-                                                   4.87,
-                                                   5.12,
-                                                   5.32,
-                                                   5.82,
-                                                   6.12,
-                                                   6.38,
-                                                   6.52,
-                                                   7.9
+                                                 .096,2.177,2.647,2.989,3.843,4.409,4.579,5.113,6.031,7.152,7.750,7.964,8.295,8.700,9.8
                                                    ],
                              "linesOfText": [
                                              {
@@ -2037,19 +2115,24 @@
                                              "xOffset": 255
                                              },
                                              {
+                                              "text": "Let me go!\"",
+                                              "yOffset": 375,
+                                              "xOffset": 255
+                                              },
+                                             {
                                              "text": "volunteered the fawn.",
                                              "yOffset": 350,
                                              "xOffset": 270
                                              },
                                              {
                                              "text": "\"I can do it.",
-                                             "yOffset": 325,
+                                             "yOffset": 300,
                                              "xOffset": 235
                                              },
                                              {
                                              "text": "I know I can!\"",
-                                             "yOffset": 300,
-                                             "xOffset": 255
+                                             "yOffset": 275,
+                                             "xOffset": 265
                                              }
                                              ]
                              }
@@ -2229,6 +2312,21 @@
               }
               },
               "API": {
+                  "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": false,
+                            "touchFlag": 10,
+                            "position": [
+                                         600,
+                                         490
+                                         ],
+                            "radius": 180,
+                            "soundToPlay": "effect-northern-cardinal-sfx.mp3"
+                            }
+                            ]
+                  },
               "CCSprites": [
                             {
                             "image": "background0190.jpg",
@@ -2329,7 +2427,7 @@
                              },
                              {
                               "delayForPanning": true,
-                              "voiceAudioFile": "page-20-paragraph-1.mp3",
+                              "voiceAudioFile": "page-20-paragraph-null.mp3",
                               "highlightingTimes": [
                                                     0.1,
                                                     0.38
@@ -2410,7 +2508,12 @@
                                      0,
                                      0
                                      ],
-              "fontSize": 20
+              "fontSize": 20,
+              "backgroundMusicFile": {
+                     "loop": false,
+                     "audioFilePath": "effect-chickadee-wing-flap.mp3"
+              
+              }
               },
               "text": {
               "paragraphs": [
@@ -2477,7 +2580,7 @@
                              ],
                "CCDelayTime": [
                                {
-                               "duration": 2,
+                               "duration": 1,
                                "actionTag": 2102
                                }
                                ],
@@ -2606,7 +2709,7 @@
                                              },
                                              {
                                              "text": "\"There are nuts and seeds",
-                                             "yOffset": 595,
+                                             "yOffset": 645,
                                              "xOffset": 410
                                              },
                                              {
@@ -2718,7 +2821,7 @@
               "paragraphs": [
                              {
                              "delayForPanning": true,
-                             "voiceAudioFile": "page-23-paragraph-1.mp3",
+                             "voiceAudioFile": "page-23-paragraph-null.mp3",
                              "highlightingTimes": [
                                                    0.159,
                                                    0.378,
@@ -2743,7 +2846,7 @@
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": ".",
+                                             "text": " ",
                                              "yOffset": 645,
                                              "xOffset": 550
                                              }
@@ -2753,6 +2856,32 @@
               }
               },
               "API": {
+                  "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": true,
+                            "touchFlag": 1,
+                            "position": [
+                                         450,
+                                         600
+                                         ],
+                            "radius": 90,
+                            "videoToPlay": "video_chickadee_on_hat.mp4"
+                            },
+                             {
+                              "glitterIndicator": true,
+                              "stopEffectIndicator": false,
+                              "touchFlag": 1,
+                              "position": [
+                                           530,
+                                           480
+                                           ],
+                              "radius": 90,
+                              "soundToPlay": "effect-spring-peeper.mp3"
+                              }
+                            ]
+                  },
               "CCSprites": [
                             {
                             "image": "background0230.jpg",
@@ -2954,17 +3083,17 @@
                                              {
                                              "text": "\"I found a treat that I can eat,\"",
                                              "yOffset": 205,
-                                             "xOffset": 550
+                                             "xOffset": 530
                                              },
                                              {
                                              "text": "said the young doe as she reached out",
                                              "yOffset": 180,
-                                             "xOffset": 475
+                                             "xOffset": 545
                                              },
                                              {
                                              "text": "to the stranger.",
                                              "yOffset": 155,
-                                             "xOffset": 550
+                                             "xOffset": 590
                                              }
                                              ]
                              },
@@ -3000,6 +3129,32 @@
               }
               },
               "API": {
+                "CCStoryTouchableNode": {
+                "nodes": [
+                          {
+                          "glitterIndicator": true,
+                          "stopEffectIndicator": false,
+                          "touchFlag": 1,
+                          "position": [
+                                       290,
+                                       500
+                                       ],
+                          "radius": 90,
+                          "videoToPlay": "video_flail.mp4"
+                          },
+                          {
+                          "glitterIndicator": true,
+                          "stopEffectIndicator": false,
+                          "touchFlag": 1,
+                          "position": [
+                                       600,
+                                       500
+                                       ],
+                          "radius": 90,
+                          "videoToPlay": "video_flail.mp4"
+                          }
+                          ]
+                },
               "CCSprites": [
                             {
                             "image": "background0260.jpg",
@@ -3035,23 +3190,22 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-27-paragraph-1.mp3",
                              "highlightingTimes": [
-                                                   0.575,
-                                                   8.85
+                                                   0.159,0.38,0.55,1.18,1.87,2.10,2.77,3.04,3.26,3.68,3.98,4.88,5.38,5.63,5.87,6.58,6.9,7.04,7.84,8.27,8.48,8.74,9.09,9.48,9.59,9.68, 11.2
                                                    ],
                              "linesOfText": [
                                              {
                                              "text": "\"What is this?\" questioned the fawn",
-                                             "yOffset": 235,
+                                             "yOffset": 260,
                                              "xOffset": 90
                                              },
                                              {
                                              "text": "as he passed",
-                                             "yOffset": 210,
-                                             "xOffset": 120
+                                             "yOffset": 235,
+                                             "xOffset": 100
                                              },
                                               {
                                               "text": "a curious object in the snow.",
-                                              "yOffset": 185,
+                                              "yOffset": 210,
                                               "xOffset": 120
                                               },
                                              {
@@ -3160,33 +3314,33 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-28-paragraph-1.mp3",
                              "highlightingTimes": [
-                                                   0.575
+                                                   0.07,0.659,0.867,1.24,1.43,2.2,2.48,3.07,3.5,3.73,3.82,4.14,4.63,5.16,5.65,6.33,6.63,7.53,7.92,8.08,8.63,9.67,10.08,10.53,10.74,11.31,11.44,11.70,11.89,12.29,12.99,13.31,13.72,15.49,15.68,16.38,16.66,17.7,17.91,18.44,18.7,18.87,19.45,22.0
                                                    ],
                              "linesOfText": [
                                              {
                                              "text": "After the corn was gone,",
-                                             "yOffset": 230,
+                                             "yOffset": 255,
                                              "xOffset": 150
                                              },
                                              {
                                              "text": "the animals left by the snow trail one by one",
-                                             "yOffset": 205,
+                                             "yOffset": 230,
                                              "xOffset": 115
                                              },
                                              {
                                              "text": "and disappeared into the winter woods.",
-                                             "yOffset": 180,
+                                             "yOffset": 205,
                                              "xOffset": 190
                                              },
                                              {
                                              "text": "It was the chickadee who took the last seed and flew away.",
                                              "yOffset": 155,
-                                             "xOffset": 120
+                                             "xOffset": 320
                                              },
                                              {
                                              "text": "The snowman stood alone, but only for a short time.",
                                              "yOffset": 130,
-                                             "xOffset": 170
+                                             "xOffset": 370
                                              }
                                              ]
                              }
@@ -3308,7 +3462,7 @@
                                              {
                                              "text": "even the carrot nose,\"",
                                              "yOffset": 675,
-                                             "xOffset": 495
+                                             "xOffset": 515
                                              },
                                              {
                                              "text": "whispered the little sister",
@@ -3326,56 +3480,38 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-29-paragraph-2.mp3",
                              "highlightingTimes": [
-                                                   0.159,
-                                                   0.386,
-                                                   0.501,
-                                                   0.8282,
-                                                   2.27,
-                                                   2.68,
-                                                   2.96,
-                                                   3.44,
-                                                   4.54,
-                                                   5.37,
-                                                   5.53,
-                                                   5.67,
-                                                   6.8,
-                                                   7.37,
-                                                   7.7,
-                                                   8,
-                                                   8.54,
-                                                   8.72,
-                                                   10.2
+                                                   0.159,0.364,0.55,0.67,0.82,1.20,1.37,1.70,2.0,2.14,2.37,3.01,4.03,4.21,5.09,5.51,6.14,6.33,6.52,6.81,6.98,7.13,8.8
                                                    ],
                              "linesOfText": [
                                              {
                                              "text": "\"Let’s put out more",
                                              "yOffset": 690,
-                                             "xOffset": 130
+                                             "xOffset": 170
                                              },
                                              {
                                              "text": "seeds and corn",
                                              "yOffset": 665,
-                                             "xOffset": 165
+                                             "xOffset": 205
                                              },
                                              {
                                              "text": "before they come back,\"",
                                              "yOffset": 640,
-                                             "xOffset": 140
+                                             "xOffset": 180
                                              },
                                              {
                                              "text": "encouraged the brother.",
                                              "yOffset": 615,
-                                             "xOffset": 155
+                                             "xOffset": 255
                                              },
                                              {
                                              "text": "\"The animals will never know",
-                                             "yOffset": 590,
-                                             "xOffset": 110
+                                             "yOffset": 565,
+                                             "xOffset": 150
                                              },
                                              {
                                              "text": "we were here.\"",
-                                             "yOffset": 565,
-                                             "xOffset": 150
+                                             "yOffset": 540,
+                                             "xOffset": 190
                                              }
                                              ]
                              }
