@@ -50,7 +50,7 @@
                       "tappedStateImage": "autoplay-over.png",
                       "storyMode": "autoPlay",
                       "position": [
-                                   125,
+                                   -225,
                                    90
                                    ]
                       },
@@ -59,7 +59,7 @@
                       "tappedStateImage": "read-it-myself-over.png",
                       "storyMode": "readItMyself",
                       "position": [
-                                   350,
+                                   160,
                                    90
                                    ]
                       },
@@ -68,8 +68,8 @@
                       "tappedStateImage": "read-to-me-over.png",
                       "storyMode": "readToMe",
                       "position": [
-                                   580,
-                                   90
+                                   500,
+                                   130
                                    ]
                       },
                       {
@@ -78,7 +78,7 @@
                       "videoToPlay": "video_the_snowman.mp4",
                       "position": [
                                    145,
-                                   200
+                                   180
                                    ]
                       },
                       {
@@ -87,7 +87,7 @@
                       "videoToPlay": "video_mixed_nuts.mp4",
                       "position": [
                                    875,
-                                   200
+                                   180
                                    ]
                       },
                       {
@@ -96,8 +96,8 @@
                       "url": "http://strangerinthewoods.com",
                       "confirmBeforeGoToUrl": true,
                       "position": [
-                                   950,
-                                   330
+                                   910,
+                                   280
                                    ]
                       }
                       ],
@@ -320,17 +320,17 @@
                                              },
                                              {
                                              "text": "Every twig in the forest",
-                                             "yOffset": 145,
+                                             "yOffset": 155,
                                              "xOffset": 590
                                              },
                                              {
                                              "text": "wore a new coat",
-                                             "yOffset": 120,
+                                             "yOffset": 130,
                                              "xOffset": 615
                                              },
                                              {
                                              "text": "of glimmering white.",
-                                             "yOffset": 95,
+                                             "yOffset": 105,
                                              "xOffset": 670
                                              }
                                              ]
@@ -1091,7 +1091,7 @@
                                              {
                                              "text": "asked the Owl of Many Questions.",
                                              "yOffset": 140,
-                                             "xOffset": 500
+                                             "xOffset": 400
                                              }
                                              ]
                              }
@@ -3176,10 +3176,15 @@
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": "\"What is this?\" questioned the fawn",
-                                             "yOffset": 260,
+                                             "text": "\"What is this?\"",
+                                             "yOffset": 285,
                                              "xOffset": 90
                                              },
+                                             {
+                                              "text": "questioned the fawn",
+                                              "yOffset": 260,
+                                              "xOffset": 160
+                                              },
                                              {
                                              "text": "as he passed",
                                              "yOffset": 235,
@@ -3317,7 +3322,7 @@
                                              {
                                              "text": "It was the chickadee who took the last seed and flew away.",
                                              "yOffset": 155,
-                                             "xOffset": 220
+                                             "xOffset": 180
                                              },
                                              {
                                              "text": "The snowman stood alone, but only for a short time.",
