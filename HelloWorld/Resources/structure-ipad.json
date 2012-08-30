@@ -543,7 +543,7 @@
                         "stopEffectIndicator": false,
                         "touchFlag": 1,
                         "position": [
-                                     200,
+                                     290,
                                      500
                                      ],
                         "radius": 90,
@@ -796,8 +796,8 @@
                             "glitterIndicator": true,
                             "touchFlag": 1,
                             "position": [
-                                         700,
-                                         400
+                                         670,
+                                         350
                                          ],
                             "radius": 90,
                             "videoToPlay": "video_owl.mp4"
@@ -919,7 +919,7 @@
                             "stopEffectIndicator": false,
                             "touchFlag": 10,
                             "position": [
-                                         120,
+                                         220,
                                          610
                                          ],
                             "radius": 90,
@@ -930,8 +930,8 @@
                             "stopEffectIndicator": true,
                             "touchFlag": 10,
                             "position": [
-                                         390,
-                                         460
+                                         450,
+                                         530
                                          ],
                             "radius": 90,
                             "soundToPlay": "effect-mourning-dove.mp3"
@@ -990,7 +990,7 @@
               "paragraphs": [
                              {
                              "delayForPanning": true,
-                             "voiceAudioFile": "page-7-paragraph-1.mp3",
+                             "voiceAudioFile": "page-7-paragraph-2.mp3",
                              "highlightingTimes": [
                                                    0.147,0.573,0.810,1.103,1.616,1.963,2.233,2.711,2.858,3.041,3.136,3.554,4.648,4.979,5.856,6.204,6.439,6.589,7.7
                                                    ],
@@ -1106,8 +1106,8 @@
                           "stopEffectIndicator": false,
                           "touchFlag": 10,
                           "position": [
-                                       120,
-                                       400
+                                       290,
+                                       470
                                        ],
                           "radius": 140,
                           "soundToPlay": "effect-owl.mp3"
@@ -1195,8 +1195,8 @@
                           "stopEffectIndicator": true,
                           "touchFlag": 10,
                           "position": [
-                                       360,
-                                       320
+                                       440,
+                                       240
                                        ],
                           "radius": 180,
                           "videoToPlay": "video_muskrat.mp4"
@@ -1227,7 +1227,7 @@
                                 ],
                   "CCDelayTime": [
                                   {
-                                  "duration": 3,
+                                  "duration": 0.75,
                                   "actionTag": 902
                                   }
                                   ],
@@ -1521,7 +1521,7 @@
                   "nodes": [
                             {
                             "glitterIndicator": true,
-                            "stopEffectIndicator": true,
+                            "stopEffectIndicator": false,
                             "touchFlag": 10,
                             "position": [
                                          420,
@@ -1611,17 +1611,17 @@
                                              },
                                              {
                                              "text": "\"Someone needs to go and,",
-                                             "yOffset": 235,
+                                             "yOffset": 210,
                                              "xOffset": 290
                                              },
                                              {
                                              "text": "and check-check-check",
-                                             "yOffset": 210,
+                                             "yOffset": 185,
                                              "xOffset": 320
                                              },
                                              {
                                              "text": "check’em out!\"",
-                                             "yOffset": 185,
+                                             "yOffset": 160,
                                              "xOffset": 475
                                              }
                                              ]
@@ -1637,7 +1637,7 @@
                               "stopEffectIndicator": false,
                               "touchFlag": 10,
                               "position": [
-                                           700,
+                                           760,
                                            500
                                            ],
                               "radius": 130,
@@ -1724,7 +1724,7 @@
                             "stopEffectIndicator": true,
                             "touchFlag": 10,
                             "position": [
-                                         150,
+                                         140,
                                          400
                                          ],
                             "radius": 170,
@@ -1816,7 +1816,7 @@
                             "stopEffectIndicator": false,
                             "touchFlag": 10,
                             "position": [
-                                         520,
+                                         590,
                                          350
                                          ],
                             "radius": 220,
@@ -2073,12 +2073,12 @@
                                              {
                                              "text": "I ca-ca-can scamper quickly.",
                                              "yOffset": 620,
-                                             "xOffset": 265
+                                             "xOffset": 225
                                              },
                                              {
                                              "text": "I’ll do it! I’ll make a tunnel under the snow",
                                              "yOffset": 595,
-                                             "xOffset": 240
+                                             "xOffset": 280
                                              },
                                              {
                                              "text": "where only I can go...",
@@ -2106,13 +2106,13 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-17-paragraph-2.mp3",
                              "highlightingTimes": [
-                                                 0.096,2.177,2.647,2.989,3.843,4.409,4.579,5.113,6.031,7.152,7.750,7.964,8.295,8.700,9.8
+                                                 0.1867,0.30,0.3867,0.613,1.306,1.653,1.9536,2.487,3.58,3.81,4.65,4.87,5.12,5.32,5.82,6.12,6.38,6.52,7.9
                                                    ],
                              "linesOfText": [
                                              {
                                              "text": "\"Let it be me!",
-                                             "yOffset": 375,
-                                             "xOffset": 255
+                                             "yOffset": 400,
+                                             "xOffset": 225
                                              },
                                              {
                                               "text": "Let me go!\"",
@@ -2319,8 +2319,8 @@
                             "stopEffectIndicator": false,
                             "touchFlag": 10,
                             "position": [
-                                         600,
-                                         490
+                                         690,
+                                         420
                                          ],
                             "radius": 180,
                             "soundToPlay": "effect-northern-cardinal-sfx.mp3"
@@ -2562,7 +2562,7 @@
                                          -845,
                                          -100
                                          ],
-                            "duration": 4,
+                            "duration": 2.5,
                             "actionTag": 2100
                             }
                             ],
@@ -2574,13 +2574,13 @@
                               },
                               {
                                "intensity": 1.05,
-                               "duration": 4,
+                               "duration": 2.5,
                                "actionTag": 2101
                                }
                              ],
                "CCDelayTime": [
                                {
-                               "duration": 1,
+                               "duration": 1.5,
                                "actionTag": 2102
                                }
                                ],
@@ -2699,22 +2699,22 @@
                              "linesOfText": [
                                              {
                                              "text": "\"Gee-gee-gee!\"",
-                                             "yOffset": 695,
-                                             "xOffset": 500
+                                             "yOffset": 680,
+                                             "xOffset": 460
                                              },
                                              {
                                              "text": "said the Chickadee-dee-dee.",
-                                             "yOffset": 670,
-                                             "xOffset": 510
+                                             "yOffset": 655,
+                                             "xOffset": 450
                                              },
                                              {
                                              "text": "\"There are nuts and seeds",
-                                             "yOffset": 645,
-                                             "xOffset": 410
+                                             "yOffset": 620,
+                                             "xOffset": 480
                                              },
                                              {
                                              "text": "on his hat for you and me!",
-                                             "yOffset": 570,
+                                             "yOffset": 595,
                                              "xOffset": 450
                                              },
                                              {
@@ -2730,7 +2730,7 @@
                                              {
                                              "text": "There’s plenty.\"",
                                              "yOffset": 495,
-                                             "xOffset": 470
+                                             "xOffset": 520
                                              }
                                              ]
                              }
@@ -2824,24 +2824,6 @@
                              "voiceAudioFile": "page-23-paragraph-null.mp3",
                              "highlightingTimes": [
                                                    0.159,
-                                                   0.378,
-                                                   0.632,
-                                                   0.82,
-                                                   1.06,
-                                                   1.26,
-                                                   1.41,
-                                                   1.61,
-                                                   2.21,
-                                                   2.58,
-                                                   2.79,
-                                                   3.15,
-                                                   3.73,
-                                                   4.01,
-                                                   4.34,
-                                                   4.88,
-                                                   5.24,
-                                                   5.46,
-                                                   5.68,
                                                    7.1
                                                    ],
                              "linesOfText": [
@@ -2863,21 +2845,21 @@
                             "stopEffectIndicator": true,
                             "touchFlag": 1,
                             "position": [
-                                         450,
-                                         600
+                                         470,
+                                         640
                                          ],
-                            "radius": 90,
+                            "radius": 80,
                             "videoToPlay": "video_chickadee_on_hat.mp4"
                             },
                              {
                               "glitterIndicator": true,
                               "stopEffectIndicator": false,
-                              "touchFlag": 1,
+                              "touchFlag": 2,
                               "position": [
-                                           530,
-                                           480
+                                           560,
+                                           450
                                            ],
-                              "radius": 90,
+                              "radius": 80,
                               "soundToPlay": "effect-spring-peeper.mp3"
                               }
                             ]
@@ -3083,7 +3065,7 @@
                                              {
                                              "text": "\"I found a treat that I can eat,\"",
                                              "yOffset": 205,
-                                             "xOffset": 530
+                                             "xOffset": 580
                                              },
                                              {
                                              "text": "said the young doe as she reached out",
@@ -3093,7 +3075,7 @@
                                              {
                                              "text": "to the stranger.",
                                              "yOffset": 155,
-                                             "xOffset": 590
+                                             "xOffset": 740
                                              }
                                              ]
                              },
@@ -3121,7 +3103,7 @@
                                              {
                                              "text": "Do I have to share it?\"",
                                              "yOffset": 175,
-                                             "xOffset": 680
+                                             "xOffset": 720
                                              }
                                              ]
                              }
@@ -3137,7 +3119,7 @@
                           "touchFlag": 1,
                           "position": [
                                        290,
-                                       500
+                                       400
                                        ],
                           "radius": 90,
                           "videoToPlay": "video_flail.mp4"
@@ -3147,8 +3129,8 @@
                           "stopEffectIndicator": false,
                           "touchFlag": 1,
                           "position": [
-                                       600,
-                                       500
+                                       780,
+                                       370
                                        ],
                           "radius": 90,
                           "videoToPlay": "video_flail.mp4"
@@ -3771,14 +3753,90 @@
               "paragraphs": [
                              {
                              "delayForPanning": true,
-                             "voiceAudioFile": "page-32-paragraph-1.mp3",
+                             "voiceAudioFile": "effect-the-end.mp3",
                              "highlightingTimes": [
                                                    0.575,
                                                    0.938
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": ".",
+                                             "text": " ",
+                                             "yOffset": 645,
+                                             "xOffset": 550
+                                             }
+                                             ]
+                             }
+                             ]
+              }
+              },
+              "API": {
+                  "CCStoryTouchableNode": {
+                  "nodes": [
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": false,
+                            "touchFlag": 10,
+                            "position": [
+                                         290,
+                                         370
+                                         ],
+                            "radius": 190,
+                            "videoToPlay": "video_the_end.mp4"
+                            },
+                            {
+                            "glitterIndicator": true,
+                            "stopEffectIndicator": false,
+                            "touchFlag": 11,
+                            "position": [
+                                         780,
+                                         370
+                                         ],
+                            "radius": 190,
+                            "videoToPlay": "video_the_end.mp4"
+                            }
+                            ]
+                  },
+              "CCSprites": [
+                            {
+                            "image": "background-the-end.jpg",
+                            "spriteTag": 2,
+                            "position": [
+                                         512,
+                                         384
+                                         ]
+                            }
+                            ]
+              }
+              },
+              {
+              "Page": {
+              "settings": {
+              "number": 33,
+              "fontType": "arial.ttf",
+              "fontColor": [
+                            0,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     255,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 20
+              },
+              "text": {
+              "paragraphs": [
+                             {
+                             "delayForPanning": true,
+                             "voiceAudioFile": "page-33-paragraph-1.mp3",
+                             "highlightingTimes": [
+                                                   0.575,
+                                                   0.938
+                                                   ],
+                             "linesOfText": [
+                                             {
+                                             "text": " ",
                                              "yOffset": 645,
                                              "xOffset": 550
                                              }
