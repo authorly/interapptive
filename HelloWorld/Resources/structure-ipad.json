@@ -257,11 +257,26 @@
                           {
                           "filename": "physics-object-snowman.png",
                           "position": [
-                                       324,
+                                       -324,
                                        222
                                        ]
                           }
                           ]
+              },
+              "fallingPhysicsSettings": {
+              "draggable":true,
+              "maxNumber": 35,
+              "speedX": 165,
+              "speedY": 30,
+              "spinSpeed": 100,
+              "slowDownSpeed": 0.6,
+              "hasFloor": true,
+              "hasWalls": true,
+              "dropBetweenPoints": [
+                                    0,
+                                    1024
+                                    ],
+              "plistfilename": "snowflake.plist"
               }
               },
               "text": {
