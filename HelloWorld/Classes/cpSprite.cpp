@@ -59,10 +59,14 @@ bool cpSprite::selected()
 
 bool cpSprite::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
-    CCSize s = getTexture()->getContentSize();
-	CCRect rect =  CCRectMake(-s.width / 2, -s.height / 2, s.width, s.height);
+    CCPoint touchLocation = touch->locationInView(touch->view());
+    touchLocation = CCDirector::sharedDirector()->convertToGL(touchLocation);
     
-    isSelected = CCRect::CCRectContainsPoint(rect, convertTouchToNodeSpaceAR(touch));
+    CCRect rect = CCRectMake(0, 0, m_tContentSize.width, m_tContentSize.height);
+    
+    CCPoint pos = convertToNodeSpace(touchLocation);
+    
+    isSelected = CCRect::CCRectContainsPoint(rect, convertToNodeSpace(touchLocation));
 	return isSelected;
 }
 
