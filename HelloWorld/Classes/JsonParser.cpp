@@ -860,7 +860,7 @@ void JsonParser::parseWithScaleToOrScaleBy(Page *page, Json::Value &value, bool 
             CCAction *action;
 			if (isScaleTo)
 			{
-				action = CCScaleTo::actionWithDuration(duration, intensity);
+				action = CCScaleTo::actionWithDuration(duration, intensity * XSCALE, intensity * YSCALE);
 			}
 			else
 			{
