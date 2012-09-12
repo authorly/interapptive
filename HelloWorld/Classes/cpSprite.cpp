@@ -52,6 +52,12 @@ void cpSprite::onEnter()
 	CCSprite::onEnter();
 }
 
+void cpSprite::onExit()
+{
+    CCTouchDispatcher::sharedDispatcher()->removeDelegate(this);
+    CCSprite::onExit();
+}
+
 bool cpSprite::selected()
 {
     return isSelected;
