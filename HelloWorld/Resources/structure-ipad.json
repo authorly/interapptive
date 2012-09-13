@@ -808,6 +808,7 @@
                  "CCStoryTouchableNode": {
                   "nodes": [
                             {
+                            "delayForAnimation": true,
                             "glitterIndicator": true,
                             "touchFlag": 1,
                             "position": [
@@ -1383,6 +1384,7 @@
               "CCStoryTouchableNode": {
               "nodes": [
                         {
+                        "delayForText": true,
                         "glitterIndicator": true,
                         "stopEffectIndicator": true,
                         "touchFlag": 10,
