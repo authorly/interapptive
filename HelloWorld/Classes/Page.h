@@ -84,6 +84,8 @@ typedef struct storyTouchableNode
 {
 	bool                      glitterIndicator;
     bool                      stopEffectIndicator;
+    bool                      delayForText;
+    bool                      delayForAnimation;
 	cocos2d::CCPoint          position;
 	int                       radius;
 	std::string               videoToPlay;

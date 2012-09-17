@@ -24,7 +24,6 @@ public:
     virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     
     void highlightParagraph();
-    void setParagraphVisible();
     void changeColor(cocos2d::CCObject *sender);
     void changeColorBack(cocos2d::CCObject *sender);
     
@@ -75,6 +74,10 @@ private:
     // record all labels
     std::vector<cocos2d::CCLabelTTF*> wordsOfParagraph;
     cocos2d::CCLayer *paragraphLayer;
+    
+    // some sprites may run action when onEnter
+    // so should calcuate delay time
+    unsigned int delayOnEnter;
 
     MyDialog *mydialog;
     
