@@ -950,6 +950,26 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
             {
                 storyTouchableNode->stopEffectIndicator = true;
             }
+            // delayForAnimation
+            Json::Value delayForAnimationJson = node["delayForAnimation"];
+            if (! delayForAnimationJson.isNull())
+            {
+                storyTouchableNode->delayForAnimation = delayForAnimationJson.asBool();
+            }
+            else 
+            {
+                storyTouchableNode->delayForAnimation = false;
+            }
+            // delayForText
+            Json::Value delayTextJson = node["delayForText"];
+            if (! delayTextJson.isNull())
+            {
+                storyTouchableNode->delayForText = delayTextJson.asBool();
+            }
+            else 
+            {
+                storyTouchableNode->delayForText = false;
+            }
 			// position
 			int x = 0, y = 1;
 			storyTouchableNode->position.x = node["position"][x].asInt() * XSCALE;

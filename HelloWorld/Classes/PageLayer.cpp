@@ -33,6 +33,7 @@ PageLayer::PageLayer()
 , paragraphLayer(NULL)
 , mydialog(NULL)
 , isSwiping(false)
+, delayOnEnter(0)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -67,6 +68,8 @@ void PageLayer::init(Page *page)
     createPhysicsLayer();
 	createParagraph(0);
     
+    this->delayOnEnter = this->calculateDelayTimeOnEnter();
+    
     // add menu item to go to main menu
     createMainMenuItem();
 }
@@ -93,6 +96,21 @@ void PageLayer::onEnter()
         SimpleAudioEngine::sharedEngine()->preloadEffect(touchNode->soundToPlay.c_str());
         
         addChild(particle);
+        
+        // delay for animations
+        if (touchNode->delayForAnimation)
+        {
+            particle->setIsVisible(false);
+            particle->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delayOnEnter),
+                                                    CCShow::action(),
+                                                    NULL));
+        }
+        
+        // delay for text
+        if (touchNode->delayForText)
+        {
+            
+        }
 	}
 	touchDetector->setIsTouchEnabled(true);
     
@@ -149,14 +167,14 @@ void PageLayer::registerWithTouchDispatcher(void)
 void PageLayer::onEnterTransitionDidFinish()
 {   
     playBackgroundMusic();  
-    float delay = calculateDelayTimeOnEnter();
-    showParagraph(delay);
+    //float delay = calculateDelayTimeOnEnter();
+    showParagraph(delayOnEnter);
     
     CCLayer::onEnterTransitionDidFinish();
 }
 
 // some sprites may run action when onEnter
-// so should calcuate delay time for showing paragraph
+// so should calcuate delay time for showing paragraph and touch zones
 float PageLayer::calculateDelayTimeOnEnter()
 {
     float delay = 0.0f;
@@ -246,14 +264,6 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
     // run actions
     float delay = 0.0f;
     
-    /*
-     typedef struct storySwipeEndedActionsToRun
-     {
-     int runAfterSwipeNumber;
-     int spriteTag;
-     int actionTag;
-     } StorySwipeEndedActionsToRun;
-     */
     vector<StorySwipeEndedActionsToRun*> *swipeEndedActionsToRun = page->getStorySwipeEndedActionToRun(currentIndexOfParagraph);
     
     if (swipeEndedActionsToRun)
@@ -292,8 +302,6 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
             
             // caculate delay time
             delay = ((CCFiniteTimeAction*)action)->getDuration();
-            
-            
             
             if (swipeLeft)
             {
@@ -341,7 +349,6 @@ void PageLayer::swipeLeft()
     {
         // increase current index of paragraph
         ++currentIndexOfParagraph;
-        
         
         float delay = swipeEndedOperationAndCalculateTotalDelay(true);
                 
@@ -412,11 +419,6 @@ void PageLayer::createSprites()
 	for (iter = page->sprites.begin(); iter != page->sprites.end(); ++iter)
 	{
 		SpriteInfo* spriteInfo = *iter;
-
-		//std::string               image;
-	    //int                       spriteTag;
-	    //cocos2d::CCPoint          position;
-	    //std::vector<int>          actions; // actionTags
 
 		CCSprite *sprite = CCSprite::spriteWithFile(spriteInfo->image.c_str());
 		sprite->setTag(spriteInfo->spriteTag);
@@ -583,13 +585,12 @@ void PageLayer::showParagraph(float delay)
 {
     CCFadeIn *fadeIn = CCFadeIn::actionWithDuration(Configurations::paragraphTextFadeDuration);
     CCCallFunc* callBack = CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::highlightParagraph));
-    CCCallFunc* showParagraphAction = CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::setParagraphVisible));
     
     if (delay != 0)
     {
         paragraphLayer->setIsVisible(false);
         paragraphLayer->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delay),
-                                                      showParagraphAction,
+                                                      CCShow::action(),
                                                       fadeIn,
                                                       callBack,
                                                       NULL));
@@ -602,11 +603,6 @@ void PageLayer::showParagraph(float delay)
     }
     
     addChild(paragraphLayer);
-}
-
-void PageLayer::setParagraphVisible()
-{
-    paragraphLayer->setIsVisible(true);
 }
 
 void PageLayer::highlightParagraph()
