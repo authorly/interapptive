@@ -45,6 +45,18 @@ void TouchDetection::emptyZones()
 	touchZones->removeAllObjects(true);
 }
 
+void TouchDetection::enableTouchByFlag(int flag, bool value)
+{
+    CCMutableArray<TouchObject*>::CCMutableArrayIterator iter;
+	for (iter = touchZones->begin(); iter != touchZones->end(); ++iter)
+	{
+		if ((*iter)->flag == flag)
+        {
+            (*iter)->touchable = value;
+        }
+	}
+}
+
 bool TouchDetection::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *event)
 {
 	CCPoint touchPoint = touch->locationInView(touch->view());
@@ -54,7 +66,8 @@ bool TouchDetection::ccTouchBegan(cocos2d::CCTouch *touch, cocos2d::CCEvent *eve
     CCMutableArray<TouchObject*>::CCMutableArrayIterator iter;
 	for (iter = touchZones->begin(); iter != touchZones->end(); ++iter)
 	{
-		if (ccpDistance(touchPoint, (*iter)->getPosition()) <= (*iter)->radius)
+		if ((*iter)->touchable
+            && ccpDistance(touchPoint, (*iter)->getPosition()) <= (*iter)->radius)
 		{
 			touchedObject = *iter;
 			return true;
@@ -69,7 +82,8 @@ void TouchDetection::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *eve
 	CCPoint touchPoint = touch->locationInView(touch->view());
 	touchPoint = CCDirector::sharedDirector()->convertToGL(touchPoint);
 
-	if (ccpDistance(touchPoint, touchedObject->getPosition()) <= touchedObject->radius)
+	if (touchedObject != NULL
+        && ccpDistance(touchPoint, touchedObject->getPosition()) <= touchedObject->radius)
 	{
 		CCObject *target = touchedObject->target;
 		SEL_SCHEDULE selector = touchedObject->selector;
