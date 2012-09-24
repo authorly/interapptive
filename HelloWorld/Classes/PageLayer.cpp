@@ -1,6 +1,4 @@
 #include "PageLayer.h"
-#include "Page.h"
-#include "TouchDetection.h"
 #include "SimpleAudioEngine.h"
 #include "PageManager.h"
 #include "Configurations.h"
@@ -33,7 +31,8 @@ PageLayer::PageLayer()
 , paragraphLayer(NULL)
 , mydialog(NULL)
 , isSwiping(false)
-, delayOnEnter(0)
+, delayOfAnimation(0)
+, touchDetector(NULL)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -50,6 +49,7 @@ PageLayer::~PageLayer()
 {
     // resources is release in onExit()
     CC_SAFE_RELEASE_NULL(mydialog);
+    CC_SAFE_RELEASE_NULL(touchDetector);
 }
 
 void PageLayer::init(Page *page)
@@ -68,7 +68,7 @@ void PageLayer::init(Page *page)
     createPhysicsLayer();
 	createParagraph(0);
     
-    this->delayOnEnter = this->calculateDelayTimeOnEnter();
+    this->delayOfAnimation = this->calculateDelayTimeOnEnter();
     
     // add menu item to go to main menu
     createMainMenuItem();
@@ -76,15 +76,23 @@ void PageLayer::init(Page *page)
 
 void PageLayer::onEnter()
 {
+    addTouchNode();
+    
+    setIsTouchEnabled(true);
+    
+    CCLayer::onEnter();
+}
+
+void PageLayer::addTouchNode()
+{
     // add touchable nodes
-	TouchDetection *touchDetector = TouchDetection::node();
-	addChild(touchDetector);
-    touchDetector->setTag(TOUCH_DETECT_TAG);
+	touchDetector = TouchDetection::node();
+    touchDetector->retain();
+    
 	vector<StoryTouchableNode*>::iterator iter;
 	for (iter = page->storyTouchableNodes.begin(); iter != page->storyTouchableNodes.end(); ++iter)
 	{
 		StoryTouchableNode* touchNode = *iter;
-        
 		touchDetector->addZoneWithPositionRadiusTargetSel(touchNode->position, touchNode->radius, this, schedule_selector(PageLayer::touchCallback), touchNode->touchFlag);
         
         // add particle system
@@ -95,28 +103,57 @@ void PageLayer::onEnter()
         // preload effect if exists
         SimpleAudioEngine::sharedEngine()->preloadEffect(touchNode->soundToPlay.c_str());
         
-        addChild(particle);
-        
-        // delay for animations
+        // delay for animation
         if (touchNode->delayForAnimation)
         {
+            touchableNodeDelayForAnimationArray.push_back(touchNode);
+            touchDetector->enableTouchByFlag(touchNode->touchFlag, false);
             particle->setIsVisible(false);
-            particle->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delayOnEnter),
+            particle->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delayOfAnimation),
+                                                    CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::enableDelayForAnimationTouchNode)),
                                                     CCShow::action(),
                                                     NULL));
         }
         
         // delay for text
-        if (touchNode->delayForText)
+        if (touchNode->delayForText
+            && (MainMenuLayer::storyMode == kStoryModeReadToMe
+                || (MainMenuLayer::storyMode == kSotryModeAutoPlay)))
         {
+            DelayForTextTouchNodeInfo info;
+            info.touchNode = touchNode;
+            info.partileSystem = particle;
+            touchableNodeDelayForTextArray.push_back(info);
             
+            touchDetector->enableTouchByFlag(touchNode->touchFlag, false);
+            particle->setIsVisible(false);
         }
+        
+        addChild(particle);
 	}
-	touchDetector->setIsTouchEnabled(true);
     
-    setIsTouchEnabled(true);
-    
-    CCLayer::onEnter();
+    touchDetector->setTag(TOUCH_DETECT_TAG);
+    addChild(touchDetector);
+    touchDetector->setIsTouchEnabled(true);
+}
+
+void PageLayer::enableDelayForAnimationTouchNode(CCObject *sender)
+{
+    vector<StoryTouchableNode*>::iterator iter;
+    for (iter = touchableNodeDelayForAnimationArray.begin(); iter != touchableNodeDelayForAnimationArray.end(); ++iter)
+    {
+        touchDetector->enableTouchByFlag((*iter)->touchFlag, true);
+    }
+}
+
+void PageLayer::enableDelayForTextTouchNode()
+{
+    vector<DelayForTextTouchNodeInfo>::iterator iter;
+    for (iter = touchableNodeDelayForTextArray.begin(); iter != touchableNodeDelayForTextArray.end(); ++iter)
+    {
+        touchDetector->enableTouchByFlag((*iter).touchNode->touchFlag, true);
+        (*iter).partileSystem->setIsVisible(true);
+    }
 }
 
 void PageLayer::onExit()
@@ -168,7 +205,7 @@ void PageLayer::onEnterTransitionDidFinish()
 {   
     playBackgroundMusic();  
     //float delay = calculateDelayTimeOnEnter();
-    showParagraph(delayOnEnter);
+    showParagraph(delayOfAnimation);
     
     CCLayer::onEnterTransitionDidFinish();
 }
@@ -656,6 +693,11 @@ void PageLayer::changeColorBack(CCObject *sender)
     if (MainMenuLayer::storyMode == kSotryModeAutoPlay && word == wordsOfParagraph[wordsOfParagraph.size()-1])
     {
         swipeLeft();
+    }
+    
+    if (word == wordsOfParagraph[wordsOfParagraph.size()-1])
+    {
+        enableDelayForTextTouchNode();
     }
 }
 

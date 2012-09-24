@@ -4,10 +4,16 @@
 #include "MyDialog.h"
 #include "VideoPlayer.h"
 #include "cocos2d.h"
+#include "Page.h"
+#include "TouchDetection.h"
 
 #include <vector>
 
-class Page;
+typedef struct
+{
+    StoryTouchableNode* touchNode;
+    cocos2d::CCParticleSystem *partileSystem;
+} DelayForTextTouchNodeInfo;
 
 class PageLayer : public cocos2d::CCLayer, public DialogProtocol
 {
@@ -26,6 +32,10 @@ public:
     void highlightParagraph();
     void changeColor(cocos2d::CCObject *sender);
     void changeColorBack(cocos2d::CCObject *sender);
+    
+    void addTouchNode();
+    void enableDelayForAnimationTouchNode(cocos2d::CCObject *sender);
+    void enableDelayForTextTouchNode();
     
     // dialog protocol
     virtual void buttonClicked(int index);
@@ -77,7 +87,11 @@ private:
     
     // some sprites may run action when onEnter
     // so should calcuate delay time
-    unsigned int delayOnEnter;
+    unsigned int delayOfAnimation;
+    
+    std::vector<DelayForTextTouchNodeInfo> touchableNodeDelayForTextArray;
+    std::vector<StoryTouchableNode*> touchableNodeDelayForAnimationArray;
+    TouchDetection *touchDetector;
 
     MyDialog *mydialog;
     
