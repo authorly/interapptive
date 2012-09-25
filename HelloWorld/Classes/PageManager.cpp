@@ -83,6 +83,8 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
             SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
         }
         
+        CCTextureCache::sharedTextureCache()->removeUnusedTextures();
+        
         // turn page
         CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
     }

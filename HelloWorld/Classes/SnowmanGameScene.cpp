@@ -1,6 +1,7 @@
 #include "SnowmanGameScene.h"
 #include "SharedGlobalData.h"
 #include "PageManager.h"
+#include "Share.h"
 
 #include <string>
 
@@ -148,7 +149,18 @@ void SnowmanGameScene::addShareMenu()
 
 void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
 {
+    CCMenuItemSprite *menuItemSprite = (CCMenuItemSprite*)sender;
+    int tag = menuItemSprite->getTag();
     
+    if (FACEBOOK_TAG == tag)
+    {
+        shareOnFaceBook();
+    }
+    
+    if (TWITTER_TAG == tag)
+    {
+        
+    }
 }
 
 void SnowmanGameScene::addArrowMenuAndAddSprite()
