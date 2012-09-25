@@ -18,6 +18,8 @@ public:
 	virtual void ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *event);
 	virtual void onExit();
 	LAYER_NODE_FUNC(TouchDetection);
+    
+    void enableTouchByFlag(int flag, bool value);
 
 public:
 	cocos2d::CCMutableArray<TouchObject*> *touchZones;

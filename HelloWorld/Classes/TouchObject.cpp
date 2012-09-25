@@ -15,3 +15,13 @@ TouchObject* TouchObject::objectWithPositionRadiusTargetSel(CCPoint &p, float r,
 
 	return touch;
 }
+
+TouchObject::TouchObject()
+: radius(0.f)
+, target(NULL)
+, selector(NULL)
+, flag(0)
+, touchable(true)
+{
+    
+}
