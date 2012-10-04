@@ -69,15 +69,15 @@
  2. 'Application Type' should be set to BROWSER (not client)
  3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
  */
-#define SHKTwitterConsumerKey		@"oIJwvsbAmOs1msqWKUSRg"
-#define SHKTwitterSecret			@"91c323az1R3J4D6jRhTKaMVnCRJ4q1FIq1cyXa4M"
-#define SHKTwitterCallbackUrl		@"http://theoryplus.com" // You need to set this if using OAuth, see note above (xAuth users can skip it)
+#define SHKTwitterConsumerKey		@"I4wqgCf4pXUhiRXXLcUNw"
+#define SHKTwitterSecret			@"COPIROTTNA40Rd4IQLvKFfx4j2Pk39YzD9pQ986gsuU"
+#define SHKTwitterCallbackUrl		@"http://curiousminds.com" // You need to set this if using OAuth, see note above (xAuth users can skip it)
 #define SHKTwitterUseXAuth			0 // To use xAuth, set to 1
 #define SHKTwitterUsername			@"" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 
 // Bit.ly (for shortening URLs on Twitter) - http://bit.ly/account/register - after signup: http://bit.ly/a/your_api_key
-#define SHKBitLyLogin				@""
-#define SHKBitLyKey					@""
+#define SHKBitLyLogin				@"whitmanc"
+#define SHKBitLyKey					@"R_1952d0a3a55cceb0c0cfc53bbd334e7e"
 
 // ShareMenu Ordering
 #define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
