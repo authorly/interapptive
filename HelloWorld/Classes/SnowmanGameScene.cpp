@@ -159,7 +159,7 @@ void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
     
     if (TWITTER_TAG == tag)
     {
-        
+        shareOnTwitter();
     }
 }
 
