@@ -706,7 +706,7 @@ void PageLayer::stopHighlightEffect()
     // stop all effect, I think now it will only have one effect that speaking word.
     SimpleAudioEngine::sharedEngine()->stopAllEffects();
     // stop background music
-    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    //SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
 }
 
 void PageLayer::playBackgroundMusic()
