@@ -173,10 +173,11 @@ void PageLayer::touchCallback(float flag)
 {
     StoryTouchableNode *storyTouchableNode = page->getSotryTouchableNodeByFlag(flag);
     
-    // stop all sounds
+    // stop all sounds and stop highlight
     if (storyTouchableNode->stopEffectIndicator)
     {
         stopHighlightEffect();
+        stopHighlightParagraph();
     }
 
     // play video
@@ -642,6 +643,20 @@ void PageLayer::showParagraph(float delay)
     addChild(paragraphLayer);
 }
 
+// stop highlight and should change color back
+void PageLayer::stopHighlightParagraph()
+{
+    if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
+    {
+        vector<CCLabelTTF*>::iterator iter;
+        for (iter = wordsOfParagraph.begin(); iter != wordsOfParagraph.end(); ++iter)
+        {
+            (*iter)->stopAllActions();
+            (*iter)->setColor(page->settings.fontColor);
+        }
+    }
+}
+
 void PageLayer::highlightParagraph()
 {
     // don't hilight if the story mode is read to myself
@@ -705,8 +720,6 @@ void PageLayer::stopHighlightEffect()
 {
     // stop all effect, I think now it will only have one effect that speaking word.
     SimpleAudioEngine::sharedEngine()->stopAllEffects();
-    // stop background music
-    //SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
 }
 
 void PageLayer::playBackgroundMusic()
