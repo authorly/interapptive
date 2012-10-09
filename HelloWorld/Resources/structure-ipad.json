@@ -121,6 +121,7 @@
               "Page": {
               "settings": {
               "number": 1,
+              "autoplayDelayBeforePageTurn":4,
               "fontType": "PoeticaChanceryIII.ttf",
               "fontColor": [
                             255,
