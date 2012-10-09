@@ -13,7 +13,7 @@ using namespace CocosDenshion;
 using namespace std;
 
 // the distance(in points) to determine swipe left or right
-#define TOLERATE_DISTANCE   50
+#define TOLERATE_DISTANCE   40
 // page layer tag
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 10
@@ -426,10 +426,8 @@ void PageLayer::swipeRight()
 
 bool PageLayer::isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos)
 {
-    float beginX = beginPos.x;
-    float endX = endPos.x;
-    
-    if ((beginX - endX) > TOLERATE_DISTANCE)
+    if ((beginPos.x - endPos.x) > TOLERATE_DISTANCE
+        && abs(int(beginPos.y - endPos.y)) < TOLERATE_DISTANCE)
     {
         return true;
     }
@@ -439,10 +437,8 @@ bool PageLayer::isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos
 
 bool PageLayer::isSwipeRight(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos)
 {
-    float beginX = beginPos.x;
-    float endX = endPos.x;
-    
-    if ((endX - beginX) > TOLERATE_DISTANCE)
+    if ((endPos.x - beginPos.x) > TOLERATE_DISTANCE
+        && abs(int(beginPos.y - endPos.y)) < TOLERATE_DISTANCE)
     {
         return true;
     }
