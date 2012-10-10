@@ -13,7 +13,7 @@ using namespace CocosDenshion;
 using namespace std;
 
 // the distance(in points) to determine swipe left or right
-#define TOLERATE_DISTANCE   50
+#define TOLERATE_DISTANCE   40
 // page layer tag
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 10
@@ -173,10 +173,11 @@ void PageLayer::touchCallback(float flag)
 {
     StoryTouchableNode *storyTouchableNode = page->getSotryTouchableNodeByFlag(flag);
     
-    // stop all sounds
+    // stop all sounds and stop highlight
     if (storyTouchableNode->stopEffectIndicator)
     {
         stopHighlightEffect();
+        stopHighlightParagraph();
     }
 
     // play video
@@ -425,10 +426,8 @@ void PageLayer::swipeRight()
 
 bool PageLayer::isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos)
 {
-    float beginX = beginPos.x;
-    float endX = endPos.x;
-    
-    if ((beginX - endX) > TOLERATE_DISTANCE)
+    if ((beginPos.x - endPos.x) > TOLERATE_DISTANCE
+        && abs(int(beginPos.y - endPos.y)) < TOLERATE_DISTANCE)
     {
         return true;
     }
@@ -438,10 +437,8 @@ bool PageLayer::isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos
 
 bool PageLayer::isSwipeRight(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos)
 {
-    float beginX = beginPos.x;
-    float endX = endPos.x;
-    
-    if ((endX - beginX) > TOLERATE_DISTANCE)
+    if ((endPos.x - beginPos.x) > TOLERATE_DISTANCE
+        && abs(int(beginPos.y - endPos.y)) < TOLERATE_DISTANCE)
     {
         return true;
     }
@@ -642,6 +639,20 @@ void PageLayer::showParagraph(float delay)
     addChild(paragraphLayer);
 }
 
+// stop highlight and should change color back
+void PageLayer::stopHighlightParagraph()
+{
+    if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
+    {
+        vector<CCLabelTTF*>::iterator iter;
+        for (iter = wordsOfParagraph.begin(); iter != wordsOfParagraph.end(); ++iter)
+        {
+            (*iter)->stopAllActions();
+            (*iter)->setColor(page->settings.fontColor);
+        }
+    }
+}
+
 void PageLayer::highlightParagraph()
 {
     // don't hilight if the story mode is read to myself
@@ -705,8 +716,6 @@ void PageLayer::stopHighlightEffect()
 {
     // stop all effect, I think now it will only have one effect that speaking word.
     SimpleAudioEngine::sharedEngine()->stopAllEffects();
-    // stop background music
-    //SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
 }
 
 void PageLayer::playBackgroundMusic()

@@ -30,6 +30,7 @@ public:
     virtual void ccTouchEnded(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
     
     void highlightParagraph();
+    void stopHighlightParagraph();
     void changeColor(cocos2d::CCObject *sender);
     void changeColorBack(cocos2d::CCObject *sender);
     
