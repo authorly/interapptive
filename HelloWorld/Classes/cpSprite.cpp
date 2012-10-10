@@ -38,6 +38,7 @@ void cpSprite::setPosition(const CCPoint& pos)
 
 void cpSprite::internalSetPosition(const CCPoint &pos)
 {
+    // don't move to the position if there is a physical object at the position
     if (cpSpacePointQueryFirst(space, cpVectMake(pos.x, pos.y), CP_ALL_LAYERS, CP_NO_GROUP) != NULL)
     {
         return;
@@ -70,9 +71,13 @@ bool cpSprite::ccTouchBegan(CCTouch* touch, CCEvent* event)
     
     CCRect rect = CCRectMake(0, 0, m_tContentSize.width, m_tContentSize.height);
     
-    CCPoint pos = convertToNodeSpace(touchLocation);
-    
     isSelected = CCRect::CCRectContainsPoint(rect, convertToNodeSpace(touchLocation));
+    
+    if (isSelected)
+    {
+        cpSpaceRemoveBody(this->space, this->body);
+    }
+    
 	return isSelected;
 }
 
@@ -85,7 +90,8 @@ void cpSprite::ccTouchMoved(CCTouch* touch, CCEvent* event)
 }
 
 void cpSprite::ccTouchEnded(CCTouch* touch, CCEvent* event)
-{		
+{
+    cpSpaceAddBody(this->space, this->body);
 	isSelected = false;
 }
 
