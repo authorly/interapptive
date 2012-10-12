@@ -417,11 +417,15 @@ const CCSize& CCNode::getContentSize()
 {
 	//return m_tContentSize;
     // the content size should be changed
+    
+    static CCSize contentSize;
+    
+    contentSize = m_tContentSize;
 
-    m_tContentSize.width *= m_fScaleX;
-    m_tContentSize.height *= m_fScaleY;
+    contentSize.width *= m_fScaleX;
+    contentSize.height *= m_fScaleY;
 
-    return m_tContentSize;
+    return contentSize;
 }
 
 void CCNode::setContentSize(const CCSize& size)
