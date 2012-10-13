@@ -22,6 +22,9 @@
  THE SOFTWARE.
  ****************************************************************************/
 #import <UIKit/UIKit.h>
+#import "SHKConfiguration.h"
+#import "SHKFacebook.h"
+#import "MyShareKitConfigurator.h"
 #import "AppController.h"
 #import "cocos2d.h"
 #import "EAGLView.h"
@@ -72,6 +75,9 @@ static AppDelegate s_sharedApplication;
 
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
     
+    DefaultSHKConfigurator *configurator = [[[MyShareKitConfigurator alloc] init] autorelease];
+    [SHKConfiguration sharedInstanceWithConfigurator:configurator];
+    
     cocos2d::CCApplication::sharedApplication().run();
     return YES;
 }
@@ -112,6 +118,25 @@ static AppDelegate s_sharedApplication;
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (BOOL)handleOpenURL:(NSURL*)url
+{
+    NSString* scheme = [url scheme];
+    NSString* prefix = [NSString stringWithFormat:@"fb%@", SHKCONFIG(facebookAppId)];
+    if ([scheme hasPrefix:prefix])
+        return [SHKFacebook handleOpenURL:url];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [self handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [self handleOpenURL:url];
 }
 
 

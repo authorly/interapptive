@@ -48,6 +48,17 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string></string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb502716383080436</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>&quot;&quot;</string>
+		</dict>
+	</array>
 	<key>UIStatusBarHidden</key>
 	<true/>
 </dict>
