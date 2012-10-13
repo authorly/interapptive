@@ -266,8 +266,8 @@
               },
               "fallingPhysicsSettings": {
               "draggable":true,
-              "maxNumber": 35,
-              "speedX": 165,
+              "maxNumber": 75,
+              "speedX": 145,
               "speedY": 30,
               "spinSpeed": 100,
               "slowDownSpeed": 0.6,
