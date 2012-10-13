@@ -84,15 +84,15 @@
 }
 
 - (NSString*)twitterConsumerKey {
-	return @"48Ii81VO5NtDKIsQDZ3Ggw";
+	return @"I4wqgCf4pXUhiRXXLcUNw";
 }
 
 - (NSString*)twitterSecret {
-	return @"WYc2HSatOQGXlUCsYnuW3UjrlqQj0xvkvvOIsKek32g";
+	return @"COPIROTTNA40Rd4IQLvKFfx4j2Pk39YzD9pQ986gsuU";
 }
 // You need to set this if using OAuth, see note above (xAuth users can skip it)
 - (NSString*)twitterCallbackUrl {
-	return @"http://twitter.sharekit.com";
+	return @"http://curiousminds.com";
 }
 // To use xAuth, set to 1
 - (NSNumber*)twitterUseXAuth {
