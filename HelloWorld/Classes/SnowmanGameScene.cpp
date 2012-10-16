@@ -190,7 +190,7 @@ void SnowmanGameScene::addArrowMenuAndAddSprite()
     SpriteBetweenArrowData *data = new SpriteBetweenArrowData();
     data->index = 0;
     data->tag = HAT_TAG;
-    data->scale = HAT_SCALE;
+    data->scale = HAT_SCALE * MIN_SCALE;
     hat->setUserData(data);
     
     hat->setPosition(SPRITE_BETWEEN_ARROW_POSITION);
