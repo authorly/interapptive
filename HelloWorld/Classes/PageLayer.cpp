@@ -275,7 +275,7 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
     }
 }
 
-float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
+float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
 {
     StorySwipeEnded &swipeEnded = page->storySwipeEnded;
     /*
@@ -341,7 +341,7 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft)
             // caculate delay time
             delay = ((CCFiniteTimeAction*)action)->getDuration();
             
-            if (swipeLeft)
+            if (isSwipeLeft)
             {
                 // swipe left
                 CCFiniteTimeAction* seq = CCSequence::actions(action, 
@@ -703,13 +703,20 @@ void PageLayer::changeColorBack(CCObject *sender)
     
     if (MainMenuLayer::storyMode == kSotryModeAutoPlay && word == wordsOfParagraph[wordsOfParagraph.size()-1])
     {
-        swipeLeft();
+        this->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(page->settings.autoplayDelayBeforePageTurn),
+                                            CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::doSwipeLeftAfterDelay)),
+                                            NULL));
     }
     
     if (word == wordsOfParagraph[wordsOfParagraph.size()-1])
     {
         enableDelayForTextTouchNode();
     }
+}
+
+void PageLayer::doSwipeLeftAfterDelay(CCObject *sender)
+{
+    swipeLeft();
 }
 
 void PageLayer::stopHighlightEffect()
