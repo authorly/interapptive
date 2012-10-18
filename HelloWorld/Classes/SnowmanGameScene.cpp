@@ -38,18 +38,25 @@
 
 #define LEFT_ARROW_SPRITE_TAG   8
 #define RIGHT_ARROW_SPRITE_TAG  9
+#define ARROW_MENU_TAG          10
 
-#define SPRITE_TO_DRAG_TAG      10
+#define SPRITE_TO_DRAG_TAG      11
 
-#define SNOWMAN_HAT_TAG         11
-#define SNOWMAN_EYE_TAG         12
-#define SNOWMAN_MITTEN_TAG      13
-#define SNOWMAN_MOUTH_TAG       14
-#define SNOWMAN_SCARF_TAG       15
-#define SNOWMAN_NOSE_TAG        16
+#define SNOWMAN_HAT_TAG         12
+#define SNOWMAN_EYE_TAG         13
+#define SNOWMAN_MITTEN_TAG      14
+#define SNOWMAN_MOUTH_TAG       15
+#define SNOWMAN_SCARF_TAG       16
+#define SNOWMAN_NOSE_TAG        17
+#define CATEGORY_TAG            18
+#define LOWER_CATEGORY_TAG      19
 
-#define FACEBOOK_TAG            17
-#define TWITTER_TAG             18
+#define FACEBOOK_TAG            20
+#define TWITTER_TAG             21
+#define SHARE_MENU_TAG          22
+
+#define HOME_MENU_TAG           23
+#define HOME_MENU_ITEM_TAG      24
 
 #define HAT_SCALE   0.7
 #define SCARF_SCALE 0.6
@@ -110,15 +117,17 @@ bool SnowmanGameScene::init()
     addChild(logo);
     
     // home menu
-    CCMenuItem *mainMenuItem = CCMenuItemImage::itemFromNormalImage("home-button.png", 
+    CCMenuItem *homeMenuItem = CCMenuItemImage::itemFromNormalImage("home-button.png",
                                                                     "home-button-over.png",
                                                                     this,
                                                                     menu_selector(SnowmanGameScene::homeMenuTouched));
-    mainMenuItem->setPosition(HOME_MENU_POSITION);
+    homeMenuItem->setPosition(HOME_MENU_POSITION);
+    homeMenuItem->setTag(HOME_MENU_ITEM_TAG);
     
-    CCMenu *mainMenu = CCMenu::menuWithItems(mainMenuItem, NULL);
-    mainMenu->setPosition(CCPointZero);
-    addChild(mainMenu);
+    CCMenu *homeMenu = CCMenu::menuWithItems(homeMenuItem, NULL);
+    homeMenu->setPosition(CCPointZero);
+    homeMenu->setTag(HOME_MENU_TAG);
+    addChild(homeMenu);
     
     CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, 0, true);
     
@@ -142,6 +151,7 @@ void SnowmanGameScene::addShareMenu()
     CCMenu *shareMenu = CCMenu::menuWithItems(facebookItem, twitterItem, NULL);
     shareMenu->alignItemsHorizontallyWithPadding(10.0f);
     shareMenu->setPosition(SHARE_MENU_POSITION);
+    shareMenu->setTag(SHARE_MENU_TAG);
     twitterItem->setPosition(ccp(15, 0));
     
     addChild(shareMenu);
@@ -149,7 +159,28 @@ void SnowmanGameScene::addShareMenu()
 
 void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
 {
-    CCMenuItemSprite *menuItemSprite = (CCMenuItemSprite*)sender;
+    // hide categories, items, arrows, and sharing icons before capturing image
+    showSprites(false);
+    
+    this->setUserData(sender);
+    this->schedule(schedule_selector(SnowmanGameScene::doSharing));
+}
+
+void SnowmanGameScene::doSharing(float dt)
+{
+    /*
+    static bool skip = true;
+    
+    // schedule will run before visit, so should skip the first time
+    if (skip)
+    {
+        skip = false;
+        return;
+    }
+     */
+    CCDirector::sharedDirector()->myDrawScene();
+    
+    CCMenuItemSprite *menuItemSprite = (CCMenuItemSprite*)this->getUserData();
     int tag = menuItemSprite->getTag();
     
     if (FACEBOOK_TAG == tag)
@@ -161,6 +192,61 @@ void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
     {
         shareOnTwitter();
     }
+    
+    this->unschedule(schedule_selector(SnowmanGameScene::doSharing));
+
+    showSprites(true);
+    
+    //skip = true;
+}
+
+void SnowmanGameScene::showSprites(bool isShow)
+{
+    // hide or show arrows
+    CCMenu *arrowMenu = (CCMenu*)getChildByTag(ARROW_MENU_TAG);
+    CCSprite *leftArrow = (CCSprite*)arrowMenu->getChildByTag(LEFT_ARROW_SPRITE_TAG);
+    leftArrow->setIsVisible(isShow);
+    
+    CCSprite *rightAroow = (CCSprite*)arrowMenu->getChildByTag(RIGHT_ARROW_SPRITE_TAG);
+    rightAroow->setIsVisible(isShow);
+    
+    // hide or show categories
+    CCMenu *categoryMenu = (CCMenu*)getChildByTag(CATEGORY_TAG);
+    CCSprite *hatCategory = (CCSprite*)categoryMenu->getChildByTag(HAT_TAG);
+    hatCategory->setIsVisible(isShow);
+    
+    CCSprite *scarfCategory = (CCSprite*)categoryMenu->getChildByTag(SCARF_TAG);
+    scarfCategory->setIsVisible(isShow);
+    
+    CCSprite *mittenCategory = (CCSprite*)categoryMenu->getChildByTag(MITTEN_TAG);
+    mittenCategory->setIsVisible(isShow);
+    
+    CCMenu *lowerCategoryMenu = (CCMenu*)getChildByTag(LOWER_CATEGORY_TAG);
+    CCSprite *eyeCategory = (CCSprite*)lowerCategoryMenu->getChildByTag(EYE_TAG);
+    eyeCategory->setIsVisible(isShow);
+    
+    CCSprite *noseCategory = (CCSprite*)lowerCategoryMenu->getChildByTag(NOSE_TAG);
+    noseCategory->setIsVisible(isShow);
+    
+    CCSprite *mouthCategory = (CCSprite*)lowerCategoryMenu->getChildByTag(MOUTH_TAG);
+    mouthCategory->setIsVisible(isShow);
+    
+    // hide or show sharing icons
+    CCMenu *shareMenu = (CCMenu*)getChildByTag(SHARE_MENU_TAG);
+    CCSprite *facebookIcon = (CCSprite*)shareMenu->getChildByTag(FACEBOOK_TAG);
+    facebookIcon->setIsVisible(isShow);
+    
+    CCSprite *twitterIcon = (CCSprite*)shareMenu->getChildByTag(TWITTER_TAG);
+    twitterIcon->setIsVisible(isShow);
+    
+    // hide or show item
+    CCSprite *item = (CCSprite*)getChildByTag(SPRITE_BETWEEN_ARROW_TAG);
+    item->setIsVisible(isShow);
+    
+    // hide or show home menu
+    CCMenu *homeMenu = (CCMenu*)getChildByTag(HOME_MENU_TAG);
+    CCMenuItem *homeMenuItem = (CCMenuItem*)homeMenu->getChildByTag(HOME_MENU_ITEM_TAG);
+    homeMenuItem->setIsVisible(isShow);
 }
 
 void SnowmanGameScene::addArrowMenuAndAddSprite()
@@ -181,7 +267,9 @@ void SnowmanGameScene::addArrowMenuAndAddSprite()
     CCMenu *arrowMenu = CCMenu::menuWithItems(leftArrow, rightArrow, NULL);
     arrowMenu->alignItemsHorizontally();
     arrowMenu->setPosition(ARROW_MENU_POSITION);
+    arrowMenu->setTag(ARROW_MENU_TAG);
     leftArrow->setPosition(LEFT_ARROW_POSITION);
+
     addChild(arrowMenu);
     
     // add default sprite between arrows
@@ -273,6 +361,9 @@ void SnowmanGameScene::addSnowmanPartsMenu()
     
     category->setPosition(CATEGORY_POSITION);
     categoryLower->setPosition(CATEGORY_LOWER_POSITION);
+    
+    category->setTag(CATEGORY_TAG);
+    categoryLower->setTag(LOWER_CATEGORY_TAG);
     
     addChild(category);
     addChild(categoryLower);

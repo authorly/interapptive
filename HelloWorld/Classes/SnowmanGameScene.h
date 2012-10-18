@@ -23,10 +23,13 @@ public:
     void shareMenuTouched(cocos2d::CCObject *sender);
     void homeMenuTouched(cocos2d::CCObject *sender);
     
+    void doSharing(float dt);
+    
     SCENE_NODE_FUNC(SnowmanGameScene);
     
 private:
     void addArrowMenuAndAddSprite();
+    void showSprites(bool isShow);
     void addShareMenu();
     void addSnowmanPartsMenu();
     int nextIndex(int curIndex);
