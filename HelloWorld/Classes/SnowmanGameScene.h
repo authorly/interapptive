@@ -23,8 +23,6 @@ public:
     void shareMenuTouched(cocos2d::CCObject *sender);
     void homeMenuTouched(cocos2d::CCObject *sender);
     
-    void doSharing(float dt);
-    
     SCENE_NODE_FUNC(SnowmanGameScene);
     
 private:

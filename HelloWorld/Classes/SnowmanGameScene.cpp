@@ -162,15 +162,9 @@ void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
     // hide categories, items, arrows, and sharing icons before capturing image
     showSprites(false);
     
-    this->setUserData(sender);
-    this->schedule(schedule_selector(SnowmanGameScene::doSharing));
-}
-
-void SnowmanGameScene::doSharing(float dt)
-{
     CCDirector::sharedDirector()->myDrawScene();
     
-    CCMenuItemSprite *menuItemSprite = (CCMenuItemSprite*)this->getUserData();
+    CCMenuItemSprite *menuItemSprite = (CCMenuItemSprite*)sender;
     int tag = menuItemSprite->getTag();
     
     if (FACEBOOK_TAG == tag)
@@ -183,8 +177,6 @@ void SnowmanGameScene::doSharing(float dt)
         shareOnTwitter();
     }
     
-    this->unschedule(schedule_selector(SnowmanGameScene::doSharing));
-
     showSprites(true);
 }
 
