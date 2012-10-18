@@ -34,6 +34,8 @@ public:
     void changeColor(cocos2d::CCObject *sender);
     void changeColorBack(cocos2d::CCObject *sender);
     
+    void doSwipeLeftAfterDelay(cocos2d::CCObject *sender);
+    
     void addTouchNode();
     void enableDelayForAnimationTouchNode(cocos2d::CCObject *sender);
     void enableDelayForTextTouchNode();
@@ -61,7 +63,7 @@ private:
      * @swipteLeft if it is swipe left
      * @ret total delay time for showing paragraph
      */
-    float swipeEndedOperationAndCalculateTotalDelay(bool swipeLeft);
+    float swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft);
     
     float calculateDelayTimeOnEnter();
     
