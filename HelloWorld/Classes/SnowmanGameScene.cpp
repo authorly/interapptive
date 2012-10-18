@@ -168,16 +168,6 @@ void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
 
 void SnowmanGameScene::doSharing(float dt)
 {
-    /*
-    static bool skip = true;
-    
-    // schedule will run before visit, so should skip the first time
-    if (skip)
-    {
-        skip = false;
-        return;
-    }
-     */
     CCDirector::sharedDirector()->myDrawScene();
     
     CCMenuItemSprite *menuItemSprite = (CCMenuItemSprite*)this->getUserData();
@@ -196,8 +186,6 @@ void SnowmanGameScene::doSharing(float dt)
     this->unschedule(schedule_selector(SnowmanGameScene::doSharing));
 
     showSprites(true);
-    
-    //skip = true;
 }
 
 void SnowmanGameScene::showSprites(bool isShow)
