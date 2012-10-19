@@ -316,6 +316,8 @@ public:
 	This method is called every frame. Don't call it manually.
 	*/
 	void drawScene(void);
+    
+    void myDrawScene(void);
 
 	// Memory Helper
 
