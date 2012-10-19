@@ -27,6 +27,7 @@ public:
     
 private:
     void addArrowMenuAndAddSprite();
+    void showSprites(bool isShow);
     void addShareMenu();
     void addSnowmanPartsMenu();
     int nextIndex(int curIndex);

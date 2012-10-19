@@ -171,6 +171,25 @@ void CCDirector::setGLDefaultValues(void)
 	}
 #endif
 }
+    
+void CCDirector::myDrawScene()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+	glPushMatrix();
+    
+    CC_ENABLE_DEFAULT_GL_STATES();
+    
+	// draw the scene
+    if (m_pRunningScene)
+    {
+        m_pRunningScene->visit();
+    }
+    
+	CC_DISABLE_DEFAULT_GL_STATES();
+    
+	glPopMatrix();
+}
 
 // Draw the SCene
 void CCDirector::drawScene(void)
