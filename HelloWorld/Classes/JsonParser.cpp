@@ -239,6 +239,16 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
 
 	// number
 	settings.number = jsonSettings["number"].asInt();
+    // autoplayDelayBeforePageTurn
+    Json::Value delayBeforePageTurnJson = jsonSettings["autoplayDelayBeforePageTurn"];
+    if (! delayBeforePageTurnJson.isNull())
+    {
+        settings.autoplayDelayBeforePageTurn = delayBeforePageTurnJson.asInt();
+    }
+    else
+    {
+        settings.autoplayDelayBeforePageTurn = 0;
+    }
 	// fontType
 	settings.fontType = jsonSettings["fontType"].asCString();
     

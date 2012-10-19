@@ -35,6 +35,7 @@ typedef struct settings
 {
 	// font info
 	int                number;
+    int                autoplayDelayBeforePageTurn;
 	std::string        fontType;
 	cocos2d::ccColor3B fontColor;
     cocos2d::ccColor3B fontHighlightColor;
