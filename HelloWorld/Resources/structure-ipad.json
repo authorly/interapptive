@@ -1209,6 +1209,7 @@
                 "nodes": [
                           {
                           "glitterIndicator": true,
+                          "delayForText": true,
                           "stopEffectIndicator": true,
                           "touchFlag": 10,
                           "position": [
