@@ -1740,7 +1740,7 @@
                   "nodes": [
                             {
                             "glitterIndicator": true,
-                            "stopEffectIndicator": true,
+                            "stopEffectIndicator": false,
                             "touchFlag": 10,
                             "position": [
                                          140,
