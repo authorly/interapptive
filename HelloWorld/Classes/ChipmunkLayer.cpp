@@ -3,6 +3,8 @@
 #include "chipmunk.h"
 #include "cpSprite.h"
 
+#define DEFAULT_SPEED_Y   -10.0f
+
 using namespace cocos2d;
 using namespace std;
 
@@ -201,8 +203,12 @@ void ChipmunkLayer::update(float delta)
     int steps = 2;
 	float dt = delta/(float)steps;
     
-    space->gravity = cpVectMake(accX * page->settings.fallingObjectSetting.speedX, 
-                                accY * page->settings.fallingObjectSetting.speedY);
+    float gravityY = accY * page->settings.fallingObjectSetting.speedY;
+    if (gravityY == 0)
+    {
+        gravityY = DEFAULT_SPEED_Y;
+    }
+    space->gravity = cpVectMake(accX * page->settings.fallingObjectSetting.speedX, gravityY);
 	
 	for(int i=0; i<steps; i++)
     {
