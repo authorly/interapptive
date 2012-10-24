@@ -1394,7 +1394,7 @@
                                      680,
                                      350
                                      ],
-                        "radius": 230,
+                        "radius": 130,
                         "soundToPlay": "effect-whitetail-deer.mp3",
                         "runAction": [
                                       {
@@ -1546,7 +1546,7 @@
                                          420,
                                          350
                                          ],
-                            "radius": 250,
+                            "radius": 150,
                             "videoToPlay": "video_doe_snort.mp4"
                             }
                             ]
@@ -1838,7 +1838,7 @@
                                          590,
                                          350
                                          ],
-                            "radius": 220,
+                            "radius": 120,
                             "soundToPlay": "effect-porcupine.mp3"
                             }
                             ]
@@ -3806,24 +3806,12 @@
                             "stopEffectIndicator": false,
                             "touchFlag": 10,
                             "position": [
-                                         290,
+                                         600,
                                          370
                                          ],
-                            "radius": 190,
+                            "radius": 130,
                             "videoToPlay": "video_the_end.mp4"
-                            },
-                            {
-                            "glitterIndicator": true,
-                            "stopEffectIndicator": false,
-                            "touchFlag": 11,
-                            "position": [
-                                         780,
-                                         370
-                                         ],
-                            "radius": 190,
-                            "videoToPlay": "video_the_end.mp4"
-                            }
-                            ]
+                            }                            ]
                   },
               "CCSprites": [
                             {
