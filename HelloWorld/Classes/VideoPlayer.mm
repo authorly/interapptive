@@ -37,6 +37,7 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
                                                         name:MPMoviePlayerDidExitFullscreenNotification
                                                       object:moviePlayer];
         
+        moviePlayer.fullscreen = false;
         [moviePlayer.view removeFromSuperview];
     }
     else 
@@ -103,9 +104,13 @@ void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl)
         {
             g_moviePlayer.controlStyle = MPMovieControlStyleNone;
         }
+        
+
         g_moviePlayer.shouldAutoplay = YES;
         [[EAGLView sharedEGLView] addSubview:g_moviePlayer.view];
         [g_moviePlayer setFullscreen:YES animated:YES];
+        
+        [g_moviePlayer play];
     }
     else 
     {
