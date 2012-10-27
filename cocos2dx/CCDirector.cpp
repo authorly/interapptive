@@ -49,6 +49,7 @@ THE SOFTWARE.
 #include "CCTouch.h"
 #include "CCUserDefault.h"
 #include "extensions/CCNotificationCenter.h"
+#include "DeviceType.h"
 
 #if CC_ENABLE_PROFILERS
 #include "support/CCProfiling.h"
@@ -325,6 +326,17 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
 {
 	CCSize size = m_obWinSizeInPixels;
 	float zeye = this->getZEye();
+    
+    /* adjust zNear according device type
+     2.0 works ok for iPhone4s
+     5.0 others
+     */
+    float zNear = 5.0f;
+    if (DeviceType::isIphone4S())
+    {
+        zNear = 2.0f;
+    }
+    
 	switch (kProjection)
 	{
 	case kCCDirectorProjection2D:
@@ -347,7 +359,7 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
         }
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
-		gluPerspective(60, (GLfloat)size.width/size.height, 5.0f, 1500.0f);
+		gluPerspective(60, (GLfloat)size.width/size.height, zNear, 1500.0f);
 			
 		glMatrixMode(GL_MODELVIEW);	
 		glLoadIdentity();

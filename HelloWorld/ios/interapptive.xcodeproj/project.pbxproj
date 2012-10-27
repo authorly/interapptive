@@ -126,6 +126,7 @@
 		154CE1521629BDC400C3A047 /* MyShareKitConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 154CE1511629BDC400C3A047 /* MyShareKitConfigurator.m */; };
 		155E6C1B159DF5ED006734D2 /* GCpShapeCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 155E6C19159DF5ED006734D2 /* GCpShapeCache.cpp */; };
 		1561F3F115BD84F100C6F4B5 /* MyPageTurn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1561F3F015BD84F100C6F4B5 /* MyPageTurn.cpp */; };
+		1567490F163C214A0002AD61 /* DeviceType.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1567490E163C214A0002AD61 /* DeviceType.mm */; };
 		1573A72915403379004AC7CA /* Configurations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1573A72815403379004AC7CA /* Configurations.cpp */; };
 		1573A72C1540357D004AC7CA /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1573A72B1540357D004AC7CA /* MainMenu.cpp */; };
 		1585A14F152DC464003E4376 /* DataLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1585A145152DC464003E4376 /* DataLoader.cpp */; };
@@ -903,6 +904,8 @@
 		155E6C1A159DF5ED006734D2 /* GCpShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCpShapeCache.h; sourceTree = "<group>"; };
 		1561F3EE15BD810300C6F4B5 /* MyPageTurn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageTurn.h; sourceTree = "<group>"; };
 		1561F3F015BD84F100C6F4B5 /* MyPageTurn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyPageTurn.cpp; sourceTree = "<group>"; };
+		1567490A163C20530002AD61 /* DeviceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceType.h; sourceTree = "<group>"; };
+		1567490E163C214A0002AD61 /* DeviceType.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceType.mm; sourceTree = "<group>"; };
 		1573A72715403346004AC7CA /* Configurations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configurations.h; sourceTree = "<group>"; };
 		1573A72815403379004AC7CA /* Configurations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Configurations.cpp; sourceTree = "<group>"; };
 		1573A72A15403567004AC7CA /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
@@ -1581,6 +1584,8 @@
 				154CD5AF1629B4F700C3A047 /* ios */,
 				154CD5E31629B4F700C3A047 /* platform.cpp */,
 				154CD5E41629B4F700C3A047 /* platform.h */,
+				1567490A163C20530002AD61 /* DeviceType.h */,
+				1567490E163C214A0002AD61 /* DeviceType.mm */,
 			);
 			path = platform;
 			sourceTree = "<group>";
@@ -2931,6 +2936,7 @@
 				154CE14A1629B50000C3A047 /* CCTouchDispatcher.cpp in Sources */,
 				154CE14B1629B50000C3A047 /* CCTouchHandler.cpp in Sources */,
 				154CE1521629BDC400C3A047 /* MyShareKitConfigurator.m in Sources */,
+				1567490F163C214A0002AD61 /* DeviceType.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
