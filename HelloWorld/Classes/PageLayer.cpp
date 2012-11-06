@@ -13,7 +13,8 @@ using namespace CocosDenshion;
 using namespace std;
 
 // the distance(in points) to determine swipe left or right
-#define TOLERATE_DISTANCE   40
+#define TOLERATE_VERTICAL_DISTANCE      150
+#define TOLERATE_HORIZONTAL_DISTANCE    30
 // page layer tag
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 10
@@ -426,10 +427,22 @@ void PageLayer::swipeRight()
 
 bool PageLayer::isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos)
 {
-    if ((beginPos.x - endPos.x) > TOLERATE_DISTANCE
-        && abs(int(beginPos.y - endPos.y)) < TOLERATE_DISTANCE)
+    // if there is physical object, should check horizontal distance,
+    // because we should determine if it is dragging physical object or swipping
+    if (page->settings.fallingObjectSetting.plistfilename.size() > 0)
     {
-        return true;
+        if ((beginPos.x - endPos.x) > TOLERATE_HORIZONTAL_DISTANCE
+            && abs(int(beginPos.y - endPos.y)) < TOLERATE_VERTICAL_DISTANCE)
+        {
+            return true;
+        }
+    }
+    else
+    {
+        if ((beginPos.x - endPos.x) > TOLERATE_HORIZONTAL_DISTANCE)
+        {
+            return true;
+        }
     }
     
     return false;
@@ -437,10 +450,22 @@ bool PageLayer::isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos
 
 bool PageLayer::isSwipeRight(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos)
 {
-    if ((endPos.x - beginPos.x) > TOLERATE_DISTANCE
-        && abs(int(beginPos.y - endPos.y)) < TOLERATE_DISTANCE)
+    // if there is physical object, should check horizontal distance,
+    // because we should determine if it is dragging physical object or swipping
+    if (page->settings.fallingObjectSetting.plistfilename.size() > 0)
     {
-        return true;
+        if ((endPos.x - beginPos.x) > TOLERATE_HORIZONTAL_DISTANCE
+            && abs(int(beginPos.y - endPos.y)) < TOLERATE_VERTICAL_DISTANCE)
+        {
+            return true;
+        }
+    }
+    else
+    {
+        if ((endPos.x - beginPos.x) > TOLERATE_HORIZONTAL_DISTANCE)
+        {
+            return true;
+        }
     }
     
     return false;
