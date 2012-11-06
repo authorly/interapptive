@@ -3142,17 +3142,6 @@
                                        ],
                           "radius": 90,
                           "videoToPlay": "video_flail.mp4"
-                          },
-                          {
-                          "glitterIndicator": true,
-                          "stopEffectIndicator": false,
-                          "touchFlag": 1,
-                          "position": [
-                                       780,
-                                       370
-                                       ],
-                          "radius": 90,
-                          "videoToPlay": "video_flail.mp4"
                           }
                           ]
                 },
