@@ -34,6 +34,7 @@ PageLayer::PageLayer()
 , isSwiping(false)
 , delayOfAnimation(0)
 , touchDetector(NULL)
+, touchSoundId(0)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -182,7 +183,7 @@ void PageLayer::touchCallback(float flag)
     }
 
     // play video
-    bool showControl = false;
+    bool showControl = true;
     string &videoName = storyTouchableNode->videoToPlay;
     if (videoName.size() != 0)
     {
@@ -193,7 +194,10 @@ void PageLayer::touchCallback(float flag)
     string &audeoName = storyTouchableNode->soundToPlay;
     if (audeoName.size() != 0)
     {
-        SimpleAudioEngine::sharedEngine()->playEffect(audeoName.c_str());
+        // stop first
+        SimpleAudioEngine::sharedEngine()->stopEffect(touchSoundId);
+        // play
+        touchSoundId = SimpleAudioEngine::sharedEngine()->playEffect(audeoName.c_str());
     }
 }
 
