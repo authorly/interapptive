@@ -99,6 +99,8 @@ private:
     MyDialog *mydialog;
     
     bool isSwiping;
+    
+    unsigned int touchSoundId;
 };
 
 #endif // __PAGE_LAYER_H__
