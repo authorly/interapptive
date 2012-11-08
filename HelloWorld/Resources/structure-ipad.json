@@ -24,6 +24,21 @@
             "soundEffect": "main-menu-title-sound.mp3",
             "soundEffectLoops": 1
         },
+        "fallingPhysicsSettings": {
+            "draggable":false,
+            "maxNumber": 0,
+            "speedX": 165,
+            "speedY": 50,
+            "spinSpeed": 100,
+            "slowDownSpeed": 0.6,
+            "hasFloor": false,
+            "hasWalls": true,
+            "dropBetweenPoints": [
+                                  0,
+                                  600
+                                  ],
+            "plistfilename": "page-22-seds.plist"
+        },
         "CCSprites": [
                       {
                       "image": "background0000.jpg",
@@ -1538,7 +1553,7 @@
                   "nodes": [
                             {
                             "glitterIndicator": true,
-                            "stopEffectIndicator": false,
+                            "stopEffectIndicator": true,
                             "touchFlag": 10,
                             "position": [
                                          420,
@@ -3790,7 +3805,7 @@
                   "nodes": [
                             {
                             "glitterIndicator": true,
-                            "stopEffectIndicator": false,
+                            "stopEffectIndicator": true,
                             "touchFlag": 10,
                             "position": [
                                          600,
