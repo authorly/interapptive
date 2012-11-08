@@ -182,7 +182,7 @@ void PageLayer::touchCallback(float flag)
     }
 
     // play video
-    bool showControl = false;
+    bool showControl = true;
     string &videoName = storyTouchableNode->videoToPlay;
     if (videoName.size() != 0)
     {
