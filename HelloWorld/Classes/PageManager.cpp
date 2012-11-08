@@ -9,6 +9,7 @@
 #include "SharedGlobalData.h"
 #include "MyScene.h"
 #include "MyPageTurn.h"
+#include "VideoPlayer.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;

@@ -2,7 +2,6 @@
 #define __PAGE_LAYER_H__
 
 #include "MyDialog.h"
-#include "VideoPlayer.h"
 #include "cocos2d.h"
 #include "Page.h"
 #include "TouchDetection.h"
@@ -43,6 +42,9 @@ public:
     // dialog protocol
     virtual void buttonClicked(int index);
     
+    // may be called when video play finished
+    void swipeLeft();
+    
 private:
     PageLayer();
     void init(Page *page);
@@ -56,7 +58,6 @@ private:
     
     bool isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos);
     bool isSwipeRight(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos);
-    void swipeLeft();
     void swipeRight();
     void swipEndCallBack();
     /**
