@@ -5,6 +5,7 @@
 #include "MainMenuLayer.h"
 #include "SharedGlobalData.h"
 #include "ChipmunkLayer.h"
+#include "VideoPlayer.h"
 
 #include <vector>
 
@@ -187,7 +188,14 @@ void PageLayer::touchCallback(float flag)
     string &videoName = storyTouchableNode->videoToPlay;
     if (videoName.size() != 0)
     {
-       VideoPlayer::sharedVideoPlayer()->playVideoByFilename(videoName.c_str(), showControl); 
+        if (MainMenuLayer::storyMode == kSotryModeAutoPlay)
+        {
+            VideoPlayer::sharedVideoPlayer()->playVideoByFilename(videoName.c_str(), showControl, this);
+        }
+        else
+        {
+            VideoPlayer::sharedVideoPlayer()->playVideoByFilename(videoName.c_str(), showControl);
+        }
     }
     
     // play audeo

@@ -53,6 +53,12 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
     g_intervalVideoPlayer = nil;
     
     g_sharedVideoPlayer->isVideoPlaying = false;
+    
+    if (VideoPlayer::sharedVideoPlayer()->delegate)
+    {
+        VideoPlayer::sharedVideoPlayer()->delegate->swipeLeft();
+        VideoPlayer::sharedVideoPlayer()->delegate = NULL;
+    }
 }
 
 @end
@@ -70,10 +76,11 @@ VideoPlayer* VideoPlayer::sharedVideoPlayer()
     return g_sharedVideoPlayer;
 }
 
-void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl)
+void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl, PageLayer *delegate)
 {
     this->showControl = showControl;
     this->isVideoPlaying = true;
+    this->delegate = delegate;
     
     NSString *nsFilePath = [NSString stringWithUTF8String:fileName];
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:nsFilePath ofType:@""]];
@@ -180,5 +187,11 @@ void VideoPlayer::stopPlay()
         }
         
         g_moviePlayer = nil;
+    }
+    
+    if (VideoPlayer::sharedVideoPlayer()->delegate)
+    {
+        VideoPlayer::sharedVideoPlayer()->delegate->swipeLeft();
+        VideoPlayer::sharedVideoPlayer()->delegate = NULL;
     }
 }
