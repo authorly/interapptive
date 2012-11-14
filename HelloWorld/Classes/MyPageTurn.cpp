@@ -401,7 +401,7 @@ void ccMyTransitionPageTurn::addShadow()
 void ccMyTransitionPageTurn::onEnter()
 {
     CCTransitionScene::onEnter();
-    addShadow();
+    // addShadow();
     
     CCSize s = CCDirector::sharedDirector()->getWinSize();
 	int x, y;
