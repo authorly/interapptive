@@ -24,8 +24,8 @@
 #define SCARF_POSITION                  ccp(350*XSCALE, 240*YSCALE)
 
 // position for menu
-#define CATEGORY_POSITION       ccp(650*XSCALE, 380*YSCALE)
-#define CATEGORY_LOWER_POSITION ccp(650*XSCALE, 285*YSCALE)
+#define CATEGORY_POSITION       ccp(650*XSCALE, 430*YSCALE)
+#define CATEGORY_LOWER_POSITION ccp(650*XSCALE, 340*YSCALE)
 
 // position for info icon
 #define INFO_ICON_POSITION ccp(50*XSCALE, 715*YSCALE)
