@@ -25,6 +25,7 @@ public:
     void playVideoMainMenuItemTouched(cocos2d::CCObject *sender);
     void urlMainMenuItemTouched(cocos2d::CCObject *sender);
     void buildASnowmanMenuItemTouched(cocos2d::CCObject *sender);
+    void creditsItemTouched(cocos2d::CCObject *sender);
     
 private:
     void init();

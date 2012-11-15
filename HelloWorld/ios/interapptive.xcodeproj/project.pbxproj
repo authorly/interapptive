@@ -243,6 +243,7 @@
 		15D7CF8D15E66936005F0F2F /* twitter-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF7315E66936005F0F2F /* twitter-hover.png */; };
 		15D7CF8E15E66936005F0F2F /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF7415E66936005F0F2F /* twitter.png */; };
 		15DCC303155805B40083B694 /* SharedGlobalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15DCC302155805B40083B694 /* SharedGlobalData.cpp */; };
+		15DD199F165530A700F79BDB /* CreditsLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15DD199E165530A700F79BDB /* CreditsLayer.cpp */; };
 		15DF9E181552AF3D00E4FF3A /* MyDialog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15DF9E171552AF3D00E4FF3A /* MyDialog.mm */; };
 		15FF89AA155F6D8700A6FED7 /* Flower.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15FF89A8155F6D8700A6FED7 /* Flower.plist */; };
 		15FF89AB155F6D8700A6FED7 /* stars.png in Resources */ = {isa = PBXBuildFile; fileRef = 15FF89A9155F6D8700A6FED7 /* stars.png */; };
@@ -1089,6 +1090,8 @@
 		15D7CF7415E66936005F0F2F /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		15DCC300155805990083B694 /* SharedGlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedGlobalData.h; sourceTree = "<group>"; };
 		15DCC302155805B40083B694 /* SharedGlobalData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SharedGlobalData.cpp; sourceTree = "<group>"; };
+		15DD199D1655302A00F79BDB /* CreditsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsLayer.h; sourceTree = "<group>"; };
+		15DD199E165530A700F79BDB /* CreditsLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditsLayer.cpp; sourceTree = "<group>"; };
 		15DF9E151552AB2E00E4FF3A /* MyDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDialog.h; sourceTree = "<group>"; };
 		15DF9E171552AF3D00E4FF3A /* MyDialog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyDialog.mm; sourceTree = "<group>"; };
 		15FF89A8155F6D8700A6FED7 /* Flower.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Flower.plist; sourceTree = "<group>"; };
@@ -2248,6 +2251,8 @@
 				15D7CF5315E665D8005F0F2F /* SnowmanGameScene.h */,
 				15D7CF5415E665EF005F0F2F /* SnowmanGameScene.cpp */,
 				15B37C5C1610A973008B02E1 /* Share.h */,
+				15DD199D1655302A00F79BDB /* CreditsLayer.h */,
+				15DD199E165530A700F79BDB /* CreditsLayer.cpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -2945,6 +2950,7 @@
 				154CE14B1629B50000C3A047 /* CCTouchHandler.cpp in Sources */,
 				154CE1521629BDC400C3A047 /* MyShareKitConfigurator.m in Sources */,
 				1567490F163C214A0002AD61 /* DeviceType.mm in Sources */,
+				15DD199F165530A700F79BDB /* CreditsLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
