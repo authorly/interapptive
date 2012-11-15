@@ -6,6 +6,7 @@
 #include "SnowmanGameScene.h"
 #include "MyPageTurn.h"
 #include "Configurations.h"
+#include "CreditsLayer.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -98,6 +99,17 @@ void MainMenuLayer::init()
     
     menu->setPosition(ccp(0,0));
     addChild(menu);
+    
+    // add credits menu
+    CCMenu *creditsMenu = CCMenu::node();
+    CCMenuItemImage *creditsItem = CCMenuItemImage::itemFromNormalImage("credits.png",
+                                                                        "credits.png",
+                                                                        this,
+                                                                        menu_selector(MainMenuLayer::creditsItemTouched));
+    creditsItem->setPosition(ccp(160*XSCALE, 300*YSCALE));
+    creditsMenu->addChild(creditsItem, 1);
+    creditsMenu->setPosition(ccp(0, 0));
+    addChild(creditsMenu);
 }
 
 void MainMenuLayer::onEnter()
@@ -218,4 +230,16 @@ void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
     SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
     
     CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, SnowmanGameScene::node(), false));
+}
+
+void MainMenuLayer::creditsItemTouched(cocos2d::CCObject *sender)
+{
+    CCScene *scene = CCScene::node();
+    CreditsLayer *layer = new CreditsLayer();
+    layer->autorelease();
+    scene->addChild(layer);
+    
+    CCDirector::sharedDirector()->replaceScene(scene);
+    CCTextureCache::sharedTextureCache()->removeAllTextures();
+    SimpleAudioEngine::sharedEngine()->end();
 }
