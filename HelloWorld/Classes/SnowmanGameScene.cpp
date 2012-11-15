@@ -23,9 +23,12 @@
 #define NOSE_POSITION                   ccp(403*XSCALE, 449*YSCALE)
 #define SCARF_POSITION                  ccp(350*XSCALE, 240*YSCALE)
 
-// position fo menu
+// position for menu
 #define CATEGORY_POSITION       ccp(650*XSCALE, 380*YSCALE)
 #define CATEGORY_LOWER_POSITION ccp(650*XSCALE, 285*YSCALE)
+
+// position for info icon
+#define INFO_ICON_POSITION ccp(50*XSCALE, 715*YSCALE)
 
 #define HAT_TAG     1
 #define EYE_TAG     2
@@ -88,7 +91,7 @@ SnowmanGameScene::~SnowmanGameScene()
 bool SnowmanGameScene::init()
 {
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    
+  
     // load plist
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("eyes.plist");
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("hats.plist");
@@ -101,7 +104,14 @@ bool SnowmanGameScene::init()
     CCSprite *background = CCSprite::spriteWithFile("snowman-game-bg.jpg");
     background->setPosition(ccp(winSize.width/2, winSize.height/2));
     addChild(background);
-    
+  
+  
+  
+  // backgournd
+    CCSprite *infoIcon = CCSprite::spriteWithFile("info-icon.png");
+    infoIcon->setPosition(INFO_ICON_POSITION);
+    addChild(infoIcon);
+  
     // arrow menu & add sprite between arrows
     addArrowMenuAndAddSprite();
     
@@ -130,7 +140,7 @@ bool SnowmanGameScene::init()
     addChild(homeMenu);
     
     CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, 0, true);
-    
+  
     return true;
 }
 
