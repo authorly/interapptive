@@ -355,6 +355,7 @@
 		3A81F05A157C885E00D930E6 /* background0310.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A81F044157C885E00D930E6 /* background0310.jpg */; };
 		3A81F05B157C885E00D930E6 /* background0320.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A81F045157C885E00D930E6 /* background0320.jpg */; };
 		3A83A4CD1654AB570009B266 /* info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A83A4CC1654AB570009B266 /* info-icon.png */; };
+		3A83A4CF1654B3420009B266 /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A83A4CE1654B3420009B266 /* credits.png */; };
 		3A8F2E3D15EECDC7003D5870 /* effect-footsteps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F2E3915EECDC7003D5870 /* effect-footsteps.mp3 */; };
 		3A8F2E3E15EECDC7003D5870 /* effect-stranger-in-woods.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F2E3A15EECDC7003D5870 /* effect-stranger-in-woods.mp3 */; };
 		3A8F2E3F15EECDC7003D5870 /* effect-woods.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F2E3B15EECDC7003D5870 /* effect-woods.mp3 */; };
@@ -1202,6 +1203,7 @@
 		3A81F044157C885E00D930E6 /* background0310.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0310.jpg; sourceTree = "<group>"; };
 		3A81F045157C885E00D930E6 /* background0320.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0320.jpg; sourceTree = "<group>"; };
 		3A83A4CC1654AB570009B266 /* info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-icon.png"; sourceTree = "<group>"; };
+		3A83A4CE1654B3420009B266 /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits.png; sourceTree = "<group>"; };
 		3A8F2E3915EECDC7003D5870 /* effect-footsteps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "effect-footsteps.mp3"; sourceTree = "<group>"; };
 		3A8F2E3A15EECDC7003D5870 /* effect-stranger-in-woods.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "effect-stranger-in-woods.mp3"; sourceTree = "<group>"; };
 		3A8F2E3B15EECDC7003D5870 /* effect-woods.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "effect-woods.mp3"; sourceTree = "<group>"; };
@@ -2022,6 +2024,7 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A83A4CE1654B3420009B266 /* credits.png */,
 				3A83A4CC1654AB570009B266 /* info-icon.png */,
 				3A806E461635A2CC0092F1D0 /* snowflake-extrasmall.png */,
 				3A806E421635A1730092F1D0 /* snowflake-medium.png */,
@@ -2769,6 +2772,7 @@
 				3A806E451635A1730092F1D0 /* snowflake-small.png in Resources */,
 				3A806E471635A2CC0092F1D0 /* snowflake-extrasmall.png in Resources */,
 				3A83A4CD1654AB570009B266 /* info-icon.png in Resources */,
+				3A83A4CF1654B3420009B266 /* credits.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
