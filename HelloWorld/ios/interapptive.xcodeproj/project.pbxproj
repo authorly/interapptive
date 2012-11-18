@@ -219,7 +219,7 @@
 		15D682A815498C150007F346 /* MainMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15D682A715498C150007F346 /* MainMenuLayer.cpp */; };
 		15D7CF5015E664AE005F0F2F /* buildASnowman-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF4E15E664AE005F0F2F /* buildASnowman-hover.png */; };
 		15D7CF5115E664AE005F0F2F /* buildASnowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF4F15E664AE005F0F2F /* buildASnowman.png */; };
-		15D7CF5515E665EF005F0F2F /* SnowmanGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15D7CF5415E665EF005F0F2F /* SnowmanGameScene.cpp */; };
+		15D7CF5515E665EF005F0F2F /* SnowmanGameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 15D7CF5415E665EF005F0F2F /* SnowmanGameScene.mm */; };
 		15D7CF7515E66936005F0F2F /* arrow-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF5B15E66935005F0F2F /* arrow-hover.png */; };
 		15D7CF7615E66936005F0F2F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF5C15E66935005F0F2F /* arrow.png */; };
 		15D7CF7715E66936005F0F2F /* eyes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF5D15E66935005F0F2F /* eyes.plist */; };
@@ -1065,7 +1065,7 @@
 		15D7CF4E15E664AE005F0F2F /* buildASnowman-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buildASnowman-hover.png"; sourceTree = "<group>"; };
 		15D7CF4F15E664AE005F0F2F /* buildASnowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buildASnowman.png; sourceTree = "<group>"; };
 		15D7CF5315E665D8005F0F2F /* SnowmanGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowmanGameScene.h; sourceTree = "<group>"; };
-		15D7CF5415E665EF005F0F2F /* SnowmanGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnowmanGameScene.cpp; sourceTree = "<group>"; };
+		15D7CF5415E665EF005F0F2F /* SnowmanGameScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SnowmanGameScene.mm; sourceTree = "<group>"; };
 		15D7CF5B15E66935005F0F2F /* arrow-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-hover.png"; sourceTree = "<group>"; };
 		15D7CF5C15E66935005F0F2F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		15D7CF5D15E66935005F0F2F /* eyes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = eyes.plist; sourceTree = "<group>"; };
@@ -2249,7 +2249,7 @@
 				159FDB3015C527640064CCAF /* cpSprite.h */,
 				159FDB3215C527760064CCAF /* cpSprite.cpp */,
 				15D7CF5315E665D8005F0F2F /* SnowmanGameScene.h */,
-				15D7CF5415E665EF005F0F2F /* SnowmanGameScene.cpp */,
+				15D7CF5415E665EF005F0F2F /* SnowmanGameScene.mm */,
 				15B37C5C1610A973008B02E1 /* Share.h */,
 				15DD199D1655302A00F79BDB /* CreditsLayer.h */,
 				15DD199E165530A700F79BDB /* CreditsLayer.cpp */,
@@ -2843,7 +2843,7 @@
 				159FDC3F15C535E30064CCAF /* cpSpaceStep.c in Sources */,
 				159FDC4015C535E30064CCAF /* cpVect.c in Sources */,
 				159FDC4115C535E30064CCAF /* Makefile in Sources */,
-				15D7CF5515E665EF005F0F2F /* SnowmanGameScene.cpp in Sources */,
+				15D7CF5515E665EF005F0F2F /* SnowmanGameScene.mm in Sources */,
 				15384D951610A9D30021DC07 /* Share.mm in Sources */,
 				154CDDEA1629B4FD00C3A047 /* CCAction.cpp in Sources */,
 				154CDDEB1629B4FD00C3A047 /* CCActionCamera.cpp in Sources */,

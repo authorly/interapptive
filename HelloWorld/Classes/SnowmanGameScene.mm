@@ -665,29 +665,49 @@ void SnowmanGameScene::snowmanPartsMenuTouched(cocos2d::CCObject *sender)
 
 void SnowmanGameScene::homeMenuTouched(cocos2d::CCObject *sender)
 {
-    // popup a dialog to select
-    // should release previous dialog if it is exist
-    CC_SAFE_RELEASE_NULL(mydialog);
+    isHomeMenuTouched = true;
     
     // pop a dialog to select 
     vector<string> items;
     items.push_back("Yes");
     items.push_back("No");
     
-    mydialog = new MyDialog();
-    mydialog->initWithItems("Go to main menu?", items, this);
-    mydialog->popUp();  
+    homeMenuDialog = new MyDialog();
+    homeMenuDialog->initWithItems("Go to main menu?", items, this);
+    homeMenuDialog->popUp();  
 }
 
 void SnowmanGameScene::infoMenuTouched(cocos2d::CCObject *sender)
 {
+    isInfoMenuTouched = true;
     
+    // pop a dialog to select
+    vector<string> items;
+    items.push_back("OK");
+    
+    infoMenuDialog = new MyDialog();
+    infoMenuDialog->initWithItems("stranger in the wood", items, this);
+    infoMenuDialog->popUp();
 }
 
 void SnowmanGameScene::buttonClicked(int index)
 {
-    if (index == 0)
+    if (isHomeMenuTouched)
     {
-        PageManager::gotoMainMenu();
+        if (index == 0)
+        {
+            PageManager::gotoMainMenu();
+        }
+        
+        // release the dialog
+        homeMenuDialog->release();
+        
+        isHomeMenuTouched = false;
+    }
+    
+    if (isInfoMenuTouched)
+    {
+        infoMenuDialog->release();
+        isInfoMenuTouched = false;
     }
 }

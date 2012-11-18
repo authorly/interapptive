@@ -41,7 +41,11 @@ private:
     cocos2d::CCMenuItemSprite *hatMenuItem;
     cocos2d::CCMenuItemSprite *eyeMenuItem;
     
-    MyDialog *mydialog;
+    MyDialog *homeMenuDialog;
+    MyDialog *infoMenuDialog;
+    
+    bool isHomeMenuTouched;
+    bool isInfoMenuTouched;
 };
 
 #endif

@@ -49,8 +49,6 @@
 
 using namespace std;
 
-static InternalDialog *internalDialog = nil;
-
 MyDialog::MyDialog() 
 : internalObject(NULL)
 {}
