@@ -22,6 +22,7 @@ public:
     void snowmanPartsMenuTouched(cocos2d::CCObject *sender);
     void shareMenuTouched(cocos2d::CCObject *sender);
     void homeMenuTouched(cocos2d::CCObject *sender);
+    void infoMenuTouched(cocos2d::CCObject *sender);
     
     SCENE_NODE_FUNC(SnowmanGameScene);
     
@@ -40,7 +41,11 @@ private:
     cocos2d::CCMenuItemSprite *hatMenuItem;
     cocos2d::CCMenuItemSprite *eyeMenuItem;
     
-    MyDialog *mydialog;
+    MyDialog *homeMenuDialog;
+    MyDialog *infoMenuDialog;
+    
+    bool isHomeMenuTouched;
+    bool isInfoMenuTouched;
 };
 
 #endif
