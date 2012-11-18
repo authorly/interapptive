@@ -314,7 +314,7 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
     Json::Value staticPhysicsSettings = jsonSettings["staticPhysicsSettings"];
     if (! staticPhysicsSettings.isNull())
     {
-        StaticObjectSetting &staticSet = settings.staicObjectSetting;
+        StaticObjectSetting &staticSet = settings.staticObjectSetting;
 
         staticSet.plistfilename = staticPhysicsSettings["plistfilename"].asCString();
         
@@ -329,7 +329,7 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
             info->position.x = staticObjectInfo[i]["position"][x].asDouble() * XSCALE;
             info->position.y = staticObjectInfo[i]["position"][y].asDouble() * YSCALE;
             
-            page->settings.staicObjectSetting.staticObjects.push_back(info);
+            page->settings.staticObjectSetting.staticObjects.push_back(info);
         }
         
     }

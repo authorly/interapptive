@@ -524,7 +524,8 @@ void PageLayer::createPhysicsLayer()
 {
     if (page->settings.fallingObjectSetting.plistfilename.size() > 0)
     {
-        ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(page);
+        ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&page->settings.fallingObjectSetting,
+                                                                    &page->settings.staticObjectSetting);
         addChild(chipmunkLayer);
     }    
 }

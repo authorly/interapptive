@@ -1,7 +1,7 @@
 #ifndef interapptive_ChipmunkLayer_h
 #define interapptive_ChipmunkLayer_h
 
-#include "Page.h"
+#include "SharedGlobalData.h"
 #include "CCLayer.h"
 #include "chipmunk.h"
 
@@ -10,7 +10,7 @@
 class ChipmunkLayer : public cocos2d::CCLayer
 {
 public:
-    static ChipmunkLayer* layerWithPage(Page* page);
+    static ChipmunkLayer* layerWithPage(FallingObjectSetting *fallingObjectSetting, StaticObjectSetting *staticObjectSetting);
     ~ChipmunkLayer();
     ChipmunkLayer();
     
@@ -21,15 +21,14 @@ public:
     virtual void didAccelerate(cocos2d::CCAcceleration* pAccelerationValue);
 
 private:
-    bool init(Page *page);
+    bool init(FallingObjectSetting *fallingObjectSetting, StaticObjectSetting *staticObjectSetting);
     void setupSpace();
     void addFloor();
     void addWalls();
     void createStaticPhysicObject();
 private:
     cpSpace *space;
-    // weak ref
-    Page *page;
+
     int totalFallingObjects;
     
     float accX;
@@ -38,6 +37,10 @@ private:
     bool isFallingObjectTouched;
     
     std::vector<cpBody*> staticBodyArray;
+    
+    // weak ref
+    FallingObjectSetting *fallingObjectSetting;
+    StaticObjectSetting *staticObjectSetting;
 };
 
 #endif
