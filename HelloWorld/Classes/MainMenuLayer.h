@@ -18,6 +18,7 @@ public:
     ~MainMenuLayer();
     
     virtual void onEnter();
+    virtual void onExit();
     // DialogProtocol
     virtual void buttonClicked(int index);
     

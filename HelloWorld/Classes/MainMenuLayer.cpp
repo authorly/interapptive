@@ -22,7 +22,6 @@ MainMenuLayer::MainMenuLayer(): mydialog(NULL)
 
 MainMenuLayer::~MainMenuLayer()
 {
-    CC_SAFE_RELEASE_NULL(mydialog);
 }
 
 void MainMenuLayer::init()
@@ -36,7 +35,10 @@ void MainMenuLayer::init()
     {
         SimpleAudioEngine::sharedEngine()->preloadEffect(MainMenu::audio.soundEffect.c_str());
     }    
-    
+}
+
+void MainMenuLayer::onEnter()
+{
     // add sprites
     for (int i = 0; i < MainMenu::sprites.size(); ++i)
     {
@@ -59,21 +61,21 @@ void MainMenuLayer::init()
         MainMenuItemInfo *menuItemInfo = MainMenu::menuItems[j];
         switch (menuItemInfo->mainMenuItemType) {
             case kNormalMainMenuItemType:
-                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(), 
-                                                                             menuItemInfo->tappedStateImage.c_str(), 
-                                                                             this, 
-                                                                             menu_selector(MainMenuLayer::normalMainMenuItemTouched));
+                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(),
+                                                                     menuItemInfo->tappedStateImage.c_str(),
+                                                                     this,
+                                                                     menu_selector(MainMenuLayer::normalMainMenuItemTouched));
                 break;
             case kPlayVideoMainMenuItemType:
-                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(), 
-                                                                     menuItemInfo->tappedStateImage.c_str(), 
-                                                                     this, 
+                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(),
+                                                                     menuItemInfo->tappedStateImage.c_str(),
+                                                                     this,
                                                                      menu_selector(MainMenuLayer::playVideoMainMenuItemTouched));
                 break;
             case kUrlMainMenuItemType:
-                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(), 
-                                                                     menuItemInfo->tappedStateImage.c_str(), 
-                                                                     this, 
+                menuItemImage = CCMenuItemImage::itemFromNormalImage(menuItemInfo->normalStateImage.c_str(),
+                                                                     menuItemInfo->tappedStateImage.c_str(),
+                                                                     this,
                                                                      menu_selector(MainMenuLayer::urlMainMenuItemTouched));
                 break;
                 
@@ -90,9 +92,9 @@ void MainMenuLayer::init()
     }
     
     // add build snow man menu item (830*90)
-    CCMenuItemImage *buildASnowman = CCMenuItemImage::itemFromNormalImage("buildASnowman.png", 
-                                                                         "buildASnowman-hover.png",
-                                                                         this,
+    CCMenuItemImage *buildASnowman = CCMenuItemImage::itemFromNormalImage("buildASnowman.png",
+                                                                          "buildASnowman-hover.png",
+                                                                          this,
                                                                           menu_selector(MainMenuLayer::buildASnowmanMenuItemTouched));
     buildASnowman->setPosition(ccp(830*XSCALE, 90*YSCALE));
     menu->addChild(buildASnowman, 1);
@@ -110,10 +112,7 @@ void MainMenuLayer::init()
     creditsMenu->addChild(creditsItem, 1);
     creditsMenu->setPosition(ccp(0, 0));
     addChild(creditsMenu);
-}
-
-void MainMenuLayer::onEnter()
-{  
+    
     if (MainMenu::audio.backgroundMusic.size() > 0)
     {
         bool musicLoop = MainMenu::audio.backgroundMusicLoops == 0 ? true : false;
@@ -143,6 +142,11 @@ void MainMenuLayer::onEnter()
     }
     
     CCLayer::onEnter();
+}
+
+void MainMenuLayer::onExit()
+{
+    CC_SAFE_RELEASE_NULL(mydialog);
 }
 
 void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
@@ -215,7 +219,6 @@ void MainMenuLayer::buttonClicked(int index)
     if (index == 1)
     {
         PageManager::turnToPage(1, false);
-
     }
 }
 
@@ -230,6 +233,8 @@ void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
     SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
     
     CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, SnowmanGameScene::node(), false));
+    
+    CCTextureCache::sharedTextureCache()->reloadAllTextures();
 }
 
 void MainMenuLayer::creditsItemTouched(cocos2d::CCObject *sender)

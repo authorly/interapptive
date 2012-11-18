@@ -91,7 +91,7 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
         // turn page
         CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
         
-        CCTextureCache::sharedTextureCache()->removeUnusedTextures();
+        CCTextureCache::sharedTextureCache()->removeAllTextures();
     }
 }
 

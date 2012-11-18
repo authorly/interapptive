@@ -239,13 +239,14 @@ void ChipmunkLayer::setupSpace()
 
 void ChipmunkLayer::addFloor()
 {
-    cpBody *staticBody = cpBodyNew(INFINITY, INFINITY);
+    cpBody *floorBody = cpBodyNew(INFINITY, INFINITY);
+    staticBodyArray.push_back(floorBody);
     cpShape *shape;
     
     CCSize wins = CCDirector::sharedDirector()->getWinSize();
     
     // bottom
-    shape = cpSegmentShapeNew(staticBody, cpVectMake(0,0), cpVectMake(wins.width,0), 0.0f);
+    shape = cpSegmentShapeNew(floorBody, cpVectMake(0,0), cpVectMake(wins.width,0), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
     
@@ -259,18 +260,19 @@ void ChipmunkLayer::addFloor()
 
 void ChipmunkLayer::addWalls()
 {
-    cpBody *staticBody = cpBodyNew(INFINITY, INFINITY);
+    cpBody *wallBody = cpBodyNew(INFINITY, INFINITY);
+    staticBodyArray.push_back(wallBody);
     cpShape *shape;
     
     CCSize wins = CCDirector::sharedDirector()->getWinSize();
     
     // left
-    shape = cpSegmentShapeNew(staticBody, cpVectMake(0,0), cpVectMake(0,wins.height), 0.0f);
+    shape = cpSegmentShapeNew(wallBody, cpVectMake(0,0), cpVectMake(0,wins.height), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
     
     // right
-    shape = cpSegmentShapeNew(staticBody, cpVectMake(wins.width,0), cpVectMake(wins.width,wins.height), 0.0f);
+    shape = cpSegmentShapeNew(wallBody, cpVectMake(wins.width,0), cpVectMake(wins.width,wins.height), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
 }

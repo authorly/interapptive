@@ -46,6 +46,7 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
         [moviePlayer release];
     }
     
+    [g_moviePlayer release];
     g_moviePlayer = nil;
     
     // release self
