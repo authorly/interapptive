@@ -22,6 +22,7 @@ public:
     void snowmanPartsMenuTouched(cocos2d::CCObject *sender);
     void shareMenuTouched(cocos2d::CCObject *sender);
     void homeMenuTouched(cocos2d::CCObject *sender);
+    void infoMenuTouched(cocos2d::CCObject *sender);
     
     SCENE_NODE_FUNC(SnowmanGameScene);
     
