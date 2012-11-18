@@ -48,6 +48,8 @@ void PageManager::gotoMainMenu(void)
     scene->addChild(mainMenuLayer);
     
     CCDirector::sharedDirector()->replaceScene(scene);
+    CCTextureCache::sharedTextureCache()->removeUnusedTextures();
+    SimpleAudioEngine::sharedEngine()->end();
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)

@@ -5,6 +5,8 @@
 #include "CCLayer.h"
 #include "chipmunk.h"
 
+#include <vector>
+
 class ChipmunkLayer : public cocos2d::CCLayer
 {
 public:
@@ -34,6 +36,8 @@ private:
     float accY;
     
     bool isFallingObjectTouched;
+    
+    std::vector<cpBody*> staticBodyArray;
 };
 
 #endif

@@ -35,8 +35,16 @@ ChipmunkLayer* ChipmunkLayer::layerWithPage(Page *page)
 
 ChipmunkLayer::~ChipmunkLayer()
 {
+    cpSpaceFreeChildren(space);
     cpSpaceFree(space);
     space = NULL;
+    
+    // free static bodies
+    vector<cpBody*>::iterator iter;
+    for (iter = staticBodyArray.begin(); iter != staticBodyArray.end(); ++iter)
+    {
+        cpBodyFree(*iter);
+    }
 }
 
 ChipmunkLayer::ChipmunkLayer()
@@ -173,6 +181,7 @@ void ChipmunkLayer::createStaticPhysicObject()
         
         // create physics shape
         cpBody *body = GCpShapeCache::sharedShapeCache()->createBodyWithName(fixtureName.c_str(), space, sprite, true);
+        staticBodyArray.push_back(body);
         body->p = cpVectMake((*iter)->position.x, (*iter)->position.y);
         sprite->setPosition((*iter)->position);
     }

@@ -169,7 +169,7 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
     // set the data
     body->data = data;
     
-    // add space to body
+    // add non-static body to space
     if (! isStatic) {
         cpSpaceAddBody(space, body);
     }
