@@ -22,6 +22,7 @@ MainMenuLayer::MainMenuLayer(): mydialog(NULL)
 
 MainMenuLayer::~MainMenuLayer()
 {
+    CC_SAFE_RELEASE_NULL(mydialog);
 }
 
 void MainMenuLayer::init()
@@ -142,11 +143,6 @@ void MainMenuLayer::onEnter()
     }
     
     CCLayer::onEnter();
-}
-
-void MainMenuLayer::onExit()
-{
-    CC_SAFE_RELEASE_NULL(mydialog);
 }
 
 void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
