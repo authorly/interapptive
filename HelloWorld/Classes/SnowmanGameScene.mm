@@ -61,6 +61,9 @@
 #define HOME_MENU_TAG           23
 #define HOME_MENU_ITEM_TAG      24
 
+#define INFO_MENU_TAG           25
+#define INFO_MENU_ITEM_TAG      26
+
 #define HAT_SCALE   0.7
 #define SCARF_SCALE 0.6
 
@@ -107,10 +110,17 @@ bool SnowmanGameScene::init()
   
   
   
-  // backgournd
-    CCSprite *infoIcon = CCSprite::spriteWithFile("info-icon.png");
-    infoIcon->setPosition(INFO_ICON_POSITION);
-    addChild(infoIcon);
+    // info menu
+    CCMenuItem *infoMenuItem = CCMenuItemImage::itemFromNormalImage("info-icon.png",
+                                                                    "info-icon.png",
+                                                                    this,
+                                                                    menu_selector(SnowmanGameScene::infoMenuTouched));
+    infoMenuItem->setPosition(INFO_ICON_POSITION);
+    infoMenuItem->setTag(INFO_MENU_ITEM_TAG);
+    CCMenu *infoMenu = CCMenu::menuWithItems(infoMenuItem, NULL);
+    infoMenu->setTag(INFO_MENU_TAG);
+    infoMenu->setPosition(CCPointZero);
+    addChild(infoMenu);
   
     // arrow menu & add sprite between arrows
     addArrowMenuAndAddSprite();
@@ -237,6 +247,11 @@ void SnowmanGameScene::showSprites(bool isShow)
     CCMenu *homeMenu = (CCMenu*)getChildByTag(HOME_MENU_TAG);
     CCMenuItem *homeMenuItem = (CCMenuItem*)homeMenu->getChildByTag(HOME_MENU_ITEM_TAG);
     homeMenuItem->setIsVisible(isShow);
+    
+    // hide or show info menu
+    CCMenu *infoMenu = (CCMenu*)getChildByTag(INFO_MENU_TAG);
+    CCMenuItem *infoMenuItem = (CCMenuItem*)infoMenu->getChildByTag(INFO_MENU_ITEM_TAG);
+    infoMenuItem->setIsVisible(isShow);
 }
 
 void SnowmanGameScene::addArrowMenuAndAddSprite()
@@ -650,24 +665,49 @@ void SnowmanGameScene::snowmanPartsMenuTouched(cocos2d::CCObject *sender)
 
 void SnowmanGameScene::homeMenuTouched(cocos2d::CCObject *sender)
 {
-    // popup a dialog to select
-    // should release previous dialog if it is exist
-    CC_SAFE_RELEASE_NULL(mydialog);
+    isHomeMenuTouched = true;
     
     // pop a dialog to select 
     vector<string> items;
     items.push_back("Yes");
     items.push_back("No");
     
-    mydialog = new MyDialog();
-    mydialog->initWithItems("Go to main menu?", items, this);
-    mydialog->popUp();  
+    homeMenuDialog = new MyDialog();
+    homeMenuDialog->initWithItems("Go to main menu?", items, this);
+    homeMenuDialog->popUp();  
+}
+
+void SnowmanGameScene::infoMenuTouched(cocos2d::CCObject *sender)
+{
+    isInfoMenuTouched = true;
+    
+    // pop a dialog to select
+    vector<string> items;
+    items.push_back("OK");
+    
+    infoMenuDialog = new MyDialog();
+    infoMenuDialog->initWithItems("stranger in the wood", items, this);
+    infoMenuDialog->popUp();
 }
 
 void SnowmanGameScene::buttonClicked(int index)
 {
-    if (index == 0)
+    if (isHomeMenuTouched)
     {
-        PageManager::gotoMainMenu();
+        if (index == 0)
+        {
+            PageManager::gotoMainMenu();
+        }
+        
+        // release the dialog
+        homeMenuDialog->release();
+        
+        isHomeMenuTouched = false;
+    }
+    
+    if (isInfoMenuTouched)
+    {
+        infoMenuDialog->release();
+        isInfoMenuTouched = false;
     }
 }
