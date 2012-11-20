@@ -127,6 +127,7 @@ GCpShapeCache* GCpShapeCache::sharedShapeCache()
 GCpShapeCache::~GCpShapeCache()
 {
     bodyDefs->release();
+    delete bodyShapesMap;
 }
 
 void GCpShapeCache::purge()
@@ -137,6 +138,7 @@ void GCpShapeCache::purge()
 GCpShapeCache::GCpShapeCache()
 {
     bodyDefs = new CCDictionary<std::string, CCObject*>();
+    bodyShapesMap = new map< cpBody*, vector<cpShape*> >();
 }
 
 CCPoint GCpShapeCache::anchorPointForShape(const char *shape)
@@ -169,10 +171,13 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
     // set the data
     body->data = data;
     
-    // add space to body
+    // add non-static body to space
     if (! isStatic) {
         cpSpaceAddBody(space, body);
     }
+    
+    // add shapes to a body in map
+    vector<cpShape*> shapesToBody;
     
     // iterate over fixtures
     CCMutableArray<GFixtureData*>::CCMutableArrayIterator iter;
@@ -193,6 +198,8 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
             
             // add shape to space
             cpSpaceAddShape(space, shape);
+            
+            shapesToBody.push_back(shape);
         }
         else {
             // iterate over polygons
@@ -214,9 +221,13 @@ cpBody* GCpShapeCache::createBodyWithName(const char *name, cpSpace *space, void
                 
                 // add shape to space
                 cpSpaceAddShape(space, shape);
+                
+                shapesToBody.push_back(shape);
             }
         }
     }
+    
+    bodyShapesMap->insert(pair< cpBody*, vector<cpShape*> >(body, shapesToBody));
     
     return body;
 }
@@ -404,4 +415,14 @@ const char* GCpShapeCache::randomShapeName()
 {
     int randIndex = rand() % bodyDefs->count();
     return bodyDefs->allKeys()[randIndex].c_str();
+}
+
+const vector<cpShape*>& GCpShapeCache::getShapes(cpBody *body)
+{
+    return bodyShapesMap->at(body);
+}
+
+map< cpBody*, vector<cpShape*> >* GCpShapeCache::getBodyShapesMap()
+{
+    return bodyShapesMap;
 }

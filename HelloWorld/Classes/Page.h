@@ -2,34 +2,11 @@
 #define __PAGE_H__
 
 #include "cocos2d.h"
+#include "SharedGlobalData.h"
 
 #include <string>
 #include <vector>
 #include <map>
-
-typedef struct fallingPhysicsSettings{
-    bool    draggble;
-    int     maxNumber;
-    int     speedX;
-    int     speedY;
-    int     spinSpeed;
-    float   slowDownSpeed;
-    bool    hasFloor;
-    bool    hasWalls;
-    cocos2d::CCPoint    dropBetweenPoints;
-    std::string         filename;
-    std::string         plistfilename;
-}FallingObjectSetting;
-
-typedef struct staticObjectInfo{
-    std::string         filename;
-    cocos2d::CCPoint    position;
-} StaticObjectInfo;
-
-typedef struct staticPhysicsSettings{
-    std::string                     plistfilename;
-    std::vector<StaticObjectInfo*>   staticObjects;
-}StaticObjectSetting;
 
 typedef struct settings
 {
@@ -48,7 +25,7 @@ typedef struct settings
     // falling physics object setting
     FallingObjectSetting fallingObjectSetting;
     // static physics object setting
-    StaticObjectSetting staicObjectSetting;
+    StaticObjectSetting staticObjectSetting;
 } Setting;
 
 // a line of a paragraph

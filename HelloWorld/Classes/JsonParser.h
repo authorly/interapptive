@@ -20,6 +20,7 @@ private:
     static void parseMenuItems(Json::Value &value);
     static void parseMainMenuAPI(Json::Value &value);
     static void parseMainMenuRunActionsOnEnter(Json::Value &value);
+    static void parseMainMenuFallingObjectSetting(Json::Value &value);
     
     // parse pages
     
