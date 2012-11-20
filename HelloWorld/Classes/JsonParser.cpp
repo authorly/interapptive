@@ -89,6 +89,9 @@ void JsonParser::parseMainMenu(Json::Value &root)
     // parse runActionsOnEnter
     Json::Value runActionsOnEnterJson = mainMenu["runActionsOnEnter"];
     parseMainMenuRunActionsOnEnter(runActionsOnEnterJson);
+    
+    // parse falling physics setting
+    parseMainMenuFallingObjectSetting(mainMenu);
 }
 
 void JsonParser::parseMainMenuAodio(Json::Value &value)
@@ -201,6 +204,24 @@ void JsonParser::parseMainMenuRunActionsOnEnter(Json::Value &value)
         
         MainMenu::actionsToRunOnEnter.push_back(actionToRun);
     }
+}
+
+void JsonParser::parseMainMenuFallingObjectSetting(Json::Value &value)
+{
+    MainMenu::fallingObjectSetting = FallingObjectSetting();
+    Json::Value fallingPhysicsSettingJson = value["fallingPhysicsSettings"];
+    MainMenu::fallingObjectSetting.draggble = fallingPhysicsSettingJson["draggable"].asBool();
+    MainMenu::fallingObjectSetting.maxNumber = fallingPhysicsSettingJson["maxNumber"].asInt();
+    MainMenu::fallingObjectSetting.speedX = fallingPhysicsSettingJson["sppedX"].asDouble() * XSCALE;
+    MainMenu::fallingObjectSetting.speedY = fallingPhysicsSettingJson["speedY"].asDouble() * YSCALE;
+    MainMenu::fallingObjectSetting.slowDownSpeed = fallingPhysicsSettingJson["slowDownSpeed"].asDouble() * XSCALE;
+    MainMenu::fallingObjectSetting.hasFloor = fallingPhysicsSettingJson["hasFloor"].asBool();
+    MainMenu::fallingObjectSetting.hasWalls = fallingPhysicsSettingJson["hasWalls"].asBool();
+    int x = 0;
+    int y = 1;
+    MainMenu::fallingObjectSetting.dropBetweenPoints.x = fallingPhysicsSettingJson["dropBetweenPoints"][x].asDouble() * XSCALE;
+    MainMenu::fallingObjectSetting.dropBetweenPoints.y = fallingPhysicsSettingJson["dropBetweenPoints"][y].asDouble() * YSCALE;
+    MainMenu::fallingObjectSetting.plistfilename = fallingPhysicsSettingJson["plistfilename"].asCString();
 }
 
 void JsonParser::parsePages(Json::Value &root)
@@ -331,7 +352,6 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
             
             page->settings.staticObjectSetting.staticObjects.push_back(info);
         }
-        
     }
 }
 

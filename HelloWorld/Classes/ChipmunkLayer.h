@@ -19,6 +19,8 @@ public:
     virtual void onEnter();
     virtual void onExit();
     virtual void didAccelerate(cocos2d::CCAcceleration* pAccelerationValue);
+    
+    std::vector<cpBody*>& getBodysToBeFreeArray();
 
 private:
     bool init(FallingObjectSetting *fallingObjectSetting, StaticObjectSetting *staticObjectSetting);
@@ -26,6 +28,7 @@ private:
     void addFloor();
     void addWalls();
     void createStaticPhysicObject();
+    void freeBodies();
 private:
     cpSpace *space;
 
@@ -37,6 +40,7 @@ private:
     bool isFallingObjectTouched;
     
     std::vector<cpBody*> staticBodyArray;
+    std::vector<cpBody*> bodyTobeFreeArray;
     
     // weak ref
     FallingObjectSetting *fallingObjectSetting;

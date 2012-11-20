@@ -20,6 +20,9 @@ static void initChipmunk()
     }
 }
 
+// used in eachBody()
+static ChipmunkLayer* currentObj = NULL;
+
 ChipmunkLayer* ChipmunkLayer::layerWithPage(FallingObjectSetting *fallingObjectSetting, StaticObjectSetting *staticObjectSetting)
 {
     ChipmunkLayer *ret = new ChipmunkLayer();
@@ -117,14 +120,17 @@ void ChipmunkLayer::newFallingObject(float dt)
     sprintf(tempName, "%s.png", name);
     
     // don't create static object
-    string strName = tempName;    
-    vector<StaticObjectInfo*> &staticObjectInfos = staticObjectSetting->staticObjects;
-    vector<StaticObjectInfo*>::iterator iter;
-    for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter) 
+    if (staticObjectSetting)
     {
-        if (strName.compare((*iter)->filename.c_str()) == 0)
+        string strName = tempName;
+        vector<StaticObjectInfo*> &staticObjectInfos = staticObjectSetting->staticObjects;
+        vector<StaticObjectInfo*>::iterator iter;
+        for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter)
         {
-            return;
+            if (strName.compare((*iter)->filename.c_str()) == 0)
+            {
+                return;
+            }
         }
     }
     
@@ -189,7 +195,14 @@ void ChipmunkLayer::createStaticPhysicObject()
 }
 
 static void eachBody(cpBody *body, void *data)
-{    
+{
+    if (body->p.y < 0)
+    {
+        ChipmunkLayer *cl = (ChipmunkLayer*)data;
+        cl->getBodysToBeFreeArray().push_back(body);
+        return;
+    }
+    
 	CCSprite *sprite = (CCSprite*)body->data;
 	if( sprite)
     {
@@ -224,7 +237,47 @@ void ChipmunkLayer::update(float delta)
     {
 		cpSpaceStep(space, dt);
 	}
-    cpSpaceEachBody(space, &eachBody, NULL);
+    cpSpaceEachBody(space, &eachBody, this);
+    
+    // free bodies that go through the floor
+    freeBodies();
+}
+
+vector<cpBody*>& ChipmunkLayer::getBodysToBeFreeArray()
+{
+    return bodyTobeFreeArray;
+}
+
+void ChipmunkLayer::freeBodies()
+{
+    vector<cpBody*>::iterator iter;
+    for (iter = bodyTobeFreeArray.begin(); iter != bodyTobeFreeArray.end(); ++iter)
+    {
+        cpBody* body = *iter;
+        
+        // remove shapes that belong to a body from cpSpace
+        vector<cpShape*> shapes = GCpShapeCache::sharedShapeCache()->getShapes(body);
+        vector<cpShape*>::iterator iter2;
+        for (iter2 = shapes.begin(); iter2 != shapes.end(); ++iter2)
+        {
+            cpSpaceRemoveShape(space, *iter2);
+            cpShapeFree(*iter2);
+        }
+        
+        // remove body from cpSpace
+        cpSpaceRemoveBody(space, body);
+        
+        // remove body from map
+        GCpShapeCache::sharedShapeCache()->getBodyShapesMap()->erase(body);
+        
+        // remove sprite
+        ((CCSprite*)body->data)->removeFromParentAndCleanup(true);
+        
+        // free body
+        cpBodyFree(body); 
+    }
+    
+    bodyTobeFreeArray.clear();
 }
 
 void ChipmunkLayer::setupSpace()

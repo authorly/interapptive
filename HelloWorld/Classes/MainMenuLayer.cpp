@@ -7,6 +7,7 @@
 #include "MyPageTurn.h"
 #include "Configurations.h"
 #include "CreditsLayer.h"
+#include "ChipmunkLayer.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -23,6 +24,7 @@ MainMenuLayer::MainMenuLayer(): mydialog(NULL)
 MainMenuLayer::~MainMenuLayer()
 {
     CC_SAFE_RELEASE_NULL(mydialog);
+    
 }
 
 void MainMenuLayer::init()
@@ -35,7 +37,7 @@ void MainMenuLayer::init()
     if (MainMenu::audio.soundEffect.size() > 0)
     {
         SimpleAudioEngine::sharedEngine()->preloadEffect(MainMenu::audio.soundEffect.c_str());
-    }    
+    }
 }
 
 void MainMenuLayer::onEnter()
@@ -141,6 +143,10 @@ void MainMenuLayer::onEnter()
         // run action
         sprite->runAction(fadeIn);
     }
+    
+    // chipmunk layer
+    ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&MainMenu::fallingObjectSetting, NULL);
+    addChild(chipmunkLayer);
     
     CCLayer::onEnter();
 }
