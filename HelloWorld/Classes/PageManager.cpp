@@ -48,6 +48,8 @@ void PageManager::gotoMainMenu(void)
     scene->addChild(mainMenuLayer);
     
     CCDirector::sharedDirector()->replaceScene(scene);
+    CCTextureCache::sharedTextureCache()->removeUnusedTextures();
+    SimpleAudioEngine::sharedEngine()->end();
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)
@@ -89,7 +91,7 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
         // turn page
         CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
         
-        CCTextureCache::sharedTextureCache()->removeUnusedTextures();
+        CCTextureCache::sharedTextureCache()->removeAllTextures();
     }
 }
 

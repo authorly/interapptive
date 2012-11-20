@@ -5,6 +5,7 @@
 #include "cocos2d.h"
 #include "chipmunk.h"
 #include <string>
+#include <map>
 
 extern cpVect cpVectMake(float x, float y);
 
@@ -18,9 +19,12 @@ public:
     cpBody* createBodyWithName(const char* name, cpSpace* space, void* data, bool isStatic = false);
     cocos2d::CCPoint anchorPointForShape(const char* shape);
     const char* randomShapeName();
+    const std::vector<cpShape*>& getShapes(cpBody *body);
+    std::map< cpBody*, std::vector<cpShape*> >* getBodyShapesMap();
     void purge();
 private:
     cocos2d::CCDictionary<std::string, CCObject*> *bodyDefs;
+    std::map< cpBody*, std::vector<cpShape*> > *bodyShapesMap;
 };
 
 #endif

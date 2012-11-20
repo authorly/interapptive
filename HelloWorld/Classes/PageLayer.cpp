@@ -67,18 +67,18 @@ void PageLayer::init(Page *page)
         SimpleAudioEngine::sharedEngine()->preloadEffect(page->paragraphs[i]->voiceAudioFile.c_str());
     }
     
-	createSprites();
-    createPhysicsLayer();
-	createParagraph(0);
-    
     this->delayOfAnimation = this->calculateDelayTimeOnEnter();
-    
-    // add menu item to go to main menu
-    createMainMenuItem();
 }
 
 void PageLayer::onEnter()
 {
+    createSprites();
+    createPhysicsLayer();
+	createParagraph(0);
+    
+    // add menu item to go to main menu
+    createMainMenuItem();
+    
     addTouchNode();
     
     setIsTouchEnabled(true);
@@ -524,7 +524,8 @@ void PageLayer::createPhysicsLayer()
 {
     if (page->settings.fallingObjectSetting.plistfilename.size() > 0)
     {
-        ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(page);
+        ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&page->settings.fallingObjectSetting,
+                                                                    &page->settings.staticObjectSetting);
         addChild(chipmunkLayer);
     }    
 }

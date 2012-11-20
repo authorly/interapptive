@@ -1,6 +1,11 @@
 #ifndef interapptive_SharedGlobalData_h
 #define interapptive_SharedGlobalData_h
 
+#include "cocos2d.h"
+
+#include <vector>
+#include <string>
+
 /** This class is used to record global data
  */
 
@@ -29,5 +34,29 @@ public:
     // max value of xScale and yScale
     float maxScale;
 };
+
+typedef struct fallingPhysicsSettings{
+    bool    draggble;
+    int     maxNumber;
+    int     speedX;
+    int     speedY;
+    int     spinSpeed;
+    float   slowDownSpeed;
+    bool    hasFloor;
+    bool    hasWalls;
+    cocos2d::CCPoint    dropBetweenPoints;
+    std::string         filename;
+    std::string         plistfilename;
+}FallingObjectSetting;
+
+typedef struct staticObjectInfo{
+    std::string         filename;
+    cocos2d::CCPoint    position;
+} StaticObjectInfo;
+
+typedef struct staticPhysicsSettings{
+    std::string                     plistfilename;
+    std::vector<StaticObjectInfo*>   staticObjects;
+}StaticObjectSetting;
 
 #endif

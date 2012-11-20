@@ -43,7 +43,7 @@ Page::~Page()
     }
     
     // free static object information
-    vector<StaticObjectInfo*> &staticObjectInfos = settings.staicObjectSetting.staticObjects;
+    vector<StaticObjectInfo*> &staticObjectInfos = settings.staticObjectSetting.staticObjects;
     vector<StaticObjectInfo*>::iterator iter;
     for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter) 
     {

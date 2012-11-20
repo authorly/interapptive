@@ -20,10 +20,13 @@ static void initChipmunk()
     }
 }
 
-ChipmunkLayer* ChipmunkLayer::layerWithPage(Page *page)
+// used in eachBody()
+static ChipmunkLayer* currentObj = NULL;
+
+ChipmunkLayer* ChipmunkLayer::layerWithPage(FallingObjectSetting *fallingObjectSetting, StaticObjectSetting *staticObjectSetting)
 {
     ChipmunkLayer *ret = new ChipmunkLayer();
-    if (ret && ret->init(page))
+    if (ret && ret->init(fallingObjectSetting, staticObjectSetting))
     {
         ret->autorelease();
         return ret;
@@ -35,45 +38,54 @@ ChipmunkLayer* ChipmunkLayer::layerWithPage(Page *page)
 
 ChipmunkLayer::~ChipmunkLayer()
 {
+    cpSpaceFreeChildren(space);
     cpSpaceFree(space);
     space = NULL;
+    
+    // free static bodies
+    vector<cpBody*>::iterator iter;
+    for (iter = staticBodyArray.begin(); iter != staticBodyArray.end(); ++iter)
+    {
+        cpBodyFree(*iter);
+    }
 }
 
 ChipmunkLayer::ChipmunkLayer()
 : totalFallingObjects(0)
-, page(NULL)
 , space(NULL)
 , accX(0.f)
 , accY(0.f)
 , isFallingObjectTouched(false)
 {}
 
-bool ChipmunkLayer::init(Page *page)
+bool ChipmunkLayer::init(FallingObjectSetting *fallingObjectSetting, StaticObjectSetting *staticObjectSetting)
 {
     this->setIsAccelerometerEnabled(true);
     
-    this->page = page;
+    this->fallingObjectSetting = fallingObjectSetting;
+    this->staticObjectSetting = staticObjectSetting;
     
     initChipmunk();
     setupSpace();
     
-    FallingObjectSetting &fallingObjectSetting = page->settings.fallingObjectSetting;
-    
-    if (fallingObjectSetting.hasFloor)
+    if (fallingObjectSetting->hasFloor)
     {
         addFloor();
     }
     
-    if (fallingObjectSetting.hasWalls)
+    if (fallingObjectSetting->hasWalls)
     {
         addWalls();
     }
     
-    GCpShapeCache::sharedShapeCache()->addShapesWithFile(fallingObjectSetting.plistfilename.c_str());
-    GCpShapeCache::sharedShapeCache()->addShapesWithFile(page->settings.staicObjectSetting.plistfilename.c_str());
-    
-    // add static object
-    createStaticPhysicObject();
+    GCpShapeCache::sharedShapeCache()->addShapesWithFile(fallingObjectSetting->plistfilename.c_str());
+    if (staticObjectSetting)
+    {
+        GCpShapeCache::sharedShapeCache()->addShapesWithFile(staticObjectSetting->plistfilename.c_str());
+        
+        // add static object
+        createStaticPhysicObject();
+    }
     
     return true;
 }
@@ -87,7 +99,7 @@ void ChipmunkLayer::onExit()
 
 void ChipmunkLayer::onEnter()
 {
-    schedule(schedule_selector(ChipmunkLayer::newFallingObject), page->settings.fallingObjectSetting.slowDownSpeed);
+    schedule(schedule_selector(ChipmunkLayer::newFallingObject), fallingObjectSetting->slowDownSpeed);
     scheduleUpdate();
     CCLayer::onEnter();
 }
@@ -101,21 +113,24 @@ void ChipmunkLayer::didAccelerate(cocos2d::CCAcceleration* pAccelerationValue)
 void ChipmunkLayer::newFallingObject(float dt)
 {
     const char *name = GCpShapeCache::sharedShapeCache()->randomShapeName();
-    bool draggable = page->settings.fallingObjectSetting.draggble;
+    bool draggable = fallingObjectSetting->draggble;
   
     // create and add sprite
     char tempName[50];
     sprintf(tempName, "%s.png", name);
     
     // don't create static object
-    string strName = tempName;    
-    vector<StaticObjectInfo*> staticObjectInfos = page->settings.staicObjectSetting.staticObjects;
-    vector<StaticObjectInfo*>::iterator iter;
-    for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter) 
+    if (staticObjectSetting)
     {
-        if (strName.compare((*iter)->filename.c_str()) == 0)
+        string strName = tempName;
+        vector<StaticObjectInfo*> &staticObjectInfos = staticObjectSetting->staticObjects;
+        vector<StaticObjectInfo*>::iterator iter;
+        for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter)
         {
-            return;
+            if (strName.compare((*iter)->filename.c_str()) == 0)
+            {
+                return;
+            }
         }
     }
     
@@ -150,7 +165,7 @@ void ChipmunkLayer::newFallingObject(float dt)
     }
     
     totalFallingObjects++;
-    if (totalFallingObjects >= page->settings.fallingObjectSetting.maxNumber)
+    if (fallingObjectSetting->maxNumber != 0 &&totalFallingObjects >= fallingObjectSetting->maxNumber)
     {
         unschedule(schedule_selector(ChipmunkLayer::newFallingObject));
     }
@@ -158,7 +173,7 @@ void ChipmunkLayer::newFallingObject(float dt)
 
 void ChipmunkLayer::createStaticPhysicObject()
 {
-    vector<StaticObjectInfo*> staticObjectInfos = page->settings.staicObjectSetting.staticObjects;
+    vector<StaticObjectInfo*> &staticObjectInfos = staticObjectSetting->staticObjects;
     vector<StaticObjectInfo*>::iterator iter;
     for (iter = staticObjectInfos.begin(); iter != staticObjectInfos.end(); ++iter) 
     {
@@ -173,13 +188,21 @@ void ChipmunkLayer::createStaticPhysicObject()
         
         // create physics shape
         cpBody *body = GCpShapeCache::sharedShapeCache()->createBodyWithName(fixtureName.c_str(), space, sprite, true);
+        staticBodyArray.push_back(body);
         body->p = cpVectMake((*iter)->position.x, (*iter)->position.y);
         sprite->setPosition((*iter)->position);
     }
 }
 
 static void eachBody(cpBody *body, void *data)
-{    
+{
+    if (body->p.y < 0)
+    {
+        ChipmunkLayer *cl = (ChipmunkLayer*)data;
+        cl->getBodysToBeFreeArray().push_back(body);
+        return;
+    }
+    
 	CCSprite *sprite = (CCSprite*)body->data;
 	if( sprite)
     {
@@ -203,18 +226,58 @@ void ChipmunkLayer::update(float delta)
     int steps = 2;
 	float dt = delta/(float)steps;
     
-    float gravityY = accY * page->settings.fallingObjectSetting.speedY;
+    float gravityY = accY * fallingObjectSetting->speedY;
     if (gravityY == 0)
     {
         gravityY = DEFAULT_SPEED_Y;
     }
-    space->gravity = cpVectMake(accX * page->settings.fallingObjectSetting.speedX, gravityY);
+    space->gravity = cpVectMake(accX * fallingObjectSetting->speedX, gravityY);
 	
 	for(int i=0; i<steps; i++)
     {
 		cpSpaceStep(space, dt);
 	}
-    cpSpaceEachBody(space, &eachBody, NULL);
+    cpSpaceEachBody(space, &eachBody, this);
+    
+    // free bodies that go through the floor
+    freeBodies();
+}
+
+vector<cpBody*>& ChipmunkLayer::getBodysToBeFreeArray()
+{
+    return bodyTobeFreeArray;
+}
+
+void ChipmunkLayer::freeBodies()
+{
+    vector<cpBody*>::iterator iter;
+    for (iter = bodyTobeFreeArray.begin(); iter != bodyTobeFreeArray.end(); ++iter)
+    {
+        cpBody* body = *iter;
+        
+        // remove shapes that belong to a body from cpSpace
+        vector<cpShape*> shapes = GCpShapeCache::sharedShapeCache()->getShapes(body);
+        vector<cpShape*>::iterator iter2;
+        for (iter2 = shapes.begin(); iter2 != shapes.end(); ++iter2)
+        {
+            cpSpaceRemoveShape(space, *iter2);
+            cpShapeFree(*iter2);
+        }
+        
+        // remove body from cpSpace
+        cpSpaceRemoveBody(space, body);
+        
+        // remove body from map
+        GCpShapeCache::sharedShapeCache()->getBodyShapesMap()->erase(body);
+        
+        // remove sprite
+        ((CCSprite*)body->data)->removeFromParentAndCleanup(true);
+        
+        // free body
+        cpBodyFree(body); 
+    }
+    
+    bodyTobeFreeArray.clear();
 }
 
 void ChipmunkLayer::setupSpace()
@@ -230,13 +293,14 @@ void ChipmunkLayer::setupSpace()
 
 void ChipmunkLayer::addFloor()
 {
-    cpBody *staticBody = cpBodyNew(INFINITY, INFINITY);
+    cpBody *floorBody = cpBodyNew(INFINITY, INFINITY);
+    staticBodyArray.push_back(floorBody);
     cpShape *shape;
     
     CCSize wins = CCDirector::sharedDirector()->getWinSize();
     
     // bottom
-    shape = cpSegmentShapeNew(staticBody, cpVectMake(0,0), cpVectMake(wins.width,0), 0.0f);
+    shape = cpSegmentShapeNew(floorBody, cpVectMake(0,0), cpVectMake(wins.width,0), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
     
@@ -250,18 +314,19 @@ void ChipmunkLayer::addFloor()
 
 void ChipmunkLayer::addWalls()
 {
-    cpBody *staticBody = cpBodyNew(INFINITY, INFINITY);
+    cpBody *wallBody = cpBodyNew(INFINITY, INFINITY);
+    staticBodyArray.push_back(wallBody);
     cpShape *shape;
     
     CCSize wins = CCDirector::sharedDirector()->getWinSize();
     
     // left
-    shape = cpSegmentShapeNew(staticBody, cpVectMake(0,0), cpVectMake(0,wins.height), 0.0f);
+    shape = cpSegmentShapeNew(wallBody, cpVectMake(0,0), cpVectMake(0,wins.height), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
     
     // right
-    shape = cpSegmentShapeNew(staticBody, cpVectMake(wins.width,0), cpVectMake(wins.width,wins.height), 0.0f);
+    shape = cpSegmentShapeNew(wallBody, cpVectMake(wins.width,0), cpVectMake(wins.width,wins.height), 0.0f);
     shape->e = 1.0f; shape->u = 1.0f;
     cpSpaceAddStaticShape(space, shape);
 }

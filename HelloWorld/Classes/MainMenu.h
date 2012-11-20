@@ -2,6 +2,7 @@
 #define interapptive_MainMenu_h
 
 #include "cocos2d.h"
+#include "SharedGlobalData.h"
 
 #include <string>
 #include <vector>
@@ -72,6 +73,8 @@ public:
     static std::vector<ActionToRunOnEnter*> actionsToRunOnEnter;
     // CCFadeIn
     static std::vector<ActionFadeIn*> actionsFadeIn;
+    // Falling object setting
+    static FallingObjectSetting fallingObjectSetting;
 };
 
 #endif

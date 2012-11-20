@@ -12,6 +12,7 @@ vector<MainMenuItemInfo*> MainMenu::menuItems = vector<MainMenuItemInfo*>();
 vector<ActionToRunOnEnter*> MainMenu::actionsToRunOnEnter = vector<ActionToRunOnEnter*>();
 // CCFadeIn
 vector<ActionFadeIn*> MainMenu::actionsFadeIn = vector<ActionFadeIn*>();
+FallingObjectSetting MainMenu::fallingObjectSetting = FallingObjectSetting();
 
 MainMenuSpriteInfo* MainMenu::getSpriteInfoByTag(int spriteTag)
 {
