@@ -39,6 +39,8 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
         
         moviePlayer.fullscreen = false;
         [moviePlayer stop];
+      
+        // Caused view to freeze up
         //[moviePlayer.view removeFromSuperview];
     }
     else 
