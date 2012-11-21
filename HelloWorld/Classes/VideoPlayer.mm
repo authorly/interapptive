@@ -38,6 +38,7 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
                                                       object:moviePlayer];
         
         moviePlayer.fullscreen = false;
+        [moviePlayer stop];
         //[moviePlayer.view removeFromSuperview];
     }
     else 
