@@ -411,6 +411,11 @@ void PageLayer::swipeLeft()
 
 void PageLayer::swipeRight()
 {
+    if (page->settings.number == 1)
+    {
+        return;
+    }
+    
     stopHighlightEffect();
     
     if (currentIndexOfParagraph == 0)
