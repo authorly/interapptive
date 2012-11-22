@@ -67,17 +67,15 @@ Page* PageManager::getPageByPageNumber(int pageNumber)
 
 void PageManager::turnToPage(int pageNumber, bool backWards)
 {
-    // stop back ground music
     if (SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying())
     {
+        // stop background music
         SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
     }
-
+    
     CCScene *scene = createSceneByPageNumber(pageNumber);
     if (scene)
     {
-        SimpleAudioEngine::sharedEngine()->end();
-        
         // play effect
         if (backWards)
         {
