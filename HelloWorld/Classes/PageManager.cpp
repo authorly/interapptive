@@ -49,7 +49,8 @@ void PageManager::gotoMainMenu(void)
     
     CCDirector::sharedDirector()->replaceScene(scene);
     CCTextureCache::sharedTextureCache()->removeUnusedTextures();
-    SimpleAudioEngine::sharedEngine()->end();
+    // Causes crash
+    // SimpleAudioEngine::sharedEngine()->end();
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)

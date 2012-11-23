@@ -9,41 +9,6 @@
 	</dict>
 	<key>bodies</key>
 	<dict>
-		<key>snowflake-extrasmall</key>
-		<dict>
-			<key>anchorpoint</key>
-			<string>{ 0.50000,0.50000 }</string>
-			<key>fixtures</key>
-			<array>
-				<dict>
-					<key>mass</key>
-					<real>9999</real>
-					<key>elasticity</key>
-					<real>0</real>
-					<key>friction</key>
-					<real>1</real>
-					<key>surface_velocity</key>
-					<string>{ 0.00000,0.00000 }</string>
-					<key>layers</key>
-					<integer>7</integer>
-					<key>group</key>
-					<integer>0</integer>
-					<key>collision_type</key>
-					<integer>0</integer>
-					<key>isSensor</key>
-					<false/>
-					<key>fixture_type</key>
-					<string>CIRCLE</string>
-					<key>circle</key>
-					<dict>
-            <key>radius</key> 
-            <real>12</real>
-            <key>position</key> 
-            <string>{ 17.000,15.000 }</string>
-          </dict>
-				</dict>
-			</array>
-		</dict>
 		<key>snowflake-extraextrasmall</key>
 		<dict>
 			<key>anchorpoint</key>
