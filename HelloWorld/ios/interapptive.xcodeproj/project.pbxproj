@@ -249,6 +249,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		3A0669E81660192A00A325C0 /* background0030.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A0669E71660192A00A325C0 /* background0030.jpg */; };
 		3A140986165F25F200716902 /* snowman-game-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A140985165F25F200716902 /* snowman-game-bg.jpg */; };
 		3A14098A165F355A00716902 /* snowflake-extraextraextrasmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A140987165F355A00716902 /* snowflake-extraextraextrasmall.png */; };
 		3A14098B165F355A00716902 /* snowflake-extraextrasmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A140988165F355A00716902 /* snowflake-extraextrasmall.png */; };
@@ -259,7 +260,6 @@
 		3A1CCF021555E06D000EEC29 /* background0000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCECE1555E06C000EEC29 /* background0000.jpg */; };
 		3A1CCF031555E06D000EEC29 /* background0010.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCECF1555E06C000EEC29 /* background0010.jpg */; };
 		3A1CCF041555E06D000EEC29 /* background0020.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCED01555E06C000EEC29 /* background0020.jpg */; };
-		3A1CCF051555E06D000EEC29 /* background0030.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCED11555E06C000EEC29 /* background0030.jpg */; };
 		3A1CCF061555E06D000EEC29 /* background0040.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCED21555E06C000EEC29 /* background0040.jpg */; };
 		3A1CCF071555E06D000EEC29 /* background0050.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCED31555E06C000EEC29 /* background0050.jpg */; };
 		3A1CCF081555E06D000EEC29 /* background0060.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCED41555E06C000EEC29 /* background0060.jpg */; };
@@ -1104,6 +1104,7 @@
 		1D6058910D05DD3D006BFB54 /* interapptive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = interapptive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3A0669E71660192A00A325C0 /* background0030.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0030.jpg; sourceTree = "<group>"; };
 		3A140985165F25F200716902 /* snowman-game-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snowman-game-bg.jpg"; sourceTree = "<group>"; };
 		3A140987165F355A00716902 /* snowflake-extraextraextrasmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-extraextraextrasmall.png"; sourceTree = "<group>"; };
 		3A140988165F355A00716902 /* snowflake-extraextrasmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-extraextrasmall.png"; sourceTree = "<group>"; };
@@ -1114,7 +1115,6 @@
 		3A1CCECE1555E06C000EEC29 /* background0000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0000.jpg; sourceTree = "<group>"; };
 		3A1CCECF1555E06C000EEC29 /* background0010.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0010.jpg; sourceTree = "<group>"; };
 		3A1CCED01555E06C000EEC29 /* background0020.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0020.jpg; sourceTree = "<group>"; };
-		3A1CCED11555E06C000EEC29 /* background0030.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0030.jpg; sourceTree = "<group>"; };
 		3A1CCED21555E06C000EEC29 /* background0040.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0040.jpg; sourceTree = "<group>"; };
 		3A1CCED31555E06C000EEC29 /* background0050.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0050.jpg; sourceTree = "<group>"; };
 		3A1CCED41555E06C000EEC29 /* background0060.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background0060.jpg; sourceTree = "<group>"; };
@@ -2063,8 +2063,8 @@
 				1585A15B152DC5C0003E4376 /* background001.png */,
 				3A1CCECF1555E06C000EEC29 /* background0010.jpg */,
 				3A1CCED01555E06C000EEC29 /* background0020.jpg */,
-				3A1CCED11555E06C000EEC29 /* background0030.jpg */,
 				3A1CCED21555E06C000EEC29 /* background0040.jpg */,
+				3A0669E71660192A00A325C0 /* background0030.jpg */,
 				3A1CCED31555E06C000EEC29 /* background0050.jpg */,
 				3A1CCED41555E06C000EEC29 /* background0060.jpg */,
 				3A1CCED51555E06C000EEC29 /* background0070.jpg */,
@@ -2609,7 +2609,6 @@
 				3A1CCF021555E06D000EEC29 /* background0000.jpg in Resources */,
 				3A1CCF031555E06D000EEC29 /* background0010.jpg in Resources */,
 				3A1CCF041555E06D000EEC29 /* background0020.jpg in Resources */,
-				3A1CCF051555E06D000EEC29 /* background0030.jpg in Resources */,
 				3A1CCF061555E06D000EEC29 /* background0040.jpg in Resources */,
 				3A1CCF071555E06D000EEC29 /* background0050.jpg in Resources */,
 				3A1CCF081555E06D000EEC29 /* background0060.jpg in Resources */,
@@ -2798,6 +2797,7 @@
 				3A93AA88165FBCC300855A80 /* snowman-game-select-item.png in Resources */,
 				3A93AA89165FBCC300855A80 /* snowman-game-touch-to-add.png in Resources */,
 				3A93AA8B165FD52F00855A80 /* background0320.jpg in Resources */,
+				3A0669E81660192A00A325C0 /* background0030.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
