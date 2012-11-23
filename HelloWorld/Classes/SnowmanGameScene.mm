@@ -717,7 +717,7 @@ void SnowmanGameScene::infoMenuTouched(cocos2d::CCObject *sender)
     items.push_back("OK");
     
     infoMenuDialog = new MyDialog();
-    infoMenuDialog->initWithItems("STEP 1\nUse arrows\nto select  an item\n\nSTEP 2\nTouch the item to add it\nto your Snowman\n\nSTEP 3\nChange the category\nby touching a new one\n(below the arrows)", items, this);
+    infoMenuDialog->initWithItems("STEP 1\nUse arrows\nto switch items\n\nSTEP 2\nTouch the item to add it\n\nSTEP 3\nChange item types by\ntouching one (below arrows)", items, this);
     infoMenuDialog->popUp();
 }
 
