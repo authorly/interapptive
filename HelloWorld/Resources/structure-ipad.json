@@ -4,7 +4,7 @@
             "forward": "page-flip-sound.mp3",
             "backward": "page-flip-sound.mp3"
         },
-        "pageFlipTransitionDuration": 0.25,
+        "pageFlipTransitionDuration": 0.35,
         "paragraphTextFadeDuration": 0.4,
         "autoplayPageTurnDelay": 0.2,
         "autoplayParagraphDelay": 0.1,
@@ -3846,7 +3846,7 @@
                                      0,
                                      0
                                      ],
-              "fontSize": 20
+              "fontSize": 24
               },
               "text": {
               "paragraphs": [
@@ -3859,9 +3859,49 @@
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": " ",
-                                             "yOffset": 645,
-                                             "xOffset": 550
+                                             "text": "\"Stranger in the Woods",
+                                             "yOffset": 605,
+                                             "xOffset": 512
+                                             },
+                                             {
+                                             "text": "Produced by Carl R. Sams II Photography, © 2012. All rights reserved. Based on the book Stranger in the Woods",
+                                             "yOffset": 580,
+                                             "xOffset": 512
+                                             },
+                                             {
+                                             "text": "by Carl R. Sams II and Jean Stoick, originally published in 1999.",
+                                             "yOffset": 555,
+                                             "xOffset": 512
+                                             },
+                                             {
+                                             "text": "www.strangerinthewoods.com",
+                                             "yOffset": 480,
+                                             "xOffset": 512
+                                             },
+                                             {
+                                             "text": "App direction, music, voices and video production by Sisbro Studios, LLC www.sisbro.com",
+                                             "yOffset": 455,
+                                             "xOffset": 512
+                                             },
+                                             {
+                                             "text": "Software built with Authorly",
+                                             "yOffset": 430,
+                                             "xOffset": 512
+                                             },
+                                             {
+                                             "text": "www.authorly.com",
+                                             "yOffset": 255,
+                                             "xOffset": 512
+                                             },
+                                             {
+                                             "text": "Special thanks to Peter Sallinger, Lucy Bowman, Chuck and Cathie Nagorski, The Cornell Lab of",
+                                             "yOffset": 230,
+                                             "xOffset": 512
+                                             },
+                                             {
+                                             "text": "Ornithology/Macaulay Library for their contributions.",
+                                             "yOffset": 205,
+                                             "xOffset": 512
                                              }
                                              ]
                              }
