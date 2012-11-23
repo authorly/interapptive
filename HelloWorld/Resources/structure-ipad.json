@@ -25,7 +25,7 @@
             "soundEffectLoops": 1
         },
         "fallingPhysicsSettings": {
-            "draggable":true,
+            "draggable":false,
             "maxNumber": 0,
             "speedX": 145,
             "speedY": 10,
@@ -3032,7 +3032,7 @@
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": ".",
+                                             "text": " ",
                                              "yOffset": 645,
                                              "xOffset": 550
                                              }
@@ -3856,8 +3856,8 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-33-paragraph-1.mp3",
                              "highlightingTimes": [
-                                                   0.575,
-                                                   0.938
+                                                   3990.0,
+                                                   3990.1
                                                    ],
                              "linesOfText": [
                                              {
@@ -3883,12 +3883,12 @@
                                              {
                                              "text": "by Carl R. Sams II and Jean Stoick, published in 1999.",
                                              "yOffset": 525,
-                                             "xOffset": 180
+                                             "xOffset": 195
                                              },
                                              {
                                              "text": "www.strangerinthewoods.com",
                                              "yOffset": 490,
-                                             "xOffset": 520
+                                             "xOffset": 505
                                              },
                                              {
                                              "text": "App direction, music, voices and video production",
@@ -3908,7 +3908,7 @@
                                              {
                                              "text": "Special thanks to",
                                              "yOffset": 245,
-                                             "xOffset": 435
+                                             "xOffset": 415
                                              },
                                              {
                                              "text": "Peter Sallinger, Lucy Bowman, Chuck and Cathie Nagorski",

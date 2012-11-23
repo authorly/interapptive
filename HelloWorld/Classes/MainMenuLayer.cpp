@@ -175,10 +175,10 @@ void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
         vector<string> items;
         items.push_back("Resume");
         items.push_back("Start Over");
-        items.push_back("Cacel");
+        items.push_back("Cancel");
         
         mydialog = new MyDialog();
-        mydialog->initWithItems("Would you like to resume where you left off?", items, this);
+        mydialog->initWithItems("Resume story where you left off?", items, this);
         mydialog->popUp();  
     }
     else 
