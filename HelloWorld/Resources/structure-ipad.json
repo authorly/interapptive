@@ -1,5 +1,5 @@
 {
-    "Configurations": {
+     "Configurations": {
         "pageFlipSound": {
             "forward": "page-flip-sound.mp3",
             "backward": "page-flip-sound.mp3"
@@ -3846,7 +3846,7 @@
                                      0,
                                      0
                                      ],
-              "fontSize": 24
+              "fontSize": 23
               },
               "text": {
               "paragraphs": [
@@ -3859,49 +3859,64 @@
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": "\"Stranger in the Woods",
-                                             "yOffset": 605,
-                                             "xOffset": 512
+                                             "text": "Stranger in the Woods",
+                                             "yOffset": 700,
+                                             "xOffset": 430
                                              },
                                              {
-                                             "text": "Produced by Carl R. Sams II Photography, © 2012. All rights reserved. Based on the book Stranger in the Woods",
-                                             "yOffset": 580,
-                                             "xOffset": 512
+                                             "text": "Produced by Carl R. Sams II Photography.",
+                                             "yOffset": 630,
+                                             "xOffset": 322
                                              },
                                              {
-                                             "text": "by Carl R. Sams II and Jean Stoick, originally published in 1999.",
-                                             "yOffset": 555,
-                                             "xOffset": 512
+                                             "text": "© 2012. All rights reserved.",
+                                             "yOffset": 595,
+                                             "xOffset": 365
+                                             },
+                                             {
+                                             "text": "Based on the book Stranger in the Woods",
+                                             "yOffset": 560,
+                                             "xOffset": 300
+                                             },
+                                             {
+                                             "text": "by Carl R. Sams II and Jean Stoick, published in 1999.",
+                                             "yOffset": 525,
+                                             "xOffset": 180
                                              },
                                              {
                                              "text": "www.strangerinthewoods.com",
-                                             "yOffset": 480,
-                                             "xOffset": 512
+                                             "yOffset": 490,
+                                             "xOffset": 520
                                              },
                                              {
-                                             "text": "App direction, music, voices and video production by Sisbro Studios, LLC www.sisbro.com",
-                                             "yOffset": 455,
-                                             "xOffset": 512
+                                             "text": "App direction, music, voices and video production",
+                                             "yOffset": 420,
+                                             "xOffset": 220
                                              },
                                              {
-                                             "text": "Software built with Authorly",
-                                             "yOffset": 430,
-                                             "xOffset": 512
+                                             "text": "by Sisbro Studios, LLC www.sisbro.com",
+                                             "yOffset": 385,
+                                             "xOffset": 290
                                              },
                                              {
-                                             "text": "www.authorly.com",
-                                             "yOffset": 255,
-                                             "xOffset": 512
+                                             "text": "Published digitally with Authorly, www.authorly.com",
+                                             "yOffset": 315,
+                                             "xOffset": 260
                                              },
                                              {
-                                             "text": "Special thanks to Peter Sallinger, Lucy Bowman, Chuck and Cathie Nagorski, The Cornell Lab of",
-                                             "yOffset": 230,
-                                             "xOffset": 512
+                                             "text": "Special thanks to",
+                                             "yOffset": 245,
+                                             "xOffset": 435
                                              },
                                              {
-                                             "text": "Ornithology/Macaulay Library for their contributions.",
-                                             "yOffset": 205,
-                                             "xOffset": 512
+                                             "text": "Peter Sallinger, Lucy Bowman, Chuck and Cathie Nagorski",
+                                             "yOffset": 210,
+                                             "xOffset": 175
+                                             },
+                                             {
+                                             "text": "Cornell Lab of Ornithology/Macaulay Library",
+                                             "yOffset": 175,
+                                             "xOffset": 265
                                              }
                                              ]
                              }

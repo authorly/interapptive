@@ -30,6 +30,10 @@
 // position for info icon
 #define INFO_ICON_POSITION ccp(950*XSCALE, 75*YSCALE)
 
+// position for "touch to add" and "select item" help images
+#define TOUCH_TO_ADD_POSITION ccp(630*XSCALE, 555*YSCALE)
+#define SELECT_ITEM_POSITION ccp(920*XSCALE, 350*YSCALE)
+
 #define HAT_TAG     1
 #define EYE_TAG     2
 #define MITTEN_TAG  3
@@ -37,7 +41,7 @@
 #define SCARF_TAG   5
 #define NOSE_TAG    6
 
-#define SPRITE_BETWEEN_ARROW_TAG       7
+#define SPRITE_BETWEEN_ARROW_TAG 7
 
 #define LEFT_ARROW_SPRITE_TAG   8
 #define RIGHT_ARROW_SPRITE_TAG  9
@@ -63,6 +67,9 @@
 
 #define INFO_MENU_TAG           25
 #define INFO_MENU_ITEM_TAG      26
+
+#define TOUCH_TO_ADD_TAG        27
+#define SELECT_ITEM_TAG         28
 
 #define HAT_SCALE   0.7
 #define SCARF_SCALE 0.6
@@ -109,6 +116,20 @@ bool SnowmanGameScene::init()
     addChild(background);
   
   
+    // Touch to add & select item images
+    // touch to add image
+    CCSprite *touchToAdd = CCSprite::spriteWithFile("snowman-game-touch-to-add.png");
+    touchToAdd->setPosition(TOUCH_TO_ADD_POSITION);
+    touchToAdd->setTag(TOUCH_TO_ADD_TAG);
+    touchToAdd->retain();
+    addChild(touchToAdd);
+  
+    // touch to add image
+    CCSprite *selectItem = CCSprite::spriteWithFile("snowman-game-select-item.png");
+    selectItem->setPosition(SELECT_ITEM_POSITION);
+    selectItem->setTag(SELECT_ITEM_TAG);
+    selectItem->retain();
+    addChild(selectItem);
   
     // info menu
     CCMenuItem *infoMenuItem = CCMenuItemImage::itemFromNormalImage("info-icon.png",
@@ -202,6 +223,16 @@ void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
 
 void SnowmanGameScene::showSprites(bool isShow)
 {
+    //
+    // NOT WORKING, PLZ FIXME - C.W. 
+    //
+    // hide or show "touch to add" and "select item"
+    // CCSprite *touchToAdd = (CCSprite*)touchToAdd->getChildByTag(TOUCH_TO_ADD_TAG);
+    // touchToAdd->setIsVisible(isShow);
+  
+    // CCSprite *selectItem = (CCSprite*)selectItem->getChildByTag(SELECT_ITEM_TAG);
+    // selectItem->setIsVisible(isShow);
+  
     // hide or show arrows
     CCMenu *arrowMenu = (CCMenu*)getChildByTag(ARROW_MENU_TAG);
     CCSprite *leftArrow = (CCSprite*)arrowMenu->getChildByTag(LEFT_ARROW_SPRITE_TAG);
