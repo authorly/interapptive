@@ -7,28 +7,28 @@
 
 // macros of coordinate
 
-#define ARROW_MENU_POSITION             ccp(893*XSCALE, 245*YSCALE)
-#define SPRITE_BETWEEN_ARROW_POSITION   ccp(805*XSCALE, 245*YSCALE)
-#define SCARF_BETWEEN_ARROW_POSITION    ccp(1080*XSCALE, 245*YSCALE)
-#define LEFT_ARROW_POSITION             ccp(-250*XSCALE, 0)
-#define SHARE_MENU_POSITION             ccp(832*XSCALE, 75*YSCALE)
+#define ARROW_MENU_POSITION             ccp(883*XSCALE, 495 *YSCALE)
+#define SPRITE_BETWEEN_ARROW_POSITION   ccp(818*XSCALE, 475 *YSCALE)
+#define SCARF_BETWEEN_ARROW_POSITION    ccp(1080*XSCALE, 495*YSCALE)
+#define LEFT_ARROW_POSITION             ccp(-208*XSCALE, 0)
+#define SHARE_MENU_POSITION             ccp(785*XSCALE, 75*YSCALE)
 #define LOGO_POSITION                   ccp(700*XSCALE, 690*YSCALE)
 #define HOME_MENU_POSITION              ccp(35*XSCALE, 35*YSCALE)
 
 // position to draw on snow man
 #define EYE_POSITION                    ccp(373*XSCALE, 484*YSCALE)
 #define MOUTH_POSITION                  ccp(373*XSCALE, 401*YSCALE)
-#define MITTEN_POSITION                 ccp(392*XSCALE, 388*YSCALE)
+#define MITTEN_POSITION                 ccp(374*XSCALE, 398*YSCALE)
 #define HAT_POSITION                    ccp(373*XSCALE, 546*YSCALE)
 #define NOSE_POSITION                   ccp(403*XSCALE, 449*YSCALE)
 #define SCARF_POSITION                  ccp(350*XSCALE, 240*YSCALE)
 
 // position for menu
-#define CATEGORY_POSITION       ccp(650*XSCALE, 430*YSCALE)
-#define CATEGORY_LOWER_POSITION ccp(650*XSCALE, 340*YSCALE)
+#define CATEGORY_POSITION       ccp(650*XSCALE, 150*YSCALE)
+#define CATEGORY_LOWER_POSITION ccp(650*XSCALE, 60*YSCALE)
 
 // position for info icon
-#define INFO_ICON_POSITION ccp(50*XSCALE, 715*YSCALE)
+#define INFO_ICON_POSITION ccp(950*XSCALE, 75*YSCALE)
 
 #define HAT_TAG     1
 #define EYE_TAG     2
@@ -686,7 +686,7 @@ void SnowmanGameScene::infoMenuTouched(cocos2d::CCObject *sender)
     items.push_back("OK");
     
     infoMenuDialog = new MyDialog();
-    infoMenuDialog->initWithItems("stranger in the wood", items, this);
+    infoMenuDialog->initWithItems("STEP 1\nUse arrows\nto select  an item\n\nSTEP 2\nTouch the item to add it\nto your Snowman\n\nSTEP 3\nChange the category\nby touching a new one\n(below the arrows)", items, this);
     infoMenuDialog->popUp();
 }
 

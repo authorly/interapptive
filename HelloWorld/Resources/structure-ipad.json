@@ -4,7 +4,7 @@
             "forward": "page-flip-sound.mp3",
             "backward": "page-flip-sound.mp3"
         },
-        "pageFlipTransitionDuration": 0.6,
+        "pageFlipTransitionDuration": 0.25,
         "paragraphTextFadeDuration": 0.4,
         "autoplayPageTurnDelay": 0.2,
         "autoplayParagraphDelay": 0.1,
@@ -25,10 +25,10 @@
             "soundEffectLoops": 1
         },
         "fallingPhysicsSettings": {
-            "draggable":false,
+            "draggable":true,
             "maxNumber": 0,
-            "speedX": 165,
-            "speedY": 50,
+            "speedX": 145,
+            "speedY": 10,
             "spinSpeed": 100,
             "slowDownSpeed": 0.6,
             "hasFloor": false,
@@ -37,7 +37,7 @@
                                   0,
                                   600
                                   ],
-            "plistfilename": "page-22-seds.plist"
+            "plistfilename": "snowflake-main-menu.plist"
         },
         "CCSprites": [
                       {

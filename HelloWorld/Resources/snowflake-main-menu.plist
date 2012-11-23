@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+	</dict>
+	<key>bodies</key>
+	<dict>
+		<key>snowflake-extrasmall</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.50000,0.50000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>mass</key>
+					<real>9999</real>
+					<key>elasticity</key>
+					<real>0</real>
+					<key>friction</key>
+					<real>1</real>
+					<key>surface_velocity</key>
+					<string>{ 0.00000,0.00000 }</string>
+					<key>layers</key>
+					<integer>7</integer>
+					<key>group</key>
+					<integer>0</integer>
+					<key>collision_type</key>
+					<integer>0</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>fixture_type</key>
+					<string>CIRCLE</string>
+					<key>circle</key>
+					<dict>
+            <key>radius</key> 
+            <real>12</real>
+            <key>position</key> 
+            <string>{ 17.000,15.000 }</string>
+          </dict>
+				</dict>
+			</array>
+		</dict>
+		<key>snowflake-extraextrasmall</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.50000,0.50000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>mass</key>
+					<real>9999</real>
+					<key>elasticity</key>
+					<real>0</real>
+					<key>friction</key>
+					<real>1</real>
+					<key>surface_velocity</key>
+					<string>{ 0.00000,0.00000 }</string>
+					<key>layers</key>
+					<integer>7</integer>
+					<key>group</key>
+					<integer>0</integer>
+					<key>collision_type</key>
+					<integer>0</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>fixture_type</key>
+					<string>CIRCLE</string>
+					<key>circle</key>
+					<dict>
+            <key>radius</key> 
+            <real>9</real>
+            <key>position</key> 
+            <string>{ 13.000,8.000 }</string>
+          </dict>
+				</dict>
+			</array>
+		</dict>
+		<key>snowflake-extraextraextrasmall</key>
+		<dict>
+			<key>anchorpoint</key>
+			<string>{ 0.50000,0.50000 }</string>
+			<key>fixtures</key>
+			<array>
+				<dict>
+					<key>mass</key>
+					<real>9999</real>
+					<key>elasticity</key>
+					<real>0</real>
+					<key>friction</key>
+					<real>1</real>
+					<key>surface_velocity</key>
+					<string>{ 0.00000,0.00000 }</string>
+					<key>layers</key>
+					<integer>7</integer>
+					<key>group</key>
+					<integer>0</integer>
+					<key>collision_type</key>
+					<integer>0</integer>
+					<key>isSensor</key>
+					<false/>
+					<key>fixture_type</key>
+					<string>CIRCLE</string>
+					<key>circle</key>
+					<dict>
+            <key>radius</key> 
+            <real>8</real>
+            <key>position</key> 
+            <string>{ 11.000,13.000 }</string>
+          </dict>
+				</dict>
+			</array>
+		</dict>
+
+	</dict>
+</dict>
+</plist>

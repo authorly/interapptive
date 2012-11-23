@@ -76,7 +76,7 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
     CCScene *scene = createSceneByPageNumber(pageNumber);
     if (scene)
     {
-        SimpleAudioEngine::sharedEngine()->end();
+        // SimpleAudioEngine::sharedEngine()->end();
         
         // play effect
         if (backWards)

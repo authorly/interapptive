@@ -239,7 +239,6 @@
 		15D7CF8815E66936005F0F2F /* noses.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF6E15E66935005F0F2F /* noses.png */; };
 		15D7CF8A15E66936005F0F2F /* scarves.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF7015E66935005F0F2F /* scarves.plist */; };
 		15D7CF8B15E66936005F0F2F /* scraves.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF7115E66935005F0F2F /* scraves.png */; };
-		15D7CF8C15E66936005F0F2F /* snowman-game-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF7215E66935005F0F2F /* snowman-game-bg.jpg */; };
 		15D7CF8D15E66936005F0F2F /* twitter-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF7315E66936005F0F2F /* twitter-hover.png */; };
 		15D7CF8E15E66936005F0F2F /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D7CF7415E66936005F0F2F /* twitter.png */; };
 		15DCC303155805B40083B694 /* SharedGlobalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15DCC302155805B40083B694 /* SharedGlobalData.cpp */; };
@@ -250,6 +249,10 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		3A140986165F25F200716902 /* snowman-game-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A140985165F25F200716902 /* snowman-game-bg.jpg */; };
+		3A14098A165F355A00716902 /* snowflake-extraextraextrasmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A140987165F355A00716902 /* snowflake-extraextraextrasmall.png */; };
+		3A14098B165F355A00716902 /* snowflake-extraextrasmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A140988165F355A00716902 /* snowflake-extraextrasmall.png */; };
+		3A14098C165F355A00716902 /* snowflake-main-menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A140989165F355A00716902 /* snowflake-main-menu.plist */; };
 		3A1CCEFF1555E06D000EEC29 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCECB1555E06C000EEC29 /* arial.ttf */; };
 		3A1CCF001555E06D000EEC29 /* autoplay-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCECC1555E06C000EEC29 /* autoplay-over.png */; };
 		3A1CCF011555E06D000EEC29 /* autoplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A1CCECD1555E06C000EEC29 /* autoplay.png */; };
@@ -1085,7 +1088,6 @@
 		15D7CF6E15E66935005F0F2F /* noses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noses.png; sourceTree = "<group>"; };
 		15D7CF7015E66935005F0F2F /* scarves.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scarves.plist; sourceTree = "<group>"; };
 		15D7CF7115E66935005F0F2F /* scraves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scraves.png; sourceTree = "<group>"; };
-		15D7CF7215E66935005F0F2F /* snowman-game-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snowman-game-bg.jpg"; sourceTree = "<group>"; };
 		15D7CF7315E66936005F0F2F /* twitter-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-hover.png"; sourceTree = "<group>"; };
 		15D7CF7415E66936005F0F2F /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		15DCC300155805990083B694 /* SharedGlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedGlobalData.h; sourceTree = "<group>"; };
@@ -1100,6 +1102,10 @@
 		1D6058910D05DD3D006BFB54 /* interapptive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = interapptive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3A140985165F25F200716902 /* snowman-game-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "snowman-game-bg.jpg"; sourceTree = "<group>"; };
+		3A140987165F355A00716902 /* snowflake-extraextraextrasmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-extraextraextrasmall.png"; sourceTree = "<group>"; };
+		3A140988165F355A00716902 /* snowflake-extraextrasmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snowflake-extraextrasmall.png"; sourceTree = "<group>"; };
+		3A140989165F355A00716902 /* snowflake-main-menu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "snowflake-main-menu.plist"; sourceTree = "<group>"; };
 		3A1CCECB1555E06C000EEC29 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
 		3A1CCECC1555E06C000EEC29 /* autoplay-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "autoplay-over.png"; sourceTree = "<group>"; };
 		3A1CCECD1555E06C000EEC29 /* autoplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autoplay.png; sourceTree = "<group>"; };
@@ -2027,6 +2033,10 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A140987165F355A00716902 /* snowflake-extraextraextrasmall.png */,
+				3A140988165F355A00716902 /* snowflake-extraextrasmall.png */,
+				3A140989165F355A00716902 /* snowflake-main-menu.plist */,
+				3A140985165F25F200716902 /* snowman-game-bg.jpg */,
 				3A83A4CE1654B3420009B266 /* credits.png */,
 				3A83A4CC1654AB570009B266 /* info-icon.png */,
 				3A806E461635A2CC0092F1D0 /* snowflake-extrasmall.png */,
@@ -2176,7 +2186,6 @@
 				3A1CCEF71555E06C000EEC29 /* read-to-me.png */,
 				15D7CF7015E66935005F0F2F /* scarves.plist */,
 				15D7CF7115E66935005F0F2F /* scraves.png */,
-				15D7CF7215E66935005F0F2F /* snowman-game-bg.jpg */,
 				15FF89A9155F6D8700A6FED7 /* stars.png */,
 				3A1CCEF91555E06C000EEC29 /* stranger-in-the-woods-logo.png */,
 				3A1CCEFA1555E06C000EEC29 /* structure-ipad-annotated.json */,
@@ -2747,7 +2756,6 @@
 				15D7CF8815E66936005F0F2F /* noses.png in Resources */,
 				15D7CF8A15E66936005F0F2F /* scarves.plist in Resources */,
 				15D7CF8B15E66936005F0F2F /* scraves.png in Resources */,
-				15D7CF8C15E66936005F0F2F /* snowman-game-bg.jpg in Resources */,
 				15D7CF8D15E66936005F0F2F /* twitter-hover.png in Resources */,
 				15D7CF8E15E66936005F0F2F /* twitter.png in Resources */,
 				158B570815EA6CB7009FCBB4 /* Icon-72.png in Resources */,
@@ -2778,6 +2786,10 @@
 				3A806E471635A2CC0092F1D0 /* snowflake-extrasmall.png in Resources */,
 				3A83A4CD1654AB570009B266 /* info-icon.png in Resources */,
 				3A83A4CF1654B3420009B266 /* credits.png in Resources */,
+				3A140986165F25F200716902 /* snowman-game-bg.jpg in Resources */,
+				3A14098A165F355A00716902 /* snowflake-extraextraextrasmall.png in Resources */,
+				3A14098B165F355A00716902 /* snowflake-extraextrasmall.png in Resources */,
+				3A14098C165F355A00716902 /* snowflake-main-menu.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
