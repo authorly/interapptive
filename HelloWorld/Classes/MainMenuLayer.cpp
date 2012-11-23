@@ -106,15 +106,18 @@ void MainMenuLayer::onEnter()
     addChild(menu);
     
     // add credits menu
-    CCMenu *creditsMenu = CCMenu::node();
-    CCMenuItemImage *creditsItem = CCMenuItemImage::itemFromNormalImage("credits.png",
-                                                                        "credits.png",
-                                                                        this,
-                                                                        menu_selector(MainMenuLayer::creditsItemTouched));
-    creditsItem->setPosition(ccp(160*XSCALE, 300*YSCALE));
-    creditsMenu->addChild(creditsItem, 1);
-    creditsMenu->setPosition(ccp(0, 0));
-    addChild(creditsMenu);
+    //
+    // REMOVED FOR CARL SAMS REQUEST //
+    //
+    // CCMenu *creditsMenu = CCMenu::node();
+    // CCMenuItemImage *creditsItem = CCMenuItemImage::itemFromNormalImage("credits.png",
+    //                                                                    "credits.png",
+    //                                                                    this,
+    //                                                                menu_selector(MainMenuLayer::creditsItemTouched));
+    // creditsItem->setPosition(ccp(160*XSCALE, 300*YSCALE));
+    // creditsMenu->addChild(creditsItem, 1);
+    // creditsMenu->setPosition(ccp(0, 0));
+    // addChild(creditsMenu);
     
     if (MainMenu::audio.backgroundMusic.size() > 0)
     {
