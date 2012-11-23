@@ -146,7 +146,16 @@ void MainMenuLayer::onEnter()
     
     // chipmunk layer
     ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&MainMenu::fallingObjectSetting, NULL);
-    addChild(chipmunkLayer);
+  
+    // CRASH CAUSED
+    //
+    // To replicate:
+    // 1. Autoplay to page with falling snowflakes
+    // 2. Hit home button once snowflakes falls
+    // 3. Use Read To Me
+    // 4. Swipe to page with physics
+    //
+    // addChild(chipmunkLayer);
     
     CCLayer::onEnter();
 }
