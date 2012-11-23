@@ -742,6 +742,7 @@
               "Page": {
               "settings": {
               "number": 5,
+              "autoplayDelayBeforePageTurn":8,
               "fontType": "PopplPontifexBE-Regular.ttf",
               "fontColor": [
                             0,
@@ -824,6 +825,7 @@
                   "nodes": [
                             {
                             "delayForAnimation": true,
+                            "delayForText": true,
                             "glitterIndicator": true,
                             "touchFlag": 1,
                             "position": [
@@ -1161,7 +1163,7 @@
               "Page": {
               "settings": {
               "number": 9,
-              "autoplayDelayBeforePageTurn":4,
+              "autoplayDelayBeforePageTurn":8,
               "fontType": "PopplPontifexBE-Regular.ttf",
               "fontColor": [
                             0,
