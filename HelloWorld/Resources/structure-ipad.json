@@ -1,3 +1,4 @@
+
 {
      "Configurations": {
         "pageFlipSound": {
@@ -3027,11 +3028,12 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-25-paragraph-1.mp3",
                              "highlightingTimes": [
-                                                   0.575
+                                                   0.575,
+                                                   8.0
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": " ",
+                                             "text": ".",
                                              "yOffset": 645,
                                              "xOffset": 550
                                              }
