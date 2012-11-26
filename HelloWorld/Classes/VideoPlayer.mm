@@ -60,7 +60,7 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
     
     if (VideoPlayer::sharedVideoPlayer()->delegate)
     {
-        VideoPlayer::sharedVideoPlayer()->delegate->swipeLeft();
+        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish();
         VideoPlayer::sharedVideoPlayer()->delegate = NULL;
     }
 }
@@ -80,7 +80,7 @@ VideoPlayer* VideoPlayer::sharedVideoPlayer()
     return g_sharedVideoPlayer;
 }
 
-void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl, PageLayer *delegate)
+void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl, VideoPlayProtocol *delegate)
 {
     this->showControl = showControl;
     this->isVideoPlaying = true;
@@ -195,7 +195,7 @@ void VideoPlayer::stopPlay()
     
     if (VideoPlayer::sharedVideoPlayer()->delegate)
     {
-        VideoPlayer::sharedVideoPlayer()->delegate->swipeLeft();
+        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish();
         VideoPlayer::sharedVideoPlayer()->delegate = NULL;
     }
 }

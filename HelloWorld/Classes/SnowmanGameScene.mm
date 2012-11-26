@@ -121,14 +121,14 @@ bool SnowmanGameScene::init()
     CCSprite *touchToAdd = CCSprite::spriteWithFile("snowman-game-touch-to-add.png");
     touchToAdd->setPosition(TOUCH_TO_ADD_POSITION);
     touchToAdd->setTag(TOUCH_TO_ADD_TAG);
-    touchToAdd->retain();
+    //touchToAdd->retain();
     addChild(touchToAdd);
   
     // touch to add image
     CCSprite *selectItem = CCSprite::spriteWithFile("snowman-game-select-item.png");
     selectItem->setPosition(SELECT_ITEM_POSITION);
     selectItem->setTag(SELECT_ITEM_TAG);
-    selectItem->retain();
+    //selectItem->retain();
     addChild(selectItem);
   
     // info menu
@@ -223,15 +223,12 @@ void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
 
 void SnowmanGameScene::showSprites(bool isShow)
 {
-    //
-    // NOT WORKING, PLZ FIXME - C.W. 
-    //
     // hide or show "touch to add" and "select item"
-    // CCSprite *touchToAdd = (CCSprite*)touchToAdd->getChildByTag(TOUCH_TO_ADD_TAG);
-    // touchToAdd->setIsVisible(isShow);
+    CCSprite *touchToAdd = (CCSprite*)getChildByTag(TOUCH_TO_ADD_TAG);
+    touchToAdd->setIsVisible(isShow);
   
-    // CCSprite *selectItem = (CCSprite*)selectItem->getChildByTag(SELECT_ITEM_TAG);
-    // selectItem->setIsVisible(isShow);
+    CCSprite *selectItem = (CCSprite*)getChildByTag(SELECT_ITEM_TAG);
+    selectItem->setIsVisible(isShow);
   
     // hide or show arrows
     CCMenu *arrowMenu = (CCMenu*)getChildByTag(ARROW_MENU_TAG);
