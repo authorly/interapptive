@@ -106,15 +106,18 @@ void MainMenuLayer::onEnter()
     addChild(menu);
     
     // add credits menu
-    CCMenu *creditsMenu = CCMenu::node();
-    CCMenuItemImage *creditsItem = CCMenuItemImage::itemFromNormalImage("credits.png",
-                                                                        "credits.png",
-                                                                        this,
-                                                                        menu_selector(MainMenuLayer::creditsItemTouched));
-    creditsItem->setPosition(ccp(160*XSCALE, 300*YSCALE));
-    creditsMenu->addChild(creditsItem, 1);
-    creditsMenu->setPosition(ccp(0, 0));
-    addChild(creditsMenu);
+    //
+    // REMOVED FOR CARL SAMS REQUEST //
+    //
+    // CCMenu *creditsMenu = CCMenu::node();
+    // CCMenuItemImage *creditsItem = CCMenuItemImage::itemFromNormalImage("credits.png",
+    //                                                                    "credits.png",
+    //                                                                    this,
+    //                                                                menu_selector(MainMenuLayer::creditsItemTouched));
+    // creditsItem->setPosition(ccp(160*XSCALE, 300*YSCALE));
+    // creditsMenu->addChild(creditsItem, 1);
+    // creditsMenu->setPosition(ccp(0, 0));
+    // addChild(creditsMenu);
     
     if (MainMenu::audio.backgroundMusic.size() > 0)
     {
@@ -146,7 +149,16 @@ void MainMenuLayer::onEnter()
     
     // chipmunk layer
     ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&MainMenu::fallingObjectSetting, NULL);
-    addChild(chipmunkLayer);
+  
+    // CRASH CAUSED
+    //
+    // To replicate:
+    // 1. Autoplay to page with falling snowflakes
+    // 2. Hit home button once snowflakes falls
+    // 3. Use Read To Me
+    // 4. Swipe to page with physics
+    //
+    // addChild(chipmunkLayer);
     
     CCLayer::onEnter();
 }
@@ -163,10 +175,10 @@ void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
         vector<string> items;
         items.push_back("Resume");
         items.push_back("Start Over");
-        items.push_back("Cacel");
+        items.push_back("Cancel");
         
         mydialog = new MyDialog();
-        mydialog->initWithItems("Would you like to resume where you left off?", items, this);
+        mydialog->initWithItems("Resume story where you left off?", items, this);
         mydialog->popUp();  
     }
     else 

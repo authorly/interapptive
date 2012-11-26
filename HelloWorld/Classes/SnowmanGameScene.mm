@@ -7,28 +7,32 @@
 
 // macros of coordinate
 
-#define ARROW_MENU_POSITION             ccp(893*XSCALE, 245*YSCALE)
-#define SPRITE_BETWEEN_ARROW_POSITION   ccp(805*XSCALE, 245*YSCALE)
-#define SCARF_BETWEEN_ARROW_POSITION    ccp(1080*XSCALE, 245*YSCALE)
-#define LEFT_ARROW_POSITION             ccp(-250*XSCALE, 0)
-#define SHARE_MENU_POSITION             ccp(832*XSCALE, 75*YSCALE)
+#define ARROW_MENU_POSITION             ccp(883*XSCALE, 495 *YSCALE)
+#define SPRITE_BETWEEN_ARROW_POSITION   ccp(818*XSCALE, 475 *YSCALE)
+#define SCARF_BETWEEN_ARROW_POSITION    ccp(1080*XSCALE, 495*YSCALE)
+#define LEFT_ARROW_POSITION             ccp(-208*XSCALE, 0)
+#define SHARE_MENU_POSITION             ccp(785*XSCALE, 75*YSCALE)
 #define LOGO_POSITION                   ccp(700*XSCALE, 690*YSCALE)
 #define HOME_MENU_POSITION              ccp(35*XSCALE, 35*YSCALE)
 
 // position to draw on snow man
 #define EYE_POSITION                    ccp(373*XSCALE, 484*YSCALE)
 #define MOUTH_POSITION                  ccp(373*XSCALE, 401*YSCALE)
-#define MITTEN_POSITION                 ccp(392*XSCALE, 388*YSCALE)
+#define MITTEN_POSITION                 ccp(374*XSCALE, 398*YSCALE)
 #define HAT_POSITION                    ccp(373*XSCALE, 546*YSCALE)
 #define NOSE_POSITION                   ccp(403*XSCALE, 449*YSCALE)
 #define SCARF_POSITION                  ccp(350*XSCALE, 240*YSCALE)
 
 // position for menu
-#define CATEGORY_POSITION       ccp(650*XSCALE, 430*YSCALE)
-#define CATEGORY_LOWER_POSITION ccp(650*XSCALE, 340*YSCALE)
+#define CATEGORY_POSITION       ccp(650*XSCALE, 150*YSCALE)
+#define CATEGORY_LOWER_POSITION ccp(650*XSCALE, 60*YSCALE)
 
 // position for info icon
-#define INFO_ICON_POSITION ccp(50*XSCALE, 715*YSCALE)
+#define INFO_ICON_POSITION ccp(950*XSCALE, 75*YSCALE)
+
+// position for "touch to add" and "select item" help images
+#define TOUCH_TO_ADD_POSITION ccp(630*XSCALE, 555*YSCALE)
+#define SELECT_ITEM_POSITION ccp(920*XSCALE, 350*YSCALE)
 
 #define HAT_TAG     1
 #define EYE_TAG     2
@@ -37,7 +41,7 @@
 #define SCARF_TAG   5
 #define NOSE_TAG    6
 
-#define SPRITE_BETWEEN_ARROW_TAG       7
+#define SPRITE_BETWEEN_ARROW_TAG 7
 
 #define LEFT_ARROW_SPRITE_TAG   8
 #define RIGHT_ARROW_SPRITE_TAG  9
@@ -63,6 +67,9 @@
 
 #define INFO_MENU_TAG           25
 #define INFO_MENU_ITEM_TAG      26
+
+#define TOUCH_TO_ADD_TAG        27
+#define SELECT_ITEM_TAG         28
 
 #define HAT_SCALE   0.7
 #define SCARF_SCALE 0.6
@@ -109,6 +116,20 @@ bool SnowmanGameScene::init()
     addChild(background);
   
   
+    // Touch to add & select item images
+    // touch to add image
+    CCSprite *touchToAdd = CCSprite::spriteWithFile("snowman-game-touch-to-add.png");
+    touchToAdd->setPosition(TOUCH_TO_ADD_POSITION);
+    touchToAdd->setTag(TOUCH_TO_ADD_TAG);
+    //touchToAdd->retain();
+    addChild(touchToAdd);
+  
+    // touch to add image
+    CCSprite *selectItem = CCSprite::spriteWithFile("snowman-game-select-item.png");
+    selectItem->setPosition(SELECT_ITEM_POSITION);
+    selectItem->setTag(SELECT_ITEM_TAG);
+    //selectItem->retain();
+    addChild(selectItem);
   
     // info menu
     CCMenuItem *infoMenuItem = CCMenuItemImage::itemFromNormalImage("info-icon.png",
@@ -202,6 +223,13 @@ void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
 
 void SnowmanGameScene::showSprites(bool isShow)
 {
+    // hide or show "touch to add" and "select item"
+    CCSprite *touchToAdd = (CCSprite*)getChildByTag(TOUCH_TO_ADD_TAG);
+    touchToAdd->setIsVisible(isShow);
+  
+    CCSprite *selectItem = (CCSprite*)getChildByTag(SELECT_ITEM_TAG);
+    selectItem->setIsVisible(isShow);
+  
     // hide or show arrows
     CCMenu *arrowMenu = (CCMenu*)getChildByTag(ARROW_MENU_TAG);
     CCSprite *leftArrow = (CCSprite*)arrowMenu->getChildByTag(LEFT_ARROW_SPRITE_TAG);
@@ -686,7 +714,7 @@ void SnowmanGameScene::infoMenuTouched(cocos2d::CCObject *sender)
     items.push_back("OK");
     
     infoMenuDialog = new MyDialog();
-    infoMenuDialog->initWithItems("stranger in the wood", items, this);
+    infoMenuDialog->initWithItems("STEP 1\nUse arrows\nto switch items\n\nSTEP 2\nTouch the item to add it\n\nSTEP 3\nChange item types by\ntouching one (below arrows)", items, this);
     infoMenuDialog->popUp();
 }
 

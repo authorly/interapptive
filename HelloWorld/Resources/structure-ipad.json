@@ -1,10 +1,10 @@
 {
-    "Configurations": {
+     "Configurations": {
         "pageFlipSound": {
             "forward": "page-flip-sound.mp3",
             "backward": "page-flip-sound.mp3"
         },
-        "pageFlipTransitionDuration": 0.6,
+        "pageFlipTransitionDuration": 0.35,
         "paragraphTextFadeDuration": 0.4,
         "autoplayPageTurnDelay": 0.2,
         "autoplayParagraphDelay": 0.1,
@@ -27,8 +27,8 @@
         "fallingPhysicsSettings": {
             "draggable":false,
             "maxNumber": 0,
-            "speedX": 165,
-            "speedY": 50,
+            "speedX": 145,
+            "speedY": 10,
             "spinSpeed": 100,
             "slowDownSpeed": 0.6,
             "hasFloor": false,
@@ -37,7 +37,7 @@
                                   0,
                                   600
                                   ],
-            "plistfilename": "page-22-seds.plist"
+            "plistfilename": "snowflake-main-menu.plist"
         },
         "CCSprites": [
                       {
@@ -546,7 +546,7 @@
                                              "xOffset": 825
                                              },
                                              {
-                                             "text": "The bluejays cawed",
+                                             "text": "The blue jays cawed",
                                              "yOffset": 185,
                                              "xOffset": 695
                                              },
@@ -742,6 +742,7 @@
               "Page": {
               "settings": {
               "number": 5,
+              "autoplayDelayBeforePageTurn":8,
               "fontType": "PopplPontifexBE-Regular.ttf",
               "fontColor": [
                             0,
@@ -823,7 +824,7 @@
                  "CCStoryTouchableNode": {
                   "nodes": [
                             {
-                            "delayForAnimation": true,
+                            "delayForText": true,
                             "glitterIndicator": true,
                             "touchFlag": 1,
                             "position": [
@@ -1161,7 +1162,7 @@
               "Page": {
               "settings": {
               "number": 9,
-              "autoplayDelayBeforePageTurn":4,
+              "autoplayDelayBeforePageTurn":8,
               "fontType": "PopplPontifexBE-Regular.ttf",
               "fontColor": [
                             0,
@@ -3030,7 +3031,7 @@
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": ".",
+                                             "text": " ",
                                              "yOffset": 645,
                                              "xOffset": 550
                                              }
@@ -3846,7 +3847,7 @@
                                      0,
                                      0
                                      ],
-              "fontSize": 20
+              "fontSize": 23
               },
               "text": {
               "paragraphs": [
@@ -3854,14 +3855,69 @@
                              "delayForPanning": true,
                              "voiceAudioFile": "page-33-paragraph-1.mp3",
                              "highlightingTimes": [
-                                                   0.575,
-                                                   0.938
+                                                   3990.0,
+                                                   3990.1
                                                    ],
                              "linesOfText": [
                                              {
-                                             "text": " ",
-                                             "yOffset": 645,
-                                             "xOffset": 550
+                                             "text": "Stranger in the Woods",
+                                             "yOffset": 700,
+                                             "xOffset": 430
+                                             },
+                                             {
+                                             "text": "Produced by Carl R. Sams II Photography.",
+                                             "yOffset": 630,
+                                             "xOffset": 322
+                                             },
+                                             {
+                                             "text": "© 2012. All rights reserved.",
+                                             "yOffset": 595,
+                                             "xOffset": 365
+                                             },
+                                             {
+                                             "text": "Based on the book Stranger in the Woods",
+                                             "yOffset": 560,
+                                             "xOffset": 300
+                                             },
+                                             {
+                                             "text": "by Carl R. Sams II and Jean Stoick, published in 1999.",
+                                             "yOffset": 525,
+                                             "xOffset": 195
+                                             },
+                                             {
+                                             "text": "www.strangerinthewoods.com",
+                                             "yOffset": 490,
+                                             "xOffset": 505
+                                             },
+                                             {
+                                             "text": "App direction, music, voices and video production",
+                                             "yOffset": 420,
+                                             "xOffset": 220
+                                             },
+                                             {
+                                             "text": "by Sisbro Studios, LLC www.sisbro.com",
+                                             "yOffset": 385,
+                                             "xOffset": 290
+                                             },
+                                             {
+                                             "text": "Published digitally with Authorly, www.authorly.com",
+                                             "yOffset": 315,
+                                             "xOffset": 260
+                                             },
+                                             {
+                                             "text": "Special thanks to",
+                                             "yOffset": 245,
+                                             "xOffset": 415
+                                             },
+                                             {
+                                             "text": "Peter Sallinger, Lucy Bowman, Chuck and Cathie Nagorski",
+                                             "yOffset": 210,
+                                             "xOffset": 175
+                                             },
+                                             {
+                                             "text": "Cornell Lab of Ornithology/Macaulay Library",
+                                             "yOffset": 175,
+                                             "xOffset": 265
                                              }
                                              ]
                              }
