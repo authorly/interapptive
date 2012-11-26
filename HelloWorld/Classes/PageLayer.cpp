@@ -37,7 +37,7 @@ PageLayer::PageLayer()
 , touchDetector(NULL)
 , touchSoundId(0)
 , isVideoPlaying(false)
-, isInDelaySwiping(false)
+, isHighLighting(false)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -217,7 +217,7 @@ void PageLayer::moviePlayBackDidFinish()
 {
     isVideoPlaying = false;
     
-    if (isInDelaySwiping)
+    if (isHighLighting)
     {
         return;
     }
@@ -719,6 +719,8 @@ void PageLayer::highlightParagraph()
     // don't hilight if the story mode is read to myself
     if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
     {
+        isHighLighting = true;
+        
         // play corresponding effect
         int wordCount = 0;
         vector<float> &audioInterval = page->paragraphs[currentIndexOfParagraph]->highlightingTimes;
@@ -768,7 +770,6 @@ void PageLayer::changeColorBack(CCObject *sender)
         this->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(page->settings.autoplayDelayBeforePageTurn),
                                             CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::doSwipeLeftAfterDelay)),
                                             NULL));
-        isInDelaySwiping = true;
     }
     
     if (word == wordsOfParagraph[wordsOfParagraph.size()-1])
@@ -779,7 +780,7 @@ void PageLayer::changeColorBack(CCObject *sender)
 
 void PageLayer::doSwipeLeftAfterDelay(CCObject *sender)
 {
-    isInDelaySwiping = false;
+    isHighLighting = false;
     
     // this fucntion is invoked to swipe left automatically when selecting "auto play" mode
     // if the video is playing, it should not swipe left
