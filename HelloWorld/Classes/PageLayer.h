@@ -102,8 +102,7 @@ private:
     
     bool isSwiping;
     bool isVideoPlaying;
-    // whether it is in the state to delay swiping
-    bool isInDelaySwiping;
+    bool isHighLighting;
     
     unsigned int touchSoundId;
 };
