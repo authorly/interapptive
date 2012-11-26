@@ -248,7 +248,7 @@ void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
     
     CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, SnowmanGameScene::node(), false));
     
-    CCTextureCache::sharedTextureCache()->reloadAllTextures();
+    CCTextureCache::sharedTextureCache()->removeAllTextures();
 }
 
 void MainMenuLayer::creditsItemTouched(cocos2d::CCObject *sender)

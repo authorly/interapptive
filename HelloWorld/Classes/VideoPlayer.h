@@ -2,7 +2,12 @@
 #define interapptive_VideoPlayer_h
 
 #include "cocos2d.h"
-#include "PageLayer.h"
+
+class VideoPlayProtocol
+{
+public:
+    virtual void moviePlayBackDidFinish() {};
+};
 
 /* Can only play one video at a time
  */
@@ -10,14 +15,14 @@ class VideoPlayer
 {
 public:
     static VideoPlayer* sharedVideoPlayer();
-    void playVideoByFilename(const char* fileName, bool showControl, PageLayer *delegate = NULL);
+    void playVideoByFilename(const char* fileName, bool showControl, VideoPlayProtocol *delegate = NULL);
     void stopPlay();
     bool touch();
     
     bool showControl;
     bool isVideoPlaying;
     
-    PageLayer *delegate;
+    VideoPlayProtocol *delegate;
 };
 
 #endif

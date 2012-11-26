@@ -5,6 +5,7 @@
 #include "cocos2d.h"
 #include "Page.h"
 #include "TouchDetection.h"
+#include "VideoPlayer.h"
 
 #include <vector>
 
@@ -14,7 +15,7 @@ typedef struct
     cocos2d::CCParticleSystem *partileSystem;
 } DelayForTextTouchNodeInfo;
 
-class PageLayer : public cocos2d::CCLayer, public DialogProtocol
+class PageLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayProtocol
 {
 public:
     virtual ~PageLayer();
@@ -42,8 +43,7 @@ public:
     // dialog protocol
     virtual void buttonClicked(int index);
     
-    // may be called when video play finished
-    void swipeLeft();
+    virtual void moviePlayBackDidFinish();
     
 private:
     PageLayer();
@@ -59,6 +59,7 @@ private:
     bool isSwipeLeft(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos);
     bool isSwipeRight(cocos2d::CCPoint &beginPos, cocos2d::CCPoint &endPos);
     void swipeRight();
+    void swipeLeft();
     void swipEndCallBack();
     /**
      * @swipteLeft if it is swipe left
@@ -100,6 +101,9 @@ private:
     MyDialog *mydialog;
     
     bool isSwiping;
+    bool isVideoPlaying;
+    // whether it is in the state to delay swiping
+    bool isInDelaySwiping;
     
     unsigned int touchSoundId;
 };

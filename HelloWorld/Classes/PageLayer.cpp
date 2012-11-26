@@ -36,6 +36,8 @@ PageLayer::PageLayer()
 , delayOfAnimation(0)
 , touchDetector(NULL)
 , touchSoundId(0)
+, isVideoPlaying(false)
+, isInDelaySwiping(false)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -196,6 +198,8 @@ void PageLayer::touchCallback(float flag)
         {
             VideoPlayer::sharedVideoPlayer()->playVideoByFilename(videoName.c_str(), showControl);
         }
+        
+        isVideoPlaying = true;
     }
     
     // play audeo
@@ -206,6 +210,20 @@ void PageLayer::touchCallback(float flag)
         SimpleAudioEngine::sharedEngine()->stopEffect(touchSoundId);
         // play
         touchSoundId = SimpleAudioEngine::sharedEngine()->playEffect(audeoName.c_str());
+    }
+}
+
+void PageLayer::moviePlayBackDidFinish()
+{
+    isVideoPlaying = false;
+    
+    if (isInDelaySwiping)
+    {
+        return;
+    }
+    else
+    {
+        swipeLeft();
     }
 }
 
@@ -411,6 +429,11 @@ void PageLayer::swipeLeft()
 
 void PageLayer::swipeRight()
 {
+    if (page->settings.number == 1)
+    {
+        return;
+    }
+    
     stopHighlightEffect();
     
     if (currentIndexOfParagraph == 0)
@@ -739,11 +762,13 @@ void PageLayer::changeColorBack(CCObject *sender)
     CCLabelTTF *word = (CCLabelTTF*)sender;
     word->setColor(page->settings.fontColor);
     
-    if (MainMenuLayer::storyMode == kSotryModeAutoPlay && word == wordsOfParagraph[wordsOfParagraph.size()-1])
+    if (MainMenuLayer::storyMode == kSotryModeAutoPlay
+        && word == wordsOfParagraph[wordsOfParagraph.size()-1])
     {
         this->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(page->settings.autoplayDelayBeforePageTurn),
                                             CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::doSwipeLeftAfterDelay)),
                                             NULL));
+        isInDelaySwiping = true;
     }
     
     if (word == wordsOfParagraph[wordsOfParagraph.size()-1])
@@ -754,7 +779,14 @@ void PageLayer::changeColorBack(CCObject *sender)
 
 void PageLayer::doSwipeLeftAfterDelay(CCObject *sender)
 {
-    swipeLeft();
+    isInDelaySwiping = false;
+    
+    // this fucntion is invoked to swipe left automatically when selecting "auto play" mode
+    // if the video is playing, it should not swipe left
+    if (!isVideoPlaying)
+    {
+        swipeLeft();
+    } 
 }
 
 void PageLayer::stopHighlightEffect()
