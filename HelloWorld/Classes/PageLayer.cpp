@@ -636,7 +636,7 @@ void PageLayer::createParagraph(int index)
             {
                 yOffset = (lineText->yOffset + downIndex*ySpaceAdded) - 30;
             }
-            else 
+            else
             {
                 yOffset = lineText->yOffset - upIndex*ySpaceAdded;
             }
@@ -703,6 +703,8 @@ void PageLayer::showParagraph(float delay)
 // stop highlight and should change color back
 void PageLayer::stopHighlightParagraph()
 {
+    isHighLighting = false;
+    
     if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
     {
         vector<CCLabelTTF*>::iterator iter;
@@ -719,8 +721,6 @@ void PageLayer::highlightParagraph()
     // don't hilight if the story mode is read to myself
     if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
     {
-        isHighLighting = true;
-        
         // play corresponding effect
         int wordCount = 0;
         vector<float> &audioInterval = page->paragraphs[currentIndexOfParagraph]->highlightingTimes;
@@ -751,6 +751,11 @@ void PageLayer::highlightParagraph()
             ++wordCount;
         }
         SimpleAudioEngine::sharedEngine()->playEffect(page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str());
+        
+        if (wordCount > 0)
+        {
+            isHighLighting = true;
+        }
     }
 }
 
