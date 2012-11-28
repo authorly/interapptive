@@ -3267,7 +3267,7 @@
                               ],
                 "CCDelayTime": [
                                 {
-                                "duration": 3,
+                                "duration": 1.5,
                                 "actionTag": 2702
                                 }
                                 ],
@@ -3386,7 +3386,7 @@
                               ],
                 "CCDelayTime": [
                                 {
-                                "duration": 3,
+                                "duration": 1.5,
                                 "actionTag": 2802
                                 }
                                 ],
@@ -3912,7 +3912,7 @@
                                              "xOffset": 415
                                              },
                                              {
-                                             "text": "Peter Sallinger, Lucy Bowman, Chuck and Cathie Nagorski",
+                                             "text": "Peter Sallinger, Lucy Bowman, Nancy Boid, Brandon DePoi",
                                              "yOffset": 210,
                                              "xOffset": 175
                                              },

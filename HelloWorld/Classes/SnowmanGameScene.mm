@@ -28,11 +28,14 @@
 #define CATEGORY_LOWER_POSITION ccp(650*XSCALE, 60*YSCALE)
 
 // position for info icon
-#define INFO_ICON_POSITION ccp(950*XSCALE, 75*YSCALE)
+#define INFO_ICON_POSITION      ccp(950*XSCALE, 75*YSCALE)
+
+// text for info alert  
+#define ALERT_HELP_TEXT         "STEP 1\nChange item with arrows\n\nSTEP 2\nTouch item to add\n\nSTEP 3\nTap to change item category"
 
 // position for "touch to add" and "select item" help images
-#define TOUCH_TO_ADD_POSITION ccp(630*XSCALE, 555*YSCALE)
-#define SELECT_ITEM_POSITION ccp(920*XSCALE, 350*YSCALE)
+#define TOUCH_TO_ADD_POSITION ccp(670*XSCALE, 585*YSCALE)
+#define SELECT_ITEM_POSITION ccp(920*XSCALE, 370*YSCALE)
 
 #define HAT_TAG     1
 #define EYE_TAG     2
@@ -714,7 +717,7 @@ void SnowmanGameScene::infoMenuTouched(cocos2d::CCObject *sender)
     items.push_back("OK");
     
     infoMenuDialog = new MyDialog();
-    infoMenuDialog->initWithItems("STEP 1\nUse arrows\nto switch items\n\nSTEP 2\nTouch the item to add it\n\nSTEP 3\nChange item types by\ntouching one (below arrows)", items, this);
+    infoMenuDialog->initWithItems(ALERT_HELP_TEXT, items, this);
     infoMenuDialog->popUp();
 }
 
