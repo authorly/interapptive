@@ -2,11 +2,12 @@
 #define interapptive_VideoPlayer_h
 
 #include "cocos2d.h"
+#include <string>
 
 class VideoPlayProtocol
 {
 public:
-    virtual void moviePlayBackDidFinish() {};
+    virtual void moviePlayBackDidFinish(const char *videoName) {};
 };
 
 /* Can only play one video at a time
@@ -23,6 +24,7 @@ public:
     bool isVideoPlaying;
     
     VideoPlayProtocol *delegate;
+    std::string fileName;
 };
 
 #endif

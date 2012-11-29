@@ -60,7 +60,7 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
     
     if (VideoPlayer::sharedVideoPlayer()->delegate)
     {
-        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish();
+        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish(VideoPlayer::sharedVideoPlayer()->fileName.c_str());
         VideoPlayer::sharedVideoPlayer()->delegate = NULL;
     }
 }
@@ -85,6 +85,7 @@ void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl, Vi
     this->showControl = showControl;
     this->isVideoPlaying = true;
     this->delegate = delegate;
+    this->fileName = fileName;
     
     NSString *nsFilePath = [NSString stringWithUTF8String:fileName];
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:nsFilePath ofType:@""]];
@@ -195,7 +196,7 @@ void VideoPlayer::stopPlay()
     
     if (VideoPlayer::sharedVideoPlayer()->delegate)
     {
-        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish();
+        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish(this->fileName.c_str());
         VideoPlayer::sharedVideoPlayer()->delegate = NULL;
     }
 }

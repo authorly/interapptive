@@ -970,6 +970,16 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 
 			// glitterIndicator
 			storyTouchableNode->glitterIndicator = node["glitterIndicator"].asBool();
+            // autoplayVideoFinishedDelay
+            Json::Value value = node["autoplayVideoFinishedDelay"];
+            if (! value.isNull())
+            {
+                storyTouchableNode->autoplayVideoFinishedDelay = value.asDouble();
+            }
+            else
+            {
+                storyTouchableNode->autoplayVideoFinishedDelay = 0;
+            }
             // stopEffectIndicator
             Json::Value stopEffectIndicatorJson = node["stopEffectIndicator"];
             if (! stopEffectIndicatorJson.isNull())
