@@ -125,13 +125,22 @@ void PageLayer::addTouchNode()
             && (MainMenuLayer::storyMode == kStoryModeReadToMe
                 || (MainMenuLayer::storyMode == kSotryModeAutoPlay)))
         {
-            DelayForTextTouchNodeInfo info;
+            TouchNodeInfo info;
             info.touchNode = touchNode;
             info.partileSystem = particle;
             touchableNodeDelayForTextArray.push_back(info);
             
             touchDetector->enableTouchByFlag(touchNode->touchFlag, false);
             particle->setIsVisible(false);
+        }
+        
+        if (touchNode->videoToPlay.size() > 0 && MainMenuLayer::storyMode == kSotryModeAutoPlay)
+        {
+            TouchNodeInfo info;
+            info.touchNode = touchNode;
+            info.partileSystem = particle;
+            
+            touchableNodeForVideoArray.push_back(info);
         }
         
         addChild(particle);
@@ -153,7 +162,7 @@ void PageLayer::enableDelayForAnimationTouchNode(CCObject *sender)
 
 void PageLayer::enableDelayForTextTouchNode()
 {
-    vector<DelayForTextTouchNodeInfo>::iterator iter;
+    vector<TouchNodeInfo>::iterator iter;
     for (iter = touchableNodeDelayForTextArray.begin(); iter != touchableNodeDelayForTextArray.end(); ++iter)
     {
         touchDetector->enableTouchByFlag((*iter).touchNode->touchFlag, true);
@@ -213,7 +222,7 @@ void PageLayer::touchCallback(float flag)
     }
 }
 
-void PageLayer::moviePlayBackDidFinish()
+void PageLayer::moviePlayBackDidFinish(const char *videoName)
 {
     isVideoPlaying = false;
     
@@ -223,8 +232,47 @@ void PageLayer::moviePlayBackDidFinish()
     }
     else
     {
-        swipeLeft();
+        
+        TouchNodeInfo* touchNodeInfo = getTouchNodeInfoByVideoName(videoName);
+        assert(touchNodeInfo != NULL);
+        
+        if (touchNodeInfo->touchNode->autoplayVideoFinishedDelay > 0)
+        {
+            // do some delay to swipe left and should disable touch node and hide particle to play video again
+            touchDetector->enableTouchByFlag(touchNodeInfo->touchNode->touchFlag, false);
+            touchNodeInfo->partileSystem->setIsVisible(false);
+            
+            // swipe left after a delay
+            this->runAction(CCSequence::actions(
+                                                CCDelayTime::actionWithDuration(touchNodeInfo->touchNode->autoplayVideoFinishedDelay),
+                                                CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::delaySwipeAfterPlayingVideo)),
+                                                NULL)
+                            );
+        }
+        else
+        {
+            swipeLeft();
+        } 
     }
+}
+
+TouchNodeInfo* PageLayer::getTouchNodeInfoByVideoName(const string &videoName)
+{
+    std::vector<TouchNodeInfo>::iterator iter;
+    for (iter = touchableNodeForVideoArray.begin(); iter != touchableNodeForVideoArray.end(); ++iter)
+    {
+        if ((*iter).touchNode->videoToPlay == videoName)
+        {
+            return &(*iter);
+        }
+    }
+    
+    return NULL;
+}
+
+void PageLayer::delaySwipeAfterPlayingVideo(cocos2d::CCObject *sender)
+{
+    swipeLeft();
 }
 
 /// touch event
