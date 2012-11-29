@@ -1225,7 +1225,7 @@
                 "nodes": [
                           {
                           "glitterIndicator": true,
-                          "autoplayVideoFinishedDelay":2.5,
+                          "autoplayVideoFinishedDelay":4.0,
                           "stopEffectIndicator": true,
                           "delayForText": true,
                           "touchFlag": 10,
@@ -2878,6 +2878,7 @@
                   "CCStoryTouchableNode": {
                   "nodes": [
                             {
+                            "autoplayVideoFinishedDelay":4.0,
                             "glitterIndicator": true,
                             "stopEffectIndicator": true,
                             "touchFlag": 1,
@@ -2886,6 +2887,7 @@
                                          640
                                          ],
                             "radius": 80,
+        
                             "videoToPlay": "video_chickadee_on_hat.mp4"
                             },
                              {
@@ -3912,7 +3914,7 @@
                                              "xOffset": 415
                                              },
                                              {
-                                             "text": "Peter Sallinger, Lucy Bowman, Nancy Boid, Brandon DePoi",
+                                             "text": "Peter Sallinger, Lucy Bowman, Nancy Boyd, Brandon DePoy",
                                              "yOffset": 210,
                                              "xOffset": 175
                                              },
