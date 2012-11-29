@@ -1,4 +1,3 @@
-
 {
      "Configurations": {
         "pageFlipSound": {
@@ -1226,6 +1225,7 @@
                 "nodes": [
                           {
                           "glitterIndicator": true,
+                          "autoplayVideoFinishedDelay":2.5,
                           "stopEffectIndicator": true,
                           "delayForText": true,
                           "touchFlag": 10,
