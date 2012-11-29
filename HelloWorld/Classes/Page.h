@@ -69,6 +69,7 @@ typedef struct storyTouchableNode
 	std::string               videoToPlay;
 	std::string               soundToPlay;
 	int                       touchFlag;
+    float                     autoplayVideoFinishedDelay;
 
 	std::vector<StoryTouchableNodeActionsToRun*> actionsToRun;
 } StoryTouchableNode;

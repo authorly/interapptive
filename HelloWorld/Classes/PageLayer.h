@@ -13,7 +13,7 @@ typedef struct
 {
     StoryTouchableNode* touchNode;
     cocos2d::CCParticleSystem *partileSystem;
-} DelayForTextTouchNodeInfo;
+} TouchNodeInfo;
 
 class PageLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayProtocol
 {
@@ -40,10 +40,12 @@ public:
     void enableDelayForAnimationTouchNode(cocos2d::CCObject *sender);
     void enableDelayForTextTouchNode();
     
+    void delaySwipeAfterPlayingVideo(cocos2d::CCObject *sender);
+    
     // dialog protocol
     virtual void buttonClicked(int index);
     
-    virtual void moviePlayBackDidFinish();
+    virtual void moviePlayBackDidFinish(const char *videoName);
     
 private:
     PageLayer();
@@ -74,6 +76,8 @@ private:
     
     void stopHighlightEffect();
     
+    TouchNodeInfo* getTouchNodeInfoByVideoName(const std::string &videoName);
+    
     // determine add or minus text space according the y coordinate 
     // of the first line text
     // @true add text space
@@ -94,8 +98,9 @@ private:
     // so should calcuate delay time
     unsigned int delayOfAnimation;
     
-    std::vector<DelayForTextTouchNodeInfo> touchableNodeDelayForTextArray;
+    std::vector<TouchNodeInfo> touchableNodeDelayForTextArray;
     std::vector<StoryTouchableNode*> touchableNodeDelayForAnimationArray;
+    std::vector<TouchNodeInfo> touchableNodeForVideoArray;
     TouchDetection *touchDetector;
 
     MyDialog *mydialog;
