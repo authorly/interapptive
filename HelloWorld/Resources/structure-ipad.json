@@ -589,6 +589,14 @@
                                          512,
                                          384
                                          ]
+                            },
+                            {
+                            "image": "arrow-pointing-left.png",
+                            "spriteTag": 3,
+                            "position": [
+                                         530,
+                                         590
+                                         ]
                             }
                             ]
               }
