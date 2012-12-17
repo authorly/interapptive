@@ -64,6 +64,7 @@ platform/CCStdC.cpp \
 platform/CCSAXParser.cpp \
 platform/CCThread.cpp \
 platform/CCCommon.cpp \
+platform/DeviceType.cpp \
 platform/platform.cpp \
 platform/android/CCEGLView_android.cpp \
 platform/android/CCAccelerometer_android.cpp \

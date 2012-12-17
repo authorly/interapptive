@@ -10,6 +10,7 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    ChipmunkLayer.cpp \
                    Configurations.cpp \
                    cpSprite.cpp \
+                   CreditsLayer.cpp \
                    DataLoader.cpp \
                    GCpShapeCache.cpp \
                    JsonParser.cpp \
@@ -24,7 +25,6 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    PageManager.cpp \
                    Share.cpp \
                    SharedGlobalData.cpp \
-                   SnowmanGameScene.cpp \
                    TouchDetection.cpp \
                    TouchObject.cpp  \
                    VideoPlayer.cpp        
