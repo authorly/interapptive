@@ -70,17 +70,17 @@ void PageLayer::init(Page *page)
     }
     
     this->delayOfAnimation = this->calculateDelayTimeOnEnter();
-}
-
-void PageLayer::onEnter()
-{
+    
     createSprites();
     createPhysicsLayer();
 	createParagraph(0);
     
     // add menu item to go to main menu
     createMainMenuItem();
-    
+}
+
+void PageLayer::onEnter()
+{
     addTouchNode();
     
     setIsTouchEnabled(true);
