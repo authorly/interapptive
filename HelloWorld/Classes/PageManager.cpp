@@ -77,22 +77,24 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
     CCScene *scene = createSceneByPageNumber(pageNumber);
     if (scene)
     {
-        // SimpleAudioEngine::sharedEngine()->end();
+        // turn page
+        CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        CCTextureCache::sharedTextureCache()->removeAllTextures();
+#else
+        CCTextureCache::sharedTextureCache()->removeUnusedTextures();
+#endif
         
         // play effect
         if (backWards)
         {
             SimpleAudioEngine::sharedEngine()->playEffect(Configurations::backwardEffect.c_str(), false);
         }
-        else 
+        else
         {
             SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
         }
-        
-        // turn page
-        CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
-        
-        CCTextureCache::sharedTextureCache()->removeAllTextures();
     }
 }
 
