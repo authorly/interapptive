@@ -238,6 +238,7 @@ void MainMenuLayer::buttonClicked(int index)
 
 void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
 {
+#ifdef BUILD_SNOWMAN
     // stop back ground music
     if (SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying())
     {
@@ -249,6 +250,7 @@ void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
     CCDirector::sharedDirector()->replaceScene(ccMyTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, SnowmanGameScene::node(), false));
     
     CCTextureCache::sharedTextureCache()->removeAllTextures();
+#endif
 }
 
 void MainMenuLayer::creditsItemTouched(cocos2d::CCObject *sender)
