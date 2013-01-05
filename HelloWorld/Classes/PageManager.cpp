@@ -95,6 +95,8 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
         {
             SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
         }
+        
+        GlobalData::sharedGlobalData()->save();
     }
 }
 
