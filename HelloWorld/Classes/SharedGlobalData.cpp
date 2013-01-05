@@ -33,6 +33,12 @@ GlobalData* GlobalData::sharedGlobalData()
     return g_sharedGlobalData;
 }
 
+void GlobalData::save()
+{
+    CCUserDefault::sharedUserDefault()->setIntegerForKey(KEY_OF_PAGE_NUMBER, currentPageNumber);
+    CCUserDefault::sharedUserDefault()->flush();
+}
+
 void GlobalData::init()
 {
     currentPageNumber = CCUserDefault::sharedUserDefault()->getIntegerForKey(KEY_OF_PAGE_NUMBER, -1);
