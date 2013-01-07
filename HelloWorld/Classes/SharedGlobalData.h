@@ -17,10 +17,16 @@ class GlobalData
 {
 public:
     static GlobalData* sharedGlobalData();
+    
     ~GlobalData();
+    
+    // save current page number
+    void save();
+    
 private:
     GlobalData();
     void init();
+    
 public:
     // the page number of current scene, it should be recorded after app exits
     // and initialize it at app begins from recorded file
