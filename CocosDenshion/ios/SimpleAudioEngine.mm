@@ -182,12 +182,12 @@ namespace CocosDenshion
 		static_preloadBackgroundMusic(pszFilePath);
 	}
 
-	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop)
+	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop, bool playeffect)
 	{
 		static_playBackgroundMusic(pszFilePath, bLoop);
 	}
 
-	void SimpleAudioEngine::stopBackgroundMusic(bool bReleaseData)
+	void SimpleAudioEngine::stopBackgroundMusic(bool bReleaseData, bool playeffect)
 	{
                 static_stopBackgroundMusic();
 	}
