@@ -64,14 +64,14 @@ namespace CocosDenshion
         preloadBackgroundMusicJNI(pszFilePath);
 	}
 
-	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop)
+	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop, bool playeffect)
 	{
-        playBackgroundMusicJNI(pszFilePath, bLoop);
+        playBackgroundMusicJNI(pszFilePath, bLoop, playeffect);
 	}
 
-	void SimpleAudioEngine::stopBackgroundMusic(bool bReleaseData)
+	void SimpleAudioEngine::stopBackgroundMusic(bool bReleaseData, bool playeffect)
 	{
-		stopBackgroundMusicJNI();
+		stopBackgroundMusicJNI(playeffect);
 	}
 
 	void SimpleAudioEngine::pauseBackgroundMusic()
