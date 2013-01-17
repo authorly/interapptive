@@ -104,35 +104,35 @@ extern "C"
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 
-	void playBackgroundMusicJNI(const char *path, bool isLoop)
+	void playBackgroundMusicJNI(const char *path, bool isLoop, bool playeffect)
 	{
 		// void playBackgroundMusic(String,boolean)
 
 		JniMethodInfo methodInfo;
 
-		if (! getStaticMethodInfo(methodInfo, "playBackgroundMusic", "(Ljava/lang/String;Z)V"))
+		if (! getStaticMethodInfo(methodInfo, "playBackgroundMusic", "(Ljava/lang/String;ZZ)V"))
 		{
 			return;
 		}
 
 		jstring stringArg = methodInfo.env->NewStringUTF(path);
-		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, stringArg, isLoop);
+		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, stringArg, isLoop, playeffect);
 		methodInfo.env->DeleteLocalRef(stringArg);
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 
-	void stopBackgroundMusicJNI()
+	void stopBackgroundMusicJNI(bool playeffect)
 	{
 		// void stopBackgroundMusic()
 
 		JniMethodInfo methodInfo;
 
-		if (! getStaticMethodInfo(methodInfo, "stopBackgroundMusic", "()V"))
+		if (! getStaticMethodInfo(methodInfo, "stopBackgroundMusic", "(Z)V"))
 		{
 			return;
 		}
 
-		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID);
+		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, playeffect);
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 

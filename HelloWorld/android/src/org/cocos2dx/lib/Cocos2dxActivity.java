@@ -44,6 +44,7 @@ import android.util.Log;
 
 public class Cocos2dxActivity extends Activity{
     private static Cocos2dxMusic backgroundMusicPlayer;
+    private static Cocos2dxMusic effectPlayer;
     private static Cocos2dxSound soundPlayer;
     private static Cocos2dxAccelerometer accelerometer;
     private static boolean accelerometerEnabled = false;
@@ -69,6 +70,7 @@ public class Cocos2dxActivity extends Activity{
         // init media player and sound player
         backgroundMusicPlayer = new Cocos2dxMusic(this);
         soundPlayer = new Cocos2dxSound(this);
+        effectPlayer = new Cocos2dxMusic(this);
         
         // init bitmap context
         Cocos2dxBitmap.setContext(this);
@@ -151,12 +153,21 @@ public class Cocos2dxActivity extends Activity{
     	backgroundMusicPlayer.preloadBackgroundMusic(path);
     }
     
-    public static void playBackgroundMusic(String path, boolean isLoop){
-    	backgroundMusicPlayer.playBackgroundMusic(path, isLoop);
+    public static void playBackgroundMusic(String path, boolean isLoop, boolean playeffect){
+    	if (playeffect) {
+    		effectPlayer.playBackgroundMusic(path, isLoop);
+    	} else {
+    		backgroundMusicPlayer.playBackgroundMusic(path, isLoop);
+    	}
     }
     
-    public static void stopBackgroundMusic(){
-    	backgroundMusicPlayer.stopBackgroundMusic();
+    public static void stopBackgroundMusic(boolean playeffect){
+    	if (playeffect) {
+    		effectPlayer.stopBackgroundMusic();
+    	} else 
+    	{
+    		backgroundMusicPlayer.stopBackgroundMusic();
+    	}
     }
     
     public static void pauseBackgroundMusic(){
