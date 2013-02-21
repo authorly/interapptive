@@ -221,7 +221,7 @@ int ZipUtils::ccInflateCCZFile(const char *path, unsigned char **out)
      unsigned char* compressed = NULL;
     
      unsigned long fileLen = 0;
-     compressed = CCFileUtils::sharedFileUtils()->getFileData(path, "rb", &fileLen);
+     compressed = CCFileUtils::getFileData(path, "rb", &fileLen);
 
      if(NULL == compressed || 0 == fileLen) 
      {
