@@ -611,11 +611,17 @@ void CCDirector::resetDirector()
 	CCScheduler::purgeSharedScheduler();
 	CCTextureCache::purgeSharedTextureCache();
 }
+   
+#define USE_THE_SAME_SCALE 0
     
 void CCDirector::setTargetWinsize(CCSize winSize)
 {
-    m_fXScale = m_obWinSizeInPoints.width / winSize.width;
     m_fYScale = m_obWinSizeInPoints.height / winSize.height;
+#if USE_THE_SAME_SCALE
+    m_fXScale = m_obWinSizeInPoints.width / winSize.width;
+#else
+    m_fXScale = m_fYScale;
+#endif // USE_THE_SAME_SCALE
 }
     
 float CCDirector::getXScale()
