@@ -285,13 +285,17 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
     settings.fontHighlightColor.r = fontHighlightColor[r].asUInt();
     settings.fontHighlightColor.g = fontHighlightColor[g].asUInt();
     settings.fontHighlightColor.b = fontHighlightColor[b].asUInt();
+
+#define ADJUST_FONT_SIZE 0
     
 	// font size
 	settings.fontSize = jsonSettings["fontSize"].asDouble();
     if (XSCALE != 1)
     {
+#if ADJUST_FONT_SIZE
         // add font size because it will be scaled down
         settings.fontSize += 8;
+#endif // ADJUST_FONT_SIZE
     }
     
 	// background music file
