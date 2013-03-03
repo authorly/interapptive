@@ -324,7 +324,7 @@ void CCDirector::setNextDeltaTimeZero(bool bNextDeltaTimeZero)
 
 void CCDirector::setProjection(ccDirectorProjection kProjection)
 {
-	CCSize size = m_obWinSizeInPixels;
+	CCSize size = m_obWinSizeInPoints;
 	float zeye = this->getZEye();
     
     /* adjust zNear according device type
@@ -337,12 +337,19 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
         zNear = 2.0f;
     }
     
+    float startX = 0;
+    if (m_fXScale != 1)
+    {
+        float realWidth = m_obTargetSize.width * m_fXScale;
+        startX = (m_obWinSizeInPoints.width - realWidth)/2;
+    }
+    
 	switch (kProjection)
 	{
 	case kCCDirectorProjection2D:
         if (m_pobOpenGLView) 
         {
-            m_pobOpenGLView->setViewPortInPoints(0, 0, size.width, size.height);
+            m_pobOpenGLView->setViewPortInPoints(startX, 0, size.width, size.height);
         }
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -355,7 +362,7 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
 	case kCCDirectorProjection3D:		
         if (m_pobOpenGLView) 
         {
-            m_pobOpenGLView->setViewPortInPoints(0, 0, size.width, size.height);
+            m_pobOpenGLView->setViewPortInPoints(startX, 0, size.width, size.height);
         }
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -611,17 +618,11 @@ void CCDirector::resetDirector()
 	CCScheduler::purgeSharedScheduler();
 	CCTextureCache::purgeSharedTextureCache();
 }
-   
-#define USE_THE_SAME_SCALE 0
     
 void CCDirector::setTargetWinsize(CCSize winSize)
 {
-    m_fYScale = m_obWinSizeInPoints.height / winSize.height;
-#if USE_THE_SAME_SCALE
-    m_fXScale = m_obWinSizeInPoints.width / winSize.width;
-#else
-    m_fXScale = m_fYScale;
-#endif // USE_THE_SAME_SCALE
+    m_fXScale = m_fYScale = m_obWinSizeInPoints.height / winSize.height;
+    m_obTargetSize = winSize;
 }
     
 float CCDirector::getXScale()

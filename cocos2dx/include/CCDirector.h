@@ -462,6 +462,8 @@ protected:
 
 	/* window size in points */
 	CCSize	m_obWinSizeInPoints;
+    
+    CCSize m_obTargetSize;
 
 	/* window size in pixels */
 	CCSize m_obWinSizeInPixels;
