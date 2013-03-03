@@ -121,6 +121,10 @@ bool CCDirector::init(void)
     m_bRetinaDisplay = false;
     m_fContentScaleFactor = 1;	
 	m_bIsContentScaleSupported = false;
+    
+    m_fStartX = 0;
+    m_fXScale = 1.0f;
+    m_fYScale = 1.0f;
 
 	// create autorelease pool
 	CCPoolManager::getInstance()->push();
@@ -325,6 +329,7 @@ void CCDirector::setNextDeltaTimeZero(bool bNextDeltaTimeZero)
 void CCDirector::setProjection(ccDirectorProjection kProjection)
 {
 	CCSize size = m_obWinSizeInPoints;
+    size.width -= (m_fStartX*2);
 	float zeye = this->getZEye();
     
     /* adjust zNear according device type
@@ -337,19 +342,12 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
         zNear = 2.0f;
     }
     
-    float startX = 0;
-    if (m_fXScale != 1)
-    {
-        float realWidth = m_obTargetSize.width * m_fXScale;
-        startX = (m_obWinSizeInPoints.width - realWidth)/2;
-    }
-    
 	switch (kProjection)
 	{
 	case kCCDirectorProjection2D:
         if (m_pobOpenGLView) 
         {
-            m_pobOpenGLView->setViewPortInPoints(startX, 0, size.width, size.height);
+            m_pobOpenGLView->setViewPortInPoints(m_fStartX, 0, size.width, size.height);
         }
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -362,7 +360,7 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
 	case kCCDirectorProjection3D:		
         if (m_pobOpenGLView) 
         {
-            m_pobOpenGLView->setViewPortInPoints(startX, 0, size.width, size.height);
+            m_pobOpenGLView->setViewPortInPoints(m_fStartX, 0, size.width, size.height);
         }
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -622,7 +620,11 @@ void CCDirector::resetDirector()
 void CCDirector::setTargetWinsize(CCSize winSize)
 {
     m_fXScale = m_fYScale = m_obWinSizeInPoints.height / winSize.height;
-    m_obTargetSize = winSize;
+
+    float realWidth = winSize.width * m_fXScale;
+    m_fStartX = (m_obWinSizeInPoints.width - realWidth)/2;
+    
+    setProjection(m_eProjection);
 }
     
 float CCDirector::getXScale()
@@ -633,6 +635,11 @@ float CCDirector::getXScale()
 float CCDirector::getYScale()
 {
     return m_fYScale;
+}
+    
+float CCDirector::getOriginX()
+{
+    return m_fStartX;
 }
 
 void CCDirector::purgeDirector()

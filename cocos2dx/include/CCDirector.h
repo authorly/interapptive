@@ -391,6 +391,7 @@ public:
     
     float getXScale();
     float getYScale();
+    float getOriginX();
 
 protected:
 
@@ -463,7 +464,8 @@ protected:
 	/* window size in points */
 	CCSize	m_obWinSizeInPoints;
     
-    CCSize m_obTargetSize;
+    // real origin x coordinate
+    float m_fStartX;
 
 	/* window size in pixels */
 	CCSize m_obWinSizeInPixels;
