@@ -121,6 +121,10 @@ bool CCDirector::init(void)
     m_bRetinaDisplay = false;
     m_fContentScaleFactor = 1;	
 	m_bIsContentScaleSupported = false;
+    
+    m_fStartX = 0;
+    m_fXScale = 1.0f;
+    m_fYScale = 1.0f;
 
 	// create autorelease pool
 	CCPoolManager::getInstance()->push();
@@ -324,7 +328,9 @@ void CCDirector::setNextDeltaTimeZero(bool bNextDeltaTimeZero)
 
 void CCDirector::setProjection(ccDirectorProjection kProjection)
 {
-	CCSize size = m_obWinSizeInPixels;
+	//CCSize size = m_obWinSizeInPoints;
+    //size.width -= (m_fStartX*2);
+    CCSize size = getWinSize();
 	float zeye = this->getZEye();
     
     /* adjust zNear according device type
@@ -342,7 +348,7 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
 	case kCCDirectorProjection2D:
         if (m_pobOpenGLView) 
         {
-            m_pobOpenGLView->setViewPortInPoints(0, 0, size.width, size.height);
+            m_pobOpenGLView->setViewPortInPoints(m_fStartX, 0, size.width, size.height);
         }
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -355,7 +361,7 @@ void CCDirector::setProjection(ccDirectorProjection kProjection)
 	case kCCDirectorProjection3D:		
         if (m_pobOpenGLView) 
         {
-            m_pobOpenGLView->setViewPortInPoints(0, 0, size.width, size.height);
+            m_pobOpenGLView->setViewPortInPoints(m_fStartX, 0, size.width, size.height);
         }
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -480,6 +486,7 @@ CCPoint CCDirector::convertToUI(const CCPoint& obPoint)
 CCSize CCDirector::getWinSize(void)
 {
 	CCSize s = m_obWinSizeInPoints;
+    s.width -= (m_fStartX*2);
 
 	if (m_eDeviceOrientation == CCDeviceOrientationLandscapeLeft
 		|| m_eDeviceOrientation == CCDeviceOrientationLandscapeRight)
@@ -614,8 +621,12 @@ void CCDirector::resetDirector()
     
 void CCDirector::setTargetWinsize(CCSize winSize)
 {
-    m_fXScale = m_obWinSizeInPoints.width / winSize.width;
-    m_fYScale = m_obWinSizeInPoints.height / winSize.height;
+    m_fXScale = m_fYScale = m_obWinSizeInPoints.height / winSize.height;
+
+    float realWidth = winSize.width * m_fXScale;
+    m_fStartX = (m_obWinSizeInPoints.width - realWidth)/2;
+    
+    setProjection(m_eProjection);
 }
     
 float CCDirector::getXScale()
@@ -626,6 +637,11 @@ float CCDirector::getXScale()
 float CCDirector::getYScale()
 {
     return m_fYScale;
+}
+    
+float CCDirector::getOriginX()
+{
+    return m_fStartX;
 }
 
 void CCDirector::purgeDirector()

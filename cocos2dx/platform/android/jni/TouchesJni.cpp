@@ -50,7 +50,6 @@ static CCTouch *s_pTouches[MAX_TOUCHES] = { NULL };
 	void Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeTouchesBegin(JNIEnv*  env, jobject thiz, jint id, jfloat x, jfloat y)
 	{
 		CCRect rcRect = CCEGLView::sharedOpenGLView().getViewPort();
-		float fScreenScaleFactor = CCEGLView::sharedOpenGLView().getScreenScaleFactor();
 		CCSet set;
 
 		CCTouch *pTouch = s_pTouches[id];
@@ -59,7 +58,7 @@ static CCTouch *s_pTouches[MAX_TOUCHES] = { NULL };
 			LOGD("Beginning touches with id: %d, x=%f, y=%f", id, x, y);
 
 			pTouch = new CCTouch();			
-			pTouch->SetTouchInfo(0, (x - rcRect.origin.x) / fScreenScaleFactor, (y - rcRect.origin.y) / fScreenScaleFactor, id);
+			pTouch->SetTouchInfo(0, x - rcRect.origin.x, y - rcRect.origin.y, id);
 			s_pTouches[id] = pTouch;
 			set.addObject(pTouch);
 
@@ -74,7 +73,6 @@ static CCTouch *s_pTouches[MAX_TOUCHES] = { NULL };
 	void Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeTouchesEnd(JNIEnv*  env, jobject thiz, jint id, jfloat x, jfloat y)
 	{
 		CCRect rcRect = CCEGLView::sharedOpenGLView().getViewPort();
-		float fScreenScaleFactor = CCEGLView::sharedOpenGLView().getScreenScaleFactor();
 		CCSet set;
 
 		/* Add to the set to send to the director */
@@ -83,7 +81,7 @@ static CCTouch *s_pTouches[MAX_TOUCHES] = { NULL };
 		{
 			LOGD("Ending touches with id: %d, x=%f, y=%f", id, x, y);
 
-			pTouch->SetTouchInfo(0, (x - rcRect.origin.x) / fScreenScaleFactor , (y - rcRect.origin.y) / fScreenScaleFactor, id);
+			pTouch->SetTouchInfo(0, x - rcRect.origin.x , y - rcRect.origin.y, id);
 		    set.addObject(pTouch);
 
 			// release the object
@@ -103,7 +101,6 @@ static CCTouch *s_pTouches[MAX_TOUCHES] = { NULL };
 		jfloat x[size];
 		jfloat y[size];
 		CCRect rcRect = CCEGLView::sharedOpenGLView().getViewPort();
-		float fScreenScaleFactor = CCEGLView::sharedOpenGLView().getScreenScaleFactor();
 		CCSet set;
 
 		env->GetIntArrayRegion(ids, 0, size, id);
@@ -115,8 +112,8 @@ static CCTouch *s_pTouches[MAX_TOUCHES] = { NULL };
 			cocos2d::CCTouch* pTouch = s_pTouches[id[i]];
 			if (pTouch)
 			{
-				pTouch->SetTouchInfo(0, (x[i] - rcRect.origin.x) / fScreenScaleFactor , 
-			                        (y[i] - rcRect.origin.y) / fScreenScaleFactor, id[i]);
+				pTouch->SetTouchInfo(0, x[i] - rcRect.origin.x , 
+			                        y[i] - rcRect.origin.y, id[i]);
 				set.addObject(pTouch);
 			}
 			else
@@ -137,7 +134,6 @@ static CCTouch *s_pTouches[MAX_TOUCHES] = { NULL };
 		jfloat x[size];
 		jfloat y[size];
 		CCRect rcRect = CCEGLView::sharedOpenGLView().getViewPort();
-		float fScreenScaleFactor = CCEGLView::sharedOpenGLView().getScreenScaleFactor();
 		CCSet set;
 
 		env->GetIntArrayRegion(ids, 0, size, id);
@@ -148,8 +144,8 @@ static CCTouch *s_pTouches[MAX_TOUCHES] = { NULL };
 			cocos2d::CCTouch* pTouch = s_pTouches[id[i]];
 			if (pTouch)
 			{
-				pTouch->SetTouchInfo(0, (x[i] - rcRect.origin.x) / fScreenScaleFactor , 
-			                        (y[i] - rcRect.origin.y) / fScreenScaleFactor, id[i]);
+				pTouch->SetTouchInfo(0, x[i] - rcRect.origin.x, 
+			                        y[i] - rcRect.origin.y, id[i]);
 				set.addObject(pTouch);
 				s_pTouches[id[i]] = NULL;
 				pTouch->release();

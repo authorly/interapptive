@@ -18,6 +18,13 @@ public:
     static std::string homeButtonTappedStateImage;
     
     static cocos2d::CCPoint homeButtonPosition;
+    
+    /** 
+     * Whether or not text scaling ratio is different from picture
+     * true: text scaling ratio is the same as picture
+     * false: text scaling ratio is different from picture
+     */
+    static bool retainTextScalingRatio;
 };
 
 #endif
