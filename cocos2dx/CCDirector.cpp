@@ -328,8 +328,9 @@ void CCDirector::setNextDeltaTimeZero(bool bNextDeltaTimeZero)
 
 void CCDirector::setProjection(ccDirectorProjection kProjection)
 {
-	CCSize size = m_obWinSizeInPoints;
-    size.width -= (m_fStartX*2);
+	//CCSize size = m_obWinSizeInPoints;
+    //size.width -= (m_fStartX*2);
+    CCSize size = getWinSize();
 	float zeye = this->getZEye();
     
     /* adjust zNear according device type
@@ -485,6 +486,7 @@ CCPoint CCDirector::convertToUI(const CCPoint& obPoint)
 CCSize CCDirector::getWinSize(void)
 {
 	CCSize s = m_obWinSizeInPoints;
+    s.width -= (m_fStartX*2);
 
 	if (m_eDeviceOrientation == CCDeviceOrientationLandscapeLeft
 		|| m_eDeviceOrientation == CCDeviceOrientationLandscapeRight)
