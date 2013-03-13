@@ -8,6 +8,7 @@
         "paragraphTextFadeDuration": 0.4,
         "autoplayPageTurnDelay": 0.2,
         "autoplayParagraphDelay": 0.1,
+        "retainTextScalingRatio" : true,
         "homeMenuForPages": {
             "normalStateImage": "home-button.png",
             "tappedStateImage": "home-button-over.png",

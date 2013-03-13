@@ -49,6 +49,8 @@ void JsonParser::parseConfigurations(Json::Value &root)
     Configurations::pageFlipTransitionDuration = (float)configurations["pageFlipTransitionDuration"].asDouble();
     // paragraph text fade duration
     Configurations::paragraphTextFadeDuration = (float)configurations["paragraphTextFadeDuration"].asDouble();
+    // whether text scaling ratio the same as picture
+    Configurations::retainTextScalingRatio = configurations["retainTextScalingRatio"].asBool();
     
     // home menu for pages
     
@@ -290,8 +292,11 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
 	settings.fontSize = jsonSettings["fontSize"].asDouble();
     if (XSCALE != 1)
     {
-        // add font size because it will be scaled down
-        settings.fontSize += 8;
+        if (! Configurations::retainTextScalingRatio)
+        {
+            // add font size because it will be scaled down
+            settings.fontSize += 8;
+        }
     }
     
 	// background music file
