@@ -438,11 +438,11 @@
               }
               },
               "API": {
-              "CCMoveBy": [
+              "CCMoveTo": [
                            {
                            "position": [
-                                        -810,
-                                        240
+                                        -40,
+                                        624
                                         ],
                            "duration": 3,
                            "actionTag": 30
