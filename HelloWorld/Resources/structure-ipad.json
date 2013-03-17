@@ -206,13 +206,6 @@
                            "actionTag": 20
                            }
                            ],
-              "CCMoveTo": [
-                           {
-                           "intensity": 1.4,
-                           "duration": 3,
-                           "actionTag": 22
-                           }
-                           ],
               "CCSprites": [
                             {
                             "image": "background0010.jpg",
