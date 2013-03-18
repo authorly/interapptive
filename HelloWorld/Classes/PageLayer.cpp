@@ -402,9 +402,10 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
                 CCArray *array = CCArray::array();
                 for (int j = 0; j < actionToRun->actionTags.size(); ++j)
                 {
-                    // the action should be CCScaleBy, CCMoveBy or CCMoveTo
+                    // the action should be CCScaleBy, CCScaleTo, CCMoveBy or CCMoveTo
                     CCAction *element = page->getActionByTag(actionToRun->actionTags[j]);
                     assert(dynamic_cast<CCScaleBy*>(element) != NULL ||
+                           dynamic_cast<CCScaleTo*>(element) != NULL ||
                            dynamic_cast<CCMoveBy*>(element) != NULL ||
                            dynamic_cast<CCMoveTo*>(element) != NULL);
                     
