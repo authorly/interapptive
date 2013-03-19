@@ -416,7 +416,11 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
             else 
             {
                 action = (CCFiniteTimeAction*)page->getActionByTag(actionToRun->actionTags[0]);
-                assert(dynamic_cast<CCScaleBy*>(action) != NULL || dynamic_cast<CCMoveBy*>(action) != NULL);
+                assert(dynamic_cast<CCScaleBy*>(action) != NULL ||
+                       dynamic_cast<CCScaleTo*>(action) != NULL ||
+                       dynamic_cast<CCMoveBy*>(action) != NULL ||
+                       dynamic_cast<CCMoveTo*>(action) != NULL);
+
             }
             
             
