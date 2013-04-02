@@ -138,6 +138,14 @@ public class Cocos2dxActivity extends Activity{
     	
     	handler.sendMessage(msg); 
     }
+    
+    public static void shareOnFaceBook() {
+    	Log.d("interapptive", "share on facebook");
+    }
+    
+    public static void shareOnTwitter() {
+    	Log.d("interapptive", "share on twitter");
+    }
 
     public static void enableAccelerometer() {
         accelerometerEnabled = true;
