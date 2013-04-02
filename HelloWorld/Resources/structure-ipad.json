@@ -136,19 +136,7 @@
               {
               "Page": {
               "settings": {
-              "number": 1,
-              "fontType": "PoeticaChanceryIII.ttf",
-              "fontColor": [
-                            255,
-                            0,
-                            0
-                            ],
-              "fontHighlightColor": [
-                                     0,
-                                     0,
-                                     0
-                                     ],
-              "fontSize": 48
+              "number": 1
               },
               "text": {
               "paragraphs": [
@@ -178,7 +166,20 @@
                                              {
                                              "text": "For those who protect wild places",
                                              "yOffset": 300,
-                                             "xOffset": 292
+                                             "xOffset": 292,
+
+                                             "fontType": "PoeticaChanceryIII.ttf",
+                                             "fontColor": [
+                                                           255,
+                                                           0,
+                                                           0
+                                                           ],
+                                             "fontHighlightColor": [
+                                                                    0,
+                                                                    0,
+                                                                    0
+                                                                    ],
+                                             "fontSize": 48
                                              },
                                              {
                                              "text": "and to the snowman that lives",
