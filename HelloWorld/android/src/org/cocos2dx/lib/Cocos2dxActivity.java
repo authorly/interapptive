@@ -55,12 +55,14 @@ public class Cocos2dxActivity extends Activity{
     private final static int HANDLER_GOTO_URL = 4;
     private static String packageName;
     private static Cocos2dxGLSurfaceView glSurfaceView;
+    private static Activity me = null;
 
     private static native void nativeSetPaths(String apkPath);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        me = this;
         
         // get frame size
         DisplayMetrics dm = new DisplayMetrics();
@@ -140,7 +142,15 @@ public class Cocos2dxActivity extends Activity{
     }
     
     public static void shareOnFaceBook() {
-    	Log.d("interapptive", "share on facebook");
+    	Log.d("interapptive", "iterate 1");
+
+    	// Working share mechanism
+        //Intent sendIntent = new Intent();
+        //sendIntent.setAction(Intent.ACTION_SEND);
+        //sendIntent.putExtra(Intent.EXTRA_TEXT, "http://www.google.com");
+        //sendIntent.setType("text/plain");
+        //me.startActivity(sendIntent);
+
     }
     
     public static void shareOnTwitter() {
