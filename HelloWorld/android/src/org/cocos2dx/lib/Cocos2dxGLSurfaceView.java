@@ -125,7 +125,7 @@ class TextInputWraper implements TextWatcher, OnEditorActionListener {
 
 public class Cocos2dxGLSurfaceView extends GLSurfaceView {
     
-    static private Cocos2dxGLSurfaceView mainView;
+    static public Cocos2dxGLSurfaceView mainView;
 
     private static final String TAG = Cocos2dxGLSurfaceView.class.getCanonicalName();
     private Cocos2dxRenderer mRenderer;

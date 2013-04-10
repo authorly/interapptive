@@ -29,6 +29,8 @@
         </activity>
         
     </application>
+    <uses-permission android:name="android.permission.INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <supports-screens android:largeScreens="true"
                       android:smallScreens="true"
                       android:anyDensity="true"
