@@ -127,6 +127,10 @@ public class Cocos2dxActivity extends Activity {
 
 		handler.sendMessage(msg);
 	}
+	
+	public static String getExternalPath() {
+		return Environment.getExternalStorageDirectory().toString() + "/snowman.png";
+	}
 
 	public static void myShowDialog(String title, String[] buttons) {
 		Message msg = new Message();
