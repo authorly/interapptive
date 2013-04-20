@@ -272,32 +272,6 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
     {
         settings.autoplayDelayBeforePageTurn = 0;
     }
-	// fontType
-	settings.fontType = jsonSettings["fontType"].asCString();
-    
-	// fontColor(r,g,b)
-	Json::Value fontColor = jsonSettings["fontColor"];
-	int r = 0, g = 1, b = 2;
-	settings.fontColor.r = fontColor[r].asUInt();
-	settings.fontColor.g = fontColor[g].asUInt();
-	settings.fontColor.b = fontColor[b].asUInt();
-    
-    // font highlight color
-    Json::Value fontHighlightColor = jsonSettings["fontHighlightColor"];
-    settings.fontHighlightColor.r = fontHighlightColor[r].asUInt();
-    settings.fontHighlightColor.g = fontHighlightColor[g].asUInt();
-    settings.fontHighlightColor.b = fontHighlightColor[b].asUInt();
-    
-	// font size
-	settings.fontSize = jsonSettings["fontSize"].asDouble();
-    if (XSCALE != 1)
-    {
-        if (! Configurations::retainTextScalingRatio)
-        {
-            // add font size because it will be scaled down
-            settings.fontSize += 8;
-        }
-    }
     
 	// background music file
     // may not have background music to play, so should check it
@@ -391,6 +365,34 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 
             // split text into words
             page->splitText(lineText);
+            
+            // fontType
+            lineText->fontType = jsonLineText["fontType"].asCString();
+            
+            // fontColor(r,g,b)
+            Json::Value fontColor = jsonLineText["fontColor"];
+            int r = 0, g = 1, b = 2;
+            lineText->fontColor.r = fontColor[r].asUInt();
+            lineText->fontColor.g = fontColor[g].asUInt();
+            lineText->fontColor.b = fontColor[b].asUInt();
+            
+            // font highlight color
+            Json::Value fontHighlightColor = jsonLineText["fontHighlightColor"];
+            lineText->fontHighlightColor.r = fontHighlightColor[r].asUInt();
+            lineText->fontHighlightColor.g = fontHighlightColor[g].asUInt();
+            lineText->fontHighlightColor.b = fontHighlightColor[b].asUInt();
+            
+            // font size
+            lineText->fontSize = jsonLineText["fontSize"].asDouble();
+            if (XSCALE != 1)
+            {
+                if (! Configurations::retainTextScalingRatio)
+                {
+                    // add font size because it will be scaled down
+                    lineText->fontSize += 8;
+                }
+            }
+
             
 			paragraph->linesOfTest.push_back(lineText);
 		}

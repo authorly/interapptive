@@ -13,10 +13,10 @@ typedef struct settings
 	// font info
 	int                number;
     int                autoplayDelayBeforePageTurn;
-	std::string        fontType;
-	cocos2d::ccColor3B fontColor;
-    cocos2d::ccColor3B fontHighlightColor;
-	float              fontSize;
+//	std::string        fontType;
+//	cocos2d::ccColor3B fontColor;
+//    cocos2d::ccColor3B fontHighlightColor;
+//	float              fontSize;
 
 	// background music info
     bool        loop; // -1 means loop forever
@@ -35,6 +35,11 @@ typedef struct lineText
 	int                 yOffset;
 	int                 xOffset;
     std::vector<string> words;
+    
+    std::string         fontType;
+    cocos2d::ccColor3B  fontColor;
+    cocos2d::ccColor3B  fontHighlightColor;
+    int                 fontSize;
 } LineText;
 
 typedef struct paragraph
