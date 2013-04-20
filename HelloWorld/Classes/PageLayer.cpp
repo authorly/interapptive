@@ -658,14 +658,15 @@ void PageLayer::createParagraph(int index)
         CC_SAFE_RELEASE_NULL(paragraphLayer);
         
         // clear paragrsphs
-        wordsOfParagraph.clear();
+//        wordsOfParagraph.clear();
+        clearLabelIndex();
         
         currentIndexOfParagraph = index;
         
         // font settings
-        const char* fontName = page->settings.fontType.c_str();
-        ccColor3B &fontColor = page->settings.fontColor;
-        int fontSize = page->settings.fontSize;
+        const char* fontName = NULL;
+        ccColor3B *fontColor = NULL;
+        int fontSize = 0;
 
         paragraphLayer = CCLayer::node();
         paragraphLayer->retain();
@@ -682,10 +683,15 @@ void PageLayer::createParagraph(int index)
         int downIndex = linesOfText.size();
         int upIndex = 0;
         bool addSpace = addTextSpace(downIndex > 0 ? linesOfText[0]->yOffset : 0);
-		for (lineTextIter = linesOfText.begin(); lineTextIter != linesOfText.end(); ++lineTextIter, --downIndex, ++ upIndex)
+        int lineNum = 0;
+		for (lineTextIter = linesOfText.begin(); lineTextIter != linesOfText.end(); ++lineTextIter, --downIndex, ++upIndex, ++lineNum)
 		{
 			LineText* lineText = *lineTextIter;
             xOffset = lineText->xOffset;
+            
+            fontName = lineText->fontType.c_str();
+            fontColor = &lineText->fontColor;
+            fontSize = lineText->fontSize;
             
             if (addSpace)
             {
@@ -701,12 +707,16 @@ void PageLayer::createParagraph(int index)
                 string &word = lineText->words[i];
                 CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);                
                 
-                label->setColor(fontColor);                           
+                label->setColor(*fontColor);
                 label->setPosition(ccp(xOffset, yOffset));
                         
                 // record label in a vector, don't have to retain it
                 // because it is retained by labelLayer
-                wordsOfParagraph.push_back(label);
+                LabelIndex *labelIndex = new LabelIndex();
+                labelIndex->label = label;
+                labelIndex->lineIndex = lineNum;
+                labelIndex->paragraphIndex = currentIndexOfParagraph;
+                wordsOfParagraph.push_back(labelIndex);
                 
                 paragraphLayer->addChild(label);
 
@@ -762,11 +772,11 @@ void PageLayer::stopHighlightParagraph()
     
     if (MainMenuLayer::storyMode != kStoryModeReadItMyself)
     {
-        vector<CCLabelTTF*>::iterator iter;
+        std::vector<LabelIndex*>::iterator iter;
         for (iter = wordsOfParagraph.begin(); iter != wordsOfParagraph.end(); ++iter)
         {
-            (*iter)->stopAllActions();
-            (*iter)->setColor(page->settings.fontColor);
+            (*iter)->label->stopAllActions();
+            (*iter)->label->setColor(getLineTextByLabel((*iter)->label)->fontColor);
         }
     }
 }
@@ -779,26 +789,26 @@ void PageLayer::highlightParagraph()
         // play corresponding effect
         int wordCount = 0;
         vector<float> &audioInterval = page->paragraphs[currentIndexOfParagraph]->highlightingTimes;
-        vector<CCLabelTTF*>::iterator iter;
+        std::vector<LabelIndex*>::iterator iter;
         for (iter = wordsOfParagraph.begin(); iter != wordsOfParagraph.end(); ++iter)
         {
             if (wordCount < audioInterval.size())
             {
-                (*iter)->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount]),
+                (*iter)->label->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount]),
                                                        CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColor)),
                                                        NULL));
             }
             
             if (wordCount < audioInterval.size() - 1)
             {
-                (*iter)->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount+1]),
+                (*iter)->label->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount+1]),
                                                        CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColorBack)),
                                                        NULL));
             }
             
             if (wordCount == audioInterval.size() - 1)
             {
-                (*iter)->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount] + 0.8f),
+                (*iter)->label->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(audioInterval[wordCount] + 0.8f),
                                                        CCCallFuncN::actionWithTarget(this, callfuncN_selector(PageLayer::changeColorBack)),
                                                        NULL));
             }
@@ -818,23 +828,23 @@ void PageLayer::highlightParagraph()
 
 void PageLayer::changeColor(CCObject *sender)
 {
-    ((CCLabelTTF*)sender)->setColor(page->settings.fontHighlightColor);
+    ((CCLabelTTF*)sender)->setColor(getLineTextByLabel((CCLabelTTF*)sender)->fontHighlightColor);
 }
 
 void PageLayer::changeColorBack(CCObject *sender)
 {
     CCLabelTTF *word = (CCLabelTTF*)sender;
-    word->setColor(page->settings.fontColor);
+    word->setColor(getLineTextByLabel(word)->fontColor);
     
     if (MainMenuLayer::storyMode == kSotryModeAutoPlay
-        && word == wordsOfParagraph[wordsOfParagraph.size()-1])
+        && word == wordsOfParagraph[wordsOfParagraph.size()-1]->label)
     {
         this->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(page->settings.autoplayDelayBeforePageTurn),
                                             CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::doSwipeLeftAfterDelay)),
                                             NULL));
     }
     
-    if (word == wordsOfParagraph[wordsOfParagraph.size()-1])
+    if (word == wordsOfParagraph[wordsOfParagraph.size()-1]->label)
     {
         enableDelayForTextTouchNode();
     }
@@ -875,4 +885,28 @@ void PageLayer::playBackgroundMusic()
             SimpleAudioEngine::sharedEngine()->playBackgroundMusic(musicFilePath, false);
         }
     }	
+}
+
+void PageLayer::clearLabelIndex()
+{
+    while(! wordsOfParagraph.empty()) {
+        delete wordsOfParagraph.back();
+        wordsOfParagraph.pop_back();
+    }
+}
+
+LineText* PageLayer::getLineTextByLabel(cocos2d::CCLabelTTF* label)
+{
+    vector<LabelIndex*>::iterator iter;
+    for (iter = wordsOfParagraph.begin(); iter != wordsOfParagraph.end(); ++iter)
+    {
+        if (label == (*iter)->label)
+        {
+            int paragraphIndex = (*iter)->paragraphIndex;
+            int textIndex = (*iter)->lineIndex;
+            return page->paragraphs[paragraphIndex]->linesOfTest[textIndex];
+        }
+    }
+    
+    return NULL;
 }

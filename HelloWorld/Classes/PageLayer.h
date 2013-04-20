@@ -84,14 +84,24 @@ private:
     // @false minus text space
     bool addTextSpace(float yFirstLineText);
     
+    void clearLabelIndex();
+    LineText* getLineTextByLabel(cocos2d::CCLabelTTF*);
+    
 private:
+    
+    typedef struct {
+        int paragraphIndex; // which paragraph a text belongs to
+        int lineIndex;  // which text line a label belongs to
+        cocos2d::CCLabelTTF *label;
+    }LabelIndex;
+    
     // record touch began position
     cocos2d::CCPoint beginPoint;
     int currentIndexOfParagraph;
     // the page that pageLayer use, weak ref
     Page *page;
     // record all labels
-    std::vector<cocos2d::CCLabelTTF*> wordsOfParagraph;
+    std::vector<LabelIndex*> wordsOfParagraph;
     cocos2d::CCLayer *paragraphLayer;
     
     // some sprites may run action when onEnter
