@@ -136,7 +136,19 @@
               {
               "Page": {
               "settings": {
-              "number": 1
+              "number": 1,
+              "fontType": "PoeticaChanceryIII.ttf",
+              "fontColor": [
+                            255,
+                            0,
+                            0
+                            ],
+              "fontHighlightColor": [
+                                     0,
+                                     0,
+                                     0
+                                     ],
+              "fontSize": 48
               },
               "text": {
               "paragraphs": [
@@ -166,56 +178,17 @@
                                              {
                                              "text": "For those who protect wild places",
                                              "yOffset": 300,
-                                             "xOffset": 292,
-
-                                             "fontType": "PoeticaChanceryIII.ttf",
-                                             "fontColor": [
-                                                           255,
-                                                           0,
-                                                           0
-                                                           ],
-                                             "fontHighlightColor": [
-                                                                    0,
-                                                                    0,
-                                                                    0
-                                                                    ],
-                                             "fontSize": 48
+                                             "xOffset": 292
                                              },
                                              {
                                              "text": "and to the snowman that lives",
                                              "yOffset": 245,
-                                             "xOffset": 313,
-
-                                             "fontType": "PoeticaChanceryIII.ttf",
-                                             "fontColor": [
-                                                           255,
-                                                           0,
-                                                           0
-                                                           ],
-                                             "fontHighlightColor": [
-                                                                    0,
-                                                                    0,
-                                                                    0
-                                                                    ],
-                                             "fontSize": 48
+                                             "xOffset": 313
                                              },
                                              {
                                              "text": "in every child's heart.",
                                              "yOffset": 190,
-                                             "xOffset": 365,
-
-                                             "fontType": "PoeticaChanceryIII.ttf",
-                                             "fontColor": [
-                                                           0,
-                                                           0,
-                                                           0
-                                                           ],
-                                             "fontHighlightColor": [
-                                                                    255,
-                                                                    0,
-                                                                    0
-                                                                    ],
-                                             "fontSize": 28
+                                             "xOffset": 365
                                              }
                                              ]
                              }
