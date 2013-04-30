@@ -1,7 +1,7 @@
 # set params
 #NDK_ROOT_LOCAL=/cygdrive/d/programe/android/ndk/android-ndk-r6b
 #COCOS2DX_ROOT_LOCAL=/Users/zhangkoumyou/SourceCode/interapptive
-NDK_ROOT_LOCAL=/Users/chriswhitman/workspace/android-ndk-r7b
+NDK_ROOT_LOCAL=/Users/whitman/rails_apps/workspace/android-ndk-r7b
 COCOS2DX_ROOT_LOCAL=`pwd`/../..
 
 
