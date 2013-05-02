@@ -1,7 +1,7 @@
 # set params
 #NDK_ROOT_LOCAL=/cygdrive/d/programe/android/ndk/android-ndk-r6b
 #COCOS2DX_ROOT_LOCAL=/Users/zhangkoumyou/SourceCode/interapptive
-NDK_ROOT_LOCAL=/Users/chriswhitman/workspace/android-ndk-r7b
+NDK_ROOT_LOCAL=/opt/android-ndk
 COCOS2DX_ROOT_LOCAL=`pwd`/../..
 
 
@@ -58,6 +58,6 @@ popd
 
 if [ $# -eq 0 ];then
 echo "generate apk"
-android update project -p .
+android update project -p . --target android-17
 ant debug
 fi
