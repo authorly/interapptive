@@ -1389,10 +1389,6 @@
              "audioFilePath":"effect-footsteps.mp3"
              }
              },
-             "backgroundMusicFile":{
-             "loop":true,
-             "audioFilePath":"effect-footsteps.mp3"
-             },
              "text":{
              "paragraphs":[
                            {
