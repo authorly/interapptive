@@ -179,106 +179,191 @@ namespace CocosDenshion
     
     void SimpleAudioEngine::preloadBackgroundMusic(const char* pszFilePath)
 	{
+#ifdef DISABLE_AUDIO
+        return;
+#else
 		static_preloadBackgroundMusic(pszFilePath);
+#endif
 	}
 
 	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop, bool playeffect)
 	{
+#ifdef DISABLE_AUDIO
+        return;
+#else
 		static_playBackgroundMusic(pszFilePath, bLoop);
+#endif
 	}
 
 	void SimpleAudioEngine::stopBackgroundMusic(bool bReleaseData, bool playeffect)
 	{
-                static_stopBackgroundMusic();
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_stopBackgroundMusic();
+#endif
+        
 	}
 
 	void SimpleAudioEngine::pauseBackgroundMusic()
 	{
-                static_pauseBackgroundMusic();
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_pauseBackgroundMusic();
+#endif
 	}
 
 	void SimpleAudioEngine::resumeBackgroundMusic()
 	{
-                static_resumeBackgroundMusic();
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_resumeBackgroundMusic();
+#endif
 	} 
 
 	void SimpleAudioEngine::rewindBackgroundMusic()
 	{
-                static_rewindBackgroundMusic();
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_rewindBackgroundMusic();
+#endif
 	}
 
 	bool SimpleAudioEngine::willPlayBackgroundMusic()
 	{
-                return static_willPlayBackgroundMusic();
+#ifdef DISABLE_AUDIO
+        return false;
+#else
+        return static_willPlayBackgroundMusic();
+#endif
 	}
 
 	bool SimpleAudioEngine::isBackgroundMusicPlaying()
 	{
-                return static_isBackgroundMusicPlaying();
+#ifdef DISABLE_AUDIO
+        return false;
+#else
+        return static_isBackgroundMusicPlaying();
+#endif
 	}
 
 	float SimpleAudioEngine::getBackgroundMusicVolume()
 	{
-                return static_getBackgroundMusicVolume();
+#ifdef DISABLE_AUDIO
+        return 0;
+#else
+        return static_getBackgroundMusicVolume();
+#endif
 	}
 
 	void SimpleAudioEngine::setBackgroundMusicVolume(float volume)
 	{
-                 static_setBackgroundMusicVolume(volume);
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_setBackgroundMusicVolume(volume);
+#endif
 	}
 
 	float SimpleAudioEngine::getEffectsVolume()
 	{
-                return static_getEffectsVolume();
+#ifdef DISABLE_AUDIO
+        return 0;
+#else
+        return static_getEffectsVolume();
+#endif
 	}
 
 	void SimpleAudioEngine::setEffectsVolume(float volume)
 	{
-                static_setEffectsVolume(volume);
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_setEffectsVolume(volume);
+#endif
 	}
 
 	unsigned int SimpleAudioEngine::playEffect(const char* pszFilePath, bool bLoop)
 	{
-                return static_playEffect(pszFilePath, bLoop);
+#ifdef DISABLE_AUDIO
+        return 0;
+#else
+        return static_playEffect(pszFilePath, bLoop);
+#endif
 	}
 
 	void SimpleAudioEngine::stopEffect(unsigned int nSoundId)
 	{
-                static_stopEffect(nSoundId);
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_stopEffect(nSoundId);
+#endif
 	}
 
 	void SimpleAudioEngine::preloadEffect(const char* pszFilePath)
 	{
-                static_preloadEffect(pszFilePath);
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_preloadEffect(pszFilePath);
+#endif
 	}
 
 	void SimpleAudioEngine::unloadEffect(const char* pszFilePath)
 	{
-                static_unloadEffect(pszFilePath);
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_unloadEffect(pszFilePath);
+#endif
 	}
 	
 	void SimpleAudioEngine::pauseEffect(unsigned int uSoundId)
 	{
+#ifdef DISABLE_AUDIO
+        return;
+#else
 	    static_pauseEffect(uSoundId);
+#endif
 	}
 	
 	void SimpleAudioEngine::resumeEffect(unsigned int uSoundId)
 	{
+#ifdef DISABLE_AUDIO
+        return;
+#else
 	    static_resumeEffect(uSoundId);
+#endif
 	}
 	
 	void SimpleAudioEngine::pauseAllEffects()
 	{
+#ifdef DISABLE_AUDIO
+        return;
+#else
 	    static_pauseAllEffects();
+#endif
 	}
 	
 	void SimpleAudioEngine::resumeAllEffects()
 	{
+#ifdef DISABLE_AUDIO
+        return;
+#else
 	    static_resumeAllEffects();
+#endif
 	}
 	
 	void SimpleAudioEngine::stopAllEffects()
 	{
+#ifdef DISABLE_AUDIO
+        return;
+#else
 	    static_stopAllEffects();
+#endif
 	}
 }
