@@ -290,6 +290,8 @@ public:
 	virtual CCObject* copyWithZone(CCZone* pZone);
 	virtual void startWithTarget(CCNode *pTarget);
 	virtual void update(ccTime time);
+    
+    virtual CCActionInterval* reverse();
 
 public:
 	/** creates the action */
@@ -299,6 +301,7 @@ protected:
 	CCPoint m_endPosition;
 	CCPoint m_startPosition;
 	CCPoint m_delta;
+    CCPoint m_targetOrigin;
 };
 
 /** @brief Moves a CCNode object x,y pixels by modifying it's position attribute.
