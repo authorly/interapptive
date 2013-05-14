@@ -856,6 +856,7 @@ void CCMoveTo::startWithTarget(CCNode *pTarget)
 	CCActionInterval::startWithTarget(pTarget);
 	m_startPosition = pTarget->getPosition();
 	m_delta = ccpSub(m_endPosition, m_startPosition);
+    m_targetOrigin = pTarget->getPosition();
 }
 
 void CCMoveTo::update(ccTime time)
@@ -866,6 +867,11 @@ void CCMoveTo::update(ccTime time)
 			m_startPosition.y + m_delta.y * time));
 	}
 }
+    
+    CCActionInterval* CCMoveTo::reverse()
+    {
+        return CCMoveTo::actionWithDuration(m_fDuration, m_targetOrigin);
+    }
 
 //
 // MoveBy
