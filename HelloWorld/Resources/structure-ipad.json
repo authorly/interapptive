@@ -126,6 +126,14 @@
                      767,
                      408
                   ]
+               },
+               {
+                  "actionTag":4001,
+                  "duration":3,
+                  "position":[
+                     267,
+                     108
+                  ]
                }
             ],
             "CCScaleTo":[
@@ -133,6 +141,11 @@
                   "actionTag":3,
                   "duration":0,
                   "intensity":1
+               },
+               {
+                  "actionTag":4002,
+                  "duration":3,
+                  "intensity":2
                }
             ],
             "CCSequence":[
@@ -146,7 +159,14 @@
             ],
             "CCStorySwipeEnded":{
                "runAction":[
-
+                  {
+                     "runAfterSwipeNumber":1,
+                     "spriteTag":3,
+                     "actionTags":[
+                        4001,
+                        4002
+                     ]
+                  }
                ]
             },
             "CCStoryTouchableNode":{
@@ -187,6 +207,29 @@
             },
             "text":{
                "paragraphs":[
+                  {
+                     "linesOfText":[
+                        {
+                           "text":"",
+                           "fontType":"Arial",
+                           "fontColor":[
+                              255,
+                              0,
+                              0
+                           ],
+                           "fontHighlightColor":[
+                              255,
+                              0,
+                              0
+                           ],
+                           "fontSize":25
+                        }
+                     ],
+                     "highlightingTimes":[
+
+                     ],
+                     "voiceAudioFile":null
+                  },
                   {
                      "linesOfText":[
                         {
