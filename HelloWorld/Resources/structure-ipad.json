@@ -208,6 +208,17 @@
             "text":{
                "paragraphs":[
                   {
+                     "hotspots":[
+                      {
+                      "glitterIndicator":true,
+                      "position":[
+                                  290,
+                                  500
+                                  ],
+                      "radius":90,
+                      "soundToPlay":"effect-bluejay-caw.mp3"
+                      }
+                      ],
                      "linesOfText":[
                         {
                            "text":"",
