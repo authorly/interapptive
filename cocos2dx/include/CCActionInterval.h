@@ -462,6 +462,7 @@ public:
 	virtual CCObject* copyWithZone(CCZone* pZone);
 	virtual void startWithTarget(CCNode *pTarget);
 	virtual void update(ccTime time);
+    virtual CCActionInterval* reverse(void);
 
 public:
 	/** creates the action with the same scale factor for X and Y */

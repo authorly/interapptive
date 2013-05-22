@@ -1449,6 +1449,11 @@ void CCScaleTo::update(ccTime time)
 		m_pTarget->setScaleY(m_fStartScaleY + m_fDeltaY * time);
 	}
 }
+    
+CCActionInterval* CCScaleTo::reverse(void)
+{
+    return CCScaleTo::actionWithDuration(m_fDuration, m_fStartScaleX);
+}
 
 //
 // ScaleBy
