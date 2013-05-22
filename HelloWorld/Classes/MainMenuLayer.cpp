@@ -95,12 +95,15 @@ void MainMenuLayer::onEnter()
     }
     
     // add build snow man menu item (830*90)
+    /*
     CCMenuItemImage *buildASnowman = CCMenuItemImage::itemFromNormalImage("buildASnowman.png",
                                                                           "buildASnowman-hover.png",
                                                                           this,
                                                                           menu_selector(MainMenuLayer::buildASnowmanMenuItemTouched));
+    
     buildASnowman->setPosition(ccp(830*XSCALE, 90*YSCALE));
     menu->addChild(buildASnowman, 1);
+     */
     
     menu->setPosition(ccp(0,0));
     addChild(menu);
@@ -236,6 +239,7 @@ void MainMenuLayer::buttonClicked(int index)
     }
 }
 
+/*
 void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
 {
     // stop back ground music
@@ -250,6 +254,7 @@ void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
     
     CCTextureCache::sharedTextureCache()->removeAllTextures();
 }
+ */
 
 void MainMenuLayer::creditsItemTouched(cocos2d::CCObject *sender)
 {
