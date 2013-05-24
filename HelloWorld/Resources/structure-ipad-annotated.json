@@ -23,13 +23,29 @@
     // 3. User swipes
     // 4. paragraph 1 fades out
     // 5. paragraph 2 fades in.
-    
+    "paragraphTextFadeDuration": 0.4,
+
     // Also, there should be a flag to delay the fading in until panning/zooming is done.
     // Some users may paragraph text hidden while panning/zooming an image.
     // However, other user may want paragraph text visible while panning or zooming is occuring
-    "paragraphTextFadeDuration": 0.4, 
 
-    // a home menu will be displayed on all of the pages in the same spot. 
+    // A delay which is added to the end of each page, before a page turn
+    // happens.. It gives the user an opportunity to use something like a hotspot, if there is one, instead of turning a page immediately after the text has been spoken. Moreover, having this slight delay at the end of each page seemed to help the flow of the story, making it a bit more pleasant instead of feeling like it was speeding through it.
+    // only in autoplay mode
+    "autoplayPageTurnDelay": 0.2,
+
+    // The amount of additional time added to each keyframe before an animation
+    // takes place after it (animation being the potential panning/zooming
+    // after each keyframe).
+    // Because autoplay triggers keyframe transitions automatically, the timing
+    // is based on the largest value of highlight times. Consequently, for
+    // the reader, autoplay waits for the voice to play before moving forward.
+    // An additional delay here makes the story run a bit smoother, and gives
+    // the reader a chance to follow along better.
+    // only in autoplay mode
+    "autoplayParagraphDelay": 0.1,
+
+    // a home menu will be displayed on all of the pages in the same spot.
     // When tapped, user confirms yes/no to continue to Main Menu from any page
     "homeMenuForPages": { 
       "normalStateImage": "home-button.png", // Normal appearance of home button - This image exists in the project.
