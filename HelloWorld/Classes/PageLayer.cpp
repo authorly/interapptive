@@ -735,7 +735,7 @@ void PageLayer::createParagraph(int index)
                     CCLabelTTF *nextLabel = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize); 
                    
                     // Calculate placement of CCLabelTTF
-                    xOffset += label->getContentSize().width/2 + nextLabel->getContentSize().width/2 + WORD_SPACING;
+                    xOffset += label->getContentSize().width + WORD_SPACING;
                 }
             }
 		}
