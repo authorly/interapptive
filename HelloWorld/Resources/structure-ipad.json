@@ -25,8 +25,8 @@
                   "actionTag":2,
                   "duration":0,
                   "position":[
-                     749,
-                     423
+                     149,
+                     323
                   ]
                }
             ],
@@ -61,7 +61,7 @@
                   "image":"background0010.jpg",
                   "spriteTag":2,
                   "position":[
-                     749.4633159233222,
+                     149.4633159233222,
                      423.21649484535993
                   ],
                   "actions":[
@@ -93,6 +93,8 @@
                      "linesOfText":[
                         {
                            "text":"",
+                           "yOffset":40,
+                           "xOffset":250,
                            "fontType":"Arial",
                            "fontColor":[
                               255,
@@ -108,7 +110,7 @@
                         }
                      ],
                      "highlightingTimes":[
-
+                      0
                      ],
                      "voiceAudioFile":null
                   }

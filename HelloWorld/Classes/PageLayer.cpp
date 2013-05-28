@@ -708,6 +708,7 @@ void PageLayer::createParagraph(int index)
                 CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);                
                 
                 label->setColor(*fontColor);
+                label->setAnchorPoint(ccp(0.5f, 0.5f));
                 label->setPosition(ccp(xOffset, yOffset));
                         
                 // record label in a vector, don't have to retain it
