@@ -24,7 +24,7 @@ using namespace std;
 
 #define XSCALE          (GlobalData::sharedGlobalData()->xScale)
 #define YSCALE          (GlobalData::sharedGlobalData()->yScale)
-#define WORD_SPACING    (1 * XSCALE)
+#define WORD_SPACING    (1.5 * XSCALE)
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
