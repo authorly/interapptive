@@ -233,7 +233,7 @@
                                   100
                                   ],
                       "radius":90,
-                      "soundToPlay":"sample.mp4"
+                      "videoToPlay":"sample.mp4"
                       }
                       ],
                      "linesOfText":[
