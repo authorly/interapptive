@@ -213,6 +213,8 @@
                      "hotspots":[
                       {
                       "glitterIndicator":true,
+                      "stopSoundAndHighlightingWhenTouched":false,
+                      "delayAfterVideoDuringAutoplay":5,
                       "touchFlag":1,
                       "position":[
                                   290,
@@ -220,6 +222,18 @@
                                   ],
                       "radius":90,
                       "soundToPlay":"effect-bluejay-caw.mp3"
+                      },
+                     {
+                      "glitterIndicator":true,
+                      "stopSoundAndHighlightingWhenTouched":true,
+                      "delayAfterVideoDuringAutoplay":5,
+                      "touchFlag":2,
+                      "position":[
+                                  590,
+                                  100
+                                  ],
+                      "radius":90,
+                      "soundToPlay":"sample.mp4"
                       }
                       ],
                      "linesOfText":[
