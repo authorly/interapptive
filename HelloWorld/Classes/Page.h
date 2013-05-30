@@ -42,11 +42,25 @@ typedef struct lineText
     int                 fontSize;
 } LineText;
 
+// hotspot of a paragraph
+typedef struct
+{
+    bool                      glitterIndicator;
+    bool                      stopSoundAndHighlightingWhenTouched;
+	cocos2d::CCPoint          position;
+	int                       radius;
+	std::string               videoToPlay;
+	std::string               soundToPlay;
+	int                       touchFlag;
+    float                     delayAfterVideoDuringAutoplay;
+} HotspotInfo;
+
 typedef struct paragraph
 {
-	std::vector<float>       highlightingTimes;
-	std::vector<LineText*>   linesOfTest;
-    std::string              voiceAudioFile;
+	std::vector<float>          highlightingTimes;
+	std::vector<LineText*>      linesOfTest;
+    std::string                 voiceAudioFile;
+    std::vector<HotspotInfo*>   hotspots;
 } Paragraph;
 
 typedef struct sprite
@@ -65,16 +79,9 @@ typedef struct storyTouchableNodeActionsToRun
 
 typedef struct storyTouchableNode
 {
-	bool                      glitterIndicator;
-    bool                      stopEffectIndicator;
+	HotspotInfo               hotspotInfo;
     bool                      delayForText;
     bool                      delayForAnimation;
-	cocos2d::CCPoint          position;
-	int                       radius;
-	std::string               videoToPlay;
-	std::string               soundToPlay;
-	int                       touchFlag;
-    float                     autoplayVideoFinishedDelay;
 
 	std::vector<StoryTouchableNodeActionsToRun*> actionsToRun;
 } StoryTouchableNode;
@@ -109,6 +116,7 @@ public:
     SpriteInfo* getSpriteInfoByTag(int spriteTag);
     StoryTouchableNode* getSotryTouchableNodeByFlag(int touchFlag);
     std::vector<StorySwipeEndedActionsToRun*>* getStorySwipeEndedActionToRun(int swipeNumber);
+    HotspotInfo* getParagraphHotspotInfo(int paragraphIndex, int touchFlag);
     void splitText(LineText *textLine);
 public:
 	// settings

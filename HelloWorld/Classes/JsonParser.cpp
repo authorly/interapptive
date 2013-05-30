@@ -392,10 +392,54 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
                     lineText->fontSize += 8;
                 }
             }
-
             
 			paragraph->linesOfTest.push_back(lineText);
 		}
+        
+        // hotspots
+        Json::Value hotspotsJson = jsonParagraph["hotspots"];
+        Json::Value hotspotJson;
+        for (unsigned int l = 0; l < hotspotsJson.size(); ++l)
+        {
+            HotspotInfo *h = new HotspotInfo();
+            hotspotJson = hotspotsJson[l];
+            
+            // glitterIndicator
+            h->glitterIndicator = hotspotJson["glitterIndicator"].asBool();
+            
+            // stopSoundAndHighlightingWhenTouched
+            h->stopSoundAndHighlightingWhenTouched = hotspotJson["stopSoundAndHighlightingWhenTouched"].asBool();
+            
+            // delayAfterVideoDuringAutoplay
+            h->delayAfterVideoDuringAutoplay = hotspotJson["delayAfterVideoDuringAutoplay"].asInt();
+            
+            // touchFlag
+            h->touchFlag = hotspotJson["touchFlag"].asInt();
+            
+            // position
+            int x = 0, y = 1;
+            h->position.x = (float)hotspotJson["position"][x].asDouble();
+            h->position.y = (float)hotspotJson["position"][y].asDouble();
+            
+            // radius
+            h->radius = hotspotJson["radius"].asInt();
+            
+            // soundToPlay
+            Json::Value soundToPlayJson = hotspotJson["soundToPlay"];
+            if (! soundToPlayJson.isNull())
+            {
+                h->soundToPlay = soundToPlayJson.asCString();
+            }
+            
+            // videoToPlay
+            Json::Value videoToPlayJson = hotspotJson["videoToPlay"];
+            if (! videoToPlayJson.isNull())
+            {
+                h->videoToPlay = videoToPlayJson.asCString();
+            }
+            
+            paragraph->hotspots.push_back(h);
+        }
         
         // voiceAudioFile
         paragraph->voiceAudioFile = jsonParagraph["voiceAudioFile"].asString();
@@ -976,26 +1020,26 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 			StoryTouchableNode * storyTouchableNode = new StoryTouchableNode();
 
 			// glitterIndicator
-			storyTouchableNode->glitterIndicator = node["glitterIndicator"].asBool();
+			storyTouchableNode->hotspotInfo.glitterIndicator = node["glitterIndicator"].asBool();
             // autoplayVideoFinishedDelay
-            Json::Value value = node["autoplayVideoFinishedDelay"];
+            Json::Value value = node["delayAfterVideoDuringAutoplay"];
             if (! value.isNull())
             {
-                storyTouchableNode->autoplayVideoFinishedDelay = value.asDouble();
+                storyTouchableNode->hotspotInfo.delayAfterVideoDuringAutoplay = value.asDouble();
             }
             else
             {
-                storyTouchableNode->autoplayVideoFinishedDelay = 0;
+                storyTouchableNode->hotspotInfo.delayAfterVideoDuringAutoplay = 0;
             }
             // stopEffectIndicator
-            Json::Value stopEffectIndicatorJson = node["stopEffectIndicator"];
+            Json::Value stopEffectIndicatorJson = node["stopSoundAndHighlightingWhenTouched"];
             if (! stopEffectIndicatorJson.isNull())
             {
-                storyTouchableNode->stopEffectIndicator = stopEffectIndicatorJson.asBool();
+                storyTouchableNode->hotspotInfo.stopSoundAndHighlightingWhenTouched = stopEffectIndicatorJson.asBool();
             }
             else 
             {
-                storyTouchableNode->stopEffectIndicator = true;
+                storyTouchableNode->hotspotInfo.stopSoundAndHighlightingWhenTouched = true;
             }
             // delayForAnimation
             Json::Value delayForAnimationJson = node["delayForAnimation"];
@@ -1019,22 +1063,22 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
             }
 			// position
 			int x = 0, y = 1;
-			storyTouchableNode->position.x = node["position"][x].asInt() * XSCALE;
-			storyTouchableNode->position.y = node["position"][y].asInt() * YSCALE;
+			storyTouchableNode->hotspotInfo.position.x = node["position"][x].asInt() * XSCALE;
+			storyTouchableNode->hotspotInfo.position.y = node["position"][y].asInt() * YSCALE;
 			// radius
-			storyTouchableNode->radius = node["radius"].asInt() * MIN_SCALE;
+			storyTouchableNode->hotspotInfo.radius = node["radius"].asInt() * MIN_SCALE;
 			// videoToPlay
             if (! node["videoToPlay"].isNull())
             {
-                storyTouchableNode->videoToPlay = node["videoToPlay"].asCString();
+                storyTouchableNode->hotspotInfo.videoToPlay = node["videoToPlay"].asCString();
             }
 			// soundToPlay
             if (! node["soundToPlay"].isNull())
             {
-                storyTouchableNode->soundToPlay = node["soundToPlay"].asCString();
+                storyTouchableNode->hotspotInfo.soundToPlay = node["soundToPlay"].asCString();
             }			
 			// touchFlag
-			storyTouchableNode->touchFlag = node["touchFlag"].asInt();
+			storyTouchableNode->hotspotInfo.touchFlag = node["touchFlag"].asInt();
 			// runAction
 			Json::Value runAction = node["runAction"];
 			

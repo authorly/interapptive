@@ -15,6 +15,13 @@ Page::~Page()
             delete *iter;
         }
         
+        vector<HotspotInfo*> &hotspotInfo = paragraphs[i]->hotspots;
+        vector<HotspotInfo*>::iterator iter2;
+        for (iter2 = hotspotInfo.begin(); iter2 != hotspotInfo.end(); ++iter2)
+        {
+            delete *iter2;
+        }
+        
         delete paragraphs[i];
     }
     
@@ -116,7 +123,7 @@ StoryTouchableNode* Page::getSotryTouchableNodeByFlag(int touchFlag)
     vector<StoryTouchableNode*>::iterator iter;
     for (iter = storyTouchableNodes.begin(); iter != storyTouchableNodes.end(); ++iter)
     {
-        if ((*iter)->touchFlag == touchFlag)
+        if ((*iter)->hotspotInfo.touchFlag == touchFlag)
         {
             return *iter;
         } 
@@ -144,4 +151,21 @@ vector<StorySwipeEndedActionsToRun*>* Page::getStorySwipeEndedActionToRun(int sw
     }
     
     return arrayActionsToRun;
+}
+
+HotspotInfo* Page::getParagraphHotspotInfo(int paragraphIndex, int touchFlag)
+{
+    assert(paragraphIndex < paragraphs.size());
+    
+    Paragraph *paragraph = paragraphs[paragraphIndex];
+    vector<HotspotInfo*>::iterator iter;
+    for (iter = paragraph->hotspots.begin(); iter != paragraph->hotspots.end(); ++iter)
+    {
+        if ((*iter)->touchFlag == touchFlag)
+        {
+            return *iter;
+        }
+    }
+    
+    return NULL;
 }
