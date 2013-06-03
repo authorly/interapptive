@@ -102,9 +102,14 @@ void PageLayer::addStoryTouchNode()
 		storyTouchDetector->addZoneWithPositionRadiusTargetSel(storyTouchNode->hotspotInfo.position, storyTouchNode->hotspotInfo.radius, this, schedule_selector(PageLayer::storyTouchCallback), storyTouchNode->hotspotInfo.touchFlag);
         
         // add particle system
-        CCParticleSystem *particle = CCParticleSystemQuad::particleWithFile("Flower.plist");
-        particle->setPosition(storyTouchNode->hotspotInfo.position);
-        particle->initWithTotalParticles(6);
+        CCParticleSystem *particle = NULL;
+        if (storyTouchNode->hotspotInfo.glitterIndicator)
+        {
+            particle = CCParticleSystemQuad::particleWithFile("Flower.plist");
+            particle->setPosition(storyTouchNode->hotspotInfo.position);
+            particle->initWithTotalParticles(6);
+            addChild(particle);
+        }
         
         // preload effect if exists
         SimpleAudioEngine::sharedEngine()->preloadEffect(storyTouchNode->hotspotInfo.soundToPlay.c_str());
@@ -112,13 +117,15 @@ void PageLayer::addStoryTouchNode()
         // delay for animation
         if (storyTouchNode->delayForAnimation)
         {
-            touchableNodeDelayForAnimationArray.push_back(storyTouchNode);
             storyTouchDetector->enableTouchByFlag(storyTouchNode->hotspotInfo.touchFlag, false);
-            particle->setIsVisible(false);
-            particle->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delayOfAnimation),
-                                                    CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::enableDelayForAnimationTouchNode)),
-                                                    CCShow::action(),
-                                                    NULL));
+            if (particle)
+            {
+                particle->setIsVisible(false);
+                particle->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delayOfAnimation),
+                                                        CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::enableDelayForAnimationTouchNode)),
+                                                        CCShow::action(),
+                                                        NULL));
+            }
         }
         
         // delay for text
@@ -126,25 +133,12 @@ void PageLayer::addStoryTouchNode()
             && (MainMenuLayer::storyMode == kStoryModeReadToMe
                 || (MainMenuLayer::storyMode == kSotryModeAutoPlay)))
         {
-            TouchNodeInfo info;
-            info.touchNode = &storyTouchNode->hotspotInfo;
-            info.partileSystem = particle;
-            touchableNodeDelayForTextArray.push_back(info);
-            
             storyTouchDetector->enableTouchByFlag(storyTouchNode->hotspotInfo.touchFlag, false);
-            particle->setIsVisible(false);
+            if (particle)
+            {
+                particle->setIsVisible(false);
+            }
         }
-        
-        if (storyTouchNode->hotspotInfo.videoToPlay.size() > 0 && MainMenuLayer::storyMode == kSotryModeAutoPlay)
-        {
-            TouchNodeInfo info;
-            info.touchNode = &storyTouchNode->hotspotInfo;
-            info.partileSystem = particle;
-            
-            touchableNodeForVideoArray.push_back(info);
-        }
-        
-        addChild(particle);
 	}
     
     storyTouchDetector->setTag(STORY_TOUCH_DETECT_TAG);
@@ -154,20 +148,31 @@ void PageLayer::addStoryTouchNode()
 
 void PageLayer::enableDelayForAnimationTouchNode(CCObject *sender)
 {
+    std::vector<StoryTouchableNode*> &storyTouchableNodes = page->storyTouchableNodes;
     vector<StoryTouchableNode*>::iterator iter;
-    for (iter = touchableNodeDelayForAnimationArray.begin(); iter != touchableNodeDelayForAnimationArray.end(); ++iter)
+    for (iter = storyTouchableNodes.begin(); iter != storyTouchableNodes.end(); ++iter)
     {
-        storyTouchDetector->enableTouchByFlag((*iter)->hotspotInfo.touchFlag, true);
+        if ((*iter)->delayForAnimation)
+        {
+            storyTouchDetector->enableTouchByFlag((*iter)->hotspotInfo.touchFlag, true);
+        }
     }
 }
 
 void PageLayer::enableDelayForTextTouchNode()
-{
-    vector<TouchNodeInfo>::iterator iter;
-    for (iter = touchableNodeDelayForTextArray.begin(); iter != touchableNodeDelayForTextArray.end(); ++iter)
+{   
+    std::vector<StoryTouchableNode*> &storyTouchableNodes = page->storyTouchableNodes;
+    vector<StoryTouchableNode*>::iterator iter;
+    for (iter = storyTouchableNodes.begin(); iter != storyTouchableNodes.end(); ++iter)
     {
-        storyTouchDetector->enableTouchByFlag((*iter).touchNode->touchFlag, true);
-        (*iter).partileSystem->setIsVisible(true);
+        if ((*iter)->delayForText)
+        {
+            storyTouchDetector->enableTouchByFlag((*iter)->hotspotInfo.touchFlag, true);
+            if ((*iter)->hotspotInfo.particle)
+            {
+                (*iter)->hotspotInfo.particle->setIsVisible(true);
+            }
+        }
     }
 }
 
@@ -186,7 +191,7 @@ void PageLayer::onExit()
 
 void PageLayer::storyTouchCallback(float flag)
 {
-    StoryTouchableNode *storyTouchableNode = page->getSotryTouchableNodeByFlag(flag);
+    StoryTouchableNode *storyTouchableNode = page->getSotryTouchableNode(flag);
     doHotspotTouched(&storyTouchableNode->hotspotInfo, false);
 }
 
@@ -238,16 +243,17 @@ void PageLayer::moviePlayBackDidFinish(const char *videoName, bool isParagraphHo
     }
     else
     {
-        
         HotspotInfo* hotspotInfo = getHotspotInfo(videoName, isParagraphHotspot);
         assert(hotspotInfo != NULL);
         
         if (hotspotInfo->delayAfterVideoDuringAutoplay > 0)
         {
-            // XXXX: fix me: should disable particle system
             // do some delay to swipe left and should disable touch node and hide particle to play video again
-//            storyTouchDetector->enableTouchByFlag(touchNodeInfo->touchNode->touchFlag, false);
-//            touchNodeInfo->partileSystem->setIsVisible(false);
+            storyTouchDetector->enableTouchByFlag(hotspotInfo->touchFlag, false);
+            if (hotspotInfo->particle)
+            {
+                hotspotInfo->particle->setIsVisible(false);
+            }
             
             // swipe left after a delay
             this->runAction(CCSequence::actions(
@@ -268,30 +274,20 @@ HotspotInfo* PageLayer::getHotspotInfo(const string &videoName, bool isParagraph
     if (isParagraphHotspot)
     {
         // paragraph hotspot is touched
-        vector<HotspotInfo*> &hotspots = page->paragraphs[currentIndexOfParagraph]->hotspots;
-        vector<HotspotInfo*>::iterator iter;
-        for (iter = hotspots.begin(); iter != hotspots.end(); ++iter)
-        {
-            if ((*iter)->videoToPlay == videoName)
-            {
-                return *iter;
-            }
-        }
+        return page->getParagraphHotspotInfo(currentIndexOfParagraph, videoName);
     }
     else
     {
-        // story touch node is touched
-        std::vector<TouchNodeInfo>::iterator iter;
-        for (iter = touchableNodeForVideoArray.begin(); iter != touchableNodeForVideoArray.end(); ++iter)
+        StoryTouchableNode *storyTouchableNode = page->getStoryTouchableNode(videoName);
+        if (storyTouchableNode)
         {
-            if ((*iter).touchNode->videoToPlay == videoName)
-            {
-                return (*iter).touchNode;
-            }
+            return &storyTouchableNode->hotspotInfo;
+        }
+        else
+        {
+            return NULL;
         }
     }
-    
-    return NULL;
 }
 
 void PageLayer::delaySwipeAfterPlayingVideo(cocos2d::CCObject *sender)
@@ -677,114 +673,124 @@ void PageLayer::createParagraph(int index)
     // then it is easy to remove a paragraph
     if (page->paragraphs.size() > 0 && index < page->paragraphs.size())
     {
+        currentIndexOfParagraph = index;
+
         // remove previous label layer if it exists
         removeChildByTag(PARAGRAPH_LAYER_TAG, true);
         CC_SAFE_RELEASE_NULL(paragraphLayer);
         
-        // clear paragrsphs
-//        wordsOfParagraph.clear();
-        clearLabelIndex();
-        
-        currentIndexOfParagraph = index;
-        
-        // font settings
-        const char* fontName = NULL;
-        ccColor3B *fontColor = NULL;
-        int fontSize = 0;
-
         paragraphLayer = CCLayer::node();
         paragraphLayer->retain();
         paragraphLayer->setTag(PARAGRAPH_LAYER_TAG);
         
-        removeChildByTag(PARAGRAPH_HOTSPOT_DETECT_TAG, true);
+        addParagraphText(index);
+        addParagraphHotspot(index);
+    }
+}
 
-        TouchDetection *paragraphTouchDectector = TouchDetection::node();
-        paragraphTouchDectector->setIsTouchEnabled(true);
-        addChild(paragraphTouchDectector);
+void PageLayer::addParagraphText(int index)
+{
+    // clear paragrsphs
+    clearLabelIndex();
+    
+    // font settings
+    const char* fontName = NULL;
+    ccColor3B *fontColor = NULL;
+    int fontSize = 0;
+    
+    // add texts
+    
+    Paragraph *paragraph = page->paragraphs[index];
+    
+    vector<LineText*> &linesOfText = paragraph->linesOfTest;
+    vector<LineText*>::iterator lineTextIter;
+    float xOffset = 0.0f;
+    float yOffset = 0.0f;
+    // should add space when it is zoomed in, because we add text size
+    float ySpaceAdded = XSCALE < 1.0f ? 4 : 0;
+    int downIndex = linesOfText.size();
+    int upIndex = 0;
+    bool addSpace = addTextSpace(downIndex > 0 ? linesOfText[0]->yOffset : 0);
+    int lineNum = 0;
+    for (lineTextIter = linesOfText.begin(); lineTextIter != linesOfText.end(); ++lineTextIter, --downIndex, ++upIndex, ++lineNum)
+    {
+        LineText* lineText = *lineTextIter;
+        xOffset = lineText->xOffset;
         
-        Paragraph *paragraph = page->paragraphs[index];
+        fontName = lineText->fontType.c_str();
+        fontColor = &lineText->fontColor;
+        fontSize = lineText->fontSize;
         
-        // add hotspots
-        std::vector<HotspotInfo*> &hotspots = paragraph->hotspots;
-        std::vector<HotspotInfo*>::iterator hotspotIter;
-        for (hotspotIter = hotspots.begin(); hotspotIter != hotspots.end(); ++hotspotIter)
+        if (addSpace)
         {
-            paragraphTouchDectector->addZoneWithPositionRadiusTargetSel((*hotspotIter)->position,
-                                                                        (*hotspotIter)->radius,
-                                                                        this,
-                                                                        schedule_selector(PageLayer::hotspotCallback),
-                                                                        (*hotspotIter)->touchFlag);
-            if ((*hotspotIter)->glitterIndicator)
-            {
-                // add particle system
-                CCParticleSystem *particle = CCParticleSystemQuad::particleWithFile("Flower.plist");
-                particle->setPosition((*hotspotIter)->position);
-                particle->initWithTotalParticles(6);
-                
-                paragraphLayer->addChild(particle);
-            }
+            yOffset = (lineText->yOffset + downIndex*ySpaceAdded) - 30;
+        }
+        else
+        {
+            yOffset = lineText->yOffset - upIndex*ySpaceAdded;
         }
         
-        // add texts
-        
-        vector<LineText*> &linesOfText = paragraph->linesOfTest;
-		vector<LineText*>::iterator lineTextIter;
-        float xOffset = 0.0f;
-        float yOffset = 0.0f;
-        // should add space when it is zoomed in, because we add text size
-        float ySpaceAdded = XSCALE < 1.0f ? 4 : 0;
-        int downIndex = linesOfText.size();
-        int upIndex = 0;
-        bool addSpace = addTextSpace(downIndex > 0 ? linesOfText[0]->yOffset : 0);
-        int lineNum = 0;
-		for (lineTextIter = linesOfText.begin(); lineTextIter != linesOfText.end(); ++lineTextIter, --downIndex, ++upIndex, ++lineNum)
-		{
-			LineText* lineText = *lineTextIter;
-            xOffset = lineText->xOffset;
+        for (int i = 0; i < lineText->words.size(); ++i)
+        {
+            string &word = lineText->words[i];
+            CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);
             
-            fontName = lineText->fontType.c_str();
-            fontColor = &lineText->fontColor;
-            fontSize = lineText->fontSize;
+            label->setColor(*fontColor);
+            label->setAnchorPoint(ccp(0.0f, -1.0f));
+            label->setPosition(ccp(xOffset, yOffset));
             
-            if (addSpace)
-            {
-                yOffset = (lineText->yOffset + downIndex*ySpaceAdded) - 30;
+            // record label in a vector, don't have to retain it
+            // because it is retained by labelLayer
+            LabelIndex *labelIndex = new LabelIndex();
+            labelIndex->label = label;
+            labelIndex->lineIndex = lineNum;
+            labelIndex->paragraphIndex = currentIndexOfParagraph;
+            wordsOfParagraph.push_back(labelIndex);
+            
+            paragraphLayer->addChild(label);
+            
+            //
+            // New word spacing/offset codes - Chris Whitman
+            //
+            
+            // If we are on the last word of a line, do not perform increment on xOffset
+            if (i < lineText->words.size()-1) {
+                // Calculate placement of CCLabelTTF
+                xOffset += label->getContentSize().width + WORD_SPACING;
             }
-            else
-            {
-                yOffset = lineText->yOffset - upIndex*ySpaceAdded;
-            }
-            
-            for (int i = 0; i < lineText->words.size(); ++i)
-            {
-                string &word = lineText->words[i];
-                CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);                
-                
-                label->setColor(*fontColor);
-                label->setAnchorPoint(ccp(0.0f, -1.0f));
-                label->setPosition(ccp(xOffset, yOffset));
-                        
-                // record label in a vector, don't have to retain it
-                // because it is retained by labelLayer
-                LabelIndex *labelIndex = new LabelIndex();
-                labelIndex->label = label;
-                labelIndex->lineIndex = lineNum;
-                labelIndex->paragraphIndex = currentIndexOfParagraph;
-                wordsOfParagraph.push_back(labelIndex);
-                
-                paragraphLayer->addChild(label);
+        }
+    }
+}
 
-                //                              
-                // New word spacing/offset codes - Chris Whitman
-                //
-                
-                // If we are on the last word of a line, do not perform increment on xOffset 
-                if (i < lineText->words.size()-1) {
-                    // Calculate placement of CCLabelTTF
-                    xOffset += label->getContentSize().width + WORD_SPACING;
-                }
-            }
-		}
+void PageLayer::addParagraphHotspot(int index)
+{
+    removeChildByTag(PARAGRAPH_HOTSPOT_DETECT_TAG, true);
+    
+    TouchDetection *paragraphTouchDectector = TouchDetection::node();
+    paragraphTouchDectector->setIsTouchEnabled(true);
+    paragraphTouchDectector->setTag(PARAGRAPH_HOTSPOT_DETECT_TAG);
+    addChild(paragraphTouchDectector);
+    
+    // add hotspots
+    Paragraph *paragraph = page->paragraphs[index];
+    std::vector<HotspotInfo*> &hotspots = paragraph->hotspots;
+    std::vector<HotspotInfo*>::iterator hotspotIter;
+    for (hotspotIter = hotspots.begin(); hotspotIter != hotspots.end(); ++hotspotIter)
+    {
+        paragraphTouchDectector->addZoneWithPositionRadiusTargetSel((*hotspotIter)->position,
+                                                                    (*hotspotIter)->radius,
+                                                                    this,
+                                                                    schedule_selector(PageLayer::hotspotCallback),
+                                                                    (*hotspotIter)->touchFlag);
+        if ((*hotspotIter)->glitterIndicator)
+        {
+            // add particle system
+            CCParticleSystem *particle = CCParticleSystemQuad::particleWithFile("Flower.plist");
+            particle->setPosition((*hotspotIter)->position);
+            particle->initWithTotalParticles(6);
+            
+            paragraphLayer->addChild(particle);
+        }
     }
 }
 

@@ -402,6 +402,7 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
         for (unsigned int l = 0; l < hotspotsJson.size(); ++l)
         {
             HotspotInfo *h = new HotspotInfo();
+            h->particle = NULL;
             hotspotJson = hotspotsJson[l];
             
             // glitterIndicator
@@ -1018,6 +1019,7 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 		{
 			Json::Value node = nodes[i];
 			StoryTouchableNode * storyTouchableNode = new StoryTouchableNode();
+            storyTouchableNode->hotspotInfo.particle = NULL;
 
 			// glitterIndicator
 			storyTouchableNode->hotspotInfo.glitterIndicator = node["glitterIndicator"].asBool();

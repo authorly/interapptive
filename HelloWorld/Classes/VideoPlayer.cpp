@@ -17,7 +17,7 @@ VideoPlayer* VideoPlayer::sharedVideoPlayer()
     return g_videoPlayer;
 }
 
-void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl, VideoPlayProtocol *delegate)
+void VideoPlayer::playVideoByFilename(const char* fileName, bool showControl, bool isParagraphHotspot, VideoPlayProtocol *delegate)
 {
     JniMethodInfo methodInfo;
     

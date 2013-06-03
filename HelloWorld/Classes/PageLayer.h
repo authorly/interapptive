@@ -9,12 +9,6 @@
 
 #include <vector>
 
-typedef struct
-{
-    HotspotInfo* touchNode;
-    cocos2d::CCParticleSystem *partileSystem;
-} TouchNodeInfo;
-
 class PageLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayProtocol
 {
 public:
@@ -91,6 +85,9 @@ private:
     // story touch node or paragraph hotspot call back
     void doHotspotTouched(HotspotInfo *hotspot, bool isParagraphHotspot);
     
+    void addParagraphText(int index);
+    void addParagraphHotspot(int index);
+    
 private:
     
     typedef struct {
@@ -111,10 +108,7 @@ private:
     // some sprites may run action when onEnter
     // so should calcuate delay time
     unsigned int delayOfAnimation;
-    
-    std::vector<TouchNodeInfo> touchableNodeDelayForTextArray;
-    std::vector<StoryTouchableNode*> touchableNodeDelayForAnimationArray;
-    std::vector<TouchNodeInfo> touchableNodeForVideoArray;
+
     // should use two dectectors, because the touch flags will be resued in story touch node and paragraph hotspot
     TouchDetection *storyTouchDetector;
 

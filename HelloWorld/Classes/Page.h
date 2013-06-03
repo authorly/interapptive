@@ -53,6 +53,8 @@ typedef struct
 	std::string               soundToPlay;
 	int                       touchFlag;
     float                     delayAfterVideoDuringAutoplay;
+    
+    cocos2d::CCParticleSystem *particle;  // weak reference
 } HotspotInfo;
 
 typedef struct paragraph
@@ -114,9 +116,15 @@ public:
 	void addAction(int actionTag, cocos2d::CCAction *action);
 	cocos2d::CCAction* getActionByTag(int actionTag);
     SpriteInfo* getSpriteInfoByTag(int spriteTag);
-    StoryTouchableNode* getSotryTouchableNodeByFlag(int touchFlag);
+    
+    StoryTouchableNode* getSotryTouchableNode(int touchFlag);
+    StoryTouchableNode* getStoryTouchableNode(const string &videoName);
+    
     std::vector<StorySwipeEndedActionsToRun*>* getStorySwipeEndedActionToRun(int swipeNumber);
+    
     HotspotInfo* getParagraphHotspotInfo(int paragraphIndex, int touchFlag);
+    HotspotInfo* getParagraphHotspotInfo(int paragraphIndex, const std::string &videoName);
+    
     void splitText(LineText *textLine);
 public:
 	// settings

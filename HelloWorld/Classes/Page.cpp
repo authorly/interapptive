@@ -118,7 +118,7 @@ SpriteInfo* Page::getSpriteInfoByTag(int spriteTag)
     return NULL;
 }
 
-StoryTouchableNode* Page::getSotryTouchableNodeByFlag(int touchFlag)
+StoryTouchableNode* Page::getSotryTouchableNode(int touchFlag)
 {
     vector<StoryTouchableNode*>::iterator iter;
     for (iter = storyTouchableNodes.begin(); iter != storyTouchableNodes.end(); ++iter)
@@ -127,6 +127,20 @@ StoryTouchableNode* Page::getSotryTouchableNodeByFlag(int touchFlag)
         {
             return *iter;
         } 
+    }
+    
+    return NULL;
+}
+
+StoryTouchableNode* Page::getStoryTouchableNode(const string &videoName)
+{
+    vector<StoryTouchableNode*>::iterator iter;
+	for (iter = storyTouchableNodes.begin(); iter != storyTouchableNodes.end(); ++iter)
+    {
+        if ((*iter)->hotspotInfo.videoToPlay == videoName)
+        {
+            return *iter;
+        }
     }
     
     return NULL;
@@ -169,3 +183,19 @@ HotspotInfo* Page::getParagraphHotspotInfo(int paragraphIndex, int touchFlag)
     
     return NULL;
 }
+
+HotspotInfo* Page::getParagraphHotspotInfo(int paragraphIndex, const std::string &videoName)
+{
+    vector<HotspotInfo*> &hotspots = paragraphs[paragraphIndex]->hotspots;
+    vector<HotspotInfo*>::iterator iter;
+    for (iter = hotspots.begin(); iter != hotspots.end(); ++iter)
+    {
+        if ((*iter)->videoToPlay == videoName)
+        {
+            return *iter;
+        }
+    }
+    
+    return NULL;
+}
+
