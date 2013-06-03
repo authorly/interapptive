@@ -60,7 +60,8 @@ static VideoPlayer* g_sharedVideoPlayer = NULL;
     
     if (VideoPlayer::sharedVideoPlayer()->delegate)
     {
-        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish(VideoPlayer::sharedVideoPlayer()->fileName.c_str());
+        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish(VideoPlayer::sharedVideoPlayer()->fileName.c_str(),
+                                                                           VideoPlayer::sharedVideoPlayer()->isParagraphHotspot);
         VideoPlayer::sharedVideoPlayer()->delegate = NULL;
     }
 }
@@ -80,12 +81,13 @@ VideoPlayer* VideoPlayer::sharedVideoPlayer()
     return g_sharedVideoPlayer;
 }
 
-void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl, VideoPlayProtocol *delegate)
+void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl, bool isParagraphHotspot, VideoPlayProtocol *delegate)
 {
     this->showControl = showControl;
     this->isVideoPlaying = true;
     this->delegate = delegate;
     this->fileName = fileName;
+    this->isParagraphHotspot = isParagraphHotspot;
     
     NSString *nsFilePath = [NSString stringWithUTF8String:fileName];
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:nsFilePath ofType:@""]];
@@ -196,7 +198,7 @@ void VideoPlayer::stopPlay()
     
     if (VideoPlayer::sharedVideoPlayer()->delegate)
     {
-        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish(this->fileName.c_str());
+        VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish(this->fileName.c_str(), isParagraphHotspot);
         VideoPlayer::sharedVideoPlayer()->delegate = NULL;
     }
 }

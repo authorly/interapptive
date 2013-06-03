@@ -15,6 +15,13 @@ Page::~Page()
             delete *iter;
         }
         
+        vector<HotspotInfo*> &hotspotInfo = paragraphs[i]->hotspots;
+        vector<HotspotInfo*>::iterator iter2;
+        for (iter2 = hotspotInfo.begin(); iter2 != hotspotInfo.end(); ++iter2)
+        {
+            delete *iter2;
+        }
+        
         delete paragraphs[i];
     }
     
@@ -111,15 +118,29 @@ SpriteInfo* Page::getSpriteInfoByTag(int spriteTag)
     return NULL;
 }
 
-StoryTouchableNode* Page::getSotryTouchableNodeByFlag(int touchFlag)
+StoryTouchableNode* Page::getSotryTouchableNode(int touchFlag)
 {
     vector<StoryTouchableNode*>::iterator iter;
     for (iter = storyTouchableNodes.begin(); iter != storyTouchableNodes.end(); ++iter)
     {
-        if ((*iter)->touchFlag == touchFlag)
+        if ((*iter)->hotspotInfo.touchFlag == touchFlag)
         {
             return *iter;
         } 
+    }
+    
+    return NULL;
+}
+
+StoryTouchableNode* Page::getStoryTouchableNode(const string &videoName)
+{
+    vector<StoryTouchableNode*>::iterator iter;
+	for (iter = storyTouchableNodes.begin(); iter != storyTouchableNodes.end(); ++iter)
+    {
+        if ((*iter)->hotspotInfo.videoToPlay == videoName)
+        {
+            return *iter;
+        }
     }
     
     return NULL;
@@ -145,3 +166,36 @@ vector<StorySwipeEndedActionsToRun*>* Page::getStorySwipeEndedActionToRun(int sw
     
     return arrayActionsToRun;
 }
+
+HotspotInfo* Page::getParagraphHotspotInfo(int paragraphIndex, int touchFlag)
+{
+    assert(paragraphIndex < paragraphs.size());
+    
+    Paragraph *paragraph = paragraphs[paragraphIndex];
+    vector<HotspotInfo*>::iterator iter;
+    for (iter = paragraph->hotspots.begin(); iter != paragraph->hotspots.end(); ++iter)
+    {
+        if ((*iter)->touchFlag == touchFlag)
+        {
+            return *iter;
+        }
+    }
+    
+    return NULL;
+}
+
+HotspotInfo* Page::getParagraphHotspotInfo(int paragraphIndex, const std::string &videoName)
+{
+    vector<HotspotInfo*> &hotspots = paragraphs[paragraphIndex]->hotspots;
+    vector<HotspotInfo*>::iterator iter;
+    for (iter = hotspots.begin(); iter != hotspots.end(); ++iter)
+    {
+        if ((*iter)->videoToPlay == videoName)
+        {
+            return *iter;
+        }
+    }
+    
+    return NULL;
+}
+
