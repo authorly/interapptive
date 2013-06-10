@@ -42,11 +42,27 @@ typedef struct lineText
     int                 fontSize;
 } LineText;
 
+// hotspot of a paragraph
+typedef struct
+{
+    bool                      glitterIndicator;
+    bool                      stopSoundAndHighlightingWhenTouched;
+	cocos2d::CCPoint          position;
+	int                       radius;
+	std::string               videoToPlay;
+	std::string               soundToPlay;
+	int                       touchFlag;
+    float                     delayAfterVideoDuringAutoplay;
+    
+    cocos2d::CCParticleSystem *particle;  // weak reference
+} HotspotInfo;
+
 typedef struct paragraph
 {
-	std::vector<float>       highlightingTimes;
-	std::vector<LineText*>   linesOfTest;
-    std::string              voiceAudioFile;
+	std::vector<float>          highlightingTimes;
+	std::vector<LineText*>      linesOfTest;
+    std::string                 voiceAudioFile;
+    std::vector<HotspotInfo*>   hotspots;
 } Paragraph;
 
 typedef struct sprite
@@ -65,16 +81,9 @@ typedef struct storyTouchableNodeActionsToRun
 
 typedef struct storyTouchableNode
 {
-	bool                      glitterIndicator;
-    bool                      stopEffectIndicator;
+	HotspotInfo               hotspotInfo;
     bool                      delayForText;
     bool                      delayForAnimation;
-	cocos2d::CCPoint          position;
-	int                       radius;
-	std::string               videoToPlay;
-	std::string               soundToPlay;
-	int                       touchFlag;
-    float                     autoplayVideoFinishedDelay;
 
 	std::vector<StoryTouchableNodeActionsToRun*> actionsToRun;
 } StoryTouchableNode;
@@ -107,8 +116,15 @@ public:
 	void addAction(int actionTag, cocos2d::CCAction *action);
 	cocos2d::CCAction* getActionByTag(int actionTag);
     SpriteInfo* getSpriteInfoByTag(int spriteTag);
-    StoryTouchableNode* getSotryTouchableNodeByFlag(int touchFlag);
+    
+    StoryTouchableNode* getSotryTouchableNode(int touchFlag);
+    StoryTouchableNode* getStoryTouchableNode(const string &videoName);
+    
     std::vector<StorySwipeEndedActionsToRun*>* getStorySwipeEndedActionToRun(int swipeNumber);
+    
+    HotspotInfo* getParagraphHotspotInfo(int paragraphIndex, int touchFlag);
+    HotspotInfo* getParagraphHotspotInfo(int paragraphIndex, const std::string &videoName);
+    
     void splitText(LineText *textLine);
 public:
 	// settings

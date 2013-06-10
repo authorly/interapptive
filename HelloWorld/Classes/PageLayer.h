@@ -9,18 +9,13 @@
 
 #include <vector>
 
-typedef struct
-{
-    StoryTouchableNode* touchNode;
-    cocos2d::CCParticleSystem *partileSystem;
-} TouchNodeInfo;
-
 class PageLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayProtocol
 {
 public:
     virtual ~PageLayer();
 	static PageLayer* pageLayerWithPage(Page* page);
-	void touchCallback(float flag);
+	void storyTouchCallback(float flag);
+    void hotspotCallback(float flag);
     void mainMenuItemCallback(cocos2d::CCObject *sender);
     virtual void onEnter();
     virtual void onExit();
@@ -36,7 +31,7 @@ public:
     
     void doSwipeLeftAfterDelay(cocos2d::CCObject *sender);
     
-    void addTouchNode();
+    void addStoryTouchNode();
     void enableDelayForAnimationTouchNode(cocos2d::CCObject *sender);
     void enableDelayForTextTouchNode();
     
@@ -45,7 +40,7 @@ public:
     // dialog protocol
     virtual void buttonClicked(int index);
     
-    virtual void moviePlayBackDidFinish(const char *videoName);
+    virtual void moviePlayBackDidFinish(const char *videoName, bool isParagraphHotspot);
     
 private:
     PageLayer();
@@ -76,7 +71,7 @@ private:
     
     void stopHighlightEffect();
     
-    TouchNodeInfo* getTouchNodeInfoByVideoName(const std::string &videoName);
+    HotspotInfo* getHotspotInfo(const std::string &videoName, bool isParagraphHotspot);
     
     // determine add or minus text space according the y coordinate 
     // of the first line text
@@ -86,6 +81,12 @@ private:
     
     void clearLabelIndex();
     LineText* getLineTextByLabel(cocos2d::CCLabelTTF*);
+    
+    // story touch node or paragraph hotspot call back
+    void doHotspotTouched(HotspotInfo *hotspot, bool isParagraphHotspot);
+    
+    void addParagraphText(int index);
+    void addParagraphHotspot(int index);
     
 private:
     
@@ -107,11 +108,9 @@ private:
     // some sprites may run action when onEnter
     // so should calcuate delay time
     unsigned int delayOfAnimation;
-    
-    std::vector<TouchNodeInfo> touchableNodeDelayForTextArray;
-    std::vector<StoryTouchableNode*> touchableNodeDelayForAnimationArray;
-    std::vector<TouchNodeInfo> touchableNodeForVideoArray;
-    TouchDetection *touchDetector;
+
+    // should use two dectectors, because the touch flags will be resued in story touch node and paragraph hotspot
+    TouchDetection *storyTouchDetector;
 
     MyDialog *mydialog;
     
