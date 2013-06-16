@@ -210,7 +210,6 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		3A7FD05716758A400031575E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7FD05616758A400031575E /* Default-568h@2x.png */; };
 		3ACBB1E8153D4BF60075EDB2 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ACBB1E7153D4BF60075EDB2 /* arial.ttf */; };
 		46F19B02170B0B0D004DEA51 /* SnowmanGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */; };
 		BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492D4B1289302400A09262 /* OpenGLES.framework */; };
@@ -891,7 +890,6 @@
 		1D6058910D05DD3D006BFB54 /* testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3A7FD05616758A400031575E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3ACBB1E7153D4BF60075EDB2 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
 		46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnowmanGameScene.cpp; sourceTree = "<group>"; };
 		BF137426128A8E4600D9F789 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1645,7 +1643,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				3A7FD05616758A400031575E /* Default-568h@2x.png */,
 				154CD4D31629B4F700C3A047 /* cocos2dx */,
 				154CD4CF1629B1D200C3A047 /* CoreFoundation.framework */,
 				154CD4CD1629B1A800C3A047 /* Twitter.framework */,
@@ -2102,7 +2099,6 @@
 				159FDC2615C535E30064CCAF /* progress.marks in Resources */,
 				159FDC2715C535E30064CCAF /* CMakeLists.txt in Resources */,
 				154CD4C81629B09F00C3A047 /* ShareKit.bundle in Resources */,
-				3A7FD05716758A400031575E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
