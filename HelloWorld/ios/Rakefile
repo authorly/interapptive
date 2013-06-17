@@ -1,9 +1,9 @@
       require 'rubygems'
       require 'betabuilder'
       BetaBuilder::Tasks.new do |config|
-        config.target = 'testing'
+        config.target = 'Authorly'
         config.configuration = 'Adhoc'
-        config.app_name = 'testing'
+        config.app_name = 'Authorly'
 
         config.deploy_using(:web) do |web|
           web.deploy_to = 'https://authorly-staging.s3.amazonaws.com/compiled_applications/2'
