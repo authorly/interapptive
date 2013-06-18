@@ -46,3 +46,6 @@ libhelloworld.so
 raw/
 BuildConfig.java
 R.java
+
+# Ignore files that are used during automated compilation
+transient_assets.txt
