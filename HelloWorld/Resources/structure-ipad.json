@@ -11,6 +11,7 @@
       "homeMenuForPages":{
          "normalStateImage":"home.png",
          "tappedStateImage":"home-over.png",
+         "scale": 2.0,
          "position":[
             29,
             19
@@ -735,7 +736,7 @@
          "API":{
             "CCMoveTo":[
                {
-                  "actionTag":18,
+                  "actionTag":218,
                   "duration":0,
                   "position":[
                      461,
@@ -745,7 +746,7 @@
             ],
             "CCScaleTo":[
                {
-                  "actionTag":17,
+                  "actionTag":117,
                   "duration":0,
                   "intensity":1
                }
@@ -767,14 +768,14 @@
             "CCSprites":[
                {
                   "image":"d9679b82ce8424b7ce33b0bdb59bd8f8.jpg",
-                  "spriteTag":10,
+                  "spriteTag":110,
                   "position":[
                      461,
                      341
                   ],
                   "actions":[
-                     17,
-                     18
+                     117,
+                     218
                   ]
                }
             ]
@@ -819,16 +820,6 @@
       },
       {
          "API":{
-            "CCMoveTo":[
-               {
-                  "actionTag":20,
-                  "duration":0,
-                  "position":[
-                     428,
-                     334
-                  ]
-               }
-            ],
             "CCScaleTo":[
                {
                   "actionTag":19,
@@ -859,8 +850,7 @@
                      334
                   ],
                   "actions":[
-                     19,
-                     20
+                     19
                   ]
                }
             ]
@@ -2715,7 +2705,7 @@
          {
             "image":"aedff2a32a333bb951875e7a5a753a21.jpg",
             "spriteTag":1,
-            "scale":1,
+            "scale":1.5,
             "position":[
                515,
                387
