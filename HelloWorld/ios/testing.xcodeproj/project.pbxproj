@@ -2345,7 +2345,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = Authorly;
+				PRODUCT_NAME = testing;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2390,7 +2390,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = Authorly;
+				PRODUCT_NAME = testing;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2456,7 +2456,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = Authorly;
+				PRODUCT_NAME = testing;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
