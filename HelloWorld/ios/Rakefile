@@ -3,9 +3,7 @@
       BetaBuilder::Tasks.new do |config|
         config.target = 'Authorly'
         config.configuration = 'Adhoc'
-        config.workspace_path = "project.xcworkspace"
-        config.scheme = "Authorly"
-        config.app_name = "Authorly"
+        config.app_name = 'Authorly'
 
         config.deploy_using(:web) do |web|
           web.deploy_to = 'https://authorly-staging.s3.amazonaws.com/compiled_applications/2'
