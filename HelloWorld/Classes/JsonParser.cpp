@@ -423,7 +423,7 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
             h->position.y = (float)hotspotJson["position"][y].asDouble() * YSCALE;
             
             // radius
-            h->radius = hotspotJson["radius"].asInt() * MIN_SCALE;
+            h->radius = hotspotJson["radius"].asInt();// * MIN_SCALE;
             
             // soundToPlay
             Json::Value soundToPlayJson = hotspotJson["soundToPlay"];

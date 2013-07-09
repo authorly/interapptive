@@ -877,8 +877,7 @@ void PageLayer::highlightParagraph()
             ++wordCount;
         }
         SimpleAudioEngine::sharedEngine()->playBackgroundMusic(page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str(),
-                                                               false,
-                                                               true);
+                                                               false);
         
         if (wordCount > 0)
         {
@@ -926,7 +925,8 @@ void PageLayer::doSwipeLeftAfterDelay(CCObject *sender)
 void PageLayer::stopHighlightEffect()
 {
     // stop all effect, I think now it will only have one effect that speaking word.
-    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(false, true);
+    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->stopAllEffects();
 }
 
 void PageLayer::playBackgroundMusic()

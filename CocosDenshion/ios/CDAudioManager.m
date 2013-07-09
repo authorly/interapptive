@@ -413,18 +413,20 @@ static BOOL configured = FALSE;
 		soundEngine = [[CDSoundEngine alloc] init];
 		
 		//Set up audioSource channels
-		audioSourceChannels = [[NSMutableArray alloc] init];
-		CDLongAudioSource *leftChannel = [[CDLongAudioSource alloc] init];
-		leftChannel.backgroundMusic = YES;
-		CDLongAudioSource *rightChannel = [[CDLongAudioSource alloc] init];
-		rightChannel.backgroundMusic = NO;
-		[audioSourceChannels insertObject:leftChannel atIndex:kASC_Left];	
-		[audioSourceChannels insertObject:rightChannel atIndex:kASC_Right];
-		[leftChannel release];
-		[rightChannel release];
-		//Used to support legacy APIs
-		backgroundMusic = [self audioSourceForChannel:BACKGROUND_MUSIC_CHANNEL];
-		backgroundMusic.delegate = self;
+//		audioSourceChannels = [[NSMutableArray alloc] init];
+//		CDLongAudioSource *leftChannel = [[CDLongAudioSource alloc] init];
+//		leftChannel.backgroundMusic = YES;
+//		CDLongAudioSource *rightChannel = [[CDLongAudioSource alloc] init];
+//		rightChannel.backgroundMusic = NO;
+//		[audioSourceChannels insertObject:leftChannel atIndex:kASC_Left];	
+//		[audioSourceChannels insertObject:rightChannel atIndex:kASC_Right];
+//		[leftChannel release];
+//		[rightChannel release];
+//		//Used to support legacy APIs
+//		backgroundMusic = [self audioSourceForChannel:BACKGROUND_MUSIC_CHANNEL];
+//		backgroundMusic.delegate = self;
+        
+        backgroundMusics = [[NSMutableDictionary alloc] init];
 		
 		//Add handler for bad al context messages, these are posted by the sound engine.
 		[[NSNotificationCenter defaultCenter] addObserver:self	selector:@selector(badAlContextHandler) name:kCDN_BadAlContext object:nil];
@@ -439,20 +441,21 @@ static BOOL configured = FALSE;
 	[soundEngine release];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[self audioSessionSetActive:NO];
-	[audioSourceChannels release];
+//	[audioSourceChannels release];
+    [backgroundMusics release];
 	[super dealloc];
 }	
 
 /** Retrieves the audio source for the specified channel */
--(CDLongAudioSource*) audioSourceForChannel:(tAudioSourceChannel) channel 
-{
-	return (CDLongAudioSource*)[audioSourceChannels objectAtIndex:channel];
-}	
+//-(CDLongAudioSource*) audioSourceForChannel:(tAudioSourceChannel) channel 
+//{
+//	return (CDLongAudioSource*)[audioSourceChannels objectAtIndex:channel];
+//}	
 
 /** Loads the data from the specified file path to the channel's audio source */
--(CDLongAudioSource*) audioSourceLoad:(NSString*) filePath channel:(tAudioSourceChannel) channel
+-(CDLongAudioSource*) audioSourceLoad:(NSString*) filePath
 {
-	CDLongAudioSource *audioSource = [self audioSourceForChannel:channel];
+    CDLongAudioSource *audioSource = [backgroundMusics objectForKey:filePath];
 	if (audioSource) {
 		[audioSource load:filePath];
 	}
@@ -507,7 +510,8 @@ static BOOL configured = FALSE;
 	if (muteValue != _mute) {
 		_mute = muteValue;
 		[soundEngine setMute:muteValue];
-		for( CDLongAudioSource *audioSource in audioSourceChannels) {
+        NSArray *audioSources = [backgroundMusics allValues];
+		for( CDLongAudioSource *audioSource in audioSources) {
 			audioSource.mute = muteValue;
 		}	
 	}	
@@ -521,26 +525,36 @@ static BOOL configured = FALSE;
 	if (enabledValue != enabled_) {
 		enabled_ = enabledValue;
 		[soundEngine setEnabled:enabled_];
-		for( CDLongAudioSource *audioSource in audioSourceChannels) {
+        NSArray *audioSources = [backgroundMusics allValues];
+		for( CDLongAudioSource *audioSource in audioSources) {
 			audioSource.enabled = enabled_;
 		}	
 	}	
 }
 
--(CDLongAudioSource*) backgroundMusic
-{
-	return backgroundMusic;
-}	
+//-(CDLongAudioSource*) backgroundMusic
+//{
+//	return backgroundMusic;
+//}	
 
 //Load background music ready for playing
 -(void) preloadBackgroundMusic:(NSString*) filePath
 {
-	[self.backgroundMusic load:filePath];	
+    CDLongAudioSource *audioSource = [[CDLongAudioSource alloc] init];
+    audioSource.backgroundMusic = true;
+    [audioSource load:filePath];
+    [backgroundMusics setObject:audioSource forKey:filePath];	
 }	
 
 -(void) playBackgroundMusic:(NSString*) filePath loop:(BOOL) loop
 {
-	[self.backgroundMusic load:filePath];
+    CDLongAudioSource *audioSource = [backgroundMusics objectForKey:filePath];
+    if (! audioSource) {
+        audioSource = [[CDLongAudioSource alloc] init];
+        audioSource.backgroundMusic = true;
+        [backgroundMusics setObject:audioSource forKey:filePath];
+        [audioSource load:filePath];
+    }
 
 	if (!willPlayBackgroundMusic || _mute) {
 		CDLOGINFO(@"Denshion::CDAudioManager - play bgm aborted because audio is not exclusive or sound is muted");
@@ -548,37 +562,55 @@ static BOOL configured = FALSE;
 	}
 		
 	if (loop) {
-		[self.backgroundMusic setNumberOfLoops:-1];
+//		[self.backgroundMusic setNumberOfLoops:-1];
+        [audioSource setNumberOfLoops:-1];
 	} else {
-		[self.backgroundMusic setNumberOfLoops:0];
+//		[self.backgroundMusic setNumberOfLoops:0];
+        [audioSource setNumberOfLoops:0];
 	}	
-	[self.backgroundMusic play];
+//	[self.backgroundMusic play];
+    [audioSource play];
 }
 
--(void) stopBackgroundMusic
+-(void) stopBackgroundMusic: (NSString*) filePath
 {
-	[self.backgroundMusic stop];
+    CDLongAudioSource *audioSource = [backgroundMusics objectForKey:filePath];
+    [audioSource stop];
+//	[self.backgroundMusic stop];
 }
 
--(void) pauseBackgroundMusic
+-(void) stopAllBackgroundMusic
 {
-	[self.backgroundMusic pause];
-}	
+    for (CDLongAudioSource *audioSource in [backgroundMusics allValues]) {
+        [audioSource stop];
+    }
+}
 
--(void) resumeBackgroundMusic
+-(void) pauseBackgroundMusic: (NSString*) filePath
+{
+    CDLongAudioSource *audioSource = [backgroundMusics objectForKey:filePath];
+    [audioSource pause];
+//	[self.backgroundMusic pause];
+}
+
+-(void) resumeBackgroundMusic: (NSString*) filePath
 {
 	if (!willPlayBackgroundMusic || _mute) {
 		CDLOGINFO(@"Denshion::CDAudioManager - resume bgm aborted because audio is not exclusive or sound is muted");
 		return;
 	}
 	
-	[self.backgroundMusic resume];
-}	
+    CDLongAudioSource *audioSource = [backgroundMusics objectForKey:filePath];
+    [audioSource resume];
+//	[self.backgroundMusic resume];
+}
 
--(void) rewindBackgroundMusic
+-(void) rewindBackgroundMusic: (NSString*) filePath
 {
-	[self.backgroundMusic rewind];
-}	
+    CDLongAudioSource *audioSource = [backgroundMusics objectForKey:filePath];
+    [audioSource rewind];
+//	[self.backgroundMusic rewind];
+}
 
 -(void) setBackgroundMusicCompletionListener:(id) listener selector:(SEL) selector {
 	backgroundMusicCompletionListener = listener;
@@ -611,12 +643,12 @@ static BOOL configured = FALSE;
 	
 	//Set the audio sesssion to one that allows sharing so that other audio won't be clobbered on resume
 	[self audioSessionSetCategory:AVAudioSessionCategoryAmbient];
+    NSArray *audioSources = [backgroundMusics allValues];
 	
 	switch (_resignBehavior) {
 			
 		case kAMRBStopPlay:
-			
-			for( CDLongAudioSource *audioSource in audioSourceChannels) {
+			for( CDLongAudioSource *audioSource in audioSources) {
 				if (audioSource.isPlaying) {
 					audioSource->systemPaused = YES;
 					audioSource->systemPauseLocation = audioSource.audioSourcePlayer.currentTime;
@@ -633,7 +665,7 @@ static BOOL configured = FALSE;
 		case kAMRBStop:
 			//Stop music regardless of whether it is playing or not because if it was paused
 			//then the OS would resume it
-			for( CDLongAudioSource *audioSource in audioSourceChannels) {
+			for( CDLongAudioSource *audioSource in audioSources) {
 				[audioSource stop];
 			}	
 			
@@ -656,6 +688,7 @@ static BOOL configured = FALSE;
 		_resigned = NO;
 		//Reset the mode incase something changed with audio while we were inactive
 		[self setMode:_mode];
+        NSArray *audioSources = [backgroundMusics allValues];
 		switch (_resignBehavior) {
 				
 			case kAMRBStopPlay:
@@ -665,7 +698,7 @@ static BOOL configured = FALSE;
 				//We check if music can be played because while we were inactive the user might have
 				//done something that should force music to not play such as starting a track in the iPod
 				if (self.willPlayBackgroundMusic) {
-					for( CDLongAudioSource *audioSource in audioSourceChannels) {
+					for( CDLongAudioSource *audioSource in audioSources) {
 						if (audioSource->systemPaused) {
 							[audioSource resume];
 							audioSource->systemPaused = NO;
