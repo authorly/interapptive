@@ -96,25 +96,30 @@ static CDBufferManager *bufferManager = nil;
 	[am playBackgroundMusic:filePath loop:loop];
 }
 
--(void) stopBackgroundMusic
+-(void) stopBackgroundMusic:(NSString*) filePath
 {
-	[am stopBackgroundMusic];
+	[am stopBackgroundMusic:filePath];
 }
 
--(void) pauseBackgroundMusic {
-	[am pauseBackgroundMusic];
-}	
-
--(void) resumeBackgroundMusic {
-	[am resumeBackgroundMusic];
-}	
-
--(void) rewindBackgroundMusic {
-	[am rewindBackgroundMusic];
+-(void) stopAllBackgroundMusic
+{
+    [am stopAllBackgroundMusic];
 }
 
--(BOOL) isBackgroundMusicPlaying {
-	return [am isBackgroundMusicPlaying];
+-(void) pauseBackgroundMusic:(NSString*) filePath {
+	[am pauseBackgroundMusic:filePath];
+}	
+
+-(void) resumeBackgroundMusic:(NSString*) filePath {
+	[am resumeBackgroundMusic:filePath];
+}	
+
+-(void) rewindBackgroundMusic:(NSString*) filePath {
+	[am rewindBackgroundMusic:filePath];
+}
+
+-(BOOL) isBackgroundMusicPlaying:(NSString*) filePath {
+	return [am isBackgroundMusicPlaying:filePath];
 }	
 
 -(BOOL) willPlayBackgroundMusic {

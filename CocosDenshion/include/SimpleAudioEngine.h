@@ -69,36 +69,38 @@ public:
     @param pszFilePath The path of the background music file,or the FileName of T_SoundResInfo
     @param bLoop Whether the background music loop or not
     */
-    void playBackgroundMusic(const char* pszFilePath, bool bLoop = false, bool playeffects = false);
+    void playBackgroundMusic(const char* pszFilePath, bool bLoop = false);
 
     /**
     @brief Stop playing background music
     @param bReleaseData If release the background music data or not.As default value is false
     */
-    void stopBackgroundMusic(bool bReleaseData = false, bool playeffects = false);
+    void stopBackgroundMusic(const char* pszFilePath, bool bReleaseData = false);
+    
+    void stopAllBackgroundMusic();
 
     /**
     @brief Pause playing background music
     */
-    void pauseBackgroundMusic();
+    void pauseBackgroundMusic(const char* pszFilePath);
 
     /**
     @brief Resume playing background music
     */
-    void resumeBackgroundMusic();
+    void resumeBackgroundMusic(const char* pszFilePath);
 
     /**
     @brief Rewind playing background music
     */
-    void rewindBackgroundMusic();
+    void rewindBackgroundMusic(const char* pszFilePath);
 
-    bool willPlayBackgroundMusic();
+    bool willPlayBackgroundMusic(const char* pszFilePath);
 
     /**
     @brief Whether the background music is playing
     @return If is playing return true,or return false
     */
-    bool isBackgroundMusicPlaying();
+    bool isBackgroundMusicPlaying(const char* pszFilePath);
 
     // properties
     /**

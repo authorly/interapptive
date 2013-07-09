@@ -39,7 +39,7 @@ void PageManager::parseJsonAndRun(const char* pathOfJasonFile)
 void PageManager::gotoMainMenu(void)
 {
     // stop background music and effects
-    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
     SimpleAudioEngine::sharedEngine()->stopAllEffects();
     
     CCScene *scene = CCScene::node();
@@ -69,10 +69,7 @@ Page* PageManager::getPageByPageNumber(int pageNumber)
 void PageManager::turnToPage(int pageNumber, bool backWards)
 {
     // stop back ground music
-    if (SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying())
-    {
-        SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
-    }
+    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
 
     CCScene *scene = createSceneByPageNumber(pageNumber);
     if (scene)
