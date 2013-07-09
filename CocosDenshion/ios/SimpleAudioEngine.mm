@@ -40,34 +40,39 @@ static void static_playBackgroundMusic(const char* pszFilePath, bool bLoop)
     [[SimpleAudioEngine sharedEngine] playBackgroundMusic: [NSString stringWithUTF8String: pszFilePath] loop: bLoop];
 }
 
-static void static_stopBackgroundMusic()
+static void static_stopBackgroundMusic(const char* pszFilePath)
 {
-    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic: [NSString stringWithUTF8String:pszFilePath]];
 }
 
-static void static_pauseBackgroundMusic()
+static void static_stopAllBackgroundMusic()
 {
-     [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+    [[SimpleAudioEngine sharedEngine] stopAllBackgroundMusic];
 }
 
-static void static_resumeBackgroundMusic()
+static void static_pauseBackgroundMusic(const char* pszFilePath)
 {
-    [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
+     [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic: [NSString stringWithUTF8String:pszFilePath]];
+}
+
+static void static_resumeBackgroundMusic(const char* pszFilePath)
+{
+    [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic: [NSString stringWithUTF8String:pszFilePath]];
 } 
 
-static void static_rewindBackgroundMusic()
+static void static_rewindBackgroundMusic(const char* pszFilePath)
 {
-    [[SimpleAudioEngine sharedEngine] rewindBackgroundMusic];
+    [[SimpleAudioEngine sharedEngine] rewindBackgroundMusic: [NSString stringWithUTF8String:pszFilePath]];
 }
 
-static bool static_willPlayBackgroundMusic()
+static bool static_willPlayBackgroundMusic(const char* pszFilePath)
 {
     return [[SimpleAudioEngine sharedEngine] willPlayBackgroundMusic];
 }
 
-static bool static_isBackgroundMusicPlaying()
+static bool static_isBackgroundMusicPlaying(const char* pszFilePath)
 {
-    return [[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying];
+    return [[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying: [NSString stringWithUTF8String:pszFilePath]];
 }
 
 static float static_getBackgroundMusicVolume()
@@ -186,7 +191,7 @@ namespace CocosDenshion
 #endif
 	}
 
-	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop, bool playeffect)
+	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop)
 	{
 #ifdef DISABLE_AUDIO
         return;
@@ -195,58 +200,67 @@ namespace CocosDenshion
 #endif
 	}
 
-	void SimpleAudioEngine::stopBackgroundMusic(bool bReleaseData, bool playeffect)
+	void SimpleAudioEngine::stopBackgroundMusic(const char* pszFilePath, bool bReleaseData)
 	{
 #ifdef DISABLE_AUDIO
         return;
 #else
-        static_stopBackgroundMusic();
+        static_stopBackgroundMusic(pszFilePath);
 #endif
         
 	}
+    
+    void SimpleAudioEngine::stopAllBackgroundMusic()
+    {
+#ifdef DISABLE_AUDIO
+        return;
+#else
+        static_stopAllBackgroundMusic();
+#endif
+    }
 
-	void SimpleAudioEngine::pauseBackgroundMusic()
+	void SimpleAudioEngine::pauseBackgroundMusic(const char* pszFilePath)
 	{
 #ifdef DISABLE_AUDIO
         return;
 #else
-        static_pauseBackgroundMusic();
+        static_pauseBackgroundMusic(pszFilePath);
 #endif
 	}
 
-	void SimpleAudioEngine::resumeBackgroundMusic()
+	void SimpleAudioEngine::resumeBackgroundMusic(const char* pszFilePath)
 	{
 #ifdef DISABLE_AUDIO
         return;
 #else
-        static_resumeBackgroundMusic();
+        static_resumeBackgroundMusic(pszFilePath);
 #endif
 	} 
 
-	void SimpleAudioEngine::rewindBackgroundMusic()
+	void SimpleAudioEngine::rewindBackgroundMusic(const char* pszFilePath)
 	{
 #ifdef DISABLE_AUDIO
         return;
 #else
-        static_rewindBackgroundMusic();
+        static_rewindBackgroundMusic(pszFilePath);
 #endif
 	}
 
-	bool SimpleAudioEngine::willPlayBackgroundMusic()
+	bool SimpleAudioEngine::willPlayBackgroundMusic(const char* pszFilePath)
 	{
 #ifdef DISABLE_AUDIO
         return false;
 #else
-        return static_willPlayBackgroundMusic();
+        return static_willPlayBackgroundMusic(pszFilePath);
 #endif
 	}
 
-	bool SimpleAudioEngine::isBackgroundMusicPlaying()
+	bool SimpleAudioEngine::isBackgroundMusicPlaying(const char* pszFilePath)
 	{
 #ifdef DISABLE_AUDIO
         return false;
 #else
-        return static_isBackgroundMusicPlaying();
+        return static_isBackgroundMusicPlaying(pszFilePath);
 #endif
 	}
 

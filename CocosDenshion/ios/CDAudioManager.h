@@ -144,8 +144,8 @@ typedef enum {
  */
 @interface CDAudioManager : NSObject <CDLongAudioSourceDelegate, CDAudioInterruptProtocol, AVAudioSessionDelegate> {
 	CDSoundEngine		*soundEngine;
-	CDLongAudioSource	*backgroundMusic;
-	NSMutableArray		*audioSourceChannels;
+	NSMutableDictionary	*backgroundMusics;
+//	NSMutableArray		*audioSourceChannels;
 	NSString*			_audioSessionCategory;
 	BOOL				_audioWasPlayingAtStartup;
 	tAudioManagerMode	_mode;
@@ -195,9 +195,9 @@ typedef enum {
 
 //New AVAudioPlayer API
 /** Loads the data from the specified file path to the channel's audio source */
--(CDLongAudioSource*) audioSourceLoad:(NSString*) filePath channel:(tAudioSourceChannel) channel;
+-(CDLongAudioSource*) audioSourceLoad:(NSString*) filePath;
 /** Retrieves the audio source for the specified channel */
--(CDLongAudioSource*) audioSourceForChannel:(tAudioSourceChannel) channel;
+//-(CDLongAudioSource*) audioSourceForChannel:(tAudioSourceChannel) channel;
 
 //Legacy AVAudioPlayer API
 /** Plays music in background. The music can be looped or not
@@ -207,15 +207,16 @@ typedef enum {
 /** Preloads a background music */
 -(void) preloadBackgroundMusic:(NSString*) filePath;
 /** Stops playing the background music */
--(void) stopBackgroundMusic;
+-(void) stopBackgroundMusic: (NSString*) filePath;
+-(void) stopAllBackgroundMusic;
 /** Pauses the background music */
--(void) pauseBackgroundMusic;
+-(void) pauseBackgroundMusic: (NSString*) filePath;
 /** Rewinds the background music */
--(void) rewindBackgroundMusic;
+-(void) rewindBackgroundMusic: (NSString*) filePath;
 /** Resumes playing the background music */
--(void) resumeBackgroundMusic;
+-(void) resumeBackgroundMusic: (NSString*) filePath;
 /** Returns whether or not the background music is playing */
--(BOOL) isBackgroundMusicPlaying;
+-(BOOL) isBackgroundMusicPlaying: (NSString*) filePath;
 
 -(void) setBackgroundMusicCompletionListener:(id) listener selector:(SEL) selector;
 

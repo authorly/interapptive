@@ -61,15 +61,16 @@
 /** plays background music, if loop is true the music will repeat otherwise it will be played once */
 -(void) playBackgroundMusic:(NSString*) filePath loop:(BOOL) loop;
 /** stops playing background music */
--(void) stopBackgroundMusic;
+-(void) stopBackgroundMusic:(NSString*) filePath;
+-(void) stopAllBackgroundMusic;
 /** pauses the background music */
--(void) pauseBackgroundMusic;
+-(void) pauseBackgroundMusic:(NSString*) filePath;
 /** resume background music that has been paused */
--(void) resumeBackgroundMusic;
+-(void) resumeBackgroundMusic:(NSString*) filePath;
 /** rewind the background music */
--(void) rewindBackgroundMusic;
+-(void) rewindBackgroundMusic:(NSString*) filePath;
 /** returns whether or not the background music is playing */
--(BOOL) isBackgroundMusicPlaying;
+-(BOOL) isBackgroundMusicPlaying:(NSString*) filePath;
 
 /** plays an audio effect with a file path*/
 -(ALuint) playEffect:(NSString*) filePath loop:(BOOL) loop;

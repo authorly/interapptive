@@ -121,7 +121,7 @@ void AppDelegate::applicationDidEnterBackground() {
 	CCDirector::sharedDirector()->stopAnimation();
     
     SimpleAudioEngine::sharedEngine()->stopAllEffects();
-    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
 
 	// if you use SimpleAudioEngine, it must be pause
 	// SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
