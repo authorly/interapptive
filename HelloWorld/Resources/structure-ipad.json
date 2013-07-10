@@ -182,9 +182,9 @@
                            {
                            "linesOfText":[
                                           {
-                                          "text":"",
-                                          "xOffset":0,
-                                          "yOffset":0,
+                                          "text":"Test",
+                                          "xOffset":100,
+                                          "yOffset":100,
                                           "fontType":"Arial.ttf",
                                           "fontColor":[
                                                        255,
@@ -234,7 +234,7 @@
                          "actionTag":13,
                          "duration":3,
                          "position":[
-                                     822,
+                                     1822,
                                      413
                                      ]
                          }
@@ -248,7 +248,7 @@
                           {
                           "actionTag":12,
                           "duration":3,
-                          "intensity":2
+                          "intensity":9
                           }
                           ],
              "CCSequence":[
@@ -266,18 +266,9 @@
                           "runAfterSwipeNumber":1,
                           "spriteTag":30,
                           "actionTags":[
-                                        11
-                                        ]
-                          },
-                          {
-                          "runAfterSwipeNumber":2,
-                          "spriteTag":30,
-                          "actionTags":[
-                                        12,
                                         13
                                         ]
-                          }
-                          ]
+                          }                          ]
              },
              "CCSprites":[
                           {
