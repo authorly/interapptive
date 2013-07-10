@@ -211,7 +211,7 @@ void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
 void MainMenuLayer::playVideoMainMenuItemTouched(cocos2d::CCObject *sender)
 {
     // stop playing background music
-    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
     
     MainMenuItemInfo *mainMenuItemInfo = (MainMenuItemInfo*)((CCMenuItemImage*)sender)->getUserData(); 
     VideoPlayer::sharedVideoPlayer()->playVideoByFilename(mainMenuItemInfo->videoToPlay.c_str(), true);
@@ -245,7 +245,7 @@ void MainMenuLayer::buildASnowmanMenuItemTouched(cocos2d::CCObject *sender)
     // stop back ground music
     if (SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying())
     {
-        SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+        SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
     }
     
     SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);

@@ -6,7 +6,7 @@
         config.app_name = 'testing'
 
         config.deploy_using(:web) do |web|
-          web.deploy_to = 'https://authorly-staging.s3.amazonaws.com/compiled_applications/2'
+          web.deploy_to = 'https://authorly-staging.s3.amazonaws.com/compiled_applications/22'
           web.remote_host = 'fake_path'
           web.remote_directory = 'fake_directory'
         end
