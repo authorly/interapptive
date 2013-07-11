@@ -85,7 +85,7 @@
              "CCStorySwipeEnded":{
              "runAction":[
                           {
-                          "runAfterSwipeNumber":2,
+                          "runAfterSwipeNumber":1,
                           "spriteTag":20,
                           "actionTags":[
                                         8
