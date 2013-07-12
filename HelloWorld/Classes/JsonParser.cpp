@@ -134,6 +134,8 @@ void JsonParser::parseMainMenuSprites(Json::Value &value)
         int x = 0, y = 1;
         spriteInfo->position.x = spriteJson["position"][x].asInt() * XSCALE;
         spriteInfo->position.y = spriteJson["position"][y].asInt() * YSCALE;
+        // scale
+        spriteInfo->scale = spriteJson["scale"].asDouble();
         
         MainMenu::sprites.push_back(spriteInfo);
     }

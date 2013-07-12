@@ -29,6 +29,7 @@ typedef struct _mainMenuSpriteInfo
     int                 spriteTag;
     bool                visible;
     cocos2d::CCPoint    position;
+    double              scale;
 } MainMenuSpriteInfo;
 
 typedef  struct _menuItem
