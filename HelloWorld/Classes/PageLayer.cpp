@@ -612,6 +612,7 @@ void PageLayer::createMainMenuItem()
                                                                     this,
                                                                     menu_selector(PageLayer::mainMenuItemCallback));
     mainMenuItem->setPosition(Configurations::homeButtonPosition);
+    mainMenuItem->setScale(Configurations::homeButtonScale);
     
     CCMenu *mainMenu = CCMenu::menuWithItems(mainMenuItem, NULL);
     mainMenu->setPosition(CCPointZero);
