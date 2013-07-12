@@ -91,6 +91,7 @@ void MainMenuLayer::onEnter()
         menuItemImage->setUserData(menuItemInfo);
         
         menuItemImage->setPosition(menuItemInfo->position);
+        menuItemImage->setScale(menuItemInfo->scale);
         menu->addChild(menuItemImage, 1);
     }
     

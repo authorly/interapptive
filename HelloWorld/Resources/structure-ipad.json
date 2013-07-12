@@ -422,6 +422,7 @@
                      "normalStateImage":"read_it_myself.png",
                      "tappedStateImage":"read_it_myself-over.png",
                      "storyMode":"readItMyself",
+                     "scale": 1.0,
                      "position":[
                                  512,
                                  200
@@ -431,6 +432,7 @@
                      "normalStateImage":"read_to_me.png",
                      "tappedStateImage":"read_to_me-over.png",
                      "storyMode":"readToMe",
+                     "scale": 1.0,
                      "position":[
                                  177,
                                  200
@@ -440,6 +442,7 @@
                      "normalStateImage":"auto_play.png",
                      "tappedStateImage":"auto_play-over.png",
                      "storyMode":"autoPlay",
+                     "scale": 1.0,
                      "position":[
                                  844,
                                  200
