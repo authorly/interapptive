@@ -531,7 +531,8 @@ void PageLayer::swipeLeft()
 
 void PageLayer::swipeRight()
 {
-    if (page->settings.number == 1)
+    if (page->settings.number == 1 &&
+        currentIndexOfParagraph == 0)
     {
         return;
     }
