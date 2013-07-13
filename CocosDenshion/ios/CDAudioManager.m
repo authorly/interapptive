@@ -553,8 +553,9 @@ static BOOL configured = FALSE;
         audioSource = [[CDLongAudioSource alloc] init];
         audioSource.backgroundMusic = true;
         [backgroundMusics setObject:audioSource forKey:filePath];
-        [audioSource load:filePath];
     }
+    
+    [audioSource load:filePath];
 
 	if (!willPlayBackgroundMusic || _mute) {
 		CDLOGINFO(@"Denshion::CDAudioManager - play bgm aborted because audio is not exclusive or sound is muted");
