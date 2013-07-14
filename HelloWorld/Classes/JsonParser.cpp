@@ -63,6 +63,7 @@ void JsonParser::parseConfigurations(Json::Value &root)
     int x = 0, y = 1;
     Configurations::homeButtonPosition.x = (float)homeMenuForPages["position"][x].asDouble() * XSCALE;
     Configurations::homeButtonPosition.y = (float)homeMenuForPages["position"][y].asDouble() * YSCALE;
+    Configurations::homeButtonScale = homeMenuForPages["scale"].asDouble();
 }
 
 void JsonParser::parseMainMenu(Json::Value &root)
