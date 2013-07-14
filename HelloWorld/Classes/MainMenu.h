@@ -43,6 +43,7 @@ typedef  struct _menuItem
     MainMenuItemType    mainMenuItemType;
    
     cocos2d::CCPoint    position;
+    double              scale;
 } MainMenuItemInfo;
 
 typedef struct _actionFadeIn

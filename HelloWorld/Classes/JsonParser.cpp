@@ -171,6 +171,8 @@ void JsonParser::parseMenuItems(Json::Value &value)
         int x = 0, y = 1;
         menuItem->position.x = menuItemJson["position"][x].asInt() * XSCALE;
         menuItem->position.y = menuItemJson["position"][y].asInt() * YSCALE;
+        // scale
+        menuItem->scale = menuItemJson["scale"].asDouble();
         
         MainMenu::menuItems.push_back(menuItem);
     }
