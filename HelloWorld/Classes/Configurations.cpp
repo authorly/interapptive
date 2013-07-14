@@ -13,5 +13,5 @@ string Configurations::homeButtonNormalStateImage = "";
 string Configurations::homeButtonTappedStateImage = "";
 
 CCPoint Configurations::homeButtonPosition = CCPointZero;
-
+double Configurations::homeButtonScale = 1.0;
 bool Configurations::retainTextScalingRatio = false;
