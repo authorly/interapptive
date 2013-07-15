@@ -408,6 +408,7 @@
                      "image":"678ee31a4e5592d249d9fd0b207d0f47.jpg",
                      "spriteTag":1,
                      "scale":1,
+                     "zOrder":1,
                      "position":[
                                  512,
                                  382
@@ -424,6 +425,7 @@
                      "tappedStateImage":"read_it_myself-over.png",
                      "storyMode":"readItMyself",
                      "scale": 1.0,
+                     "zOrder":2,
                      "position":[
                                  512,
                                  200
@@ -434,6 +436,7 @@
                      "tappedStateImage":"read_to_me-over.png",
                      "storyMode":"readToMe",
                      "scale": 1.0,
+                     "zOrder":3,
                      "position":[
                                  177,
                                  200
@@ -444,6 +447,7 @@
                      "tappedStateImage":"auto_play-over.png",
                      "storyMode":"autoPlay",
                      "scale": 1.0,
+                     "zOrder":4,
                      "position":[
                                  844,
                                  200

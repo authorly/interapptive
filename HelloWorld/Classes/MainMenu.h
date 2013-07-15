@@ -29,6 +29,7 @@ typedef struct _mainMenuSpriteInfo
     int                 spriteTag;
     bool                visible;
     cocos2d::CCPoint    position;
+    int                 zOrder;
 } MainMenuSpriteInfo;
 
 typedef  struct _menuItem
@@ -44,6 +45,7 @@ typedef  struct _menuItem
    
     cocos2d::CCPoint    position;
     double              scale;
+    int                 zOrder;
 } MainMenuItemInfo;
 
 typedef struct _actionFadeIn

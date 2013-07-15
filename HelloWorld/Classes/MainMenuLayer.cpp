@@ -52,7 +52,7 @@ void MainMenuLayer::onEnter()
         sprite->setIsVisible(spriteInfo->visible);
         sprite->setPosition(spriteInfo->position);
         
-        addChild(sprite);
+        addChild(sprite, spriteInfo->zOrder);
     }
     
     // add menu
@@ -92,7 +92,7 @@ void MainMenuLayer::onEnter()
         
         menuItemImage->setPosition(menuItemInfo->position);
         menuItemImage->setScale(menuItemInfo->scale);
-        menu->addChild(menuItemImage, 1);
+        menu->addChild(menuItemImage, menuItemInfo->zOrder);
     }
     
     // add build snow man menu item (830*90)
@@ -107,7 +107,7 @@ void MainMenuLayer::onEnter()
      */
     
     menu->setPosition(ccp(0,0));
-    addChild(menu);
+    addChild(menu, 1000);
     
     // add credits menu
     //
