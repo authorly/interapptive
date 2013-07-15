@@ -136,6 +136,9 @@ void JsonParser::parseMainMenuSprites(Json::Value &value)
         spriteInfo->position.x = spriteJson["position"][x].asInt() * XSCALE;
         spriteInfo->position.y = spriteJson["position"][y].asInt() * YSCALE;
         
+        // zOrder
+        spriteInfo->zOrder = spriteJson["zOrder"].asInt();
+        
         MainMenu::sprites.push_back(spriteInfo);
     }
 }
@@ -173,6 +176,8 @@ void JsonParser::parseMenuItems(Json::Value &value)
         menuItem->position.y = menuItemJson["position"][y].asInt() * YSCALE;
         // scale
         menuItem->scale = menuItemJson["scale"].asDouble();
+        // zOrder
+        menuItem->zOrder = menuItemJson["zOrder"].asInt();
         
         MainMenu::menuItems.push_back(menuItem);
     }
