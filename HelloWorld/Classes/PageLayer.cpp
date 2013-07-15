@@ -39,6 +39,7 @@ PageLayer::PageLayer()
 , touchSoundId(0)
 , isVideoPlaying(false)
 , isHighLighting(false)
+, isPlayingAnimation(false)
 {}
 
 PageLayer* PageLayer::pageLayerWithPage(Page* page)
@@ -71,6 +72,13 @@ void PageLayer::init(Page *page)
     }
     
     this->delayOfAnimation = this->calculateDelayTimeOnEnter();
+    if (this->delayOfAnimation > 0)
+    {
+        isPlayingAnimation = true;
+        this->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delayOfAnimation),
+                        CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::animationDelayCallback)),
+                        NULL));
+    }
     
     createSprites();
     createPhysicsLayer();
@@ -78,6 +86,17 @@ void PageLayer::init(Page *page)
     
     // add menu item to go to main menu
     createMainMenuItem();
+}
+
+void PageLayer::animationDelayCallback(cocos2d::CCObject *sender)
+{
+    isPlayingAnimation = false;
+}
+
+bool PageLayer::canSwipe()
+{
+    return (isPlayingAnimation == false &&
+            isSwiping == false);
 }
 
 void PageLayer::onEnter()
@@ -355,6 +374,14 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
         return;
     }
     
+    // can not swipe
+    // 1. in swipping
+    // 2. sprites run actions
+    if (! canSwipe())
+    {
+        return;
+    }
+    
     CCPoint endPoint = pTouch->locationInView(pTouch->view());
     endPoint = CCDirector::sharedDirector()->convertToGL(endPoint);
     
@@ -504,7 +531,8 @@ void PageLayer::swipeLeft()
 
 void PageLayer::swipeRight()
 {
-    if (page->settings.number == 1)
+    if (page->settings.number == 1 &&
+        currentIndexOfParagraph == 0)
     {
         return;
     }
