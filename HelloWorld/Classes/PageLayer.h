@@ -37,6 +37,9 @@ public:
     
     void delaySwipeAfterPlayingVideo(cocos2d::CCObject *sender);
     
+    // delay of animation call back
+    void animationDelayCallback(cocos2d::CCObject *sender);
+    
     // dialog protocol
     virtual void buttonClicked(int index);
     
@@ -58,6 +61,10 @@ private:
     void swipeRight();
     void swipeLeft();
     void swipEndCallBack();
+    // can not swipe
+    // 1. in swipping
+    // 2. sprites run actions
+    bool canSwipe();
     /**
      * @swipteLeft if it is swipe left
      * @ret total delay time for showing paragraph
@@ -117,6 +124,7 @@ private:
     bool isSwiping;
     bool isVideoPlaying;
     bool isHighLighting;
+    bool isPlayingAnimation;
     
     unsigned int touchSoundId;
 };
