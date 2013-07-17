@@ -50,3 +50,8 @@ R.java
 
 # Ignore files that are used during automated compilation
 transient_assets.txt
+Rakefile
+Gemfile
+Gemfile.lock
+.bundle/config
+HellWorld/ios/pkg/*
