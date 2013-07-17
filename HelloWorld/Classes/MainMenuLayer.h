@@ -11,7 +11,7 @@ enum StoryMode {
     kStoryModeReadToMe,
 };
 
-class MainMenuLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayProtocol
+class MainMenuLayer : public cocos2d::CCLayerColor, public DialogProtocol, public VideoPlayProtocol
 {
 public:
    MainMenuLayer();

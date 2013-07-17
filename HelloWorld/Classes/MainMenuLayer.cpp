@@ -29,6 +29,11 @@ MainMenuLayer::~MainMenuLayer()
 
 void MainMenuLayer::init()
 {
+    if( !CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)) ) //RGBA
+    {
+        // below line not working
+        // return false;
+    }
     // preload background music, effect if exists
     if (MainMenu::audio.backgroundMusic.size() > 0)
     {
