@@ -30,6 +30,7 @@ typedef struct _mainMenuSpriteInfo
     bool                visible;
     cocos2d::CCPoint    position;
     int                 zOrder;
+    double              scale;
 } MainMenuSpriteInfo;
 
 typedef  struct _menuItem
