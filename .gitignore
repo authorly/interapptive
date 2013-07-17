@@ -26,6 +26,7 @@ build_*_xcode/
 *.xcuserstate
 xcschememanagement.plist
 build/
+build.output
 .DS_Store
 
 # Ignore files built by bada
