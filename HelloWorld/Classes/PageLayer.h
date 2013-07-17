@@ -9,7 +9,7 @@
 
 #include <vector>
 
-class PageLayer : public cocos2d::CCLayer, public DialogProtocol, public VideoPlayProtocol
+class PageLayer : public cocos2d::CCLayerColor, public DialogProtocol, public VideoPlayProtocol
 {
 public:
     virtual ~PageLayer();

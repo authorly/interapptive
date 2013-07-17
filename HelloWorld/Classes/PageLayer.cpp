@@ -61,6 +61,13 @@ PageLayer::~PageLayer()
 
 void PageLayer::init(Page *page)
 {
+    
+    if( !CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)) ) //RGBA
+    {
+        // below line not working
+        // return false;
+    }
+        
     this->page = page;
     
     // preload backgound music
