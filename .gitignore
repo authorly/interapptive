@@ -53,5 +53,5 @@ transient_assets.txt
 Rakefile
 Gemfile
 Gemfile.lock
-.bundle/config
-HellWorld/ios/pkg/*
+HelloWorld/ios/.bundle/
+HelloWorld/ios/pkg/*
