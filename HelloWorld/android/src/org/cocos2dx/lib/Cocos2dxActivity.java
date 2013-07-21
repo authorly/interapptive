@@ -24,6 +24,9 @@ THE SOFTWARE.
 
 package org.cocos2dx.lib;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.startupminds.VideoPlayer;
 
 import android.app.Activity;
@@ -35,7 +38,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
-import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -43,8 +45,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 
 public class Cocos2dxActivity extends Activity{
-    private static Cocos2dxMusic backgroundMusicPlayer;
-    private static Cocos2dxMusic effectPlayer;
+    private static Map<String, Cocos2dxMusic> musicPlayerMap = new HashMap<String, Cocos2dxMusic>();
     private static Cocos2dxSound soundPlayer;
     private static Cocos2dxAccelerometer accelerometer;
     private static boolean accelerometerEnabled = false;
@@ -57,6 +58,8 @@ public class Cocos2dxActivity extends Activity{
     private static Cocos2dxGLSurfaceView glSurfaceView;
 
     private static native void nativeSetPaths(String apkPath);
+    
+    private static Cocos2dxActivity self = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +71,9 @@ public class Cocos2dxActivity extends Activity{
         accelerometer = new Cocos2dxAccelerometer(this);
 
         // init media player and sound player
-        backgroundMusicPlayer = new Cocos2dxMusic(this);
         soundPlayer = new Cocos2dxSound(this);
-        effectPlayer = new Cocos2dxMusic(this);
+        
+        self = this;
         
         // init bitmap context
         Cocos2dxBitmap.setContext(this);
@@ -158,48 +161,66 @@ public class Cocos2dxActivity extends Activity{
     }
 
     public static void preloadBackgroundMusic(String path){
-    	backgroundMusicPlayer.preloadBackgroundMusic(path);
+    	
     }
     
-    public static void playBackgroundMusic(String path, boolean isLoop, boolean playeffect){
-    	if (playeffect) {
-    		effectPlayer.playBackgroundMusic(path, isLoop);
-    	} else {
-    		backgroundMusicPlayer.playBackgroundMusic(path, isLoop);
+    public static void playBackgroundMusic(String path, boolean isLoop){
+    	Cocos2dxMusic musicPlayer = createMusicPlayer(path);
+    	musicPlayer.playBackgroundMusic(path, isLoop);
+    }
+    
+    public static void stopBackgroundMusic(String path){
+    	Cocos2dxMusic musicPlayer = getMusicPlayer(path);
+    	musicPlayer.stopBackgroundMusic();
+    	
+    	musicPlayerMap.remove(path);
+    }
+    
+    public static void stopAllBackgroundMusic() {
+    	for (Map.Entry<String, Cocos2dxMusic> entry : musicPlayerMap.entrySet()) {
+    		entry.getValue().stopBackgroundMusic();
     	}
     }
     
-    public static void stopBackgroundMusic(boolean playeffect){
-    	if (playeffect) {
-    		effectPlayer.stopBackgroundMusic();
-    	} else 
-    	{
-    		backgroundMusicPlayer.stopBackgroundMusic();
-    	}
+    public static void pauseBackgroundMusic(String path){   	
+    	Cocos2dxMusic musicPlayer = getMusicPlayer(path);
+    	musicPlayer.stopBackgroundMusic();
+    	
+    	musicPlayer.pauseBackgroundMusic();
     }
     
-    public static void pauseBackgroundMusic(){
-    	backgroundMusicPlayer.pauseBackgroundMusic();
+    public static void resumeBackgroundMusic(String path){	
+    	Cocos2dxMusic musicPlayer = getMusicPlayer(path);
+    	musicPlayer.stopBackgroundMusic();
+    	
+    	musicPlayer.resumeBackgroundMusic();
     }
     
-    public static void resumeBackgroundMusic(){
-    	backgroundMusicPlayer.resumeBackgroundMusic();
+    public static void rewindBackgroundMusic(String path){
+    	Cocos2dxMusic musicPlayer = getMusicPlayer(path);
+    	musicPlayer.stopBackgroundMusic();
+    	
+    	musicPlayer.rewindBackgroundMusic();
     }
     
-    public static void rewindBackgroundMusic(){
-    	backgroundMusicPlayer.rewindBackgroundMusic();
-    }
-    
-    public static boolean isBackgroundMusicPlaying(){
-    	return backgroundMusicPlayer.isBackgroundMusicPlaying();
+    public static boolean isBackgroundMusicPlaying(String path){
+    	Cocos2dxMusic musicPlayer = getMusicPlayer(path);
+    	
+    	return musicPlayer.isBackgroundMusicPlaying();
     }
     
     public static float getBackgroundMusicVolume(){
-    	return backgroundMusicPlayer.getBackgroundVolume();
+    	for (Map.Entry<String, Cocos2dxMusic> entry : musicPlayerMap.entrySet()) {
+    		entry.getValue().getBackgroundVolume();
+    	}
+    	
+    	return 0;
     }
     
     public static void setBackgroundMusicVolume(float volume){
-    	backgroundMusicPlayer.setBackgroundVolume(volume);
+    	for (Map.Entry<String, Cocos2dxMusic> entry : musicPlayerMap.entrySet()) {
+    		entry.getValue().setBackgroundVolume(volume);
+    	}
     }
     
     public static int playEffect(String path, boolean isLoop){
@@ -247,8 +268,11 @@ public class Cocos2dxActivity extends Activity{
     }
     
     public static void end(){
-    	backgroundMusicPlayer.end();
-    	soundPlayer.end();
+    	for (Map.Entry<String, Cocos2dxMusic> entry : musicPlayerMap.entrySet()) {
+    		entry.getValue().end();
+    	}
+    	
+    	musicPlayerMap.clear();
     }
     
     public static String getCocos2dxPackageName(){
@@ -292,6 +316,29 @@ public class Cocos2dxActivity extends Activity{
 
         // add this link at the renderer class
         nativeSetPaths(apkFilePath);
+    }
+    
+    private static Cocos2dxMusic getMusicPlayer(String backgroundMusic) {
+    	for (Map.Entry<String, Cocos2dxMusic> entry : musicPlayerMap.entrySet()) {
+    		if (entry.getKey().equals(backgroundMusic)) {
+    			return entry.getValue();
+    		}
+    	}
+    	
+    	return null;
+    }
+    
+    private static Cocos2dxMusic createMusicPlayer(String backgroundMusic) {
+    	for (Map.Entry<String, Cocos2dxMusic> entry : musicPlayerMap.entrySet()) {
+    		if (entry.getKey().equals(backgroundMusic)) {
+    			return entry.getValue();
+    		}
+    	}
+    	
+    	Cocos2dxMusic musicPlayer = new Cocos2dxMusic(self);
+    	musicPlayerMap.put(backgroundMusic, musicPlayer);
+    	
+    	return musicPlayer;
     }
     
     private void showDialog(String title, String message){
