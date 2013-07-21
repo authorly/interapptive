@@ -64,39 +64,44 @@ namespace CocosDenshion
         preloadBackgroundMusicJNI(pszFilePath);
 	}
 
-	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop, bool playeffect)
+	void SimpleAudioEngine::playBackgroundMusic(const char* pszFilePath, bool bLoop)
 	{
-        playBackgroundMusicJNI(pszFilePath, bLoop, playeffect);
+        playBackgroundMusicJNI(pszFilePath, bLoop);
 	}
 
-	void SimpleAudioEngine::stopBackgroundMusic(bool bReleaseData, bool playeffect)
+	void SimpleAudioEngine::stopBackgroundMusic(const char* pszFilePath, bool bReleaseData)
 	{
-		stopBackgroundMusicJNI(playeffect);
+		stopBackgroundMusicJNI(pszFilePath);
 	}
 
-	void SimpleAudioEngine::pauseBackgroundMusic()
+	void SimpleAudioEngine::stopAllBackgroundMusic()
 	{
-		pauseBackgroundMusicJNI();
+		stopAllBackgroundMusicJNI();
 	}
 
-	void SimpleAudioEngine::resumeBackgroundMusic()
+	void SimpleAudioEngine::pauseBackgroundMusic(const char* pszFilePath)
 	{
-		resumeBackgroundMusicJNI();
+		pauseBackgroundMusicJNI(pszFilePath);
+	}
+
+	void SimpleAudioEngine::resumeBackgroundMusic(const char* pszFilePath)
+	{
+		resumeBackgroundMusicJNI(pszFilePath);
 	} 
 
-	void SimpleAudioEngine::rewindBackgroundMusic()
+	void SimpleAudioEngine::rewindBackgroundMusic(const char* pszFilePath)
 	{
-		rewindBackgroundMusicJNI();
+		rewindBackgroundMusicJNI(pszFilePath);
 	}
 
-	bool SimpleAudioEngine::willPlayBackgroundMusic()
+	bool SimpleAudioEngine::willPlayBackgroundMusic(const char* pszFilePath)
 	{
 		return true;
 	}
 
-	bool SimpleAudioEngine::isBackgroundMusicPlaying()
+	bool SimpleAudioEngine::isBackgroundMusicPlaying(const char* pszFilePath)
 	{
-		return isBackgroundMusicPlayingJNI();
+		return isBackgroundMusicPlayingJNI(pszFilePath);
 	}
 
 	float SimpleAudioEngine::getBackgroundMusicVolume()

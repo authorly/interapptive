@@ -104,96 +104,119 @@ extern "C"
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 
-	void playBackgroundMusicJNI(const char *path, bool isLoop, bool playeffect)
+	void playBackgroundMusicJNI(const char *path, bool isLoop)
 	{
 		// void playBackgroundMusic(String,boolean)
 
 		JniMethodInfo methodInfo;
 
-		if (! getStaticMethodInfo(methodInfo, "playBackgroundMusic", "(Ljava/lang/String;ZZ)V"))
+		if (! getStaticMethodInfo(methodInfo, "playBackgroundMusic", "(Ljava/lang/String;Z)V"))
 		{
 			return;
 		}
 
 		jstring stringArg = methodInfo.env->NewStringUTF(path);
-		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, stringArg, isLoop, playeffect);
+		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, stringArg, isLoop);
 		methodInfo.env->DeleteLocalRef(stringArg);
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 
-	void stopBackgroundMusicJNI(bool playeffect)
+	void stopBackgroundMusicJNI(const char *path)
 	{
 		// void stopBackgroundMusic()
 
 		JniMethodInfo methodInfo;
 
-		if (! getStaticMethodInfo(methodInfo, "stopBackgroundMusic", "(Z)V"))
+		if (! getStaticMethodInfo(methodInfo, "stopBackgroundMusic", "(Ljava/lang/String;)V"))
 		{
 			return;
 		}
 
-		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, playeffect);
+        jstring stringArg = methodInfo.env->NewStringUTF(path);
+		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, stringArg);
+		methodInfo.env->DeleteLocalRef(stringArg);
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 
-	void pauseBackgroundMusicJNI()
+	void stopAllBackgroundMusicJNI()
+	{
+		JniMethodInfo methodInfo;
+
+		if (! getStaticMethodInfo(methodInfo, "stopAllBackgroundMusic", "()V"))
+		{
+			return;
+		}
+
+		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID);
+		methodInfo.env->DeleteLocalRef(methodInfo.classID);
+	}
+
+	void pauseBackgroundMusicJNI(const char *path)
 	{
 		// void pauseBackgroundMusic()
 
 		JniMethodInfo methodInfo;
 
-		if (! getStaticMethodInfo(methodInfo, "pauseBackgroundMusic", "()V"))
+		if (! getStaticMethodInfo(methodInfo, "pauseBackgroundMusic", "(Ljava/lang/String;)V"))
 		{
 			return;
 		}
 
-		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID);
+        jstring stringArg = methodInfo.env->NewStringUTF(path);
+		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, stringArg);
+		methodInfo.env->DeleteLocalRef(stringArg);
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 
-	void resumeBackgroundMusicJNI()
+	void resumeBackgroundMusicJNI(const char *path)
 	{
 		// void resumeBackgroundMusic()
 
 		JniMethodInfo methodInfo;
 
-		if (! getStaticMethodInfo(methodInfo, "resumeBackgroundMusic", "()V"))
+		if (! getStaticMethodInfo(methodInfo, "resumeBackgroundMusic", "(Ljava/lang/String;)V"))
 		{
 			return;
 		}
 
-		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID);
+        jstring stringArg = methodInfo.env->NewStringUTF(path);
+		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, stringArg);
+		methodInfo.env->DeleteLocalRef(stringArg);
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 
-	void rewindBackgroundMusicJNI()
+	void rewindBackgroundMusicJNI(const char *path)
 	{
 		// void rewindBackgroundMusic()
 
 		JniMethodInfo methodInfo;
 
-		if (! getStaticMethodInfo(methodInfo, "rewindBackgroundMusic", "()V"))
+		if (! getStaticMethodInfo(methodInfo, "rewindBackgroundMusic", "(Ljava/lang/String;)V"))
 		{
 			return;
 		}
 
-		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID);
+        jstring stringArg = methodInfo.env->NewStringUTF(path);
+		methodInfo.env->CallStaticVoidMethod(methodInfo.classID, methodInfo.methodID, stringArg);
+		methodInfo.env->DeleteLocalRef(stringArg);
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 	}
 
-	bool isBackgroundMusicPlayingJNI()
+	bool isBackgroundMusicPlayingJNI(const char *path)
 	{
 		// boolean rewindBackgroundMusic()
 
 		JniMethodInfo methodInfo;
 		jboolean ret = false;
 
-		if (! getStaticMethodInfo(methodInfo, "isBackgroundMusicPlaying", "()Z"))
+		if (! getStaticMethodInfo(methodInfo, "isBackgroundMusicPlaying", "(Ljava/lang/String;)Z"))
 		{
 			return ret;
 		}
 
-		ret = methodInfo.env->CallStaticBooleanMethod(methodInfo.classID, methodInfo.methodID);
+        jstring stringArg = methodInfo.env->NewStringUTF(path);
+		ret = methodInfo.env->CallStaticBooleanMethod(methodInfo.classID, methodInfo.methodID, stringArg);
+		methodInfo.env->DeleteLocalRef(stringArg);
 		methodInfo.env->DeleteLocalRef(methodInfo.classID);
 
 		return ret;
