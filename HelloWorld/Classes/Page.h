@@ -12,11 +12,6 @@ typedef struct settings
 {
 	// font info
 	int                number;
-    int                autoplayDelayBeforePageTurn;
-//	std::string        fontType;
-//	cocos2d::ccColor3B fontColor;
-//    cocos2d::ccColor3B fontHighlightColor;
-//	float              fontSize;
 
 	// background music info
     bool        loop; // -1 means loop forever
@@ -63,6 +58,7 @@ typedef struct paragraph
 	std::vector<LineText*>      linesOfTest;
     std::string                 voiceAudioFile;
     std::vector<HotspotInfo*>   hotspots;
+    float                       autoplayDuration;
 } Paragraph;
 
 typedef struct sprite
