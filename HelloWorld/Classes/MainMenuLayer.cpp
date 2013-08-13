@@ -131,7 +131,7 @@ void MainMenuLayer::onEnter()
     
     if (MainMenu::audio.backgroundMusic.size() > 0)
     {
-        bool musicLoop = MainMenu::audio.backgroundMusicLoops == 0 ? true : false;
+        bool musicLoop = MainMenu::audio.backgroundMusicLoops == 0 ? false : true;
         SimpleAudioEngine::sharedEngine()->playBackgroundMusic(MainMenu::audio.backgroundMusic.c_str(), musicLoop);
     }
 
