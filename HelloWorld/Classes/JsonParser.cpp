@@ -272,16 +272,6 @@ void JsonParser::parseWithSettings(Page* page, Json::Value &jsonSettings)
 
 	// number
 	settings.number = jsonSettings["number"].asInt();
-    // autoplayDelayBeforePageTurn
-    Json::Value delayBeforePageTurnJson = jsonSettings["autoplayDelayBeforePageTurn"];
-    if (! delayBeforePageTurnJson.isNull())
-    {
-        settings.autoplayDelayBeforePageTurn = delayBeforePageTurnJson.asInt();
-    }
-    else
-    {
-        settings.autoplayDelayBeforePageTurn = 0;
-    }
     
 	// background music file
     // may not have background music to play, so should check it
@@ -361,6 +351,9 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 		{
 			paragraph->highlightingTimes.push_back((float)highlightingTimes[j].asDouble());
 		}
+        
+        // autoplayDuration
+        paragraph->autoplayDuration = jsonParagraph["autoplayDuration"].asDouble();
         
 		// linesOfText
 		Json::Value linesOfText = jsonParagraph["linesOfText"];

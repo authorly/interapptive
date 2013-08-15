@@ -843,6 +843,15 @@ void PageLayer::showParagraph(float delay)
     CCFadeIn *fadeIn = CCFadeIn::actionWithDuration(Configurations::paragraphTextFadeDuration);
     CCCallFunc* callBack = CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::highlightParagraph));
     
+    // delay some time then turn left
+    // use "autoplayDuration" instead of highlight time
+    if (MainMenuLayer::storyMode == kSotryModeAutoPlay)
+    {
+        this->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(page->paragraphs[currentIndexOfParagraph]->autoplayDuration),
+                                            CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::doSwipeLeftAfterDelay)),
+                                            NULL));
+    }
+    
     if (delay != 0)
     {
         paragraphLayer->setIsVisible(false);
@@ -931,14 +940,6 @@ void PageLayer::changeColorBack(CCObject *sender)
 {
     CCLabelTTF *word = (CCLabelTTF*)sender;
     word->setColor(getLineTextByLabel(word)->fontColor);
-    
-    if (MainMenuLayer::storyMode == kSotryModeAutoPlay
-        && word == wordsOfParagraph[wordsOfParagraph.size()-1]->label)
-    {
-        this->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(page->settings.autoplayDelayBeforePageTurn),
-                                            CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::doSwipeLeftAfterDelay)),
-                                            NULL));
-    }
     
     if (word == wordsOfParagraph[wordsOfParagraph.size()-1]->label)
     {
