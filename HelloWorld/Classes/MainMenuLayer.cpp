@@ -56,7 +56,8 @@ void MainMenuLayer::onEnter()
         sprite->setTag(spriteInfo->spriteTag);
         sprite->setIsVisible(spriteInfo->visible);
         sprite->setPosition(spriteInfo->position);
-        sprite->setScale(spriteInfo->scale);
+        sprite->setScaleX(spriteInfo->scale * XSCALE);
+        sprite->setScaleY(spriteInfo->scale * YSCALE);
         
         addChild(sprite, spriteInfo->zOrder);
     }
@@ -97,7 +98,7 @@ void MainMenuLayer::onEnter()
         menuItemImage->setUserData(menuItemInfo);
         
         menuItemImage->setPosition(menuItemInfo->position);
-        menuItemImage->setScale(menuItemInfo->scale);
+        menuItemImage->setScaleX(menuItemInfo->scale);
         menu->addChild(menuItemImage, menuItemInfo->zOrder);
     }
     
