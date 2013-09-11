@@ -61,7 +61,6 @@ PageLayer::~PageLayer()
 
 void PageLayer::init(Page *page)
 {
-    
     if( !CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)) ) //RGBA
     {
         // below line not working
@@ -226,7 +225,8 @@ void PageLayer::doHotspotTouched(HotspotInfo *hotspot,bool isParagraphHotspot)
     // stop all sounds and stop highlight
     if (hotspot->stopSoundAndHighlightingWhenTouched)
     {
-        stopHighlightEffect();
+        SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
+        SimpleAudioEngine::sharedEngine()->stopAllEffects();
         stopHighlightParagraph();
     }
     
@@ -517,7 +517,7 @@ void PageLayer::swipEndCallBack()
 
 void PageLayer::swipeLeft()
 {
-    stopHighlightEffect();
+    stopHighlighVoiceAndOtherEffect();
     
     if (currentIndexOfParagraph == (page->paragraphs.size() - 1))
     {
@@ -544,7 +544,7 @@ void PageLayer::swipeRight()
         return;
     }
     
-    stopHighlightEffect();
+    stopHighlighVoiceAndOtherEffect();
     
     if (currentIndexOfParagraph == 0)
     {
@@ -558,12 +558,7 @@ void PageLayer::swipeRight()
         // should decrease index after swipeEndedOperationAndCalculateTotalDelay, because it will
         // run reverse action of current index
         --currentIndexOfParagraph;
-        
-        // add child
-        // remove child
-        
-        // run actions
-        
+
         createParagraph(currentIndexOfParagraph);
         
         showParagraph(delay);
@@ -958,11 +953,12 @@ void PageLayer::doSwipeLeftAfterDelay(CCObject *sender)
     } 
 }
 
-void PageLayer::stopHighlightEffect()
+void PageLayer::stopHighlighVoiceAndOtherEffect()
 {
-    // stop all effect, I think now it will only have one effect that speaking word.
-    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
-    SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    const char* voiceAudioOfHighlight = page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str();
+    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(voiceAudioOfHighlight);
+    
+    SimpleAudioEngine::sharedEngine()->stopEffect(touchSoundId);
 }
 
 void PageLayer::playBackgroundMusic()
