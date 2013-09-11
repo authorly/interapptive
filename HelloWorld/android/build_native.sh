@@ -51,9 +51,9 @@ do
 done
 
 # build
-pushd $NDK_ROOT_LOCAL
+cd $NDK_ROOT_LOCAL
 ./ndk-build -C $HELLOWORLD_ROOT $*
-popd
+cd -
 
 
 if [ $# -eq 0 ];then
