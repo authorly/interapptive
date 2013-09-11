@@ -76,7 +76,7 @@ private:
     // helper functions of handling paragraph
     void showParagraph(float delay);
     
-    void stopHighlightEffect();
+    void stopHighlighVoiceAndOtherEffect();
     
     HotspotInfo* getHotspotInfo(const std::string &videoName, bool isParagraphHotspot);
     
