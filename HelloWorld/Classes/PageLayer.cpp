@@ -737,11 +737,8 @@ void PageLayer::addParagraphText(int index)
     vector<LineText*>::iterator lineTextIter;
     float xOffset = 0.0f;
     float yOffset = 0.0f;
-    // should add space when it is zoomed in, because we add text size
-    float ySpaceAdded = XSCALE < 1.0f ? 4 : 0;
     int downIndex = linesOfText.size();
     int upIndex = 0;
-    bool addSpace = addTextSpace(downIndex > 0 ? linesOfText[0]->yOffset : 0);
     int lineNum = 0;
     for (lineTextIter = linesOfText.begin(); lineTextIter != linesOfText.end(); ++lineTextIter, --downIndex, ++upIndex, ++lineNum)
     {
@@ -752,14 +749,7 @@ void PageLayer::addParagraphText(int index)
         fontColor = &lineText->fontColor;
         fontSize = lineText->fontSize;
         
-        if (addSpace)
-        {
-            yOffset = (lineText->yOffset + downIndex*ySpaceAdded) - 30;
-        }
-        else
-        {
-            yOffset = lineText->yOffset - upIndex*ySpaceAdded;
-        }
+        yOffset = lineText->yOffset;
         
         for (int i = 0; i < lineText->words.size(); ++i)
         {
@@ -767,7 +757,7 @@ void PageLayer::addParagraphText(int index)
             CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);
             
             label->setColor(*fontColor);
-            label->setAnchorPoint(ccp(0.0f, -1.0f));
+            label->setAnchorPoint(ccp(0.0f, 0.25f));
             label->setPosition(ccp(xOffset, yOffset));
             
             // record label in a vector, don't have to retain it
