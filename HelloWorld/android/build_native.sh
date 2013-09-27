@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# Set PATH to include SDK and NDK executable paths
+
+[[ -s "/opt/profile.d/android-ndk.sh" ]] && source "/opt/profile.d/android-ndk.sh"
+[[ -s "/opt/profile.d/android-sdk.sh" ]] && source "/opt/profile.d/android-sdk.sh"
+
 # set params
 #NDK_ROOT_LOCAL=/cygdrive/d/programe/android/ndk/android-ndk-r6b
 #COCOS2DX_ROOT_LOCAL=/Users/zhangkoumyou/SourceCode/interapptive
