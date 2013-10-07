@@ -171,9 +171,12 @@ public class Cocos2dxActivity extends Activity{
     
     public static void stopBackgroundMusic(String path){
     	Cocos2dxMusic musicPlayer = getMusicPlayer(path);
-    	musicPlayer.stopBackgroundMusic();
     	
-    	musicPlayerMap.remove(path);
+    	if (musicPlayer != null) {
+    		musicPlayer.stopBackgroundMusic();
+        	
+        	musicPlayerMap.remove(path);
+    	}
     }
     
     public static void stopAllBackgroundMusic() {
