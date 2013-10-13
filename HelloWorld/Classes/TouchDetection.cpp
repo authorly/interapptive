@@ -3,8 +3,8 @@
 
 using namespace cocos2d;
 
-// the priority should low than pagelayer
-#define TOUCHDETECTION_HANDLER_PRIORITY -10
+// let the priority to 11 because should do swipe when touch begin from hotspot
+#define TOUCHDETECTION_HANDLER_PRIORITY 11
 
 TouchDetection::TouchDetection()
 {
