@@ -324,7 +324,7 @@ void PageLayer::delaySwipeAfterPlayingVideo(cocos2d::CCObject *sender)
 /// touch event
 void PageLayer::registerWithTouchDispatcher(void)
 {
-    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, PAGELAYER_HANDLER_PRIORITY, true);
+    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, PAGELAYER_HANDLER_PRIORITY, false);
 }
 
 void PageLayer::onEnterTransitionDidFinish()
