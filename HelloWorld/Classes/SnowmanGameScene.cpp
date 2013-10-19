@@ -180,7 +180,9 @@ bool SnowmanGameScene::init()
 
 void SnowmanGameScene::addShareMenu()
 {
-    CCMenuItemSprite *facebookItem = CCMenuItemSprite::itemFromNormalSprite(CCSprite::spriteWithFile("facebook.png"), 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    
+    CCMenuItemSprite *facebookItem = CCMenuItemSprite::itemFromNormalSprite(CCSprite::spriteWithFile("facebook.png"),
                                                                             CCSprite::spriteWithFile("facebook-hover.png"),
                                                                             this,
                                                                             menu_selector(SnowmanGameScene::shareMenuTouched));
@@ -199,6 +201,8 @@ void SnowmanGameScene::addShareMenu()
     twitterItem->setPosition(ccp(15, 0));
     
     addChild(shareMenu);
+    
+#endif  // CC_PLATFORM_IOS
 }
 
 void SnowmanGameScene::shareMenuTouched(cocos2d::CCObject *sender)
