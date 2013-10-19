@@ -45,6 +45,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.View;
 import android.os.Environment;
+import android.widget.TextView;
 
 import java.io.*;
 
@@ -353,7 +354,10 @@ public class Cocos2dxActivity extends Activity {
 
 	private void showMyDialog(String title, String[] buttons) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(title);
+		TextView textView = new TextView(this);
+		textView.setText(title);
+		builder.setCustomTitle(textView);
+		
 		builder.setItems(buttons, new DialogInterface.OnClickListener() {
 
 			@Override
