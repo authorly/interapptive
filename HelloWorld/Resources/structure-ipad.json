@@ -374,6 +374,13 @@
              }
              ],
     "MainMenu":{
+        "sounds": {
+          "background":{
+            "file": "effect-footsteps.mp3"
+            "loop": true
+          },
+          "effectOnEnter": "main-menu-title-sound.mp3"
+        }
         "CCSprites":[
                      {
                      "image":"ZLzfJRemUTxKleXiKmtIDPCzjQorXKurBs.jpg",
