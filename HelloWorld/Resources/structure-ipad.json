@@ -375,12 +375,12 @@
              ],
     "MainMenu":{
         "sounds": {
-          "background":{
-            "file": "effect-footsteps.mp3"
-            "loop": true
-          },
-          "effectOnEnter": "main-menu-title-sound.mp3"
-        }
+            "background":{
+                "file": "effect-footsteps.mp3",
+                "loop": false
+            },
+            "effectOnEnter": "main-menu-title-sound.mp3"
+        },
         "CCSprites":[
                      {
                      "image":"ZLzfJRemUTxKleXiKmtIDPCzjQorXKurBs.jpg",
@@ -407,6 +407,33 @@
                      ],
         "fallingPhysicsSettings":{
             "plistfilename":"snowflake-main-menu.plist"
+        },
+        "CCSprites": [
+                      {
+                      "image": "ZLzfJRemUTxKleXiKmtIDPCzjQorXKurBs.jpg",
+                      "spriteTag": 14,
+                      "scale": 1,
+                      "position": [
+                                   515,
+                                   383
+                                   ],
+                      "visible": true,
+                      "zOrder": 2
+                      },
+                      {
+                      "image": "AFFIukPByYpWzkCQEgnyrHlYBTDrdWwBUVgPJnXeXY.png",
+                      "spriteTag": 15,
+                      "scale": 1,
+                      "position": [
+                                   772,
+                                   595
+                                   ],
+                      "visible": true,
+                      "zOrder": 3
+                      }
+                      ],
+        "fallingPhysicsSettings": {
+            "plistfilename": "snowflake-main-menu.plist"
         },
         "MenuItems":[
                      {
