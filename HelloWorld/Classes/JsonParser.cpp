@@ -71,10 +71,10 @@ void JsonParser::parseMainMenu(Json::Value &root)
     Json::Value mainMenu = root["MainMenu"];
     
     // parse audio
-    Json::Value audio = mainMenu["audio"];
-    if (! audio.isNull())
+    Json::Value sounds = mainMenu["sounds"];
+    if (! sounds.isNull())
     {
-        parseMainMenuAodio(audio);
+        parseMainMenuAodio(sounds);
     }
     
     // parse CCSprites
@@ -97,24 +97,22 @@ void JsonParser::parseMainMenu(Json::Value &root)
     parseMainMenuFallingObjectSetting(mainMenu);
 }
 
-void JsonParser::parseMainMenuAodio(Json::Value &value)
+void JsonParser::parseMainMenuAodio(Json::Value &sounds)
 {
     // backgroundMusic
-    Json::Value backgroundJson = value["backgroundMusic"];
-    if (! backgroundJson.isNull())
+    Json::Value background = sounds["background"];
+    if (! background.isNull())
     {
-        MainMenu::audio.backgroundMusic = backgroundJson.asCString();
+        MainMenu::audio.backgroundMusic = background["file"].asCString();
         // backgroundMusicLoops
-        MainMenu::audio.backgroundMusicLoops = value["backgroundMusicLoops"].asInt();
+        MainMenu::audio.isBackgroundMusicLoop = background["loop"].asBool();
     }
     
-    Json::Value soundJson = value["soundEffect"];
-    if (! soundJson.isNull())
+    Json::Value effectOnEnter = sounds["effectOnEnter"];
+    if (! effectOnEnter.isNull())
     {
         // soundEffect
-        MainMenu::audio.soundEffect = soundJson.asCString();
-        // soundEffectLoops
-        MainMenu::audio.soundEffectLoops = value["soundEffectLoops"].asInt();
+        MainMenu::audio.effectOnEnter = effectOnEnter.asCString();
     }    
 }
 
