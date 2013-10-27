@@ -17,10 +17,9 @@ enum MainMenuItemType
 typedef struct _audio
 {
     std::string backgroundMusic;
-    int         backgroundMusicLoops;
+    bool        isBackgroundMusicLoop;
     // sound effect for main menu title
-    std::string soundEffect;
-    int         soundEffectLoops;
+    std::string effectOnEnter;
 } Audio;
 
 typedef struct _mainMenuSpriteInfo

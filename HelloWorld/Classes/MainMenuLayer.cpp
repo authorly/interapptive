@@ -39,9 +39,9 @@ void MainMenuLayer::init()
     {
         SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(MainMenu::audio.backgroundMusic.c_str());
     }
-    if (MainMenu::audio.soundEffect.size() > 0)
+    if (MainMenu::audio.effectOnEnter.size() > 0)
     {
-        SimpleAudioEngine::sharedEngine()->preloadEffect(MainMenu::audio.soundEffect.c_str());
+        SimpleAudioEngine::sharedEngine()->preloadEffect(MainMenu::audio.effectOnEnter.c_str());
     }
 }
 
@@ -132,8 +132,12 @@ void MainMenuLayer::onEnter()
     
     if (MainMenu::audio.backgroundMusic.size() > 0)
     {
-        bool musicLoop = MainMenu::audio.backgroundMusicLoops == 0 ? false : true;
-        SimpleAudioEngine::sharedEngine()->playBackgroundMusic(MainMenu::audio.backgroundMusic.c_str(), musicLoop);
+        SimpleAudioEngine::sharedEngine()->playBackgroundMusic(MainMenu::audio.backgroundMusic.c_str(),
+                                                               MainMenu::audio.isBackgroundMusicLoop);
+    }
+    if (MainMenu::audio.effectOnEnter.size() > 0)
+    {
+        SimpleAudioEngine::sharedEngine()->playEffect(MainMenu::audio.effectOnEnter.c_str());
     }
 
     // run action, action type should be CCFadeIn
@@ -159,7 +163,7 @@ void MainMenuLayer::onEnter()
     }
     
     // chipmunk layer
-    ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&MainMenu::fallingObjectSetting, NULL);
+    //ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&MainMenu::fallingObjectSetting, NULL);
   
     // CRASH CAUSED
     //
