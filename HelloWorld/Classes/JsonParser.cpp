@@ -997,6 +997,8 @@ void JsonParser::parseWithSprites(Page *page, Json::Value &value)
 			spriteInfo->image = sprite["image"].asCString();
 			// spriteTag
 			spriteInfo->spriteTag = sprite["spriteTag"].asInt();
+			// zOrder
+			spriteInfo->spriteTag = sprite["zOrder"].asInt();
             // position
 			int x = 0, y = 1;
 			spriteInfo->position.x = sprite["position"][x].asInt() * XSCALE;
