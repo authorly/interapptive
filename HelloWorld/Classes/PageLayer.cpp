@@ -631,7 +631,7 @@ void PageLayer::createSprites()
 			sprite->runAction(action);
 		}
 
-		addChild(sprite);
+		addChild(sprite, spriteInfo->zOrder);
 	}
 }
 

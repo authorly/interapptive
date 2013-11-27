@@ -65,6 +65,7 @@ typedef struct sprite
 {
 	std::string               image;
 	int                       spriteTag;
+	int                       zOrder;
 	cocos2d::CCPoint          position;
     double                    scale;
 	std::vector<int>          actions; // actionTags
