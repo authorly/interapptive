@@ -61,6 +61,8 @@ public class Cocos2dxActivity extends Activity{
     
     private static Cocos2dxActivity self = null;
 
+    private final int VIDEO_CALL_BACK = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -377,8 +379,15 @@ public class Cocos2dxActivity extends Activity{
     	Intent intent = new Intent(this, VideoPlayer.class);
     	intent.putExtra("showControl", showControl);
     	intent.putExtra("fileName", fileName);
-        startActivity(intent);
+        this.startActivityForResult(intent, VIDEO_CALL_BACK);
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (requestCode == this.VIDEO_CALL_BACK) {
+       moviePlayBackDidFinish();     }
+    }
+ 
+    private native void moviePlayBackDidFinish();
 }
 
 class DialogMessage {
