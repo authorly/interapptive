@@ -64,6 +64,8 @@ public class Cocos2dxActivity extends Activity {
 	private static String packageName;
 	private static Cocos2dxGLSurfaceView glSurfaceView;
 	private static Activity me = null;
+	
+	private final int VIDEO_CALL_BACK = 1;
 
 	private static native void nativeSetPaths(String apkPath);
 
@@ -373,8 +375,17 @@ public class Cocos2dxActivity extends Activity {
 		Intent intent = new Intent(this, VideoPlayer.class);
 		intent.putExtra("showControl", showControl);
 		intent.putExtra("fileName", fileName);
-		startActivity(intent);
+		this.startActivityForResult(intent, VIDEO_CALL_BACK);
 	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == this.VIDEO_CALL_BACK) {
+			Log.d("cocos2d-x activity", "call back from video player");
+			moviePlayBackDidFinish();
+		}
+	}
+	
+	private native void moviePlayBackDidFinish();
 }
 
 class DialogMessage {
