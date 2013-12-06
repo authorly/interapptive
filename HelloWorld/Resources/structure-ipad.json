@@ -744,7 +744,7 @@
               "Page": {
               "settings": {
               "number": 5,
-              "autoplayDelayBeforePageTurn":8,
+              "autoplayDelayBeforePageTurn":12,
               "fontType": "PopplPontifexBE-Regular.ttf",
               "fontColor": [
                             0,
@@ -1164,7 +1164,7 @@
               "Page": {
               "settings": {
               "number": 9,
-              "autoplayDelayBeforePageTurn":8,
+              "autoplayDelayBeforePageTurn":10,
               "fontType": "PopplPontifexBE-Regular.ttf",
               "fontColor": [
                             0,
