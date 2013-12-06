@@ -6,6 +6,11 @@
 
 static GlobalData *g_sharedGlobalData = 0;
 
+// Zorder of sprite is [1000, 2000], so the zorder of main menu, paragraph and hotspot should be greater than 2000
+int GlobalData::ZORDER_MAIN_MENU = 2001;
+int GlobalData::ZORDER_PARAGRAPH = 2002;
+int GlobalData::ZORDER_HOTSPOT = 2003;
+
 using namespace cocos2d;
 
 GlobalData::GlobalData()
