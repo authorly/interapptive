@@ -646,7 +646,7 @@ void PageLayer::createMainMenuItem()
     
     CCMenu *mainMenu = CCMenu::menuWithItems(mainMenuItem, NULL);
     mainMenu->setPosition(CCPointZero);
-    addChild(mainMenu);
+    addChild(mainMenu, GlobalData::ZORDER_MAIN_MENU);
 }
 
 void PageLayer::createPhysicsLayer()
@@ -790,7 +790,7 @@ void PageLayer::addParagraphHotspot(int index)
     TouchDetection *paragraphTouchDectector = TouchDetection::node();
     paragraphTouchDectector->setIsTouchEnabled(true);
     paragraphTouchDectector->setTag(PARAGRAPH_HOTSPOT_DETECT_TAG);
-    addChild(paragraphTouchDectector);
+    addChild(paragraphTouchDectector, GlobalData::ZORDER_HOTSPOT);
     
     // add hotspots
     Paragraph *paragraph = page->paragraphs[index];
@@ -853,7 +853,7 @@ void PageLayer::showParagraph(float delay)
                                                       NULL));
     }
     
-    addChild(paragraphLayer);
+    addChild(paragraphLayer, GlobalData::ZORDER_PARAGRAPH);
 }
 
 // stop highlight and should change color back
