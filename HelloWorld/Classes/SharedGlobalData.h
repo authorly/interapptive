@@ -39,6 +39,10 @@ public:
     float minScale;
     // max value of xScale and yScale
     float maxScale;
+    
+    static int ZORDER_MAIN_MENU;
+    static int ZORDER_PARAGRAPH;
+    static int ZORDER_HOTSPOT;
 };
 
 typedef struct fallingPhysicsSettings{
