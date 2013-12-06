@@ -84,6 +84,7 @@
                           {
                           "image":"ypABsXQctDWefFwDtztCYuNoyRhoTACbjUI.jpg",
                           "spriteTag":26,
+                          "zOrder": 1005,
                           "position":[
                                       510,
                                       385
@@ -203,13 +204,14 @@
              "runAction":[
              
              ]
-             },
+             }, 
              "CCSprites":[
                           {
                           "image":"YfoehyJiclPuqBmsnTUPVWSOcPcyUThCUUQ.jpg",
                           "spriteTag":37,
+                          "zOrder": 1005,
                           "position":[
-                                      507,
+                                      7,
                                       384
                                       ],
                           "actions":[
@@ -228,9 +230,9 @@
                            {
                            "linesOfText":[
                                           {
-                                          "text":"",
-                                          "xOffset":0,
-                                          "yOffset":0,
+                                          "text":"dasadasds",
+                                          "xOffset":100,
+                                          "yOffset":100,
                                           "fontType":"Arial.ttf",
                                           "fontColor":[
                                                        255,
@@ -246,7 +248,18 @@
                                           }
                                           ],
                            "hotspots":[
-                           
+
+                            {
+                                       "glitterIndicator":true,
+                                       "stopEffectIndicator":false,
+                                       "touchFlag":14,
+                                       "position":[
+                                                   500,
+                                                   452
+                                                   ],
+                                       "radius":148,
+                                       "soundToPlay": "page-flip-sound.mp3"
+                                       }
                            ],
                            "highlightingTimes":[
                                                 0
@@ -322,6 +335,7 @@
                           {
                           "image":"HVNftMDianeOAQPRdfvdBdtHWzEDqqoTRreA.jpg",
                           "spriteTag":48,
+                          "zOrder": 1005,
                           "position":[
                                       512,
                                       384
