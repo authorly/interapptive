@@ -383,8 +383,9 @@ public class Cocos2dxActivity extends Activity{
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    if (requestCode == this.VIDEO_CALL_BACK) {
-       moviePlayBackDidFinish();     }
+        if (requestCode == this.VIDEO_CALL_BACK) {
+           moviePlayBackDidFinish();
+        }
     }
  
     private native void moviePlayBackDidFinish();
