@@ -61,10 +61,10 @@ private:
     void swipeRight();
     void swipeLeft();
     void swipEndCallBack();
-    // can not swipe
-    // 1. in swipping
-    // 2. sprites run actions
-    bool canSwipe();
+    
+    void addActionsToBeSkipped(cocos2d::CCAction *action);
+    void skipAnimation();
+
     /**
      * @swipteLeft if it is swipe left
      * @ret total delay time for showing paragraph
@@ -121,9 +121,14 @@ private:
 
     MyDialog *mydialog;
     
-    bool isSwiping;
+    // Actions of sprites that will be run on enter
+    std::vector<cocos2d::CCAction*> actionsToBeSkipped;
+    
     bool isVideoPlaying;
     bool isHighLighting;
+    // it is true for two cases
+    // 1. turn to a new page, and some sprite run some actions
+    // 2. swip left or right, and some sprite run some actions
     bool isPlayingAnimation;
     
     unsigned int touchSoundId;
