@@ -69,6 +69,9 @@ public:
 	virtual void startWithTarget(CCNode *pTarget);
 	/** returns a reversed action */
 	virtual CCActionInterval* reverse(void);
+    
+    // make action finish at once
+    virtual void finish();
 
 public:
 	/** creates the action */
@@ -99,6 +102,7 @@ public:
 	virtual void stop(void);
 	virtual void update(ccTime time);
 	virtual CCActionInterval* reverse(void);
+    virtual void finish();
 
 public:
 	/** helper constructor to create an array of sequenceable actions */
@@ -217,6 +221,7 @@ public:
 	virtual void stop(void);
 	virtual void update(ccTime time);
 	virtual CCActionInterval* reverse(void);
+    virtual void finish();
 
 public:
 	/** helper constructor to create an array of spawned actions */
