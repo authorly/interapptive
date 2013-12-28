@@ -51,6 +51,13 @@ void JsonParser::parseConfigurations(Json::Value &root)
     Configurations::paragraphTextFadeDuration = (float)configurations["paragraphTextFadeDuration"].asDouble();
     // whether text scaling ratio the same as picture
     Configurations::retainTextScalingRatio = configurations["retainTextScalingRatio"].asBool();
+    // whether or not to skip animation on swip
+    // XXX: is "skipAnimationOnSwipe" optional?
+    Json::Value skipAnimation = configurations["skipAnimationOnSwipe"];
+    if (! skipAnimation.isNull())
+        Configurations::skipAnimationOnSwipe = skipAnimation.asBool();
+    else
+        Configurations::skipAnimationOnSwipe = false;
     
     // home menu for pages
     

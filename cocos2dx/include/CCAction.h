@@ -66,6 +66,9 @@ public:
 
 	//! called every frame with it's delta time. DON'T override unless you know what you are doing.
 	virtual void step(ccTime dt);
+    
+    // finish action at once
+    virtual void finish() {};
 
 	/** 
 	called once per frame. time a value between 0 and 1
