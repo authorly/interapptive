@@ -26,6 +26,8 @@ public:
      * false: text scaling ratio is different from picture
      */
     static bool retainTextScalingRatio;
+    
+    static bool skipAnimationOnSwipe;
 };
 
 #endif

@@ -33,7 +33,6 @@ PageLayer::PageLayer()
 , page(NULL)
 , paragraphLayer(NULL)
 , mydialog(NULL)
-, isSwiping(false)
 , delayOfAnimation(0)
 , storyTouchDetector(NULL)
 , touchSoundId(0)
@@ -81,9 +80,13 @@ void PageLayer::init(Page *page)
     if (this->delayOfAnimation > 0)
     {
         isPlayingAnimation = true;
-        this->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delayOfAnimation),
-                        CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::animationDelayCallback)),
-                        NULL));
+        CCAction *seq = CCSequence::actions(CCDelayTime::actionWithDuration(delayOfAnimation),
+                                               CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::animationDelayCallback)),
+                                               NULL);
+        this->runAction(seq);
+        
+        // should skip this action to invoke animationDelayCallback() to set "isPlayingAnimation" to false
+        addActionsToBeSkipped(seq);
     }
     
     createSprites();
@@ -97,12 +100,6 @@ void PageLayer::init(Page *page)
 void PageLayer::animationDelayCallback(cocos2d::CCObject *sender)
 {
     isPlayingAnimation = false;
-}
-
-bool PageLayer::canSwipe()
-{
-    return (isPlayingAnimation == false &&
-            isSwiping == false);
 }
 
 void PageLayer::onEnter()
@@ -381,21 +378,19 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
         return;
     }
     
-    // can not swipe
-    // 1. in swipping
-    // 2. sprites run actions
-    if (! canSwipe())
+    // skip animations if user "skipAnimationOnSwipe" is true
+    if (isPlayingAnimation == true)
     {
+        if (Configurations::skipAnimationOnSwipe)
+        {
+            skipAnimation();
+        }
+ 
         return;
     }
     
     CCPoint endPoint = pTouch->locationInView(pTouch->view());
     endPoint = CCDirector::sharedDirector()->convertToGL(endPoint);
-    
-    if (isSwiping)
-    {
-        return;
-    }
     
     if (isSwipeLeft(beginPoint, endPoint)) 
     {
@@ -464,6 +459,8 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
                            dynamic_cast<CCMoveTo*>(element) != NULL);
                     
                     array->addObject(element);
+                    
+                    
                 }
                 action = CCSpawn::actionsWithArray(array);                
             }
@@ -474,9 +471,7 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
                        dynamic_cast<CCScaleTo*>(action) != NULL ||
                        dynamic_cast<CCMoveBy*>(action) != NULL ||
                        dynamic_cast<CCMoveTo*>(action) != NULL);
-
             }
-            
             
             // caculate delay time
             delay = ((CCFiniteTimeAction*)action)->getDuration();
@@ -488,6 +483,9 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
                                                               CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::swipEndCallBack)),
                                                               NULL);
                 sprite->runAction(seq);
+                
+                // should skip this action to invoke swipEndCallBack() to set "isPlayingAnimation" to false
+                addActionsToBeSkipped(seq);
             }
             else 
             {
@@ -496,11 +494,17 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
                 CCFiniteTimeAction* seq = CCSequence::actions(action->reverse(), 
                                                               CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::swipEndCallBack)),
                                                               NULL);
-                sprite->runAction(seq); 
-            }  
+                sprite->runAction(seq);
+                
+                // should skip this action to invoke swipEndCallBack() to set "isPlayingAnimation" to false
+                addActionsToBeSkipped(seq);
+            }
+            
+            // record actoin to be skipped
+            addActionsToBeSkipped(action);
             
             // start swipping, then don't do swipe operation until done
-            isSwiping = true;
+            isPlayingAnimation= true;
         }
         
         delete swipeEndedActionsToRun;
@@ -512,7 +516,7 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
 void PageLayer::swipEndCallBack()
 {
     // swipping ended
-    isSwiping = false;
+    isPlayingAnimation = false;
 }
 
 void PageLayer::swipeLeft()
@@ -629,6 +633,9 @@ void PageLayer::createSprites()
 			CCAction *action = page->actions[spriteInfo->actions[i]];
 			assert(action != NULL);
 			sprite->runAction(action);
+            
+            // record all actions, then these actions may be skipped when swipping
+            addActionsToBeSkipped(action);
 		}
 
 		addChild(sprite, spriteInfo->zOrder);
@@ -840,11 +847,16 @@ void PageLayer::showParagraph(float delay)
     if (delay != 0)
     {
         paragraphLayer->setIsVisible(false);
-        paragraphLayer->runAction(CCSequence::actions(CCDelayTime::actionWithDuration(delay),
-                                                      CCShow::action(),
-                                                      fadeIn,
-                                                      callBack,
-                                                      NULL));
+        CCAction *seq = CCSequence::actions(CCDelayTime::actionWithDuration(delay),
+                                             CCShow::action(),
+                                             fadeIn,
+                                             callBack,
+                                              NULL);
+        paragraphLayer->runAction(seq);
+        
+        // record actions to be skipped
+        // when animations are skipped, then should show paragraph at once
+        addActionsToBeSkipped(seq);
     }
     else 
     {
@@ -993,4 +1005,22 @@ LineText* PageLayer::getLineTextByLabel(cocos2d::CCLabelTTF* label)
     }
     
     return NULL;
+}
+
+void PageLayer::addActionsToBeSkipped(cocos2d::CCAction *action)
+{
+    actionsToBeSkipped.push_back(action);
+    action->retain();
+}
+
+void PageLayer::skipAnimation()
+{
+    // skip animations and show paragraph at once
+    vector<cocos2d::CCAction*>::iterator iter;
+    for (iter = actionsToBeSkipped.begin(); iter != actionsToBeSkipped.end(); ++iter)
+    {
+        (*iter)->finish();
+        (*iter)->release();
+    }
+    actionsToBeSkipped.clear();
 }

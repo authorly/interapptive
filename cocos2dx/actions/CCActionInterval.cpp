@@ -112,6 +112,11 @@ void CCActionInterval::step(ccTime dt)
 //	update(min(1, m_elapsed/m_fDuration));
 	update(1 > m_elapsed/m_fDuration ? m_elapsed/m_fDuration : 1);
 }
+    
+void CCActionInterval::finish()
+{
+    m_elapsed = m_fDuration;
+}
 
 void CCActionInterval::setAmplitudeRate(CGFloat amp)
 {
@@ -307,6 +312,15 @@ void CCSequence::update(ccTime time)
 
 	m_pActions[found]->update(new_t);
 	m_last = found;
+}
+    
+void CCSequence::finish()
+{
+    CCActionInterval::finish();
+    
+    // should invoke each action's finish function
+    m_pActions[0]->finish();
+    m_pActions[1]->finish();
 }
 
 CCActionInterval* CCSequence::reverse(void)
@@ -650,6 +664,13 @@ void CCSpawn::update(ccTime time)
 	{
 		m_pTwo->update(time);
 	}
+}
+    
+void CCSpawn::finish()
+{
+    CCActionInterval::finish();
+    m_pOne->finish();
+    m_pTwo->finish();
 }
 
 CCActionInterval* CCSpawn::reverse(void)
