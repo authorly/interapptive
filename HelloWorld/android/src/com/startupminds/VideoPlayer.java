@@ -1,8 +1,8 @@
 package com.startupminds;
 
-import org.cocos2dx.application.R;
-import org.cocos2dx.application.R.id;
-import org.cocos2dx.application.R.layout;
+import org.strangerinthewoods.application.R;
+import org.strangerinthewoods.application.R.id;
+import org.strangerinthewoods.application.R.layout;
 
 import android.app.Activity;
 import android.content.res.Resources;
