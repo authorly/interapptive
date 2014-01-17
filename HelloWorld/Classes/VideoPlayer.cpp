@@ -13,7 +13,7 @@ extern "C"
     {
         if (VideoPlayer::sharedVideoPlayer()->delegate)
         {
-            VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish(VideoPlayer::sharedVideoPlayer()->fileName.c_str());
+            VideoPlayer::sharedVideoPlayer()->delegate->moviePlayBackDidFinish(VideoPlayer::sharedVideoPlayer()->fileName.c_str(), false);
             VideoPlayer::sharedVideoPlayer()->delegate = NULL;
         }  
     }

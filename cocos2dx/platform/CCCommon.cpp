@@ -173,8 +173,6 @@ void CCLog(const char * pszFormat, ...)
 	va_start(args, pszFormat);    	
 	vsprintf(buf, pszFormat, args);
 	va_end(args);
-
-	__android_log_print(ANDROID_LOG_DEBUG, "cocos2d-x debug info",  buf);
 }
 
 void CCMessageBox(const char * pszMsg, const char * pszTitle)
