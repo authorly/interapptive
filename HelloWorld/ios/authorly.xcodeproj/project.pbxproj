@@ -912,7 +912,7 @@
 		15DF9E151552AB2E00E4FF3A /* MyDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDialog.h; sourceTree = "<group>"; };
 		15DF9E171552AF3D00E4FF3A /* MyDialog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyDialog.mm; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* Stormy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stormy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* babyblue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babyblue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3ACBB1E7153D4BF60075EDB2 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
@@ -1685,7 +1685,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Stormy.app */,
+				1D6058910D05DD3D006BFB54 /* babyblue.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1855,7 +1855,7 @@
 			);
 			name = authorly;
 			productName = HelloWorld;
-			productReference = 1D6058910D05DD3D006BFB54 /* Stormy.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* babyblue.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2454,7 +2454,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = Stormy;
+				PRODUCT_NAME = FameJL;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2502,7 +2502,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = Stormy;
+				PRODUCT_NAME = FameJL;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2571,7 +2571,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = Stormy;
+				PRODUCT_NAME = FameJL;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
