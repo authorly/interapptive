@@ -203,8 +203,8 @@ void PageLayer::enableDelayForTextTouchNode()
 
 void PageLayer::onExit()
 {
+    stopHighlighVoiceAndOtherEffect();
     CC_SAFE_RELEASE_NULL(paragraphLayer);
-    
     // unload effect
     for (int i = 0; i < page->paragraphs.size(); ++i)
     {
