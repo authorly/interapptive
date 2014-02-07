@@ -18,7 +18,7 @@ using namespace std;
 #define TOLERATE_HORIZONTAL_DISTANCE    30
 // page layer tag
 #define PARAGRAPH_LAYER_TAG       10
-#define PAGELAYER_HANDLER_PRIORITY 10
+#define PAGELAYER_HANDLER_PRIORITY 12
 
 #define STORY_TOUCH_DETECT_TAG          11
 #define PARAGRAPH_HOTSPOT_DETECT_TAG    12
