@@ -64,6 +64,12 @@
 #endif
 }
 
+//fix not hide status on ios7
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (BOOL) shouldAutorotate {
     return YES;
 }
