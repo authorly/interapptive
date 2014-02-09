@@ -3,7 +3,7 @@
 
 using namespace cocos2d;
 
-// let the priority to 11 because should do swipe when touch begin from hotspot
+// touch detection node should handle touch event before pagelayer
 #define TOUCHDETECTION_HANDLER_PRIORITY 11
 
 TouchDetection::TouchDetection()
@@ -17,7 +17,8 @@ TouchDetection::~TouchDetection()
 
 void TouchDetection::registerWithTouchDispatcher(void)
 {
-    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, TOUCHDETECTION_HANDLER_PRIORITY, true);
+    // don't swallow touch events, because it should make pagelayer can swipe event touch event starts in hotspot area.
+    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, TOUCHDETECTION_HANDLER_PRIORITY, false);
 }
 
 bool TouchDetection::init()
