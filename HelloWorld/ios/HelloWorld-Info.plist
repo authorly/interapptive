@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Foyle</string>
+	<string>Animal</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -18,9 +18,39 @@
 		<string>Icon@144.png</string>
 	</array>
 	<key>CFBundleIcons</key>
-	<dict/>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon@80</string>
+				<string>Icon@58</string>
+				<string>Icon@29</string>
+				<string>Icon@120</string>
+				<string>Icon@114</string>
+				<string>Icon@57</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIcons~ipad</key>
-	<dict/>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon@80</string>
+				<string>Icon@58</string>
+				<string>Icon@29</string>
+				<string>Icon@40</string>
+				<string>Icon@100</string>
+				<string>Icon@50</string>
+				<string>Icon@152</string>
+				<string>Icon@76</string>
+				<string>Icon@144</string>
+				<string>Icon@72</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.authorly.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
