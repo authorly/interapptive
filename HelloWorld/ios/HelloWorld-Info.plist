@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Fame: J.L.</string>
+	<string>Baby Blue</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -23,6 +23,12 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>Baby_Blue-80</string>
+				<string>Baby_Blue-58</string>
+				<string>Baby_Blue-29</string>
+				<string>Baby_Blue-120</string>
+				<string>Baby_Blue-114</string>
+				<string>Baby_Blue-57</string>
 				<string>Icon@80</string>
 				<string>Icon@58</string>
 				<string>Icon@29</string>
@@ -38,6 +44,16 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>Baby_Blue-58</string>
+				<string>Baby_Blue-29</string>
+				<string>Baby_Blue-80</string>
+				<string>Baby_Blue-40</string>
+				<string>Baby_Blue-100</string>
+				<string>Baby_Blue-50</string>
+				<string>Baby_Blue-152</string>
+				<string>Baby_Blue-76</string>
+				<string>Baby_Blue-144</string>
+				<string>Baby_Blue</string>
 				<string>Icon@58</string>
 				<string>Icon@80</string>
 				<string>Icon@40</string>
