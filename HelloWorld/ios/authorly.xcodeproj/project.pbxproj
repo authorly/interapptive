@@ -220,7 +220,6 @@
 		BF365AA812A103F70050DCF4 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF365AA712A103F70050DCF4 /* AppController.mm */; };
 		BF4DE6AD138BB89600CF907D /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF4DE6AC138BB89600CF907D /* RootViewController.mm */; };
 		D4ABB4B313B4395300552E6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ABB4B213B4395300552E6E /* main.m */; };
-		DC0F44D318A9306A003EB82E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0F44D218A9306A003EB82E /* Images.xcassets */; };
 		DC2C80DA18A09279006C8AB5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2C80D918A09279006C8AB5 /* Default-568h@2x.png */; };
 		DC75825B18A91E5000902025 /* Icon@144.png in Resources */ = {isa = PBXBuildFile; fileRef = DC75824618A91E5000902025 /* Icon@144.png */; };
 		DC75825C18A91E5000902025 /* Icon@114.png in Resources */ = {isa = PBXBuildFile; fileRef = DC75824718A91E5000902025 /* Icon@114.png */; };
@@ -247,6 +246,7 @@
 		DC75827518A91E9900902025 /* Icon@120.png in Resources */ = {isa = PBXBuildFile; fileRef = DC75827118A91E9900902025 /* Icon@120.png */; };
 		DC75827618A91E9900902025 /* Icon@80.png in Resources */ = {isa = PBXBuildFile; fileRef = DC75827218A91E9900902025 /* Icon@80.png */; };
 		DC75827718A91E9900902025 /* Icon@76.png in Resources */ = {isa = PBXBuildFile; fileRef = DC75827318A91E9900902025 /* Icon@76.png */; };
+		DCB05D7C18A9AEE600F16D25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCB05D7B18A9AEE600F16D25 /* Images.xcassets */; };
 		DCF47DB2178D0D2400D0DC4C /* structure-ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */; };
 /* End PBXBuildFile section */
 
@@ -915,7 +915,7 @@
 		15DF9E151552AB2E00E4FF3A /* MyDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDialog.h; sourceTree = "<group>"; };
 		15DF9E171552AF3D00E4FF3A /* MyDialog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyDialog.mm; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* tootallfoyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tootallfoyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* denniswildbull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = denniswildbull.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3ACBB1E7153D4BF60075EDB2 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
@@ -931,7 +931,6 @@
 		BF4DE6AB138BB89600CF907D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BF4DE6AC138BB89600CF907D /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
 		D4ABB4B213B4395300552E6E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DC0F44D218A9306A003EB82E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = authorly/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		DC2C80D918A09279006C8AB5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DC75824618A91E5000902025 /* Icon@144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@144.png"; sourceTree = "<group>"; };
 		DC75824718A91E5000902025 /* Icon@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@114.png"; sourceTree = "<group>"; };
@@ -958,6 +957,7 @@
 		DC75827118A91E9900902025 /* Icon@120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@120.png"; sourceTree = "<group>"; };
 		DC75827218A91E9900902025 /* Icon@80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@80.png"; sourceTree = "<group>"; };
 		DC75827318A91E9900902025 /* Icon@76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@76.png"; sourceTree = "<group>"; };
+		DCB05D7B18A9AEE600F16D25 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = authorly/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "structure-ipad.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1691,7 +1691,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* tootallfoyle.app */,
+				1D6058910D05DD3D006BFB54 /* denniswildbull.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1744,7 +1744,7 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DC0F44D218A9306A003EB82E /* Images.xcassets */,
+				DCB05D7B18A9AEE600F16D25 /* Images.xcassets */,
 				DC75827018A91E9900902025 /* Icon@152.png */,
 				DC75827118A91E9900902025 /* Icon@120.png */,
 				DC75827218A91E9900902025 /* Icon@80.png */,
@@ -1864,7 +1864,7 @@
 			);
 			name = authorly;
 			productName = HelloWorld;
-			productReference = 1D6058910D05DD3D006BFB54 /* tootallfoyle.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* denniswildbull.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2174,7 +2174,7 @@
 				1585A178152DC7CE003E4376 /* json_writer.inl in Resources */,
 				DC75826F18A91E5000902025 /* Icon-72.png in Resources */,
 				DC75826518A91E5000902025 /* Icon.png in Resources */,
-				DC0F44D318A9306A003EB82E /* Images.xcassets in Resources */,
+				DCB05D7C18A9AEE600F16D25 /* Images.xcassets in Resources */,
 				1585A179152DC7CE003E4376 /* sconscript in Resources */,
 				159FDC1215C535E30064CCAF /* build.make in Resources */,
 				159FDC1315C535E30064CCAF /* C.includecache in Resources */,
@@ -2431,6 +2431,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2467,7 +2468,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = animalmotions;
+				PRODUCT_NAME = denniswildbull;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2481,6 +2482,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation (3K3N7L5797)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Novel Apps Corporation (3K3N7L5797)";
@@ -2516,7 +2518,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = animalmotions;
+				PRODUCT_NAME = denniswildbull;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2550,6 +2552,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2586,7 +2589,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = animalmotions;
+				PRODUCT_NAME = denniswildbull;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
