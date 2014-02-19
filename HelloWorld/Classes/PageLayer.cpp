@@ -251,6 +251,7 @@ void PageLayer::doHotspotTouched(HotspotInfo *hotspot,bool isParagraphHotspot)
         // stop first
         SimpleAudioEngine::sharedEngine()->stopEffect(touchSoundId);
         // play
+        SimpleAudioEngine::sharedEngine()->preloadEffect(audeoName.c_str());
         touchSoundId = SimpleAudioEngine::sharedEngine()->playEffect(audeoName.c_str());
     }
 }
