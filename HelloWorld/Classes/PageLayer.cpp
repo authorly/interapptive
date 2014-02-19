@@ -812,6 +812,9 @@ void PageLayer::addParagraphHotspot(int index)
             
             paragraphLayer->addChild(particle);
         }
+        
+        // preload effect
+        SimpleAudioEngine::sharedEngine()->preloadEffect((*hotspotIter)->soundToPlay.c_str());
     }
 }
 
