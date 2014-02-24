@@ -5721,7 +5721,7 @@
              },
              "CCSprites":[
                           {
-                          "image":"abbdfffaffaabdbfedaeffecbdeefcdfaceadcfafe.png",
+                          "image":"abbdfffaffaabdbfedaeffecbdeefcdfaceadcfafe.jpg",
                           "scale":1.66,
                           "position":[
                                       1676,
@@ -9686,7 +9686,7 @@
              },
              "CCSprites":[
                           {
-                          "image":"eacefcaccdeacaabdaadeecdfdbbbddfaddcabeecdce.png",
+                          "image":"eacefcaccdeacaabdaadeecdfdbbbddfaddcabeecdce.jpg",
                           "scale":0.94,
                           "position":[
                                       963,
@@ -10340,7 +10340,7 @@
              },
              "CCSprites":[
                           {
-                          "image":"fcfacdcdbbdbafcdadcbaffaaafbcebbadbdcaecbfcccbfddbef.png",
+                          "image":"fcfacdcdbbdbafcdadcbaffaaafbcebbadbdcaecbfcccbfddbef.jpg",
                           "scale":1.5,
                           "position":[
                                       1527,
@@ -11082,7 +11082,7 @@
              },
              "CCSprites":[
                           {
-                          "image":"ceabccdabacabdfafbfeaaabecefbdfabdfcdeecdcdeea.png",
+                          "image":"ceabccdabacabdfafbfeaaabecefbdfabdfcdeecdcdeea.jpg",
                           "scale":1.84,
                           "position":[
                                       995,
@@ -24872,7 +24872,7 @@
     "MainMenu":{
         "CCSprites":[
                      {
-                     "image":"eeabeeebcdbffbdddedebeabddfdafedecedbcbeedeeabfa.png",
+                     "image":"eeabeeebcdbffbdddedebeabddfdafedecedbcbeedeeabfa.jpg",
                      "scale":0.51,
                      "position":[
                                  512,
