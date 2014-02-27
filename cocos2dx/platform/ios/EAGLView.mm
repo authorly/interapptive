@@ -456,7 +456,7 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
                     return;
                 }
         
-		float x = [touch locationInView: [touch view]].x;
+        float x = [touch locationInView: [touch view]].x - cocos2d::CCDirector::sharedDirector()->getOriginX();
 		float y = [touch locationInView: [touch view]].y;
 		pTouch->SetTouchInfo(0, x, y, pTouch->id());
 		
@@ -487,7 +487,7 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
                     return;
                 }
         
-		float x = [touch locationInView: [touch view]].x;
+        float x = [touch locationInView: [touch view]].x - cocos2d::CCDirector::sharedDirector()->getOriginX();
 		float y = [touch locationInView: [touch view]].y;
 		pTouch->SetTouchInfo(0, x, y, pTouch->id());
 		
