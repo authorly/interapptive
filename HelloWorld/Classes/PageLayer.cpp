@@ -6,6 +6,7 @@
 #include "SharedGlobalData.h"
 #include "ChipmunkLayer.h"
 #include "VideoPlayer.h"
+#include "Utils.h"
 
 #include <vector>
 
@@ -13,9 +14,6 @@ using namespace cocos2d;
 using namespace CocosDenshion;
 using namespace std;
 
-// the distance(in points) to determine swipe left or right
-#define TOLERATE_VERTICAL_DISTANCE      150
-#define TOLERATE_HORIZONTAL_DISTANCE    30
 // page layer tag
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 12
@@ -60,6 +58,12 @@ PageLayer::~PageLayer()
 
 void PageLayer::init(Page *page)
 {
+    // can not define it as static class member variable or macro
+    // or it will crash on android, because in invokes JNI to invoke
+    // java codes.
+    TOLERATE_HORIZONTAL_DISTANCE = 30 * Utils::getDPI() / 132;
+    TOLERATE_VERTICAL_DISTANCE = 150 * Utils::getDPI() / 132;
+    
     if( !CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)) ) //RGBA
     {
         // below line not working
