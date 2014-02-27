@@ -223,6 +223,7 @@
 		BF4DE6AD138BB89600CF907D /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF4DE6AC138BB89600CF907D /* RootViewController.mm */; };
 		D4ABB4B313B4395300552E6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ABB4B213B4395300552E6E /* main.m */; };
 		DC10C8E018DA1B1100F2BA9A /* background-wood.png in Resources */ = {isa = PBXBuildFile; fileRef = DC10C8DF18DA1B1100F2BA9A /* background-wood.png */; };
+		DC48553118EF2607000103A3 /* Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC48552F18EF2607000103A3 /* Utils.mm */; };
 		DC9CE28418EDBACD0016D81B /* HelloWorld-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC9CE28318EDBACD0016D81B /* HelloWorld-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -912,6 +913,8 @@
 		BF4DE6AC138BB89600CF907D /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
 		D4ABB4B213B4395300552E6E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC10C8DF18DA1B1100F2BA9A /* background-wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-wood.png"; sourceTree = "<group>"; };
+		DC48552E18EF2607000103A3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		DC48552F18EF2607000103A3 /* Utils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Utils.mm; sourceTree = "<group>"; };
 		DC54A7C718DADCC10022D748 /* SubscriptionApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubscriptionApp.h; sourceTree = "<group>"; };
 		DC9CE28318EDBACD0016D81B /* HelloWorld-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HelloWorld-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1709,6 +1712,8 @@
 		BF23D4E2143315EB00657E08 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DC48552E18EF2607000103A3 /* Utils.h */,
+				DC48552F18EF2607000103A3 /* Utils.mm */,
 				46C02E0F18E9B4F2004B7456 /* LoginLayer.cpp */,
 				46C02E1018E9B4F2004B7456 /* LoginLayer.h */,
 				BF23D4E3143315EB00657E08 /* AppDelegate.cpp */,
@@ -2292,6 +2297,7 @@
 				154CE1391629B50000C3A047 /* TGAlib.cpp in Sources */,
 				154CE13A1629B50000C3A047 /* TransformUtils.cpp in Sources */,
 				154CE13B1629B50000C3A047 /* ioapi.cpp in Sources */,
+				DC48553118EF2607000103A3 /* Utils.mm in Sources */,
 				154CE13C1629B50000C3A047 /* unzip.cpp in Sources */,
 				154CE13D1629B50000C3A047 /* ZipUtils.cpp in Sources */,
 				154CE13E1629B50000C3A047 /* CCIMEDispatcher.cpp in Sources */,

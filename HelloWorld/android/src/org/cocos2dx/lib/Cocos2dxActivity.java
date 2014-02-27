@@ -43,6 +43,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
 
 public class Cocos2dxActivity extends Activity{
     private static Map<String, Cocos2dxMusic> musicPlayerMap = new HashMap<String, Cocos2dxMusic>();
@@ -288,6 +290,25 @@ public class Cocos2dxActivity extends Activity{
     	android.os.Process.killProcess(android.os.Process.myPid());
     }
 
+    public static int getDPI()
+    {
+        if (self != null)
+        {
+            DisplayMetrics metrics = new DisplayMetrics();
+            WindowManager wm = self.getWindowManager();
+            if (wm != null)
+            {
+                Display d = wm.getDefaultDisplay();
+                if (d != null)
+                {
+                    d.getMetrics(metrics);
+                    return (int)(metrics.density*160.0f);
+                }
+            }
+        }
+        return 160;
+    }
+
     @Override
     protected void onResume() {
     	super.onResume();
@@ -420,6 +441,7 @@ class PlayVideoMessage {
 		this.showControl = showControl;
 	}
 }
+
 
 class GotoUrlMessage {
 	public String url;

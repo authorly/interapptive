@@ -28,7 +28,8 @@ LOCAL_SRC_FILES := AppDelegate.cpp \
                    SnowmanGameScene.cpp \
                    TouchDetection.cpp \
                    TouchObject.cpp  \
-                   VideoPlayer.cpp        
+                   VideoPlayer.cpp  \
+                   Utils.cpp      
                    
                    
                    
