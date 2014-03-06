@@ -1,464 +1,344 @@
 {
-    "Configurations": {
-        "skipAnimationOnSwipe": true,
-        "pageFlipSound": {
-            "forward": "page-flip-sound.mp3",
-            "backward": "page-flip-sound.mp3"
+    "Configurations":{
+        "retainTextScalingRatio":true,
+        "pageFlipSound":{
+            "forward":"page-flip-sound.mp3",
+            "backward":"page-flip-sound.mp3"
         },
-        "pageFlipTransitionDuration": 0.6,
-        "paragraphTextFadeDuration": 0.4,
-        "autoplayPageTurnDelay": 0.2,
-        "autoplayKeyframeDelay": 0.1,
-        "homeMenuForPages": {
-            "normalStateImage": "home.png",
-            "tappedStateImage": "home-over.png",
-            "position": [
-                         52,
-                         46
-                         ],
-            "scale": 1
+        "pageFlipTransitionDuration":0.6,
+        "paragraphTextFadeDuration":0.4,
+        "autoplayPageTurnDelay":0.2,
+        "autoplayKeyframeDelay":0.1,
+        "homeMenuForPages":{
+            "normalStateImage":"home.png",
+            "tappedStateImage":"home-over.png",
+            "position":[
+                        200,
+                        400
+                        ],
+            "scale":1
         }
     },
-    "Pages": [
-              {
-              "API": {
-              "CCMoveTo": [
+    "Pages":[
+             {
+             "API":{
+             "CCMoveTo":[
+             
+             ],
+             "CCScaleTo":[
+             
+             ],
+             "CCSequence":[
+             
+             ],
+             "CCDelayTime":[
+             
+             ],
+             "CCSpawn":[
+             
+             ],
+             "CCStorySwipeEnded":{
+             "runAction":[
+             
+             ]
+             },
+             "CCSprites":[
+             
+             ]
+             },
+             "Page":{
+             "settings":{
+             "number":1
+             },
+             "text":{
+             "paragraphs":[
                            {
-                           "actionTag": 15,
-                           "duration": 0,
-                           "position": [
-                                        510,
-                                        385
-                                        ]
-                           },
-                           {
-                           "actionTag": 20,
-                           "duration": 3,
-                           "position": [
-                                        516,
-                                        384
-                                        ]
-                           }
-                           ],
-              "CCScaleTo": [
-                            {
-                            "actionTag": 14,
-                            "duration": 5,
-                            "intensity": 2
-                            },
-                            {
-                            "actionTag": 19,
-                            "duration": 3,
-                            "intensity": 1
-                            }
-                            ],
-              "CCSequence": [
-                             {
-                             "actionTag": 18,
-                             "actions": [
-                                         16,
-                                         17
-                                         ]
-                             }
-                             ],
-              "CCDelayTime": [
-                              {
-                              "actionTag": 16,
-                              "duration": 0
-                              }
-                              ],
-              "CCSpawn": [
-                          {
-                          "actionTag": 17,
-                          "actions": [
-                                      19,
-                                      20
-                                      ]
-                          }
-                          ],
-              "CCStorySwipeEnded": {
-              "runAction": []
-              },
-              "CCSprites": [
-                            {
-                            "image": "ypABsXQctDWefFwDtztCYuNoyRhoTACbjUI.jpg",
-                            "spriteTag": 26,
-                            "position": [
-                                         510,
-                                         385
-                                         ],
-                            "actions": [
-                                        14
-                                        ]
-                            }
-                            ]
-              },
-              "Page": {
-              "settings": {
-              "number": 1
-              },
-              "text": {
-              "paragraphs": [
-                             {
-                             "linesOfText": [
-                                             {
-                                             "text": "",
-                                             "xOffset": 0,
-                                             "yOffset": 0,
-                                             "fontType": "Arial.ttf",
-                                             "fontColor": [
-                                                           255,
-                                                           183,
-                                                           213
-                                                           ],
-                                             "fontHighlightColor": [
-                                                                    255,
-                                                                    0,
-                                                                    0
-                                                                    ],
-                                             "fontSize": 25
-                                             }
-                                             ],
-                             "hotspots": [
+                           "linesOfText":[
                                           {
-                                          "glitterIndicator": true,
-                                          "stopEffectIndicator": false,
-                                          "touchFlag": 14,
-                                          "position": [
-                                                       500,
-                                                       452
+                                          "text":"Left in a corner\nwith multiple lines\n\n\n\n\n\n\n\n\none near home",
+                                          "xOffset":9,
+                                          "yOffset":752,
+                                          "fontType":"arialother.ttf",
+                                          "fontColor":[
+                                                       0,
+                                                       0,
+                                                       0
                                                        ],
-                                          "radius": 148,
-                                          "soundToPlay": "page-flip-sound.mp3"
+                                          "fontHighlightColor":[
+                                                                255,
+                                                                0,
+                                                                0
+                                                                ],
+                                          "fontSize":34,
+                                          "anchorPoint":[
+                                                         0,
+                                                         0
+                                                         ]
+                                          },
+                                          {
+                                          "text":"Right in the other corner\nso many lines\nso many feelings",
+                                          "xOffset":1018,
+                                          "yOffset":145,
+                                          "fontType":"CourierNew.ttf",
+                                          "fontColor":[
+                                                       0,
+                                                       204,
+                                                       0
+                                                       ],
+                                          "fontHighlightColor":[
+                                                                255,
+                                                                0,
+                                                                0
+                                                                ],
+                                          "fontSize":45,
+                                          "anchorPoint":[
+                                                         1,
+                                                         0
+                                                         ]
+                                          },
+                                          {
+                                          "text":"Center\nkeep to the center\ncenter\nkeep to the center",
+                                          "xOffset":494,
+                                          "yOffset":524,
+                                          "fontType":"TimesNewRoman.ttf",
+                                          "fontColor":[
+                                                       0,
+                                                       0,
+                                                       0
+                                                       ],
+                                          "fontHighlightColor":[
+                                                                255,
+                                                                0,
+                                                                0
+                                                                ],
+                                          "fontSize":34,
+                                          "anchorPoint":[
+                                                         0.5,
+                                                         0
+                                                         ]
                                           }
                                           ],
-                             "highlightingTimes": [
-                                                   0
-                                                   ],
-                             "autoplayDuration": 8
-                             }
-                             ]
-              }
-              }
-              },
-              {
-              "API": {
-              "CCMoveTo": [
-                           {
-                           "actionTag": 22,
-                           "duration": 0,
-                           "position": [
-                                        507,
-                                        384
-                                        ]
+                           "hotspots":[
+                           
+                           ],
+                           "highlightingTimes":[
+                                                0
+                                                ],
+                           "autoplayDuration":41
                            },
                            {
-                           "actionTag": 27,
-                           "duration": 3,
-                           "position": [
-                                        506,
-                                        392
-                                        ]
-                           }
+                           "linesOfText":[
+                                          {
+                                          "text":"Click to edit or drag to move",
+                                          "xOffset":512,
+                                          "yOffset":384,
+                                          "fontType":"arialother.ttf",
+                                          "fontColor":[
+                                                       0,
+                                                       0,
+                                                       0
+                                                       ],
+                                          "fontHighlightColor":[
+                                                                255,
+                                                                0,
+                                                                0
+                                                                ],
+                                          "fontSize":34,
+                                          "anchorPoint":[
+                                                         0,
+                                                         0
+                                                         ]
+                                          }
+                                          ],
+                           "hotspots":[
+                           
                            ],
-              "CCScaleTo": [
-                            {
-                            "actionTag": 21,
-                            "duration": 0,
-                            "intensity": 1
-                            },
-                            {
-                            "actionTag": 26,
-                            "duration": 3,
-                            "intensity": 1
-                            }
-                            ],
-              "CCSequence": [
-                             {
-                             "actionTag": 25,
-                             "actions": [
-                                         23,
-                                         24
-                                         ]
-                             }
-                             ],
-              "CCDelayTime": [
-                              {
-                              "actionTag": 23,
-                              "duration": 0
-                              }
-                              ],
-              "CCSpawn": [
-                          {
-                          "actionTag": 24,
-                          "actions": [
-                                      26,
-                                      27
-                                      ]
-                          }
-                          ],
-              "CCStorySwipeEnded": {
-              "runAction": []
-              },
-              "CCSprites": [
-                            {
-                            "image": "YfoehyJiclPuqBmsnTUPVWSOcPcyUThCUUQ.jpg",
-                            "spriteTag": 37,
-                            "position": [
-                                         507,
-                                         384
-                                         ],
-                            "actions": [
-                                        21,
-                                        25
-                                        ]
-                            }
-                            ]
-              },
-              "Page": {
-              "settings": {
-              "number": 2
-              },
-              "text": {
-              "paragraphs": [
-                             {
-                             "linesOfText": [
-                                             {
-                                             "text": "",
-                                             "xOffset": 0,
-                                             "yOffset": 0,
-                                             "fontType": "Arial.ttf",
-                                             "fontColor": [
-                                                           255,
-                                                           183,
-                                                           213
-                                                           ],
-                                             "fontHighlightColor": [
-                                                                    255,
-                                                                    0,
-                                                                    0
-                                                                    ],
-                                             "fontSize": 25
-                                             }
-                                             ],
-                             "hotspots": [],
-                             "highlightingTimes": [
-                                                   0
-                                                   ],
-                             "autoplayDuration": 8
-                             }
-                             ]
-              }
-              }
-              },
-              {
-              "API": {
-              "CCMoveTo": [
-                           {
-                           "actionTag": 29,
-                           "duration": 0,
-                           "position": [
-                                        512,
-                                        384
-                                        ]
+                           "highlightingTimes":[
+                                                0
+                                                ],
+                           "autoplayDuration":9
                            },
                            {
-                           "actionTag": 34,
-                           "duration": 3,
-                           "position": [
-                                        512,
-                                        384
-                                        ]
-                           }
+                           "linesOfText":[
+                                          {
+                                          "text":"Click to edit or drag to move",
+                                          "xOffset":723,
+                                          "yOffset":384,
+                                          "fontType":"arialother.ttf",
+                                          "fontColor":[
+                                                       0,
+                                                       0,
+                                                       0
+                                                       ],
+                                          "fontHighlightColor":[
+                                                                255,
+                                                                0,
+                                                                0
+                                                                ],
+                                          "fontSize":34,
+                                          "anchorPoint":[
+                                                         0.5,
+                                                         0
+                                                         ]
+                                          }
+                                          ],
+                           "hotspots":[
+                           
                            ],
-              "CCScaleTo": [
-                            {
-                            "actionTag": 28,
-                            "duration": 0,
-                            "intensity": 1
-                            },
-                            {
-                            "actionTag": 33,
-                            "duration": 3,
-                            "intensity": 1
-                            }
-                            ],
-              "CCSequence": [
-                             {
-                             "actionTag": 32,
-                             "actions": [
-                                         30,
-                                         31
-                                         ]
-                             }
-                             ],
-              "CCDelayTime": [
-                              {
-                              "actionTag": 30,
-                              "duration": 0
-                              }
-                              ],
-              "CCSpawn": [
-                          {
-                          "actionTag": 31,
-                          "actions": [
-                                      33,
-                                      34
-                                      ]
-                          }
-                          ],
-              "CCStorySwipeEnded": {
-              "runAction": []
-              },
-              "CCSprites": [
-                            {
-                            "image": "HVNftMDianeOAQPRdfvdBdtHWzEDqqoTRreA.jpg",
-                            "spriteTag": 48,
-                            "position": [
-                                         512,
-                                         384
-                                         ],
-                            "actions": [
-                                        28,
-                                        32
-                                        ]
-                            }
-                            ]
-              },
-              "Page": {
-              "settings": {
-              "number": 3
-              },
-              "text": {
-              "paragraphs": [
-                             {
-                             "linesOfText": [
-                                             {
-                                             "text": "",
-                                             "xOffset": 0,
-                                             "yOffset": 0,
-                                             "fontType": "Arial.ttf",
-                                             "fontColor": [
-                                                           255,
-                                                           183,
-                                                           213
-                                                           ],
-                                             "fontHighlightColor": [
-                                                                    255,
-                                                                    0,
-                                                                    0
-                                                                    ],
-                                             "fontSize": 25
-                                             }
-                                             ],
-                             "hotspots": [],
-                             "highlightingTimes": [
-                                                   0
-                                                   ],
-                             "autoplayDuration": 8
-                             }
-                             ]
-              }
-              }
-              }
-              ],
-    "MainMenu": {
-        "sounds": {
-            "background":{
-                "file": "effect-footsteps.mp3",
-                "loop": false
-            },
-            "effectOnEnter": "main-menu-title-sound.mp3"
-        },
+                           "highlightingTimes":[
+                                                0
+                                                ],
+                           "autoplayDuration":9
+                           },
+                           {
+                           "linesOfText":[
+                                          {
+                                          "text":"Click to edit or drag to move",
+                                          "xOffset":933,
+                                          "yOffset":384,
+                                          "fontType":"arialother.ttf",
+                                          "fontColor":[
+                                                       0,
+                                                       0,
+                                                       0
+                                                       ],
+                                          "fontHighlightColor":[
+                                                                255,
+                                                                0,
+                                                                0
+                                                                ],
+                                          "fontSize":34,
+                                          "anchorPoint":[
+                                                         1,
+                                                         0
+                                                         ]
+                                          }
+                                          ],
+                           "hotspots":[
+                           
+                           ],
+                           "highlightingTimes":[
+                                                0
+                                                ],
+                           "autoplayDuration":9
+                           }
+                           ]
+             }
+             }
+             },
+             {
+             "API":{
+             "CCMoveTo":[
+             
+             ],
+             "CCScaleTo":[
+             
+             ],
+             "CCSequence":[
+             
+             ],
+             "CCDelayTime":[
+             
+             ],
+             "CCSpawn":[
+             
+             ],
+             "CCStorySwipeEnded":{
+             "runAction":[
+             
+             ]
+             },
+             "CCSprites":[
+             
+             ]
+             },
+             "Page":{
+             "settings":{
+             "number":2
+             },
+             "text":{
+             "paragraphs":[
+                           {
+                           "linesOfText":[
+                                          {
+                                          "text":"Click to edit or drag to move",
+                                          "xOffset":32,
+                                          "yOffset":469,
+                                          "fontType":"arialother.ttf",
+                                          "fontColor":[
+                                                       0,
+                                                       0,
+                                                       0
+                                                       ],
+                                          "fontHighlightColor":[
+                                                                255,
+                                                                0,
+                                                                0
+                                                                ],
+                                          "fontSize":34,
+                                          "anchorPoint":[
+                                                         0,
+                                                         0
+                                                         ]
+                                          }
+                                          ],
+                           "hotspots":[
+                           
+                           ],
+                           "highlightingTimes":[
+                                                0
+                                                ],
+                           "autoplayDuration":9
+                           }
+                           ]
+             }
+             }
+             }
+             ],
+    "MainMenu":{
         "CCSprites":[
-                     {
-                     "image":"ZLzfJRemUTxKleXiKmtIDPCzjQorXKurBs.jpg",
-                     "spriteTag":14,
-                     "scale":1,
-                     "position":[
-                                 515,
-                                 383
-                                 ],
-                     "visible":true,
-                     "zOrder":2
-                     },
-                     {
-                     "image":"AFFIukPByYpWzkCQEgnyrHlYBTDrdWwBUVgPJnXeXY.png",
-                     "spriteTag":15,
-                     "scale":1,
-                     "position":[
-                                 772,
-                                 595
-                                 ],
-                     "visible":true,
-                     "zOrder":3
-                     }
-                     ],
+        
+        ],
         "fallingPhysicsSettings":{
             "plistfilename":"snowflake-main-menu.plist"
         },
-        "CCSprites": [
-                      {
-                      "image": "ZLzfJRemUTxKleXiKmtIDPCzjQorXKurBs.jpg",
-                      "spriteTag": 14,
-                      "scale": 1,
-                      "position": [
-                                   515,
-                                   383
-                                   ],
-                      "visible": true,
-                      "zOrder": 2
-                      },
-                      {
-                      "image": "AFFIukPByYpWzkCQEgnyrHlYBTDrdWwBUVgPJnXeXY.png",
-                      "spriteTag": 15,
-                      "scale": 1,
-                      "position": [
-                                   772,
-                                   595
-                                   ],
-                      "visible": true,
-                      "zOrder": 3
-                      }
-                      ],
-        "fallingPhysicsSettings": {
-            "plistfilename": "snowflake-main-menu.plist"
-        },
-        "MenuItems": [
-                      {
-                      "normalStateImage": "read_it_myself.png",
-                      "tappedStateImage": "read_it_myself-over.png",
-                      "storyMode": "readItMyself",
-                      "position": [
-                                   512,
-                                   106
-                                   ],
-                      "scale": 1,
-                      "zOrder": 4001
-                      },
-                      {
-                      "normalStateImage": "read_to_me.png",
-                      "tappedStateImage": "read_to_me-over.png",
-                      "storyMode": "readToMe",
-                      "position": [
-                                   177,
-                                   129
-                                   ],
-                      "scale": 1,
-                      "zOrder": 4002
-                      },
-                      {
-                      "normalStateImage": "auto_play.png",
-                      "tappedStateImage": "auto_play-over.png",
-                      "storyMode": "autoPlay",
-                      "position": [
-                                   851,
-                                   124
-                                   ],
-                      "scale": 1,
-                      "zOrder": 4003
-                      }
-                      ],
-        "API": {}
+        "MenuItems":[
+                     {
+                     "normalStateImage":"read_it_myself.png",
+                     "tappedStateImage":"read_it_myself-over.png",
+                     "storyMode":"readItMyself",
+                     "position":[
+                                 512,
+                                 200
+                                 ],
+                     "scale":1,
+                     "zOrder":4001
+                     },
+                     {
+                     "normalStateImage":"read_to_me.png",
+                     "tappedStateImage":"read_to_me-over.png",
+                     "storyMode":"readToMe",
+                     "position":[
+                                 177,
+                                 200
+                                 ],
+                     "scale":1,
+                     "zOrder":4002
+                     },
+                     {
+                     "normalStateImage":"auto_play.png",
+                     "tappedStateImage":"auto_play-over.png",
+                     "storyMode":"autoPlay",
+                     "position":[
+                                 844,
+                                 200
+                                 ],
+                     "scale":1,
+                     "zOrder":4003
+                     }
+                     ],
+        "API":{
+            
+        }
     }
 }
