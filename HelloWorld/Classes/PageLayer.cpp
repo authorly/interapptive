@@ -767,7 +767,7 @@ void PageLayer::addParagraphText(int index)
             CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);
             
             label->setColor(*fontColor);
-            label->setAnchorPoint(ccp(0.0f, 0.25f));
+            label->setAnchorPoint(ccp(0.0f, 1.0f));
             label->setPosition(ccp(xOffset, yOffset));
             
             // record label in a vector, don't have to retain it
@@ -788,6 +788,29 @@ void PageLayer::addParagraphText(int index)
             if (i < lineText->words.size()-1) {
                 // Calculate placement of CCLabelTTF
                 xOffset += label->getContentSize().width + WORD_SPACING;
+            }
+        }
+        
+        if (lineText->anchorPoint.x != 0) {
+            // move all labels if right or center aligned
+            std::vector<LabelIndex*>::iterator iter;
+            int totalWidth = -WORD_SPACING;
+            for (iter = wordsOfParagraph.begin(); iter != wordsOfParagraph.end(); ++iter)
+            {
+                if ((*iter)->lineIndex == lineNum)
+                {
+                  totalWidth += (*iter)->label->getContentSize().width + WORD_SPACING;
+                }
+            }
+            double delta = -totalWidth * lineText->anchorPoint.x;
+            for (iter = wordsOfParagraph.begin(); iter != wordsOfParagraph.end(); ++iter)
+            {
+                if ((*iter)->lineIndex == lineNum)
+                {
+                    cocos2d::CCPoint position = (*iter)->label->getPosition();
+                    position.x += delta;
+                    (*iter)->label->setPosition(position);
+                }
             }
         }
     }
