@@ -30,7 +30,7 @@ typedef struct lineText
 	int                 yOffset;
 	int                 xOffset;
     std::vector<string> words;
-    
+    cocos2d::CCPoint    anchorPoint;
     std::string         fontType;
     cocos2d::ccColor3B  fontColor;
     cocos2d::ccColor3B  fontHighlightColor;
