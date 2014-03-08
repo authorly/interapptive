@@ -211,6 +211,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3ACBB1E8153D4BF60075EDB2 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ACBB1E7153D4BF60075EDB2 /* arial.ttf */; };
+		46416E3618CB4B0000A31D34 /* Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 46416E3518CB4B0000A31D34 /* Utils.mm */; };
 		46F19B02170B0B0D004DEA51 /* SnowmanGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */; };
 		BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492D4B1289302400A09262 /* OpenGLES.framework */; };
 		BF1373F0128A899500D9F789 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492C21128924A800A09262 /* libxml2.dylib */; };
@@ -892,6 +893,8 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3ACBB1E7153D4BF60075EDB2 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
+		46416E3418CB4A7100A31D34 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		46416E3518CB4B0000A31D34 /* Utils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Utils.mm; sourceTree = "<group>"; };
 		46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnowmanGameScene.cpp; sourceTree = "<group>"; };
 		BF137426128A8E4600D9F789 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF23D4E3143315EB00657E08 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -1698,6 +1701,8 @@
 		BF23D4E2143315EB00657E08 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				46416E3518CB4B0000A31D34 /* Utils.mm */,
+				46416E3418CB4A7100A31D34 /* Utils.h */,
 				BF23D4E3143315EB00657E08 /* AppDelegate.cpp */,
 				BF23D4E4143315EB00657E08 /* AppDelegate.h */,
 				15CFCF521592175200B6DBD7 /* ChipmunkLayer.cpp */,
@@ -1791,6 +1796,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "authorly" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -2238,6 +2245,7 @@
 				154CDE321629B4FD00C3A047 /* CCGL.cpp in Sources */,
 				154CDE341629B4FD00C3A047 /* CCSAXParser.cpp in Sources */,
 				154CDE351629B4FD00C3A047 /* CCStdC.cpp in Sources */,
+				46416E3618CB4B0000A31D34 /* Utils.mm in Sources */,
 				154CDE371629B4FD00C3A047 /* AccelerometerDelegateWrapper.mm in Sources */,
 				154CDE381629B4FD00C3A047 /* CCAccelerometer_ios.mm in Sources */,
 				154CDE391629B4FD00C3A047 /* CCApplication_ios.mm in Sources */,

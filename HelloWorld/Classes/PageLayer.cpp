@@ -6,6 +6,7 @@
 #include "SharedGlobalData.h"
 #include "ChipmunkLayer.h"
 #include "VideoPlayer.h"
+#include "Utils.h"
 
 #include <vector>
 
@@ -13,9 +14,6 @@ using namespace cocos2d;
 using namespace CocosDenshion;
 using namespace std;
 
-// the distance(in points) to determine swipe left or right
-#define TOLERATE_VERTICAL_DISTANCE      150
-#define TOLERATE_HORIZONTAL_DISTANCE    30
 // page layer tag
 #define PARAGRAPH_LAYER_TAG       10
 #define PAGELAYER_HANDLER_PRIORITY 12
@@ -26,6 +24,10 @@ using namespace std;
 #define XSCALE          (GlobalData::sharedGlobalData()->xScale)
 #define YSCALE          (GlobalData::sharedGlobalData()->yScale)
 #define WORD_SPACING    (1.5 * XSCALE)
+
+// the distance(in points) to determine swipe left or right
+static int TOLERATE_HORIZONTAL_DISTANCE = 30 * Utils::getDPI() / 132;
+static int TOLERATE_VERTICAL_DISTANCE = 150 * Utils::getDPI() / 132 ;
 
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
