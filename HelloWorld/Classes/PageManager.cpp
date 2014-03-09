@@ -33,7 +33,7 @@ void PageManager::parseJsonAndRun(const char* pathOfJasonFile)
     mainMenuLayer->autorelease();
     scene->addChild(mainMenuLayer);
     
-    CCDirector::sharedDirector()->runWithScene(scene);
+    CCDirector::sharedDirector()->replaceScene(scene);
 }
 
 void PageManager::gotoMainMenu(void)

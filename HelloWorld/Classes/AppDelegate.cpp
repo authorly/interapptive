@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "CCEGLView.h"
+#include "LoadingLayer.h"
 #include "PageManager.h"
 
 #include "cocos2d.h"
@@ -103,15 +104,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
      //pDirector->enableRetinaDisplay(true);
 
 	// turn on display FPS
-	pDirector->setDisplayFPS(true);
+	pDirector->setDisplayFPS(false);
 
 	// pDirector->setDeviceOrientation(kCCDeviceOrientationLandscapeLeft);
 
 	// set FPS. the default value is 1.0/60 if you don't call this
 	pDirector->setAnimationInterval(1.0 / 60);
-	
-    // parse with json data
-	PageManager::parseJsonAndRun("structure-ipad.json");
+    
+    CCScene *loadingScene = CCScene::node();
+    loadingScene->addChild(LoadingLayer::node());
+    CCDirector::sharedDirector()->runWithScene(loadingScene);
 
 	return true;
 }

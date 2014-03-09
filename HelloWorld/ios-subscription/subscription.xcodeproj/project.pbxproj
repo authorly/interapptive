@@ -210,6 +210,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		46416E3B18CC3D0C00A31D34 /* LoadingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46416E3918CC3D0C00A31D34 /* LoadingLayer.cpp */; };
 		46F19B02170B0B0D004DEA51 /* SnowmanGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */; };
 		BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492D4B1289302400A09262 /* OpenGLES.framework */; };
 		BF1373F0128A899500D9F789 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492C21128924A800A09262 /* libxml2.dylib */; };
@@ -890,6 +891,8 @@
 		1D6058910D05DD3D006BFB54 /* Subscription.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Subscription.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		46416E3918CC3D0C00A31D34 /* LoadingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingLayer.cpp; sourceTree = "<group>"; };
+		46416E3A18CC3D0C00A31D34 /* LoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingLayer.h; sourceTree = "<group>"; };
 		46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnowmanGameScene.cpp; sourceTree = "<group>"; };
 		BF137426128A8E4600D9F789 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF23D4E3143315EB00657E08 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -1743,6 +1746,8 @@
 				1585A157152DC478003E4376 /* TouchObject.h */,
 				15AB5F0815687322007CA061 /* VideoPlayer.h */,
 				15AB5F0A15687351007CA061 /* VideoPlayer.mm */,
+				46416E3918CC3D0C00A31D34 /* LoadingLayer.cpp */,
+				46416E3A18CC3D0C00A31D34 /* LoadingLayer.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -2196,6 +2201,7 @@
 				154CDDF41629B4FD00C3A047 /* CCActionTiledGrid.cpp in Sources */,
 				154CDDF61629B4FD00C3A047 /* CCAtlasNode.cpp in Sources */,
 				154CDDF71629B4FD00C3A047 /* CCNode.cpp in Sources */,
+				46416E3B18CC3D0C00A31D34 /* LoadingLayer.cpp in Sources */,
 				154CDDF81629B4FD00C3A047 /* CCCamera.cpp in Sources */,
 				154CDDF91629B4FD00C3A047 /* CCConfiguration.cpp in Sources */,
 				154CDDFA1629B4FD00C3A047 /* CCDirector.cpp in Sources */,
