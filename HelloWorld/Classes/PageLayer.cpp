@@ -25,10 +25,6 @@ using namespace std;
 #define YSCALE          (GlobalData::sharedGlobalData()->yScale)
 #define WORD_SPACING    (1.5 * XSCALE)
 
-// the distance(in points) to determine swipe left or right
-static int TOLERATE_HORIZONTAL_DISTANCE = 30 * Utils::getDPI() / 132;
-static int TOLERATE_VERTICAL_DISTANCE = 150 * Utils::getDPI() / 132 ;
-
 PageLayer::PageLayer()
 : currentIndexOfParagraph(0)
 , beginPoint(0, 0)
@@ -62,6 +58,12 @@ PageLayer::~PageLayer()
 
 void PageLayer::init(Page *page)
 {
+    // can not define it as static class member variable or macro
+    // or it will crash on android, because in invokes JNI to invoke
+    // java codes.
+    TOLERATE_HORIZONTAL_DISTANCE = 30 * Utils::getDPI() / 132;
+    TOLERATE_VERTICAL_DISTANCE = 150 * Utils::getDPI() / 132;
+    
     if( !CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)) ) //RGBA
     {
         // below line not working

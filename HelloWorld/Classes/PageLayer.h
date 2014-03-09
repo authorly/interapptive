@@ -132,6 +132,10 @@ private:
     bool isPlayingAnimation;
     
     unsigned int touchSoundId;
+    
+    // the distance(in points) to determine swipe left or right
+    int TOLERATE_HORIZONTAL_DISTANCE;
+    int TOLERATE_VERTICAL_DISTANCE;
 };
 
 #endif // __PAGE_LAYER_H__
