@@ -365,43 +365,71 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 		for (unsigned int k = 0; k < linesOfText.size(); ++k)
 		{
 			Json::Value jsonLineText = linesOfText[k];
-			LineText *lineText = new LineText();
-			lineText->text = jsonLineText["text"].asCString();
+            string text = jsonLineText["text"].asCString();
             
-            lineText->xOffset = jsonLineText["xOffset"].asInt() * XSCALE;
-            lineText->yOffset = jsonLineText["yOffset"].asInt() * YSCALE;
+            Json::Value anchorPointValue = jsonLineText["anchorPoint"];
+            int xAnchor = 0, yAnchor = 1;
+            cocos2d::CCPoint anchorPoint = ccp(anchorPointValue[xAnchor].asDouble(), anchorPointValue[yAnchor].asDouble());
 
-            // split text into words
-            page->splitText(lineText);
-            
-            // fontType
-            lineText->fontType = jsonLineText["fontType"].asCString();
-            
-            // fontColor(r,g,b)
-            Json::Value fontColor = jsonLineText["fontColor"];
-            int r = 0, g = 1, b = 2;
-            lineText->fontColor.r = fontColor[r].asUInt();
-            lineText->fontColor.g = fontColor[g].asUInt();
-            lineText->fontColor.b = fontColor[b].asUInt();
-            
-            // font highlight color
-            Json::Value fontHighlightColor = jsonLineText["fontHighlightColor"];
-            lineText->fontHighlightColor.r = fontHighlightColor[r].asUInt();
-            lineText->fontHighlightColor.g = fontHighlightColor[g].asUInt();
-            lineText->fontHighlightColor.b = fontHighlightColor[b].asUInt();
-            
-            // font size
-            lineText->fontSize = jsonLineText["fontSize"].asDouble();
-            if (XSCALE != 1)
-            {
-                if (! Configurations::retainTextScalingRatio)
-                {
-                    // add font size because it will be scaled down
-                    lineText->fontSize += 8;
-                }
+
+            // split text into lines
+            std::vector<string> lines;
+            int startPos = 0;
+            int endPos = text.find('\n', startPos);
+            while (endPos != string::npos) {
+                // exclude \n
+                lines.push_back(text.substr(startPos, endPos - startPos));
+                startPos = endPos + 1;
+                endPos = text.find_first_of('\n', startPos);
             }
-            
-			paragraph->linesOfTest.push_back(lineText);
+            lines.push_back(text.substr(startPos, text.size() - startPos));
+
+            int yInnerOffset = 0;
+            for (int lineNumber = 0; lineNumber < lines.size(); ++lineNumber)
+            {
+                string &line = lines[lineNumber];
+                
+                LineText *lineText = new LineText();
+                lineText->text = line;
+                
+                lineText->xOffset = jsonLineText["xOffset"].asInt() * XSCALE;
+                lineText->yOffset = (jsonLineText["yOffset"].asInt() + yInnerOffset) * YSCALE;
+
+                lineText->anchorPoint = anchorPoint;
+
+                // split text into words
+                page->splitText(lineText);
+                
+                // fontType
+                lineText->fontType = jsonLineText["fontType"].asCString();
+                
+                // fontColor(r,g,b)
+                Json::Value fontColor = jsonLineText["fontColor"];
+                int r = 0, g = 1, b = 2;
+                lineText->fontColor.r = fontColor[r].asUInt();
+                lineText->fontColor.g = fontColor[g].asUInt();
+                lineText->fontColor.b = fontColor[b].asUInt();
+                
+                // font highlight color
+                Json::Value fontHighlightColor = jsonLineText["fontHighlightColor"];
+                lineText->fontHighlightColor.r = fontHighlightColor[r].asUInt();
+                lineText->fontHighlightColor.g = fontHighlightColor[g].asUInt();
+                lineText->fontHighlightColor.b = fontHighlightColor[b].asUInt();
+                
+                // font size
+                lineText->fontSize = jsonLineText["fontSize"].asDouble();
+                yInnerOffset -= lineText->fontSize;
+                if (XSCALE != 1)
+                {
+                    if (! Configurations::retainTextScalingRatio)
+                    {
+                        // add font size because it will be scaled down
+                        lineText->fontSize += 8;
+                    }
+                }
+                
+                paragraph->linesOfTest.push_back(lineText);
+            }
 		}
         
         // hotspots
