@@ -767,7 +767,8 @@ void PageLayer::addParagraphText(int index)
             CCLabelTTF *label = CCLabelTTF::labelWithString(word.c_str(), fontName, fontSize);
             
             label->setColor(*fontColor);
-            label->setAnchorPoint(ccp(0.0f, 1.0f));
+            // 0.85 seems the right anchor point to display the text the same as in the web editor @dira 2014/03/14
+            label->setAnchorPoint(ccp(0.0f, 0.85f));
             label->setPosition(ccp(xOffset, yOffset));
             
             // record label in a vector, don't have to retain it
