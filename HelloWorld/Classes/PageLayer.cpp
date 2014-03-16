@@ -58,27 +58,25 @@ PageLayer::~PageLayer()
 
 void PageLayer::init(Page *page)
 {
+
     // can not define it as static class member variable or macro
     // or it will crash on android, because in invokes JNI to invoke
     // java codes.
     TOLERATE_HORIZONTAL_DISTANCE = 30 * Utils::getDPI() / 132;
     TOLERATE_VERTICAL_DISTANCE = 150 * Utils::getDPI() / 132;
     
-    if( !CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)) ) //RGBA
-    {
-        // below line not working
-        // return false;
-    }
+    CCLayerColor::initWithColor(ccc4(255, 255, 255, 255));
         
     this->page = page;
+    // Optimize: not preload effects and music
     
-    // preload backgound music
-    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(page->settings.audioFilePath.c_str());
-    // preload effect used to speak paragraph
-    for (int i = 0; i < page->paragraphs.size(); ++i)
-    {
-        SimpleAudioEngine::sharedEngine()->preloadEffect(page->paragraphs[i]->voiceAudioFile.c_str());
-    }
+//    // preload backgound music
+//    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(page->settings.audioFilePath.c_str());
+//    // preload effect used to speak paragraph
+//    for (int i = 0; i < page->paragraphs.size(); ++i)
+//    {
+//        SimpleAudioEngine::sharedEngine()->preloadEffect(page->paragraphs[i]->voiceAudioFile.c_str());
+//    }
     
     this->delayOfAnimation = this->calculateDelayTimeOnEnter();
     if (this->delayOfAnimation > 0)
