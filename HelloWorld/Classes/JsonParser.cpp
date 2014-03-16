@@ -1009,6 +1009,7 @@ void JsonParser::parseWithSprites(Page *page, Json::Value &value)
 			}
 			
 			page->sprites.push_back(spriteInfo);
+            page->images.push_back(spriteInfo->image);
 		}
 	}
 }

@@ -133,8 +133,10 @@ public:
 
 	// sprites in the scene
 	std::vector<SpriteInfo*> sprites;
+    
+    std::vector<string> images;
 
-	// actions 
+	// actions
 	// CCTimer doesn't have target and handler
 	std::map<int, cocos2d::CCAction*> actions;
 

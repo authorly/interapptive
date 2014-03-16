@@ -10,6 +10,7 @@
 #include "MyScene.h"
 #include "MyPageTurn.h"
 #include "VideoPlayer.h"
+#include "DataLoader.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -77,11 +78,13 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
         // turn page
         CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
         CCTextureCache::sharedTextureCache()->removeAllTextures();
-#else
-        CCTextureCache::sharedTextureCache()->removeUnusedTextures();
-#endif
+        int nextPageNumber = GlobalData::sharedGlobalData()->currentPageNumber + 1;
+        if (nextPageNumber < pages.size())
+        {
+            
+            DataLoader::loadAssetsAsync(nextPageNumber);
+        }
         
         // play effect
         if (backWards)

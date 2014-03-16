@@ -17,10 +17,8 @@ public:
 	static cocos2d::CCScene* createSceneByPageNumber(int pageNumber);
     static void turnToPage(int pageNumber, bool backWards);
     static void gotoMainMenu(void);
-    
-private:
 	
-private:
+public:
 	// key: page number 
 	static std::map<int, Page*> pages;
 

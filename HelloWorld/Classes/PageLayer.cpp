@@ -61,21 +61,18 @@ PageLayer::~PageLayer()
 
 void PageLayer::init(Page *page)
 {
-    if( !CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)) ) //RGBA
-    {
-        // below line not working
-        // return false;
-    }
+    CCLayerColor::initWithColor(ccc4(255, 255, 255, 255));
         
     this->page = page;
+    // Optimize: not preload effects and music
     
-    // preload backgound music
-    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(page->settings.audioFilePath.c_str());
-    // preload effect used to speak paragraph
-    for (int i = 0; i < page->paragraphs.size(); ++i)
-    {
-        SimpleAudioEngine::sharedEngine()->preloadEffect(page->paragraphs[i]->voiceAudioFile.c_str());
-    }
+//    // preload backgound music
+//    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(page->settings.audioFilePath.c_str());
+//    // preload effect used to speak paragraph
+//    for (int i = 0; i < page->paragraphs.size(); ++i)
+//    {
+//        SimpleAudioEngine::sharedEngine()->preloadEffect(page->paragraphs[i]->voiceAudioFile.c_str());
+//    }
     
     this->delayOfAnimation = this->calculateDelayTimeOnEnter();
     if (this->delayOfAnimation > 0)
