@@ -82,8 +82,7 @@ void PageLayer::init(Page *page)
                         CCCallFunc::actionWithTarget(this, callfunc_selector(PageLayer::animationDelayCallback)),
                         NULL));
     }
-    
-    createSprites();
+
     createPhysicsLayer();
 	createParagraph(0);
     
@@ -105,6 +104,8 @@ bool PageLayer::canSwipe()
 void PageLayer::onEnter()
 {
     addStoryTouchNode();
+    
+    createSprites();
     
     setIsTouchEnabled(true);
     

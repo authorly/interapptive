@@ -5,6 +5,7 @@ class DeviceType
 {
 public:
     static bool isIphone4S();
+    static bool isIpad1();
 };
 
 #endif
