@@ -90,8 +90,7 @@ void PageLayer::init(Page *page)
         // should skip this action to invoke animationDelayCallback() to set "isPlayingAnimation" to false
         addActionsToBeSkipped(seq);
     }
-    
-    createSprites();
+
     createPhysicsLayer();
 	createParagraph(0);
     
@@ -107,6 +106,8 @@ void PageLayer::animationDelayCallback(cocos2d::CCObject *sender)
 void PageLayer::onEnter()
 {
     addStoryTouchNode();
+    
+    createSprites();
     
     setIsTouchEnabled(true);
     

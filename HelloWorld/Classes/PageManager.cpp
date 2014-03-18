@@ -2,7 +2,6 @@
 #include "JsonParser.h"
 #include "cocos2d.h"
 #include "PageLayer.h"
-#include "cocos2d.h"
 #include "SimpleAudioEngine.h"
 #include "Configurations.h"
 #include "MainMenuLayer.h"
@@ -11,6 +10,7 @@
 #include "MyPageTurn.h"
 #include "VideoPlayer.h"
 #include "DataLoader.h"
+#include "platform/DeviceType.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -73,17 +73,27 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
     SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
 
     CCScene *scene = createSceneByPageNumber(pageNumber);
+    CCTextureCache::sharedTextureCache()->removeAllTextures();
     if (scene)
     {
-        // turn page
-        CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
+        if (DeviceType::isIpad1())
+        {
+            // turn page
+            CCDirector::sharedDirector()->replaceScene(scene);
+        }
+        else
+        {
+            // turn page
+            CCDirector::sharedDirector()->replaceScene(CCTransitionPageTurn::transitionWithDuration(Configurations::pageFlipTransitionDuration, scene, backWards));
+        }
+        
 
-        CCTextureCache::sharedTextureCache()->removeAllTextures();
+        
         int nextPageNumber = GlobalData::sharedGlobalData()->currentPageNumber + 1;
         if (nextPageNumber < pages.size())
         {
             
-            DataLoader::loadAssetsAsync(nextPageNumber);
+//            DataLoader::loadAssetsAsync(nextPageNumber);
         }
         
         // play effect
