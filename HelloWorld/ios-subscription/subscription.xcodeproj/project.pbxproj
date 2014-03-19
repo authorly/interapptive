@@ -220,6 +220,7 @@
 		BF365AA812A103F70050DCF4 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF365AA712A103F70050DCF4 /* AppController.mm */; };
 		BF4DE6AD138BB89600CF907D /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF4DE6AC138BB89600CF907D /* RootViewController.mm */; };
 		D4ABB4B313B4395300552E6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ABB4B213B4395300552E6E /* main.m */; };
+		DC10C8E018DA1B1100F2BA9A /* background-wood.png in Resources */ = {isa = PBXBuildFile; fileRef = DC10C8DF18DA1B1100F2BA9A /* background-wood.png */; };
 		DCF47DB2178D0D2400D0DC4C /* structure-ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */; };
 /* End PBXBuildFile section */
 
@@ -905,6 +906,7 @@
 		BF4DE6AB138BB89600CF907D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BF4DE6AC138BB89600CF907D /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
 		D4ABB4B213B4395300552E6E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC10C8DF18DA1B1100F2BA9A /* background-wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-wood.png"; sourceTree = "<group>"; };
 		DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "structure-ipad.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1689,6 +1691,7 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DC10C8DF18DA1B1100F2BA9A /* background-wood.png */,
 				DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */,
 			);
 			name = Resources;
@@ -2087,6 +2090,7 @@
 				159FDC1415C535E30064CCAF /* cmake_clean.cmake in Resources */,
 				159FDC1515C535E30064CCAF /* depend.internal in Resources */,
 				159FDC1615C535E30064CCAF /* depend.make in Resources */,
+				DC10C8E018DA1B1100F2BA9A /* background-wood.png in Resources */,
 				159FDC1715C535E30064CCAF /* DependInfo.cmake in Resources */,
 				159FDC1815C535E30064CCAF /* flags.make in Resources */,
 				159FDC1915C535E30064CCAF /* link.txt in Resources */,
