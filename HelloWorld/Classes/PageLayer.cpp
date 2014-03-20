@@ -111,6 +111,9 @@ void PageLayer::onEnter()
     
     setIsTouchEnabled(true);
     
+    // play effect
+    SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
+    
     CCLayer::onEnter();
 }
 
