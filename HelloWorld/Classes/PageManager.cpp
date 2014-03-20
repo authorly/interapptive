@@ -96,16 +96,6 @@ void PageManager::turnToPage(int pageNumber, bool backWards)
 //            DataLoader::loadAssetsAsync(nextPageNumber);
         }
         
-        // play effect
-        if (backWards)
-        {
-            SimpleAudioEngine::sharedEngine()->playEffect(Configurations::backwardEffect.c_str(), false);
-        }
-        else
-        {
-            SimpleAudioEngine::sharedEngine()->playEffect(Configurations::forwardEffect.c_str(), false);
-        }
-        
         GlobalData::sharedGlobalData()->save();
     }
 }
