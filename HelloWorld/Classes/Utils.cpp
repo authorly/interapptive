@@ -20,7 +20,7 @@ int Utils::getDPI()
     if (JniHelper::getStaticMethodInfo(methodInfo, 
                                        "org/cocos2dx/lib/Cocos2dxActivity",
                                        "getDPI",
-                                       "(V)I")
+                                       "()I")
         )
     {
         // invoke java method
