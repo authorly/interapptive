@@ -907,6 +907,7 @@
 		BF4DE6AC138BB89600CF907D /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
 		D4ABB4B213B4395300552E6E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC10C8DF18DA1B1100F2BA9A /* background-wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-wood.png"; sourceTree = "<group>"; };
+		DC54A7C718DADCC10022D748 /* SubscriptionApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubscriptionApp.h; sourceTree = "<group>"; };
 		DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "structure-ipad.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1751,6 +1752,7 @@
 				15AB5F0A15687351007CA061 /* VideoPlayer.mm */,
 				46416E3918CC3D0C00A31D34 /* LoadingLayer.cpp */,
 				46416E3A18CC3D0C00A31D34 /* LoadingLayer.h */,
+				DC54A7C718DADCC10022D748 /* SubscriptionApp.h */,
 			);
 			name = Classes;
 			path = ../Classes;

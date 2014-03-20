@@ -112,7 +112,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	pDirector->setAnimationInterval(1.0 / 60);
     
     CCScene *loadingScene = CCScene::node();
-    loadingScene->addChild(LoadingLayer::node());
+    CCLayer * pLayer = new LoadingLayer();
+    pLayer->autorelease();
+    
+    loadingScene->addChild(pLayer);
     CCDirector::sharedDirector()->runWithScene(loadingScene);
 
 	return true;
