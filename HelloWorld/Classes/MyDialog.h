@@ -24,5 +24,12 @@ private:
     void *internalObject;
 };
 
+class Login
+{
+public:
+    Login();
+    void popUp();
+};
+
 
 #endif

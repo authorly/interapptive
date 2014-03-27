@@ -9,6 +9,7 @@
 #include "LoadingLayer.h"
 #include "PageManager.h"
 #include "SubscriptionApp.h"
+#include "MyDialog.h"
 
 using namespace cocos2d;
 
@@ -90,5 +91,8 @@ void LoadingLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 
 void LoadingLayer::buttonClicked(CCObject *sender)
 {
-    PageManager::parseJsonAndRun("structure-ipad.json");
+    Login *login = new Login();
+    login->popUp();
+    
+//    PageManager::parseJsonAndRun("structure-ipad.json");
 }
