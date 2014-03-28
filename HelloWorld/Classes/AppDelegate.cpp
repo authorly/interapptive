@@ -1,7 +1,6 @@
 #include "AppDelegate.h"
 #include "CCEGLView.h"
-#include "LoadingLayer.h"
-#include "PageManager.h"
+#include "LoginLayer.h"
 
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
@@ -111,12 +110,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	// set FPS. the default value is 1.0/60 if you don't call this
 	pDirector->setAnimationInterval(1.0 / 60);
     
-    CCScene *loadingScene = CCScene::node();
-    CCLayer * pLayer = new LoadingLayer();
-    pLayer->autorelease();
-    
-    loadingScene->addChild(pLayer);
-    CCDirector::sharedDirector()->runWithScene(loadingScene);
+    CCScene *loginScene = CCScene::node();
+    CCLayer *loginLayer = new LoginLayer();
+    loginScene->addChild(loginLayer);
+    CCDirector::sharedDirector()->runWithScene(loginScene);
 
 	return true;
 }

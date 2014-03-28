@@ -123,8 +123,14 @@ void MyDialog::popUp()
 
 - (void)buttonClicked
 {
-    NSLog(@"user name is %@", userNameFeild.text);
-    NSLog(@"password is %@", passWordFeild.text);
+    [self.view removeFromSuperview];
+    [self release];
+    
+    LoginProtocol *loginDelegate = Login::sharedLogin()->getDelegate();
+    if (loginDelegate)
+    {
+        loginDelegate->buttonClicked([userNameFeild.text UTF8String], [passWordFeild.text UTF8String]);
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -262,9 +268,30 @@ void MyDialog::popUp()
 
 @end
 
-Login::Login()
+Login* Login::instance = NULL;
+
+Login* Login::sharedLogin()
+{
+    if (!instance)
+    {
+        instance = new Login();
+    }
+    return instance;
+}
+
+Login::Login() : delegate(NULL)
 {
     
+}
+
+void Login::setDelegate(LoginProtocol *delegate)
+{
+    this->delegate = delegate;
+}
+
+LoginProtocol* Login::getDelegate()
+{
+    return delegate;
 }
 
 void Login::popUp()

@@ -1,11 +1,3 @@
-//
-//  LoadingScene.h
-//  subscription
-//
-//  Created by minggo on 3/9/14.
-//
-//
-
 #ifndef __subscription__LoadingScene__
 #define __subscription__LoadingScene__
 

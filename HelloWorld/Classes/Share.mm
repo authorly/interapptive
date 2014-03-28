@@ -1,11 +1,3 @@
-//
-//  ShareOnFacebook.cpp
-//  interapptive
-//
-//  Created by minggo on 12-9-24.
-//
-//
-
 #include "Share.h"
 #include "cocos2d.h"
 #import "SHKItem.h"

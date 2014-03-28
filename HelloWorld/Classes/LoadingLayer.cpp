@@ -1,11 +1,3 @@
- //
-//  LoadingScene.cpp
-//  subscription
-//
-//  Created by minggo on 3/9/14.
-//
-//
-
 #include "LoadingLayer.h"
 #include "PageManager.h"
 #include "SubscriptionApp.h"
@@ -91,8 +83,5 @@ void LoadingLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 
 void LoadingLayer::buttonClicked(CCObject *sender)
 {
-    Login *login = new Login();
-    login->popUp();
-    
-//    PageManager::parseJsonAndRun("structure-ipad.json");
+    PageManager::parseJsonAndRun("structure-ipad.json");
 }
