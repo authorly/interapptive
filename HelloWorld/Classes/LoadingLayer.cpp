@@ -44,14 +44,14 @@ LoadingLayer::LoadingLayer()
     // Create menu
     m_menu = CCMenu::node();
     m_menu->setPosition(ccp(0,0));
-    addChild(m_menu);
+    addChild(m_menu, 100000);
     
     // Book covers on bookshelf
     // Iterates through an array of strings created in Subscription.h
     for (int i = 0; i < BOOK_COUNT; ++i)
     {
         // Add book spacing value to book width for positioning each book
-        if(i%3 == 0){
+        if(i % 3 == 0){
             bookPositionX = bookPositionX + BOOK_SPACING;
         } else {
             bookPositionX = bookPositionX + BOOK_WIDTH + BOOK_SPACING;
@@ -72,7 +72,7 @@ LoadingLayer::LoadingLayer()
         bookCover->setAnchorPoint(ccp(0,0));
         
         // Add created menu item to the menu
-        m_menu->addChild(bookCover, 10);
+        m_menu->addChild(bookCover, 0);
         
         // Make a new row for books
         if ((i+1) % 3 == 0) {

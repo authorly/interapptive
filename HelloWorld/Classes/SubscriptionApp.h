@@ -13,7 +13,7 @@
 #include <sstream>
 
 enum {
-    BOOK_COUNT = 23,
+    BOOK_COUNT = 22,
     BOOK_WIDTH = 300,
     BOOK_SPACING = 30
 };
@@ -23,7 +23,6 @@ const std::string g_bookTitles[BOOK_COUNT] = {
     "CalebsBirthdayWish",
     "MrHubbardsHeart",
     "JackTheBurnBoy",
-    "MrHubbardsHeart",
     "PowerOfThePenny",
     "StormyTheRaincloud",
     "WhereHasPollyGone",

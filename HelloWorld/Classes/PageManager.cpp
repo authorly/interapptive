@@ -10,6 +10,7 @@
 #include "MyScene.h"
 #include "MyPageTurn.h"
 #include "VideoPlayer.h"
+#include "LoadingLayer.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -51,6 +52,22 @@ void PageManager::gotoMainMenu(void)
     CCTextureCache::sharedTextureCache()->removeUnusedTextures();
     // Causes crash
     // SimpleAudioEngine::sharedEngine()->end();
+}
+
+void PageManager::gotoBookList(void)
+{
+    // stop background music and effects
+    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    
+    CCScene *scene = CCScene::node();
+    LoadingLayer *loadingLayer = new LoadingLayer();
+    loadingLayer->autorelease();
+    
+    scene->addChild(loadingLayer);
+    
+    CCDirector::sharedDirector()->replaceScene(scene);
+    CCTextureCache::sharedTextureCache()->removeUnusedTextures();
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)
