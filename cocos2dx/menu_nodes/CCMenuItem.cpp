@@ -512,7 +512,7 @@ namespace cocos2d{
         setNormalImage(normalSprite);
         setSelectedImage(selectedSprite);
         setDisabledImage(disabledSprite);
-        
+         
         this->setContentSize(m_pNormalImage->getContentSize());
         return true;
     }

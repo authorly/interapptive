@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>60C01A8F-33EE-4A41-8747-548BD3DDBC6D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>test</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D749E911-8EAA-45F1-BA1F-D2FD44420899</key>
+		<string>https://github.com/authorly/interapptive.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>tests/test.ios/test.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D749E911-8EAA-45F1-BA1F-D2FD44420899</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/authorly/interapptive.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D749E911-8EAA-45F1-BA1F-D2FD44420899</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D749E911-8EAA-45F1-BA1F-D2FD44420899</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Crucible</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -220,6 +220,7 @@
 		BF365AA812A103F70050DCF4 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF365AA712A103F70050DCF4 /* AppController.mm */; };
 		BF4DE6AD138BB89600CF907D /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF4DE6AC138BB89600CF907D /* RootViewController.mm */; };
 		D4ABB4B313B4395300552E6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ABB4B213B4395300552E6E /* main.m */; };
+		DC0F365718E825BC0050FE0D /* LoadingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0F365518E825BC0050FE0D /* LoadingLayer.cpp */; };
 		DCF47DB2178D0D2400D0DC4C /* structure-ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */; };
 /* End PBXBuildFile section */
 
@@ -904,6 +905,9 @@
 		BF4DE6AB138BB89600CF907D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BF4DE6AC138BB89600CF907D /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
 		D4ABB4B213B4395300552E6E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC0F365518E825BC0050FE0D /* LoadingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingLayer.cpp; sourceTree = "<group>"; };
+		DC0F365618E825BC0050FE0D /* LoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingLayer.h; sourceTree = "<group>"; };
+		DC0F367918E826150050FE0D /* SubscriptionApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscriptionApp.h; sourceTree = "<group>"; };
 		DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "structure-ipad.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1698,6 +1702,9 @@
 		BF23D4E2143315EB00657E08 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DC0F367918E826150050FE0D /* SubscriptionApp.h */,
+				DC0F365518E825BC0050FE0D /* LoadingLayer.cpp */,
+				DC0F365618E825BC0050FE0D /* LoadingLayer.h */,
 				BF23D4E3143315EB00657E08 /* AppDelegate.cpp */,
 				BF23D4E4143315EB00657E08 /* AppDelegate.h */,
 				15CFCF521592175200B6DBD7 /* ChipmunkLayer.cpp */,
@@ -1791,7 +1798,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "authorly" */;
+			attributes = {
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Authorly" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -2157,6 +2166,7 @@
 				155E6C1B159DF5ED006734D2 /* GCpShapeCache.cpp in Sources */,
 				1561F3F115BD84F100C6F4B5 /* MyPageTurn.cpp in Sources */,
 				159FDB3315C527760064CCAF /* cpSprite.cpp in Sources */,
+				DC0F365718E825BC0050FE0D /* LoadingLayer.cpp in Sources */,
 				159FDC1115C535E30064CCAF /* chipmunk.c in Sources */,
 				159FDC2815C535E30064CCAF /* cpConstraint.c in Sources */,
 				159FDC2915C535E30064CCAF /* cpDampedRotarySpring.c in Sources */,
@@ -2524,7 +2534,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "authorly" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Authorly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
