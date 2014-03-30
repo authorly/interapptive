@@ -44,7 +44,7 @@ LoadingLayer::LoadingLayer()
     // Create menu
     m_menu = CCMenu::node();
     m_menu->setPosition(ccp(0,0));
-    addChild(m_menu, 100000);
+    addChild(m_menu);
     
     // Book covers on bookshelf
     // Iterates through an array of strings created in Subscription.h
