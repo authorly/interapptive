@@ -88,11 +88,14 @@ void MyDialog::popUp()
     UITableView *mainLoginInfo;
     UITextField *userNameFeild;
     UITextField *passWordFeild;
+    NSString *initUserName;
+    NSString *initPassword;
 }
 @property(nonatomic, retain) UITextField *userNameFeild;
 @property(nonatomic, retain) UITextField *passWordFeild;
 
 - (void) buttonClicked;
+- (id) initWithUsername:(NSString *)userName password:(NSString *)password;
 
 @end
 
@@ -107,8 +110,20 @@ void MyDialog::popUp()
     
     [userNameFeild release];
     [passWordFeild release];
+    [initUserName release];
+    [initPassword release];
     [super dealloc];
     
+}
+
+- (id) initWithUsername:(NSString *)userName password:(NSString *)password {
+    self = [super init];
+    initUserName = userName;
+    [initUserName retain];
+    initPassword = password;
+    [initPassword retain];
+    
+    return self;
 }
 
 - (void)viewDidUnload
@@ -140,7 +155,6 @@ void MyDialog::popUp()
     userNameFeild.text = @"";
     passWordFeild.text = @"";
 }
-
 
 - (void)viewDidLoad
 {
@@ -220,6 +234,7 @@ void MyDialog::popUp()
             userNameFeild.textColor = [UIColor blueColor];
             userNameFeild.clearButtonMode  = UITextFieldViewModeAlways;
             userNameFeild.delegate = self;
+            userNameFeild.text = initUserName;
             userNameFeild.font = [UIFont fontWithName:@"Helvetica" size:14.0];
             [cell.contentView addSubview:userNameFeild];
             break;
@@ -231,6 +246,7 @@ void MyDialog::popUp()
             passWordFeild.clearButtonMode = UITextFieldViewModeAlways;
             passWordFeild.secureTextEntry = YES;
             passWordFeild.delegate = self;
+            passWordFeild.text = initPassword;
             passWordFeild.font = [UIFont fontWithName:@"Helvetica" size:14.0];
             [cell.contentView addSubview:passWordFeild];
             
@@ -268,6 +284,8 @@ void MyDialog::popUp()
 
 @end
 
+static LoginViewController *g_loginViewController = NULL;
+
 Login* Login::instance = NULL;
 
 Login* Login::sharedLogin()
@@ -294,8 +312,20 @@ LoginProtocol* Login::getDelegate()
     return delegate;
 }
 
-void Login::popUp()
+void Login::popUp(const char* userName, const char* password)
 {
-    LoginViewController *viewContorller =  [[LoginViewController alloc] init];
+    LoginViewController *viewContorller =  [[LoginViewController alloc] initWithUsername:[NSString stringWithUTF8String:userName ] password:[NSString stringWithUTF8String:password]];
+    g_loginViewController = viewContorller;
     [[EAGLView sharedEGLView] addSubview:viewContorller.view];
 }
+
+void Login::hide()
+{
+    if (g_loginViewController)
+    {
+        [g_loginViewController.view removeFromSuperview];
+        [g_loginViewController release];
+        g_loginViewController = NULL;
+    }
+}
+

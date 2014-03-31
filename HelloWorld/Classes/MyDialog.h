@@ -34,7 +34,8 @@ class Login
 {
 public:
     static Login* sharedLogin();
-    void popUp();
+    void popUp(const char *userName, const char* password);
+    void hide();
     void setDelegate(LoginProtocol * delegate);
     LoginProtocol* getDelegate();
 private:
