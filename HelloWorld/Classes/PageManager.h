@@ -17,6 +17,7 @@ public:
 	static cocos2d::CCScene* createSceneByPageNumber(int pageNumber);
     static void turnToPage(int pageNumber, bool backWards);
     static void gotoMainMenu(void);
+    static void gotoBookList(void);
     
 private:
 	

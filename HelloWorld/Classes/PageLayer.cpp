@@ -676,6 +676,7 @@ void PageLayer::mainMenuItemCallback(CCObject *sender)
     vector<string> items;
     items.push_back("Yes");
     items.push_back("No");
+    items.push_back("Exit Book");
     
     mydialog = new MyDialog();
     mydialog->initWithItems("Go to main menu?", items, this);
@@ -687,6 +688,8 @@ void PageLayer::buttonClicked(int index)
     if (index == 0)
     {
         PageManager::gotoMainMenu();
+    } else if (index == 2) {
+        PageManager::gotoBookList();
     }
 }
 
