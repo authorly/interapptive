@@ -17,15 +17,17 @@
 using namespace cocos2d;
 
 
-int bookPositionX = 0;
-int bookPositionY = 305;
-bool isLastBookOfRow = false;
+int bookPositionX,
+    bookPositionY;
 
 static CCPoint s_tCurPos = CCPointZero;
 
 LoadingLayer::LoadingLayer()
 : m_tBeginPos(CCPointZero)
 {
+    bookPositionX = 0;
+    bookPositionY = 305;
+    
     setIsTouchEnabled(true);
     
     // Create repeatable background from texture
