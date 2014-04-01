@@ -11,8 +11,9 @@ class LoadingLayer : public cocos2d::CCLayer
 public:
     LoadingLayer();
     
-    virtual void ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent);
-    virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
+    virtual bool ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+    virtual void ccTouchMoved(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent);
+    virtual void registerWithTouchDispatcher();
     
     void buttonClicked(cocos2d::CCObject *sender);
     

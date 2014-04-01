@@ -15,7 +15,52 @@
 #include "SubscriptionApp.h"
 #include "MyDialog.h"
 
+#define DISTANCE_OF_TO
+
 using namespace cocos2d;
+
+class MyMenu : public CCMenu
+{
+public:
+    static MyMenu* node()
+    {
+        MyMenu *ret = new MyMenu();
+        ret->autorelease();
+        return ret;
+    }
+    
+    MyMenu()
+    {
+        init();
+    }
+    
+    virtual bool ccTouchBegan(CCTouch* touch, CCEvent* event)
+    {
+        beginPos = touch->locationInView( touch->view() );
+        beginPos = CCDirector::sharedDirector()->convertToGL( beginPos );
+        
+        return CCMenu::ccTouchBegan(touch, event);
+    }
+    
+    virtual void ccTouchEnded(CCTouch* touch, CCEvent* event)
+    {
+        CCPoint endPos = touch->locationInView(touch->view());
+        endPos = CCDirector::sharedDirector()->convertToGL(endPos);
+        
+        if (fabs(endPos.y - beginPos.y) > 20)
+        {
+            m_eState = kCCMenuStateWaiting;
+            return;
+        }
+        else
+        {
+            CCMenu::ccTouchEnded(touch, event);
+        }
+    }
+    
+private:
+    CCPoint beginPos;
+};
 
 
 int bookPositionX,
@@ -45,7 +90,7 @@ LoadingLayer::LoadingLayer()
     addChild(m_bgSprite);
     
     // Create menu
-    m_menu = CCMenu::node();
+    m_menu = MyMenu::node();
     m_menu->setPosition(ccp(0,0));
     addChild(m_menu);
     
@@ -85,21 +130,23 @@ LoadingLayer::LoadingLayer()
     }
 }
 
-void LoadingLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
+void LoadingLayer::registerWithTouchDispatcher()
 {
-    CCSetIterator iterator = pTouches->begin();
-    CCTouch* touch = (CCTouch*)(*iterator);
-    
-    m_tBeginPos = touch->locationInView(touch->view());
-    m_tBeginPos = CCDirector::sharedDirector()->convertToGL(m_tBeginPos);
+    CCTouchDispatcher::sharedDispatcher()->addTargetedDelegate(this, kCCMenuTouchPriority - 1, false);
 }
 
-void LoadingLayer::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
+bool LoadingLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
-    CCSetIterator iterator = pTouches->begin();
-    CCTouch* touch = (CCTouch*)(*iterator);
+
+    m_tBeginPos = pTouch->locationInView(pTouch->view());
+    m_tBeginPos = CCDirector::sharedDirector()->convertToGL(m_tBeginPos);
     
-    CCPoint touchLocation = touch->locationInView( touch->view() );
+    return true;
+}
+
+void LoadingLayer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+{
+    CCPoint touchLocation = pTouch->locationInView( pTouch->view() );
     touchLocation = CCDirector::sharedDirector()->convertToGL( touchLocation );
     float nMoveY = touchLocation.y - m_tBeginPos.y;
     
