@@ -119,6 +119,12 @@ LoadingLayer::LoadingLayer()
                                    bookPositionY * cocos2d::CCDirector::sharedDirector()->getXScale()));
         bookCover->setAnchorPoint(ccp(0,0));
         
+        // Give sprite a tag that correlates with books index value from global array (g_bookTitles[])
+        // So we can access the title from its tag later
+        bookCover->setTag(i);
+        
+        
+        
         // Add created menu item to the menu
         m_menu->addChild(bookCover, 0);
         
@@ -174,5 +180,15 @@ void LoadingLayer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 
 void LoadingLayer::buttonClicked(CCObject *sender)
 {
-    PageManager::parseJsonAndRun("structure-ipad.json");
+    // Find which storybook was clicked by its tag.
+    // The tag is it's index in the global array of book titles (g_bookTitles)
+    CCMenuItem* pMenuItem = (CCMenuItem *)(sender);
+    int tag = (int)pMenuItem->getTag();
+    
+    // Concatenate book title with JSON file extension
+    std::stringstream jsonLocationStream;
+    jsonLocationStream << g_bookTitles[tag].c_str() << ".json";
+    std::string jsonLocation = jsonLocationStream.str();
+
+    PageManager::parseJsonAndRun(jsonLocation.c_str());
 }

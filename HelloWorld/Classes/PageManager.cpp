@@ -63,11 +63,12 @@ void PageManager::gotoBookList(void)
     CCScene *scene = CCScene::node();
     LoadingLayer *loadingLayer = new LoadingLayer();
     loadingLayer->autorelease();
-    
     scene->addChild(loadingLayer);
     
     CCDirector::sharedDirector()->replaceScene(scene);
     CCTextureCache::sharedTextureCache()->removeUnusedTextures();
+    // Causes crash
+    // SimpleAudioEngine::sharedEngine()->end();
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)

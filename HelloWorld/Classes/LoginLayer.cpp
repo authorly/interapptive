@@ -24,7 +24,7 @@ LoginLayer::LoginLayer()
     // FIX ME: add a button to pass login section
     CCLabelTTF *label = CCLabelTTF::labelWithString("go to bookshelf", "Arial", 30);
     CCMenuItemLabel *item = CCMenuItemLabel::itemWithLabel(label, this, menu_selector(LoginLayer::goToBookshelf));
-    item->setPosition(ccp(100, 50));
+    item->setPosition(ccp(200, 50));
     CCMenu *menu = CCMenu::menuWithItem(item);
     menu->setPosition(ccp(0, 0));
     addChild(menu);
