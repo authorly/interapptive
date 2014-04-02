@@ -13,6 +13,8 @@
 #define YSCALE      (GlobalData::sharedGlobalData()->yScale)
 #define MIN_SCALE   (GlobalData::sharedGlobalData()->minScale)
 
+#define HAS_LOGINED     "hasLogined"
+
 class GlobalData
 {
 public:

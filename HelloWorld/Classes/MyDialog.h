@@ -24,5 +24,26 @@ private:
     void *internalObject;
 };
 
+class LoginProtocol
+{
+public:
+    virtual void buttonClicked(const char* userName, const char* password) = 0;
+};
+
+class Login
+{
+public:
+    static Login* sharedLogin();
+    void popUp(const char *userName, const char* password);
+    void hide();
+    void setDelegate(LoginProtocol * delegate);
+    LoginProtocol* getDelegate();
+private:
+    Login();
+    
+    static Login* instance;
+    LoginProtocol* delegate;
+};
+
 
 #endif

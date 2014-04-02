@@ -211,6 +211,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		46416E3B18CC3D0C00A31D34 /* LoadingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46416E3918CC3D0C00A31D34 /* LoadingLayer.cpp */; };
+		46C02E1118E9B4F2004B7456 /* LoginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46C02E0F18E9B4F2004B7456 /* LoginLayer.cpp */; };
+		46C02E3418E9B549004B7456 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C02E3318E9B549004B7456 /* libcurl.a */; };
 		46F19B02170B0B0D004DEA51 /* SnowmanGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */; };
 		BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492D4B1289302400A09262 /* OpenGLES.framework */; };
 		BF1373F0128A899500D9F789 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492C21128924A800A09262 /* libxml2.dylib */; };
@@ -894,6 +896,9 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		46416E3918CC3D0C00A31D34 /* LoadingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingLayer.cpp; sourceTree = "<group>"; };
 		46416E3A18CC3D0C00A31D34 /* LoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingLayer.h; sourceTree = "<group>"; };
+		46C02E0F18E9B4F2004B7456 /* LoginLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginLayer.cpp; sourceTree = "<group>"; };
+		46C02E1018E9B4F2004B7456 /* LoginLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginLayer.h; sourceTree = "<group>"; };
+		46C02E3318E9B549004B7456 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnowmanGameScene.cpp; sourceTree = "<group>"; };
 		BF137426128A8E4600D9F789 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF23D4E3143315EB00657E08 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -916,6 +921,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46C02E3418E9B549004B7456 /* libcurl.a in Frameworks */,
 				154CD4D01629B1D200C3A047 /* CoreFoundation.framework in Frameworks */,
 				154CD4CE1629B1A800C3A047 /* Twitter.framework in Frameworks */,
 				154CD4CC1629B18E00C3A047 /* CoreLocation.framework in Frameworks */,
@@ -1678,6 +1684,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46C02E3318E9B549004B7456 /* libcurl.a */,
 				BF492B6912891AC600A09262 /* libz.dylib */,
 				BF137426128A8E4600D9F789 /* QuartzCore.framework */,
 				BF492D4B1289302400A09262 /* OpenGLES.framework */,
@@ -1702,6 +1709,8 @@
 		BF23D4E2143315EB00657E08 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				46C02E0F18E9B4F2004B7456 /* LoginLayer.cpp */,
+				46C02E1018E9B4F2004B7456 /* LoginLayer.h */,
 				BF23D4E3143315EB00657E08 /* AppDelegate.cpp */,
 				BF23D4E4143315EB00657E08 /* AppDelegate.h */,
 				15CFCF521592175200B6DBD7 /* ChipmunkLayer.cpp */,
@@ -2205,6 +2214,7 @@
 				154CDDF21629B4FD00C3A047 /* CCActionPageTurn3D.cpp in Sources */,
 				154CDDF31629B4FD00C3A047 /* CCActionProgressTimer.cpp in Sources */,
 				154CDDF41629B4FD00C3A047 /* CCActionTiledGrid.cpp in Sources */,
+				46C02E1118E9B4F2004B7456 /* LoginLayer.cpp in Sources */,
 				154CDDF61629B4FD00C3A047 /* CCAtlasNode.cpp in Sources */,
 				154CDDF71629B4FD00C3A047 /* CCNode.cpp in Sources */,
 				46416E3B18CC3D0C00A31D34 /* LoadingLayer.cpp in Sources */,
@@ -2348,17 +2358,16 @@
 					"$(SRCROOT)/../../chipmunk/include",
 					"$(SRCROOT)/../../chipmunk/include/constraints",
 					"$(SRCROOT)/../../Submodules/**",
+					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios",
 				);
 				INFOPLIST_FILE = "HelloWorld-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries\"",
+					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries",
+					/Users/minggo/SourceCode/interapptive/cocos2dx/platform/third_party/ios/libraries,
 				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Subscription;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -2394,17 +2403,16 @@
 					"$(SRCROOT)/../../chipmunk/include",
 					"$(SRCROOT)/../../chipmunk/include/constraints",
 					"$(SRCROOT)/../../Submodules/**",
+					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios",
 				);
 				INFOPLIST_FILE = "HelloWorld-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries\"",
+					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries",
+					/Users/minggo/SourceCode/interapptive/cocos2dx/platform/third_party/ios/libraries,
 				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Subscription;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -2463,17 +2471,16 @@
 					"$(SRCROOT)/../../chipmunk/include",
 					"$(SRCROOT)/../../chipmunk/include/constraints",
 					"$(SRCROOT)/../../Submodules/**",
+					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios",
 				);
 				INFOPLIST_FILE = "HelloWorld-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries\"",
+					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries",
+					/Users/minggo/SourceCode/interapptive/cocos2dx/platform/third_party/ios/libraries,
 				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = au;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
