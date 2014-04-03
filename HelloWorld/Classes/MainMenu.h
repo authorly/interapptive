@@ -65,6 +65,8 @@ class MainMenu
 public:
     static MainMenuSpriteInfo* getSpriteInfoByTag(int spriteTag);
     static ActionFadeIn* getActionFadeInInfoByTag(int actionTag);
+    // clear all recorded data
+    static void clear();
 public:
     // audio
     static Audio audio;

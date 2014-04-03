@@ -41,3 +41,17 @@ ActionFadeIn* MainMenu::getActionFadeInInfoByTag(int actionTag)
     
     return NULL;
 }
+
+void MainMenu::clear()
+{
+    sprites.clear();
+    menuItems.clear();
+    actionsToRunOnEnter.clear();
+    actionsFadeIn.clear();
+    
+    audio.backgroundMusic.clear();
+    audio.effectOnEnter.clear();
+    
+    fallingObjectSetting.filename.clear();
+    fallingObjectSetting.plistfilename.clear();
+}

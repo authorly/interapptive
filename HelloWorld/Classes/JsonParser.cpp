@@ -75,6 +75,8 @@ void JsonParser::parseConfigurations(Json::Value &root)
 
 void JsonParser::parseMainMenu(Json::Value &root)
 {
+    MainMenu::clear();
+    
     Json::Value mainMenu = root["MainMenu"];
     
     // parse audio
