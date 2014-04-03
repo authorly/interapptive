@@ -21,15 +21,17 @@ LoginLayer::LoginLayer()
     
     showLogin("", "");
     
-    // FIX ME: add a button to pass login section
+#ifdef LOGIN_DEBUG
     CCLabelTTF *label = CCLabelTTF::labelWithString("go to bookshelf", "Arial", 30);
     CCMenuItemLabel *item = CCMenuItemLabel::itemWithLabel(label, this, menu_selector(LoginLayer::goToBookshelf));
     item->setPosition(ccp(200, 50));
     CCMenu *menu = CCMenu::menuWithItem(item);
     menu->setPosition(ccp(0, 0));
     addChild(menu);
+#endif
 }
 
+#ifdef LOGIN_DEBUG
 void LoginLayer::goToBookshelf(cocos2d::CCObject *sender)
 {
     CCScene *scene = CCScene::node();
@@ -39,6 +41,7 @@ void LoginLayer::goToBookshelf(cocos2d::CCObject *sender)
     CCDirector::sharedDirector()->replaceScene(scene);
     Login::sharedLogin()->hide();
 }
+#endif
 
 LoginLayer::~LoginLayer()
 {
@@ -50,9 +53,10 @@ LoginLayer::~LoginLayer()
 
 void LoginLayer::buttonClicked(const char *userName, const char *password)
 {
-    // FIX ME: these user name and password is used for testing
-//    userName =  "waseem@authorly.com";
-//    password = "tester";
+#ifdef LOGIN_DEBUG
+    userName =  "waseem@authorly.com";
+    password = "tester";
+#endif
     
     if (strcmp(userName, "") == 0)
     {
@@ -104,7 +108,7 @@ void LoginLayer::buttonClicked(const char *userName, const char *password)
     {
         //Failed
         
-        CCLog("user name is %s, password is %s", userName, password);
+        CCLOG("user name is %s, password is %s", userName, password);
         errorMessage->setString("user name or password error");
         
         showLogin(userName, password);
