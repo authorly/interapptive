@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>BookFair</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -46,7 +46,7 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>""</string>
+			<string>&quot;&quot;</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb502716383080436</string>
