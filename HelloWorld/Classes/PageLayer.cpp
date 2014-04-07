@@ -51,6 +51,8 @@ PageLayer* PageLayer::pageLayerWithPage(Page* page)
 
 PageLayer::~PageLayer()
 {
+    clearLabelIndex();
+    
     // resources is release in onExit()
     CC_SAFE_RELEASE_NULL(mydialog);
     CC_SAFE_RELEASE_NULL(storyTouchDetector);
@@ -207,6 +209,8 @@ void PageLayer::enableDelayForTextTouchNode()
 
 void PageLayer::onExit()
 {
+    clearActionsToBeSkipped();
+    
     stopHighlighVoiceAndOtherEffect();
     CC_SAFE_RELEASE_NULL(paragraphLayer);
     // unload effect
@@ -216,6 +220,16 @@ void PageLayer::onExit()
     }
     
     CCLayer::onExit();
+}
+
+void PageLayer::clearActionsToBeSkipped()
+{
+    vector<cocos2d::CCAction*>::iterator iter;
+    for (iter = actionsToBeSkipped.begin(); iter != actionsToBeSkipped.end(); ++iter)
+    {
+        (*iter)->release();
+    }
+    actionsToBeSkipped.clear();
 }
 
 void PageLayer::storyTouchCallback(float flag)
@@ -335,7 +349,7 @@ void PageLayer::onEnterTransitionDidFinish()
 {   
     playBackgroundMusic();  
     //float delay = calculateDelayTimeOnEnter();
-    showParagraph(delayOfAnimation);
+    showParagraph(page->paragraphs[currentIndexOfParagraph]->delayBeforeShowingText);
     
     CCLayer::onEnterTransitionDidFinish();
 }
@@ -354,7 +368,7 @@ float PageLayer::calculateDelayTimeOnEnter()
         for (int j = 0; j < actions.size(); ++j)
         {
             CCAction *action = page->getActionByTag(actions[j]);
-            if (dynamic_cast<CCMoveTo*>(action) != NULL || dynamic_cast<CCScaleTo*>(action) != NULL ||  dynamic_cast<CCDelayTime*>(action) != NULL || dynamic_cast<CCSequence*>(action) != NULL ||  dynamic_cast<CCSpawn*>(action) != NULL)
+            if (dynamic_cast<CCMoveTo*>(action) != NULL || dynamic_cast<CCScaleTo*>(action) != NULL ||  dynamic_cast<CCDelayTime*>(action) != NULL || dynamic_cast<CCSequence*>(action) != NULL ||  dynamic_cast<CCSpawn*>(action) != NULL || dynamic_cast<CCFadeTo*>(action) != NULL)
             {
                 float temDelay = ((CCFiniteTimeAction*)action)->getDuration();
                 if (temDelay > delay)
@@ -412,28 +426,6 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 
 float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
 {
-    StorySwipeEnded &swipeEnded = page->storySwipeEnded;
-    /*
-     should add children and remove children every time swiping ended
-     
-     // add child
-     vector<int> &spritesToAdd = swipeEnded.spritesToAdd;
-     vector<int>::iterator iter;
-     for (iter = spritesToAdd.begin(); iter != spritesToAdd.end(); ++iter)
-     {
-     CCSprite *sprite = page->getSpriteInfoByTag(*iter);
-     addChild(sprite);
-     }
-     
-     // remove child
-     vector<int> &spritesToRemove = swipeEnded.spritesToMove;
-     for (iter = spritesToRemove.begin(); iter != spritesToRemove.end(); ++iter)
-     {
-     CCSprite *sprite = page->getSpriteInfoByTag(*iter);
-     removeChildByTag(sprite->getTag(), true);
-     }
-     */
-    
     // run actions
     float delay = 0.0f;
     
@@ -460,10 +452,10 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
                 {
                     // the action should be CCScaleBy, CCScaleTo, CCMoveBy or CCMoveTo
                     CCAction *element = page->getActionByTag(actionToRun->actionTags[j]);
-                    assert(dynamic_cast<CCScaleBy*>(element) != NULL ||
-                           dynamic_cast<CCScaleTo*>(element) != NULL ||
-                           dynamic_cast<CCMoveBy*>(element) != NULL ||
-                           dynamic_cast<CCMoveTo*>(element) != NULL);
+//                    assert(dynamic_cast<CCScaleBy*>(element) != NULL ||
+//                           dynamic_cast<CCScaleTo*>(element) != NULL ||
+//                           dynamic_cast<CCMoveBy*>(element) != NULL ||
+//                           dynamic_cast<CCMoveTo*>(element) != NULL);
                     
                     array->addObject(element);
                     
@@ -474,10 +466,13 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
             else 
             {
                 action = (CCFiniteTimeAction*)page->getActionByTag(actionToRun->actionTags[0]);
-                assert(dynamic_cast<CCScaleBy*>(action) != NULL ||
-                       dynamic_cast<CCScaleTo*>(action) != NULL ||
-                       dynamic_cast<CCMoveBy*>(action) != NULL ||
-                       dynamic_cast<CCMoveTo*>(action) != NULL);
+//                assert(dynamic_cast<CCScaleBy*>(action) != NULL ||
+//                       dynamic_cast<CCScaleTo*>(action) != NULL ||
+//                       dynamic_cast<CCMoveBy*>(action) != NULL ||
+//                       dynamic_cast<CCMoveTo*>(action) != NULL ||
+//                       dynamic_cast<CCFadeTo*>(action) != NULL ||
+//                       dynamic_cast<CCJumpBy*>(action) != NULL ||
+//                       dynamic_cast<CCJumpTo*>(action) != NULL);
             }
             
             // caculate delay time
@@ -539,11 +534,11 @@ void PageLayer::swipeLeft()
         // increase current index of paragraph
         ++currentIndexOfParagraph;
         
-        float delay = swipeEndedOperationAndCalculateTotalDelay(true);
-                
+        swipeEndedOperationAndCalculateTotalDelay(true);
+        
         createParagraph(currentIndexOfParagraph);
         
-        showParagraph(delay);
+        showParagraph(page->paragraphs[currentIndexOfParagraph]->delayBeforeShowingText);
     }
 }
 
@@ -633,6 +628,8 @@ void PageLayer::createSprites()
 		CCSprite *sprite = CCSprite::spriteWithFile(spriteInfo->image.c_str());
 		sprite->setTag(spriteInfo->spriteTag);
 		sprite->setPosition(spriteInfo->position);
+        // use opacity for visibility
+        sprite->setOpacity(spriteInfo->visible ? 255 : 0);
 
 		// runAction
 		for (unsigned int i = 0; i < spriteInfo->actions.size(); ++i)

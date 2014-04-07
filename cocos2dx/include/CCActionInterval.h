@@ -134,6 +134,7 @@ public:
 	virtual void stop(void);
 	virtual void update(ccTime time);
 	virtual bool isDone(void);
+    virtual void finish();
 	virtual CCActionInterval* reverse(void);
 
 	inline void setInnerAction(CCFiniteTimeAction *pAction)

@@ -50,6 +50,9 @@ private:
 	static void parseWithStorySwipeEnded(Page *page, Json::Value &value);
 	static void parseWithDelayTime(Page *page, Json::Value &value);
     static void parseWithSpawn(Page *page, Json::Value &value);
+    
+    static void parseWithRepeatForever(Page *page, Json::Value &value);
+    static void parseWithBlink(Page *page, Json::Value &value);
 };
 
 #endif // __JSON_PARSER_H__
