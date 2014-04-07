@@ -446,6 +446,13 @@ bool CCRepeat::isDone(void)
 {
 	return m_uTotal == m_uTimes;
 }
+    
+void CCRepeat::finish()
+{
+    CCActionInterval::finish();
+    m_pInnerAction->finish();
+    m_uTotal = m_uTimes;
+}
 
 CCActionInterval* CCRepeat::reverse(void)
 {
@@ -817,7 +824,7 @@ void CCRotateBy::update(ccTime time)
 	// XXX: shall I add % 360
 	if (m_pTarget)
 	{
-		m_pTarget->setRotation(m_fStartAngle + m_fAngle * time);
+		m_pTarget->setRotation(fmod(m_fStartAngle + m_fAngle * time, 360));
 	}
 }
 
