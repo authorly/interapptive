@@ -1,8 +1,6 @@
 package com.startupminds;
 
-import org.cocos2dx.application.R;
-import org.cocos2dx.application.R.id;
-import org.cocos2dx.application.R.layout;
+import org.authorly.animalmotions.R;
 
 import android.app.Activity;
 import android.content.res.Resources;

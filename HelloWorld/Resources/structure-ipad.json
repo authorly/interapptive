@@ -1,5 +1,6 @@
 {
    "Configurations":{
+      "skipAnimationOnSwipe":true,
       "retainTextScalingRatio":true,
       "pageFlipSound":{
          "forward":"page-flip-sound.mp3",
