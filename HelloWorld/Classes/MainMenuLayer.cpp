@@ -184,23 +184,23 @@ void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
     CC_SAFE_RELEASE_NULL(mydialog);
     
     // only show dialog that page number greater than 1 last time left off 
-    if (GlobalData::sharedGlobalData()->currentPageNumber > 1)
-    {
-        // pop a dialog to select 
-        vector<string> items;
-        items.push_back("Resume");
-        items.push_back("Start Over");
-        items.push_back("Cancel");
-        
-        mydialog = new MyDialog();
-        mydialog->initWithItems("Resume story where you left off?", items, this);
-        mydialog->popUp();  
-    }
-    else 
-    {
-        // start over
-        buttonClicked(1);
-    }      
+    // if (GlobalData::sharedGlobalData()->currentPageNumber > 1)
+    // {
+    //     // pop a dialog to select
+    //     vector<string> items;
+    //     items.push_back("Resume");
+    //     items.push_back("Start Over");
+    //     items.push_back("Cancel");
+    //
+    //     mydialog = new MyDialog();
+    //     mydialog->initWithItems("Resume story where you left off?", items, this);
+    //     mydialog->popUp();
+    // }
+    // else
+    // {
+    //     // start over
+    //     buttonClicked(1);
+    // }
 
     // set story mode, no matter if user select "cancle"
     // because it will not turn not page if he selects "cancle"
@@ -218,6 +218,8 @@ void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
     {
         storyMode = kStoryModeReadToMe;
     }
+    
+    buttonClicked(1);
 }
 
 void MainMenuLayer::playVideoMainMenuItemTouched(cocos2d::CCObject *sender)
