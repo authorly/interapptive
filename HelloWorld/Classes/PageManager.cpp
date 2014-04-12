@@ -135,3 +135,7 @@ CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 
 	return scene;
 }
+
+int PageManager::numberOfPages(void) {
+    return pages.size();
+}

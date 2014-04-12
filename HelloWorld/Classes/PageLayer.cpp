@@ -525,6 +525,12 @@ void PageLayer::swipEndCallBack()
 
 void PageLayer::swipeLeft()
 {
+    // Return if on last paragraph/keyframe on last scene
+    if (PageManager::numberOfPages() == page->settings.number &&
+        currentIndexOfParagraph == (page->paragraphs.size() - 1)) {
+        return;
+    }
+    
     stopHighlighVoiceAndOtherEffect();
     
     if (currentIndexOfParagraph == (page->paragraphs.size() - 1))

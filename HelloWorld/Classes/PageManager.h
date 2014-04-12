@@ -18,6 +18,7 @@ public:
     static void turnToPage(int pageNumber, bool backWards);
     static void gotoMainMenu(void);
     static void gotoBookList(void);
+    static int numberOfPages(void);
     
 private:
 	
