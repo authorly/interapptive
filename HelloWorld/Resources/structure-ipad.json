@@ -1342,7 +1342,7 @@
         },
         {
             "API": {
-                "CCMoveTo": [
+                "CCJumpTo": [
                     {
                         "actionTag": 57,
                         "duration": 0,
