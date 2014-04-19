@@ -139,3 +139,13 @@ CCScene* PageManager::createSceneByPageNumber(int pageNumber)
 int PageManager::numberOfPages(void) {
     return pages.size();
 }
+
+void PageManager::clear()
+{
+    std::map<int, Page*>::iterator iter;
+    for (iter = pages.begin(); iter != pages.end(); ++iter)
+    {
+        delete iter->second;
+    }
+    pages.clear();
+}
