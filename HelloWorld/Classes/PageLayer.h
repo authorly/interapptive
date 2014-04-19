@@ -95,6 +95,10 @@ private:
     void addParagraphText(int index);
     void addParagraphHotspot(int index);
     
+    // should release the actions that added into actionsToBeSkipped,
+    // or it will make pagelayer not to be deleted
+    void clearActionsToBeSkipped();
+    
 private:
     
     typedef struct {

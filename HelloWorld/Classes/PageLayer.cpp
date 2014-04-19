@@ -51,6 +51,8 @@ PageLayer* PageLayer::pageLayerWithPage(Page* page)
 
 PageLayer::~PageLayer()
 {
+    clearLabelIndex();
+    
     // resources is release in onExit()
     CC_SAFE_RELEASE_NULL(mydialog);
     CC_SAFE_RELEASE_NULL(storyTouchDetector);
@@ -206,6 +208,8 @@ void PageLayer::enableDelayForTextTouchNode()
 
 void PageLayer::onExit()
 {
+    clearActionsToBeSkipped();
+    
     stopHighlighVoiceAndOtherEffect();
     CC_SAFE_RELEASE_NULL(paragraphLayer);
     // unload effect
@@ -215,6 +219,16 @@ void PageLayer::onExit()
     }
     
     CCLayer::onExit();
+}
+
+void PageLayer::clearActionsToBeSkipped()
+{
+    vector<cocos2d::CCAction*>::iterator iter;
+    for (iter = actionsToBeSkipped.begin(); iter != actionsToBeSkipped.end(); ++iter)
+    {
+        (*iter)->release();
+    }
+    actionsToBeSkipped.clear();
 }
 
 void PageLayer::storyTouchCallback(float flag)
