@@ -66,9 +66,9 @@ void PageManager::gotoBookList(void)
     scene->addChild(loadingLayer);
     
     CCDirector::sharedDirector()->replaceScene(scene);
-    CCTextureCache::sharedTextureCache()->removeUnusedTextures();
-    // Causes crash
-    // SimpleAudioEngine::sharedEngine()->end();
+    CCTextureCache::sharedTextureCache()->removeAllTextures();
+    
+    SimpleAudioEngine::sharedEngine()->end();
 }
 
 Page* PageManager::getPageByPageNumber(int pageNumber)
@@ -86,8 +86,7 @@ Page* PageManager::getPageByPageNumber(int pageNumber)
 
 void PageManager::turnToPage(int pageNumber, bool backWards)
 {
-    // stop back ground music
-    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->end();
 
     CCScene *scene = createSceneByPageNumber(pageNumber);
     if (scene)

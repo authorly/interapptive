@@ -2342,7 +2342,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoming zhang (WW33858BB4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -2376,6 +2376,7 @@
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = bookfair;
+				PROVISIONING_PROFILE = "3628963B-46D1-48FA-BDE3-56A4E532FEF2";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2388,7 +2389,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoming zhang (WW33858BB4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2421,7 +2422,7 @@
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = bookfair;
-				PROVISIONING_PROFILE = "BBF64C61-D7D5-4356-8786-188E76A6303B";
+				PROVISIONING_PROFILE = "3628963B-46D1-48FA-BDE3-56A4E532FEF2";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2434,7 +2435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoming zhang (WW33858BB4)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2442,7 +2443,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PREBINDING = NO;
 				PRODUCT_NAME = bookfair;
-				PROVISIONING_PROFILE = "BBF64C61-D7D5-4356-8786-188E76A6303B";
+				PROVISIONING_PROFILE = "3628963B-46D1-48FA-BDE3-56A4E532FEF2";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
@@ -2454,7 +2455,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoming zhang (WW33858BB4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -2488,7 +2489,7 @@
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = bookfair;
-				PROVISIONING_PROFILE = "BBF64C61-D7D5-4356-8786-188E76A6303B";
+				PROVISIONING_PROFILE = "3628963B-46D1-48FA-BDE3-56A4E532FEF2";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2500,7 +2501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoming zhang (WW33858BB4)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2508,7 +2509,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PREBINDING = NO;
 				PRODUCT_NAME = bookfair;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3628963B-46D1-48FA-BDE3-56A4E532FEF2";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
@@ -2519,7 +2520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xiaoming zhang (WW33858BB4)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2528,7 +2529,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				PRODUCT_NAME = bookfair;
-				PROVISIONING_PROFILE = "BBF64C61-D7D5-4356-8786-188E76A6303B";
+				PROVISIONING_PROFILE = "3628963B-46D1-48FA-BDE3-56A4E532FEF2";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
