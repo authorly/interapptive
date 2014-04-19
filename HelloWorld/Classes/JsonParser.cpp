@@ -17,10 +17,11 @@ using namespace std;
 bool JsonParser::parseJson(const char* pathOfJasonFile)
 {
 	// read json file
-	std::string doc;
 	unsigned long size;
     string fullPath = CCFileUtils::fullPathFromRelativePath(pathOfJasonFile);
-	doc = (char*)CCFileUtils::getFileData(fullPath.c_str(), "r", &size);
+    unsigned char* data = CCFileUtils::getFileData(fullPath.c_str(), "r", &size);
+    std::string doc((char*)data);
+    delete [] data;
 
 	// read root
 	Json::Reader reader;
