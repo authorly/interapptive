@@ -437,7 +437,7 @@ static BOOL configured = FALSE;
 
 -(void) dealloc {
 	CDLOGINFO(@"Denshion::CDAudioManager - deallocating");
-	[self stopBackgroundMusic];
+	[self stopAllBackgroundMusic];
 	[soundEngine release];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[self audioSessionSetActive:NO];
@@ -726,7 +726,7 @@ static BOOL configured = FALSE;
 - (void) applicationWillTerminate:(NSNotification *) notification
 {
 	CDLOGINFO(@"Denshion::CDAudioManager - audio manager handling terminate");
-	[self stopBackgroundMusic];
+	[self stopAllBackgroundMusic];
 }
 
 /** The audio source completed playing */
