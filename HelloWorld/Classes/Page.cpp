@@ -32,9 +32,10 @@ Page::~Page()
     }
     
     // free actions
-    for (int k = 0; k < actions.size(); ++k)
+    map<int, cocos2d::CCAction*>::iterator actionIter;
+    for (actionIter = actions.begin(); actionIter != actions.end(); ++actionIter)
     {
-        actions[k]->release();
+        actionIter->second->release();
     }
     
     // free StoryTouchableNode

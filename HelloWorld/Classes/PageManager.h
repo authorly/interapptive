@@ -19,6 +19,7 @@ public:
     static void gotoMainMenu(void);
     static void gotoBookList(void);
     static int numberOfPages(void);
+    static void clear();
     
 private:
 	

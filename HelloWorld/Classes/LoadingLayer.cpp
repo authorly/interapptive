@@ -190,5 +190,6 @@ void LoadingLayer::buttonClicked(CCObject *sender)
     jsonLocationStream << g_bookTitles[tag].c_str() << ".json";
     std::string jsonLocation = jsonLocationStream.str();
 
+    PageManager::clear();
     PageManager::parseJsonAndRun(jsonLocation.c_str());
 }
