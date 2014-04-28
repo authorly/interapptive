@@ -102,6 +102,20 @@ void MainMenuLayer::onEnter()
         menu->addChild(menuItemImage, menuItemInfo->zOrder);
     }
     
+    // Add home button for going back to the bookshelf.
+    // Should use a macro to not show if app
+    // isnt being built as a standalone app.
+    CCMenuItemImage *homeButton = CCMenuItemImage::itemFromNormalImage("home.png",
+                                                                       "home-over.png",
+                                                                      this,
+                                                                      menu_selector(MainMenuLayer::homeButtonTouched));
+    homeButton->setPosition(ccp(5 * cocos2d::CCDirector::sharedDirector()->getXScale(),
+                                709 * cocos2d::CCDirector::sharedDirector()->getXScale()));
+    homeButton->setAnchorPoint(ccp(0,0));
+    
+    menu->addChild(homeButton, 10000);
+    
+    
     // add build snow man menu item (830*90)
     /*
     CCMenuItemImage *buildASnowman = CCMenuItemImage::itemFromNormalImage("buildASnowman.png",
@@ -280,4 +294,22 @@ void MainMenuLayer::creditsItemTouched(cocos2d::CCObject *sender)
     CCDirector::sharedDirector()->replaceScene(scene);
     CCTextureCache::sharedTextureCache()->removeAllTextures();
     SimpleAudioEngine::sharedEngine()->end();
+}
+
+void MainMenuLayer::homeButtonTouched(cocos2d::CCObject *sender)
+{
+    CCLog("Hoem button touched");
+    PageManager::gotoBookList();
+    // Find which storybook was clicked by its tag.
+    // The tag is it's index in the global array of book titles (g_bookTitles)
+    // CCMenuItem* pMenuItem = (CCMenuItem *)(sender);
+    // int tag = (int)pMenuItem->getTag();
+    
+    // Concatenate book title with JSON file extension
+    //std::stringstream jsonLocationStream;
+   // jsonLocationStream << g_bookTitles[tag].c_str() << ".json";
+   // std::string jsonLocation = jsonLocationStream.str();
+    
+    //PageManager::clear();
+    //PageManager::parseJsonAndRun(jsonLocation.c_str());
 }

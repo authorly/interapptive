@@ -26,6 +26,7 @@ public:
     void urlMainMenuItemTouched(cocos2d::CCObject *sender);
     //void buildASnowmanMenuItemTouched(cocos2d::CCObject *sender);
     void creditsItemTouched(cocos2d::CCObject *sender);
+    void homeButtonTouched(cocos2d::CCObject *sender);
     
 private:
     void init();
