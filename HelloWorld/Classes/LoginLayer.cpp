@@ -10,16 +10,24 @@ using namespace cocos2d;
 LoginLayer::LoginLayer()
 : errorMessage(NULL)
 {
+    // White background
+    if( !CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)) ) //RGBA
+    {
+        return;
+    }
+    
     errorMessage = CCLabelTTF::labelWithString("", "Arial", 35);
+    errorMessage->setColor(ccc3(0,0,0));
     errorMessage->retain();
     CCSize size = CCDirector::sharedDirector()->getWinSize();
-    errorMessage->setPosition(ccp(size.width/2, size.height/2 - 50));
+    errorMessage->setPosition(ccp(size.width/2, size.height/4 - 50));
     addChild(errorMessage);
     
     curl_global_init(CURL_GLOBAL_ALL);
     curl = curl_easy_init();
     
     showLogin("", "");
+    
     
 #ifdef LOGIN_DEBUG
     CCLabelTTF *label = CCLabelTTF::labelWithString("go to bookshelf", "Arial", 30);
@@ -55,7 +63,7 @@ void LoginLayer::buttonClicked(const char *userName, const char *password)
 {
 #ifdef LOGIN_DEBUG
     userName =  "waseem@authorly.com";
-    password = "tester";
+    password = "tester";=
 #endif
     
     if (strcmp(userName, "") == 0)

@@ -703,7 +703,7 @@ void PageLayer::mainMenuItemCallback(CCObject *sender)
     items.push_back("Exit Book");
     
     mydialog = new MyDialog();
-    mydialog->initWithItems("Go to main menu?", items, this);
+    mydialog->initWithItems("Go to book cover?", items, this);
     mydialog->popUp();  
 }
 

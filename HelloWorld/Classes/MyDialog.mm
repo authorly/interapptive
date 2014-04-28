@@ -162,17 +162,27 @@ void MyDialog::popUp()
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenHeight = screenRect.size.height;
+    CGFloat screenWidth = screenRect.size.width;
     
-    mainLoginInfo  = [[UITableView alloc] initWithFrame:CGRectMake((screenHeight - 300)/2,90/2, 320,150) style:UITableViewStyleGrouped];
+    mainLoginInfo  = [[UITableView alloc] initWithFrame:CGRectMake((screenHeight - 320)/2,screenWidth/7, 320,150) style:UITableViewStyleGrouped];
     mainLoginInfo.dataSource = self;
     [self.view addSubview:mainLoginInfo];
     
+    // BookFair logo above UITableView
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((screenHeight - 300)/2,  mainLoginInfo.frame.origin.y - 27, 300, 54)];
+    [imgView setImage:[UIImage imageNamed:@"logo.png"]];
+    [[EAGLView sharedEGLView]  addSubview:imgView];
+    
+    // Login button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button addTarget:self
                action:@selector(buttonClicked)
      forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"Login" forState:UIControlStateNormal];
-    button.frame = CGRectMake(screenHeight/2 - 80, 170, 160.0, 40.0);
+    
+    // Iphone 170 for y is good. iPhone width: 320.
+    // iPad ? is good.    iPad width: 768
+    button.frame = CGRectMake(screenHeight/2 - 80, mainLoginInfo.frame.origin.y + 125, 160.0, 40.0);
     [self.view addSubview:button];
 }
 
@@ -222,32 +232,37 @@ void MyDialog::popUp()
     }
     // Configure the cell...
     
-    
-    tableView.separatorStyle= UITableViewCellSeparatorStyleSingleLine;
+    tableView.scrollEnabled = NO;
+    tableView.separatorStyle= UITableViewCellSeparatorStyleNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     switch (indexPath.row) {
         case 0:
-            cell.textLabel.text = @"User Name";
-            userNameFeild = [[UITextField alloc] initWithFrame:CGRectMake(115,12, 180, 31)];
-            userNameFeild.textAlignment = UITextAlignmentCenter;
+            cell.textLabel.text = @"Email";
+            userNameFeild = [[UITextField alloc] initWithFrame:CGRectMake(115, 7, 185, 31)];
+            userNameFeild.textAlignment = UITextAlignmentLeft;
             userNameFeild.textColor = [UIColor blueColor];
             userNameFeild.clearButtonMode  = UITextFieldViewModeAlways;
             userNameFeild.delegate = self;
+            userNameFeild.borderStyle = UITextBorderStyleBezel;
             userNameFeild.text = initUserName;
-            userNameFeild.font = [UIFont fontWithName:@"Helvetica" size:14.0];
+            userNameFeild.font = [UIFont fontWithName:@"Helvetica" size:18.0];
+            userNameFeild.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            userNameFeild.keyboardType = UIKeyboardTypeEmailAddress;
             [cell.contentView addSubview:userNameFeild];
             break;
         case 1:
             cell.textLabel.text = @"Password";
-            passWordFeild = [[UITextField alloc] initWithFrame:CGRectMake(115,12, 180, 31)];
-            passWordFeild.textAlignment = UITextAlignmentCenter;
+            passWordFeild = [[UITextField alloc] initWithFrame:CGRectMake(115, 7, 185, 31)];
+            passWordFeild.textAlignment = UITextAlignmentLeft;
             passWordFeild.textColor = [UIColor blueColor];
             passWordFeild.clearButtonMode = UITextFieldViewModeAlways;
             passWordFeild.secureTextEntry = YES;
             passWordFeild.delegate = self;
+            passWordFeild.borderStyle = UITextBorderStyleBezel;
             passWordFeild.text = initPassword;
-            passWordFeild.font = [UIFont fontWithName:@"Helvetica" size:14.0];
+            passWordFeild.font = [UIFont fontWithName:@"Helvetica" size:18.0];
+            passWordFeild.autocapitalizationType = UITextAutocapitalizationTypeNone;
             [cell.contentView addSubview:passWordFeild];
             
             break;
@@ -317,6 +332,7 @@ void Login::popUp(const char* userName, const char* password)
     LoginViewController *viewContorller =  [[LoginViewController alloc] initWithUsername:[NSString stringWithUTF8String:userName ] password:[NSString stringWithUTF8String:password]];
     g_loginViewController = viewContorller;
     [[EAGLView sharedEGLView] addSubview:viewContorller.view];
+    
 }
 
 void Login::hide()

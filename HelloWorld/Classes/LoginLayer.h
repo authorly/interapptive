@@ -7,9 +7,9 @@
 
 // This macro is used to control whether to add a menu to pass login stage.
 // Should comment it when releasing.
-#define LOGIN_DEBUG
+// #define LOGIN_DEBUG
 
-class LoginLayer : public cocos2d::CCLayer, LoginProtocol
+class LoginLayer : public cocos2d::CCLayerColor, LoginProtocol
 {
 public:
     LoginLayer();
