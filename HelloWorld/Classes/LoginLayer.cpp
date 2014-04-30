@@ -89,7 +89,7 @@ void LoginLayer::buttonClicked(const char *userName, const char *password)
     data.append("password=");
     data.append(password);
     
-    curl_easy_setopt(curl, CURLOPT_URL, "http://173.255.244.186/api/sessions.json");
+    curl_easy_setopt(curl, CURLOPT_URL, "http://alpha.bookfairapp.com/api/sessions.json");
     curl_easy_setopt(curl, CURLOPT_POST, 1);
     curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data.c_str());
     CURLcode res = curl_easy_perform(curl);

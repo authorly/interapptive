@@ -72,7 +72,7 @@ LoadingLayer::LoadingLayer()
 : m_tBeginPos(CCPointZero)
 {
     bookPositionX = 0;
-    bookPositionY = 305;
+    bookPositionY = 311;
     
     setIsTouchEnabled(true);
     
@@ -81,11 +81,11 @@ LoadingLayer::LoadingLayer()
     ccTexParams textureParams = { GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT };
 	texture->setTexParameters(&textureParams);
     
-    m_bgSprite = CCSprite::spriteWithTexture(texture, CCRectMake(0, 0, 1024, 3078));
+    m_bgSprite = CCSprite::spriteWithTexture(texture, CCRectMake(0, 0, 1024, 5132));
     m_bgSprite->setAnchorPoint(ccp(0, 0));
     
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    m_bgSprite->setPosition(ccp(0,winSize.height*-3));
+    m_bgSprite->setPosition(ccp(0,(winSize.height*-5)));
     
     addChild(m_bgSprite);
     
@@ -122,8 +122,7 @@ LoadingLayer::LoadingLayer()
         // Give sprite a tag that correlates with books index value from global array (g_bookTitles[])
         // So we can access the title from its tag later
         bookCover->setTag(i);
-        
-        
+
         
         // Add created menu item to the menu
         m_menu->addChild(bookCover, 0);
@@ -159,21 +158,25 @@ void LoadingLayer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
     CCPoint curPos  = m_bgSprite->getPosition();
     CCPoint nextPos = ccp(curPos.x, curPos.y + nMoveY);
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+    
+    
+    // Prevents bookshelf from dragging below bottom
     if (nextPos.y > 0.0f)
     {
-        m_bgSprite->setPosition(CCPointZero);
-        m_menu->setPosition(ccp(CCPointZero.x, CCPointZero.y +  winSize.height*3));
+        //m_bgSprite->setPosition(ccp(CCPointZero.x, CCPointZero.y));
+        // m_menu->setPosition(ccp(CCPointZero.x, CCPointZero.y +  winSize.height*7 ));
         return;
     }
-    
-    if (nextPos.y < (winSize.height*-3))
+
+    // Prevents bookshelf from dragging down too much
+    if (nextPos.y < (winSize.height*-5))
     {
-        m_bgSprite->setPosition(ccp(0, (winSize.height*-3)));
-        m_menu->setPosition(ccp(0, (winSize.height*-3 + winSize.height*3)));
+        m_bgSprite->setPosition(ccp(0, (winSize.height*-5)));
+        m_menu->setPosition(ccp(0, (winSize.height*-5 + winSize.height*5)));
         return;
     }
     m_bgSprite->setPosition(nextPos);
-    m_menu->setPosition(ccp(nextPos.x, nextPos.y + winSize.height*3));
+    m_menu->setPosition(ccp(nextPos.x, nextPos.y + winSize.height*5));
     m_tBeginPos = touchLocation;
     s_tCurPos   = nextPos;
 }

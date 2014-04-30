@@ -29,6 +29,9 @@ build/
 build.output
 .DS_Store
 
+# Ignore beta builder stuff for Over-The-Air (OTA) builds
+HelloWorld/ios-subscription/pkg/*
+
 # Ignore files built by bada
 .Simulator-Debug/
 .Target-Debug/

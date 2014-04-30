@@ -138,6 +138,10 @@ void MyDialog::popUp()
 
 - (void)buttonClicked
 {
+    // Bug: must call this two times to hide keyboard. 
+    [[mainLoginInfo window] endEditing:YES];
+    [[mainLoginInfo window] endEditing:YES];
+    
     [self.view removeFromSuperview];
     [self release];
     
@@ -184,15 +188,30 @@ void MyDialog::popUp()
     [self.view addSubview:button];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if ([userNameFeild isFirstResponder] && [touch view] != userNameFeild) {
+        [userNameFeild resignFirstResponder];
+        
+        [[mainLoginInfo window] endEditing:YES];
+    }
+    
+    if ([passWordFeild isFirstResponder] && [touch view] != passWordFeild) {
+        [passWordFeild resignFirstResponder];
+        
+        [[mainLoginInfo window] endEditing:YES];
+    }
+    
+    [super touchesBegan:touches withEvent:event];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     [[mainLoginInfo window] endEditing:YES];
     return YES;
 }
 
-- (BOOL)textFieldShouldClear:(UITextField *)textField{
-    return YES;
-}
 
 //- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 //{
@@ -246,7 +265,7 @@ void MyDialog::popUp()
             userNameFeild.text = initUserName;
             userNameFeild.font = [UIFont fontWithName:@"Helvetica" size:18.0];
             userNameFeild.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            userNameFeild.keyboardType = UIKeyboardTypeEmailAddress;
+            userNameFeild.keyboardType = UIKeyboardTypeDefault;
             userNameFeild.adjustsFontSizeToFitWidth = YES;
             userNameFeild.minimumFontSize = 4.0;
             [cell.contentView addSubview:userNameFeild];
