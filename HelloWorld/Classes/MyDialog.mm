@@ -249,6 +249,8 @@ void MyDialog::popUp()
             userNameFeild.font = [UIFont fontWithName:@"Helvetica" size:18.0];
             userNameFeild.autocapitalizationType = UITextAutocapitalizationTypeNone;
             userNameFeild.keyboardType = UIKeyboardTypeEmailAddress;
+            userNameFeild.adjustsFontSizeToFitWidth = YES;
+            userNameFeild.minimumFontSize = 4.0;
             [cell.contentView addSubview:userNameFeild];
             break;
         case 1:
@@ -263,6 +265,8 @@ void MyDialog::popUp()
             passWordFeild.text = initPassword;
             passWordFeild.font = [UIFont fontWithName:@"Helvetica" size:18.0];
             passWordFeild.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            userNameFeild.adjustsFontSizeToFitWidth = YES;
+            userNameFeild.minimumFontSize = 4.0;
             [cell.contentView addSubview:passWordFeild];
             
             break;
