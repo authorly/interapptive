@@ -180,8 +180,6 @@ void MyDialog::popUp()
      forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"Login" forState:UIControlStateNormal];
     
-    // Iphone 170 for y is good. iPhone width: 320.
-    // iPad ? is good.    iPad width: 768
     button.frame = CGRectMake(screenHeight/2 - 80, mainLoginInfo.frame.origin.y + 125, 160.0, 40.0);
     [self.view addSubview:button];
 }
