@@ -171,7 +171,7 @@ void MyDialog::popUp()
     // BookFair logo above UITableView
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((screenHeight - 300)/2,  mainLoginInfo.frame.origin.y - 27, 300, 54)];
     [imgView setImage:[UIImage imageNamed:@"logo.png"]];
-    [[EAGLView sharedEGLView]  addSubview:imgView];
+    [self.view  addSubview:imgView];
     
     // Login button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
