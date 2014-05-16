@@ -1,9 +1,10 @@
 #include "AppDelegate.h"
 #include "CCEGLView.h"
 #include "LoadingLayer.h"
-
+#include "LoginLayer.h"
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
+#include "FlurryX.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -28,7 +29,7 @@ bool AppDelegate::initInstance() {
 
 #endif  // CC_PLATFORM_WIN32
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-
+        FlurryX::startSession("2D5HXDFK3PT75MQPMJNX");
 		// OpenGLView initialized in testsAppDelegate.mm on ios platform, nothing need to do here.
 
 #endif  // CC_PLATFORM_IOS

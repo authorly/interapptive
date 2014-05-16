@@ -14,6 +14,7 @@
 #include "PageManager.h"
 #include "SubscriptionApp.h"
 #include "MyDialog.h"
+#include "FlurryX.h"
 
 #define DISTANCE_OF_TO
 
@@ -183,6 +184,7 @@ void LoadingLayer::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 
 void LoadingLayer::buttonClicked(CCObject *sender)
 {
+    FlurryX::logEvent("Opened book");
     // Find which storybook was clicked by its tag.
     // The tag is it's index in the global array of book titles (g_bookTitles)
     CCMenuItem* pMenuItem = (CCMenuItem *)(sender);

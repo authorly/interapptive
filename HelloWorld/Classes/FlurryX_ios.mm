@@ -65,7 +65,8 @@ void FlurryX::setSecureTransportEnabled(bool value)
  */
 void FlurryX::startSession(const char* apiKey)
 {
-    [Flurry startSession:CStrToNSString(apiKey) ];
+    [Flurry setCrashReportingEnabled:YES];
+    [Flurry startSession:CStrToNSString(apiKey)];
 }
 
 /*
