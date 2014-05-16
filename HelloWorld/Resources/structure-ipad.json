@@ -22,63 +22,79 @@
     },
     "Pages": [
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 15,
-                        "duration": 0,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 14,
-                        "duration": 0,
-                        "intensity": 1
-                    }
-                ],
-                "CCFadeTo": [
-                    {
-                        "actionTag": 1000,
-                        "duration": 2.0,
-                        "opacity": 1.0
-                    }
-                ],
-                "CCSequence": [],
-                "CCDelayTime": [],
-                "CCSpawn": [],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCMoveTo": [
                         {
-                            "runAfterSwipeNumber":1,
-                            "spriteTag":24,
-                            "actionTags":[
-                                100
+                            "actionTag": 15,
+                            "duration": 0,
+                            "position": [
+                                512,
+                                384
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            512,
-                            384
-                        ],
-                        "visible": false,
-                        "zOrder": 1,
-                        "spriteTag": 24,
-                        "actions": [
-                            14,
-                            15
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 14,
+                            "duration": 0,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCFadeTo": [
+                        {
+                            "actionTag": 1000,
+                            "duration": 2,
+                            "opacity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": []
+                },
+                {
+                    "CCDelayTime": []
+                },
+                {
+                    "CCSpawn": []
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 24,
+                                "actionTags": [
+                                    100
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                512,
+                                384
+                            ],
+                            "visible": false,
+                            "zOrder": 1,
+                            "spriteTag": 24,
+                            "actions": [
+                                14,
+                                15
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 1
@@ -152,63 +168,70 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 17,
-                        "duration": 0,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 16,
-                        "duration": 0,
-                        "intensity": 1
-                    }
-                ],
-                "CCFadeTo": [
-                    {
-                        "actionTag": 1001,
-                        "duration": 2.0,
-                        "opacity": 0
-                    }
-                ],
-                "CCSequence": [],
-                "CCDelayTime": [],
-                "CCSpawn": [],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCMoveTo": [
                         {
-                            "runAfterSwipeNumber":1,
-                            "spriteTag":35,
-                            "actionTags":[
-                                1001
+                            "actionTag": 17,
+                            "duration": 0,
+                            "position": [
+                                512,
+                                384
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            512,
-                            384
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 35,
-                        "actions": [
-                            16,
-                            17
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 16,
+                            "duration": 0,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCFadeTo": [
+                        {
+                            "actionTag": 1001,
+                            "duration": 2,
+                            "opacity": 0
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 35,
+                                "actionTags": [
+                                    1001
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                512,
+                                384
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 35,
+                            "actions": [
+                                16,
+                                17
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 2
@@ -282,73 +305,80 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 19,
-                        "duration": 0,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 18,
-                        "duration": 0,
-                        "intensity": 1
-                    }
-                ],
-                "CCFadeTo": [
-                    {
-                        "actionTag": 1004,
-                        "duration": 2.0,
-                        "opacity": 0
-                    },
-                    {
-                        "actionTag": 1005,
-                        "duration": 2.0,
-                        "opacity": 1
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag":1003,
-                        "actions":[
-                           1004,
-                           1005
-                        ]
-                    }
-                ],
-                "CCRepeatForever": [
-                    {
-                      "actionTag": 1006,
-                      "innerAction": 1003
-                    }
-                ],
-                "CCDelayTime": [],
-                "CCSpawn": [],
-                "CCStorySwipeEnded": {
-                    "runAction": []
+            "API": [
+                {
+                    "CCMoveTo": [
+                        {
+                            "actionTag": 19,
+                            "duration": 0,
+                            "position": [
+                                512,
+                                384
+                            ]
+                        }
+                    ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            512,
-                            384
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 46,
-                        "actions": [
-                            1006
-                        ]
-                    }
-                ]
-            },
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 18,
+                            "duration": 0,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCFadeTo": [
+                        {
+                            "actionTag": 1004,
+                            "duration": 2,
+                            "opacity": 0
+                        },
+                        {
+                            "actionTag": 1005,
+                            "duration": 2,
+                            "opacity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 1003,
+                            "actions": [
+                                1004,
+                                1005
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCRepeatForever": [
+                        {
+                            "actionTag": 1006,
+                            "innerAction": 1003
+                        }
+                    ]
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                512,
+                                384
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 46,
+                            "actions": [
+                                1006
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 3
@@ -391,55 +421,57 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 21,
-                        "duration": 0,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 20,
-                        "duration": 0,
-                        "intensity": 1
-                    }
-                ],
-                "CCSequence": [],
-                "CCBlink": [
-                    {
-                      "actionTag": 1007,
-                      "duration": 0.5
-                    }    
-                ],
-                "CCDelayTime": [],
-                "CCSpawn": [],
-                "CCStorySwipeEnded": {
-                    "runAction": []
+            "API": [
+                {
+                    "CCMoveTo": [
+                        {
+                            "actionTag": 21,
+                            "duration": 0,
+                            "position": [
+                                512,
+                                384
+                            ]
+                        }
+                    ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            512,
-                            384
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 57,
-                        "actions": [
-                            20,
-                            21,
-                            1007
-                        ]
-                    }
-                ]
-            },
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 20,
+                            "duration": 0,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCBlink": [
+                        {
+                            "actionTag": 1007,
+                            "duration": 0.5
+                        }
+                    ]
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                512,
+                                384
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 57,
+                            "actions": [
+                                20,
+                                21,
+                                1007
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 4
@@ -513,109 +545,124 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 23,
-                        "duration": 0,
-                        "position": [
-                            -89,
-                            381
-                        ]
-                    },
-                    {
-                        "actionTag": 28,
-                        "duration": 3,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 22,
-                        "duration": 0,
-                        "intensity": 1
-                    },
-                    {
-                        "actionTag": 27,
-                        "duration": 3,
-                        "intensity": 1
-                    }
-                ],
-                "CCRotateBy": [
-                    {
-                      "actionTag": 1020,
-                      "duration": 3,
-                      "degrees": 360
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 26,
-                        "actions": [
-                            24,
-                            25
-                        ]
-                    }
-                ],
-                "CCRepeatForever": [
-                    {
-                        "actionTag": 1021,
-                        "innerAction": 1020
-                    }
-
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 24,
-                        "duration": 0
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 25,
-                        "actions": [
-                            27,
-                            28,
-                            1021
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": [],
-                    "stopAction": [
+            "API": [
+                {
+                    "CCMoveTo": [
                         {
-
-                            "afterSwipeNumber":1,
-                            "actionTag": 1020
+                            "actionTag": 23,
+                            "duration": 0,
+                            "position": [
+                                -89,
+                                381
+                            ]
                         },
                         {
-
-                            "afterSwipeNumber":1,
-                            "actionTag": 1021
+                            "actionTag": 28,
+                            "duration": 3,
+                            "position": [
+                                512,
+                                384
+                            ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            -89,
-                            381
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 68,
-                        "actions": [
-                            22,
-                            26
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 22,
+                            "duration": 0,
+                            "intensity": 1
+                        },
+                        {
+                            "actionTag": 27,
+                            "duration": 3,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCRotateBy": [
+                        {
+                            "actionTag": 1020,
+                            "duration": 3,
+                            "degrees": 360
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 26,
+                            "actions": [
+                                24,
+                                25
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCRepeatForever": [
+                        {
+                            "actionTag": 1021,
+                            "innerAction": 1020
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 24,
+                            "duration": 0
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 25,
+                            "actions": [
+                                27,
+                                28,
+                                1021
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [],
+                        "stopAction": [
+                            {
+                                "afterSwipeNumber": 1,
+                                "actionTag": 1020
+                            },
+                            {
+                                "afterSwipeNumber": 1,
+                                "actionTag": 1021
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                -89,
+                                381
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 68,
+                            "actions": [
+                                22,
+                                26
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 5
@@ -689,111 +736,128 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 30,
-                        "duration": 0,
-                        "position": [
-                            -145,
-                            386
-                        ]
-                    },
-                    {
-                        "actionTag": 35,
-                        "duration": 3,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    },
-                    {
-                        "actionTag": 36,
-                        "duration": 3.1,
-                        "position": [
-                            1103,
-                            378
-                        ]
-                    }
-                ],
-                "CCRotateBy": [
-                    {
-                      "actionTag": 1060,
-                      "duration": 3,
-                      "degrees": 360
-                    }
-                ],
-                "CCRepeatForever": [
-                    {
-                        "actionTag": 1061,
-                        "innerAction": 1060
-                    }
-
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 29,
-                        "duration": 0,
-                        "intensity": 1
-                    },
-                    {
-                        "actionTag": 34,
-                        "duration": 3,
-                        "intensity": 1
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 33,
-                        "actions": [
-                            31,
-                            32
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 31,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 32,
-                        "actions": [
-                            34,
-                            35
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCMoveTo": [
                         {
-                            "runAfterSwipeNumber": 1,
-                            "spriteTag": 79,
-                            "actionTags": [
-                                36
+                            "actionTag": 30,
+                            "duration": 0,
+                            "position": [
+                                -145,
+                                386
+                            ]
+                        },
+                        {
+                            "actionTag": 35,
+                            "duration": 3,
+                            "position": [
+                                512,
+                                384
+                            ]
+                        },
+                        {
+                            "actionTag": 36,
+                            "duration": 3.1,
+                            "position": [
+                                1103,
+                                378
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            -145,
-                            386
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 79,
-                        "actions": [
-                             1061
+                {
+                    "CCRotateBy": [
+                        {
+                            "actionTag": 1060,
+                            "duration": 3,
+                            "degrees": 360
+                        }
+                    ]
+                },
+                {
+                    "CCRepeatForever": [
+                        {
+                            "actionTag": 1061,
+                            "innerAction": 1060
+                        }
+                    ]
+                },
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 29,
+                            "duration": 0,
+                            "intensity": 1
+                        },
+                        {
+                            "actionTag": 34,
+                            "duration": 3,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 33,
+                            "actions": [
+                                31,
+                                32
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 31,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 32,
+                            "actions": [
+                                34,
+                                35
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 79,
+                                "actionTags": [
+                                    36
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                -145,
+                                386
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 79,
+                            "actions": [
+                                1061
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 6
@@ -867,113 +931,130 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 38,
-                        "duration": 0,
-                        "position": [
-                            -156,
-                            304
-                        ]
-                    },
-                    {
-                        "actionTag": 43,
-                        "duration": 3,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    },
-                    {
-                        "actionTag": 44,
-                        "duration": 3,
-                        "position": [
-                            1127,
-                            372
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 37,
-                        "duration": 0,
-                        "intensity": 1
-                    },
-                    {
-                        "actionTag": 42,
-                        "duration": 3,
-                        "intensity": 1
-                    }
-                ],
-                "CCRotateBy": [
-                    {
-                      "actionTag": 1070,
-                      "duration": 3,
-                      "degrees": 360
-                    }
-                ],
-                "CCRepeatForever": [
-                    {
-                        "actionTag": 1071,
-                        "innerAction": 1070
-                    }
-
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 41,
-                        "actions": [
-                            39,
-                            40
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 39,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 40,
-                        "actions": [
-                            42,
-                            43,
-                            1071
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCMoveTo": [
                         {
-                            "runAfterSwipeNumber": 1,
-                            "spriteTag": 90,
-                            "actionTags": [
-                                44
+                            "actionTag": 38,
+                            "duration": 0,
+                            "position": [
+                                -156,
+                                304
+                            ]
+                        },
+                        {
+                            "actionTag": 43,
+                            "duration": 3,
+                            "position": [
+                                512,
+                                384
+                            ]
+                        },
+                        {
+                            "actionTag": 44,
+                            "duration": 3,
+                            "position": [
+                                1127,
+                                372
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            -156,
-                            304
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 90,
-                        "actions": [
-                            37,
-                            41
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 37,
+                            "duration": 0,
+                            "intensity": 1
+                        },
+                        {
+                            "actionTag": 42,
+                            "duration": 3,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCRotateBy": [
+                        {
+                            "actionTag": 1070,
+                            "duration": 3,
+                            "degrees": 360
+                        }
+                    ]
+                },
+                {
+                    "CCRepeatForever": [
+                        {
+                            "actionTag": 1071,
+                            "innerAction": 1070
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 41,
+                            "actions": [
+                                39,
+                                40
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 39,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 40,
+                            "actions": [
+                                42,
+                                43,
+                                1071
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 90,
+                                "actionTags": [
+                                    44
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                -156,
+                                304
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 90,
+                            "actions": [
+                                37,
+                                41
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 7
@@ -1043,64 +1124,69 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 46,
-                        "duration": 0,
-                        "position": [
-                            533,
-                            372
-                        ]
-                    },
-                    {
-                        "actionTag": 47,
-                        "duration": 3,
-                        "position": [
-                            518,
-                            392
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 45,
-                        "duration": 0,
-                        "intensity": 1
-                    }
-                ],
-                "CCSequence": [],
-                "CCDelayTime": [],
-                "CCSpawn": [],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCMoveTo": [
                         {
-                            "runAfterSwipeNumber": 1,
-                            "spriteTag": 101,
-                            "actionTags": [
-                                47
+                            "actionTag": 46,
+                            "duration": 0,
+                            "position": [
+                                533,
+                                372
+                            ]
+                        },
+                        {
+                            "actionTag": 47,
+                            "duration": 3,
+                            "position": [
+                                518,
+                                392
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            533,
-                            372
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 101,
-                        "actions": [
-                            45,
-                            46
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 45,
+                            "duration": 0,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 101,
+                                "actionTags": [
+                                    47
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                533,
+                                372
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 101,
+                            "actions": [
+                                45,
+                                46
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 8
@@ -1174,104 +1260,118 @@
             }
         },
         {
-            "API": {
-                "CCJumpTo": [
-                    {
-                        "actionTag": 49,
-                        "duration": 0,
-                        "height": 200,
-                        "numberOfJumps": 4,
-                        "position": [
-                            -79,
-                            368
-                        ]
-                    },
-                    {
-                        "actionTag": 54,
-                        "duration": 3,
-                        "height": 200,
-                        "numberOfJumps": 4,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    },
-                    {
-                        "actionTag": 55,
-                        "duration": 3,
-                        "height": 200,
-                        "numberOfJumps": 4,
-                        "position": [
-                            1113,
-                            370
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 48,
-                        "duration": 0,
-                        "intensity": 1
-                    },
-                    {
-                        "actionTag": 53,
-                        "duration": 3,
-                        "intensity": 1
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 52,
-                        "actions": [
-                            50,
-                            51
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 50,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 51,
-                        "actions": [
-                            53,
-                            54
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCJumpTo": [
                         {
-                            "runAfterSwipeNumber": 1,
-                            "spriteTag": 112,
-                            "actionTags": [
-                                55
+                            "actionTag": 49,
+                            "duration": 0,
+                            "height": 200,
+                            "numberOfJumps": 4,
+                            "position": [
+                                -79,
+                                368
+                            ]
+                        },
+                        {
+                            "actionTag": 54,
+                            "duration": 3,
+                            "height": 200,
+                            "numberOfJumps": 4,
+                            "position": [
+                                512,
+                                384
+                            ]
+                        },
+                        {
+                            "actionTag": 55,
+                            "duration": 3,
+                            "height": 200,
+                            "numberOfJumps": 4,
+                            "position": [
+                                1113,
+                                370
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            -79,
-                            368
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 112,
-                        "actions": [
-                            48,
-                            52
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 48,
+                            "duration": 0,
+                            "intensity": 1
+                        },
+                        {
+                            "actionTag": 53,
+                            "duration": 3,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 52,
+                            "actions": [
+                                50,
+                                51
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 50,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 51,
+                            "actions": [
+                                53,
+                                54
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 112,
+                                "actionTags": [
+                                    55
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                -79,
+                                368
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 112,
+                            "actions": [
+                                48,
+                                52
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 9
@@ -1341,86 +1441,100 @@
             }
         },
         {
-            "API": {
-                "CCJumpTo": [
-                    {
-                        "actionTag": 57,
-                        "duration": 0,
-                        "height": 200,
-                        "numberOfJumps": 6,
-                        "position": [
-                            -69,
-                            329
-                        ]
-                    },
-                    {
-                        "actionTag": 62,
-                        "duration": 6,
-                        "height": 200,
-                        "numberOfJumps": 6,
-                        "position": [
-                            1119,
-                            377
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 56,
-                        "duration": 0,
-                        "intensity": 1
-                    },
-                    {
-                        "actionTag": 61,
-                        "duration": 3,
-                        "intensity": 1
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 60,
-                        "actions": [
-                            58,
-                            59
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 58,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 59,
-                        "actions": [
-                            61,
-                            62
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": []
+            "API": [
+                {
+                    "CCJumpTo": [
+                        {
+                            "actionTag": 57,
+                            "duration": 0,
+                            "height": 200,
+                            "numberOfJumps": 6,
+                            "position": [
+                                -69,
+                                329
+                            ]
+                        },
+                        {
+                            "actionTag": 62,
+                            "duration": 6,
+                            "height": 200,
+                            "numberOfJumps": 6,
+                            "position": [
+                                1119,
+                                377
+                            ]
+                        }
+                    ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            -69,
-                            329
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 123,
-                        "actions": [
-                            56,
-                            60
-                        ]
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 56,
+                            "duration": 0,
+                            "intensity": 1
+                        },
+                        {
+                            "actionTag": 61,
+                            "duration": 3,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 60,
+                            "actions": [
+                                58,
+                                59
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 58,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 59,
+                            "actions": [
+                                61,
+                                62
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": []
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                -69,
+                                329
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 123,
+                            "actions": [
+                                56,
+                                60
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 10
@@ -1463,94 +1577,120 @@
             }
         },
         {
-            "API": {
-                "CCBezierTo": [
-                    {
-                        "actionTag": 69,
-                        "duration": 3,
-                        "controlPoint1": [175, 110],
-                        "controlPoint2": [300, 0],
-                        "endPosition": [
-                            530,
-                            354
-                        ]
-                    },
-                    {
-                        "actionTag": 70,
-                        "duration": 3,
-                        "controlPoint1": [625, 500],
-                        "controlPoint2": [710, 100],
-                        "endPosition": [
-                            839,
-                            354
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 63,
-                        "duration": 0,
-                        "intensity": 1
-                    },
-                    {
-                        "actionTag": 68,
-                        "duration": 3,
-                        "intensity": 1
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 67,
-                        "actions": [
-                            65,
-                            66
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 65,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 66,
-                        "actions": [
-                            68,
-                            69
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCBezierTo": [
                         {
-                            "runAfterSwipeNumber": 1,
-                            "spriteTag": 134,
-                            "actionTags": [
-                                70
+                            "actionTag": 69,
+                            "duration": 3,
+                            "controlPoint1": [
+                                175,
+                                110
+                            ],
+                            "controlPoint2": [
+                                300,
+                                0
+                            ],
+                            "endPosition": [
+                                530,
+                                354
+                            ]
+                        },
+                        {
+                            "actionTag": 70,
+                            "duration": 3,
+                            "controlPoint1": [
+                                625,
+                                500
+                            ],
+                            "controlPoint2": [
+                                710,
+                                100
+                            ],
+                            "endPosition": [
+                                839,
+                                354
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            66,
-                            300
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 134,
-                        "actions": [
-                            63,
-                            67
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 63,
+                            "duration": 0,
+                            "intensity": 1
+                        },
+                        {
+                            "actionTag": 68,
+                            "duration": 3,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 67,
+                            "actions": [
+                                65,
+                                66
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 65,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 66,
+                            "actions": [
+                                68,
+                                69
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 134,
+                                "actionTags": [
+                                    70
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                66,
+                                300
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 134,
+                            "actions": [
+                                63,
+                                67
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 11
@@ -1624,85 +1764,99 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 72,
-                        "duration": 0,
-                        "position": [
-                            429,
-                            277
-                        ]
-                    },
-                    {
-                        "actionTag": 77,
-                        "duration": 3,
-                        "position": [
-                            435,
-                            277
-                        ]
-                    }
-                ],
-                "CCSkewTo": [
-                    {
-                        "actionTag": 71,
-                        "duration": 0,
-                        "deltaX": 20,
-                        "deltaY": 0
-                    },
-                    {
-                        "actionTag": 76,
-                        "duration": 3,
-                        "intensity": 1,
-                        "deltaX": -40,
-                        "deltaY": 0
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 75,
-                        "actions": [
-                            73,
-                            74
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 73,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 74,
-                        "actions": [
-                            76,
-                            77
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": []
+            "API": [
+                {
+                    "CCMoveTo": [
+                        {
+                            "actionTag": 72,
+                            "duration": 0,
+                            "position": [
+                                429,
+                                277
+                            ]
+                        },
+                        {
+                            "actionTag": 77,
+                            "duration": 3,
+                            "position": [
+                                435,
+                                277
+                            ]
+                        }
+                    ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            429,
-                            277
-                        ],
-                        "visible": true,
-                        "zOrder": 2,
-                        "spriteTag": 145,
-                        "actions": [
-                            71,
-                            75
-                        ]
+                {
+                    "CCSkewTo": [
+                        {
+                            "actionTag": 71,
+                            "duration": 0,
+                            "deltaX": 20,
+                            "deltaY": 0
+                        },
+                        {
+                            "actionTag": 76,
+                            "duration": 3,
+                            "intensity": 1,
+                            "deltaX": -40,
+                            "deltaY": 0
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 75,
+                            "actions": [
+                                73,
+                                74
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 73,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 74,
+                            "actions": [
+                                76,
+                                77
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": []
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                429,
+                                277
+                            ],
+                            "visible": true,
+                            "zOrder": 2,
+                            "spriteTag": 145,
+                            "actions": [
+                                71,
+                                75
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 12
@@ -1776,86 +1930,100 @@
             }
         },
         {
-            "API": {
-                "CCMoveTo": [
-                    {
-                        "actionTag": 79,
-                        "duration": 0,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    },
-                    {
-                        "actionTag": 84,
-                        "duration": 3,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    }
-                ],
-                "CCSkewTo": [
-                    {
-                        "actionTag": 78,
-                        "duration": 0,
-                        "intensity": 1,
-                        "deltaX": 0,
-                        "deltaY": 20
-                    },
-                    {
-                        "actionTag": 83,
-                        "duration": 3,
-                        "intensity": 1,
-                        "deltaX": 0,
-                        "deltaY": -40
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 82,
-                        "actions": [
-                            80,
-                            81
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 80,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 81,
-                        "actions": [
-                            83,
-                            84
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": []
+            "API": [
+                {
+                    "CCMoveTo": [
+                        {
+                            "actionTag": 79,
+                            "duration": 0,
+                            "position": [
+                                512,
+                                384
+                            ]
+                        },
+                        {
+                            "actionTag": 84,
+                            "duration": 3,
+                            "position": [
+                                512,
+                                384
+                            ]
+                        }
+                    ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            512,
-                            384
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 156,
-                        "actions": [
-                            78,
-                            82
-                        ]
+                {
+                    "CCSkewTo": [
+                        {
+                            "actionTag": 78,
+                            "duration": 0,
+                            "intensity": 1,
+                            "deltaX": 0,
+                            "deltaY": 20
+                        },
+                        {
+                            "actionTag": 83,
+                            "duration": 3,
+                            "intensity": 1,
+                            "deltaX": 0,
+                            "deltaY": -40
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 82,
+                            "actions": [
+                                80,
+                                81
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 80,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 81,
+                            "actions": [
+                                83,
+                                84
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": []
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                512,
+                                384
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 156,
+                            "actions": [
+                                78,
+                                82
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 13
@@ -1929,108 +2097,124 @@
             }
         },
         {
-            "API": {
-                "CCEaseIn": [
-                    {
-                      "actionTag": 1200,
-                      "innerAction": 88
-                    },
-                    {
-                      "actionTag": 1201,
-                      "innerAction": 92
-                    }
-                ],
-                "CCMoveTo": [
-                    {
-                        "actionTag": 86,
-                        "duration": 0,
-                        "position": [
-                            56,
-                            376
-                        ]
-                    },
-                    {
-                        "actionTag": 91,
-                        "duration": 3,
-                        "position": [
-                            512,
-                            384
-                        ]
-                    },
-                    {
-                        "actionTag": 92,
-                        "duration": 3,
-                        "position": [
-                            983,
-                            347
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 85,
-                        "duration": 0,
-                        "intensity": 1
-                    },
-                    {
-                        "actionTag": 90,
-                        "duration": 3,
-                        "intensity": 1
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 89,
-                        "actions": [
-                            87,
-                            1200
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 87,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 88,
-                        "actions": [
-                            90,
-                            91
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCEaseIn": [
                         {
-                            "runAfterSwipeNumber": 1,
-                            "spriteTag": 167,
-                            "actionTags": [
-                                1201
+                            "actionTag": 1200,
+                            "innerAction": 88
+                        },
+                        {
+                            "actionTag": 1201,
+                            "innerAction": 92
+                        }
+                    ]
+                },
+                {
+                    "CCMoveTo": [
+                        {
+                            "actionTag": 86,
+                            "duration": 0,
+                            "position": [
+                                56,
+                                376
+                            ]
+                        },
+                        {
+                            "actionTag": 91,
+                            "duration": 3,
+                            "position": [
+                                512,
+                                384
+                            ]
+                        },
+                        {
+                            "actionTag": 92,
+                            "duration": 3,
+                            "position": [
+                                983,
+                                347
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            56,
-                            376
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 167,
-                        "actions": [
-                            85,
-                            89
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 85,
+                            "duration": 0,
+                            "intensity": 1
+                        },
+                        {
+                            "actionTag": 90,
+                            "duration": 3,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 89,
+                            "actions": [
+                                87,
+                                1200
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 87,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 88,
+                            "actions": [
+                                90,
+                                91
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 167,
+                                "actionTags": [
+                                    1201
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                56,
+                                376
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 167,
+                            "actions": [
+                                85,
+                                89
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 14
@@ -2104,108 +2288,124 @@
             }
         },
         {
-            "API": {
-                "CCEaseIn": [
-                    {
-                      "actionTag": 1300,
-                      "innerAction": 97
-                    },
-                    {
-                      "actionTag": 1301,
-                      "innerAction": 100
-                    }
-                ],
-                "CCMoveTo": [
-                    {
-                        "actionTag": 94,
-                        "duration": 0,
-                        "position": [
-                            72,
-                            377
-                        ]
-                    },
-                    {
-                        "actionTag": 99,
-                        "duration": 3,
-                        "position": [
-                            488,
-                            372
-                        ]
-                    },
-                    {
-                        "actionTag": 100,
-                        "duration": 3,
-                        "position": [
-                            970,
-                            382
-                        ]
-                    }
-                ],
-                "CCScaleTo": [
-                    {
-                        "actionTag": 93,
-                        "duration": 0,
-                        "intensity": 1
-                    },
-                    {
-                        "actionTag": 98,
-                        "duration": 3,
-                        "intensity": 1
-                    }
-                ],
-                "CCSequence": [
-                    {
-                        "actionTag": 97,
-                        "actions": [
-                            95,
-                            96
-                        ]
-                    }
-                ],
-                "CCDelayTime": [
-                    {
-                        "actionTag": 95,
-                        "duration": 3
-                    }
-                ],
-                "CCSpawn": [
-                    {
-                        "actionTag": 96,
-                        "actions": [
-                            98,
-                            99
-                        ]
-                    }
-                ],
-                "CCStorySwipeEnded": {
-                    "runAction": [
+            "API": [
+                {
+                    "CCEaseIn": [
                         {
-                            "runAfterSwipeNumber": 1,
-                            "spriteTag": 178,
-                            "actionTags": [
-                                1301
+                            "actionTag": 1300,
+                            "innerAction": 97
+                        },
+                        {
+                            "actionTag": 1301,
+                            "innerAction": 100
+                        }
+                    ]
+                },
+                {
+                    "CCMoveTo": [
+                        {
+                            "actionTag": 94,
+                            "duration": 0,
+                            "position": [
+                                72,
+                                377
+                            ]
+                        },
+                        {
+                            "actionTag": 99,
+                            "duration": 3,
+                            "position": [
+                                488,
+                                372
+                            ]
+                        },
+                        {
+                            "actionTag": 100,
+                            "duration": 3,
+                            "position": [
+                                970,
+                                382
                             ]
                         }
                     ]
                 },
-                "CCSprites": [
-                    {
-                        "image": "cocos2d_wheel.png",
-                        "scale": 1,
-                        "position": [
-                            72,
-                            377
-                        ],
-                        "visible": true,
-                        "zOrder": 1,
-                        "spriteTag": 178,
-                        "actions": [
-                            93,
-                            1300
+                {
+                    "CCScaleTo": [
+                        {
+                            "actionTag": 93,
+                            "duration": 0,
+                            "intensity": 1
+                        },
+                        {
+                            "actionTag": 98,
+                            "duration": 3,
+                            "intensity": 1
+                        }
+                    ]
+                },
+                {
+                    "CCSequence": [
+                        {
+                            "actionTag": 97,
+                            "actions": [
+                                95,
+                                96
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCDelayTime": [
+                        {
+                            "actionTag": 95,
+                            "duration": 3
+                        }
+                    ]
+                },
+                {
+                    "CCSpawn": [
+                        {
+                            "actionTag": 96,
+                            "actions": [
+                                98,
+                                99
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "CCStorySwipeEnded": {
+                        "runAction": [
+                            {
+                                "runAfterSwipeNumber": 1,
+                                "spriteTag": 178,
+                                "actionTags": [
+                                    1301
+                                ]
+                            }
                         ]
                     }
-                ]
-            },
+                },
+                {
+                    "CCSprites": [
+                        {
+                            "image": "cocos2d_wheel.png",
+                            "scale": 1,
+                            "position": [
+                                72,
+                                377
+                            ],
+                            "visible": true,
+                            "zOrder": 1,
+                            "spriteTag": 178,
+                            "actions": [
+                                93,
+                                1300
+                            ]
+                        }
+                    ]
+                }
+            ],
             "Page": {
                 "settings": {
                     "number": 15
