@@ -367,7 +367,7 @@ float PageLayer::calculateDelayTimeOnEnter()
         for (int j = 0; j < actions.size(); ++j)
         {
             CCAction *action = page->getActionByTag(actions[j]);
-            if (dynamic_cast<CCMoveTo*>(action) != NULL || dynamic_cast<CCScaleTo*>(action) != NULL ||  dynamic_cast<CCDelayTime*>(action) != NULL || dynamic_cast<CCSequence*>(action) != NULL ||  dynamic_cast<CCSpawn*>(action) != NULL)
+            if (dynamic_cast<CCMoveTo*>(action) != NULL || dynamic_cast<CCScaleTo*>(action) != NULL ||  dynamic_cast<CCDelayTime*>(action) != NULL || dynamic_cast<CCSequence*>(action) != NULL ||  dynamic_cast<CCSpawn*>(action) != NULL || dynamic_cast<CCFadeTo*>(action) != NULL)
             {
                 float temDelay = ((CCFiniteTimeAction*)action)->getDuration();
                 if (temDelay > delay)
@@ -473,10 +473,10 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
                 {
                     // the action should be CCScaleBy, CCScaleTo, CCMoveBy or CCMoveTo
                     CCAction *element = page->getActionByTag(actionToRun->actionTags[j]);
-                    assert(dynamic_cast<CCScaleBy*>(element) != NULL ||
-                           dynamic_cast<CCScaleTo*>(element) != NULL ||
-                           dynamic_cast<CCMoveBy*>(element) != NULL ||
-                           dynamic_cast<CCMoveTo*>(element) != NULL);
+//                    assert(dynamic_cast<CCScaleBy*>(element) != NULL ||
+//                           dynamic_cast<CCScaleTo*>(element) != NULL ||
+//                           dynamic_cast<CCMoveBy*>(element) != NULL ||
+//                           dynamic_cast<CCMoveTo*>(element) != NULL);
                     
                     array->addObject(element);
                     
@@ -487,10 +487,13 @@ float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
             else 
             {
                 action = (CCFiniteTimeAction*)page->getActionByTag(actionToRun->actionTags[0]);
-                assert(dynamic_cast<CCScaleBy*>(action) != NULL ||
-                       dynamic_cast<CCScaleTo*>(action) != NULL ||
-                       dynamic_cast<CCMoveBy*>(action) != NULL ||
-                       dynamic_cast<CCMoveTo*>(action) != NULL);
+//                assert(dynamic_cast<CCScaleBy*>(action) != NULL ||
+//                       dynamic_cast<CCScaleTo*>(action) != NULL ||
+//                       dynamic_cast<CCMoveBy*>(action) != NULL ||
+//                       dynamic_cast<CCMoveTo*>(action) != NULL ||
+//                       dynamic_cast<CCFadeTo*>(action) != NULL ||
+//                       dynamic_cast<CCJumpBy*>(action) != NULL ||
+//                       dynamic_cast<CCJumpTo*>(action) != NULL);
             }
             
             // caculate delay time
@@ -646,6 +649,8 @@ void PageLayer::createSprites()
 		CCSprite *sprite = CCSprite::spriteWithFile(spriteInfo->image.c_str());
 		sprite->setTag(spriteInfo->spriteTag);
 		sprite->setPosition(spriteInfo->position);
+        // use opacity for visibility
+        sprite->setOpacity(spriteInfo->visible ? 255 : 0);
 
 		// runAction
 		for (unsigned int i = 0; i < spriteInfo->actions.size(); ++i)

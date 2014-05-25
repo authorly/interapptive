@@ -489,124 +489,198 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
 
 void JsonParser::parseWithAPI(Page* page, Json::Value &jsonAPI)
 {
-	// CCBezierBy
-	Json::Value bezierBy = jsonAPI["CCBezierBy"];
-	parseWithBezierByOrBezierTo(page, bezierBy, true);
-
-	// CCBezierTo
-	Json::Value bezierTo = jsonAPI["CCBezierTo"];
-	parseWithBezierByOrBezierTo(page, bezierTo, false);
-
-	// CCFadeIn
-	Json::Value fadeIn = jsonAPI["CCFadeIn"];
-	parseWithFadeInOrFadeOut(page, fadeIn, true);
-
-	// CCFadeOut
-	Json::Value fadeOut = jsonAPI["CCFadeOut"];
-	parseWithFadeInOrFadeOut(page, fadeOut, false);
-
-	// CCFadeTo
-	Json::Value fadeTo = jsonAPI["CCFadeTo"];
-	parseWithFadeTo(page, fadeTo);
-
-	// CCFlipX
-	Json::Value flipX = jsonAPI["CCFlipX"];
-	parseWithFlipxOrFlipy(page, flipX, true);
-
-	// CCFlipY
-	Json::Value flipY = jsonAPI["CCFlipY"];
-	parseWithFlipxOrFlipy(page, flipY, false);
-
-	// CCFlipX3D
-	Json::Value flipX3D = jsonAPI["CCFlipX3D"];
-	parseWithFlipx3dOrFlipy3d(page, flipX3D, true);
-
-	// CCFlipY3D
-	Json::Value flipY3D = jsonAPI["CCFlipY3D"];
-	parseWithFlipx3dOrFlipy3d(page, flipY3D, false);
-
-	// CCJumpTo
-	Json::Value jumpTo = jsonAPI["CCJumpTo"];
-	parseWithJumpToOrJumpBy(page, jumpTo, true);
-
-	// CCJumpBy
-	Json::Value jumpBy = jsonAPI["CCJumpBy"];
-	parseWithJumpToOrJumpBy(page, jumpBy, false);
-
-	// CCRotateTo
-	Json::Value rotateTo = jsonAPI["CCRotateTo"];
-	parseWithRotateToOrRotateBy(page, rotateTo, true);
-
-	// CCRotateBy
-	Json::Value rotateBy = jsonAPI["CCRotateBy"];
-	parseWithRotateToOrRotateBy(page, rotateBy, false);
-
-	// CCSkewTo
-	Json::Value skewTo = jsonAPI["CCSkewTo"];
-	parseWithSkewToOrSkewBy(page, skewTo, true);
-
-	// CCSkewBy
-	Json::Value skewBy = jsonAPI["CCSkewBy"];
-	parseWithSkewToOrSkewBy(page, skewBy, false);
-
-	// CCMoveTo
-	Json::Value moveTo = jsonAPI["CCMoveTo"];
-	parseWithMoveToOrMoveBy(page, moveTo, true);
-
-	// CCMoveBy
-	Json::Value moveBy = jsonAPI["CCMoveBy"];
-	parseWithMoveToOrMoveBy(page, moveBy, false);
-
-	// CCScaleTo
-	Json::Value scaleTo = jsonAPI["CCScaleTo"];
-	parseWithScaleToOrScaleBy(page, scaleTo, true);
-
-	// CCScaleBy
-	Json::Value scaleBy = jsonAPI["CCScaleBy"];
-	parseWithScaleToOrScaleBy(page, scaleBy, false);
-
-	// CCDelayTime
-	Json::Value delayTime = jsonAPI["CCDelayTime"];
-	parseWithDelayTime(page, delayTime);
-    
-    // CCSpawn
-    Json::Value spawn = jsonAPI["CCSpawn"];
-    parseWithSpawn(page, spawn);
-
-	// CCSequence
-	// should parse CCSequence later, it uses other action
-	Json::Value sequence = jsonAPI["CCSequence"];
-	parseWithSequence(page, sequence);
-
-	// CCSprites
-	Json::Value sprites = jsonAPI["CCSprites"];
-	parseWithSprites(page, sprites);
-
-	// CCStoryTouchableNode
-	Json::Value storyTouchableNode = jsonAPI["CCStoryTouchableNode"];
-	parseWithStoryTouchableNode(page, storyTouchableNode);
-
-	// CCStorySwipeEnded
-	Json::Value storySwipeEnded = jsonAPI["CCStorySwipeEnded"];
-	parseWithStorySwipeEnded(page, storySwipeEnded);
-
-	// should parse CCEaseXXX later, because it will use other action
-
-    // CCEaseBounceIn
-	Json::Value easeBounceIn = jsonAPI["CCEaseBounceIn"];	
-	parseWithEaseBounceInOrEaseBounceOut(page, easeBounceIn, true);
-
-	// CCEaseBounceOut
-	Json::Value easeBounceOut = jsonAPI["CCEaseBounceIn"];	
-	parseWithEaseBounceInOrEaseBounceOut(page, easeBounceOut, false);
-
-	// CCEaseIn
-	Json::Value easeIn = jsonAPI["CCEaseIn"];
-	parseWithEaseInOrEaseOut(page, easeIn, true);
-
-	// CCEaseOut
-	Json::Value easeOut = jsonAPI["CCEaseOut"];
-	parseWithEaseInOrEaseOut(page, easeOut, false);
+    for (int i = 0; i < jsonAPI.size(); ++i)
+    {
+        Json::Value jsonActions = jsonAPI[i];
+        std::string actionName = jsonActions.getMemberNames()[0];
+        Json::Value jsonAction = jsonActions[actionName];
+        
+        // CCBezierBy
+        if (actionName.compare("CCBezierBy") == 0)
+        {
+            parseWithBezierByOrBezierTo(page, jsonAction, true);
+        }
+        
+        // CCBezierTo
+        if (actionName.compare("CCBezierTo") == 0)
+        {
+            parseWithBezierByOrBezierTo(page, jsonAction, false);
+        }
+        
+        // CCFadeIn
+        if (actionName.compare("CCFadeIn") == 0)
+        {
+            parseWithFadeInOrFadeOut(page, jsonAction, true);
+        }
+        
+        // CCFadeOut
+        if (actionName.compare("CCFadeOut") == 0)
+        {
+            parseWithFadeInOrFadeOut(page, jsonAction, false);
+        }
+        
+        // CCFadeTo
+        if (actionName.compare("CCFadeTo") == 0)
+        {
+            parseWithFadeTo(page, jsonAction);
+        }
+        
+        // CCFlipX
+        if (actionName.compare("CCFlipX") == 0)
+        {
+            parseWithFlipxOrFlipy(page, jsonAction, true);
+        }
+        
+        // CCFlipY
+        if (actionName.compare("CCFlipY") == 0)
+        {
+            parseWithFlipxOrFlipy(page, jsonAction, false);
+        }
+        
+        // CCFlipX3D
+        if (actionName.compare("CCFlipX3D") == 0)
+        {
+            parseWithFlipx3dOrFlipy3d(page, jsonAction, true);
+        }
+        
+        // CCFlipY3D
+        if (actionName.compare("CCFlipY3D") == 0)
+        {
+            parseWithFlipx3dOrFlipy3d(page, jsonAction, false);
+        }
+        
+        // CCJumpTo
+        if (actionName.compare("CCJumpTo") == 0)
+        {
+            parseWithJumpToOrJumpBy(page, jsonAction, true);
+        }
+        
+        // CCJumpBy
+        if (actionName.compare("CCJumpBy") == 0)
+        {
+            parseWithJumpToOrJumpBy(page, jsonAction, false);
+        }
+        
+        // CCRotateTo
+        if (actionName.compare("CCRotateTo") == 0)
+        {
+            parseWithRotateToOrRotateBy(page, jsonAction, true);
+        }
+        
+        // CCRotateBy
+        if (actionName.compare("CCRotateBy") == 0)
+        {
+            parseWithRotateToOrRotateBy(page, jsonAction, false);
+        }
+        
+        // CCSkewTo
+        if (actionName.compare("CCSkewTo") == 0)
+        {
+            parseWithSkewToOrSkewBy(page, jsonAction, true);
+        }
+        
+        // CCSkewBy
+        if (actionName.compare("CCSkewBy") == 0)
+        {
+            parseWithSkewToOrSkewBy(page, jsonAction, false);
+        }
+        
+        // CCMoveTo
+        if (actionName.compare("CCMoveTo") == 0)
+        {
+            parseWithMoveToOrMoveBy(page, jsonAction, true);
+        }
+        
+        // CCMoveBy
+        if (actionName.compare("CCMoveBy") == 0)
+        {
+            parseWithMoveToOrMoveBy(page, jsonAction, false);
+        }
+        
+        // CCScaleTo
+        if (actionName.compare("CCScaleTo") == 0)
+        {
+            parseWithScaleToOrScaleBy(page, jsonAction, true);
+        }
+        
+        // CCScaleBy
+        if (actionName.compare("CCScaleBy") == 0)
+        {
+            parseWithScaleToOrScaleBy(page, jsonAction, false);
+        }
+        
+        // CCDelayTime
+        if (actionName.compare("CCDelayTime") == 0)
+        {
+            parseWithDelayTime(page, jsonAction);
+        }
+        
+        // CCSpawn
+        if (actionName.compare("CCSpawn") == 0)
+        {
+            parseWithSpawn(page, jsonAction);
+        }
+        
+        // CCSequence
+        if (actionName.compare("CCSequence") == 0)
+        {
+            parseWithSequence(page, jsonAction);
+        }
+        
+        // CCSprites
+        if (actionName.compare("CCSprites") == 0)
+        {
+            parseWithSprites(page, jsonAction);
+        }
+        
+        // CCStoryTouchableNode
+        if (actionName.compare("CCStoryTouchableNode") == 0)
+        {
+            parseWithStoryTouchableNode(page, jsonAction);
+        }
+        
+        // CCStorySwipeEnded
+        if (actionName.compare("CCStorySwipeEnded") == 0)
+        {
+            parseWithStorySwipeEnded(page, jsonAction);
+        }
+        
+        // CCEaseBounceIn
+        if (actionName.compare("CCEaseBounceIn") == 0)
+        {
+            parseWithEaseBounceInOrEaseBounceOut(page, jsonAction, true);
+        }
+        
+        // CCEaseBounceOut
+        if (actionName.compare("CCEaseBounceOut") == 0)
+        {
+            parseWithEaseBounceInOrEaseBounceOut(page, jsonAction, false);
+        }
+        
+        // CCEaseIn
+        if (actionName.compare("CCEaseIn") == 0)
+        {
+            parseWithEaseInOrEaseOut(page, jsonAction, true);
+        }
+        
+        // CCEaseOut
+        if (actionName.compare("CCEaseOut") == 0)
+        {
+            parseWithEaseInOrEaseOut(page, jsonAction, false);
+        }
+        
+        // CCRepeatForever
+        if (actionName.compare("CCRepeatForever") == 0)
+        {
+            parseWithRepeatForever(page, jsonAction);
+        }
+        
+        // CCBlink
+        if (actionName.compare("CCBlink") == 0)
+        {
+            parseWithBlink(page, jsonAction);
+        }
+    }
 }
 
 void JsonParser::parseWithBezierByOrBezierTo(Page *page, Json::Value &value, bool isBezierBy)
@@ -626,20 +700,20 @@ void JsonParser::parseWithBezierByOrBezierTo(Page *page, Json::Value &value, boo
 		    float duration = (float)jsonBezierByOrBezierTo["duration"].asDouble();
 
 		    // endPosition
-		    Json::Value jsonEndPosition = jsonBezierByOrBezierTo["config"]["endPosition"];
+		    Json::Value jsonEndPosition = jsonBezierByOrBezierTo["endPosition"];
 		    int x = 0, y = 1;
 		    config.endPosition.x = (float)jsonEndPosition[x].asInt() * XSCALE;
 		    config.endPosition.y = (float)jsonEndPosition[y].asInt() * YSCALE;
        
 		    // controlPosition1
-		    Json::Value jsonControlPosition1 = jsonBezierByOrBezierTo["config"]["controlPosition_1"];
-		    config.controlPoint_1.x = (float)jsonEndPosition[x].asInt() * XSCALE;
-		    config.controlPoint_1.y = (float)jsonEndPosition[y].asInt() * YSCALE;
+		    Json::Value jsonControlPosition1 = jsonBezierByOrBezierTo["controlPosition1"];
+		    config.controlPoint_1.x = (float)jsonControlPosition1[x].asInt() * XSCALE;
+		    config.controlPoint_1.y = (float)jsonControlPosition1[y].asInt() * YSCALE;
 
 		    // controlPosition2
-		    Json::Value jsonControlPosition2 = jsonBezierByOrBezierTo["config"]["controlPosition_2"];
-		    config.controlPoint_2.x = (float)jsonEndPosition[x].asInt() * XSCALE;
-		    config.controlPoint_2.y = (float)jsonEndPosition[y].asInt() * YSCALE;
+		    Json::Value jsonControlPosition2 = jsonBezierByOrBezierTo["controlPosition2"];
+		    config.controlPoint_2.x = (float)jsonControlPosition2[x].asInt() * XSCALE;
+		    config.controlPoint_2.y = (float)jsonControlPosition2[y].asInt() * YSCALE;
 
 		    // create action and add it into page
 		    CCAction *action;
@@ -700,8 +774,8 @@ void JsonParser::parseWithEaseInOrEaseOut(Page *page, Json::Value &value, bool i
 
 			// actionTag
 		    int actionTag = easeInOrOut["actionTag"].asInt();
-		    // internalActionTag
-		    int internalActionTag = easeInOrOut["internalActionTag"].asInt();
+		    // innerAction
+		    int internalActionTag = easeInOrOut["innerAction"].asInt();
 		    // rate
 		    float rate = (float)easeInOrOut["rate"].asDouble();
 
@@ -853,7 +927,7 @@ void JsonParser::parseWithJumpToOrJumpBy(Page *page, Json::Value &value, bool is
 			// height
 			float height = (float)jumpToOrJumpBy["height"].asDouble() * YSCALE;
 			// jumps
-			int jumps = jumpToOrJumpBy["jumps"].asInt();
+			int jumps = jumpToOrJumpBy["numberOfJumps"].asInt();
 
 			CCAction *action;
 			if (isJumpTo)
@@ -909,9 +983,9 @@ void JsonParser::parseWithSkewToOrSkewBy(Page *page, Json::Value &value, bool is
 			// duration
 			float duration = (float)skewToOrBy["duration"].asDouble();
 			// deltaSkewX
-			int deltaSkewX = skewToOrBy["deltaSkewX"].asInt();
+			int deltaSkewX = skewToOrBy["deltaX"].asInt();
 			// deltaSkewY
-			int deltaSkewY = skewToOrBy["deltaSkewY"].asInt();
+			int deltaSkewY = skewToOrBy["deltaY"].asInt();
 			// actionTag
 			int actionTag = skewToOrBy["actionTag"].asInt();
 
@@ -1037,6 +1111,8 @@ void JsonParser::parseWithSprites(Page *page, Json::Value &value)
 			int x = 0, y = 1;
 			spriteInfo->position.x = sprite["position"][x].asInt() * XSCALE;
 			spriteInfo->position.y = sprite["position"][y].asInt() * YSCALE;
+            // visible
+            spriteInfo->visible = sprite["visible"].asBool();
 			// actions
 			Json::Value actions = sprite["actions"];
 			for (unsigned int j = 0; j < actions.size(); ++j)
@@ -1218,6 +1294,47 @@ void JsonParser::parseWithSpawn(Page *page, Json::Value &value)
                 arr->addObject((CCFiniteTimeAction*)actionToAdd);
             }
             CCFiniteTimeAction *action = CCSpawn::actionsWithArray(arr);
+            page->addAction(actionTag, action);
+        }
+    }
+}
+
+void JsonParser::parseWithRepeatForever(Page *page, Json::Value &value)
+{
+    if (! value.isNull())
+    {
+        for (unsigned int i = 0; i < value.size(); ++i)
+        {
+            Json::Value jsonRepeatForever = value[i];
+            
+            // actionTag
+            int actionTag = jsonRepeatForever["actionTag"].asInt();
+            // innerAction
+            int innerActionTag = jsonRepeatForever["innerAction"].asInt();
+            CCActionInterval *actionToAdd = (CCActionInterval*)(page->getActionByTag(innerActionTag));
+            assert(actionToAdd != NULL);
+            
+            CCFiniteTimeAction *action = CCRepeat::actionWithAction(actionToAdd, std::numeric_limits<int>::max());
+            page->addAction(actionTag, action);
+        }
+    }
+}
+
+void JsonParser::parseWithBlink(Page *page, Json::Value &value)
+{
+    if (! value.isNull())
+    {
+        for (unsigned int i = 0; i < value.size(); ++i)
+        {
+            Json::Value jsonRepeatForever = value[i];
+            
+            // actionTag
+            int actionTag = jsonRepeatForever["actionTag"].asInt();
+            // duration
+            float duration = (float)jsonRepeatForever["duration"].asDouble();
+            
+            // Blink for ever
+            CCFiniteTimeAction *action = CCRepeat::actionWithAction(CCBlink::actionWithDuration(duration, 1), std::numeric_limits<int>::max());
             page->addAction(actionTag, action);
         }
     }

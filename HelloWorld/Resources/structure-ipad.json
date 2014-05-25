@@ -49,7 +49,7 @@
                         {
                             "actionTag": 1000,
                             "duration": 2,
-                            "opacity": 1
+                            "opacity": 255
                         }
                     ]
                 },
@@ -69,7 +69,7 @@
                                 "runAfterSwipeNumber": 1,
                                 "spriteTag": 24,
                                 "actionTags": [
-                                    100
+                                    1000
                                 ]
                             }
                         ]
@@ -337,7 +337,7 @@
                         {
                             "actionTag": 1005,
                             "duration": 2,
-                            "opacity": 1
+                            "opacity": 255
                         }
                     ]
                 },
@@ -590,40 +590,40 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 24,
+                                    "duration": 0
+                                    }
+                                    ]
+                },
+                {
+                    "CCRepeatForever": [
+                                        {
+                                        "actionTag": 1021,
+                                        "innerAction": 1020
+                                        }
+                                        ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 25,
+                                "actions": [
+                                            27,
+                                            28,
+                                            1021
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 26,
                             "actions": [
                                 24,
                                 25
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCRepeatForever": [
-                        {
-                            "actionTag": 1021,
-                            "innerAction": 1020
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 24,
-                            "duration": 0
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 25,
-                            "actions": [
-                                27,
-                                28,
-                                1021
                             ]
                         }
                     ]
@@ -797,31 +797,31 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 31,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 32,
+                                "actions": [
+                                            34,
+                                            35
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 33,
                             "actions": [
                                 31,
                                 32
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 31,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 32,
-                            "actions": [
-                                34,
-                                35
                             ]
                         }
                     ]
@@ -845,7 +845,7 @@
                             "image": "cocos2d_wheel.png",
                             "scale": 1,
                             "position": [
-                                -145,
+                                145,
                                 386
                             ],
                             "visible": true,
@@ -992,32 +992,32 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 39,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 40,
+                                "actions": [
+                                            42,
+                                            43,
+                                            1071
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 41,
                             "actions": [
                                 39,
                                 40
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 39,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 40,
-                            "actions": [
-                                42,
-                                43,
-                                1071
                             ]
                         }
                     ]
@@ -1041,7 +1041,7 @@
                             "image": "cocos2d_wheel.png",
                             "scale": 1,
                             "position": [
-                                -156,
+                                156,
                                 304
                             ],
                             "visible": true,
@@ -1310,31 +1310,31 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 50,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 51,
+                                "actions": [
+                                            53,
+                                            54
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 52,
                             "actions": [
                                 50,
                                 51
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 50,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 51,
-                            "actions": [
-                                53,
-                                54
                             ]
                         }
                     ]
@@ -1481,31 +1481,31 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 58,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 59,
+                                "actions": [
+                                            61,
+                                            62
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 60,
                             "actions": [
                                 58,
                                 59
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 58,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 59,
-                            "actions": [
-                                61,
-                                62
                             ]
                         }
                     ]
@@ -1629,31 +1629,31 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 65,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 66,
+                                "actions": [
+                                            68,
+                                            69
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 67,
                             "actions": [
                                 65,
                                 66
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 65,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 66,
-                            "actions": [
-                                68,
-                                69
                             ]
                         }
                     ]
@@ -1803,31 +1803,31 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 73,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 74,
+                                "actions": [
+                                            76,
+                                            77
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 75,
                             "actions": [
                                 73,
                                 74
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 73,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 74,
-                            "actions": [
-                                76,
-                                77
                             ]
                         }
                     ]
@@ -1970,31 +1970,31 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 80,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 81,
+                                "actions": [
+                                            83,
+                                            84
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 82,
                             "actions": [
                                 80,
                                 81
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 80,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 81,
-                            "actions": [
-                                83,
-                                84
                             ]
                         }
                     ]
@@ -2099,18 +2099,6 @@
         {
             "API": [
                 {
-                    "CCEaseIn": [
-                        {
-                            "actionTag": 1200,
-                            "innerAction": 88
-                        },
-                        {
-                            "actionTag": 1201,
-                            "innerAction": 92
-                        }
-                    ]
-                },
-                {
                     "CCMoveTo": [
                         {
                             "actionTag": 86,
@@ -2153,31 +2141,43 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 87,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 88,
+                                "actions": [
+                                            90,
+                                            91
+                                            ]
+                                }
+                                ]
+                },
+                {
+                    "CCEaseIn": [
+                                 {
+                                 "actionTag": 1200,
+                                 "innerAction": 88
+                                 },
+                                 {
+                                 "actionTag": 1201,
+                                 "innerAction": 92
+                                 }
+                                 ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 89,
                             "actions": [
                                 87,
                                 1200
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 87,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 88,
-                            "actions": [
-                                90,
-                                91
                             ]
                         }
                     ]
@@ -2290,18 +2290,6 @@
         {
             "API": [
                 {
-                    "CCEaseIn": [
-                        {
-                            "actionTag": 1300,
-                            "innerAction": 97
-                        },
-                        {
-                            "actionTag": 1301,
-                            "innerAction": 100
-                        }
-                    ]
-                },
-                {
                     "CCMoveTo": [
                         {
                             "actionTag": 94,
@@ -2344,6 +2332,25 @@
                     ]
                 },
                 {
+                    "CCDelayTime": [
+                                    {
+                                    "actionTag": 95,
+                                    "duration": 3
+                                    }
+                                    ]
+                },
+                {
+                    "CCSpawn": [
+                                {
+                                "actionTag": 96,
+                                "actions": [
+                                            98,
+                                            99
+                                            ]
+                                }
+                                ]
+                },
+                {
                     "CCSequence": [
                         {
                             "actionTag": 97,
@@ -2354,25 +2361,18 @@
                         }
                     ]
                 },
-                {
-                    "CCDelayTime": [
-                        {
-                            "actionTag": 95,
-                            "duration": 3
-                        }
-                    ]
-                },
-                {
-                    "CCSpawn": [
-                        {
-                            "actionTag": 96,
-                            "actions": [
-                                98,
-                                99
-                            ]
-                        }
-                    ]
-                },
+                    {
+                    "CCEaseIn": [
+                                 {
+                                 "actionTag": 1300,
+                                 "innerAction": 97
+                                 },
+                                 {
+                                 "actionTag": 1301,
+                                 "innerAction": 100
+                                 }
+                                 ]
+                    },
                 {
                     "CCStorySwipeEnded": {
                         "runAction": [

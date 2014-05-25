@@ -69,6 +69,7 @@ typedef struct sprite
 	cocos2d::CCPoint          position;
     double                    scale;
 	std::vector<int>          actions; // actionTags
+    bool                      visible;
 }SpriteInfo;
 
 typedef struct storyTouchableNodeActionsToRun
