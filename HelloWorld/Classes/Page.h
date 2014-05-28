@@ -59,6 +59,7 @@ typedef struct paragraph
     std::string                 voiceAudioFile;
     std::vector<HotspotInfo*>   hotspots;
     float                       autoplayDuration;
+    float                       delayBeforeShowingText;
 } Paragraph;
 
 typedef struct sprite

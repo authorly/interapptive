@@ -70,15 +70,6 @@ void PageLayer::init(Page *page)
     CCLayerColor::initWithColor(ccc4(255, 255, 255, 255));
         
     this->page = page;
-    // Optimize: not preload effects and music
-    
-//    // preload backgound music
-//    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(page->settings.audioFilePath.c_str());
-//    // preload effect used to speak paragraph
-//    for (int i = 0; i < page->paragraphs.size(); ++i)
-//    {
-//        SimpleAudioEngine::sharedEngine()->preloadEffect(page->paragraphs[i]->voiceAudioFile.c_str());
-//    }
     
     this->delayOfAnimation = this->calculateDelayTimeOnEnter();
     if (this->delayOfAnimation > 0)
@@ -348,7 +339,7 @@ void PageLayer::onEnterTransitionDidFinish()
 {   
     playBackgroundMusic();  
     //float delay = calculateDelayTimeOnEnter();
-    showParagraph(delayOfAnimation);
+    showParagraph(page->paragraphs[currentIndexOfParagraph]->delayBeforeShowingText);
     
     CCLayer::onEnterTransitionDidFinish();
 }
@@ -425,28 +416,6 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 
 float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
 {
-    StorySwipeEnded &swipeEnded = page->storySwipeEnded;
-    /*
-     should add children and remove children every time swiping ended
-     
-     // add child
-     vector<int> &spritesToAdd = swipeEnded.spritesToAdd;
-     vector<int>::iterator iter;
-     for (iter = spritesToAdd.begin(); iter != spritesToAdd.end(); ++iter)
-     {
-     CCSprite *sprite = page->getSpriteInfoByTag(*iter);
-     addChild(sprite);
-     }
-     
-     // remove child
-     vector<int> &spritesToRemove = swipeEnded.spritesToMove;
-     for (iter = spritesToRemove.begin(); iter != spritesToRemove.end(); ++iter)
-     {
-     CCSprite *sprite = page->getSpriteInfoByTag(*iter);
-     removeChildByTag(sprite->getTag(), true);
-     }
-     */
-    
     // run actions
     float delay = 0.0f;
     
@@ -555,11 +524,11 @@ void PageLayer::swipeLeft()
         // increase current index of paragraph
         ++currentIndexOfParagraph;
         
-        float delay = swipeEndedOperationAndCalculateTotalDelay(true);
-                
+        swipeEndedOperationAndCalculateTotalDelay(true);
+        
         createParagraph(currentIndexOfParagraph);
         
-        showParagraph(delay);
+        showParagraph(page->paragraphs[currentIndexOfParagraph]->delayBeforeShowingText);
     }
 }
 

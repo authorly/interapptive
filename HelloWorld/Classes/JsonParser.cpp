@@ -361,6 +361,9 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
         // autoplayDuration
         paragraph->autoplayDuration = jsonParagraph["autoplayDuration"].asDouble();
         
+        // delayBeforeShowingText
+        paragraph->delayBeforeShowingText = jsonParagraph["delayBeforeShowingText"].asDouble();
+        
 		// linesOfText
 		Json::Value linesOfText = jsonParagraph["linesOfText"];
 		for (unsigned int k = 0; k < linesOfText.size(); ++k)
