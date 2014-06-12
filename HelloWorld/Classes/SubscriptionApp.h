@@ -19,7 +19,7 @@ enum {
 };
 
 const std::string g_bookTitles[BOOK_COUNT] = {
-    "StormyTheRaincloud",
+    "MyBestSelf",
     "AnimalMotions",
     "CaptainNoBeard",
     "TooTallFoyle",
@@ -42,7 +42,7 @@ const std::string g_bookTitles[BOOK_COUNT] = {
     "LittleWenWhatIsTheChineseSayingForThisOne",
     "MyHeartNeverLies",
     "SantasSugar",
-    "MyBestSelf",
+    "StormyTheRaincloud",
     "TheTeethThatLookedForANewMouth"
 };
 
