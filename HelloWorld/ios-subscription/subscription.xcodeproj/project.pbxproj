@@ -211,6 +211,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		46416E3B18CC3D0C00A31D34 /* LoadingLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46416E3918CC3D0C00A31D34 /* LoadingLayer.cpp */; };
+		46947F12191DB72C00F66E94 /* FlurryX_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = 46947F10191DB72C00F66E94 /* FlurryX_ios.mm */; };
 		46C02E1118E9B4F2004B7456 /* LoginLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46C02E0F18E9B4F2004B7456 /* LoginLayer.cpp */; };
 		46C02E3418E9B549004B7456 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C02E3318E9B549004B7456 /* libcurl.a */; };
 		46F19B02170B0B0D004DEA51 /* SnowmanGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46F19B01170B0B0D004DEA51 /* SnowmanGameScene.cpp */; };
@@ -897,6 +898,10 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		46416E3918CC3D0C00A31D34 /* LoadingLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingLayer.cpp; sourceTree = "<group>"; };
 		46416E3A18CC3D0C00A31D34 /* LoadingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingLayer.h; sourceTree = "<group>"; };
+		46947F10191DB72C00F66E94 /* FlurryX_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FlurryX_ios.mm; sourceTree = "<group>"; };
+		46947F11191DB72C00F66E94 /* FlurryX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryX.h; sourceTree = "<group>"; };
+		46947F35191DB74700F66E94 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		46947F36191DB74700F66E94 /* libFlurry_5.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.0.0.a; sourceTree = "<group>"; };
 		46C02E0F18E9B4F2004B7456 /* LoginLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoginLayer.cpp; sourceTree = "<group>"; };
 		46C02E1018E9B4F2004B7456 /* LoginLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginLayer.h; sourceTree = "<group>"; };
 		46C02E3318E9B549004B7456 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
@@ -1658,6 +1663,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				46947F34191DB74700F66E94 /* Flurry */,
 				DC9CE28318EDBACD0016D81B /* HelloWorld-Info.plist */,
 				154CD4D31629B4F700C3A047 /* cocos2dx */,
 				154CD4CF1629B1D200C3A047 /* CoreFoundation.framework */,
@@ -1700,6 +1706,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		46947F34191DB74700F66E94 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				46947F35191DB74700F66E94 /* Flurry.h */,
+				46947F36191DB74700F66E94 /* libFlurry_5.0.0.a */,
+			);
+			name = Flurry;
+			path = ../Flurry;
+			sourceTree = "<group>";
+		};
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1712,6 +1728,8 @@
 		BF23D4E2143315EB00657E08 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				46947F10191DB72C00F66E94 /* FlurryX_ios.mm */,
+				46947F11191DB72C00F66E94 /* FlurryX.h */,
 				DC48552E18EF2607000103A3 /* Utils.h */,
 				DC48552F18EF2607000103A3 /* Utils.mm */,
 				46C02E0F18E9B4F2004B7456 /* LoginLayer.cpp */,
@@ -2284,6 +2302,7 @@
 				154CE12C1629B50000C3A047 /* CCScriptSupport.cpp in Sources */,
 				154CE12D1629B50000C3A047 /* CCAnimation.cpp in Sources */,
 				154CE12E1629B50000C3A047 /* CCAnimationCache.cpp in Sources */,
+				46947F12191DB72C00F66E94 /* FlurryX_ios.mm in Sources */,
 				154CE12F1629B50000C3A047 /* CCSprite.cpp in Sources */,
 				154CE1301629B50000C3A047 /* CCSpriteBatchNode.cpp in Sources */,
 				154CE1311629B50000C3A047 /* CCSpriteFrame.cpp in Sources */,
@@ -2342,8 +2361,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
 				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2372,9 +2394,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries",
-					/Users/minggo/SourceCode/interapptive/cocos2dx/platform/third_party/ios/libraries,
+					"$(SRCROOT)/../Flurry",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-lFlurry_5.0.0";
 				PRODUCT_NAME = bookfair;
 				PROVISIONING_PROFILE = "BBF64C61-D7D5-4356-8786-188E76A6303B";
 				SDKROOT = iphoneos;
@@ -2389,8 +2411,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
 				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2418,9 +2443,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries",
-					/Users/minggo/SourceCode/interapptive/cocos2dx/platform/third_party/ios/libraries,
+					"$(SRCROOT)/../Flurry",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-lFlurry_5.0.0";
 				PRODUCT_NAME = bookfair;
 				PROVISIONING_PROFILE = "BBF64C61-D7D5-4356-8786-188E76A6303B";
 				SDKROOT = iphoneos;
@@ -2455,8 +2480,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
 				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2485,9 +2513,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries",
-					/Users/minggo/SourceCode/interapptive/cocos2dx/platform/third_party/ios/libraries,
+					"$(SRCROOT)/../Flurry",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-lFlurry_5.0.0";
 				PRODUCT_NAME = bookfair;
 				PROVISIONING_PROFILE = "BBF64C61-D7D5-4356-8786-188E76A6303B";
 				SDKROOT = iphoneos;
