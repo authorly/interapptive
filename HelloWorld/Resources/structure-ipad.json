@@ -104,7 +104,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Swipe will fade object in",
+                                             "text": "Swipe will fade object in - pg 1",
                                              "xOffset": 289,
                                              "yOffset": 511,
                                              "fontType": "arialother.ttf",
@@ -135,7 +135,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "object should be shown now",
+                                             "text": "object should be shown now - pg 1",
                                              "xOffset": 290,
                                              "yOffset": 489,
                                              "fontType": "arialother.ttf",
@@ -272,7 +272,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Object should be gone",
+                                             "text": "Object should be gone - pg 2",
                                              "xOffset": 304,
                                              "yOffset": 508,
                                              "fontType": "arialother.ttf",
@@ -388,7 +388,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Continuously fade in then fade out object",
+                                             "text": "Continuously fade in then fade out object - pg 3",
                                              "xOffset": 255,
                                              "yOffset": 513,
                                              "fontType": "arialother.ttf",
@@ -481,7 +481,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Continuously blinking object",
+                                             "text": "Continuously blinking object - pg 4",
                                              "xOffset": 328,
                                              "yOffset": 488,
                                              "fontType": "arialother.ttf",
@@ -672,7 +672,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Rotating object that doesnt stop until first swipe",
+                                             "text": "Rotating object that doesnt stop until first swipe - pg 5",
                                              "xOffset": 192,
                                              "yOffset": 493,
                                              "fontType": "arialother.ttf",
@@ -703,7 +703,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "rolling object that stops after first swipe - should be stopped now",
+                                             "text": "rolling object that stops after first swipe - should be stopped now - pg 5",
                                              "xOffset": 47,
                                              "yOffset": 521,
                                              "fontType": "arialother.ttf",
@@ -867,7 +867,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "rolling object that never stops rotating",
+                                             "text": "rolling object that never stops rotating - pg 6",
                                              "xOffset": 255,
                                              "yOffset": 509,
                                              "fontType": "arialother.ttf",
@@ -1069,7 +1069,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Rotating object that stops then starts again after swipe",
+                                             "text": "Rotating object that stops then starts again after swipe - pg 7",
                                              "xOffset": 186,
                                              "yOffset": 521,
                                              "fontType": "arialother.ttf",
@@ -1210,7 +1210,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Rolling object that stops after first swipe",
+                                             "text": "Rolling object that stops after first swipe - pg 8",
                                              "xOffset": 270,
                                              "yOffset": 532,
                                              "fontType": "arialother.ttf",
@@ -1395,7 +1395,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Object jumping in, then jumping out after swipe",
+                                             "text": "Object jumping in, then jumping out after swipe - pg 9",
                                              "xOffset": 171,
                                              "yOffset": 508,
                                              "fontType": "arialother.ttf",
@@ -1558,7 +1558,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "Object jumping in and continuing after text is shown",
+                                             "text": "Object jumping in and continuing after text is shown - pg 10",
                                              "xOffset": 108,
                                              "yOffset": 593,
                                              "fontType": "arialother.ttf",
@@ -1714,7 +1714,7 @@
                              {
                              "linesOfText": [
                                              {
-                                             "text": "CCBezierTo on enter",
+                                             "text": "CCBezierTo on enter - pg 11",
                                              "xOffset": 346,
                                              "yOffset": 443,
                                              "fontType": "arialother.ttf",
