@@ -114,9 +114,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     // go to bookshelf
     CCScene *scene = CCScene::node();
-    LoadingLayer *loadingLayer = new LoadingLayer();
-    scene->addChild(loadingLayer);
-    loadingLayer->release();
+    LoginLayer *loginLayer = new LoginLayer();
+    scene->addChild(loginLayer);
+    loginLayer->release();
     CCDirector::sharedDirector()->runWithScene(scene);
     
 

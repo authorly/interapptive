@@ -4,6 +4,7 @@
 #include "LoadingLayer.h"
 #include "CCUserDefault.h"
 #include "SharedGlobalData.h"
+#include "FlurryX.h"
 
 using namespace cocos2d;
 
