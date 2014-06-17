@@ -352,8 +352,14 @@ void Login::popUp(const char* userName, const char* password)
 {
     LoginViewController *viewContorller =  [[LoginViewController alloc] initWithUsername:[NSString stringWithUTF8String:userName ] password:[NSString stringWithUTF8String:password]];
     g_loginViewController = viewContorller;
-    [[EAGLView sharedEGLView] addSubview:viewContorller.view];
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
+    CGFloat screenWidth = screenRect.size.width;
+    
+    viewContorller.view.frame = CGRectMake(0, 0, screenHeight, screenWidth);
+    
+    [[EAGLView sharedEGLView] addSubview:viewContorller.view];
 }
 
 void Login::hide()
