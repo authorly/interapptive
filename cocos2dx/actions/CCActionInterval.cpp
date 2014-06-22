@@ -1712,7 +1712,7 @@ CCFadeTo* CCFadeTo::actionWithDuration(ccTime duration, GLubyte opacity)
 	pFadeTo->initWithDuration(duration, opacity);
 	pFadeTo->autorelease();
 
-	 return pFadeTo;
+    return pFadeTo;
 }
 
 bool CCFadeTo::initWithDuration(ccTime duration, GLubyte opacity)
@@ -1770,6 +1770,11 @@ void CCFadeTo::update(ccTime time)
 	}
 	/*m_pTarget->setOpacity((GLubyte)(m_fromOpacity + (m_toOpacity - m_fromOpacity) * time));*/
 }
+    
+    CCActionInterval* CCFadeTo::reverse(void)
+    {
+        return CCFadeTo::actionWithDuration(m_fDuration, m_fromOpacity);
+    }
 
 //
 // TintTo

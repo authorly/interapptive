@@ -565,6 +565,7 @@ public:
 	virtual CCObject* copyWithZone(CCZone* pZone);
 	virtual void startWithTarget(CCNode *pTarget);
 	virtual void update(ccTime time);
+    virtual CCActionInterval* reverse(void);
 
 public:
 	/** creates an action with duration and opacity */
