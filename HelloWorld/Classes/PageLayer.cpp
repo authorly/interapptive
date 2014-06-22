@@ -624,7 +624,7 @@ void PageLayer::createSprites()
 		// runAction
 		for (unsigned int i = 0; i < spriteInfo->actions.size(); ++i)
 		{
-			CCAction *action = page->actions[spriteInfo->actions[i]];
+			CCAction *action = (CCAction*)page->actions[spriteInfo->actions[i]]->copy();
 			assert(action != NULL);
 			sprite->runAction(action);
             
