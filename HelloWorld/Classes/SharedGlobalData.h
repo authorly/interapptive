@@ -2,7 +2,7 @@
 #define interapptive_SharedGlobalData_h
 
 #include "cocos2d.h"
-
+#include "platform.h"
 #include <vector>
 #include <string>
 
@@ -24,6 +24,7 @@ public:
     
     // save current page number
     void save();
+    void saveFirstDateUsed();
     
 private:
     GlobalData();
@@ -41,6 +42,8 @@ public:
     float minScale;
     // max value of xScale and yScale
     float maxScale;
+    // First date app was used
+    long int firstDateUsed;
     
     static int ZORDER_MAIN_MENU;
     static int ZORDER_PARAGRAPH;

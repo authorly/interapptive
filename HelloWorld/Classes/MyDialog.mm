@@ -265,7 +265,7 @@ void MyDialog::popUp()
             userNameFeild.text = initUserName;
             userNameFeild.font = [UIFont fontWithName:@"Helvetica" size:18.0];
             userNameFeild.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            userNameFeild.keyboardType = UIKeyboardTypeDefault;
+            userNameFeild.keyboardType = UIKeyboardTypeEmailAddress;
             userNameFeild.adjustsFontSizeToFitWidth = YES;
             userNameFeild.minimumFontSize = 4.0;
             [cell.contentView addSubview:userNameFeild];

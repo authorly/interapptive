@@ -3,6 +3,7 @@
 #include "cocos2d.h"
 
 #define KEY_OF_PAGE_NUMBER "currentPageNumber"
+#define KEY_OF_FIRST_DATE_USED "firstDateUsed"
 
 static GlobalData *g_sharedGlobalData = 0;
 
@@ -19,12 +20,14 @@ GlobalData::GlobalData()
 , minScale(0.0f)
 , maxScale(0.0f)
 , currentPageNumber(0)
+, firstDateUsed(0)
 {}
 
 GlobalData::~GlobalData()
 {
-    // save currentPageNumber
+    // save currentPageNumber & first date used
     CCUserDefault::sharedUserDefault()->setIntegerForKey(KEY_OF_PAGE_NUMBER, currentPageNumber);
+    CCUserDefault::sharedUserDefault()->setIntegerForKey(KEY_OF_FIRST_DATE_USED, firstDateUsed);
 }
 
 GlobalData* GlobalData::sharedGlobalData()
@@ -44,14 +47,27 @@ void GlobalData::save()
     CCUserDefault::sharedUserDefault()->flush();
 }
 
+void GlobalData::saveFirstDateUsed()
+{
+    CCUserDefault::sharedUserDefault()->setIntegerForKey(KEY_OF_FIRST_DATE_USED, firstDateUsed);
+    CCUserDefault::sharedUserDefault()->flush();
+}
+
 void GlobalData::init()
 {
     currentPageNumber = CCUserDefault::sharedUserDefault()->getIntegerForKey(KEY_OF_PAGE_NUMBER, -1);
+    firstDateUsed = CCUserDefault::sharedUserDefault()->getIntegerForKey(KEY_OF_FIRST_DATE_USED, -1);
     
     // if it is the first time to run the app, set last left off page number to 0
     if (currentPageNumber == -1)
     {  
         currentPageNumber = 0;
+    }
+    
+    // if it is the first time to run the app, set the firstDateUsed value to current date/time
+    if (firstDateUsed  == -1)
+    {
+        firstDateUsed = 0;
     }
     
     // calculate all the scale ratio

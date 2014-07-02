@@ -5,6 +5,10 @@
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
 #include "FlurryX.h"
+#include "SharedGlobalData.h"
+#include "platform.h"
+
+#define SEVEN_DAYS_IN_SECONDS 604800
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -111,14 +115,39 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	// set FPS. the default value is 1.0/60 if you don't call this
 	pDirector->setAnimationInterval(1.0 / 60);
     
-    
-    // go to bookshelf
-    CCScene *scene = CCScene::node();
-    LoginLayer *loginLayer = new LoginLayer();
-    scene->addChild(loginLayer);
-    loginLayer->release();
-    CCDirector::sharedDirector()->runWithScene(scene);
-    
+    if(GlobalData::sharedGlobalData()->firstDateUsed == 0) {
+        time_t rawTime;
+        time (&rawTime);
+        localtime (&rawTime);
+        
+        GlobalData::sharedGlobalData()->firstDateUsed = rawTime;
+        GlobalData::sharedGlobalData()->saveFirstDateUsed();
+        
+        // show the bookshelf
+    } else {
+        time_t savedTime = GlobalData::sharedGlobalData()->firstDateUsed;
+        time_t rawTimeCurrent;
+        time (&rawTimeCurrent);
+        localtime(&rawTimeCurrent);
+        
+        double secondsBetweenFirstUseTimeAndNow = difftime(rawTimeCurrent, savedTime);
+        CCLog("secondsBetweenFirstUseTimeAndNow: %f", secondsBetweenFirstUseTimeAndNow);
+        if(secondsBetweenFirstUseTimeAndNow > SEVEN_DAYS_IN_SECONDS){
+            // show login
+            CCScene *scene = CCScene::node();
+            LoginLayer *loginLayer = new LoginLayer();
+            scene->addChild(loginLayer);
+            loginLayer->release();
+            CCDirector::sharedDirector()->runWithScene(scene);
+        } else {
+            // go to bookshelf
+            CCScene *scene = CCScene::node();
+            LoadingLayer *loadingLayer = new LoadingLayer();
+            scene->addChild(loadingLayer);
+            loadingLayer->release();
+            CCDirector::sharedDirector()->runWithScene(scene);
+        }
+    }
 
 	return true;
 }
