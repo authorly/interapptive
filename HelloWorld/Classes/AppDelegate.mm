@@ -1,0 +1,174 @@
+#include "AppDelegate.h"
+#include "CCEGLView.h"
+#include "LoadingLayer.h"
+#include "LoginLayer.h"
+#include "cocos2d.h"
+#include "SimpleAudioEngine.h"
+#include "FlurryX.h"
+#include "SharedGlobalData.h"
+#include "platform.h"
+#import <Optimizely/Optimizely.h>
+
+#define NUMBER_OF_SECONDS_BEFORE_LOCKOUT 1209600
+
+USING_NS_CC;
+using namespace CocosDenshion;
+
+AppDelegate::AppDelegate() {
+
+}
+
+AppDelegate::~AppDelegate() {
+}
+
+bool AppDelegate::initInstance() {
+	bool bRet = false;
+	do {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+
+		// Initialize OpenGLView instance, that release by CCDirector when application terminate.
+		// The HelloWorld is designed as HVGA.
+		CCEGLView * pMainWnd = new CCEGLView();
+		CC_BREAK_IF(! pMainWnd
+				|| ! pMainWnd->Create(TEXT("cocos2d: Hello World"), 480, 320));
+
+#endif  // CC_PLATFORM_WIN32
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        FlurryX::startSession("2D5HXDFK3PT75MQPMJNX");
+		// OpenGLView initialized in testsAppDelegate.mm on ios platform, nothing need to do here.
+
+#endif  // CC_PLATFORM_IOS
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+
+		// OpenGLView initialized in HelloWorld/android/jni/helloworld/main.cpp
+		// the default setting is to create a fullscreen view
+		// if you want to use auto-scale, please enable view->create(320,480) in main.cpp
+		// if the resources under '/sdcard" or other writeable path, set it.
+		// warning: the audio source should in assets/
+		// cocos2d::CCFileUtils::setResourcePath("/sdcard");
+
+#endif  // CC_PLATFORM_ANDROID
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WOPHONE)
+
+		// Initialize OpenGLView instance, that release by CCDirector when application terminate.
+		// The HelloWorld is designed as HVGA.
+		CCEGLView* pMainWnd = new CCEGLView(this);
+		CC_BREAK_IF(! pMainWnd || ! pMainWnd->Create(320,480, WM_WINDOW_ROTATE_MODE_CW));
+
+#ifndef _TRANZDA_VM_  
+		// on wophone emulator, we copy resources files to Work7/NEWPLUS/TDA_DATA/Data/ folder instead of zip file
+		cocos2d::CCFileUtils::setResource("HelloWorld.zip");
+#endif
+
+#endif  // CC_PLATFORM_WOPHONE
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_MARMALADE)
+		// MaxAksenov said it's NOT a very elegant solution. I agree, haha
+		CCDirector::sharedDirector()->setDeviceOrientation(kCCDeviceOrientationLandscapeLeft);
+#endif
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
+
+		// Initialize OpenGLView instance, that release by CCDirector when application terminate.
+		// The HelloWorld is designed as HVGA.
+		CCEGLView * pMainWnd = new CCEGLView();
+		CC_BREAK_IF(! pMainWnd
+				|| ! pMainWnd->Create("cocos2d: Hello World", 480, 320 ,480, 320));
+
+		CCFileUtils::setResourcePath("../Resources/");
+
+#endif  // CC_PLATFORM_LINUX
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_BADA)
+
+		CCEGLView * pMainWnd = new CCEGLView();
+		CC_BREAK_IF(! pMainWnd|| ! pMainWnd->Create(this, 480, 320));
+		pMainWnd->setDeviceOrientation(Osp::Ui::ORIENTATION_LANDSCAPE);
+		CCFileUtils::setResourcePath("/Res/");
+
+#endif  // CC_PLATFORM_BADA
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_QNX)
+		CCEGLView * pMainWnd = new CCEGLView();
+		CC_BREAK_IF(! pMainWnd|| ! pMainWnd->Create(1024, 600));
+		CCFileUtils::setResourcePath("app/native/Resources");
+#endif // CC_PLATFORM_QNX
+		bRet = true;
+	} while (0);
+	return bRet;
+}
+
+bool AppDelegate::applicationDidFinishLaunching() {
+	// initialize director
+	CCDirector *pDirector = CCDirector::sharedDirector();
+
+	pDirector->setOpenGLView(&CCEGLView::sharedOpenGLView());
+    pDirector->setDepthTest(false);
+    
+    pDirector->setTargetWinsize(CCSizeMake(1024, 768));
+
+	// enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
+     //pDirector->enableRetinaDisplay(true);
+
+	// turn on display FPS
+	pDirector->setDisplayFPS(false);
+
+	// pDirector->setDeviceOrientation(kCCDeviceOrientationLandscapeLeft);
+
+	// set FPS. the default value is 1.0/60 if you don't call this
+	pDirector->setAnimationInterval(1.0 / 60);
+    
+    if(GlobalData::sharedGlobalData()->firstDateUsed == 0) {
+        time_t rawTime;
+        time (&rawTime);
+        localtime (&rawTime);
+        
+        GlobalData::sharedGlobalData()->firstDateUsed = rawTime;
+        GlobalData::sharedGlobalData()->saveFirstDateUsed();
+        
+        // show the bookshelf
+    } else {
+        time_t savedTime = GlobalData::sharedGlobalData()->firstDateUsed;
+        time_t rawTimeCurrent;
+        time (&rawTimeCurrent);
+        localtime(&rawTimeCurrent);
+        
+        // Get the number of seconds between savedTime (first day/time used) and current time
+        // Show login if over 7 days. Otherwise, show the bookshelf.
+        double secondsBetweenFirstUseTimeAndNow = difftime(rawTimeCurrent, savedTime);
+        if(secondsBetweenFirstUseTimeAndNow > NUMBER_OF_SECONDS_BEFORE_LOCKOUT){
+            // show login
+            CCScene *scene = CCScene::node();
+            LoginLayer *loginLayer = new LoginLayer();
+            scene->addChild(loginLayer);
+            loginLayer->release();
+            CCDirector::sharedDirector()->runWithScene(scene);
+        } else {
+            // go to bookshelf
+            CCScene *scene = CCScene::node();
+            LoadingLayer *loadingLayer = new LoadingLayer();
+            scene->addChild(loadingLayer);
+            loadingLayer->release();
+            CCDirector::sharedDirector()->runWithScene(scene);
+        }
+    }
+
+	return true;
+}
+
+// This function will be called when the app is inactive. When comes a phone call,it's be invoked too
+void AppDelegate::applicationDidEnterBackground() {
+	CCDirector::sharedDirector()->stopAnimation();
+    
+    SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
+
+	// if you use SimpleAudioEngine, it must be pause
+	// SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+}
+
+// this function will be called when the app is active again
+void AppDelegate::applicationWillEnterForeground() {
+	CCDirector::sharedDirector()->startAnimation();
+
+	// if you use SimpleAudioEngine, it must resume here
+	// SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+}
