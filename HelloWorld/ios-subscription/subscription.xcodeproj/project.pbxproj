@@ -250,6 +250,9 @@
 		DC5D0358194A69D5004FBA2A /* Icon@114.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5D0340194A69D5004FBA2A /* Icon@114.png */; };
 		DC5D0359194A69D5004FBA2A /* Icon@144.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5D0341194A69D5004FBA2A /* Icon@144.png */; };
 		DC5D035A194A69D5004FBA2A /* Icon@152.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5D0342194A69D5004FBA2A /* Icon@152.png */; };
+		DC64F53F1965F4D500524D5F /* Optimizely.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC64F53E1965F4D500524D5F /* Optimizely.framework */; };
+		DC64F5411965F60000524D5F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC64F5401965F60000524D5F /* libsqlite3.dylib */; };
+		DC64F5431965F66300524D5F /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC64F5421965F66300524D5F /* libicucore.dylib */; };
 		DC9CE28418EDBACD0016D81B /* HelloWorld-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC9CE28318EDBACD0016D81B /* HelloWorld-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -971,6 +974,10 @@
 		DC5D0340194A69D5004FBA2A /* Icon@114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@114.png"; sourceTree = "<group>"; };
 		DC5D0341194A69D5004FBA2A /* Icon@144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@144.png"; sourceTree = "<group>"; };
 		DC5D0342194A69D5004FBA2A /* Icon@152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@152.png"; sourceTree = "<group>"; };
+		DC64F53C1965F39200524D5F /* OptimizelyPrepareNibs.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = OptimizelyPrepareNibs.py; sourceTree = "<group>"; };
+		DC64F53E1965F4D500524D5F /* Optimizely.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Optimizely.framework; sourceTree = "<group>"; };
+		DC64F5401965F60000524D5F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DC64F5421965F66300524D5F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		DC9CE28318EDBACD0016D81B /* HelloWorld-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HelloWorld-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -979,6 +986,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC64F5431965F66300524D5F /* libicucore.dylib in Frameworks */,
+				DC64F5411965F60000524D5F /* libsqlite3.dylib in Frameworks */,
 				46C02E3418E9B549004B7456 /* libcurl.a in Frameworks */,
 				154CD4D01629B1D200C3A047 /* CoreFoundation.framework in Frameworks */,
 				154CD4CE1629B1A800C3A047 /* Twitter.framework in Frameworks */,
@@ -998,6 +1007,7 @@
 				BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */,
 				BF1373F0128A899500D9F789 /* libxml2.dylib in Frameworks */,
 				BF1373F1128A899E00D9F789 /* libz.dylib in Frameworks */,
+				DC64F53F1965F4D500524D5F /* Optimizely.framework in Frameworks */,
 				BF13742F128A8E6A00D9F789 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1713,6 +1723,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DC64F53C1965F39200524D5F /* OptimizelyPrepareNibs.py */,
 				46947F34191DB74700F66E94 /* Flurry */,
 				DC9CE28318EDBACD0016D81B /* HelloWorld-Info.plist */,
 				154CD4D31629B4F700C3A047 /* cocos2dx */,
@@ -1737,6 +1748,7 @@
 				BF5681CC1313A84D0055EEAC /* ios */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				DC64F53E1965F4D500524D5F /* Optimizely.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -1744,6 +1756,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC64F5421965F66300524D5F /* libicucore.dylib */,
+				DC64F5401965F60000524D5F /* libsqlite3.dylib */,
 				46C02E3318E9B549004B7456 /* libcurl.a */,
 				BF492B6912891AC600A09262 /* libz.dylib */,
 				BF137426128A8E4600D9F789 /* QuartzCore.framework */,
@@ -1884,6 +1898,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Subscription" */;
 			buildPhases = (
+				DC64F53D1965F3E600524D5F /* ShellScript */,
 				DC1A422917389DB000B03F0B /* ShellScript */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -2263,6 +2278,19 @@
 			shellPath = /bin/sh;
 			shellScript = "find -L ${SRCROOT%/*}/Resources -type f -not -name \".*\" \\\n     -not -name \"`basename ${INFOPLIST_FILE}`\" \\\n     | xargs -t -I {} \\\ncp {} ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/";
 		};
+		DC64F53D1965F3E600524D5F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python \"$SRCROOT/OptimizelyPrepareNibs.py\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2465,6 +2493,10 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation (3K3N7L5797)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -2515,6 +2547,10 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation (3K3N7L5797)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2584,6 +2620,10 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation (3K3N7L5797)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;

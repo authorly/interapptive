@@ -7,8 +7,9 @@
 #include "FlurryX.h"
 #include "SharedGlobalData.h"
 #include "platform.h"
+#import <Optimizely/Optimizely.h>
 
-#define SEVEN_DAYS_IN_SECONDS 604800
+#define NUMBER_OF_SECONDS_BEFORE_LOCKOUT 1209600
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -130,9 +131,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
         time (&rawTimeCurrent);
         localtime(&rawTimeCurrent);
         
+        // Get the number of seconds between savedTime (first day/time used) and current time
+        // Show login if over 7 days. Otherwise, show the bookshelf.
         double secondsBetweenFirstUseTimeAndNow = difftime(rawTimeCurrent, savedTime);
-        CCLog("secondsBetweenFirstUseTimeAndNow: %f", secondsBetweenFirstUseTimeAndNow);
-        if(secondsBetweenFirstUseTimeAndNow > SEVEN_DAYS_IN_SECONDS){
+        if(secondsBetweenFirstUseTimeAndNow > NUMBER_OF_SECONDS_BEFORE_LOCKOUT){
             // show login
             CCScene *scene = CCScene::node();
             LoginLayer *loginLayer = new LoginLayer();
