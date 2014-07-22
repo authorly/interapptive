@@ -131,7 +131,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
         localtime(&rawTimeCurrent);
         
         double secondsBetweenFirstUseTimeAndNow = difftime(rawTimeCurrent, savedTime);
-        CCLog("secondsBetweenFirstUseTimeAndNow: %f", secondsBetweenFirstUseTimeAndNow);
+        // CCLog("secondsBetweenFirstUseTimeAndNow: %f", secondsBetweenFirstUseTimeAndNow);
         if(secondsBetweenFirstUseTimeAndNow > SEVEN_DAYS_IN_SECONDS){
             // show login
             CCScene *scene = CCScene::node();
