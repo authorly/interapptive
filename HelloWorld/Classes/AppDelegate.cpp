@@ -123,6 +123,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
         GlobalData::sharedGlobalData()->firstDateUsed = rawTime;
         GlobalData::sharedGlobalData()->saveFirstDateUsed();
         
+        // go to bookshelf
+        CCScene *scene = CCScene::node();
+        LoadingLayer *loadingLayer = new LoadingLayer();
+        scene->addChild(loadingLayer);
+        loadingLayer->release();
+        CCDirector::sharedDirector()->runWithScene(scene);
+        
         // show the bookshelf
     } else {
         time_t savedTime = GlobalData::sharedGlobalData()->firstDateUsed;
