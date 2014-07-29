@@ -44,8 +44,6 @@ class CC_DLL CCTransitionPageTurn : public CCTransitionScene
 {
 protected:
 	bool	m_bBack;
-    static float POLYGON_OFFSET_FACTOR;
-    static float POLYGON_OFFSET_UNITS;
 	
 public:
 	CCTransitionPageTurn();
