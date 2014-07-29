@@ -31,7 +31,8 @@ THE SOFTWARE.
 #include "CCActionPageTurn3D.h"
 
 namespace   cocos2d {
-
+float POLYGONOFFSETFACTOR = -20.f;
+float POLYGONOFFSETUNITS = -20.f;
 CCTransitionPageTurn::CCTransitionPageTurn()
 {
 }
@@ -122,7 +123,7 @@ void CCTransitionPageTurn::draw()
     {
         m_pOutScene->visit();
         glEnable(GL_POLYGON_OFFSET_FILL);
-        glPolygonOffset(POLYGON_OFFSET_FACTOR, POLYGON_OFFSET_UNITS);
+        glPolygonOffset(POLYGONOFFSETFACTOR, POLYGONOFFSETUNITS);
         m_pInScene->visit();
         glDisable(GL_POLYGON_OFFSET_FILL);
         glPolygonOffset(0, 0);
@@ -131,7 +132,7 @@ void CCTransitionPageTurn::draw()
     {
         m_pInScene->visit();
         glEnable(GL_POLYGON_OFFSET_FILL);
-        glPolygonOffset(POLYGON_OFFSET_FACTOR, POLYGON_OFFSET_UNITS);
+        glPolygonOffset(POLYGONOFFSETFACTOR, POLYGONOFFSETUNITS);
         m_pOutScene->visit();
         glDisable(GL_POLYGON_OFFSET_FILL);
         glPolygonOffset(0, 0);
