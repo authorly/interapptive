@@ -115,6 +115,29 @@ void CCTransitionPageTurn::onEnter()
 	}
 }
 
+void CCTransitionPageTurn::draw()
+{
+    CCScene::draw();
+    if( m_bIsInSceneOnTop )
+    {
+        m_pOutScene->visit();
+        glEnable(GL_POLYGON_OFFSET_FILL);
+        glPolygonOffset(POLYGON_OFFSET_FACTOR, POLYGON_OFFSET_UNITS);
+        m_pInScene->visit();
+        glDisable(GL_POLYGON_OFFSET_FILL);
+        glPolygonOffset(0, 0);
+    }
+    else
+    {
+        m_pInScene->visit();
+        glEnable(GL_POLYGON_OFFSET_FILL);
+        glPolygonOffset(POLYGON_OFFSET_FACTOR, POLYGON_OFFSET_UNITS);
+        m_pOutScene->visit();
+        glDisable(GL_POLYGON_OFFSET_FILL);
+        glPolygonOffset(0, 0);
+    }
+}
+
 
 CCActionInterval* CCTransitionPageTurn:: actionWithSize(const ccGridSize& vector)
 {
