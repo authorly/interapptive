@@ -44,6 +44,8 @@ class CC_DLL CCTransitionPageTurn : public CCTransitionScene
 {
 protected:
 	bool	m_bBack;
+    static float POLYGON_OFFSET_FACTOR;
+    static float POLYGON_OFFSET_UNITS;
 	
 public:
 	CCTransitionPageTurn();
@@ -62,6 +64,7 @@ public:
 	* scene is being turned from left over the outgoing scene.
 	*/
 	virtual bool initWithDuration(ccTime t,CCScene* scene,bool backwards);
+    virtual void draw();
 
 	CCActionInterval* actionWithSize(const ccGridSize& vector);
 
