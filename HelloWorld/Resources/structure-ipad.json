@@ -23,7 +23,22 @@
     "Pages": [
               {
               "API": [
+              {
+      "CCRotateBy": [
+      {
+        "actionTag": 10010,
+        "duration": 15,
+        "degrees": 360
+      },
+      {
+        "actionTag": 10020,
+        "duration": 11,
+        "degrees": 720
+      }
+      ]
+    },
                       {
+
                       "CCMoveTo": [
                                    {
                                    "actionTag": 15,
@@ -115,7 +130,7 @@
                                    },
                                    {
                                    "actionTag": 55,
-                                   "duration": 15,
+                                   "duration": 100,
                                    "position": [
                                                 380,
                                                 399
@@ -807,7 +822,8 @@
                                   "actionTag": 108,
                                   "actions": [
                                               110,
-                                              111
+                                              111,
+                                              10020
                                               ]
                                   },
                                   {
@@ -897,7 +913,14 @@
                                   ]
                       },
                       {
-                      "CCDelayTime": [
+                      "CCDelayTime": [{
+                                      "actionTag": 10042,
+                                      "duration": 0.15
+                                      },
+                                      {
+                                      "actionTag": 10030,
+                                      "duration": 13
+                                      },
                                       {
                                       "actionTag": 10001,
                                       "duration": 6
@@ -952,11 +975,11 @@
                                       },
                                       {
                                       "actionTag": 100,
-                                      "duration": 0.6
+                                      "duration": 3.6
                                       },
                                       {
                                       "actionTag": 107,
-                                      "duration": 0.6
+                                      "duration": 3.6
                                       },
                                       {
                                       "actionTag": 114,
@@ -1007,18 +1030,60 @@
                                       "duration": 0.6
                                       }
                                       ]
-                      },{
+                      },
+{
+      "CCFadeTo": [
+      {
+        "actionTag": 10031,
+        "duration": 1.5,
+        "opacity": 255
+      }
+      ]
+    },
+                      {
       "CCBlink": [
       {
         "actionTag": 10000,
         "duration": 1.6
+      },
+
+      {
+        "actionTag": 10040,
+        "duration": 0.3
+      },
+
+      {
+        "actionTag": 10041,
+        "duration": 0.3
       }
 
+      ]
+    },
+    {
+      "CCRepeatForever": [
+      {
+        "actionTag": 10011,
+        "innerAction": 10010
+      }
       ]
     },
                       {
                       "CCSequence": [
                       {
+                        "actionTag": 10043,
+                          "actions": [
+                            10042,
+                          10041
+                            ]
+                        },
+                      {
+                        "actionTag": 10032,
+                          "actions": [
+                            10030,
+                          10031
+                            ]
+                        },
+                        {
                         "actionTag": 10002,
                           "actions": [
                             10001,
@@ -1075,7 +1140,8 @@
                                     "spriteTag": 51,
                                     "actions": [
                                                 28,
-                                                32
+                                                32,
+                                                10011
                                                 ]
                                     },
                                     {
@@ -1227,7 +1293,7 @@
                                     "_originalFileName": "01_tractor.png",
                                     "scale": 1,
                                     "position": [
-                                                 184,
+                                                 -50,
                                                  66
                                                  ],
                                     "visible": true,
@@ -1243,7 +1309,7 @@
                                     "_originalFileName": "01_tractor_wheel.png",
                                     "scale": 1,
                                     "position": [
-                                                 118,
+                                                 -116,
                                                  54
                                                  ],
                                     "visible": true,
@@ -1267,7 +1333,8 @@
                                     "spriteTag": 183,
                                     "actions": [
                                                 112,
-                                                116
+                                                116,
+                                                10040
                                                 ]
                                     },
                                     {
@@ -1283,7 +1350,8 @@
                                     "spriteTag": 194,
                                     "actions": [
                                                 119,
-                                                123
+                                                123,
+                                                10043
                                                 ]
                                     },
                                     {
@@ -1358,12 +1426,13 @@
                                                  537,
                                                  320
                                                  ],
-                                    "visible": true,
+                                    "visible": false,
                                     "zOrder": 21,
                                     "spriteTag": 249,
                                     "actions": [
                                                 154,
-                                                158
+                                                158,
+                                                10032
                                                 ]
                                     },
                                     {
