@@ -274,10 +274,10 @@
                                    },
                                    {
                                    "actionTag": 118,
-                                   "duration": 3.5,
+                                   "duration": 25,
                                    "position": [
-                                                289,
-                                                688
+                                                -89,
+                                                700
                                                 ]
                                    },
                                    {
@@ -290,10 +290,10 @@
                                    },
                                    {
                                    "actionTag": 125,
-                                   "duration": 3.5,
+                                   "duration": 25,
                                    "position": [
-                                                289,
-                                                688
+                                                -89,
+                                                700
                                                 ]
                                    },
                                    {
@@ -915,7 +915,7 @@
                       {
                       "CCDelayTime": [{
                                       "actionTag": 10042,
-                                      "duration": 0.15
+                                      "duration": 0.6
                                       },
                                       {
                                       "actionTag": 10030,
@@ -983,11 +983,11 @@
                                       },
                                       {
                                       "actionTag": 114,
-                                      "duration": 0.6
+                                      "duration": 3.6
                                       },
                                       {
                                       "actionTag": 121,
-                                      "duration": 0.6
+                                      "duration": 3.6
                                       },
                                       {
                                       "actionTag": 128,
@@ -1031,36 +1031,36 @@
                                       }
                                       ]
                       },
-{
-      "CCFadeTo": [
-      {
-        "actionTag": 10031,
-        "duration": 1.5,
-        "opacity": 255
-      }
-      ]
-    },
                       {
-      "CCBlink": [
-      {
-        "actionTag": 10000,
-        "duration": 1.6
-      },
-
-      {
-        "actionTag": 10040,
-        "duration": 0.3
-      },
-
-      {
-        "actionTag": 10041,
-        "duration": 0.3
-      }
+                      "CCFadeTo": [
+                            {
+                              "actionTag": 10031,
+                              "duration": 1.5,
+                              "opacity": 255
+                            }
+                        ]
+                      },
+                      {
+                      "CCBlink": [
+                        {
+                          "actionTag": 10000,
+                          "duration": 1.6
+                        },
+                  
+                        {
+                          "actionTag": 10040,
+                          "duration": 1.2
+                        },
+                  
+                        {
+                          "actionTag": 10041,
+                          "duration": 1.2
+                        }
 
       ]
     },
     {
-      "CCRepeatForever": [
+    "CCRepeatForever": [
       {
         "actionTag": 10011,
         "innerAction": 10010
@@ -1325,11 +1325,11 @@
                                     "_originalFileName": "01_big_bird_flapping.png",
                                     "scale": 1,
                                     "position": [
-                                                 902,
-                                                 422
+                                                 1100,
+                                                 760
                                                  ],
                                     "visible": true,
-                                    "zOrder": 14,
+                                    "zOrder": 934,
                                     "spriteTag": 183,
                                     "actions": [
                                                 112,
@@ -1342,11 +1342,11 @@
                                     "_originalFileName": "01_bird_big.png",
                                     "scale": 1,
                                     "position": [
-                                                 902,
-                                                 422
+                                                 1100,
+                                                 760
                                                  ],
                                     "visible": true,
-                                    "zOrder": 15,
+                                    "zOrder": 935,
                                     "spriteTag": 194,
                                     "actions": [
                                                 119,
