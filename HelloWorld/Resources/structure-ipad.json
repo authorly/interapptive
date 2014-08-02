@@ -865,7 +865,8 @@
                                       },
                                       {
                                       "actionTag": 170,
-                                      "duration": 0.6
+                                      "duration": 0.6,
+                                      "skipAnimationAvailable": false
                                       },
                                       {
                                       "actionTag": 177,
@@ -1088,7 +1089,7 @@
                             {
                               "actionTag": 11010,
                               "duration": 1.5,
-                              "opacity": 160
+                              "opacity": 220
                             },
                             {
                               "actionTag": 11011,
