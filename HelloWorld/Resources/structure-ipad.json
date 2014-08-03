@@ -119,6 +119,7 @@
                                    {
                                    "actionTag": 34,
                                    "duration": 0,
+                                   "skipAnimationAvailable": false,
                                    "position": [
                                                 916,
                                                 660
@@ -135,6 +136,7 @@
                                    {
                                    "actionTag": 41,
                                    "duration": 0,
+                                   "skipAnimationAvailable": false,
                                    "position": [
                                                 916,
                                                 660
@@ -167,6 +169,7 @@
                                    {
                                    "actionTag": 55,
                                    "duration": 100,
+                                   "skipAnimationAvailable": false,
                                    "position": [
                                                 380,
                                                 399
@@ -439,6 +442,7 @@
                                    {
                                    "actionTag": 174,
                                    "duration": 5,
+                                   "skipAnimationAvailable": false,
                                    "position": [
                                                 756,
                                                 512
@@ -524,7 +528,8 @@
                                     {
                                     "actionTag": 33,
                                     "duration": 3.5,
-                                    "intensity": 1
+                                    "intensity": 1,
+                                    "skipAnimationAvailable": false
                                     },
                                     {
                                     "actionTag": 35,
@@ -554,7 +559,8 @@
                                     {
                                     "actionTag": 54,
                                     "duration": 3.5,
-                                    "intensity": 1
+                                    "intensity": 1,
+                                    "skipAnimationAvailable": false
                                     },
                                     {
                                     "actionTag": 56,
@@ -719,12 +725,14 @@
                                     {
                                     "actionTag": 168,
                                     "duration": 0,
-                                    "intensity": 1
+                                    "intensity": 1,
+                                    "skipAnimationAvailable": false
                                     },
                                     {
                                     "actionTag": 173,
                                     "duration": 3.5,
-                                    "intensity": 1
+                                    "intensity": 1,
+                                    "skipAnimationAvailable": false
                                     },
                                     {
                                     "actionTag": 175,
@@ -785,11 +793,13 @@
                                       },
                                       {
                                       "actionTag": 30,
-                                      "duration": 0.0
+                                      "duration": 0.0,
+                                      "skipAnimationAvailable": false
                                       },
                                       {
                                       "actionTag": 37,
-                                      "duration": 0.0
+                                      "duration": 0.0,
+                                      "skipAnimationAvailable": false
                                       },
                                       {
                                       "actionTag": 44,
@@ -797,7 +807,8 @@
                                       },
                                       {
                                       "actionTag": 51,
-                                      "duration": 0.6
+                                      "duration": 0.6,
+                                      "skipAnimationAvailable": false
                                       },
                                       {
                                       "actionTag": 58,
@@ -907,6 +918,7 @@
                                   },
                                   {
                                   "actionTag": 38,
+                                  "skipAnimationAvailable": false,
                                   "actions": [
                                               40,
                                               41
@@ -1041,6 +1053,7 @@
                                   },
                                   {
                                   "actionTag": 171,
+                                  "skipAnimationAvailable": false,
                                   "actions": [
                                               173,
                                               174
@@ -1074,27 +1087,32 @@
                             {
                               "actionTag": 11026,
                               "duration": 1.5,
-                              "opacity": 0
+                              "opacity": 0,
+                              "skipAnimationAvailable": false
                             },
                             {
                               "actionTag": 11027,
                               "duration": 1.5,
-                              "opacity": 255
+                              "opacity": 255,
+                              "skipAnimationAvailable": false
                             },
                             {
                               "actionTag": 10031,
                               "duration": 1.5,
-                              "opacity": 0
+                              "opacity": 0,
+                              "skipAnimationAvailable": false
                             },
                             {
                               "actionTag": 11010,
                               "duration": 1.5,
-                              "opacity": 220
+                              "opacity": 220,
+                              "skipAnimationAvailable": false
                             },
                             {
                               "actionTag": 11011,
                               "duration": 1.5,
-                              "opacity": 0
+                              "opacity": 0,
+                              "skipAnimationAvailable": false
                             }
                         ]
                       },
@@ -1102,17 +1120,20 @@
                       "CCBlink": [
                         {
                           "actionTag": 10000,
-                          "duration": 1.6
+                          "duration": 1.6,
+                          "skipAnimationAvailable": false
                         },
                   
                         {
                           "actionTag": 10040,
-                          "duration": 1.2
+                          "duration": 1.2,
+                          "skipAnimationAvailable": false
                         },
                   
                         {
                           "actionTag": 10041,
-                          "duration": 1.2
+                          "duration": 1.2,
+                          "skipAnimationAvailable": false
                         }
 
                        ]
@@ -1174,28 +1195,34 @@
                      "CCRepeatForever": [
                       {
                         "actionTag": 11050,
-                         "innerAction": 11028
+                         "innerAction": 11028,
+                         "skipAnimationAvailable": false
                         },
                        {
                          "actionTag": 11023,
-                         "innerAction": 11022
+                         "innerAction": 11022,
+                         "skipAnimationAvailable": false
                        },
                        {
                          "actionTag": 11013,
-                         "innerAction": 11012
+                         "innerAction": 11012,
+                         "skipAnimationAvailable": false
                        },
                        {
                          "actionTag": 11008,
-                         "innerAction": 11007
+                         "innerAction": 11007,
+                         "skipAnimationAvailable": false
                        },
                        {
                          "actionTag": 10011,
-                         "innerAction": 10010
+                         "innerAction": 10010,
+                         "skipAnimationAvailable": false
                        },
                   
                        {
                          "actionTag": 10061,
-                         "innerAction": 10060
+                         "innerAction": 10060,
+                         "skipAnimationAvailable": false
                        }
                        ]
                      },
@@ -1248,6 +1275,7 @@
                                     "visible": true,
                                     "zOrder": 5,
                                     "spriteTag": 40,
+                                    "skipAnimationAvailable": false,
                                     "actions": [
                                                 21,
                                                 25
@@ -1714,6 +1742,7 @@
                                      },
                                      {
                                      "actionTag": 32,
+                                     "skipAnimationAvailable": false,
                                      "actions": [
                                                  30,
                                                  31
@@ -1721,6 +1750,7 @@
                                      },
                                      {
                                      "actionTag": 39,
+                                     "skipAnimationAvailable": false,
                                      "actions": [
                                                  37,
                                                  38
@@ -1854,6 +1884,7 @@
                                      },
                                      {
                                      "actionTag": 172,
+                                     "skipAnimationAvailable": false,
                                      "actions": [
                                                  170,
                                                  171
