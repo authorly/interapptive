@@ -638,8 +638,10 @@ void PageLayer::createSprites()
 			assert(action != NULL);
 			sprite->runAction(action);
             
-            // record all actions, then these actions may be skipped when swipping
-            addActionsToBeSkipped(action);
+            if (std::find(page->actionTagsSkipAnimationAvailable.begin(), page->actionTagsSkipAnimationAvailable.end(), spriteInfo->actions[i]) ==
+                page->actionTagsSkipAnimationAvailable.end())
+                // record all actions that skipAnimationAvailable is not "false", then these actions may be skipped when swipping
+                addActionsToBeSkipped(action);
 		}
 
 		addChild(sprite, spriteInfo->zOrder);

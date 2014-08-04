@@ -498,6 +498,18 @@ void JsonParser::parseWithAPI(Page* page, Json::Value &jsonAPI)
         std::string actionName = jsonActions.getMemberNames()[0];
         Json::Value jsonAction = jsonActions[actionName];
         
+        if (actionName != "CCStorySwipeEnded")
+        {
+            // record actions that "skipAnimationAvailable" is true
+            for (unsigned int i = 0; i < jsonAction.size(); ++i)
+            {
+                Json::Value skipAnimationAvailable = jsonAction[i]["skipAnimationAvailable"];
+                
+                if (!skipAnimationAvailable.isNull() && skipAnimationAvailable.asString() == "false")
+                    page->actionTagsSkipAnimationAvailable.push_back(jsonAction[i]["actionTag"].asInt());
+            }
+        }
+        
         // CCBezierBy
         if (actionName.compare("CCBezierBy") == 0)
         {

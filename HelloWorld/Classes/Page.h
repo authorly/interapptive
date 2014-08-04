@@ -142,6 +142,8 @@ public:
 
 	// CCStoryTouchableNodes
 	std::vector<StoryTouchableNode*> storyTouchableNodes;
+    
+    std::vector<int> actionTagsSkipAnimationAvailable;
 
 	StorySwipeEnded storySwipeEnded;
 };
