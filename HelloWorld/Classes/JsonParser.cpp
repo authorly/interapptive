@@ -8,6 +8,7 @@
 #include <json/value.h>
 #include <json/reader.h>
 #include <string>
+#include <limits>
 
 using namespace cocos2d;
 using namespace std;
