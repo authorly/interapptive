@@ -9,6 +9,7 @@
 #include "Utils.h"
 
 #include <vector>
+#include <algorithm>
 
 using namespace cocos2d;
 using namespace CocosDenshion;
