@@ -399,6 +399,14 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
         return;
     }
     
+    CCPoint endPoint = pTouch->locationInView(pTouch->view());
+    endPoint = CCDirector::sharedDirector()->convertToGL(endPoint);
+    
+    if (isSwipeRight(beginPoint, endPoint))
+    {
+        swipeRight();
+    }
+    
     // skip animations if user "skipAnimationOnSwipe" is true
     if (isPlayingAnimation == true)
     {
@@ -406,21 +414,13 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
         {
             skipAnimation();
         }
- 
+        
         return;
     }
     
-    CCPoint endPoint = pTouch->locationInView(pTouch->view());
-    endPoint = CCDirector::sharedDirector()->convertToGL(endPoint);
-    
-    if (isSwipeLeft(beginPoint, endPoint)) 
+    if (isSwipeLeft(beginPoint, endPoint))
     {
         swipeLeft();
-    }
-    
-    if (isSwipeRight(beginPoint, endPoint)) 
-    {
-        swipeRight();
     }
 }
 
