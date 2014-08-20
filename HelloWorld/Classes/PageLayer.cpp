@@ -524,6 +524,7 @@ void PageLayer::swipEndCallBack()
 void PageLayer::swipeLeft()
 {
     stopHighlighVoiceAndOtherEffect();
+    stopHighlightParagraph();
     
     if (currentIndexOfParagraph == (page->paragraphs.size() - 1))
     {
@@ -1012,7 +1013,6 @@ void PageLayer::stopHighlighVoiceAndOtherEffect()
 {
     const char* voiceAudioOfHighlight = page->paragraphs[currentIndexOfParagraph]->voiceAudioFile.c_str();
     SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(voiceAudioOfHighlight);
-    
     SimpleAudioEngine::sharedEngine()->stopEffect(touchSoundId);
 }
 
