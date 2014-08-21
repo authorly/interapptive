@@ -2364,7 +2364,7 @@
                                         643
                                     ],
                                     "radius": 89,
-                                    "soundToPlay": "hs_05_glitter_sparkle.mp3"
+                                    "soundToPlay": "hs_05_tree_birds.mp3"
                                 },
                                 {
                                     "glitterIndicator": true,
@@ -2375,7 +2375,7 @@
                                         552
                                     ],
                                     "radius": 124,
-                                    "soundToPlay": "hs_05_tree_birds.mp3"
+                                    "soundToPlay": "hs_05_glitter_sparkle.mp3"
                                 }
                             ],
                             "highlightingTimes":[
@@ -3157,7 +3157,7 @@
                             "_originalFileName": "pg7_tail_1.png",
                             "scale": 1,
                             "position": [
-                                162,
+                                160,
                                 417
                             ],
                             "visible": true,
@@ -3172,7 +3172,7 @@
                             "_originalFileName": "pg7_tail_3.png",
                             "scale": 1,
                             "position": [
-                                162,
+                                160,
                                 417
                             ],
                             "visible": false,
