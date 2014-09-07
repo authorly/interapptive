@@ -37,6 +37,12 @@ typedef struct lineText
     int                 fontSize;
 } LineText;
 
+typedef struct spriteAction
+{
+	int spriteTag;
+	int actionTag;
+} SpriteAction;
+
 // hotspot of a paragraph
 typedef struct
 {
@@ -48,6 +54,7 @@ typedef struct
 	std::string               soundToPlay;
 	int                       touchFlag;
     float                     delayAfterVideoDuringAutoplay;
+    std::vector<SpriteAction> actionsToRun;
     
     cocos2d::CCParticleSystem *particle;  // weak reference
 } HotspotInfo;
@@ -73,19 +80,13 @@ typedef struct sprite
     bool                      visible;
 }SpriteInfo;
 
-typedef struct storyTouchableNodeActionsToRun
-{
-	int spriteTag;
-	int actionTag;
-} StoryTouchableNodeActionsToRun;
-
 typedef struct storyTouchableNode
 {
 	HotspotInfo               hotspotInfo;
     bool                      delayForText;
     bool                      delayForAnimation;
 
-	std::vector<StoryTouchableNodeActionsToRun*> actionsToRun;
+	std::vector<SpriteAction*> actionsToRun;
 } StoryTouchableNode;
 
 typedef struct storySwipeEndedActionsToRun

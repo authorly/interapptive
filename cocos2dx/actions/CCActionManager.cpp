@@ -199,7 +199,7 @@ void CCActionManager::addAction(CCAction *pAction, CCNode *pTarget, bool paused)
 
  	actionAllocWithHashElement(pElement);
  
- 	CCAssert(! ccArrayContainsObject(pElement->actions, pAction), "");
+ 	//CCAssert(! ccArrayContainsObject(pElement->actions, pAction), "");
  	ccArrayAppendObject(pElement->actions, pAction);
  
  	pAction->startWithTarget(pTarget);

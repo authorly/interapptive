@@ -479,6 +479,19 @@ void JsonParser::parseWithText(Page* page, Json::Value &jsonText)
                 h->videoToPlay = videoToPlayJson.asCString();
             }
             
+            // actions to run
+            Json::Value actionsToRunJson = hotspotJson["actionsToRun"];
+            if (! actionsToRunJson.isNull())
+            {
+                for (int j = 0; j < actionsToRunJson.size(); ++j)
+                {
+                    SpriteAction spriteAction;
+                    spriteAction.spriteTag = actionsToRunJson[j]["spriteTag"].asInt();
+                    spriteAction.actionTag = actionsToRunJson[j]["actionTag"].asInt();
+                    h->actionsToRun.push_back(spriteAction);
+                }
+            }
+            
             paragraph->hotspots.push_back(h);
         }
         
@@ -1205,7 +1218,7 @@ void JsonParser::parseWithStoryTouchableNode(Page *page, Json::Value &value)
 			
 			for (unsigned int j = 0; j < runAction.size(); ++j)
 			{
-				StoryTouchableNodeActionsToRun *storyTouchableNodeActionsToRun = new StoryTouchableNodeActionsToRun();
+				SpriteAction *storyTouchableNodeActionsToRun = new SpriteAction();
 				storyTouchableNodeActionsToRun->actionTag = runAction[j]["actionTag"].asInt();
 				storyTouchableNodeActionsToRun->spriteTag = runAction[j]["spriteTag"].asInt();
 				storyTouchableNode->actionsToRun.push_back(storyTouchableNodeActionsToRun);
