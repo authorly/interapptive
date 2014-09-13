@@ -269,8 +269,17 @@ void PageLayer::doHotspotTouched(HotspotInfo *hotspot,bool isParagraphHotspot)
     for (int i = 0; i < hotspot->actionsToRun.size(); ++i)
     {
         CCSprite *sprite = (CCSprite*)getChildByTag(hotspot->actionsToRun[i].spriteTag);
-        CCAction *action = page->getActionByTag(hotspot->actionsToRun[i].actionTag);
-        sprite->runAction((CCAction*)action->copy());
+        
+        // don't run an action again
+        if (sprite->getActionByTag(i) != NULL)
+        {
+            continue;
+        }
+        
+        CCAction *action = (CCAction*)page->getActionByTag(hotspot->actionsToRun[i].actionTag)->copy();
+        action->setTag(i);
+        
+        sprite->runAction(action);
     }
 }
 
