@@ -2927,11 +2927,7 @@
       ],
       "Page" : {
         "settings" : {
-          "number" : 3,
-          "backgroundMusicFile" : {
-            "loop" : 0,
-            "audioFilePath" : "hs_pooof.mp3"
-          }
+          "number" : 3
         },
         "text" : {
           "paragraphs" : [
@@ -2960,17 +2956,6 @@
                 }
               ],
               "hotspots" : [
-                {
-                  "glitterIndicator" : true,
-                  "stopEffectIndicator" : false,
-                  "touchFlag" : 16,
-                  "position" : [
-                    483,
-                    608
-                  ],
-                  "radius" : 81,
-                  "soundToPlay" : "ladyemma_1018_aafcebdcacfceeddebeeeaeadaefcebf.mp3"
-                },
                 {
                   "glitterIndicator" : true,
                   "stopEffectIndicator" : false,
@@ -3688,14 +3673,6 @@
               ]
             },
             {
-              "actionTag" : 1137,
-              "duration" : 0,
-              "position" : [
-                602,
-                182
-              ]
-            },
-            {
               "actionTag" : 1143,
               "duration" : 0,
               "position" : [
@@ -3881,16 +3858,6 @@
               "opacity" : 60
             },
             {
-              "actionTag" : 1138,
-              "duration" : 0,
-              "opacity" : 0
-            },
-            {
-              "actionTag" : 1139,
-              "duration" : 0.3,
-              "opacity" : 255
-            },
-            {
               "actionTag" : 1144,
               "duration" : 0.3,
               "opacity" : 0
@@ -3917,7 +3884,7 @@
             },
             {
               "actionTag" : 1142,
-              "duration" : 2
+              "duration" : 7
             }
           ]
         },
@@ -4329,7 +4296,7 @@
               "actions" : [
                 222,
                 223,
-                1141
+                1140
               ]
             },
             {
@@ -4400,10 +4367,7 @@
               "actionTag" : 1140,
               "actions" : [
                 1142,
-                1136,
-                1138,
-                1137,
-                1139
+                1136
               ]
             }
           ]
@@ -4433,10 +4397,6 @@
             {
               "actionTag" : 1132,
               "innerAction" : 1131
-            },
-            {
-              "actionTag" : 1141,
-              "innerAction" : 1140
             },
             {
               "actionTag" : 1146,
@@ -5040,14 +5000,6 @@
               ]
             },
             {
-              "actionTag" : 1157,
-              "duration" : 0,
-              "position" : [
-                452,
-                599
-              ]
-            },
-            {
               "actionTag" : 10701,
               "duration" : 0,
               "position" : [
@@ -5181,16 +5133,6 @@
         {
           "CCFadeTo" : [
             {
-              "actionTag" : 1158,
-              "duration" : 0.3,
-              "opacity" : 0
-            },
-            {
-              "actionTag" : 1159,
-              "duration" : 0,
-              "opacity" : 255
-            },
-            {
               "actionTag" : 1163,
               "duration" : 0,
               "opacity" : 60
@@ -5212,10 +5154,6 @@
         },
         {
           "CCDelayTime" : [
-            {
-              "actionTag" : 1160,
-              "duration" : 1
-            },
             {
               "actionTag" : 1162,
               "duration" : 1
@@ -5274,7 +5212,7 @@
               "actions" : [
                 242,
                 243,
-                1162
+                1156
               ]
             },
             {
@@ -5546,17 +5484,6 @@
         {
           "CCSequence" : [
             {
-              "actionTag" : 1161,
-              "actions" : [
-                1156,
-                1162,
-                1158,
-                1157,
-                1160,
-                1159
-              ]
-            },
-            {
               "actionTag" : 10707,
               "actions" : [
                 10706,
@@ -5570,10 +5497,6 @@
         },
         {
           "CCRepeatForever" : [
-            {
-              "actionTag" : 1162,
-              "innerAction" : 1161
-            },
             {
               "actionTag" : 10708,
               "innerAction" : 10707
@@ -5594,7 +5517,7 @@
             {
               "linesOfText" : [
                 {
-                  "text" : "Her Father came running to help Emma out...\nTo straighten her up and to turn her about.",
+                  "text" : "Her father came running to help Emma out...\nTo straighten her up and to turn her about.",
                   "xOffset" : 512,
                   "yOffset" : 100,
                   "fontType" : "ladyemma_1018_abafcbdcdcbcbcdfaaddceabcdebdfbc.ttf",
@@ -6431,7 +6354,7 @@
             {
               "actionTag" : 10924,
               "duration" : 7,
-              "height" : 2,
+              "height" : 4,
               "numberOfJumps" : 5,
               "position" : [
                 0,
@@ -6441,7 +6364,7 @@
             {
               "actionTag" : 10926,
               "duration" : 6,
-              "height" : 3,
+              "height" : 5,
               "numberOfJumps" : 8,
               "position" : [
                 0,
@@ -6451,7 +6374,7 @@
             {
               "actionTag" : 10928,
               "duration" : 9,
-              "height" : 4,
+              "height" : 6,
               "numberOfJumps" : 7,
               "position" : [
                 0,
@@ -6461,7 +6384,7 @@
             {
               "actionTag" : 10930,
               "duration" : 12,
-              "height" : 5,
+              "height" : 7,
               "numberOfJumps" : 15,
               "position" : [
                 0,
@@ -6471,7 +6394,7 @@
             {
               "actionTag" : 10932,
               "duration" : 8,
-              "height" : 6,
+              "height" : 8,
               "numberOfJumps" : 9,
               "position" : [
                 0,
@@ -7586,6 +7509,14 @@
               ]
             },
             {
+              "actionTag" : 11371,
+              "duration" : 0,
+              "position" : [
+                512,
+                529
+              ]
+            },
+            {
               "actionTag" : 373,
               "duration" : 0,
               "position" : [
@@ -7739,6 +7670,11 @@
               "intensity" : 1.1
             },
             {
+              "actionTag" : 11370,
+              "duration" : 0,
+              "intensity" : 1.1
+            },
+            {
               "actionTag" : 372,
               "duration" : 0,
               "intensity" : 1.1
@@ -7835,6 +7771,26 @@
               "actionTag" : 11101,
               "duration" : 0,
               "opacity" : 60
+            },
+            {
+              "actionTag" : 11107,
+              "duration" : 0,
+              "opacity" : 0
+            },
+            {
+              "actionTag" : 11109,
+              "duration" : 0,
+              "opacity" : 255
+            },
+            {
+              "actionTag" : 11113,
+              "duration" : 0,
+              "opacity" : 255
+            },
+            {
+              "actionTag" : 11115,
+              "duration" : 0,
+              "opacity" : 0
             }
           ]
         },
@@ -7842,7 +7798,24 @@
           "CCSpawn" : []
         },
         {
-          "CCDelayTime" : []
+          "CCDelayTime" : [
+            {
+              "actionTag" : 11106,
+              "duration" : 1
+            },
+            {
+              "actionTag" : 11108,
+              "duration" : 1
+            },
+            {
+              "actionTag" : 11112,
+              "duration" : 1
+            },
+            {
+              "actionTag" : 11114,
+              "duration" : 1
+            }
+          ]
         },
         {
           "CCSprites" : [
@@ -7903,7 +7876,7 @@
                 364
               ],
               "visible" : true,
-              "zOrder" : 21,
+              "zOrder" : 22,
               "spriteTag" : 1796,
               "actions" : [
                 360,
@@ -7989,7 +7962,25 @@
               "spriteTag" : 1851,
               "actions" : [
                 370,
-                371
+                371,
+                11111
+              ]
+            },
+            {
+              "image" : "emma_sway.png",
+              "_originalFileName" : "emma_sway.png",
+              "scale" : 1.1,
+              "position" : [
+                512,
+                529
+              ],
+              "visible" : false,
+              "zOrder" : 9,
+              "spriteTag" : 11851,
+              "actions" : [
+                11370,
+                11371,
+                11117
               ]
             },
             {
@@ -8001,7 +7992,7 @@
                 252
               ],
               "visible" : true,
-              "zOrder" : 9,
+              "zOrder" : 10,
               "spriteTag" : 1862,
               "actions" : [
                 372,
@@ -8017,7 +8008,7 @@
                 554
               ],
               "visible" : true,
-              "zOrder" : 10,
+              "zOrder" : 11,
               "spriteTag" : 1873,
               "actions" : [
                 374,
@@ -8033,7 +8024,7 @@
                 234
               ],
               "visible" : true,
-              "zOrder" : 12,
+              "zOrder" : 13,
               "spriteTag" : 1884,
               "actions" : [
                 376,
@@ -8049,7 +8040,7 @@
                 594
               ],
               "visible" : true,
-              "zOrder" : 14,
+              "zOrder" : 15,
               "spriteTag" : 1895,
               "actions" : [
                 378,
@@ -8065,7 +8056,7 @@
                 364
               ],
               "visible" : true,
-              "zOrder" : 16,
+              "zOrder" : 17,
               "spriteTag" : 1906,
               "actions" : [
                 380,
@@ -8081,7 +8072,7 @@
                 346
               ],
               "visible" : true,
-              "zOrder" : 18,
+              "zOrder" : 19,
               "spriteTag" : 1917,
               "actions" : [
                 382,
@@ -8097,7 +8088,7 @@
                 697
               ],
               "visible" : true,
-              "zOrder" : 19,
+              "zOrder" : 20,
               "spriteTag" : 1928,
               "actions" : [
                 384,
@@ -8113,7 +8104,7 @@
                 274
               ],
               "visible" : true,
-              "zOrder" : 20,
+              "zOrder" : 21,
               "spriteTag" : 1939,
               "actions" : [
                 386,
@@ -8129,7 +8120,7 @@
                 384
               ],
               "visible" : true,
-              "zOrder" : 22,
+              "zOrder" : 23,
               "spriteTag" : 1950,
               "actions" : [
                 388,
@@ -8146,7 +8137,7 @@
                 346
               ],
               "visible" : true,
-              "zOrder" : 17,
+              "zOrder" : 18,
               "spriteTag" : 1961,
               "actions" : [
                 390,
@@ -8162,7 +8153,7 @@
                 364
               ],
               "visible" : true,
-              "zOrder" : 15,
+              "zOrder" : 16,
               "spriteTag" : 1972,
               "actions" : [
                 392,
@@ -8178,7 +8169,7 @@
                 594
               ],
               "visible" : true,
-              "zOrder" : 13,
+              "zOrder" : 14,
               "spriteTag" : 1983,
               "actions" : [
                 394,
@@ -8194,7 +8185,7 @@
                 234
               ],
               "visible" : true,
-              "zOrder" : 11,
+              "zOrder" : 12,
               "spriteTag" : 1994,
               "actions" : [
                 396,
@@ -8209,7 +8200,26 @@
           }
         },
         {
-          "CCSequence" : []
+          "CCSequence" : [
+            {
+              "actionTag" : 11110,
+              "actions" : [
+                11106,
+                11107,
+                11108,
+                11109
+              ]
+            },
+            {
+              "actionTag" : 11116,
+              "actions" : [
+                11112,
+                11113,
+                11114,
+                11115
+              ]
+            }
+          ]
         },
         {
           "CCRepeatForever" : [
@@ -8220,6 +8230,14 @@
             {
               "actionTag" : 11105,
               "innerAction" : 11103
+            },
+            {
+              "actionTag" : 11111,
+              "innerAction" : 11110
+            },
+            {
+              "actionTag" : 11117,
+              "innerAction" : 11116
             }
           ]
         }
@@ -9978,53 +9996,53 @@
           ]
         },
         {
-          "CCJumpBy": [
+          "CCJumpBy" : [
             {
-              "actionTag": 11308,
-              "duration": 7,
-              "height": 1,
-              "numberOfJumps": 9,
-              "position": [
+              "actionTag" : 11308,
+              "duration" : 7,
+              "height" : 1,
+              "numberOfJumps" : 9,
+              "position" : [
                 0,
                 0
               ]
             },
             {
-              "actionTag": 11309,
-              "duration": 5,
-              "height": 3,
-              "numberOfJumps": 7,
-              "position": [
+              "actionTag" : 11309,
+              "duration" : 5,
+              "height" : 3,
+              "numberOfJumps" : 7,
+              "position" : [
                 0,
                 0
               ]
             },
             {
-              "actionTag": 11310,
-              "duration": 9,
-              "height": 1,
-              "numberOfJumps": 6,
-              "position": [
+              "actionTag" : 11310,
+              "duration" : 9,
+              "height" : 1,
+              "numberOfJumps" : 6,
+              "position" : [
                 0,
                 0
               ]
             },
             {
-              "actionTag": 11311,
-              "duration": 5,
-              "height": 2,
-              "numberOfJumps": 8,
-              "position": [
+              "actionTag" : 11311,
+              "duration" : 5,
+              "height" : 2,
+              "numberOfJumps" : 8,
+              "position" : [
                 0,
                 0
               ]
             },
             {
-              "actionTag": 11312,
-              "duration": 7,
-              "height": 2,
-              "numberOfJumps": 9,
-              "position": [
+              "actionTag" : 11312,
+              "duration" : 7,
+              "height" : 2,
+              "numberOfJumps" : 9,
+              "position" : [
                 0,
                 0
               ]
@@ -10056,8 +10074,8 @@
         {
           "CCDelayTime" : [
             {
-              "actionTag": 11305,
-              "duration": 1
+              "actionTag" : 11305,
+              "duration" : 1
             }
           ]
         },
@@ -10240,8 +10258,8 @@
         {
           "CCSequence" : [
             {
-              "actionTag": 11306,
-              "actions": [
+              "actionTag" : 11306,
+              "actions" : [
                 11305,
                 11303,
                 11302,
@@ -10253,30 +10271,30 @@
           ]
         },
         {
-          "CCRepeatForever": [
+          "CCRepeatForever" : [
             {
-              "actionTag": 11307,
-              "innerAction": 11306
+              "actionTag" : 11307,
+              "innerAction" : 11306
             },
             {
-              "actionTag": 11313,
-              "innerAction": 11308
+              "actionTag" : 11313,
+              "innerAction" : 11308
             },
             {
-              "actionTag": 11314,
-              "innerAction": 11309
+              "actionTag" : 11314,
+              "innerAction" : 11309
             },
             {
-              "actionTag": 11315,
-              "innerAction": 11310
+              "actionTag" : 11315,
+              "innerAction" : 11310
             },
             {
-              "actionTag": 11316,
-              "innerAction": 11311
+              "actionTag" : 11316,
+              "innerAction" : 11311
             },
             {
-              "actionTag": 11317,
-              "innerAction": 11312
+              "actionTag" : 11317,
+              "innerAction" : 11312
             }
           ]
         }
@@ -10615,50 +10633,40 @@
               "intensity" : 0.6
             },
             {
-              "actionTag" : 11420,
-              "duration" : 0,
-              "intensity" : 1
-            },
-            {
               "actionTag" : 11429,
               "duration" : 4,
               "intensity" : 0.6
-            },
-            {
-              "actionTag" : 11431,
-              "duration" : 0,
-              "intensity" : 1
             }
           ]
         },
         {
-          "CCJumpBy": [
+          "CCJumpBy" : [
             {
-              "actionTag": 11407,
-              "duration": 3,
-              "height": 3,
-              "numberOfJumps": 3,
-              "position": [
+              "actionTag" : 11407,
+              "duration" : 3,
+              "height" : 3,
+              "numberOfJumps" : 3,
+              "position" : [
                 0,
                 0
               ]
             },
             {
-              "actionTag": 11409,
-              "duration": 14,
-              "height": 3,
-              "numberOfJumps": 6,
-              "position": [
+              "actionTag" : 11409,
+              "duration" : 14,
+              "height" : 3,
+              "numberOfJumps" : 6,
+              "position" : [
                 0,
                 0
               ]
             },
             {
-              "actionTag": 11410,
-              "duration": 16,
-              "height": 2,
-              "numberOfJumps": 7,
-              "position": [
+              "actionTag" : 11410,
+              "duration" : 16,
+              "height" : 2,
+              "numberOfJumps" : 7,
+              "position" : [
                 0,
                 0
               ]
@@ -10678,34 +10686,24 @@
               "opacity" : 255
             },
             {
-              "actionTag" : 11419,
-              "duration" : 0.4,
-              "opacity" : 0
-            },
-            {
               "actionTag" : 11425,
               "duration" : 0.4,
               "opacity" : 255
-            },
-            {
-              "actionTag" : 11430,
-              "duration" : 0.4,
-              "opacity" : 0
             }
           ]
         },
         {
           "CCSpawn" : [
             {
-              "actionTag": 11416,
-              "actions": [
+              "actionTag" : 11416,
+              "actions" : [
                 11417,
                 11418
               ]
             },
             {
-              "actionTag": 11427,
-              "actions": [
+              "actionTag" : 11427,
+              "actions" : [
                 11428,
                 11429
               ]
@@ -10715,16 +10713,16 @@
         {
           "CCDelayTime" : [
             {
-              "actionTag": 11404,
-              "duration": 0.6
+              "actionTag" : 11404,
+              "duration" : 0.6
             },
             {
-              "actionTag": 11413,
-              "duration": 1
+              "actionTag" : 11413,
+              "duration" : 1
             },
             {
-              "actionTag": 11424,
-              "duration": 1
+              "actionTag" : 11424,
+              "duration" : 1
             }
           ]
         },
@@ -10939,7 +10937,7 @@
               "actions" : [
                 512,
                 513,
-                11433
+                11432
               ]
             },
             {
@@ -10956,7 +10954,7 @@
               "actions" : [
                 514,
                 515,
-                11422
+                11421
               ]
             },
             {
@@ -10986,64 +10984,50 @@
         {
           "CCSequence" : [
             {
-              "actionTag": 11405,
-              "actions": [
+              "actionTag" : 11405,
+              "actions" : [
                 11404,
                 11402,
                 11403
               ]
             },
             {
-              "actionTag": 11421,
-              "actions": [
+              "actionTag" : 11421,
+              "actions" : [
                 11413,
                 11414,
                 11415,
-                11416,
-                11419,
-                515,
-                11420
+                11416
               ]
             },
             {
-              "actionTag": 11432,
-              "actions": [
+              "actionTag" : 11432,
+              "actions" : [
                 11424,
                 11425,
                 11426,
-                11427,
-                11430,
-                513,
-                11431
+                11427
               ]
             }
           ]
         },
         {
-          "CCRepeatForever": [
+          "CCRepeatForever" : [
             {
-              "actionTag": 11406,
-              "innerAction": 11405
+              "actionTag" : 11406,
+              "innerAction" : 11405
             },
             {
-              "actionTag": 11408,
-              "innerAction": 11407
+              "actionTag" : 11408,
+              "innerAction" : 11407
             },
             {
-              "actionTag": 11411,
-              "innerAction": 11409
+              "actionTag" : 11411,
+              "innerAction" : 11409
             },
             {
-              "actionTag": 11412,
-              "innerAction": 11410
-            },
-            {
-              "actionTag": 11422,
-              "innerAction": 11421
-            },
-            {
-              "actionTag": 11433,
-              "innerAction": 11432
+              "actionTag" : 11412,
+              "innerAction" : 11410
             }
           ]
         }
@@ -11274,8 +11258,8 @@
         {
           "CCDelayTime" : [
             {
-              "actionTag": 11505,
-              "duration": 1
+              "actionTag" : 11505,
+              "duration" : 1
             }
           ]
         },
@@ -11421,8 +11405,8 @@
         {
           "CCSequence" : [
             {
-              "actionTag": 11503,
-              "actions": [
+              "actionTag" : 11503,
+              "actions" : [
                 11502,
                 527,
                 11505
@@ -11431,10 +11415,10 @@
           ]
         },
         {
-          "CCRepeatForever": [
+          "CCRepeatForever" : [
             {
-              "actionTag": 11504,
-              "innerAction": 11503
+              "actionTag" : 11504,
+              "innerAction" : 11503
             }
           ]
         }
@@ -11732,33 +11716,33 @@
           ]
         },
         {
-          "CCJumpBy": [
+          "CCJumpBy" : [
             {
-              "actionTag": 11602,
-              "duration": 6,
-              "height": 5,
-              "numberOfJumps": 4,
-              "position": [
+              "actionTag" : 11602,
+              "duration" : 6,
+              "height" : 5,
+              "numberOfJumps" : 4,
+              "position" : [
                 0,
                 0
               ]
             },
             {
-              "actionTag": 11604,
-              "duration": 5,
-              "height": 3,
-              "numberOfJumps": 7,
-              "position": [
+              "actionTag" : 11604,
+              "duration" : 5,
+              "height" : 3,
+              "numberOfJumps" : 7,
+              "position" : [
                 0,
                 0
               ]
             },
             {
-              "actionTag": 11605,
-              "duration": 6,
-              "height": 3,
-              "numberOfJumps": 5,
-              "position": [
+              "actionTag" : 11605,
+              "duration" : 6,
+              "height" : 3,
+              "numberOfJumps" : 5,
+              "position" : [
                 0,
                 0
               ]
@@ -11790,8 +11774,8 @@
         {
           "CCDelayTime" : [
             {
-              "actionTag": 11611,
-              "duration": 1
+              "actionTag" : 11611,
+              "duration" : 1
             }
           ]
         },
@@ -11924,8 +11908,8 @@
         {
           "CCSequence" : [
             {
-              "actionTag": 11612,
-              "actions": [
+              "actionTag" : 11612,
+              "actions" : [
                 11609,
                 11608,
                 11610,
@@ -11936,22 +11920,22 @@
           ]
         },
         {
-          "CCRepeatForever": [
+          "CCRepeatForever" : [
             {
-              "actionTag": 11603,
-              "innerAction": 11602
+              "actionTag" : 11603,
+              "innerAction" : 11602
             },
             {
-              "actionTag": 11606,
-              "innerAction": 11604
+              "actionTag" : 11606,
+              "innerAction" : 11604
             },
             {
-              "actionTag": 11607,
-              "innerAction": 11605
+              "actionTag" : 11607,
+              "innerAction" : 11605
             },
             {
-              "actionTag": 11613,
-              "innerAction": 11612
+              "actionTag" : 11613,
+              "innerAction" : 11612
             }
           ]
         }
@@ -12401,16 +12385,16 @@
         {
           "CCDelayTime" : [
             {
-              "actionTag": 11723,
-              "duration": 1
+              "actionTag" : 11723,
+              "duration" : 1
             },
             {
-              "actionTag": 11726,
-              "duration": 1
+              "actionTag" : 11726,
+              "duration" : 1
             },
             {
-              "actionTag": 11733,
-              "duration": 1
+              "actionTag" : 11733,
+              "duration" : 1
             }
           ]
         },
@@ -12706,13 +12690,13 @@
           }
         },
         {
-          "CCJumpBy": [
+          "CCJumpBy" : [
             {
-              "actionTag": 11731,
-              "duration": 6,
-              "height": 1,
-              "numberOfJumps": 8,
-              "position": [
+              "actionTag" : 11731,
+              "duration" : 6,
+              "height" : 1,
+              "numberOfJumps" : 8,
+              "position" : [
                 0,
                 0
               ]
@@ -12720,47 +12704,47 @@
           ]
         },
         {
-          "CCRotateBy": [
+          "CCRotateBy" : [
             {
-              "actionTag": 11718,
-              "duration": 7,
-              "degrees": 360
+              "actionTag" : 11718,
+              "duration" : 7,
+              "degrees" : 360
             }
           ]
         },
         {
           "CCSequence" : [
             {
-              "actionTag": 11710,
-              "actions": [
+              "actionTag" : 11710,
+              "actions" : [
                 11702,
                 11703
               ]
             },
             {
-              "actionTag": 11711,
-              "actions": [
+              "actionTag" : 11711,
+              "actions" : [
                 11704,
                 11705
               ]
             },
             {
-              "actionTag": 11712,
-              "actions": [
+              "actionTag" : 11712,
+              "actions" : [
                 11706,
                 11707
               ]
             },
             {
-              "actionTag": 11713,
-              "actions": [
+              "actionTag" : 11713,
+              "actions" : [
                 11708,
                 11709
               ]
             },
             {
-              "actionTag": 11724,
-              "actions": [
+              "actionTag" : 11724,
+              "actions" : [
                 11720,
                 11721,
                 11722,
@@ -12769,16 +12753,16 @@
               ]
             },
             {
-              "actionTag": 11729,
-              "actions": [
+              "actionTag" : 11729,
+              "actions" : [
                 11726,
                 11727,
                 11728
               ]
             },
             {
-              "actionTag": 11737,
-              "actions": [
+              "actionTag" : 11737,
+              "actions" : [
                 11733,
                 11734,
                 11735,
@@ -12789,42 +12773,42 @@
           ]
         },
         {
-          "CCRepeatForever": [
+          "CCRepeatForever" : [
             {
-              "actionTag": 11714,
-              "innerAction": 11710
+              "actionTag" : 11714,
+              "innerAction" : 11710
             },
             {
-              "actionTag": 11715,
-              "innerAction": 11711
+              "actionTag" : 11715,
+              "innerAction" : 11711
             },
             {
-              "actionTag": 11716,
-              "innerAction": 11712
+              "actionTag" : 11716,
+              "innerAction" : 11712
             },
             {
-              "actionTag": 11717,
-              "innerAction": 11713
+              "actionTag" : 11717,
+              "innerAction" : 11713
             },
             {
-              "actionTag": 11719,
-              "innerAction": 11718
+              "actionTag" : 11719,
+              "innerAction" : 11718
             },
             {
-              "actionTag": 11725,
-              "innerAction": 11724
+              "actionTag" : 11725,
+              "innerAction" : 11724
             },
             {
-              "actionTag": 11730,
-              "innerAction": 11729
+              "actionTag" : 11730,
+              "innerAction" : 11729
             },
             {
-              "actionTag": 11732,
-              "innerAction": 11731
+              "actionTag" : 11732,
+              "innerAction" : 11731
             },
             {
-              "actionTag": 11738,
-              "innerAction": 11737
+              "actionTag" : 11738,
+              "innerAction" : 11737
             }
           ]
         }
@@ -13059,12 +13043,12 @@
         {
           "CCDelayTime" : [
             {
-              "actionTag": 11804,
-              "duration": 1
+              "actionTag" : 11804,
+              "duration" : 1
             },
             {
-              "actionTag": 11805,
-              "duration": 1
+              "actionTag" : 11805,
+              "duration" : 1
             }
           ]
         },
@@ -13163,15 +13147,15 @@
         {
           "CCSequence" : [
             {
-              "actionTag": 11806,
-              "actions": [
+              "actionTag" : 11806,
+              "actions" : [
                 11804,
                 11802
               ]
             },
             {
-              "actionTag": 11807,
-              "actions": [
+              "actionTag" : 11807,
+              "actions" : [
                 11805,
                 11803
               ]
@@ -13319,7 +13303,11 @@
     ],
     "API" : {},
     "sounds" : {
-      "effectOnEnter" : "ladyemma_1018_abdccafbebffbcacddddaccadcbcddac.mp3"
+      "background" : {
+        "file" : "title_bg.mp3",
+        "loop" : true
+      },
+      "effectOnEnter" : "title.mp3"
     }
   }
 }
