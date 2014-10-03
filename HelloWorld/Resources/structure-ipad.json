@@ -964,10 +964,18 @@
             },
             {
               "actionTag" : 10063,
-              "duration" : 2.5,
+              "duration" : 1,
               "position" : [
                 380,
                 520
+              ]
+            },
+            {
+              "actionTag" : 100010,
+              "duration" : 0,
+              "position" : [
+                343,
+                582
               ]
             }
           ]
@@ -1056,8 +1064,13 @@
             },
             {
               "actionTag" : 10064,
-              "duration" : 2.5,
+              "duration" : 1,
               "intensity" : 1.15
+            },
+            {
+              "actionTag" : 100013,
+              "duration" : 0,
+              "intensity" : 1
             }
           ]
         },
@@ -1076,17 +1089,6 @@
           ]
         },
         {
-          "CCSpawn" : [
-            {
-              "actionTag" : 10062,
-              "actions" : [
-                10063,
-                10064
-              ]
-            }
-          ]
-        },
-        {
           "CCDelayTime" : [
             {
               "actionTag" : 10058,
@@ -1099,6 +1101,35 @@
             {
               "actionTag" : 10061,
               "duration" : 0.2
+            },
+            {
+              "actionTag" : 100012,
+              "duration" : 1
+            }
+          ]
+        },
+        {
+          "CCSequence" : [
+            {
+              "actionTag" : 100011,
+              "actions" : [
+                100012,
+                100013,
+                100010
+              ],
+              "skipAnimationAvailable" : false
+            }
+          ]
+        },
+        {
+          "CCSpawn" : [
+            {
+              "actionTag" : 10062,
+              "actions" : [
+                10063,
+                10064,
+                100011
+              ]
             }
           ]
         },
@@ -1425,9 +1456,7 @@
               "visible" : true,
               "zOrder" : 7,
               "spriteTag" : 190,
-              "actions" : [
-                10060
-              ]
+              "actions" : []
             },
             {
               "image" : "amipretty_979_aafdacacdcaefcdfabbfbfddfcbdbdda.png",
@@ -1514,7 +1543,25 @@
                   ]
                 }
               ],
-              "hotspots" : [],
+              "hotspots" : [
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 110000,
+                  "position" : [
+                    343,
+                    545
+                  ],
+                  "radius" : 93,
+                  "soundToPlay" : "01.mp3",
+                  "actionsToRun" : [
+                    {
+                      "spriteTag" : 190,
+                      "actionTag" : 10062
+                    }
+                  ]
+                }
+              ],
               "highlightingTimes" : [
                 0.42,
                 0.63,
@@ -1884,7 +1931,7 @@
             },
             {
               "actionTag" : 10084,
-              "duration" : 2.5,
+              "duration" : 0.1,
               "skipAnimationAvailable" : false
             },
             {
@@ -1894,7 +1941,7 @@
             },
             {
               "actionTag" : 10090,
-              "duration" : 1.75,
+              "duration" : 0,
               "skipAnimationAvailable" : false
             }
           ]
@@ -1916,18 +1963,7 @@
                 10087,
                 10088,
                 10089,
-                10090,
-                10087,
-                10088,
-                10089,
-                10084,
-                10087,
-                10088,
-                10089,
-                10090,
-                10087,
-                10088,
-                10089
+                10090
               ],
               "skipAnimationAvailable" : false
             }
@@ -1963,7 +1999,7 @@
               "zOrder" : 70,
               "spriteTag" : 245,
               "actions" : [
-                10085
+                10086
               ]
             },
             {
@@ -2119,6 +2155,23 @@
                   ],
                   "radius" : 62,
                   "soundToPlay" : "hs_04_bus_engine.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 100860,
+                  "position" : [
+                    324,
+                    153
+                  ],
+                  "radius" : 190,
+                  "soundToPlay" : "01.mp3",
+                  "actionsToRun" : [
+                    {
+                      "spriteTag" : 245,
+                      "actionTag" : 10086
+                    }
+                  ]
                 }
               ],
               "highlightingTimes" : [
