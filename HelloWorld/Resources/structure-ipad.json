@@ -210,7 +210,7 @@
         {
           "CCSprites" : [
             {
-              "image" : "amipretty_979_fdccaacfdebefeeebeaddcacfffdeebf.jpg",
+              "image" : "pg-1-bg.jpg",
               "_originalFileName" : "amiprettyintro.jpg",
               "scale" : 1,
               "position" : [
@@ -220,6 +220,45 @@
               "visible" : true,
               "zOrder" : 1,
               "spriteTag" : 25,
+              "actions" : []
+            },
+            {
+              "image" : "pg-1-emma.png",
+              "_originalFileName" : "pg-1-emma.png",
+              "scale" : 1,
+              "position" : [
+                562,
+                406
+              ],
+              "visible" : true,
+              "zOrder" : 1000,
+              "spriteTag" : 15000,
+              "actions" : []
+            },
+            {
+              "image" : "pg-1-mirrorframe.png",
+              "_originalFileName" : "pg-1-mirrorframe.png",
+              "scale" : 1,
+              "position" : [
+                528,
+                461
+              ],
+              "visible" : true,
+              "zOrder" : 1001,
+              "spriteTag" : 15001,
+              "actions" : []
+            },
+            {
+              "image" : "pg-1-mirrorglare.png",
+              "_originalFileName" : "pg-1-gloss.png",
+              "scale" : 1,
+              "position" : [
+                438,
+                495
+              ],
+              "visible" : true,
+              "zOrder" : 1004,
+              "spriteTag" : 15005,
               "actions" : []
             },
             {
