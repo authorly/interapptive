@@ -317,7 +317,7 @@
                     562,
                     406
                   ],
-                  "radius" : 170,
+                  "radius" : 200,
                   "soundToPlay" : "hs_laugh2.mp3",
                   "actionsToRun" : [
                     {
@@ -6626,7 +6626,7 @@
                     512,
                     384
                   ],
-                  "radius" : 170,
+                  "radius" : 200,
                   "soundToPlay" : "hs_laugh1.mp3",
                   "actionsToRun" : [
                     {
