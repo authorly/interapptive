@@ -260,23 +260,20 @@
               "zOrder" : 1004,
               "spriteTag" : 15005,
               "actions" : []
-            },
+            }
+          ]
+        },
+        {
+          "CCJumpTo" : [
             {
-              "image" : "amipretty_979_dfedcadbdbeaadecfaedecddcedbabab.png",
-              "_originalFileName" : "hand.png",
-              "scale" : 0.5,
+              "actionTag" : 140000,
+              "duration" : 0.4,
               "position" : [
-                846,
-                195
+                562,
+                406
               ],
-              "visible" : false,
-              "zOrder" : 2,
-              "spriteTag" : 36,
-              "actions" : [
-                16,
-                10012,
-                10011
-              ]
+              "numberOfJumps" : 1,
+              "height" : 100
             }
           ]
         }
@@ -311,7 +308,25 @@
                   ]
                 }
               ],
-              "hotspots" : [],
+              "hotspots" : [
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 16,
+                  "position" : [
+                    562,
+                    406
+                  ],
+                  "radius" : 170,
+                  "soundToPlay" : "hs_laugh2.mp3",
+                  "actionsToRun" : [
+                    {
+                      "spriteTag" : 15000,
+                      "actionTag" : 140000
+                    }
+                  ]
+                }
+              ],
               "highlightingTimes" : [
                 0.293,
                 0.399,
@@ -573,11 +588,35 @@
           ]
         },
         {
+          "CCRotateBy" : [
+            {
+              "actionTag" : 2781,
+              "duration" : 0.5,
+              "degrees" : 30,
+              "skipAnimationAvailable" : false
+            },
+            {
+              "actionTag" : 2782,
+              "duration" : 0.5,
+              "degrees" : -30,
+              "skipAnimationAvailable" : false
+            }
+          ]
+        },
+        {
           "CCSequence" : [
             {
               "actionTag" : 2706,
               "actions" : [
                 2700
+              ],
+              "skipAnimationAvailable" : false
+            },
+            {
+              "actionTag" : 2780,
+              "actions" : [
+                2781,
+                2782
               ],
               "skipAnimationAvailable" : false
             }
@@ -586,19 +625,17 @@
         {
           "CCSprites" : [
             {
-              "image" : "amipretty_979_dabeeeabbcefdcadfcddfbcdeedbaaad.png",
-              "_originalFileName" : "Am_I_Pretty__pgs1-2_0005_bubble-3.png",
+              "image" : "pg-2-cloud3-bg.png",
+              "_originalFileName" : "pg-2-cloud3-bg.png",
               "scale" : 1,
               "position" : [
-                843,
-                305
+                847,
+                307
               ],
               "visible" : false,
               "zOrder" : 2,
               "spriteTag" : 47,
               "actions" : [
-                18,
-                19,
                 10036
               ]
             },
@@ -711,6 +748,51 @@
                 31,
                 10033
               ]
+            },
+            {
+              "image" : "pg-2-cloud3-girl.png",
+              "_originalFileName" : "pg-2-cloud3-girl.png",
+              "scale" : 1,
+              "position" : [
+                891,
+                373
+              ],
+              "visible" : false,
+              "zOrder" : 3,
+              "spriteTag" : 471,
+              "actions" : [
+                10036
+              ]
+            },
+            {
+              "image" : "pg-2-cloud3-hand.png",
+              "_originalFileName" : "pg-2-cloud3-hand.png",
+              "scale" : 1,
+              "position" : [
+                903,
+                386
+              ],
+              "visible" : false,
+              "zOrder" : 4,
+              "spriteTag" : 472,
+              "actions" : [
+                10036
+              ]
+            },
+            {
+              "image" : "pg-2-cloud3-ladder.png",
+              "_originalFileName" : "pg-2-cloud3-ladder.png",
+              "scale" : 1,
+              "position" : [
+                869,
+                291
+              ],
+              "visible" : false,
+              "zOrder" : 5,
+              "spriteTag" : 473,
+              "actions" : [
+                10036
+              ]
             }
           ]
         }
@@ -755,7 +837,7 @@
                     433
                   ],
                   "radius" : 122,
-                  "soundToPlay" : "http://authorly-production.s3.amazonaws.com/sounds/34641/01.mp3",
+                  "soundToPlay" : "hs_chalk.mp3",
                   "actionsToRun" : [
                     {
                       "spriteTag" : 98991,
@@ -772,7 +854,7 @@
                     459
                   ],
                   "radius" : 148,
-                  "soundToPlay" : "http://authorly-production.s3.amazonaws.com/sounds/34645/02part1.mp3",
+                  "soundToPlay" : "wee.mp3",
                   "actionsToRun" : [
                     {
                       "spriteTag" : 113,
@@ -789,7 +871,13 @@
                     326
                   ],
                   "radius" : 179,
-                  "soundToPlay" : "http://authorly-production.s3.amazonaws.com/sounds/34655/02part2.mp3"
+                  "soundToPlay" : "hs_laugh2.mp3",
+                  "actionsToRun" : [
+                    {
+                      "spriteTag" : 471,
+                      "actionTag" : 2780
+                    }
+                  ]
                 }
               ],
               "highlightingTimes" : [
@@ -1592,7 +1680,7 @@
                     545
                   ],
                   "radius" : 93,
-                  "soundToPlay" : "01.mp3",
+                  "soundToPlay" : "wee.mp3",
                   "actionsToRun" : [
                     {
                       "spriteTag" : 190,
@@ -4821,11 +4909,11 @@
             {
               "actionTag" : 50006,
               "duration" : 1.25,
-              "intensity" : 1.35
+              "intensity" : 1.6
             },
             {
               "actionTag" : 50007,
-              "duration" : 1.2,
+              "duration" : 1.7,
               "intensity" : 1
             }
           ]
@@ -6384,19 +6472,6 @@
         {
           "CCSprites" : [
             {
-              "image" : "amipretty_979_fdccaacfdebefeeebeaddcacfffdeebf.jpg",
-              "_originalFileName" : "amiprettyintro.jpg",
-              "scale" : 1,
-              "position" : [
-                512,
-                384
-              ],
-              "visible" : true,
-              "zOrder" : 1,
-              "spriteTag" : 25,
-              "actions" : []
-            },
-            {
               "image" : "amipretty_979_cadcaceddaadbfcefcadcbdebbcabbea.png",
               "_originalFileName" : "butterfly",
               "scale" : 1,
@@ -6405,7 +6480,7 @@
                 185
               ],
               "visible" : true,
-              "zOrder" : 10,
+              "zOrder" : 999,
               "spriteTag" : 25,
               "actions" : []
             },
@@ -6418,7 +6493,72 @@
                 123
               ],
               "visible" : true,
-              "zOrder" : 10,
+              "zOrder" : 998,
+              "spriteTag" : 25,
+              "actions" : []
+            },
+            {
+              "image" : "pg-1-bg.jpg",
+              "_originalFileName" : "amiprettyintro.jpg",
+              "scale" : 1,
+              "position" : [
+                512,
+                384
+              ],
+              "visible" : true,
+              "zOrder" : 1,
+              "spriteTag" : 25,
+              "actions" : []
+            },
+            {
+              "image" : "pg-1-emma.png",
+              "_originalFileName" : "pg-1-emma.png",
+              "scale" : 1,
+              "position" : [
+                562,
+                406
+              ],
+              "visible" : true,
+              "zOrder" : 1000,
+              "spriteTag" : 15000,
+              "actions" : []
+            },
+            {
+              "image" : "pg-1-mirrorframe.png",
+              "_originalFileName" : "pg-1-mirrorframe.png",
+              "scale" : 1,
+              "position" : [
+                528,
+                461
+              ],
+              "visible" : true,
+              "zOrder" : 1001,
+              "spriteTag" : 15001,
+              "actions" : []
+            },
+            {
+              "image" : "pg-1-mirrorglare.png",
+              "_originalFileName" : "pg-1-gloss.png",
+              "scale" : 1,
+              "position" : [
+                438,
+                495
+              ],
+              "visible" : true,
+              "zOrder" : 1004,
+              "spriteTag" : 15005,
+              "actions" : []
+            },
+            {
+              "image" : "pg-1-bg.jpg",
+              "_originalFileName" : "amiprettyintro.jpg",
+              "scale" : 1,
+              "position" : [
+                512,
+                384
+              ],
+              "visible" : true,
+              "zOrder" : 1,
               "spriteTag" : 25,
               "actions" : []
             }
@@ -6431,6 +6571,20 @@
         },
         {
           "CCSequence" : []
+        },
+        {
+          "CCJumpTo" : [
+            {
+              "actionTag" : 140000,
+              "duration" : 0.4,
+              "position" : [
+                562,
+                406
+              ],
+              "numberOfJumps" : 1,
+              "height" : 100
+            }
+          ]
         }
       ],
       "Page" : {
@@ -6463,7 +6617,25 @@
                   ]
                 }
               ],
-              "hotspots" : [],
+              "hotspots" : [
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 16,
+                  "position" : [
+                    512,
+                    384
+                  ],
+                  "radius" : 170,
+                  "soundToPlay" : "hs_laugh1.mp3",
+                  "actionsToRun" : [
+                    {
+                      "spriteTag" : 15000,
+                      "actionTag" : 140000
+                    }
+                  ]
+                }
+              ],
               "highlightingTimes" : [
                 0.1,
                 0.9
