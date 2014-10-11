@@ -2292,7 +2292,7 @@
                     153
                   ],
                   "radius" : 190,
-                  "soundToPlay" : "01.mp3",
+                  "soundToPlay" : "swish.mp3",
                   "actionsToRun" : [
                     {
                       "spriteTag" : 245,
