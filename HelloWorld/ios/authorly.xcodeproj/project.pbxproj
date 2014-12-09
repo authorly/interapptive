@@ -221,6 +221,7 @@
 		BF365AA812A103F70050DCF4 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF365AA712A103F70050DCF4 /* AppController.mm */; };
 		BF4DE6AD138BB89600CF907D /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF4DE6AC138BB89600CF907D /* RootViewController.mm */; };
 		D4ABB4B313B4395300552E6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ABB4B213B4395300552E6E /* main.m */; };
+		DC66E9311A24F70F00D2FBCA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC66E9301A24F70F00D2FBCA /* Default-568h@2x.png */; };
 		DCF47DB2178D0D2400D0DC4C /* structure-ipad.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */; };
 /* End PBXBuildFile section */
 
@@ -907,6 +908,7 @@
 		BF4DE6AB138BB89600CF907D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BF4DE6AC138BB89600CF907D /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
 		D4ABB4B213B4395300552E6E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC66E9301A24F70F00D2FBCA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DCF47DB1178D0D2400D0DC4C /* structure-ipad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "structure-ipad.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1648,6 +1650,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DC66E9301A24F70F00D2FBCA /* Default-568h@2x.png */,
 				154CD4D31629B4F700C3A047 /* cocos2dx */,
 				154CD4CF1629B1D200C3A047 /* CoreFoundation.framework */,
 				154CD4CD1629B1A800C3A047 /* Twitter.framework */,
@@ -2101,6 +2104,7 @@
 				159FDC1E15C535E30064CCAF /* cmake_clean_target.cmake in Resources */,
 				159FDC1F15C535E30064CCAF /* depend.internal in Resources */,
 				159FDC2015C535E30064CCAF /* depend.make in Resources */,
+				DC66E9311A24F70F00D2FBCA /* Default-568h@2x.png in Resources */,
 				159FDC2115C535E30064CCAF /* DependInfo.cmake in Resources */,
 				159FDC2215C535E30064CCAF /* flags.make in Resources */,
 				159FDC2315C535E30064CCAF /* link.txt in Resources */,
@@ -2324,6 +2328,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -2358,6 +2363,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = authorly;
+				PROVISIONING_PROFILE = "f7021982-426b-4a5f-b5cc-06a885c03879";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2404,7 +2410,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = authorly;
-				PROVISIONING_PROFILE = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
+				PROVISIONING_PROFILE = "f7021982-426b-4a5f-b5cc-06a885c03879";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2424,8 +2430,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "4df7c9eb-413e-4490-8fa2-0f77f65e962e";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4df7c9eb-413e-4490-8fa2-0f77f65e962e";
+				PROVISIONING_PROFILE = "f7021982-426b-4a5f-b5cc-06a885c03879";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "f7021982-426b-4a5f-b5cc-06a885c03879";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
@@ -2437,6 +2443,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -2471,7 +2478,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = authorly;
-				PROVISIONING_PROFILE = "4df7c9eb-413e-4490-8fa2-0f77f65e962e";
+				PROVISIONING_PROFILE = "f7021982-426b-4a5f-b5cc-06a885c03879";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2490,8 +2497,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "4df7c9eb-413e-4490-8fa2-0f77f65e962e";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "f7021982-426b-4a5f-b5cc-06a885c03879";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
@@ -2510,8 +2517,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
+				PROVISIONING_PROFILE = "f7021982-426b-4a5f-b5cc-06a885c03879";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "f7021982-426b-4a5f-b5cc-06a885c03879";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
