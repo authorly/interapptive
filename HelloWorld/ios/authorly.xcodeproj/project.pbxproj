@@ -241,6 +241,19 @@
 		82E2AE591A38FB82001826AB /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE3E1A38FB82001826AB /* iTunesArtwork.png */; };
 		82E2AE5A1A38FB82001826AB /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE3F1A38FB82001826AB /* iTunesArtwork@2x.png */; };
 		82E2AE5C1A38FBE0001826AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE5B1A38FBE0001826AB /* Images.xcassets */; };
+		82E2AE6C1A3915B6001826AB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE5F1A3915B6001826AB /* Default-568h@2x.png */; };
+		82E2AE6D1A3915B6001826AB /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE601A3915B6001826AB /* Default-Landscape@2x~ipad.png */; };
+		82E2AE6E1A3915B6001826AB /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE611A3915B6001826AB /* Default-Landscape~ipad.png */; };
+		82E2AE6F1A3915B6001826AB /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE621A3915B6001826AB /* Default-Portrait@2x~ipad.png */; };
+		82E2AE701A3915B6001826AB /* Default~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE631A3915B6001826AB /* Default~ipad.png */; };
+		82E2AE711A3915B6001826AB /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE641A3915B6001826AB /* Default~iphone.png */; };
+		82E2AE721A3915B6001826AB /* port-port.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE651A3915B6001826AB /* port-port.png */; };
+		82E2AE731A3915B6001826AB /* portriate.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE661A3915B6001826AB /* portriate.png */; };
+		82E2AE741A3915B6001826AB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE671A3915B6001826AB /* Default-568h@2x~iphone.png */; };
+		82E2AE751A3915B6001826AB /* Default@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE681A3915B6001826AB /* Default@2.png */; };
+		82E2AE761A3915B6001826AB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE691A3915B6001826AB /* Default@2x.png */; };
+		82E2AE771A3915B6001826AB /* Default copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE6A1A3915B6001826AB /* Default copy.png */; };
+		82E2AE781A3915B6001826AB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E2AE6B1A3915B6001826AB /* Default.png */; };
 		BF1373EF128A898400D9F789 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492D4B1289302400A09262 /* OpenGLES.framework */; };
 		BF1373F0128A899500D9F789 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492C21128924A800A09262 /* libxml2.dylib */; };
 		BF1373F1128A899E00D9F789 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF492B6912891AC600A09262 /* libz.dylib */; };
@@ -952,6 +965,19 @@
 		82E2AE3E1A38FB82001826AB /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		82E2AE3F1A38FB82001826AB /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		82E2AE5B1A38FBE0001826AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = authorly/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		82E2AE5F1A3915B6001826AB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		82E2AE601A3915B6001826AB /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		82E2AE611A3915B6001826AB /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		82E2AE621A3915B6001826AB /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		82E2AE631A3915B6001826AB /* Default~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~ipad.png"; sourceTree = "<group>"; };
+		82E2AE641A3915B6001826AB /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		82E2AE651A3915B6001826AB /* port-port.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "port-port.png"; sourceTree = "<group>"; };
+		82E2AE661A3915B6001826AB /* portriate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portriate.png; sourceTree = "<group>"; };
+		82E2AE671A3915B6001826AB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
+		82E2AE681A3915B6001826AB /* Default@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2.png"; sourceTree = "<group>"; };
+		82E2AE691A3915B6001826AB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		82E2AE6A1A3915B6001826AB /* Default copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default copy.png"; sourceTree = "<group>"; };
+		82E2AE6B1A3915B6001826AB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BF137426128A8E4600D9F789 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF23D4E3143315EB00657E08 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		BF23D4E4143315EB00657E08 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1748,6 +1774,19 @@
 		784521C214EBA449009D533B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				82E2AE5F1A3915B6001826AB /* Default-568h@2x.png */,
+				82E2AE601A3915B6001826AB /* Default-Landscape@2x~ipad.png */,
+				82E2AE611A3915B6001826AB /* Default-Landscape~ipad.png */,
+				82E2AE621A3915B6001826AB /* Default-Portrait@2x~ipad.png */,
+				82E2AE631A3915B6001826AB /* Default~ipad.png */,
+				82E2AE641A3915B6001826AB /* Default~iphone.png */,
+				82E2AE651A3915B6001826AB /* port-port.png */,
+				82E2AE661A3915B6001826AB /* portriate.png */,
+				82E2AE671A3915B6001826AB /* Default-568h@2x~iphone.png */,
+				82E2AE681A3915B6001826AB /* Default@2.png */,
+				82E2AE691A3915B6001826AB /* Default@2x.png */,
+				82E2AE6A1A3915B6001826AB /* Default copy.png */,
+				82E2AE6B1A3915B6001826AB /* Default.png */,
 				82E2AE5B1A38FBE0001826AB /* Images.xcassets */,
 				82E2AE251A38FB82001826AB /* Icon-72.png */,
 				82E2AE261A38FB82001826AB /* Icon-72@2x.png */,
@@ -2162,12 +2201,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E2AE6E1A3915B6001826AB /* Default-Landscape~ipad.png in Resources */,
 				3ACBB1E8153D4BF60075EDB2 /* arial.ttf in Resources */,
 				1585A173152DC7CE003E4376 /* json_internalarray.inl in Resources */,
+				82E2AE761A3915B6001826AB /* Default@2x.png in Resources */,
 				82E2AE581A38FB82001826AB /* Icon@152.png in Resources */,
 				82E2AE471A38FB82001826AB /* Icon-Small-50@2x.png in Resources */,
 				1585A174152DC7CE003E4376 /* json_internalmap.inl in Resources */,
 				82E2AE511A38FB82001826AB /* Icon@72.png in Resources */,
+				82E2AE721A3915B6001826AB /* port-port.png in Resources */,
 				82E2AE431A38FB82001826AB /* Icon-Small-20@2x.png in Resources */,
 				82E2AE4B1A38FB82001826AB /* Icon@2x.png in Resources */,
 				82E2AE521A38FB82001826AB /* Icon@76.png in Resources */,
@@ -2185,17 +2227,25 @@
 				159FDC1415C535E30064CCAF /* cmake_clean.cmake in Resources */,
 				82E2AE5C1A38FBE0001826AB /* Images.xcassets in Resources */,
 				82E2AE541A38FB82001826AB /* Icon@100.png in Resources */,
+				82E2AE6D1A3915B6001826AB /* Default-Landscape@2x~ipad.png in Resources */,
 				159FDC1515C535E30064CCAF /* depend.internal in Resources */,
 				159FDC1615C535E30064CCAF /* depend.make in Resources */,
 				159FDC1715C535E30064CCAF /* DependInfo.cmake in Resources */,
+				82E2AE6F1A3915B6001826AB /* Default-Portrait@2x~ipad.png in Resources */,
+				82E2AE731A3915B6001826AB /* portriate.png in Resources */,
 				82E2AE401A38FB82001826AB /* Icon-72.png in Resources */,
 				82E2AE561A38FB82001826AB /* Icon@120.png in Resources */,
 				82E2AE4F1A38FB82001826AB /* Icon@57.png in Resources */,
+				82E2AE771A3915B6001826AB /* Default copy.png in Resources */,
 				159FDC1815C535E30064CCAF /* flags.make in Resources */,
+				82E2AE781A3915B6001826AB /* Default.png in Resources */,
 				82E2AE5A1A38FB82001826AB /* iTunesArtwork@2x.png in Resources */,
 				159FDC1915C535E30064CCAF /* link.txt in Resources */,
+				82E2AE741A3915B6001826AB /* Default-568h@2x~iphone.png in Resources */,
+				82E2AE711A3915B6001826AB /* Default~iphone.png in Resources */,
 				82E2AE481A38FB82001826AB /* Icon-Small.png in Resources */,
 				82E2AE501A38FB82001826AB /* Icon@58.png in Resources */,
+				82E2AE6C1A3915B6001826AB /* Default-568h@2x.png in Resources */,
 				159FDC1A15C535E30064CCAF /* progress.make in Resources */,
 				159FDC1B15C535E30064CCAF /* build.make in Resources */,
 				82E2AE4E1A38FB82001826AB /* Icon@50.png in Resources */,
@@ -2205,10 +2255,12 @@
 				159FDC1D15C535E30064CCAF /* cmake_clean.cmake in Resources */,
 				159FDC1E15C535E30064CCAF /* cmake_clean_target.cmake in Resources */,
 				82E2AE491A38FB82001826AB /* Icon-Small@2x.png in Resources */,
+				82E2AE751A3915B6001826AB /* Default@2.png in Resources */,
 				82E2AE411A38FB82001826AB /* Icon-72@2x.png in Resources */,
 				159FDC1F15C535E30064CCAF /* depend.internal in Resources */,
 				159FDC2015C535E30064CCAF /* depend.make in Resources */,
 				159FDC2115C535E30064CCAF /* DependInfo.cmake in Resources */,
+				82E2AE701A3915B6001826AB /* Default~ipad.png in Resources */,
 				159FDC2215C535E30064CCAF /* flags.make in Resources */,
 				82E2AE4D1A38FB82001826AB /* Icon@40.png in Resources */,
 				159FDC2315C535E30064CCAF /* link.txt in Resources */,
@@ -2436,7 +2488,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -2470,7 +2521,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = authorly;
+				PRODUCT_NAME = amipretty;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2483,8 +2534,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation (3K3N7L5797)";
 				COPY_PHASE_STRIP = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2517,8 +2567,8 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = authorly;
-				PROVISIONING_PROFILE = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
+				PRODUCT_NAME = amipretty;
+				PROVISIONING_PROFILE = "fc09104d-925b-4b15-bd67-ef6882ebe902";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2551,7 +2601,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -2585,7 +2634,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = authorly;
+				PRODUCT_NAME = amipretty;
 				PROVISIONING_PROFILE = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -2617,8 +2666,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation (3K3N7L5797)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Novel Apps Corporation (3K3N7L5797)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2626,7 +2675,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "fc09104d-925b-4b15-bd67-ef6882ebe902";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
