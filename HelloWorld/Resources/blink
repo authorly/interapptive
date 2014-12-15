@@ -1,0 +1,62 @@
+{
+  "actionTag": 29013,
+  "duration": 0,
+  "opacity": 255
+},
+{
+  "actionTag": 29015,
+  "duration": 0,
+  "opacity": 0
+},
+{
+  "actionTag": 29017,
+  "duration": 0,
+  "opacity": 255
+},
+{
+  "actionTag": 29019,
+  "duration": 0,
+  "opacity": 0
+}
+
+
+{
+  "actionTag": 29012,
+  "duration": 0.3
+},
+{
+  "actionTag": 29014,
+  "duration": 0.5
+},
+{
+  "actionTag": 29016,
+  "duration": 0.4
+},
+{
+  "actionTag": 29018,
+  "duration": 0.7
+}
+
+
+{
+  "actionTag": 29020,
+  "actions": [
+    29012,
+    29013,
+    29014,
+    29015,
+    29016,
+    29017,
+    29018,
+    29019
+  ]
+}    
+
+{
+  "CCRepeatForever": [
+    {
+      "actionTag": 29021,
+      "innerAction": 29020
+    }
+  ]
+}        

@@ -929,7 +929,7 @@
 		15DF9E151552AB2E00E4FF3A /* MyDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDialog.h; sourceTree = "<group>"; };
 		15DF9E171552AF3D00E4FF3A /* MyDialog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyDialog.mm; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* authorly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = authorly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* sniff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sniff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3ACBB1E7153D4BF60075EDB2 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arial.ttf; sourceTree = "<group>"; };
@@ -1720,7 +1720,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* authorly.app */,
+				1D6058910D05DD3D006BFB54 /* sniff.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1908,7 +1908,7 @@
 			);
 			name = authorly;
 			productName = HelloWorld;
-			productReference = 1D6058910D05DD3D006BFB54 /* authorly.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* sniff.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2517,7 +2517,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = amipretty;
+				PRODUCT_NAME = sniff;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2563,7 +2563,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = amipretty;
+				PRODUCT_NAME = sniff;
 				PROVISIONING_PROFILE = "fc09104d-925b-4b15-bd67-ef6882ebe902";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -2630,7 +2630,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = amipretty;
+				PRODUCT_NAME = sniff;
 				PROVISIONING_PROFILE = "8B13FF04-AE38-45DC-8CAA-5806868A0902";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;

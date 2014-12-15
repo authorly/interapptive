@@ -1,0 +1,87 @@
+fade
+
+{
+  "actionTag": 30001,
+  "duration": 0,
+  "opacity": 0
+},
+{
+  "actionTag": 30003,
+  "duration": 0,
+  "opacity": 255
+},
+{
+  "actionTag": 30006,
+  "duration": 0,
+  "opacity": 255
+},
+{
+  "actionTag": 30008,
+  "duration": 0,
+  "opacity": 0
+}
+
+delay
+
+{
+  "actionTag": 30000,
+  "duration": 0.7
+},
+{
+  "actionTag": 30002,
+  "duration": 0.7
+},
+{
+  "actionTag": 30005,
+  "duration": 0.7
+},
+{
+  "actionTag": 30007,
+  "duration": 0.7
+}
+
+sequence
+
+{  
+  "actionTag":30004,
+  "actions":[  
+    30000,  
+    30001,
+    30002,
+    30003
+  ]
+},
+{  
+  "actionTag":30009,
+  "actions":[  
+    30005,
+    30006,
+    30007,
+    30008
+  ]
+}
+
+{
+  "CCRepeatForever": [
+    {
+      "actionTag": 30010,
+      "innerAction": 30004
+    },
+    {
+      "actionTag": 30011,
+      "innerAction": 30009
+    }
+  ]
+}
+
+hotspot trigger (using sequence not repeat)
+"actionsToRun" : [
+  {
+    "spriteTag" : ,
+    "actionTag" : 30004
+  },
+  {
+    "spriteTag" : ,
+    "actionTag" : 30009
+  }
+],
