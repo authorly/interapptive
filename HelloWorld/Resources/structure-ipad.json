@@ -48,6 +48,14 @@
                 686,
                 360
               ]
+            },
+            {
+              "actionTag":7101,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
             }
           ]
         },
@@ -67,7 +75,12 @@
               "actionTag":18,
               "duration":0,
               "intensity":1
-            }
+            },
+            {
+              "actionTag":7100,
+              "duration":0,
+              "intensity":1
+            }            
           ]
         },
         {
@@ -186,6 +199,21 @@
               "actions":[  
                 18,
                 19
+              ]
+            },
+            {
+              "image":"pgn_01.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9101,
+              "actions":[
+                7100,
+                7101
               ]
             }
           ]
@@ -482,6 +510,14 @@
                 1966,
                 176
               ]
+            },
+            {
+              "actionTag":7103,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
             }
           ]
         },
@@ -566,6 +602,11 @@
               "actionTag":81,
               "duration":3.5,
               "intensity":1.5
+            },
+            {
+              "actionTag":7102,
+              "duration":0,
+              "intensity":1
             }
           ]
         },
@@ -842,6 +883,21 @@
                 80,
                 2011
               ]
+            },
+            {
+              "image":"pgn_02.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9102,
+              "actions":[
+                7102,
+                7103
+              ]
             }
           ]
         },
@@ -1007,7 +1063,7 @@
             {  
               "linesOfText":[  
                 {  
-                  "text":"Today she reigns as queen.\nShe skips around her kingdom a sniffer that\u2019s supreme.\n\nThese are her princes, Horace, Ricky and Li.\nThey dance to scents everywhere, everywhere you see.\n\nToday is Maya\u2019s Day! She gathers up her friends.\n\u201cThe city is our kingdom,\u201d she blissfully pretends.",
+                  "text":"Today she reigns as queen.\nShe skips around her kingdom\nwith a sniffer that\u2019s supreme.\n\nThese are her princes, Horace, Ricky and Li.\nThey dance to scents everywhere, everywhere you see.\n\nToday is Maya\u2019s Day! She gathers up her friends.\n\u201cThe city is our kingdom,\u201d she blissfully pretends.",
                   "xOffset":512,
                   "yOffset":690,
                   "fontType":"sniff_1128_cebcdbcfffacebaaaedbcacebbffbacf.ttf",
@@ -1112,7 +1168,8 @@
                 0
               ],
               "autoplayDuration":57,
-              "delayBeforeShowingText":1
+              "delayBeforeShowingText":1,
+              "voiceAudioFile":"mp3_02_2.mp3"
             }
           ]
         }
@@ -1145,7 +1202,15 @@
                 726,
                 335
               ]
-            }
+            },
+            {
+              "actionTag":7105,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }           
           ]
         },
         {  
@@ -1162,6 +1227,11 @@
             },
             {  
               "actionTag":88,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7104,
               "duration":0,
               "intensity":1
             }
@@ -1257,7 +1327,22 @@
                 88,
                 89
               ]
-            }
+            },
+            {
+              "image":"pgn_03.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9103,
+              "actions":[
+                7104,
+                7105
+              ]
+            }            
           ]
         },
         {  
@@ -1651,6 +1736,14 @@
                 684,
                 203
               ]
+            },
+            {
+              "actionTag":7107,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
             }
           ]
         },
@@ -1718,6 +1811,11 @@
             },
             {  
               "actionTag":137,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7106,
               "duration":0,
               "intensity":1
             }
@@ -1990,6 +2088,21 @@
                 137,
                 138,
                 4011
+              ]
+            },
+            {
+              "image":"pgn_04.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9104,
+              "actions":[
+                7106,
+                7107
               ]
             }
           ]
@@ -2402,6 +2515,14 @@
                 730,
                 384
               ]
+            },
+            {
+              "actionTag":7109,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
             }
           ]
         },
@@ -2416,6 +2537,11 @@
               "actionTag":145,
               "duration":2,
               "intensity":0.5
+            },
+            {
+              "actionTag":7108,
+              "duration":0,
+              "intensity":1
             }
           ]
         },
@@ -2459,6 +2585,21 @@
               "actions":[  
                 140,
                 144
+              ]
+            },
+            {
+              "image":"pgn_05.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9105,
+              "actions":[
+                7108,
+                7109
               ]
             }
           ]
@@ -2527,17 +2668,6 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":21,
-                  "position":[  
-                    572,
-                    253
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_abedcfbfcceacdeebdbdfcbbfdcfcfbf.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":22,
                   "position":[  
                     494,
@@ -2545,17 +2675,6 @@
                   ],
                   "radius":48,
                   "soundToPlay":"sniff_1128_fbeeaefcbcdeffafcdffdebdecddcfcd.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":23,
-                  "position":[  
-                    480,
-                    287
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_abedcfbfcceacdeebdbdfcbbfdcfcfbf.mp3"
                 },
                 {  
                   "glitterIndicator":true,
@@ -2577,17 +2696,6 @@
                     348
                   ],
                   "radius":74,
-                  "soundToPlay":"sniff_1128_aaaedeedccabdbababacbaaedcbbdadd.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":26,
-                  "position":[  
-                    679,
-                    251
-                  ],
-                  "radius":48,
                   "soundToPlay":"sniff_1128_aaaedeedccabdbababacbaaedcbbdadd.mp3"
                 }
               ],
@@ -2637,7 +2745,15 @@
                 659,
                 649
               ]
-            }
+            },
+            {
+              "actionTag":7111,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {
@@ -2675,6 +2791,11 @@
               "actionTag":153,
               "duration":0,
               "intensity":1.4
+            },
+            {
+              "actionTag":7110,
+              "duration":0,
+              "intensity":1
             }
           ]
         },
@@ -2770,6 +2891,21 @@
               "actions":[  
                 153,
                 154
+              ]
+            },
+            {
+              "image":"pgn_06.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9106,
+              "actions":[
+                7110,
+                7111
               ]
             }
           ]
@@ -2921,7 +3057,7 @@
               "actionTag":156,
               "duration":0,
               "position":[  
-                516,
+                512,
                 384
               ]
             },
@@ -2929,7 +3065,7 @@
               "actionTag":158,
               "duration":0,
               "position":[  
-                206,
+                202,
                 241
               ]
             },
@@ -2937,10 +3073,18 @@
               "actionTag":160,
               "duration":0,
               "position":[  
-                210,
+                212,
                 223
               ]
-            }
+            },
+            {
+              "actionTag":7112,
+              "duration":0,
+              "position":[
+                1016,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -2957,6 +3101,11 @@
             },
             {  
               "actionTag":159,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7113,
               "duration":0,
               "intensity":1
             }
@@ -3014,11 +3163,11 @@
         {  
           "CCSprites":[  
             {  
-              "image":"sniff_1128_efebceadfdaabeaacefaaedbdbbacaaa.jpg",
+              "image":"07.jpg",
               "_originalFileName":"07.jpg",
               "scale":1,
               "position":[  
-                516,
+                512,
                 384
               ],
               "visible":true,
@@ -3034,7 +3183,7 @@
               "_originalFileName":"07_maya_1.png",
               "scale":1,
               "position":[  
-                206,
+                212,
                 241
               ],
               "visible":true,
@@ -3051,7 +3200,7 @@
               "_originalFileName":"07_maya_2.png",
               "scale":1,
               "position":[  
-                210,
+                216,
                 223
               ],
               "visible":false,
@@ -3061,6 +3210,21 @@
                 159,
                 160,
                 7011
+              ]
+            },
+            {
+              "image":"pgn_07.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9107,
+              "actions":[
+                7113,
+                7112
               ]
             }
           ]
@@ -3223,7 +3387,15 @@
                 512,
                 384
               ]
-            }
+            },
+            {
+              "actionTag":7114,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -3255,6 +3427,11 @@
             },
             {  
               "actionTag":171,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7115,
               "duration":0,
               "intensity":1
             }
@@ -3405,6 +3582,21 @@
               "actions":[  
                 171,
                 172
+              ]
+            },
+            {
+              "image":"pgn_08.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9108,
+              "actions":[
+                7114,
+                7115
               ]
             }
           ]
@@ -3678,7 +3870,15 @@
                 512,
                 384
               ]
-            }
+            },
+            {
+              "actionTag":7116,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -3700,6 +3900,11 @@
             },
             {  
               "actionTag":179,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7117,
               "duration":0,
               "intensity":1
             }
@@ -3821,6 +4026,21 @@
                 179,
                 180
               ]
+            },
+            {
+              "image":"pgn_09.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9109,
+              "actions":[
+                7116,
+                7117
+              ]
             }
           ]
         },
@@ -3922,17 +4142,6 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":42,
-                  "position":[  
-                    75,
-                    179
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_efcfbabbfaefdebfdfdaeabbafccbdfc.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":43,
                   "position":[  
                     509,
@@ -3955,34 +4164,12 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":45,
-                  "position":[  
-                    329,
-                    157
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_effcbdcdebcbafecddcccadcebbbafbf.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":46,
                   "position":[  
                     192,
                     285
                   ],
                   "radius":58,
-                  "soundToPlay":"sniff_1128_dfedffabfccacadeeebeaafbcaadddec.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":47,
-                  "position":[  
-                    197,
-                    196
-                  ],
-                  "radius":62,
                   "soundToPlay":"sniff_1128_dfedffabfccacadeeebeaafbcaadddec.mp3"
                 }
               ],
@@ -4032,7 +4219,15 @@
                 126,
                 691
               ]
-            }
+            },
+            {
+              "actionTag":7118,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -4054,6 +4249,11 @@
             },
             {  
               "actionTag":187,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7119,
               "duration":0,
               "intensity":1
             }
@@ -4172,6 +4372,21 @@
               "actions":[  
                 187,
                 188
+              ]
+            },
+            {
+              "image":"pgn_10.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9110,
+              "actions":[
+                7118,
+                7119
               ]
             }
           ]
@@ -4313,7 +4528,15 @@
                 512,
                 384
               ]
-            }
+            },
+            {
+              "actionTag":7120,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -4335,6 +4558,11 @@
             },
             {  
               "actionTag":195,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7121,
               "duration":0,
               "intensity":1
             }
@@ -4456,6 +4684,21 @@
                 195,
                 196
               ]
+            },
+            {
+              "image":"pgn_11.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9111,
+              "actions":[
+                7120,
+                7121
+              ]
             }
           ]
         },
@@ -4541,7 +4784,7 @@
                     439
                   ],
                   "radius":142,
-                  "soundToPlay":"sniff_1128_bcbcafbbfbacfcafaeadbdbeecfffcfe.mp3"
+                  "soundToPlay":"hs_maya_queen.mp3"
                 },
                 {  
                   "glitterIndicator":true,
@@ -4665,7 +4908,15 @@
                 512,
                 384
               ]
-            }
+            },
+            {
+              "actionTag":7122,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -4728,6 +4979,11 @@
             {  
               "actionTag":237,
               "duration":3,
+              "intensity":1
+            },
+            {
+              "actionTag":7123,
+              "duration":0,
               "intensity":1
             }
           ]
@@ -4945,6 +5201,21 @@
                 232,
                 236
               ]
+            },
+            {
+              "image":"pgn_12.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9112,
+              "actions":[
+                7122,
+                7123
+              ]
             }
           ]
         },
@@ -5077,34 +5348,12 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":52,
-                  "position":[  
-                    64,
-                    134
-                  ],
-                  "radius":63,
-                  "soundToPlay":"sniff_1128_ceccaecfddfcdccdfcfcdbdbedbfedfc.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":53,
                   "position":[  
                     393,
                     218
                   ],
                   "radius":74,
-                  "soundToPlay":"sniff_1128_fbffdadbbeafebecbcdfceeaaedbeffc.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":54,
-                  "position":[  
-                    383,
-                    141
-                  ],
-                  "radius":58,
                   "soundToPlay":"sniff_1128_fbffdadbbeafebecbcdfceeaaedbeffc.mp3"
                 },
                 {  
@@ -5121,34 +5370,12 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":56,
-                  "position":[  
-                    250,
-                    160
-                  ],
-                  "radius":64,
-                  "soundToPlay":"sniff_1128_debbdcbeacaaccfdbcfcffdcaaddceec.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":57,
                   "position":[  
                     531,
                     262
                   ],
                   "radius":66,
-                  "soundToPlay":"sniff_1128_bdcdefaefbcacefecdfeddfeadcadbde.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":58,
-                  "position":[  
-                    547,
-                    182
-                  ],
-                  "radius":59,
                   "soundToPlay":"sniff_1128_bdcdefaefbcacefecdfeddfeadcadbde.mp3"
                 }
               ],
@@ -5190,7 +5417,15 @@
                 872,
                 482
               ]
-            }
+            },
+            {
+              "actionTag":7124,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -5207,6 +5442,11 @@
             },
             {  
               "actionTag":243,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7125,
               "duration":0,
               "intensity":1
             }
@@ -5310,6 +5550,21 @@
                 243,
                 244
               ]
+            },
+            {
+              "image":"pgn_13.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9113,
+              "actions":[
+                7124,
+                7125
+              ]
             }
           ]
         },
@@ -5377,7 +5632,28 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":59,
+                  "touchFlag":13068,
+                  "actionsToRun" : [
+                    {
+                      "spriteTag" : 685,
+                      "actionTag" : 13004
+                    },
+                    {
+                      "spriteTag" : 696,
+                      "actionTag" : 13009
+                    }
+                  ],
+                  "position":[  
+                    639,
+                    577
+                  ],
+                  "radius":48,
+                  "soundToPlay":"sniff_1128_faecedecdbcbffebebdcbbfefcaabcbf.mp3"
+                },
+                {  
+                  "glitterIndicator":false,
+                  "stopEffectIndicator":false,
+                  "touchFlag":13059,
                   "actionsToRun" : [
                     {
                       "spriteTag" : 685,
@@ -5474,7 +5750,15 @@
                 855,
                 100
               ]
-            }
+            },
+            {
+              "actionTag":7126,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },        
         {  
@@ -5517,6 +5801,11 @@
             {  
               "actionTag":259,
               "duration":1.5,
+              "intensity":1
+            },
+            {
+              "actionTag":7127,
+              "duration":0,
               "intensity":1
             }
           ]
@@ -5600,6 +5889,21 @@
               "actions":[  
                 257,
                 258
+              ]
+            },
+            {
+              "image":"pgn_14.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9114,
+              "actions":[
+                7126,
+                7127
               ]
             }
           ]
@@ -5704,39 +6008,6 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":62,
-                  "position":[  
-                    82,
-                    346
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_bafddeabdcfaabdecfeeefceadbddecd.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":63,
-                  "position":[  
-                    62,
-                    391
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_bafddeabdcfaabdecfeeefceadbddecd.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":64,
-                  "position":[  
-                    371,
-                    321
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_bfeaffdccbaefbcefeebdcdefedcbdfe.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":65,
                   "position":[  
                     318,
@@ -5746,7 +6017,7 @@
                   "soundToPlay":"sniff_1128_cdfabfadcffcbadafeaddfcabbbeeacb.mp3"
                 },
                 {  
-                  "glitterIndicator":true,
+                  "glitterIndicator":false,
                   "stopEffectIndicator":false,
                   "touchFlag":66,
                   "position":[  
@@ -5754,18 +6025,7 @@
                     547
                   ],
                   "radius":48,
-                  "soundToPlay":"sniff_1128_ebebdcadedfbbaaecebbceaaaddfadee.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":67,
-                  "position":[  
-                    187,
-                    425
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_ebebdcadedfbbaaecebbceaaaddfadee.mp3"
+                  "soundToPlay":"hs_ricky_sitting.mp3"
                 },
                 {  
                   "glitterIndicator":true,
@@ -5776,10 +6036,10 @@
                     497
                   ],
                   "radius":48,
-                  "soundToPlay":"sniff_1128_ebebdcadedfbbaaecebbceaaaddfadee.mp3"
+                  "soundToPlay":"hs_ricky_sitting.mp3"
                 },
                 {  
-                  "glitterIndicator":true,
+                  "glitterIndicator":false,
                   "stopEffectIndicator":false,
                   "touchFlag":69,
                   "position":[  
@@ -5787,7 +6047,7 @@
                     547
                   ],
                   "radius":48,
-                  "soundToPlay":"sniff_1128_ebebdcadedfbbaaecebbceaaaddfadee.mp3"
+                  "soundToPlay":"shs_ricky_sitting.mp3"
                 }
               ],
               "highlightingTimes":[  
@@ -5878,6 +6138,14 @@
                 277,
                 360
               ]
+            },
+            {
+              "actionTag":7128,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
             }
           ]
         },
@@ -5905,6 +6173,11 @@
             },
             {  
               "actionTag":269,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7129,
               "duration":0,
               "intensity":1
             }
@@ -6087,6 +6360,21 @@
                 270,
                 15019
               ]
+            },
+            {
+              "image":"pgn_15.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9115,
+              "actions":[
+                7128,
+                7129
+              ]
             }
           ]
         },
@@ -6247,7 +6535,15 @@
                 390,
                 254
               ]
-            }
+            },
+            {
+              "actionTag":7130,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -6269,6 +6565,11 @@
             },
             {  
               "actionTag":277,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7131,
               "duration":0,
               "intensity":1
             }
@@ -6399,6 +6700,21 @@
                 277,
                 278,
                 16011
+              ]
+            },
+            {
+              "image":"pgn_16.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9116,
+              "actions":[
+                7130,
+                7131
               ]
             }
           ]
@@ -6549,7 +6865,15 @@
                 913,
                 650
               ]
-            }
+            },
+            {
+              "actionTag":7132,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -6576,6 +6900,11 @@
             },
             {  
               "actionTag":287,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7133,
               "duration":0,
               "intensity":1
             }
@@ -6740,6 +7069,21 @@
               "actions":[  
                 287,
                 288
+              ]
+            },
+            {
+              "image":"pgn_17.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9117,
+              "actions":[
+                7132,
+                7133
               ]
             }
           ]
@@ -6929,7 +7273,15 @@
                 232,
                 598
               ]
-            }
+            },
+            {
+              "actionTag":7134,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -6953,6 +7305,11 @@
               "actionTag":295,
               "duration":0,
               "intensity":1.6
+            },
+            {
+              "actionTag":7135,
+              "duration":0,
+              "intensity":1
             }
           ]
         },
@@ -7083,6 +7440,21 @@
               "actions":[  
                 295,
                 296
+              ]
+            },
+            {
+              "image":"pgn_18.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9118,
+              "actions":[
+                7134,
+                7135
               ]
             }
           ]
@@ -7228,7 +7600,15 @@
                 512,
                 384
               ]
-            }
+            },
+            {
+              "actionTag":7136,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -7250,6 +7630,11 @@
             },
             {  
               "actionTag":303,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7137,
               "duration":0,
               "intensity":1
             }
@@ -7371,6 +7756,21 @@
                 303,
                 304
               ]
+            },
+            {
+              "image":"pgn_19.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9119,
+              "actions":[
+                7136,
+                7137
+              ]
             }
           ]
         },
@@ -7470,7 +7870,7 @@
                   "soundToPlay":"sniff_1128_abbcdfeabbaafadbfdbcffaababeccaa.mp3"
                 },
                 {  
-                  "glitterIndicator":true,
+                  "glitterIndicator":false,
                   "stopEffectIndicator":false,
                   "touchFlag":77,
                   "position":[  
@@ -7481,7 +7881,7 @@
                   "soundToPlay":"sniff_1128_abbcdfeabbaafadbfdbcffaababeccaa.mp3"
                 },
                 {  
-                  "glitterIndicator":true,
+                  "glitterIndicator":false,
                   "stopEffectIndicator":false,
                   "touchFlag":78,
                   "position":[  
@@ -7570,7 +7970,15 @@
                 682,
                 198
               ]
-            }
+            },
+            {
+              "actionTag":7138,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -7613,6 +8021,11 @@
             {  
               "actionTag":331,
               "duration":3.5,
+              "intensity":1
+            },
+            {
+              "actionTag":7139,
+              "duration":0,
               "intensity":1
             }
           ]
@@ -7776,6 +8189,21 @@
                 330,
                 20011
               ]
+            },
+            {
+              "image":"pgn_20.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9120,
+              "actions":[
+                7138,
+                7139
+              ]
             }
           ]
         },
@@ -7894,17 +8322,6 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":80,
-                  "position":[  
-                    598,
-                    255
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_cdeccbeeeddcdfcfdaeffdfafcedcefa.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":81,
                   "position":[  
                     869,
@@ -7927,45 +8344,12 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":83,
-                  "position":[  
-                    730,
-                    228
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_dbfffecddbdccebbcefbeabcefbbcbac.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":84,
                   "position":[  
                     470,
                     356
                   ],
                   "radius":56,
-                  "soundToPlay":"sniff_1128_dafceeaeebaaefffbaefedfbadbdafdf.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":85,
-                  "position":[  
-                    484,
-                    290
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_dafceeaeebaaefffbaefedfbadbdafdf.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":86,
-                  "position":[  
-                    453,
-                    273
-                  ],
-                  "radius":48,
                   "soundToPlay":"sniff_1128_dafceeaeebaaefffbaefedfbadbdafdf.mp3"
                 }
               ],
@@ -8007,7 +8391,15 @@
                 285,
                 504
               ]
-            }
+            },
+            {
+              "actionTag":7140,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -8024,6 +8416,11 @@
             },
             {  
               "actionTag":337,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7141,
               "duration":0,
               "intensity":1
             }
@@ -8128,6 +8525,21 @@
                 338,
                 21019
               ]
+            },
+            {
+              "image":"pgn_21.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9121,
+              "actions":[
+                7140,
+                7141
+              ]
             }
           ]
         },
@@ -8172,44 +8584,23 @@
           "paragraphs":[  
             {  
               "linesOfText":[  
-                {  
-                  "text":"\u201cDo you sniff what I sniff?\u201d\nMaya prances about.\n\n\u201cNo we don\u2019t, Your Highness,\u201d\nall three princes shout.",
-                  "xOffset":296,
-                  "yOffset":204,
+                {
+                  "text":"\u201cDo you sniff\nwhat I sniff?\u201d\nMaya prances about.\n\n\u201cNo we don\u2019t,\nYour Highness,\u201d\nall three princes shout.",
+                  "xOffset":802,
+                  "yOffset":527,
                   "fontType":"sniff_1128_cebcdbcfffacebaaaedbcacebbffbacf.ttf",
-                  "fontColor":[  
+                  "fontColor":[
                     0,
                     0,
                     0
                   ],
-                  "fontHighlightColor":[  
+                  "fontHighlightColor":[
                     255,
                     0,
                     0
                   ],
                   "fontSize":40,
-                  "anchorPoint":[  
-                    0.5,
-                    0
-                  ]
-                },
-                {  
-                  "text":"\u201cThis scent\nis not so pretty.\n\nIt spreads\nalong the streets.\u201d\n\nLi jumps up\non his tippy toes.\n\n\u201cIt\u2019s people\u2019s\nsmelly feets!\u201d\n\n\u201cNo, no, Prince Li.\n\nIt\u2019s something\nyou can eat.\n\nBut, nope! Not me.\nI sniff to my own beat.\u201d",
-                  "xOffset":800,
-                  "yOffset":753,
-                  "fontType":"sniff_1128_cebcdbcfffacebaaaedbcacebbffbacf.ttf",
-                  "fontColor":[  
-                    0,
-                    0,
-                    0
-                  ],
-                  "fontHighlightColor":[  
-                    255,
-                    0,
-                    0
-                  ],
-                  "fontSize":40,
-                  "anchorPoint":[  
+                  "anchorPoint":[
                     0.5,
                     0
                   ]
@@ -8241,17 +8632,6 @@
                 {  
                   "glitterIndicator":true,
                   "stopEffectIndicator":false,
-                  "touchFlag":89,
-                  "position":[  
-                    499,
-                    423
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_fdfcaabfdbefdaecbddddbacfcedcbad.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
                   "touchFlag":90,
                   "position":[  
                     255,
@@ -8261,40 +8641,7 @@
                   "soundToPlay":"sniff_1128_eecdededfeeacbababfdecedbdfbbcfb.mp3"
                 },
                 {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":91,
-                  "position":[  
-                    247,
-                    420
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_eecdededfeeacbababfdecedbdfbbcfb.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":92,
-                  "position":[  
-                    89,
-                    430
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_ffcacbfcebadaacbfeddffefeaeefaef.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
-                  "stopEffectIndicator":false,
-                  "touchFlag":93,
-                  "position":[  
-                    405,
-                    443
-                  ],
-                  "radius":48,
-                  "soundToPlay":"sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
-                },
-                {  
-                  "glitterIndicator":true,
+                  "glitterIndicator":false,
                   "stopEffectIndicator":false,
                   "touchFlag":94,
                   "position":[  
@@ -8305,7 +8652,7 @@
                   "soundToPlay":"sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
                 },
                 {  
-                  "glitterIndicator":true,
+                  "glitterIndicator":false,
                   "stopEffectIndicator":false,
                   "touchFlag":95,
                   "position":[  
@@ -8333,7 +8680,205 @@
               "autoplayDuration":27,
               "delayBeforeShowingText":0,
               "voiceAudioFile":"sniff_1128_acaccebedbfdffffabcbdddabfafcade.mp3"
-            }
+            },
+            {  
+              "linesOfText":[  
+                {
+                  "text":"\u201cThis scent\nis not so pretty.\n\nIt spreads\nalong the streets.\u201d\n\nLi jumps up on his\ntippy toes.\n\n\u201cIt\u2019s people\u2019s\nsmelly feets!\u201d",
+                  "xOffset":802,
+                  "yOffset":587,
+                  "fontType":"sniff_1128_cebcdbcfffacebaaaedbcacebbffbacf.ttf",
+                  "fontColor":[
+                    0,
+                    0,
+                    0
+                  ],
+                  "fontHighlightColor":[
+                    255,
+                    0,
+                    0
+                  ],
+                  "fontSize":40,
+                  "anchorPoint":[
+                    0.5,
+                    0
+                  ]
+                }
+              ],
+              "hotspots":[  
+                {  
+                  "glitterIndicator":true,
+                  "stopEffectIndicator":false,
+                  "touchFlag":87,
+                  "position":[  
+                    75,
+                    533
+                  ],
+                  "radius":77,
+                  "soundToPlay":"sniff_1128_ffcacbfcebadaacbfeddffefeaeefaef.mp3"
+                },
+                {  
+                  "glitterIndicator":true,
+                  "stopEffectIndicator":false,
+                  "touchFlag":88,
+                  "position":[  
+                    499,
+                    520
+                  ],
+                  "radius":69,
+                  "soundToPlay":"sniff_1128_fdfcaabfdbefdaecbddddbacfcedcbad.mp3"
+                },
+                {  
+                  "glitterIndicator":true,
+                  "stopEffectIndicator":false,
+                  "touchFlag":90,
+                  "position":[  
+                    255,
+                    523
+                  ],
+                  "radius":90,
+                  "soundToPlay":"sniff_1128_eecdededfeeacbababfdecedbdfbbcfb.mp3"
+                },
+                {  
+                  "glitterIndicator":false,
+                  "stopEffectIndicator":false,
+                  "touchFlag":94,
+                  "position":[  
+                    397,
+                    587
+                  ],
+                  "radius":51,
+                  "soundToPlay":"sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                },
+                {  
+                  "glitterIndicator":false,
+                  "stopEffectIndicator":false,
+                  "touchFlag":95,
+                  "position":[  
+                    435,
+                    619
+                  ],
+                  "radius":48,
+                  "soundToPlay":"sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                },
+                {  
+                  "glitterIndicator":true,
+                  "stopEffectIndicator":false,
+                  "touchFlag":96,
+                  "position":[  
+                    388,
+                    515
+                  ],
+                  "radius":42,
+                  "soundToPlay":"sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                }
+              ],
+              "highlightingTimes":[  
+                0
+              ],
+              "autoplayDuration":27,
+              "delayBeforeShowingText":0,
+              "voiceAudioFile":"sniff_1128_acaccebedbfdffffabcbdddabfafcade.mp3"
+            },
+            {  
+              "linesOfText":[  
+                {
+                  "text":"\u201cNo, no, Prince Li.\nIt\u2019s something\nyou can eat.\n\nBut, nope! Not me.\n\nI sniff\nto my own beat.\u201d",
+                  "xOffset":802,
+                  "yOffset":524,
+                  "fontType":"sniff_1128_cebcdbcfffacebaaaedbcacebbffbacf.ttf",
+                  "fontColor":[
+                    0,
+                    0,
+                    0
+                  ],
+                  "fontHighlightColor":[
+                    255,
+                    0,
+                    0
+                  ],
+                  "fontSize":40,
+                  "anchorPoint":[
+                    0.5,
+                    0
+                  ]
+                }
+              ],
+              "hotspots":[  
+                {  
+                  "glitterIndicator":true,
+                  "stopEffectIndicator":false,
+                  "touchFlag":87,
+                  "position":[  
+                    75,
+                    533
+                  ],
+                  "radius":77,
+                  "soundToPlay":"sniff_1128_ffcacbfcebadaacbfeddffefeaeefaef.mp3"
+                },
+                {  
+                  "glitterIndicator":true,
+                  "stopEffectIndicator":false,
+                  "touchFlag":88,
+                  "position":[  
+                    499,
+                    520
+                  ],
+                  "radius":69,
+                  "soundToPlay":"sniff_1128_fdfcaabfdbefdaecbddddbacfcedcbad.mp3"
+                },
+                {  
+                  "glitterIndicator":true,
+                  "stopEffectIndicator":false,
+                  "touchFlag":90,
+                  "position":[  
+                    255,
+                    523
+                  ],
+                  "radius":90,
+                  "soundToPlay":"sniff_1128_eecdededfeeacbababfdecedbdfbbcfb.mp3"
+                },
+                {  
+                  "glitterIndicator":false,
+                  "stopEffectIndicator":false,
+                  "touchFlag":94,
+                  "position":[  
+                    397,
+                    587
+                  ],
+                  "radius":51,
+                  "soundToPlay":"sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                },
+                {  
+                  "glitterIndicator":false,
+                  "stopEffectIndicator":false,
+                  "touchFlag":95,
+                  "position":[  
+                    435,
+                    619
+                  ],
+                  "radius":48,
+                  "soundToPlay":"sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                },
+                {  
+                  "glitterIndicator":true,
+                  "stopEffectIndicator":false,
+                  "touchFlag":96,
+                  "position":[  
+                    388,
+                    515
+                  ],
+                  "radius":42,
+                  "soundToPlay":"sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                }
+              ],
+              "highlightingTimes":[  
+                0
+              ],
+              "autoplayDuration":27,
+              "delayBeforeShowingText":0,
+              "voiceAudioFile":"sniff_1128_acaccebedbfdffffabcbdddabfafcade.mp3"
+            }            
           ]
         }
       }
@@ -8453,7 +8998,15 @@
                 732,
                 284
               ]
-            }
+            },
+            {
+              "actionTag":7142,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -8527,6 +9080,11 @@
               "actionTag":386,
               "duration":3,
               "intensity":0.35
+            },
+            {
+              "actionTag":7143,
+              "duration":0,
+              "intensity":1
             }
           ]
         },
@@ -8770,6 +9328,21 @@
                 381,
                 385
               ]
+            },
+            {
+              "image":"pgn_22.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9122,
+              "actions":[
+                7142,
+                7143
+              ]
             }
           ]
         },
@@ -9003,7 +9576,15 @@
                 226,
                 312
               ]
-            }
+            },
+            {
+              "actionTag":7144,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -9017,6 +9598,11 @@
               "actionTag":390,
               "duration":0,
               "intensity":0.3
+            },
+            {
+              "actionTag":7145,
+              "duration":0,
+              "intensity":1
             }
           ]
         },
@@ -9102,6 +9688,21 @@
               "actions":[  
                 390,
                 391
+              ]
+            },
+            {
+              "image":"pgn_23.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9123,
+              "actions":[
+                7144,
+                7145
               ]
             }
           ]
@@ -9236,7 +9837,15 @@
                 798,
                 311
               ]
-            }
+            },
+            {
+              "actionTag":7146,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -9263,6 +9872,11 @@
             },
             {  
               "actionTag":400,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7147,
               "duration":0,
               "intensity":1
             }
@@ -9446,6 +10060,21 @@
                 400,
                 401,
                 24021
+              ]
+            },
+            {
+              "image":"pgn_24.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9124,
+              "actions":[
+                7146,
+                7147
               ]
             }
           ]
@@ -9653,7 +10282,15 @@
                 863,
                 503
               ]
-            }
+            },
+            {
+              "actionTag":7148,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {
@@ -9720,6 +10357,11 @@
             {  
               "actionTag":435,
               "duration":2,
+              "intensity":1
+            },
+            {
+              "actionTag":7149,
+              "duration":0,
               "intensity":1
             }
           ]
@@ -9935,6 +10577,21 @@
                 430,
                 434
               ]
+            },
+            {
+              "image":"pgn_25.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9125,
+              "actions":[
+                7148,
+                7149
+              ]
             }
           ]
         },
@@ -10147,7 +10804,15 @@
                 188,
                 374
               ]
-            }
+            },
+            {
+              "actionTag":7150,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -10184,6 +10849,11 @@
             },
             {  
               "actionTag":449,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7151,
               "duration":0,
               "intensity":1
             }
@@ -10404,6 +11074,21 @@
                 450,
                 26021
               ]
+            },
+            {
+              "image":"pgn_26.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9126,
+              "actions":[
+                7150,
+                7151
+              ]
             }
           ]
         },
@@ -10553,7 +11238,15 @@
                 478,
                 631
               ]
-            }
+            },
+            {
+              "actionTag":7152,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -10567,6 +11260,11 @@
               "actionTag":453,
               "duration":0,
               "intensity":0.6
+            },
+            {
+              "actionTag":7153,
+              "duration":0,
+              "intensity":1
             }
           ]
         },
@@ -10652,6 +11350,21 @@
                 453,
                 454,
                 27021
+              ]
+            },
+            {
+              "image":"pgn_27.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9127,
+              "actions":[
+                7152,
+                7153
               ]
             }
           ]
@@ -10781,7 +11494,15 @@
                 512,
                 384
               ]
-            }
+            },
+            {
+              "actionTag":7154,
+              "duration":0,
+              "position":[
+                14,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -10798,6 +11519,11 @@
             },
             {  
               "actionTag":459,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7155,
               "duration":0,
               "intensity":1
             }
@@ -10901,6 +11627,21 @@
               "actions":[  
                 459,
                 460
+              ]
+            },
+            {
+              "image":"pgn_28.png",
+              "scale":1,
+              "position":[
+                14,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9128,
+              "actions":[
+                7154,
+                7155
               ]
             }
           ]
@@ -11063,7 +11804,15 @@
                 184,
                 637
               ]
-            }
+            },
+            {
+              "actionTag":7156,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -11082,6 +11831,11 @@
               "actionTag":465,
               "duration":0,
               "intensity":1.6
+            },
+            {
+              "actionTag":7157,
+              "duration":0,
+              "intensity":1
             }
           ]
         },
@@ -11178,6 +11932,21 @@
               "actions":[  
                 465,
                 466
+              ]
+            },
+            {
+              "image":"pgn_29.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9129,
+              "actions":[
+                7156,
+                7157
               ]
             }
           ]
@@ -11302,7 +12071,15 @@
                 512,
                 384
               ]
-            }
+            },
+            {
+              "actionTag":7158,
+              "duration":0,
+              "position":[
+                1010,
+                12
+              ]
+            }            
           ]
         },
         {  
@@ -11319,6 +12096,11 @@
             },
             {  
               "actionTag":471,
+              "duration":0,
+              "intensity":1
+            },
+            {
+              "actionTag":7159,
               "duration":0,
               "intensity":1
             }
@@ -11423,6 +12205,21 @@
                 471,
                 472,
                 30011
+              ]
+            },
+            {
+              "image":"pgn_30.png",
+              "scale":1,
+              "position":[
+                1010,
+                12
+              ],
+              "visible":true,
+              "zOrder":420,
+              "spriteTag":9130,
+              "actions":[
+                7158,
+                7159
               ]
             }
           ]
@@ -11625,7 +12422,8 @@
                 0
               ],
               "autoplayDuration":4.7,
-              "delayBeforeShowingText":0.7
+              "delayBeforeShowingText":0.7,
+              "voiceAudioFile":"the_end.mp3"
             }
           ]
         }
@@ -11692,7 +12490,8 @@
       "background":{  
         "file":"sniff_1128_bfcbdecdafaaddebfdffcbbebabbabba.mp3",
         "loop":false
-      }
+      },
+      "effectOnEnter":"intro.mp3"
     }
   }
 }
