@@ -23,7 +23,7 @@ THE SOFTWARE.
 ****************************************************************************/
 package com.startupminds;
 
-import org.cocos2dx.application.R;
+import org.cocos2dx.dontsticksticks.R;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxEditText;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
