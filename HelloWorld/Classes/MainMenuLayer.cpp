@@ -178,6 +178,13 @@ void MainMenuLayer::onEnter()
     CCLayer::onEnter();
 }
 
+void MainMenuLayer::onExit()
+{
+    SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    SimpleAudioEngine::sharedEngine()->stopAllBackgroundMusic();
+    
+    CCLayer::onExit();
+}
 void MainMenuLayer::normalMainMenuItemTouched(cocos2d::CCObject *sender)
 {
     // should release previous dialog if it is exist
