@@ -3532,8 +3532,8 @@
               ]
             },
             {
-              "image" : "sniff_1128_decfadaadbbedbccfcdffbbcdaecabca.png",
-              "_originalFileName" : "bg_yellow.png",
+              "image" : "light-blue-bg.png",
+              "_originalFileName" : "light-blue-bg.png",
               "scale" : 1,
               "position" : [
                 512,
@@ -3639,7 +3639,7 @@
                   ],
                   "position" : [
                     820,
-                    499
+                    429
                   ],
                   "radius" : 60,
                   "soundToPlay" : "sniff_1128_edffddffdaafaccfdccdcbaaaffceefa.mp3"
@@ -3650,7 +3650,7 @@
                   "touchFlag" : 35,
                   "position" : [
                     507,
-                    402
+                    332
                   ],
                   "radius" : 67,
                   "soundToPlay" : "sniff_1128_bcdeffbfeecdbcabedeeaafbbaddebcc.mp3"
@@ -3671,7 +3671,7 @@
                   ],
                   "position" : [
                     686,
-                    441
+                    371
                   ],
                   "radius" : 82,
                   "soundToPlay" : "sniff_1128_defedadadbbeaafdefecabbcdcbcbfef.mp3"
@@ -3681,8 +3681,8 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 38,
                   "position" : [
-                    961,
-                    513
+                    971,
+                    433
                   ],
                   "radius" : 70,
                   "soundToPlay" : "sniff_1128_cffedfbdefdcdbacddaffccffbbfdcdf.mp3"
@@ -3736,7 +3736,7 @@
                   ],
                   "position" : [
                     820,
-                    499
+                    429
                   ],
                   "radius" : 60,
                   "soundToPlay" : "sniff_1128_edffddffdaafaccfdccdcbaaaffceefa.mp3"
@@ -3747,7 +3747,7 @@
                   "touchFlag" : 35,
                   "position" : [
                     507,
-                    402
+                    332
                   ],
                   "radius" : 67,
                   "soundToPlay" : "sniff_1128_bcdeffbfeecdbcabedeeaafbbaddebcc.mp3"
@@ -3768,7 +3768,7 @@
                   ],
                   "position" : [
                     686,
-                    441
+                    371
                   ],
                   "radius" : 82,
                   "soundToPlay" : "sniff_1128_defedadadbbeaafdefecabbcdcbcbfef.mp3"
@@ -3778,8 +3778,8 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 38,
                   "position" : [
-                    961,
-                    513
+                    971,
+                    433
                   ],
                   "radius" : 70,
                   "soundToPlay" : "sniff_1128_cffedfbdefdcdbacddaffccffbbfdcdf.mp3"
@@ -4080,9 +4080,9 @@
                   "touchFlag" : 40,
                   "position" : [
                     464,
-                    559
+                    459
                   ],
-                  "radius" : 90,
+                  "radius" : 190,
                   "soundToPlay" : "sniff_1128_bdcbabcdadbbcadddbcdabfdffafcfda.mp3"
                 },
                 {
@@ -4091,9 +4091,9 @@
                   "touchFlag" : 41,
                   "position" : [
                     63,
-                    270
+                    210
                   ],
-                  "radius" : 68,
+                  "radius" : 110,
                   "soundToPlay" : "sniff_1128_efcfbabbfaefdebfdfdaeabbafccbdfc.mp3"
                 },
                 {
@@ -4102,9 +4102,9 @@
                   "touchFlag" : 43,
                   "position" : [
                     509,
-                    247
+                    187
                   ],
-                  "radius" : 73,
+                  "radius" : 110,
                   "soundToPlay" : "sniff_1128_caafacedbdffabcdcbbfacaefdefaffc.mp3"
                 },
                 {
@@ -4113,9 +4113,9 @@
                   "touchFlag" : 44,
                   "position" : [
                     332,
-                    257
+                    197
                   ],
-                  "radius" : 80,
+                  "radius" : 120,
                   "soundToPlay" : "sniff_1128_effcbdcdebcbafecddcccadcebbbafbf.mp3"
                 },
                 {
@@ -4124,9 +4124,9 @@
                   "touchFlag" : 46,
                   "position" : [
                     192,
-                    285
+                    225
                   ],
-                  "radius" : 58,
+                  "radius" : 100,
                   "soundToPlay" : "sniff_1128_dfedffabfccacadeeebeaafbcaadddec.mp3"
                 }
               ],
@@ -4429,9 +4429,9 @@
                   ],
                   "position" : [
                     240,
-                    506
+                    406
                   ],
-                  "radius" : 174,
+                  "radius" : 250,
                   "soundToPlay" : "sniff_1128_feeebccbefaaabdcdaeefcacfcafccaf.mp3"
                 }
               ],
@@ -4729,10 +4729,10 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 49,
                   "position" : [
-                    855,
-                    439
+                    870,
+                    359
                   ],
-                  "radius" : 142,
+                  "radius" : 260,
                   "soundToPlay" : "hs_maya_queen.mp3"
                 },
                 {
@@ -4741,9 +4741,9 @@
                   "touchFlag" : 50,
                   "position" : [
                     571,
-                    304
+                    224
                   ],
-                  "radius" : 122,
+                  "radius" : 180,
                   "soundToPlay" : "sniff_1128_debdeafdebcfdbfbdfabaeabeeafaebd.mp3"
                 }
               ],
@@ -5286,8 +5286,8 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 51,
                   "position" : [
-                    83,
-                    235
+                    60,
+                    145
                   ],
                   "radius" : 70,
                   "soundToPlay" : "sniff_1128_ceccaecfddfcdccdfcfcdbdbedbfedfc.mp3"
@@ -5298,7 +5298,7 @@
                   "touchFlag" : 53,
                   "position" : [
                     393,
-                    218
+                    163
                   ],
                   "radius" : 74,
                   "soundToPlay" : "sniff_1128_fbffdadbbeafebecbcdfceeaaedbeffc.mp3"
@@ -5309,7 +5309,7 @@
                   "touchFlag" : 55,
                   "position" : [
                     237,
-                    231
+                    166
                   ],
                   "radius" : 77,
                   "soundToPlay" : "sniff_1128_debbdcbeacaaccfdbcfcffdcaaddceec.mp3"
@@ -5320,7 +5320,7 @@
                   "touchFlag" : 57,
                   "position" : [
                     531,
-                    262
+                    173
                   ],
                   "radius" : 66,
                   "soundToPlay" : "sniff_1128_bdcdefaefbcacefecdfeddfeadcadbde.mp3"
@@ -5594,7 +5594,7 @@
                   "soundToPlay" : "sniff_1128_faecedecdbcbffebebdcbbfefcaabcbf.mp3"
                 },
                 {
-                  "glitterIndicator" : false,
+                  "glitterIndicator" : true,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 13059,
                   "actionsToRun" : [
@@ -5609,9 +5609,9 @@
                   ],
                   "position" : [
                     713,
-                    502
+                    419
                   ],
-                  "radius" : 212,
+                  "radius" : 280,
                   "soundToPlay" : "sniff_1128_faecedecdbcbffebebdcbbfefcaabcbf.mp3"
                 }
               ],
@@ -7353,7 +7353,7 @@
                 232,
                 598
               ],
-              "visible" : false,
+              "visible" : true,
               "zOrder" : 4,
               "spriteTag" : 938,
               "actions" : [
@@ -7457,10 +7457,6 @@
                     {
                       "spriteTag" : 916,
                       "actionTag" : 18009
-                    },
-                    {
-                      "spriteTag" : 938,
-                      "actionTag" : 18013
                     }
                   ],
                   "position" : [
@@ -9189,8 +9185,8 @@
               ]
             },
             {
-              "image" : "sniff_1128_decfadaadbbedbccfcdffbbcdaecabca.png",
-              "_originalFileName" : "bg_yellow.png",
+              "image" : "pg-22-bg.png",
+              "_originalFileName" : "pg-22-bg.png",
               "scale" : 1,
               "position" : [
                 512,
@@ -10943,7 +10939,7 @@
                 219,
                 599
               ],
-              "visible" : false,
+              "visible" : true,
               "zOrder" : 6,
               "spriteTag" : 1334,
               "actions" : [
@@ -11085,12 +11081,7 @@
                   "glitterIndicator" : true,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 107,
-                  "actionsToRun" : [
-                    {
-                      "spriteTag" : 1334,
-                      "actionTag" : 26025
-                    }
-                  ],
+                  "actionsToRun" : [],
                   "position" : [
                     168,
                     360
@@ -11300,7 +11291,7 @@
                 {
                   "text" : "Queen Maya bows to Horace\nand Prince Horace, he bows back.\n\nThen the queen and her prince\nhave a great big laugh attack!\n\n“You,” Maya giggles, “have won the sniffing game.\nBut all of my princes, I love you just the same.”",
                   "xOffset" : 515,
-                  "yOffset" : 325,
+                  "yOffset" : 335,
                   "fontType" : "sniff_1128_cebcdbcfffacebaaaedbcacebbffbacf.ttf",
                   "fontColor" : [
                     0,
@@ -11499,8 +11490,8 @@
               ]
             },
             {
-              "image" : "sniff_1128_decfadaadbbedbccfcdffbbcdaecabca.png",
-              "_originalFileName" : "bg_yellow.png",
+              "image" : "pg-28-bg.png",
+              "_originalFileName" : "pg-28-bg.png",
               "scale" : 1,
               "position" : [
                 512,
@@ -11713,7 +11704,7 @@
             {
               "actionTag" : 465,
               "duration" : 0,
-              "intensity" : 1.6
+              "intensity" : 0.5
             },
             {
               "actionTag" : 7157,
@@ -12171,7 +12162,7 @@
                   ]
                 },
                 {
-                  "text" : "Then the queen and her princes,\ntoo sleepy now to sniff,\nthey rest their royal bodies\nwithout a single whiff.",
+                  "text" : "The queen and her princes,\ntoo sleepy now to sniff,\nthey rest their royal bodies\nwithout a single whiff.",
                   "xOffset" : 518,
                   "yOffset" : 473,
                   "fontType" : "sniff_1128_cebcdbcfffacebaaaedbcacebbffbacf.ttf",
