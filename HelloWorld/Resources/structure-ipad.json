@@ -6374,7 +6374,7 @@
             {
               "linesOfText" : [
                 {
-                  "text" : "“Your highness,” motions Horace,\n“it’s syrup on the top.\n\nIt’s pancakes that you sniff,\npancakes for your pop!”",
+                  "text" : "“Your Highness,” motions Horace,\n“it’s syrup on the top.\n\nIt’s pancakes that you sniff,\npancakes for your pop!”",
                   "xOffset" : 693,
                   "yOffset" : 531,
                   "fontType" : "sniff_1128_cebcdbcfffacebaaaedbcacebbffbacf.ttf",
@@ -11493,7 +11493,7 @@
                   "touchFlag" : 108,
                   "position" : [
                     606,
-                    670
+                    700
                   ],
                   "radius" : 110,
                   "soundToPlay" : "sniff_1128_ddeeddedecffedfedeafeaaffdfdefaf.mp3"
