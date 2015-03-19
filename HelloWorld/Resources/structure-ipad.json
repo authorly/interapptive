@@ -7125,9 +7125,9 @@
                   "touchFlag" : 72,
                   "position" : [
                     152,
-                    368
+                    195
                   ],
-                  "radius" : 189,
+                  "radius" : 390,
                   "soundToPlay" : "sniff_1128_befcbacfcdacbaeaffdefcadbbddbeda.mp3"
                 },
                 {
@@ -7141,10 +7141,10 @@
                     }
                   ],
                   "position" : [
-                    906,
-                    643
+                    850,
+                    520
                   ],
-                  "radius" : 133,
+                  "radius" : 250,
                   "soundToPlay" : "sniff_1128_ebebfdbbdeabaabababbfdfeecdecebc.mp3"
                 }
               ],
@@ -7461,9 +7461,9 @@
                   ],
                   "position" : [
                     524,
-                    467
+                    335
                   ],
-                  "radius" : 150,
+                  "radius" : 300,
                   "soundToPlay" : "sniff_1128_edbafcbcabadfddffbddcfcbbeaafbcc.mp3"
                 }
               ],
@@ -7761,33 +7761,11 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 75,
                   "position" : [
-                    915,
-                    303
+                    938,
+                    386
                   ],
-                  "radius" : 171,
+                  "radius" : 220,
                   "soundToPlay" : "sniff_1128_ecaedabcfdaeadadadfadcdcbfecefba.mp3"
-                },
-                {
-                  "glitterIndicator" : true,
-                  "stopEffectIndicator" : false,
-                  "touchFlag" : 76,
-                  "position" : [
-                    568,
-                    332
-                  ],
-                  "radius" : 142,
-                  "soundToPlay" : "sniff_1128_abbcdfeabbaafadbfdbcffaababeccaa.mp3"
-                },
-                {
-                  "glitterIndicator" : false,
-                  "stopEffectIndicator" : false,
-                  "touchFlag" : 77,
-                  "position" : [
-                    632,
-                    467
-                  ],
-                  "radius" : 111,
-                  "soundToPlay" : "sniff_1128_abbcdfeabbaafadbfdbcffaababeccaa.mp3"
                 },
                 {
                   "glitterIndicator" : false,
@@ -7795,9 +7773,9 @@
                   "touchFlag" : 78,
                   "position" : [
                     545,
-                    493
+                    445
                   ],
-                  "radius" : 106,
+                  "radius" : 260,
                   "soundToPlay" : "sniff_1128_abbcdfeabbaafadbfdbcffaababeccaa.mp3"
                 }
               ],
@@ -8216,7 +8194,7 @@
               ],
               "hotspots" : [
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 79,
                   "position" : [
@@ -8227,7 +8205,7 @@
                   "soundToPlay" : "sniff_1128_cdeccbeeeddcdfcfdaeffdfafcedcefa.mp3"
                 },
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 81,
                   "position" : [
@@ -8238,7 +8216,7 @@
                   "soundToPlay" : "sniff_1128_ddbfaeaeeaadaaffaebebcfaffebecea.mp3"
                 },
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 82,
                   "position" : [
@@ -8254,10 +8232,54 @@
                   "touchFlag" : 84,
                   "position" : [
                     470,
-                    356
+                    256
                   ],
                   "radius" : 56,
                   "soundToPlay" : "sniff_1128_dafceeaeebaaefffbaefedfbadbdafdf.mp3"
+                },
+                {
+                  "glitterIndicator" : false,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 84,
+                  "position" : [
+                    472,
+                    350
+                  ],
+                  "radius" : 65,
+                  "soundToPlay" : "sniff_1128_dafceeaeebaaefffbaefedfbadbdafdf.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 79,
+                  "position" : [
+                    591,
+                    218
+                  ],
+                  "radius" : 63,
+                  "soundToPlay" : "sniff_1128_cdeccbeeeddcdfcfdaeffdfafcedcefa.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 82,
+                  "position" : [
+                    737,
+                    194
+                  ],
+                  "radius" : 64,
+                  "soundToPlay" : "sniff_1128_dbfffecddbdccebbcefbeabcefbbcbac.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 81,
+                  "position" : [
+                    900,
+                    210
+                  ],
+                  "radius" : 76,
+                  "soundToPlay" : "sniff_1128_ddbfaeaeeaadaaffaebebcfaffebecea.mp3"
                 }
               ],
               "highlightingTimes" : [
@@ -8568,6 +8590,50 @@
                 {
                   "glitterIndicator" : true,
                   "stopEffectIndicator" : false,
+                  "touchFlag" : 91,
+                  "position" : [
+                    247,
+                    420
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_eecdededfeeacbababfdecedbdfbbcfb.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 89,
+                  "position" : [
+                    499,
+                    423
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_fdfcaabfdbefdaecbddddbacfcedcbad.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 92,
+                  "position" : [
+                    89,
+                    430
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_ffcacbfcebadaacbfeddffefeaeefaef.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 93,
+                  "position" : [
+                    405,
+                    443
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
                   "touchFlag" : 96,
                   "position" : [
                     388,
@@ -8667,6 +8733,50 @@
                 {
                   "glitterIndicator" : true,
                   "stopEffectIndicator" : false,
+                  "touchFlag" : 91,
+                  "position" : [
+                    247,
+                    420
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_eecdededfeeacbababfdecedbdfbbcfb.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 89,
+                  "position" : [
+                    499,
+                    423
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_fdfcaabfdbefdaecbddddbacfcedcbad.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 92,
+                  "position" : [
+                    89,
+                    430
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_ffcacbfcebadaacbfeddffefeaeefaef.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 93,
+                  "position" : [
+                    405,
+                    443
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
                   "touchFlag" : 96,
                   "position" : [
                     388,
@@ -8759,6 +8869,50 @@
                   "position" : [
                     435,
                     619
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 91,
+                  "position" : [
+                    247,
+                    420
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_eecdededfeeacbababfdecedbdfbbcfb.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 89,
+                  "position" : [
+                    499,
+                    423
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_fdfcaabfdbefdaecbddddbacfcedcbad.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 92,
+                  "position" : [
+                    89,
+                    430
+                  ],
+                  "radius" : 48,
+                  "soundToPlay" : "sniff_1128_ffcacbfcebadaacbfeddffefeaeefaef.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 93,
+                  "position" : [
+                    405,
+                    443
                   ],
                   "radius" : 48,
                   "soundToPlay" : "sniff_1128_bfbaecffbeecdaadbbbcfdbcfdfafeed.mp3"
@@ -9370,7 +9524,7 @@
               ],
               "hotspots" : [
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 97,
                   "position" : [
@@ -9381,7 +9535,7 @@
                   "soundToPlay" : "sniff_1128_abeedfabcfbcfcbfbdfffddeabaafaff.mp3"
                 },
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 98,
                   "position" : [
@@ -9392,7 +9546,7 @@
                   "soundToPlay" : "sniff_1128_ffedcefaceecbceaebfbdcfaddfcaabf.mp3"
                 },
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 99,
                   "position" : [
@@ -9403,7 +9557,7 @@
                   "soundToPlay" : "sniff_1128_eddbdaddcfecdceadaecdccfddcbcbcd.mp3"
                 },
                 {
-                  "glitterIndicator" : false,
+                  "glitterIndicator" : true,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 100,
                   "position" : [
@@ -9414,7 +9568,7 @@
                   "soundToPlay" : "sniff_1128_eddbdaddcfecdceadaecdccfddcbcbcd.mp3"
                 },
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 101,
                   "position" : [
@@ -9425,12 +9579,12 @@
                   "soundToPlay" : "sniff_1128_caeecdfbfbfceafebeecebdbffaeddef.mp3"
                 },
                 {
-                  "glitterIndicator" : false,
+                  "glitterIndicator" : true,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 102,
                   "position" : [
                     948,
-                    167
+                    200
                   ],
                   "radius" : 48,
                   "soundToPlay" : "sniff_1128_caeecdfbfbfceafebeecebdbffaeddef.mp3"
@@ -9445,6 +9599,28 @@
                   ],
                   "radius" : 48,
                   "soundToPlay" : "sniff_1128_caeecdfbfbfceafebeecebdbffaeddef.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 98,
+                  "position" : [
+                    740,
+                    170
+                  ],
+                  "radius" : 75,
+                  "soundToPlay" : "sniff_1128_ffedcefaceecbceaebfbdcfaddfcaabf.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 97,
+                  "position" : [
+                    534,
+                    155
+                  ],
+                  "radius" : 120,
+                  "soundToPlay" : "sniff_1128_abeedfabcfbcfcbfbdfffddeabaafaff.mp3"
                 }
               ],
               "highlightingTimes" : [
@@ -9673,10 +9849,10 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 104,
                   "position" : [
-                    237,
-                    440
+                    269,
+                    277
                   ],
-                  "radius" : 175,
+                  "radius" : 300,
                   "soundToPlay" : "sniff_1128_fbedadbbbcbfbcadcaeaecaaaffcefbd.mp3"
                 }
               ],
@@ -10075,9 +10251,9 @@
                   "touchFlag" : 105,
                   "position" : [
                     835,
-                    245
+                    135
                   ],
-                  "radius" : 157,
+                  "radius" : 280,
                   "soundToPlay" : "sniff_1128_fabafadadbaadebdbedbcaefcbaeefea.mp3"
                 }
               ],
@@ -10618,10 +10794,10 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 106,
                   "position" : [
-                    624,
-                    258
+                    672,
+                    95
                   ],
-                  "radius" : 173,
+                  "radius" : 300,
                   "soundToPlay" : "sniff_1128_bbcbdcfbfcecdacbebfffdbaefeaffac.mp3"
                 }
               ],
@@ -11083,10 +11259,10 @@
                   "touchFlag" : 107,
                   "actionsToRun" : [],
                   "position" : [
-                    168,
-                    360
+                    160,
+                    237
                   ],
-                  "radius" : 115,
+                  "radius" : 250,
                   "soundToPlay" : "sniff_1128_bacbfdbcfbabecefecbdfeaeafbefebe.mp3"
                 }
               ],
@@ -11312,12 +11488,12 @@
               ],
               "hotspots" : [
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 108,
                   "position" : [
                     606,
-                    652
+                    670
                   ],
                   "radius" : 110,
                   "soundToPlay" : "sniff_1128_ddeeddedecffedfedeafeaaffdfdefaf.mp3"
@@ -11327,11 +11503,22 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 109,
                   "position" : [
-                    378,
-                    632
+                    346,
+                    525
                   ],
-                  "radius" : 113,
+                  "radius" : 200,
                   "soundToPlay" : "sniff_1128_bcfafcafccdccdaabcacbfbdabccacee.mp3"
+                },
+                {
+                  "glitterIndicator" : true,
+                  "stopEffectIndicator" : false,
+                  "touchFlag" : 108,
+                  "position" : [
+                    667,
+                    476
+                  ],
+                  "radius" : 110,
+                  "soundToPlay" : "sniff_1128_ddeeddedecffedfedeafeaaffdfdefaf.mp3"
                 }
               ],
               "highlightingTimes" : [
@@ -11590,13 +11777,13 @@
                   "touchFlag" : 110,
                   "position" : [
                     792,
-                    320
+                    250
                   ],
                   "radius" : 67,
                   "soundToPlay" : "sniff_1128_fcaaacafceafffbfdcbbfacabecaeeed.mp3"
                 },
                 {
-                  "glitterIndicator" : true,
+                  "glitterIndicator" : false,
                   "stopEffectIndicator" : false,
                   "touchFlag" : 111,
                   "position" : [
@@ -11622,8 +11809,8 @@
                   "stopEffectIndicator" : false,
                   "touchFlag" : 113,
                   "position" : [
-                    647,
-                    293
+                    655,
+                    220
                   ],
                   "radius" : 75,
                   "soundToPlay" : "sniff_1128_ddeefedfbaacaeecabdadedafbadafae.mp3"
@@ -11634,7 +11821,7 @@
                   "touchFlag" : 114,
                   "position" : [
                     940,
-                    327
+                    260
                   ],
                   "radius" : 72,
                   "soundToPlay" : "sniff_1128_adbcefdeddcddadcaebafdcadafaedfb.mp3"
@@ -11694,17 +11881,17 @@
             {
               "actionTag" : 461,
               "duration" : 0,
-              "intensity" : 1
+              "intensity" : 0.9
             },
             {
               "actionTag" : 463,
               "duration" : 0,
-              "intensity" : 0.3
+              "intensity" : 0.27
             },
             {
               "actionTag" : 465,
               "duration" : 0,
-              "intensity" : 0.5
+              "intensity" : 1.5
             },
             {
               "actionTag" : 7157,
@@ -11777,7 +11964,7 @@
             {
               "image" : "sniff_1128_bbcdabbbedfbaddbaafaaacebfbadfad.png",
               "_originalFileName" : "29_0001_maya_with_bg.png",
-              "scale" : 0.3,
+              "scale" : 0.27,
               "position" : [
                 291,
                 306
@@ -11897,9 +12084,9 @@
                   ],
                   "position" : [
                     282,
-                    329
+                    160
                   ],
-                  "radius" : 203,
+                  "radius" : 450,
                   "soundToPlay" : "sniff_1128_deabfadffdfdeacadabadffbfeaabbfa.mp3"
                 }
               ],
