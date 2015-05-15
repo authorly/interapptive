@@ -312,7 +312,9 @@
                 }
               ],
               "highlightingTimes" : [
-                0
+                0.073,
+                0.48,
+                0.794
               ],
               "autoplayDuration" : 5,
               "delayBeforeShowingText" : 0,
@@ -7230,9 +7232,9 @@
                   "touchFlag" : 71,
                   "position" : [
                     239,
-                    425
+                    510
                   ],
-                  "radius" : 187,
+                  "radius" : 300,
                   "soundToPlay" : "sniff_1128_bbdaebfebebbeecaebfddadfbcfeffbc.mp3"
                 }
               ],
