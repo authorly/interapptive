@@ -3060,7 +3060,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -3162,7 +3162,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "384b7129-bd39-413a-9512-7ba586d123af";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "384b7129-bd39-413a-9512-7ba586d123af";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
@@ -3221,15 +3221,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Novel Apps Corporation";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Novel Apps Corporation";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "384b7129-bd39-413a-9512-7ba586d123af";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "384b7129-bd39-413a-9512-7ba586d123af";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
