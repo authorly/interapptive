@@ -2318,6 +2318,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "interapptive" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -3026,7 +3028,7 @@
 					"$(SRCROOT)/../../Submodules/**",
 				);
 				INFOPLIST_FILE = "HelloWorld-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries\"",
@@ -3069,7 +3071,7 @@
 					"$(SRCROOT)/../../Submodules/**",
 				);
 				INFOPLIST_FILE = "HelloWorld-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries\"",
@@ -3135,7 +3137,7 @@
 					"$(SRCROOT)/../../Submodules/**",
 				);
 				INFOPLIST_FILE = "HelloWorld-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../cocos2dx/platform/third_party/ios/libraries\"",

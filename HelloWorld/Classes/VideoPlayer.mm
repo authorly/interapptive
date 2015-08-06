@@ -129,11 +129,11 @@ void VideoPlayer::playVideoByFilename(const char *fileName, bool showControl, Vi
         // use 2.0 style API
         if (showControl)
         {
-            g_moviePlayer.movieControlMode = MPMovieControlModeDefault;
+            g_moviePlayer.controlStyle = MPMovieControlStyleDefault;//g_moviePlayer.movieControlMode = MPMovieControlModeDefault;
         }
         else 
         {
-            g_moviePlayer.movieControlMode = MPMovieControlModeHidden;
+            g_moviePlayer.controlStyle = MPMovieControlStyleNone;//g_moviePlayer.movieControlMode = MPMovieControlModeHidden;
         }
         
         [g_moviePlayer play];
