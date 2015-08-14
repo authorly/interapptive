@@ -264,6 +264,23 @@ void PageLayer::doHotspotTouched(HotspotInfo *hotspot,bool isParagraphHotspot)
         // play
         touchSoundId = SimpleAudioEngine::sharedEngine()->playEffect(audeoName.c_str());
     }
+    
+    // run actions
+    for (int i = 0; i < hotspot->actionsToRun.size(); ++i)
+    {
+        CCSprite *sprite = (CCSprite*)getChildByTag(hotspot->actionsToRun[i].spriteTag);
+        
+        // don't run an action again
+        if (sprite->getActionByTag(i) != NULL)
+        {
+            continue;
+        }
+        
+        CCAction *action = (CCAction*)page->getActionByTag(hotspot->actionsToRun[i].actionTag)->copy();
+        action->setTag(i);
+        
+        sprite->runAction(action);
+    }
 }
 
 // this call back function will be called by VideoPlayer only with auto play mode
