@@ -8,9 +8,9 @@
 
 #include "Share.h"
 #include "cocos2d.h"
-#import "SHKItem.h"
-#import "SHKFacebook.h"
-#import "SHKTwitter.h"
+//#import "SHKItem.h"
+//#import "SHKFacebook.h"
+//#import "SHKTwitter.h"
 
 using namespace cocos2d;
 
@@ -100,17 +100,17 @@ static UIImage* screenshotUIImage()
 void shareOnFaceBook()
 {
     //take screenshot
-    UIImage *image = screenshotUIImageFromHeight(20);
-    
-    SHKItem *fbItem = [SHKItem image:image title:@"Check out my snowman!"];
-    [SHKFacebook shareItem:fbItem];
+//    UIImage *image = screenshotUIImageFromHeight(20);
+//    
+//    SHKItem *fbItem = [SHKItem image:image title:@"Check out my snowman!"];
+//    [SHKFacebook shareItem:fbItem];
 }
 
 void shareOnTwitter()
 {
     //take screenshot
-    UIImage *image = screenshotUIImageFromHeight(20);
-    
-    SHKItem *twitterItem = [SHKItem image:image title:@"Check out my snowman!"];
-    [SHKTwitter shareItem:twitterItem];
+//    UIImage *image = screenshotUIImageFromHeight(20);
+//    
+//    SHKItem *twitterItem = [SHKItem image:image title:@"Check out my snowman!"];
+//    [SHKTwitter shareItem:twitterItem];
 }
