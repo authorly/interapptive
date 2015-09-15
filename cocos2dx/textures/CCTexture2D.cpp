@@ -239,8 +239,8 @@ bool CCTexture2D::initWithImage(CCImage * uiImage)
 	else 
 #endif
 	{
-		POTWide = ccNextPOT(uiImage->getWidth());
-		POTHigh = ccNextPOT(uiImage->getHeight());
+		POTWide = (int)ccNextPOT(uiImage->getWidth());
+		POTHigh = (int)ccNextPOT(uiImage->getHeight());
 	}
 
 	unsigned maxTextureSize = conf->getMaxTextureSize();

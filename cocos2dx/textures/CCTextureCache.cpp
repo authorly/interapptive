@@ -349,7 +349,7 @@ CCTexture2D * CCTextureCache::addImage(const char * path)
                 CCFileData data(fullpath.c_str(), "rb");
                 unsigned long nSize  = data.getSize();
                 unsigned char* pBuffer = data.getBuffer();
-                CC_BREAK_IF(! image.initWithImageData((void*)pBuffer, nSize, CCImage::kFmtJpg));
+                CC_BREAK_IF(! image.initWithImageData((void*)pBuffer, (int)nSize, CCImage::kFmtJpg));
 
 				texture = new CCTexture2D();
 				texture->initWithImage(&image);
@@ -377,7 +377,7 @@ CCTexture2D * CCTextureCache::addImage(const char * path)
                 CCFileData data(fullpath.c_str(), "rb");
                 unsigned long nSize  = data.getSize();
                 unsigned char* pBuffer = data.getBuffer();
-                CC_BREAK_IF(! image.initWithImageData((void*)pBuffer, nSize, CCImage::kFmtPng));
+                CC_BREAK_IF(! image.initWithImageData((void*)pBuffer, (int)nSize, CCImage::kFmtPng));
 
 				texture = new CCTexture2D();
 				texture->initWithImage(&image);

@@ -159,7 +159,7 @@ namespace cocos2d{
         std::string strLeft(pBuffer, nBufSize);
         while (strLeft.length() > 0)
         {
-            int pos = strLeft.find('\n');
+            int pos = (int)strLeft.find('\n');
 
             if (pos != (int)std::string::npos)
             {
@@ -221,13 +221,13 @@ namespace cocos2d{
 		//////////////////////////////////////////////////////////////////////////
 
 		// page ID. Sanity check
-		int index = line.find('=')+1;
-		int index2 = line.find(' ', index);
+		int index = (int)line.find('=')+1;
+		int index2 = (int)line.find(' ', index);
 		std::string value = line.substr(index, index2-index);
 		CCAssert(atoi(value.c_str()) == 0, "LabelBMFont file could not be found");
 		// file 
-		index = line.find('"')+1;
-		index2 = line.find('"', index);
+		index = (int)line.find('"')+1;
+		index2 = (int)line.find('"', index);
 		value = line.substr(index, index2-index);
 
 		m_sAtlasName = CCFileUtils::fullPathFromRelativeFile(value.c_str(), fntFile);
@@ -241,8 +241,8 @@ namespace cocos2d{
 		//////////////////////////////////////////////////////////////////////////
 
 		// padding
-		int index = line.find("padding=");
-		int index2 = line.find(' ', index);
+		int index = (int)line.find("padding=");
+		int index2 = (int)line.find(' ', index);
 		std::string value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "padding=%d,%d,%d,%d", &m_tPadding.top, &m_tPadding.right, &m_tPadding.bottom, &m_tPadding.left);
 		CCLOG("cocos2d: padding: %d,%d,%d,%d", m_tPadding.left, m_tPadding.top, m_tPadding.right, m_tPadding.bottom);
@@ -255,23 +255,23 @@ namespace cocos2d{
 		//////////////////////////////////////////////////////////////////////////
 		
 		// Height
-		int index = line.find("lineHeight=");
-		int index2 = line.find(' ', index);
+		int index = (int)line.find("lineHeight=");
+		int index2 = (int)line.find(' ', index);
 		std::string value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "lineHeight=%u", &m_uCommonHeight);
 		// scaleW. sanity check
-		index = line.find("scaleW=") + strlen("scaleW=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("scaleW=") + strlen("scaleW=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		CCAssert(atoi(value.c_str()) <= CCConfiguration::sharedConfiguration()->getMaxTextureSize(), "CCLabelBMFont: page can't be larger than supported");
 		// scaleH. sanity check
-		index = line.find("scaleH=") + strlen("scaleH=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("scaleH=") + strlen("scaleH=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		CCAssert(atoi(value.c_str()) <= CCConfiguration::sharedConfiguration()->getMaxTextureSize(), "CCLabelBMFont: page can't be larger than supported");
 		// pages. sanity check
-		index = line.find("pages=") + strlen("pages=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("pages=") + strlen("pages=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		CCAssert(atoi(value.c_str()) == 1, "CCBitfontAtlas: only supports 1 page");
 
@@ -285,44 +285,44 @@ namespace cocos2d{
 		//////////////////////////////////////////////////////////////////////////
 
 		// Character ID
-		int index = line.find("id=");
-		int index2 = line.find(' ', index);
+		int index = (int)line.find("id=");
+		int index2 = (int)line.find(' ', index);
 		std::string value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "id=%u", &characterDefinition->charID);
 
 		// Character x
-		index = line.find("x=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("x=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "x=%f", &characterDefinition->rect.origin.x);
 		// Character y
-		index = line.find("y=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("y=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "y=%f", &characterDefinition->rect.origin.y);
 		// Character width
-		index = line.find("width=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("width=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "width=%f", &characterDefinition->rect.size.width);
 		// Character height
-		index = line.find("height=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("height=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "height=%f", &characterDefinition->rect.size.height);
 		// Character xoffset
-		index = line.find("xoffset=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("xoffset=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "xoffset=%d", &characterDefinition->xOffset);
 		// Character yoffset
-		index = line.find("yoffset=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("yoffset=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "yoffset=%d", &characterDefinition->yOffset);
 		// Character xadvance
-		index = line.find("xadvance=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("xadvance=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "xadvance=%d", &characterDefinition->xAdvance);
 	}
@@ -356,22 +356,22 @@ namespace cocos2d{
 
 		// first
 		int first;
-		int index = line.find("first=");
-		int index2 = line.find(' ', index);
+		int index = (int)line.find("first=");
+		int index2 = (int)line.find(' ', index);
 		std::string value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "first=%d", &first);
 
 		// second
 		int second;
-		index = line.find("second=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("second=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "second=%d", &second);
 
 		// amount
 		int amount;
-		index = line.find("amount=");
-		index2 = line.find(' ', index);
+		index = (int)line.find("amount=");
+		index2 = (int)line.find(' ', index);
 		value = line.substr(index, index2-index);
 		sscanf(value.c_str(), "amount=%d", &amount);
 
@@ -411,7 +411,7 @@ namespace cocos2d{
 		m_pConfiguration->retain();
 		CCAssert( m_pConfiguration, "Error creating config for LabelBMFont");
 
-		if (CCSpriteBatchNode::initWithFile(m_pConfiguration->m_sAtlasName.c_str(), strlen(theString)))
+		if (CCSpriteBatchNode::initWithFile(m_pConfiguration->m_sAtlasName.c_str(), (int)strlen(theString)))
 		{
 			m_cOpacity = 255;
 			m_tColor = ccWHITE;
@@ -639,7 +639,7 @@ namespace cocos2d{
             return;
         }
 
-        int utf8len = cc_utf8_strlen(m_sString.c_str(), -1);
+        int utf8len = (int)cc_utf8_strlen(m_sString.c_str(), -1);
         if (utf8len == 0)
         {
             return;

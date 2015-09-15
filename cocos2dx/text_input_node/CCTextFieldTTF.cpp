@@ -173,7 +173,7 @@ void CCTextFieldTTF::insertText(const char * text, int len)
     std::string sInsert(text, len);
 
     // insert \n means input end
-    int nPos = sInsert.find('\n');
+    int nPos = (int)sInsert.find('\n');
     if ((int)sInsert.npos != nPos)
     {
         len = nPos;
@@ -210,7 +210,7 @@ void CCTextFieldTTF::insertText(const char * text, int len)
 
 void CCTextFieldTTF::deleteBackward()
 {
-    int nStrLen = m_pInputText->length();
+    int nStrLen = (int)m_pInputText->length();
     if (! nStrLen)
     {
         // there is no string

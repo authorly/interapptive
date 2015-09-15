@@ -47,7 +47,7 @@ namespace cocos2d{
 	bool CCLabelAtlas::initWithString(const char *label, const char *charMapFile, unsigned int itemWidth, unsigned int itemHeight, unsigned char startCharMap)
 	{
 		CCAssert(label != NULL, "");
-		if (CCAtlasNode::initWithTileFile(charMapFile, itemWidth, itemHeight, strlen(label)))
+		if (CCAtlasNode::initWithTileFile(charMapFile, itemWidth, itemHeight, (int)strlen(label)))
 		{
 			m_cMapStartChar = startCharMap;
 			this->setString(label);
@@ -59,7 +59,7 @@ namespace cocos2d{
 	//CCLabelAtlas - Atlas generation
 	void CCLabelAtlas::updateAtlasValues()
 	{
-		unsigned int n = m_sString.length();
+		unsigned int n = (int)m_sString.length();
 
 		ccV3F_C4B_T2F_Quad quad;
 
@@ -116,7 +116,7 @@ namespace cocos2d{
 	//CCLabelAtlas - CCLabelProtocol
 	void CCLabelAtlas::setString(const char *label)
 	{
-		unsigned int len = strlen(label);
+		unsigned int len = (int)strlen(label);
 		if (len > m_pTextureAtlas->getTotalQuads())
 		{
 			m_pTextureAtlas->resizeCapacity(len);

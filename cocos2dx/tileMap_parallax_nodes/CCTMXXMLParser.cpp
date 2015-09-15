@@ -557,7 +557,7 @@ namespace cocos2d {
 				int inflatedLen = ZipUtils::ccInflateMemoryWithHint(buffer, len, &deflated, sizeHint);
 				CCAssert(inflatedLen == sizeHint, "");
 
-                inflatedLen = (size_t)&inflatedLen; // XXX: to avoid warings in compiler
+                inflatedLen = (int)(size_t)&inflatedLen; // XXX: to avoid warings in compiler
 				
 				delete [] buffer;
 				buffer = NULL;

@@ -107,8 +107,8 @@ bool CCRenderTexture::initWithWidthAndHeight(int w, int h, CCTexture2DPixelForma
         glGetIntegerv(CC_GL_FRAMEBUFFER_BINDING, &m_nOldFBO);
 
         // textures must be power of two squared
-        unsigned int powW = ccNextPOT(w);
-        unsigned int powH = ccNextPOT(h);
+        unsigned int powW = (int)ccNextPOT(w);
+        unsigned int powH = (int)ccNextPOT(h);
 
         void *data = malloc((int)(powW * powH * 4));
         CC_BREAK_IF(! data);
@@ -334,8 +334,8 @@ bool CCRenderTexture::getUIImageFromBuffer(CCImage *pImage, int x, int y, int nW
 		int nMaxTextureSize = 0;
 		glGetIntegerv(GL_MAX_TEXTURE_SIZE, &nMaxTextureSize);
 
-		nReadBufferWidth = ccNextPOT(tx);
-		nReadBufferHeight = ccNextPOT(ty);
+		nReadBufferWidth = (int)ccNextPOT(tx);
+		nReadBufferHeight = (int)ccNextPOT(ty);
 
 		CC_BREAK_IF(0 == nReadBufferWidth || 0 == nReadBufferHeight);
 		CC_BREAK_IF(nReadBufferWidth > nMaxTextureSize || nReadBufferHeight > nMaxTextureSize);

@@ -125,7 +125,7 @@ namespace cocos2d
 		}
 
 		CCTexture2D *pTexture = new CCTexture2D();
-		pTexture->initWithData(data, format, POTWide, POTHigh, s);
+		pTexture->initWithData(data, format, (int)POTWide, (int)POTHigh, s);
 
 		free(data);
 
