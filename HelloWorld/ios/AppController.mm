@@ -126,7 +126,7 @@ static AppDelegate s_sharedApplication;
 //    NSString* prefix = [NSString stringWithFormat:@"fb%@", SHKCONFIG(facebookAppId)];
 //    if ([scheme hasPrefix:prefix])
 //        return [SHKFacebook handleOpenURL:url];
-//    return YES;
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
