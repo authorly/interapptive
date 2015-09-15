@@ -62,7 +62,7 @@ void Page::splitText(LineText *textLine)
     }
     
     int startPos = 0;
-    int endPos = text.find(' ', startPos);
+    int endPos = (int)text.find(' ', startPos);
     
     // if have only one word
     if (endPos == string::npos)
@@ -76,7 +76,7 @@ void Page::splitText(LineText *textLine)
         // include space
         textLine->words.push_back(text.substr(startPos, endPos - startPos + 1));
         startPos = endPos + 1;
-        endPos = text.find_first_of(' ', startPos);
+        endPos = (int)text.find_first_of(' ', startPos);
     }
     
     // add last word

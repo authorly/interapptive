@@ -148,7 +148,7 @@ void MainMenuLayer::onEnter()
     }
     
     // chipmunk layer
-    ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&MainMenu::fallingObjectSetting, NULL);
+//    ChipmunkLayer *chipmunkLayer = ChipmunkLayer::layerWithPage(&MainMenu::fallingObjectSetting, NULL);
   
     // CRASH CAUSED
     //

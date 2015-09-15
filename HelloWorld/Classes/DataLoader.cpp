@@ -17,7 +17,7 @@ DataLoader* DataLoader::instance()
 void DataLoader::loadAssetsAsync(std::vector<string> *filePathArray, CCObject *target, SEL_CallFunc callBack)
 {
 	loadPointer = 0;
-	totalToLoad = filePathArray->size();
+	totalToLoad = (int)filePathArray->size();
 	this->target = target;
 	this->callBack = callBack;
 	this->filePathArray = filePathArray;

@@ -21,7 +21,7 @@ static void initChipmunk()
 }
 
 // used in eachBody()
-static ChipmunkLayer* currentObj = NULL;
+//static ChipmunkLayer* currentObj = NULL;
 
 ChipmunkLayer* ChipmunkLayer::layerWithPage(FallingObjectSetting *fallingObjectSetting, StaticObjectSetting *staticObjectSetting)
 {

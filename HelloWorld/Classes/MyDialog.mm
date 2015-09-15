@@ -16,7 +16,7 @@
 
 -(void) alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    callBackObject->buttonClicked(buttonIndex);
+    callBackObject->buttonClicked((int)buttonIndex);
 }
 
 -(void) initWithItems:(NSString*)title buttons:(NSMutableArray*)items deletate:(DialogProtocol*)delegate

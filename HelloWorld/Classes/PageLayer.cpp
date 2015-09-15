@@ -356,7 +356,7 @@ void PageLayer::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 
 float PageLayer::swipeEndedOperationAndCalculateTotalDelay(bool isSwipeLeft)
 {
-    StorySwipeEnded &swipeEnded = page->storySwipeEnded;
+//    StorySwipeEnded &swipeEnded = page->storySwipeEnded;
     /*
      should add children and remove children every time swiping ended
      
@@ -672,7 +672,7 @@ void PageLayer::createParagraph(int index)
         float yOffset = 0.0f;
         // should add space when it is zoomed in, because we add text size
         float ySpaceAdded = XSCALE < 1.0f ? 4 : 0;
-        int downIndex = linesOfText.size();
+        int downIndex = (int)linesOfText.size();
         int upIndex = 0;
         bool addSpace = addTextSpace(downIndex > 0 ? linesOfText[0]->yOffset : 0);
 		for (lineTextIter = linesOfText.begin(); lineTextIter != linesOfText.end(); ++lineTextIter, --downIndex, ++ upIndex)
