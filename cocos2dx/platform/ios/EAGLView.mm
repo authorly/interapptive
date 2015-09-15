@@ -558,7 +558,7 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
 		markedText_ = nil;
 	}
     const char * pszText = [text cStringUsingEncoding:NSUTF8StringEncoding];
-    cocos2d::CCIMEDispatcher::sharedDispatcher()->dispatchInsertText(pszText, strlen(pszText));
+    cocos2d::CCIMEDispatcher::sharedDispatcher()->dispatchInsertText(pszText, (int)strlen(pszText));
 }
 
 - (void)deleteBackward
@@ -666,7 +666,7 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
         return;
     }
     const char * pszText = [markedText_ cStringUsingEncoding:NSUTF8StringEncoding];
-    cocos2d::CCIMEDispatcher::sharedDispatcher()->dispatchInsertText(pszText, strlen(pszText));
+    cocos2d::CCIMEDispatcher::sharedDispatcher()->dispatchInsertText(pszText, (int)strlen(pszText));
 	[markedText_ release];
     markedText_ = nil;
 }
@@ -862,4 +862,6 @@ static cocos2d::CCTouch *s_pTouches[MAX_TOUCHES];
         dispatcher->dispatchKeyboardDidHide(notiInfo);
     }
 }
+
+
 @end

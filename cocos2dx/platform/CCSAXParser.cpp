@@ -73,7 +73,7 @@ bool CCSAXParser::parse(const char *pszFile)
 	saxHandler.endElement = &CCSAXParser::endElement;
 	saxHandler.characters = &CCSAXParser::textHandler;
 	
-	int result = xmlSAXUserParseMemory( &saxHandler, this, pBuffer, size );
+	int result = xmlSAXUserParseMemory( &saxHandler, this, pBuffer, (int)size);
 	if ( result != 0 )
 	{
 		return false;

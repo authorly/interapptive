@@ -96,11 +96,11 @@
 			CGPoint point = CGPointMake(rect.origin.x,
 										rect.origin.y + roundf(((rect.size.height - actualFont.leading) / 2.0f)));
 			CGSize size = [self.text sizeWithZFont:actualFont];
-			if (self.adjustsFontSizeToFitWidth && self.minimumFontSize < actualFont.pointSize) {
+			if (self.adjustsFontSizeToFitWidth/* && self.minimumFontSize < actualFont.pointSize*/) {
 				if (size.width > origSize.width) {
 					CGFloat desiredRatio = (origSize.width * actualFont.ratio) / size.width;
 					CGFloat desiredPointSize = desiredRatio * actualFont.pointSize / actualFont.ratio;
-					actualFont = [actualFont fontWithSize:MAX(MAX(desiredPointSize, self.minimumFontSize), 1.0f)];
+					actualFont = [actualFont fontWithSize:MAX(MAX(desiredPointSize, /*self.minimumFontSize*/actualFont.pointSize), 1.0f)];
 					size = [self.text sizeWithZFont:actualFont];
 				}
 				if (!CGSizeEqualToSize(origSize, size)) {
@@ -118,15 +118,20 @@
 			}
 			size.width = MIN(size.width, origSize.width);
 			// adjust the point for alignment
-			switch (self.textAlignment) {
-				case UITextAlignmentLeft:
+			switch (self.textAlignment)
+            {
+				case NSTextAlignmentLeft:
 					break;
-				case UITextAlignmentCenter:
+				case NSTextAlignmentCenter:
 					point.x += (origSize.width - size.width) / 2.0f;
 					break;
-				case UITextAlignmentRight:
+				case NSTextAlignmentRight:
 					point.x += origSize.width - size.width;
 					break;
+                    
+                case NSTextAlignmentJustified:
+                case NSTextAlignmentNatural:
+                    break;
 			}
 			[self.text drawAtPoint:point forWidth:size.width withZFont:actualFont lineBreakMode:self.lineBreakMode];
 		} else {

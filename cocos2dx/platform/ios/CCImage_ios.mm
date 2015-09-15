@@ -227,7 +227,7 @@ static bool _initPremultipliedATextureWithImage(CGImageRef image, NSUInteger POT
     // should be after calling super init
     pImageInfo->isPremultipliedAlpha = true;
     pImageInfo->hasAlpha = true;
-    pImageInfo->bitsPerComponent = bpp;
+    pImageInfo->bitsPerComponent = (int)bpp;
     pImageInfo->width = imageSize.width;
     pImageInfo->height = imageSize.height;
     
@@ -435,7 +435,7 @@ static bool _initWithString(const char * pText, cocos2d::CCImage::ETextAlign eAl
         
         // draw text
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();    
-        CGContextRef context = CGBitmapContextCreate(data, dim.width, dim.height, 8, dim.width * 4, colorSpace, kCGImageAlphaLast | kCGBitmapByteOrder32Big);
+        CGContextRef context = CGBitmapContextCreate(data, dim.width, dim.height, 8, dim.width * 4, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
         CGColorSpaceRelease(colorSpace);
         
 		if (! context)
@@ -451,20 +451,20 @@ static bool _initWithString(const char * pText, cocos2d::CCImage::ETextAlign eAl
         
         // measure text size with specified font and determine the rectangle to draw text in
         unsigned uHoriFlag = eAlign & 0x0f;
-        UITextAlignment align = (2 == uHoriFlag) ? UITextAlignmentRight
-                                : (3 == uHoriFlag) ? UITextAlignmentCenter
-                                : UITextAlignmentLeft;
+        UITextAlignment align = (2 == uHoriFlag) ? NSTextAlignmentRight
+                                : (3 == uHoriFlag) ? NSTextAlignmentCenter
+                                : NSTextAlignmentLeft;
         
         // normal fonts
 	if( [font isKindOfClass:[UIFont class] ] )
 	{
-		[str drawInRect:CGRectMake(0, startH, dim.width, dim.height) withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:align];
+		[str drawInRect:CGRectMake(0, startH, dim.width, dim.height) withFont:font lineBreakMode:NSLineBreakByWordWrapping alignment:align];
 	}
 	
 #if CC_FONT_LABEL_SUPPORT
 	else // ZFont class 
 	{
-		[FontLabelStringDrawingHelper drawInRect:str rect:CGRectMake(0, startH, dim.width, dim.height) withZFont:font lineBreakMode:UILineBreakModeWordWrap alignment:align];
+		[FontLabelStringDrawingHelper drawInRect:str rect:CGRectMake(0, startH, dim.width, dim.height) withZFont:font lineBreakMode:NSLineBreakByWordWrapping alignment:align];
 	}
 #endif
         
@@ -506,7 +506,7 @@ CCImage::~CCImage()
 bool CCImage::initWithImageFile(const char * strPath, EImageFormat eImgFmt/* = eFmtPng*/)
 {
     CCFileData data(CCFileUtils::fullPathFromRelativePath(strPath), "rb");
-    return initWithImageData(data.getBuffer(), data.getSize(), eImgFmt);
+    return initWithImageData(data.getBuffer(), (int)data.getSize(), eImgFmt);
 }
 
 bool CCImage::initWithImageFileThreadSafe(const char *fullpath, EImageFormat imageType)
@@ -516,7 +516,7 @@ bool CCImage::initWithImageFileThreadSafe(const char *fullpath, EImageFormat ima
 	   * CCFileUtils::fullPathFromRelativePath() is not thread-safe, it use autorelease().
 	   */
     CCFileData data(fullpath, "rb");
-    return initWithImageData(data.getBuffer(), data.getSize(), imageType);
+    return initWithImageData(data.getBuffer(), (int)data.getSize(), imageType);
 }
 
 bool CCImage::initWithImageData(void * pData, 

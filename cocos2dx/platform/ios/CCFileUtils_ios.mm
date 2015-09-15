@@ -269,7 +269,7 @@ namespace cocos2d {
 
         fclose(f);
 
-        return size;
+        return (int)size;
     }
 
     std::string& CCFileUtils::ccRemoveHDSuffixFromFile(std::string& path )
@@ -398,7 +398,7 @@ namespace cocos2d {
 		
 		        pBuffer = new unsigned char[FileInfo.uncompressed_size];
 		        int nSize = 0;
-		        nSize = unzReadCurrentFile(pFile, pBuffer, FileInfo.uncompressed_size);
+		        nSize = unzReadCurrentFile(pFile, pBuffer, (int)FileInfo.uncompressed_size);
 		        CCAssert(nSize == 0 || nSize == (int)FileInfo.uncompressed_size, "the file size is wrong");
 		
 		        *pSize = FileInfo.uncompressed_size;
