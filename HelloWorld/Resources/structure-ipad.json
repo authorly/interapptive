@@ -198,21 +198,6 @@
                 18,
                 19
               ]
-            },
-            {
-              "image" : "pgn_01.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9101,
-              "actions" : [
-                7100,
-                7101
-              ]
             }
           ]
         },
@@ -892,21 +877,6 @@
                 80,
                 2011
               ]
-            },
-            {
-              "image" : "pgn_02.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9102,
-              "actions" : [
-                7102,
-                7103
-              ]
             }
           ]
         },
@@ -1406,21 +1376,6 @@
               "actions" : [
                 88,
                 89
-              ]
-            },
-            {
-              "image" : "pgn_03.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9103,
-              "actions" : [
-                7104,
-                7105
               ]
             }
           ]
@@ -2203,21 +2158,6 @@
                 138,
                 4011
               ]
-            },
-            {
-              "image" : "pgn_04.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9104,
-              "actions" : [
-                7106,
-                7107
-              ]
             }
           ]
         },
@@ -2740,21 +2680,6 @@
                 140,
                 144
               ]
-            },
-            {
-              "image" : "pgn_05.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9105,
-              "actions" : [
-                7108,
-                7109
-              ]
             }
           ]
         },
@@ -3062,21 +2987,6 @@
               "actions" : [
                 153,
                 154
-              ]
-            },
-            {
-              "image" : "pgn_06.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9106,
-              "actions" : [
-                7110,
-                7111
               ]
             }
           ]
@@ -3398,21 +3308,6 @@
                 159,
                 160,
                 7011
-              ]
-            },
-            {
-              "image" : "pgn_07.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9107,
-              "actions" : [
-                7113,
-                7112
               ]
             }
           ]
@@ -3784,21 +3679,6 @@
               "actions" : [
                 171,
                 172
-              ]
-            },
-            {
-              "image" : "pgn_08.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9108,
-              "actions" : [
-                7114,
-                7115
               ]
             }
           ]
@@ -4301,21 +4181,6 @@
                 179,
                 180
               ]
-            },
-            {
-              "image" : "pgn_09.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9109,
-              "actions" : [
-                7116,
-                7117
-              ]
             }
           ]
         },
@@ -4668,21 +4533,6 @@
                 187,
                 188
               ]
-            },
-            {
-              "image" : "pgn_10.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9110,
-              "actions" : [
-                7118,
-                7119
-              ]
             }
           ]
         },
@@ -5027,21 +4877,6 @@
               "actions" : [
                 195,
                 196
-              ]
-            },
-            {
-              "image" : "pgn_11.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9111,
-              "actions" : [
-                7120,
-                7121
               ]
             }
           ]
@@ -5561,21 +5396,6 @@
                 232,
                 236
               ]
-            },
-            {
-              "image" : "pgn_12.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9112,
-              "actions" : [
-                7122,
-                7123
-              ]
             }
           ]
         },
@@ -5929,21 +5749,6 @@
                 243,
                 244
               ]
-            },
-            {
-              "image" : "pgn_13.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9113,
-              "actions" : [
-                7124,
-                7125
-              ]
             }
           ]
         },
@@ -6277,21 +6082,6 @@
               "actions" : [
                 257,
                 258
-              ]
-            },
-            {
-              "image" : "pgn_14.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9114,
-              "actions" : [
-                7126,
-                7127
               ]
             }
           ]
@@ -6776,21 +6566,6 @@
                 270,
                 15019
               ]
-            },
-            {
-              "image" : "pgn_15.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9115,
-              "actions" : [
-                7128,
-                7129
-              ]
             }
           ]
         },
@@ -7129,21 +6904,6 @@
                 277,
                 278,
                 16011
-              ]
-            },
-            {
-              "image" : "pgn_16.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9116,
-              "actions" : [
-                7130,
-                7131
               ]
             }
           ]
@@ -7525,21 +7285,6 @@
               "actions" : [
                 287,
                 288
-              ]
-            },
-            {
-              "image" : "pgn_17.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9117,
-              "actions" : [
-                7132,
-                7133
               ]
             }
           ]
@@ -7933,21 +7678,6 @@
                 295,
                 296
               ]
-            },
-            {
-              "image" : "pgn_18.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9118,
-              "actions" : [
-                7134,
-                7135
-              ]
             }
           ]
         },
@@ -8239,21 +7969,6 @@
               "actions" : [
                 303,
                 304
-              ]
-            },
-            {
-              "image" : "pgn_19.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9119,
-              "actions" : [
-                7136,
-                7137
               ]
             }
           ]
@@ -8667,21 +8382,6 @@
                 330,
                 20011
               ]
-            },
-            {
-              "image" : "pgn_20.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9120,
-              "actions" : [
-                7138,
-                7139
-              ]
             }
           ]
         },
@@ -9062,21 +8762,6 @@
                 337,
                 338,
                 21019
-              ]
-            },
-            {
-              "image" : "pgn_21.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9121,
-              "actions" : [
-                7140,
-                7141
               ]
             }
           ]
@@ -10052,21 +9737,6 @@
                 381,
                 385
               ]
-            },
-            {
-              "image" : "pgn_22.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9122,
-              "actions" : [
-                7142,
-                7143
-              ]
             }
           ]
         },
@@ -10465,21 +10135,6 @@
                 390,
                 391
               ]
-            },
-            {
-              "image" : "pgn_23.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9123,
-              "actions" : [
-                7144,
-                7145
-              ]
             }
           ]
         },
@@ -10867,21 +10522,6 @@
                 400,
                 401,
                 24021
-              ]
-            },
-            {
-              "image" : "pgn_24.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9124,
-              "actions" : [
-                7146,
-                7147
               ]
             }
           ]
@@ -11401,21 +11041,6 @@
                 430,
                 434
               ]
-            },
-            {
-              "image" : "pgn_25.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9125,
-              "actions" : [
-                7148,
-                7149
-              ]
             }
           ]
         },
@@ -11925,21 +11550,6 @@
                 450,
                 26021
               ]
-            },
-            {
-              "image" : "pgn_26.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9126,
-              "actions" : [
-                7150,
-                7151
-              ]
             }
           ]
         },
@@ -12221,21 +11831,6 @@
                 453,
                 454,
                 27021
-              ]
-            },
-            {
-              "image" : "pgn_27.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9127,
-              "actions" : [
-                7152,
-                7153
               ]
             }
           ]
@@ -12547,21 +12142,6 @@
                 459,
                 460
               ]
-            },
-            {
-              "image" : "pgn_28.png",
-              "scale" : 1,
-              "position" : [
-                14,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9128,
-              "actions" : [
-                7154,
-                7155
-              ]
             }
           ]
         },
@@ -12868,21 +12448,6 @@
                 465,
                 466
               ]
-            },
-            {
-              "image" : "pgn_29.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9129,
-              "actions" : [
-                7156,
-                7157
-              ]
             }
           ]
         },
@@ -13185,21 +12750,6 @@
                 471,
                 472,
                 30011
-              ]
-            },
-            {
-              "image" : "pgn_30.png",
-              "scale" : 1,
-              "position" : [
-                1010,
-                12
-              ],
-              "visible" : true,
-              "zOrder" : 420,
-              "spriteTag" : 9130,
-              "actions" : [
-                7158,
-                7159
               ]
             }
           ]
